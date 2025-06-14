@@ -1,0 +1,57 @@
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
+authors            = ["Yingchun Tian"]
+edition            = "2021"
+license            = "MIT"
+homepage           = "https://gitlab.itcjf.com/flatjs-next/took-kits"
+repository         = "https://gitlab.itcjf.com/flatjs-next/took-kits"
+rust-version       = "1.70"
+
+[workspace.dependencies]
+cow-utils          = { version = "0.1.3" }
+heck               = { version = "0.5.0" }
+json               = { version = "0.12.4" }
+rustc-hash         = { version = "2.1.0" }
+serde              = { version = "1.0.217" }
+serde_json         = { version = "1.0.134" }
+tracing            = { version = "0.1.41", features = ["max_level_trace", "release_max_level_trace"] }
+tracing-subscriber = { version = "0.3.19" }
+pathdiff           = { version = "0.2.3" }
+
+# Must be pinned with the same swc versions
+swc                         = { version = "=22.0.0" }
+swc_common                  = { version = "=9.1.0" }
+swc_config                  = { version = "=2.0.0" }
+swc_core                    = { version = "=23.2.0", default-features = false, features = ["parallel_rayon"] }
+swc_ecma_minifier           = { version = "=17.0.0", default-features = false }
+swc_error_reporters         = { version = "=11.0.0" }
+swc_html                    = { version = "=17.0.0" }
+swc_html_minifier           = { version = "=17.0.0", default-features = false }
+swc_node_comments           = { version = "=9.0.0" }
+swc_parallel                = { version = "1.3.0", default-features = false, features = ["rayon"] }
+swc_ecma_ast                = { version = "9.0.0" }
+swc_ecma_utils              = { version = "13.0.0" }
+swc_ecma_visit              = { version = "9.0.0" }
+swc_plugin_macro            = { version = "1.1.0" }
+swc_atoms                   = { version = "5.0.0" }
+swc_cached                  = { version = "2.0.0" }
+swc_ecma_transforms_react   = { version = "14.0.0" }
+swc_ecma_transforms_testing = { version = "16.0.0" }
+swc_trace_macro             = { version = "2.0.0" }
+testing                     = { version = "10.0.0" }
+convert_case                = { version = "0.8.0" }
+handlebars                  = { version = "6.3.2" }
+
+[profile.release]
+codegen-units = 1
+# debug = true
+lto = true
+
+# Optimize for size
+opt-level = "s"
+
+# Strip debug symbols
+strip = "symbols"

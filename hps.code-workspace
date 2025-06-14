@@ -1,0 +1,84 @@
+{
+  "folders": [
+    {
+      "name": "website",
+      "path": "website",
+    },
+    {
+      "name": "example-single",
+      "path": "examples/example-single",
+    },
+    {
+      "name": "example-modular",
+      "path": "examples/example-modular",
+    },
+    {
+      "name": "hps-plugin-import",
+      "path": "crates/hps-plugin-import",
+    },
+    {
+      "name": "hps-plugin-ts",
+      "path": "packages/hps-plugin-ts",
+    },
+    {
+      "name": "root",
+      "path": ".",
+    },
+  ],
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint"
+    ],
+  },
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "never",
+    },
+    "files.associations": {
+      "*.css": "tailwindcss",
+    },
+    "tailwindCSS.classFunctions": ["tw", "tv", "clsx", "twMerge", "extendVariants"],
+    "tailwindCSS.classAttributes": [
+      "class",
+      "className",
+      "classNames"
+    ],
+    "tailwindCSS.experimental.configFile": {
+      "website/src/css/custom.css": "website/src/**",
+      "website/src/css/layout.css": "website/src/**",
+      "website/src/css/overrides.css": "website/src/**",
+      "website/src/css/code-blocks.css": "website/src/**",
+    },
+    // Disable vscode formatting for js,jsx,ts,tsx files
+    // to allow dbaeumer.vscode-eslint to format them
+    "[javascript]": {
+      "editor.formatOnSave": false,
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true,
+    },
+    "[rust]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "[json]": {
+      "editor.formatOnSave": false,
+    },
+    "[jsonc]": {
+      "editor.formatOnSave": false,
+    },
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
+    "eslint.workingDirectories": [
+      "./website",
+      "./examples/example-single",
+      "./examples/example-modular",
+      "./crates/hps-plugin-import",
+      "./package/hps-plugin-ts",
+    ],
+    "typescript.tsdk": "root/node_modules/typescript/lib"
+  },
+}

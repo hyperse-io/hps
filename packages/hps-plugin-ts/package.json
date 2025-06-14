@@ -1,0 +1,68 @@
+{
+  "name": "@hyperse/hps-plugin-ts",
+  "version": "0.0.1",
+  "homepage": "https://github.com/hyperse-io/hps",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperse-io/hps",
+    "directory": "package/hps-plugin-ts"
+  },
+  "license": "SEE LICENSE IN FILE 'LICENSE'",
+  "author": {
+    "name": "Hyperse",
+    "url": "https://github.com/hyperse-io"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "bin/",
+    "dist/",
+    "index.js",
+    "README.md",
+    "CHANGELOG.md",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc -p ./tsconfig.build.json && npm run minify",
+    "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
+    "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
+    "minify": "node ../../scripts/minify.mjs --dest=dist",
+    "clean": "rimraf --no-glob ./dist ./_release ./coverage ./tsconfig.tsbuildinfo",
+    "lint": "TIMING=1 eslint .",
+    "test": "run-s test-unit",
+    "test-task": "vitest run",
+    "test-unit": "vitest run",
+    "test-coverage": "vitest run --coverage",
+    "test-unit-watch": "vitest watch --ui",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@hyperse/eslint-config-hyperse": "^1.4.5",
+    "@types/node": "24.0.1",
+    "@vitest/coverage-istanbul": "3.2.3",
+    "@vitest/ui": "3.2.3",
+    "eslint": "^9.29.0",
+    "npm-run-all": "4.1.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rimraf": "6.0.1",
+    "typescript": "5.8.3",
+    "vitest": "3.2.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "_release/package"
+  }
+}

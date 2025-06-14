@@ -1,0 +1,85 @@
+{
+  "name": "@hyperse/hps-website",
+  "version": "0.0.1",
+  "private": true,
+  "keywords": [
+    "hyperse",
+    "docusaurus",
+    "website",
+    "docs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperse-io/hps",
+    "directory": "website"
+  },
+  "scripts": {
+    "build": "docusaurus build",
+    "clear": "docusaurus clear",
+    "deploy": "docusaurus deploy",
+    "docusaurus": "docusaurus",
+    "lint": "eslint .",
+    "lint-fix": "yarn lint --fix",
+    "lint-staged-files": "lint-staged --allow-empty",
+    "serve": "docusaurus serve",
+    "start": "docusaurus start",
+    "swizzle": "docusaurus swizzle",
+    "test": "vitest run",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "write-translations": "docusaurus write-translations"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/plugin-content-docs": "^3.8.1",
+    "@docusaurus/plugin-google-gtag": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "@heroicons/react": "^2.2.0",
+    "@mdx-js/react": "^3.1.0",
+    "clsx": "^2.1.1",
+    "postcss": "^8.5.5",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.10",
+    "usehooks-ts": "^3.1.1"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "0.5.1",
+    "@changesets/cli": "2.29.4",
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
+    "@docusaurus/module-type-aliases": "3.8.1",
+    "@hyperse/eslint-config-hyperse": "^1.4.5",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@tsconfig/docusaurus": "^2.0.3",
+    "@types/node": "^24.0.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "commitizen": "4.3.1",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^9.29.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.1.0",
+    "typescript": "5.8.3",
+    "vitest": "^3.2.3"
+  },
+  "packageManager": "yarn@4.3.0"
+}

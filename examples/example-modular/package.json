@@ -1,0 +1,75 @@
+{
+  "name": "@example/example-modular",
+  "version": "0.0.1",
+  "private": true,
+  "homepage": "https://github.com/hyperse-io/hps/examples/example-modular",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperse-io/hps/examples/example-modular",
+    "directory": "examples/example-modular"
+  },
+  "author": {
+    "name": "Hyperse",
+    "url": "https://github.com/hyperse-io"
+  },
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "webpack serve",
+    "build": "npm run clean && webpack"
+  },
+  "dependencies": {
+    "@heroui/react": "^2.8.0-beta.4",
+    "@hyperse/hps": "workspace:*",
+    "@hyperse/hps-plugin-import": "workspace:*",
+    "@hyperse/hps-plugin-ts": "workspace:*",
+    "@iconify/react": "^6.0.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.18.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-github-corner": "^2.5.0",
+    "react-refresh": "^0.17.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.27.4",
+    "@babel/preset-env": "7.27.2",
+    "@babel/preset-react": "7.27.1",
+    "@babel/preset-typescript": "7.27.1",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/node": "24.0.1",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
+    "@zthxxx/tsconfig": "1.0.5",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "10.0.0",
+    "css-loader": "7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "html-webpack-plugin": "^5.6.3",
+    "npm-run-all": "4.1.5",
+    "postcss": "^8.5.5",
+    "postcss-loader": "8.1.1",
+    "rimraf": "6.0.1",
+    "style-loader": "4.0.0",
+    "tailwindcss": "^4.1.10",
+    "terser-webpack-plugin": "^5.3.14",
+    "ts-node": "10.9.2",
+    "typescript": "5.8.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

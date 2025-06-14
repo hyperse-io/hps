@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "react-jsx",
+    "noImplicitAny": false,
+    "allowJs": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": false,
+    "incremental": true,
+    "paths": {
+      "@hyperse/hps": ["../../packages/hps/src/index.js"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "rspack.config.mjs"],
+  "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
+}

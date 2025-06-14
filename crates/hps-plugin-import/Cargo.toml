@@ -1,0 +1,31 @@
+[package]
+
+description = "SWC plugin for module import"
+
+authors      = { workspace = true }
+edition      = { workspace = true }
+homepage     = { workspace = true }
+license      = { workspace = true }
+name         = "hps-plugin-modular"
+publish      = false
+repository   = { workspace = true }
+rust-version = { workspace = true }
+version      = "1.0.0"
+
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+transform_source = { path = "./transform" }
+serde              = { workspace = true }
+serde_json         = { workspace = true }
+swc_common         = { workspace = true, features = ["concurrent"] }
+swc_core           = { workspace = true, features = ["ecma_plugin_transform"] }
+swc_ecma_ast       = { workspace = true }
+swc_ecma_utils     = { workspace = true }
+swc_ecma_visit     = { workspace = true }
+swc_plugin_macro   = { workspace = true }
+tracing            = { workspace = true, features = ["release_max_level_off"] }
+pathdiff           = { workspace = true }
+

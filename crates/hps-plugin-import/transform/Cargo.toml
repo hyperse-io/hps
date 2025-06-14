@@ -1,0 +1,24 @@
+[package]
+
+authors      = { workspace = true }
+edition      = { workspace = true }
+homepage     = { workspace = true }
+license      = { workspace = true }
+name         = "transform_source"
+publish      = false
+repository   = { workspace = true }
+rust-version = { workspace = true }
+version      = "1.0.0"
+
+
+[dependencies]
+cow-utils  = { workspace = true }
+handlebars = "6.3.0"
+heck       = { workspace = true }
+rustc-hash = { workspace = true }
+serde      = { workspace = true }
+swc_core   = { workspace = true, features = ["common", "ecma_ast", "ecma_visit"] }
+pathdiff   = "0.2"
+
+[package.metadata.cargo-machete]
+ignored = ["Inflector"]
