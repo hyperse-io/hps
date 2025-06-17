@@ -32,17 +32,17 @@ jobs:
       - name: 📥 Install Dependencies
         run: yarn --frozen-lockfile
 
-      - name: Build
-        run: |
-          yarn build
-
       - name: Unit tests
         run: |
           yarn test
+
+      - name: Build
+        run: |
+          yarn build:ghpage
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website/build
+          publish_dir: ./website/out

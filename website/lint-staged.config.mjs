@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
  * A good practice is to override this base configuration in each package and/or application
  * where we are able to add customization depending on the nature of the project (eslint...).
  */
-import { getEslintFixCmd } from '../lint-staged.common.mjs';
+import { getEslintFixCmd } from './lint-staged.common.mjs';
 
 /**
  * @type {Record<string, (filenames: string[]) => string | string[] | Promise<string | string[]>>}

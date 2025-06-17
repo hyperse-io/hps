@@ -9,6 +9,7 @@ lerna-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+.DS_Store
 
 # Runtime data
 pids
@@ -129,7 +130,13 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-.netrc
-.env
-.env.*
-build
+# testing
+/coverage
+.out/
+
+# Build directories (next.js...)
+/.next/
+/out/
+/build
+.eslintcache
+_pagefind/

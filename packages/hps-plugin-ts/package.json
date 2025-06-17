@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.5",
-    "@types/node": "24.0.1",
+    "@types/node": "24.0.3",
     "@vitest/coverage-istanbul": "3.2.3",
     "@vitest/ui": "3.2.3",
     "eslint": "^9.29.0",

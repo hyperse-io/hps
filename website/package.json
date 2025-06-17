@@ -1,85 +1,68 @@
 {
   "name": "@hyperse/hps-website",
   "version": "0.0.1",
+  "description": "Hyperse documentation website",
   "private": true,
-  "keywords": [
-    "hyperse",
-    "docusaurus",
-    "website",
-    "docs"
-  ],
+  "homepage": "https://github.com/hyperse-io/hps#readme",
+  "bugs": {
+    "url": "https://github.com/hyperse-io/hps/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hyperse-io/hps",
-    "directory": "website"
+    "url": "git@github.com:hyperse-io/hps.git"
   },
+  "license": "MIT",
+  "type": "module",
   "scripts": {
-    "build": "docusaurus build",
-    "clear": "docusaurus clear",
-    "deploy": "docusaurus deploy",
-    "docusaurus": "docusaurus",
+    "build": "next build && yarn postbuild",
+    "postbuild": "next-sitemap && pagefind --site .next/server/app --output-path public/_pagefind",
+    "build:ghpage": "cross-env NEXT_BUILD_ENV_OUTPUT='export' next build && yarn postbuild:ghpage",
+    "postbuild:ghpage": "next-sitemap && pagefind --site .next/server/app --output-path out/_pagefind",
+    "dev": "next dev -p 3000 -H 0.0.0.0",
+    "fix-all-files": "eslint . --fix",
+    "g:lint-staged-files": "lint-staged --allow-empty",
     "lint": "eslint .",
-    "lint-fix": "yarn lint --fix",
-    "lint-staged-files": "lint-staged --allow-empty",
-    "serve": "docusaurus serve",
-    "start": "docusaurus start",
-    "swizzle": "docusaurus swizzle",
+    "start": "next start -p 3000 -H 0.0.0.0",
     "test": "vitest run",
-    "typecheck": "tsc --project ./tsconfig.json --noEmit",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "write-translations": "docusaurus write-translations"
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "dependencies": {
-    "@docusaurus/core": "^3.8.1",
-    "@docusaurus/plugin-content-docs": "^3.8.1",
-    "@docusaurus/plugin-google-gtag": "^3.8.1",
-    "@docusaurus/preset-classic": "^3.8.1",
-    "@heroicons/react": "^2.2.0",
-    "@mdx-js/react": "^3.1.0",
+    "@heroui/react": "^2.7.10",
+    "@tailwindcss/typography": "^0.5.16",
     "clsx": "^2.1.1",
-    "postcss": "^8.5.5",
-    "prism-react-renderer": "^2.4.1",
+    "framer-motion": "^12.18.1",
+    "next": "^15.3.3",
+    "nextra": "alpha",
+    "nextra-theme-docs": "alpha",
+    "postcss": "^8.5.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.10",
-    "usehooks-ts": "^3.1.1"
+    "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
     "@changesets/changelog-github": "0.5.1",
-    "@changesets/cli": "2.29.4",
-    "@commitlint/cli": "19.8.1",
-    "@commitlint/config-conventional": "19.8.1",
-    "@docusaurus/module-type-aliases": "3.8.1",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@hyperse/eslint-config-hyperse": "^1.4.5",
+    "@hyperse/next-config": "^1.0.4",
     "@tailwindcss/postcss": "^4.1.10",
-    "@tsconfig/docusaurus": "^2.0.3",
-    "@types/node": "^24.0.1",
+    "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "commitizen": "4.3.1",
-    "cz-conventional-changelog": "3.3.0",
+    "commitizen": "^4.3.1",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.29.0",
-    "husky": "9.1.7",
-    "lint-staged": "16.1.0",
-    "typescript": "5.8.3",
-    "vitest": "^3.2.3"
-  },
-  "packageManager": "yarn@4.3.0"
+    "lint-staged": "^16.1.2",
+    "next-sitemap": "^4.2.3",
+    "pagefind": "^1.3.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.3",
+    "zod": "^3.25.67"
+  }
 }

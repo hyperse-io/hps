@@ -13,6 +13,10 @@
       "path": "examples/example-modular",
     },
     {
+      "name": "hps",
+      "path": "packages/hps",
+    },
+    {
       "name": "hps-plugin-import",
       "path": "crates/hps-plugin-import",
     },
