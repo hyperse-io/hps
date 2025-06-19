@@ -1,10 +1,13 @@
 [package]
 
+description = "HPS SWC plugin for https://www.npmjs.com/package/babel-plugin-transform-imports"
+
+
 authors      = { workspace = true }
 edition      = { workspace = true }
 homepage     = { workspace = true }
 license      = { workspace = true }
-name         = "transform_source"
+name         = "modularize_imports"
 publish      = false
 repository   = { workspace = true }
 rust-version = { workspace = true }
@@ -18,7 +21,6 @@ heck       = { workspace = true }
 rustc-hash = { workspace = true }
 serde      = { workspace = true }
 swc_core   = { workspace = true, features = ["common", "ecma_ast", "ecma_visit"] }
-pathdiff   = "0.2"
 
 [package.metadata.cargo-machete]
 ignored = ["Inflector"]

@@ -17,6 +17,14 @@
       "path": "packages/hps",
     },
     {
+      "name": "hps-lib",
+      "path": "packages/hps-lib",
+    },
+    {
+      "name": "hps-pack",
+      "path": "packages/hps-pack",
+    },
+    {
       "name": "hps-plugin-import",
       "path": "crates/hps-plugin-import",
     },
@@ -81,6 +89,7 @@
       "./examples/example-single",
       "./examples/example-modular",
       "./crates/hps-plugin-import",
+      "./packages/hps-plugin-import",
       "./package/hps-plugin-ts",
     ],
     "typescript.tsdk": "root/node_modules/typescript/lib"

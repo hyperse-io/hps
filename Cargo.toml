@@ -5,9 +5,9 @@ resolver = "2"
 [workspace.package]
 authors            = ["Yingchun Tian"]
 edition            = "2021"
-license            = "MIT"
-homepage           = "https://gitlab.itcjf.com/flatjs-next/took-kits"
-repository         = "https://gitlab.itcjf.com/flatjs-next/took-kits"
+license            = "HCL"
+homepage           = "https://github.com/hyperse-io/hps"
+repository         = "https://github.com/hyperse-io/hps"
 rust-version       = "1.70"
 
 [workspace.dependencies]
@@ -19,7 +19,6 @@ serde              = { version = "1.0.217" }
 serde_json         = { version = "1.0.134" }
 tracing            = { version = "0.1.41", features = ["max_level_trace", "release_max_level_trace"] }
 tracing-subscriber = { version = "0.3.19" }
-pathdiff           = { version = "0.2.3" }
 
 # Must be pinned with the same swc versions
 swc                         = { version = "=22.0.0" }

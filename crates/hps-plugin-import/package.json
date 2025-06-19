@@ -1,11 +1,10 @@
 {
   "name": "@hyperse/hps-plugin-import",
-  "version": "0.0.1",
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
     "type": "git",
     "url": "https://github.com/hyperse-io/hps",
-    "directory": "crates/hps-plugin-import"
+    "directory": "packages/hps-plugin-import"
   },
   "author": {
     "name": "Hyperse",
@@ -13,51 +12,46 @@
   },
   "type": "module",
   "license": "SEE LICENSE IN FILE 'LICENSE'",
-  "main": "./dist/hps-plugin-import.wasm",
+  "files": [
+    "./dist/"
+  ],
+  "main": "./dist/hps_plugin_import.wasm",
   "exports": {
     ".": {
-      "require": "./dist/hps-plugin-import.wasm",
-      "import": "./dist/hps-plugin-import.wasm"
+      "require": "./dist/hps_plugin_import.wasm",
+      "import": "./dist/hps_plugin_import.wasm"
     }
   },
-  "types": "./dist/index.d.ts",
-  "files": [
-    "bin/",
-    "dist/",
-    "index.js",
-    "README.md",
-    "CHANGELOG.md",
-    "package.json"
-  ],
   "scripts": {
-    "build": "rimraf ./dist && mkdir ./dist && cargo build --release -p hps-plugin-import --target wasm32-wasip1 && cp ../../target/wasm32-wasip1/release/hps-plugin-import.wasm ./dist/hps-plugin-import.wasm",
-    "build:debug": "rimraf ./dist && mkdir ./dist && cargo build -p hps-plugin-import --target wasm32-wasip1 && cp ../../target/wasm32-wasip1/debug/hps-plugin-import.wasm ./dist/hps-plugin-import.wasm",
+    "build": "rimraf ./dist && mkdir ./dist && cargo build --release -p hps_plugin_import --target wasm32-wasip1 && cp ../../target/wasm32-wasip1/release/hps_plugin_import.wasm ./dist/hps_plugin_import.wasm",
+    "build:debug": "rimraf ./dist && mkdir ./dist && cargo build -p hps_plugin_import --target wasm32-wasip1 && cp ../../target/wasm32-wasip1/debug/hps_plugin_import.wasm ./dist/hps_plugin_import.wasm",
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
-    "build-release": "rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
-    "clean": "rimraf --no-glob ./dist ./_release ./coverage ./tsconfig.tsbuildinfo",
-    "lint": "eslint .",
-    "test": "run-s test-unit",
-    "test-unit": "yarn build && vitest run",
-    "test-coverage": "vitest run --coverage",
-    "test-unit-watch": "vitest watch --ui",
+    "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
+    "minify": "node ../../scripts/minify.mjs --dest=dist",
+    "codegen": "graphql-codegen --config ./codegen.cjs",
+    "clean": "rimraf --no-glob ./dist  ./node_modules ./coverage ./__data__ ./config/__data__ ./_release ./tsconfig.tsbuildinfo",
+    "test": "yarn build && run-s test-unit",
+    "test-task": "vitest run",
+    "test-unit": "vitest run --passWithNoTests",
+    "test-watch": "vitest watch --ui",
+    "fix-all-files": "eslint . --fix",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.4.5",
-    "@swc/core": "1.12.1",
-    "@swc/wasm-web": "1.12.1",
-    "@types/node": "24.0.3",
-    "@vitest/coverage-istanbul": "3.2.3",
-    "@vitest/ui": "3.2.3",
-    "eslint": "^9.29.0",
+    "@hyperse/eslint-config-hyperse": "^1.4.1",
+    "@swc/core": "1.11.21",
+    "@types/node": "22.14.1",
+    "eslint": "^9.25.1",
     "npm-run-all": "4.1.5",
     "rimraf": "6.0.1",
     "typescript": "5.8.3",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "3.2.3"
+    "vitest": "3.2.2"
   },
+  "preferUnplugged": true,
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0",
+    "npm": ">=8.0.0"
   },
   "publishConfig": {
     "access": "public",

@@ -7,6 +7,7 @@
     "allowJs": false,
     "noEmit": false,
     "incremental": true,
+    "paths": {},
     "types": ["vitest/globals", "node"]
   },
   "exclude": ["**/node_modules", "**/.*/", "dist", "build", "**/fixtures/**"]

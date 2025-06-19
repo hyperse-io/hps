@@ -1,80 +1,79 @@
 import fs from 'node:fs/promises';
-import { join, relative } from 'node:path';
+import path from 'node:path';
+import url from 'node:url';
 import { test } from 'vitest';
-import { getDirname } from './utils/getDirname.js';
-import { transformCode } from './utils/transformCode.js';
+import { transform } from '@swc/core';
 
-const projectCwd = getDirname(import.meta.url, 'fixtures');
-const filePath = join(projectCwd, 'react.tsx');
+const pluginName = 'swc_plugin_import.wasm';
 
-describe('tests inspector swc plugin', () => {
-  test('default options. should return absolute path', async () => {
-    const input = await fs.readFile(
-      new URL('./fixtures/react.tsx', import.meta.url),
-      'utf-8'
-    );
-    const { code } = await transformCode(input, filePath);
-
-    expect(code).toBeDefined();
-    expect(code).toContain('data-hps-source');
-    expect(code).toContain(`${filePath}`);
+const transformCode = async (code: string) => {
+  return transform(code, {
+    jsc: {
+      parser: {
+        syntax: 'ecmascript',
+      },
+      target: 'es2018',
+      experimental: {
+        plugins: [
+          [
+            path.join(
+              path.dirname(url.fileURLToPath(import.meta.url)),
+              '..',
+              'dist',
+              pluginName
+            ),
+            {
+              modularImports: [
+                {
+                  libraryName: '@dimjs/lang',
+                  libraryDirectory: 'dist',
+                  transformToDefaultImport: true,
+                  methodNameToFiles: {
+                    isArray: '@dimjs/lang/dist/is-array.js',
+                  },
+                },
+                {
+                  libraryName: '@dimjs/utils',
+                  libraryDirectory: 'dist',
+                  transformToDefaultImport: true,
+                  customName: '@dimjs/utils/es/{{ kebabCase member }}/index.js',
+                },
+                {
+                  libraryName: '@ant-design/icons',
+                  libraryDirectory: 'es/icons',
+                  transformToDefaultImport: true,
+                  camel2DashComponentName: false,
+                  customName: '@ant-design/icons/es/icons/{{ member }}.js',
+                },
+              ],
+            },
+          ],
+        ],
+      },
+    },
+    filename: 'test.js',
   });
+};
 
-  test('projectCwd is projectCwd. should return relative path of projectCwd', async () => {
+describe('wasm', () => {
+  test('Should load remove-console wasm plugin correctly', async () => {
     const input = await fs.readFile(
-      new URL('./fixtures/react.tsx', import.meta.url),
+      new URL('./fixtures/input.js', import.meta.url),
       'utf-8'
     );
-    const { code } = await transformCode(input, filePath, {
-      projectCwd,
-    });
+    const { code } = await transformCode(input);
 
-    expect(code).toBeDefined();
-    expect(code).toContain('data-hps-source');
-    expect(code).toContain(`${relative(projectCwd, filePath)}`);
-  });
-
-  test('projectCwd is process.cwd(). should return relative path of process.cwd()', async () => {
-    const input = await fs.readFile(
-      new URL('./fixtures/react.tsx', import.meta.url),
-      'utf-8'
+    expect(code).toContain(
+      `import arrayChunk from "@dimjs/utils/es/array-chunk/index.js";`
     );
-    const { code } = await transformCode(input, filePath, {
-      projectCwd: process.cwd(),
-    });
-
-    expect(code).toBeDefined();
-    expect(code).toContain('data-hps-source');
-    expect(code).toContain(`${relative(process.cwd(), filePath)}`);
-  });
-
-  test('isAbsolutePath is true. should return absolute path', async () => {
-    const input = await fs.readFile(
-      new URL('./fixtures/react.tsx', import.meta.url),
-      'utf-8'
+    expect(code).toContain(
+      `import isArray from "@dimjs/lang/dist/is-array.js";`
     );
-    const { code } = await transformCode(input, filePath, {});
-
-    expect(code).toBeDefined();
-    expect(code).toContain('data-hps-source');
-    expect(code).toContain(`${filePath}`);
-  });
-
-  test('isAbsolutePath is true. should return absolute path. support nextjs', async () => {
-    const input = await fs.readFile(
-      new URL('./fixtures/react.tsx', import.meta.url),
-      'utf-8'
+    expect(code).toContain(
+      `import CloseCircleFilled from "@ant-design/icons/es/icons/CloseCircleFilled.js";`
     );
-
-    const fileName =
-      '[project]/apps/main/src/app/[locale]/(account)/account/widgets/AccountView.tsx';
-
-    const { code } = await transformCode(input, fileName, {
-      projectCwd: process.cwd(),
-    });
-
-    expect(code).toBeDefined();
-    expect(code).toContain('data-hps-source');
-    expect(code).toContain(fileName.replace('[project]/', ''));
+    expect(code).toContain(
+      `import PlusOutlined from "@ant-design/icons/es/icons/PlusOutlined.js";`
+    );
   });
 });

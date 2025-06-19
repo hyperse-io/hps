@@ -1,125 +1,635 @@
-mod utils;
+#![allow(clippy::unwrap_used)]
 
-use crate::utils::get_file_info;
+mod legacy_case;
+mod visit;
+
+use std::fmt::Debug;
+
+use cow_utils::CowUtils;
+use handlebars::{Context, Helper, HelperResult, Output, RenderContext, Template};
+use heck::{ToKebabCase, ToLowerCamelCase, ToSnakeCase};
+use rustc_hash::{FxHashMap as HashMap, FxHashSet as HashSet};
+use serde::{Deserialize, Serialize};
 use swc_core::{
-    common::{SyntaxContext, DUMMY_SP},
+    common::{errors::HANDLER, util::take::Take, BytePos, Span, SyntaxContext, DUMMY_SP},
     ecma::{
-        ast::*,
-        visit::{VisitMut, VisitMutWith},
+        ast::{
+            Ident, ImportDecl, ImportDefaultSpecifier, ImportNamedSpecifier, ImportPhase,
+            ImportSpecifier, Module, ModuleDecl, ModuleExportName, ModuleItem, Str,
+        },
+        atoms::Atom,
+        visit::{visit_mut_pass, VisitMut, VisitWith},
     },
 };
 
-const TRACE_SOURCE: &str = "data-hps-source";
+use crate::{
+    legacy_case::{identifier_to_legacy_kebab_case, identifier_to_legacy_snake_case},
+    visit::IdentComponent,
+};
 
-pub struct InspectorPlugin {
-    #[allow(dead_code)]
-    project_cwd: Option<String>,
-    file_name_identifier: Option<Ident>,
-    source_map: swc_core::plugin::proxies::PluginSourceMapProxy,
+#[derive(Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct RawStyleConfig {
+    pub style_library_directory: Option<String>,
+    pub custom: Option<String>,
+    pub css: Option<String>,
+    pub bool: Option<bool>,
 }
 
-impl InspectorPlugin {
-    pub fn new(
-        project_cwd: Option<String>,
-        source_map: swc_core::plugin::proxies::PluginSourceMapProxy,
-    ) -> Self {
+impl From<RawStyleConfig> for StyleConfig {
+    fn from(raw_style_config: RawStyleConfig) -> Self {
+        if let Some(style_library_directory) = raw_style_config.style_library_directory {
+            Self::StyleLibraryDirectory(style_library_directory)
+        } else if let Some(custom) = raw_style_config.custom {
+            Self::Custom(CustomTransform::Tpl(custom))
+        } else if raw_style_config.css.is_some() {
+            Self::Css
+        } else if let Some(bool) = raw_style_config.bool {
+            Self::Bool(bool)
+        } else {
+            Self::None
+        }
+    }
+}
+
+#[derive(Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
+pub struct RawImportOptions {
+    pub project_cwd: Option<String>,
+    pub method_name_to_files: Option<HashMap<String, String>>,
+    pub library_name: String,
+    pub library_directory: Option<String>, // default to `lib`
+    pub custom_name: Option<String>,
+    pub custom_style_name: Option<String>, // If this is set, `style` option will be ignored
+    pub style: Option<RawStyleConfig>,
+    pub camel_to_dash_component_name: Option<bool>, // default to true
+    pub transform_to_default_import: Option<bool>,
+    pub ignore_es_component: Option<Vec<String>>,
+    pub ignore_style_component: Option<Vec<String>>,
+}
+
+impl From<RawImportOptions> for ImportOptions {
+    fn from(plugin_import: RawImportOptions) -> Self {
+        let RawImportOptions {
+            project_cwd,
+            method_name_to_files,
+            library_name,
+            library_directory,
+            custom_name,
+            custom_style_name,
+            style,
+            camel_to_dash_component_name,
+            transform_to_default_import,
+            ignore_es_component,
+            ignore_style_component,
+        } = plugin_import;
+
         Self {
             project_cwd,
-            file_name_identifier: None,
-            source_map,
+            method_name_to_files,
+            library_name,
+            library_directory,
+            custom_name: custom_name.map(CustomTransform::Tpl),
+            custom_style_name: custom_style_name.map(CustomTransform::Tpl),
+            style: style.map(Into::into),
+            camel_to_dash_component_name,
+            transform_to_default_import,
+            ignore_es_component,
+            ignore_style_component,
         }
     }
 }
 
-impl VisitMut for InspectorPlugin {
-    fn visit_mut_jsx_opening_element(&mut self, el: &mut JSXOpeningElement) {
-        let (line, col, filename) =
-            get_file_info(self.project_cwd.clone(), &self.source_map, el.span.lo);
+#[derive(Debug, Deserialize, Clone)]
+pub enum StyleConfig {
+    StyleLibraryDirectory(String),
+    #[serde(skip)]
+    Custom(CustomTransform),
+    Css,
+    Bool(bool),
+    None,
+}
 
-        // Skip if element has no location info or already has data-hps-source
-        if el.span.is_dummy()
-            || el.attrs.iter().any(|attr| {
-                if let JSXAttrOrSpread::JSXAttr(attr) = attr {
-                    if let JSXAttrName::Ident(ident) = &attr.name {
-                        return ident.sym == TRACE_SOURCE;
+#[derive(Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum CustomTransform {
+    Tpl(String),
+    #[serde(skip)]
+    Fn(Box<dyn Sync + Send + Fn(String) -> Option<String>>),
+}
+
+impl Clone for CustomTransform {
+    fn clone(&self) -> Self {
+        match self {
+            Self::Fn(_) => panic!("Function cannot be cloned"),
+            Self::Tpl(s) => Self::Tpl(s.clone()),
+        }
+    }
+}
+
+impl Debug for CustomTransform {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            CustomTransform::Fn(_) => f.write_str("Function"),
+            CustomTransform::Tpl(t) => f.write_str(t),
+        }
+    }
+}
+
+#[derive(Debug, Deserialize, Default, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct ImportOptions {
+    pub project_cwd: Option<String>,
+    pub method_name_to_files: Option<HashMap<String, String>>,
+
+    pub library_name: String,
+    pub library_directory: Option<String>, // default to `lib`
+    pub custom_name: Option<CustomTransform>,
+    pub custom_style_name: Option<CustomTransform>, // If this is set, `style` option will be ignored
+    pub style: Option<StyleConfig>,
+
+    pub camel_to_dash_component_name: Option<bool>, // default to true
+    pub transform_to_default_import: Option<bool>,
+
+    pub ignore_es_component: Option<Vec<String>>,
+    pub ignore_style_component: Option<Vec<String>>,
+}
+
+const CUSTOM_JS: &str = "CUSTOM_JS_NAME";
+const CUSTOM_STYLE: &str = "CUSTOM_STYLE";
+const CUSTOM_STYLE_NAME: &str = "CUSTOM_STYLE_NAME";
+
+/// Panic:
+///
+/// Panics in sometimes if [swc_core::common::errors::HANDLER] is not provided.
+pub fn plugin_import(
+    config: &Vec<ImportOptions>,
+) -> swc_core::ecma::visit::VisitMutPass<ImportPlugin<'_>> {
+    let mut renderer = handlebars::Handlebars::new();
+
+    renderer.register_helper(
+        "kebabCase",
+        Box::new(
+            |helper: &Helper<'_>,
+             _: &'_ handlebars::Handlebars<'_>,
+             _: &'_ Context,
+             _: &mut RenderContext<'_, '_>,
+             out: &mut dyn Output|
+             -> HelperResult {
+                let param = helper
+                    .param(0)
+                    .and_then(|v| v.value().as_str())
+                    .unwrap_or("");
+                out.write(param.to_kebab_case().as_ref())?;
+                Ok(())
+            },
+        ),
+    );
+
+    renderer.register_helper(
+        "legacyKebabCase",
+        Box::new(
+            |helper: &Helper<'_>,
+             _: &'_ handlebars::Handlebars<'_>,
+             _: &'_ Context,
+             _: &mut RenderContext<'_, '_>,
+             out: &mut dyn Output|
+             -> HelperResult {
+                let param = helper
+                    .param(0)
+                    .and_then(|v| v.value().as_str())
+                    .unwrap_or("");
+                out.write(identifier_to_legacy_kebab_case(param).as_ref())?;
+                Ok(())
+            },
+        ),
+    );
+
+    renderer.register_helper(
+        "camelCase",
+        Box::new(
+            |helper: &Helper<'_>,
+             _: &'_ handlebars::Handlebars<'_>,
+             _: &'_ Context,
+             _: &mut RenderContext<'_, '_>,
+             out: &mut dyn Output|
+             -> HelperResult {
+                let param = helper
+                    .param(0)
+                    .and_then(|v| v.value().as_str())
+                    .unwrap_or("");
+                out.write(param.to_lower_camel_case().as_ref())?;
+                Ok(())
+            },
+        ),
+    );
+
+    renderer.register_helper(
+        "snakeCase",
+        Box::new(
+            |helper: &Helper<'_>,
+             _: &'_ handlebars::Handlebars<'_>,
+             _: &'_ Context,
+             _: &mut RenderContext<'_, '_>,
+             out: &mut dyn Output|
+             -> HelperResult {
+                let param = helper
+                    .param(0)
+                    .and_then(|v| v.value().as_str())
+                    .unwrap_or("");
+                out.write(param.to_snake_case().as_ref())?;
+                Ok(())
+            },
+        ),
+    );
+
+    renderer.register_helper(
+        "legacySnakeCase",
+        Box::new(
+            |helper: &Helper<'_>,
+             _: &'_ handlebars::Handlebars<'_>,
+             _: &'_ Context,
+             _: &mut RenderContext<'_, '_>,
+             out: &mut dyn Output|
+             -> HelperResult {
+                let param = helper
+                    .param(0)
+                    .and_then(|v| v.value().as_str())
+                    .unwrap_or("");
+                out.write(identifier_to_legacy_snake_case(param).as_ref())?;
+                Ok(())
+            },
+        ),
+    );
+
+    renderer.register_helper(
+        "upperCase",
+        Box::new(
+            |helper: &Helper<'_>,
+             _: &'_ handlebars::Handlebars<'_>,
+             _: &'_ Context,
+             _: &mut RenderContext<'_, '_>,
+             out: &mut dyn Output|
+             -> HelperResult {
+                let param = helper
+                    .param(0)
+                    .and_then(|v| v.value().as_str())
+                    .unwrap_or("");
+                out.write(param.cow_to_ascii_uppercase().as_ref())?;
+                Ok(())
+            },
+        ),
+    );
+
+    renderer.register_helper(
+        "lowerCase",
+        Box::new(
+            |helper: &Helper<'_>,
+             _: &'_ handlebars::Handlebars<'_>,
+             _: &'_ Context,
+             _: &mut RenderContext<'_, '_>,
+             out: &mut dyn Output|
+             -> HelperResult {
+                let param = helper
+                    .param(0)
+                    .and_then(|v| v.value().as_str())
+                    .unwrap_or("");
+                out.write(param.cow_to_ascii_lowercase().as_ref())?;
+                Ok(())
+            },
+        ),
+    );
+
+    config.iter().for_each(|cfg| {
+        if let Some(CustomTransform::Tpl(tpl)) = &cfg.custom_name {
+            renderer.register_template(
+                &(cfg.library_name.clone() + CUSTOM_JS),
+                Template::compile(tpl).unwrap(),
+            )
+        }
+
+        if let Some(CustomTransform::Tpl(tpl)) = &cfg.custom_style_name {
+            renderer.register_template(
+                &(cfg.library_name.clone() + CUSTOM_STYLE_NAME),
+                Template::compile(tpl).unwrap(),
+            )
+        }
+
+        if let Some(StyleConfig::Custom(CustomTransform::Tpl(tpl))) = &cfg.style {
+            renderer.register_template(
+                &(cfg.library_name.clone() + CUSTOM_STYLE),
+                Template::compile(tpl).unwrap(),
+            )
+        }
+    });
+
+    visit_mut_pass(ImportPlugin { config, renderer })
+}
+
+#[derive(Debug)]
+struct EsSpec {
+    source: String,
+    default_spec: String,
+    as_name: Option<String>,
+    use_default_import: bool,
+    mark: u32,
+}
+
+pub struct ImportPlugin<'a> {
+    pub config: &'a Vec<ImportOptions>,
+    pub renderer: handlebars::Handlebars<'a>,
+}
+
+impl ImportPlugin<'_> {
+    // return (import_es, import_css)
+    fn transform(&self, name: String, config: &ImportOptions) -> (Option<String>, Option<String>) {
+        let should_ignore = &config
+            .ignore_es_component
+            .as_ref()
+            .map(|list| list.iter().any(|c| c == &name))
+            .unwrap_or(false);
+
+        if *should_ignore {
+            return (None, None);
+        }
+
+        let should_ignore_css = &config
+            .ignore_style_component
+            .as_ref()
+            .map(|list| list.iter().any(|c| c == &name))
+            .unwrap_or(false);
+
+        let transformed_name = if config.camel_to_dash_component_name.unwrap_or(true) {
+            name.to_kebab_case()
+        } else {
+            name.clone()
+        };
+
+        let path = if let Some(transform) = &config.custom_name {
+            match transform {
+                CustomTransform::Fn(f) => Ok(f(name.clone())),
+                CustomTransform::Tpl(_) => self
+                    .renderer
+                    .render(
+                        format!("{}{}", &config.library_name, CUSTOM_JS).as_str(),
+                        &render_context(name.clone()),
+                    )
+                    .map(Some),
+            }
+        } else {
+            Ok(Some(format!(
+                "{}/{}/{}",
+                &config.library_name,
+                config
+                    .library_directory
+                    .as_ref()
+                    .unwrap_or(&"lib".to_string()),
+                transformed_name
+            )))
+        };
+
+        let path = match path {
+            Ok(p) => p,
+            Err(e) => {
+                HANDLER.with(|handler| {
+                    handler.err(&e.to_string());
+                });
+                None
+            }
+        };
+
+        if path.is_none() {
+            return (None, None);
+        }
+
+        let js_source = path.unwrap();
+
+        let css = if *should_ignore_css {
+            None
+        } else if let Some(custom) = &config.custom_style_name {
+            match custom {
+                CustomTransform::Fn(f) => f(name),
+                CustomTransform::Tpl(_) => Some(
+                    self.renderer
+                        .render(
+                            &format!("{}{}", &config.library_name, CUSTOM_STYLE_NAME),
+                            &render_context(name),
+                        )
+                        .unwrap(),
+                ),
+            }
+        } else if let Some(style) = &config.style {
+            match style {
+                StyleConfig::StyleLibraryDirectory(lib) => Some(format!(
+                    "{}/{}/{}",
+                    config.library_name, lib, &transformed_name
+                )),
+                StyleConfig::Custom(custom) => match custom {
+                    CustomTransform::Fn(f) => f(js_source.clone()),
+                    CustomTransform::Tpl(_) => Some(
+                        self.renderer
+                            .render(
+                                &format!("{}{}", config.library_name, CUSTOM_STYLE),
+                                &render_context(js_source.clone()),
+                            )
+                            .expect("Should success"),
+                    ),
+                },
+                StyleConfig::Css => Some(format!("{js_source}/style/css")),
+                StyleConfig::Bool(should_transform) => {
+                    if *should_transform {
+                        Some(format!("{}/style", &js_source))
+                    } else {
+                        None
                     }
                 }
-                false
-            })
-        {
-            return;
-        }
+                StyleConfig::None => None,
+            }
+        } else {
+            None
+        };
 
-        // Create file name identifier if not exists
-        if self.file_name_identifier.is_none() {
-            self.file_name_identifier = Some(Ident::new(
-                filename.clone().into(),
-                DUMMY_SP,
-                SyntaxContext::empty(),
-            ));
-        }
-
-        // Add data-hps-file-name attribute
-        el.attrs.push(JSXAttrOrSpread::JSXAttr(JSXAttr {
-            span: DUMMY_SP,
-            name: JSXAttrName::Ident(
-                Ident::new(TRACE_SOURCE.into(), DUMMY_SP, SyntaxContext::empty()).into(),
-            ),
-            value: Some(JSXAttrValue::JSXExprContainer(JSXExprContainer {
-                span: DUMMY_SP,
-                expr: JSXExpr::Expr(Box::new(Expr::Lit(Lit::Str(Str {
-                    span: DUMMY_SP,
-                    value: format!(
-                        "{}:{}:{}:{}",
-                        filename.clone(),
-                        line,
-                        col,
-                        match &el.name {
-                            JSXElementName::Ident(ident) => ident.sym.to_string(),
-                            JSXElementName::JSXMemberExpr(member) => member.prop.sym.to_string(),
-                            JSXElementName::JSXNamespacedName(namespaced) =>
-                                namespaced.name.sym.to_string(),
-                        }
-                    )
-                    .into(),
-                    raw: None,
-                })))),
-            })),
-        }));
-
-        el.visit_mut_children_with(self);
+        (Some(js_source), css)
     }
+}
 
+impl VisitMut for ImportPlugin<'_> {
     fn visit_mut_module(&mut self, module: &mut Module) {
-        let (_, _, filename) =
-            get_file_info(self.project_cwd.clone(), &self.source_map, module.span.lo);
+        // use visitor to collect all ident reference, and then remove imported component and type that is never referenced
+        let mut visitor = IdentComponent {
+            ident_set: HashSet::default(),
+            type_ident_set: HashSet::default(),
+            in_ts_type_ref: false,
+        };
+        module.body.visit_with(&mut visitor);
 
-        // Add file name variable declaration at the start of the module
-        if let Some(file_name_id) = &self.file_name_identifier {
-            module.body.insert(
-                0,
-                ModuleItem::Stmt(Stmt::Decl(Decl::Var(Box::new(VarDecl {
-                    span: DUMMY_SP,
-                    kind: VarDeclKind::Var,
-                    declare: false,
-                    decls: vec![VarDeclarator {
-                        span: DUMMY_SP,
-                        name: Pat::Ident(BindingIdent {
-                            id: file_name_id.clone(),
-                            type_ann: None,
-                        }),
-                        init: Some(Box::new(Expr::Lit(Lit::Str(Str {
-                            span: DUMMY_SP,
-                            value: filename.clone().into(),
-                            raw: None,
-                        })))),
-                        definite: false,
-                    }],
-                    ctxt: SyntaxContext::empty(),
-                })))),
-            );
+        let ident_referenced =
+            |ident: &Ident| -> bool { visitor.ident_set.contains(&ident.to_id()) };
+        let type_ident_referenced =
+            |ident: &Ident| -> bool { visitor.type_ident_set.contains(&ident.to_id()) };
+
+        let mut specifiers_css = vec![];
+        let mut specifiers_es = vec![];
+        let mut specifiers_rm_es = HashSet::default();
+
+        let config = &self.config;
+
+        for (item_index, item) in module.body.iter_mut().enumerate() {
+            if let ModuleItem::ModuleDecl(ModuleDecl::Import(var)) = item {
+                let source = &*var.src.value;
+
+                if let Some(child_config) = config.iter().find(|&c| c.library_name == source) {
+                    let mut rm_specifier = HashSet::default();
+
+                    for (specifier_idx, specifier) in var.specifiers.iter().enumerate() {
+                        match specifier {
+                            ImportSpecifier::Named(ref s) => {
+                                let imported = s.imported.as_ref().map(|imported| match imported {
+                                    ModuleExportName::Ident(ident) => ident.sym.to_string(),
+                                    ModuleExportName::Str(str) => str.value.to_string(),
+                                });
+
+                                let as_name: Option<String> =
+                                    imported.is_some().then(|| s.local.sym.to_string());
+                                let ident: String =
+                                    imported.unwrap_or_else(|| s.local.sym.to_string());
+
+                                let mark = s.local.ctxt.as_u32();
+
+                                if ident_referenced(&s.local) {
+                                    let use_default_import =
+                                        child_config.transform_to_default_import.unwrap_or(false);
+
+                                    let (import_es_source, import_css_source) =
+                                        self.transform(ident.clone(), child_config);
+
+                                    if let Some(source) = import_es_source {
+                                        specifiers_es.push(EsSpec {
+                                            source,
+                                            default_spec: ident,
+                                            as_name,
+                                            use_default_import,
+                                            mark,
+                                        });
+                                        rm_specifier.insert(specifier_idx);
+                                    }
+
+                                    if let Some(source) = import_css_source {
+                                        specifiers_css.push(source);
+                                    }
+                                } else if type_ident_referenced(&s.local) {
+                                    // type referenced
+                                    continue;
+                                } else {
+                                    // not referenced, should tree shaking
+                                    rm_specifier.insert(specifier_idx);
+                                }
+                            }
+                            ImportSpecifier::Default(ref _s) => {}
+                            ImportSpecifier::Namespace(ref _ns) => {}
+                        }
+                    }
+                    if rm_specifier.len() == var.specifiers.len() {
+                        // all specifier remove, just remove whole stmt
+                        specifiers_rm_es.insert(item_index);
+                    } else {
+                        // only remove some specifier
+                        var.specifiers = var
+                            .specifiers
+                            .take()
+                            .into_iter()
+                            .enumerate()
+                            .filter_map(|(idx, spec)| {
+                                (!rm_specifier.contains(&idx)).then_some(spec)
+                            })
+                            .collect();
+                    }
+                }
+            }
         }
 
-        module.visit_mut_children_with(self);
+        module.body = module
+            .body
+            .take()
+            .into_iter()
+            .enumerate()
+            .filter_map(|(idx, stmt)| (!specifiers_rm_es.contains(&idx)).then_some(stmt))
+            .collect();
+
+        let body = &mut module.body;
+
+        for js_source in specifiers_es {
+            let js_source_ref = js_source.source.as_str();
+            let dec = ModuleItem::ModuleDecl(ModuleDecl::Import(ImportDecl {
+                span: DUMMY_SP,
+                specifiers: if js_source.use_default_import {
+                    vec![ImportSpecifier::Default(ImportDefaultSpecifier {
+                        span: DUMMY_SP,
+                        local: Ident {
+                            ctxt: SyntaxContext::from_u32(js_source.mark),
+                            span: Span::new(BytePos::DUMMY, BytePos::DUMMY),
+                            sym: Atom::from(
+                                js_source.as_name.unwrap_or(js_source.default_spec).as_str(),
+                            ),
+                            optional: false,
+                        },
+                    })]
+                } else {
+                    vec![ImportSpecifier::Named(ImportNamedSpecifier {
+                        span: DUMMY_SP,
+                        imported: if js_source.as_name.is_some() {
+                            Some(ModuleExportName::Ident(Ident {
+                                span: DUMMY_SP,
+                                ctxt: Default::default(),
+                                sym: Atom::from(js_source.default_spec.as_str()),
+                                optional: false,
+                            }))
+                        } else {
+                            None
+                        },
+                        local: Ident {
+                            ctxt: SyntaxContext::from_u32(js_source.mark),
+                            span: Span::new(BytePos::DUMMY, BytePos::DUMMY),
+                            sym: Atom::from(
+                                js_source.as_name.unwrap_or(js_source.default_spec).as_str(),
+                            ),
+                            optional: false,
+                        },
+                        is_type_only: false,
+                    })]
+                },
+                src: Box::new(Str {
+                    span: DUMMY_SP,
+                    value: Atom::from(js_source_ref),
+                    raw: None,
+                }),
+                type_only: false,
+                with: Default::default(),
+                phase: ImportPhase::default(),
+            }));
+            body.insert(0, dec);
+        }
+
+        for css_source in specifiers_css {
+            let dec = ModuleItem::ModuleDecl(ModuleDecl::Import(ImportDecl {
+                span: DUMMY_SP,
+                specifiers: vec![],
+                src: Box::new(Str {
+                    span: DUMMY_SP,
+                    value: Atom::from(css_source),
+                    raw: None,
+                }),
+                type_only: false,
+                with: Default::default(),
+                phase: ImportPhase::default(),
+            }));
+            body.insert(0, dec);
+        }
     }
+}
+
+fn render_context(s: String) -> HashMap<&'static str, String> {
+    let mut ctx = HashMap::default();
+    ctx.insert("member", s);
+    ctx
 }

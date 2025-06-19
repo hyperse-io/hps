@@ -1,35 +1,50 @@
+#![allow(clippy::not_unsafe_ptr_arg_deref)]
+use modularize_imports::ImportOptions;
 use serde::Deserialize;
 use swc_core::{
-    ecma::{ast::*, visit::VisitMutWith},
+    ecma::ast::Program,
     plugin::{plugin_transform, proxies::TransformPluginProgramMetadata},
 };
-use transform_source::InspectorPlugin;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Default, Clone)]
 #[serde(rename_all = "camelCase")]
-pub struct PluginConfig {
-    #[serde(default)]
-    pub project_cwd: Option<String>,
+pub struct ImportInputOptions {
+    pub modular_imports: Vec<ImportOptions>,
 }
 
-/// SWC plugin for code transform
-///
-/// This plugin adds source location information to JSX elements
-/// by injecting a `data-hps-source` attribute with file path,
-/// line number, and column number.
 #[plugin_transform]
-pub fn inspector_swc_plugin(program: Program, metadata: TransformPluginProgramMetadata) -> Program {
-    // Parse plugin config with defaults
-    let config: PluginConfig = metadata
+fn swc_plugin_import(program: Program, data: TransformPluginProgramMetadata) -> Program {
+    let config_str = data
         .get_transform_plugin_config()
-        .and_then(|config_str| serde_json::from_str::<PluginConfig>(&config_str).ok())
-        .unwrap_or_else(|| PluginConfig { project_cwd: None });
+        .expect("failed to get swc-plugin-import options");
 
-    let source_map = metadata.source_map;
-    let project_cwd = config.project_cwd.clone();
+    let import_input_options = match serde_json::from_str::<ImportInputOptions>(&config_str) {
+        Ok(options) => options,
+        Err(err) => panic!("invalid swc-plugin-import options: {:?}", err),
+    };
 
-    let mut visitor = InspectorPlugin::new(project_cwd, source_map);
-    let mut program = program;
-    program.visit_mut_with(&mut visitor);
-    program
+    let import_options = import_input_options.modular_imports;
+
+    let mut custom_import_options = vec![];
+    for i in 0..import_options.len() {
+        let mut option = import_options[i].clone();
+
+        if option.method_name_to_files.is_some() {
+            let method_name_to_files = option.method_name_to_files.clone();
+
+            option.custom_name = Some(modularize_imports::CustomTransform::Fn(Box::new(
+                move |name| {
+                    if let Some(map) = &method_name_to_files {
+                        if let Some(val) = map.get(&name) {
+                            return Some(val.clone());
+                        }
+                    }
+                    None
+                },
+            )));
+        }
+        custom_import_options.push(option);
+    }
+
+    return program.apply(modularize_imports::plugin_import(&custom_import_options));
 }

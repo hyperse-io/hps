@@ -22,4 +22,3 @@ HPS is a blazing fast frontend build tool based on Rspack that powers the next g
 ## License
 
 This project is licensed under the [MIT LICENSE](./LICENSE).
-

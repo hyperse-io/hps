@@ -1,12 +1,12 @@
 [package]
 
-description = "SWC plugin for module import"
+description = "Hps SWC plugin for modular import"
 
 authors      = { workspace = true }
 edition      = { workspace = true }
 homepage     = { workspace = true }
 license      = { workspace = true }
-name         = "hps-plugin-modular"
+name         = "hps_plugin_import"
 publish      = false
 repository   = { workspace = true }
 rust-version = { workspace = true }
@@ -17,7 +17,7 @@ version      = "1.0.0"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-transform_source = { path = "./transform" }
+modularize_imports = { path = "./transform" }
 serde              = { workspace = true }
 serde_json         = { workspace = true }
 swc_common         = { workspace = true, features = ["concurrent"] }
@@ -27,5 +27,4 @@ swc_ecma_utils     = { workspace = true }
 swc_ecma_visit     = { workspace = true }
 swc_plugin_macro   = { workspace = true }
 tracing            = { workspace = true, features = ["release_max_level_off"] }
-pathdiff           = { workspace = true }
 

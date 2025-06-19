@@ -1,1 +1,1 @@
-# @hyperse/inspector
+# @hyperse/hps
