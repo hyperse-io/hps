@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-info
 
+## 0.1.0-next.2
+
+### Minor Changes
+
+- [`04874ab`](https://github.com/hyperse-io/hps/commit/04874abd7bcb6b65b3f3d3503d9fc05832e5e1f0) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add import-meta-resolve dependency and enhance CLI output colors
+
 ## 0.1.0-next.1
 
 ### Minor Changes
