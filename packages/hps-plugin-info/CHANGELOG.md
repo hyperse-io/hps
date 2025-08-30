@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-info
 
+## 0.1.0-next.1
+
+### Minor Changes
+
+- [`3e3393e`](https://github.com/hyperse-io/hps/commit/3e3393e92503de7a23f46a3c36aacae92d605472) Thanks [@tianyingchun](https://github.com/tianyingchun)! - simplify locale message types in hps-plugin-info
+
 ## 0.1.0-next.0
 
 ### Minor Changes
