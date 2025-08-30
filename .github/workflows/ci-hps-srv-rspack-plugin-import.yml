@@ -63,7 +63,7 @@ jobs:
       - name: Unit tests
         working-directory: crates/hps-srv-rspack-plugin-import
         run: |
-          yarn test-unit --passWithNoTests
+          yarn test-unit
 
       - name: Build hps-srv-rspack-plugin-import
         working-directory: crates/hps-srv-rspack-plugin-import

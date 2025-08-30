@@ -31,7 +31,7 @@
     "clean": "rimraf --no-glob ./dist  ./node_modules ./coverage ./__data__ ./config/__data__ ./_release ./tsconfig.tsbuildinfo",
     "test": "yarn build && run-s test-unit",
     "test-task": "vitest run",
-    "test-unit": "vitest run --passWithNoTests",
+    "test-unit": "vitest run",
     "test-watch": "vitest watch --ui",
     "fix-all-files": "eslint . --fix",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"

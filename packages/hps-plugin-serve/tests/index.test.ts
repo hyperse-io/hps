@@ -1,4 +1,4 @@
-describe('Inspector', () => {
+describe('Update', () => {
   it('should render', () => {
     expect(true).toBe(true);
   });

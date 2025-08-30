@@ -66,4 +66,4 @@ jobs:
       - name: Unit tests
         working-directory: packages/hps-plugin-serve
         run: |
-          yarn test-unit --passWithNoTests
+          yarn test-unit
