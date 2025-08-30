@@ -46,11 +46,8 @@ jobs:
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
 
-      - name: Build hps-srv-rspack-plugin-import
-        working-directory: crates/hps-srv-rspack-plugin-import
-        run: |
-          yarn clean
-          yarn build
+      - name: Add wasm32-wasip1 target
+        run: rustup target add wasm32-wasip1
 
       # @link https://github.com/changesets/action
       - name: Create Release Pull Request or Publish to npm
