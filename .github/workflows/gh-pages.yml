@@ -24,8 +24,8 @@ jobs:
         node-version: [20.x]
     steps:
       - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      - name: Setup Node.js Environment
+        uses: ./.github/actions/node-env
         with:
           node-version: ${{ matrix.node-version }}
 

@@ -1,0 +1,49 @@
+name: 'Rust Setup'
+description: 'Setup Rust toolchain with wasm32-wasip1 target and components'
+
+inputs:
+  targets:
+    description: 'Rust targets to install (comma-separated)'
+    required: false
+    default: 'wasm32-wasip1'
+  components:
+    description: 'Rust components to install (comma-separated)'
+    required: false
+    default: 'rustfmt,clippy'
+  toolchain:
+    description: 'Rust toolchain version'
+    required: false
+    default: 'stable'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Rust
+      uses: dtolnay/rust-toolchain@${{ inputs.toolchain }}
+      with:
+        targets: ${{ inputs.targets }}
+        components: ${{ inputs.components }}
+
+    - name: Set Rust environment
+      shell: bash
+      run: |
+        echo "RUSTUP_HOME=$HOME/.rustup" >> $GITHUB_ENV
+        echo "CARGO_HOME=$HOME/.cargo" >> $GITHUB_ENV
+        echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+    - name: Verify Rust toolchain
+      shell: bash
+      run: |
+        rustup show
+        rustup toolchain list
+        rustc --version
+        cargo --version
+
+    - name: Verify Rust before build
+      shell: bash
+      run: |
+        which cargo
+        cargo --version
+        rustup target list --installed
+        rustup default stable
+        rustup show

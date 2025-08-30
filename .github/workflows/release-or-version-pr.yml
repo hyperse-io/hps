@@ -20,49 +20,21 @@ jobs:
           # @link https://github.com/actions/checkout#fetch-all-history-for-all-tags-and-branches
           fetch-depth: 0
 
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: wasm32-wasip1
-          components: rustfmt, clippy
+      - name: Setup Rust Environment
+        uses: ./.github/actions/rust-setup
 
-      - name: Verify Rust toolchain  
-        run: |
-          rustup show
-          rustup toolchain list
-          rustc --version
-          cargo --version
-
-      - name: Set Rust environment
-        run: |
-          echo "RUSTUP_HOME=$HOME/.rustup" >> $GITHUB_ENV
-          echo "CARGO_HOME=$HOME/.cargo" >> $GITHUB_ENV
-          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.x
+      - name: Setup Node.js Environment
+        uses: ./.github/actions/node-env
 
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
 
-      - name: Verify Rust before build
-        run: |
-          which cargo
-          cargo --version
-          rustup target list --installed
-          rustup default stable
-          rustup show
-
       - name: Build hps-srv-rspack-plugin-import
-        working-directory: crates/hps-srv-rspack-plugin-import
-        env:
-          RUST_BACKTRACE: 1
-          CARGO_TERM_COLOR: always
-        run: |
-          yarn clean
-          yarn build
+        uses: ./.github/actions/rust-build
+        with:
+          working-directory: crates/hps-srv-rspack-plugin-import
+          build-command: yarn build
+          clean-command: yarn clean
 
       # @link https://github.com/changesets/action
       - name: Create Release Pull Request or Publish to npm

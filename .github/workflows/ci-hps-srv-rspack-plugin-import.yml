@@ -49,35 +49,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      - name: Setup Rust Environment
+        uses: ./.github/actions/rust-setup
+
+      - name: Setup Node.js Environment
+        uses: ./.github/actions/node-env
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: wasm32-wasip1
 
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
 
-      - name: Verify Rust before build
-        run: |
-          which cargo
-          cargo
-          cargo --version
-          rustup target list --installed
-          rustup default stable
-          rustup show
-
       - name: Build hps-srv-rspack-plugin-import
-        working-directory: crates/hps-srv-rspack-plugin-import
-        env:
-          RUST_BACKTRACE: 1
-          CARGO_TERM_COLOR: always
-        run: |
-          yarn build
+        uses: ./.github/actions/rust-build
+        with:
+          working-directory: crates/hps-srv-rspack-plugin-import
+          build-command: yarn build
 
       - name: Unit tests
         working-directory: crates/hps-srv-rspack-plugin-import

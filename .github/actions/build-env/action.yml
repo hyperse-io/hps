@@ -1,0 +1,44 @@
+name: 'Build Environment Setup'
+description: 'Setup complete build environment with Node.js and Rust'
+
+inputs:
+  node-version:
+    description: 'Node.js version to use'
+    required: false
+    default: '20.x'
+  rust-targets:
+    description: 'Rust targets to install (comma-separated)'
+    required: false
+    default: 'wasm32-wasip1'
+  rust-components:
+    description: 'Rust components to install (comma-separated)'
+    required: false
+    default: 'rustfmt,clippy'
+  rust-toolchain:
+    description: 'Rust toolchain version'
+    required: false
+    default: 'stable'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Rust Environment
+      uses: ./.github/actions/rust-setup
+      with:
+        targets: ${{ inputs.rust-targets }}
+        components: ${{ inputs.rust-components }}
+        toolchain: ${{ inputs.rust-toolchain }}
+
+    - name: Setup Node.js Environment
+      uses: ./.github/actions/node-env
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    - name: Verify complete environment
+      shell: bash
+      run: |
+        echo "=== Complete Environment Verification ==="
+        echo "Rust: $(rustc --version)"
+        echo "Cargo: $(cargo --version)"
+        echo "Node: $(node --version)"
+        echo "Yarn: $(yarn --version)"

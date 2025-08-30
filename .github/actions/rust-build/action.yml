@@ -1,0 +1,34 @@
+name: 'Rust Build'
+description: 'Build Rust crates with proper environment setup'
+
+inputs:
+  working-directory:
+    description: 'Working directory for the build'
+    required: true
+  build-command:
+    description: 'Build command to run (e.g., yarn build, cargo build)'
+    required: false
+    default: 'yarn build'
+  clean-command:
+    description: 'Clean command to run before build'
+    required: false
+    default: 'yarn clean'
+  rust-backtrace:
+    description: 'Enable Rust backtrace for debugging'
+    required: false
+    default: '1'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Build ${{ inputs.working-directory }}
+      working-directory: ${{ inputs.working-directory }}
+      env:
+        RUST_BACKTRACE: ${{ inputs.rust-backtrace }}
+        CARGO_TERM_COLOR: always
+      shell: bash
+      run: |
+        if [ -n "${{ inputs.clean-command }}" ]; then
+          ${{ inputs.clean-command }}
+        fi
+        ${{ inputs.build-command }}
