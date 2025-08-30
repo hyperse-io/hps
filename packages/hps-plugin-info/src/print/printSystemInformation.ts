@@ -8,13 +8,13 @@ import { terminalColor } from '../utils/terminalColor.js';
  */
 export const printSystemInformation = (noColor?: boolean) => {
   console.info('');
-  console.info(terminalColor(['green'], noColor)('  ✔ System Information'));
+  console.info(terminalColor(['dim'], noColor)('  ✔ System Information'));
   console.info(
     '   OS Version     :',
-    terminalColor(['magenta'], noColor)(` ${osName(platform(), release())}`)
+    terminalColor(['blue'], noColor)(` ${osName(platform(), release())}`)
   );
   console.info(
     '   NodeJS Version :',
-    terminalColor(['magenta'], noColor)(` ${process.version}`)
+    terminalColor(['blue'], noColor)(` ${process.version}`)
   );
 };

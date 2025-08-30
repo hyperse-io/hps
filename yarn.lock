@@ -2720,6 +2720,7 @@ __metadata:
     "@vitest/ui": "npm:^3.2.4"
     cfonts: "npm:^3.3.0"
     eslint: "npm:^9.34.0"
+    import-meta-resolve: "npm:^4.2.0"
     npm-run-all: "npm:^4.1.5"
     os-name: "npm:^6.1.0"
     package-directory: "npm:^8.1.0"
@@ -11291,10 +11292,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-meta-resolve@npm:^4.0.0":
-  version: 4.1.0
-  resolution: "import-meta-resolve@npm:4.1.0"
-  checksum: 10c0/42f3284b0460635ddf105c4ad99c6716099c3ce76702602290ad5cbbcd295700cbc04e4bdf47bacf9e3f1a4cec2e1ff887dabc20458bef398f9de22ddff45ef5
+"import-meta-resolve@npm:^4.0.0, import-meta-resolve@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "import-meta-resolve@npm:4.2.0"
+  checksum: 10c0/3ee8aeecb61d19b49d2703987f977e9d1c7d4ba47db615a570eaa02fe414f40dfa63f7b953e842cbe8470d26df6371332bfcf21b2fd92b0112f9fea80dde2c4c
   languageName: node
   linkType: hard
 
