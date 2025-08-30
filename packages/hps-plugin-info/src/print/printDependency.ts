@@ -39,6 +39,7 @@ export const dependencyformat = (dependencies: ProjectDependency[]) => {
 };
 
 export const printDependency = async (noColor?: boolean) => {
+  console.info('');
   console.info(
     terminalColor(['green'], noColor)('  ✔ @hyperse Platform Information')
   );

@@ -15,7 +15,7 @@ export const createInfoPlugin = () => {
           description: 'plugins.infoPlugin.command.description',
           example: 'plugins.infoPlugin.command.example',
         }).process(async () => {
-          await printBanner(noColor);
+          await printBanner();
           await printCliVersion(noColor);
           await printSystemInformation(noColor);
           await printDependency(noColor);

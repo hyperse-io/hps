@@ -1,13 +1,11 @@
 import { showBanner } from '../utils/showBanner.js';
-import { terminalColor } from '../utils/terminalColor.js';
 
-export const printBanner = async (noColor?: boolean) => {
-  await showBanner(`flat`, {
+export const printBanner = async () => {
+  await showBanner(`hyperse`, {
     align: 'left',
-    gradient: 'red,blue',
-    letterSpacing: 3,
+    gradient: 'gray,blue',
+    letterSpacing: 1,
+    font: 'simple',
   });
-  console.log(terminalColor(['magenta', 'bold'], noColor)(`  ⚡ HYPERSE ⚡`));
-  console.log('    🚀 Next-Generation CLI Tool ');
-  console.log('    ✨ Built with TypeScript • Powered by Hyperse');
+  console.log('  ✨ Next-Generation CLI • Powered by Hyperse');
 };
