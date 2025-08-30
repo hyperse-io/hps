@@ -1,0 +1,128 @@
+{
+  "folders": [
+    {
+      "name": "website",
+      "path": "website",
+    },
+    {
+      "name": "example-single",
+      "path": "examples/example-single",
+    },
+    {
+      "name": "example-modular",
+      "path": "examples/example-modular",
+    },
+    {
+      "name": "hps",
+      "path": "packages/hps",
+    },
+    {
+      "name": "hps-plugin-info",
+      "path": "packages/hps-plugin-info",
+    },
+    {
+      "name": "hps-plugin-pack",
+      "path": "packages/hps-plugin-pack",
+    },
+    {
+      "name": "hps-plugin-build",
+      "path": "packages/hps-plugin-build",
+    },
+    {
+      "name": "hps-plugin-serve",
+      "path": "packages/hps-plugin-serve",
+    },
+    {
+      "name": "hps-plugin-update",
+      "path": "packages/hps-plugin-update",
+    },
+    {
+      "name": "hps-plugin-publish",
+      "path": "packages/hps-plugin-publish",
+    },
+    {
+      "name": "hps-srv-mock",
+      "path": "packages/hps-srv-mock",
+    },
+    {
+      "name": "hps-srv-rolldown",
+      "path": "packages/hps-srv-rolldown",
+    },
+    {
+      "name": "hps-srv-rspack",
+      "path": "packages/hps-srv-rspack",
+    },
+    {
+      "name": "hps-srv-rspack-plugin-import",
+      "path": "crates/hps-srv-rspack-plugin-import",
+    },
+    {
+      "name": "root",
+      "path": ".",
+    },
+  ],
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint"
+    ],
+  },
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "never",
+    },
+    "files.associations": {
+      "*.css": "tailwindcss",
+    },
+    "tailwindCSS.classFunctions": ["tw", "tv", "clsx", "twMerge", "extendVariants"],
+    "tailwindCSS.classAttributes": [
+      "class",
+      "className",
+      "classNames"
+    ],
+    "tailwindCSS.experimental.configFile": {
+      "website/src/css/custom.css": "website/src/**",
+      "website/src/css/layout.css": "website/src/**",
+      "website/src/css/overrides.css": "website/src/**",
+      "website/src/css/code-blocks.css": "website/src/**",
+    },
+    // Disable vscode formatting for js,jsx,ts,tsx files
+    // to allow dbaeumer.vscode-eslint to format them
+    "[javascript]": {
+      "editor.formatOnSave": false,
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true,
+    },
+    "[rust]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "[json]": {
+      "editor.formatOnSave": false,
+    },
+    "[jsonc]": {
+      "editor.formatOnSave": false,
+    },
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    // https://github.com/Microsoft/vscode-eslint#mono-repository-setup
+    "eslint.workingDirectories": [
+      "./website",
+      "./examples/example-single",
+      "./examples/example-modular",
+      "./packages/hps-plugin-info",
+      "./packages/hps-plugin-pack",
+      "./packages/hps-plugin-update",
+      "./packages/hps-plugin-publish",
+      "./packages/hps-plugin-serve",
+      "./packages/hps-plugin-build",
+      "./packages/hps-srv-mock",
+      "./packages/hps-srv-rolldown",
+      "./packages/hps-srv-rspack",
+      "./crates/hps-srv-rspack-plugin-import",
+    ],
+    "typescript.tsdk": "root/node_modules/typescript/lib"
+  },
+}

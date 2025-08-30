@@ -1,0 +1,20 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@example/example-modular": "0.0.1",
+    "@example/example-single": "0.0.1",
+    "@hyperse/hps": "0.0.1",
+    "@hyperse/hps-plugin-build": "0.0.1",
+    "@hyperse/hps-plugin-info": "0.0.1",
+    "@hyperse/hps-plugin-pack": "0.0.1",
+    "@hyperse/hps-plugin-publish": "0.0.1",
+    "@hyperse/hps-plugin-serve": "0.0.1",
+    "@hyperse/hps-plugin-update": "0.0.1",
+    "@hyperse/hps-srv-mock": "0.0.1",
+    "@hyperse/hps-srv-rolldown": "0.0.1",
+    "@hyperse/hps-srv-rspack": "0.0.1",
+    "@hyperse/hps-website": "0.0.1"
+  },
+  "changesets": []
+}

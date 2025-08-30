@@ -1,1 +1,0 @@
-# @hyperse/hps-plugin-ts

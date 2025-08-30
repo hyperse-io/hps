@@ -46,8 +46,8 @@ jobs:
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
 
-      - name: Build hps-plugin-import
-        working-directory: crates/hps-plugin-import
+      - name: Build hps-srv-rspack-plugin-import
+        working-directory: crates/hps-srv-rspack-plugin-import
         run: |
           yarn clean
           yarn build
