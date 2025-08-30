@@ -1,5 +1,16 @@
 # @hyperse/hps
 
+## 0.1.0-next.3
+
+### Minor Changes
+
+- [`691901b`](https://github.com/hyperse-io/hps/commit/691901bfe8961c38140b9474457a80528f700005) Thanks [@tianyingchun](https://github.com/tianyingchun)! - refactor hps packageJson
+
+### Patch Changes
+
+- Updated dependencies [[`691901b`](https://github.com/hyperse-io/hps/commit/691901bfe8961c38140b9474457a80528f700005)]:
+  - @hyperse/hps-plugin-info@0.1.0-next.3
+
 ## 0.1.0-next.2
 
 ### Patch Changes
