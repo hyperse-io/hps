@@ -39,6 +39,9 @@ export const dependencyformat = (dependencies: ProjectDependency[]) => {
 };
 
 export const printDependency = async (noColor?: boolean) => {
+  console.info(
+    terminalColor(['green'], noColor)('  ✔ @hyperse Platform Information')
+  );
   const packageJson = await getCliPackage();
   const dependencies: Record<string, unknown> = Object.assign(
     {},

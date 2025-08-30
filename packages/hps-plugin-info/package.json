@@ -7,12 +7,12 @@
     "url": "https://github.com/hyperse-io/hps",
     "directory": "packages/hps-plugin-info"
   },
+  "license": "SEE LICENSE IN FILE 'LICENSE'",
   "author": {
     "name": "Hyperse",
     "url": "https://github.com/hyperse-io"
   },
   "type": "module",
-  "license": "SEE LICENSE IN FILE 'LICENSE'",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -42,12 +42,10 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
+    "cfonts": "^3.3.0",
     "os-name": "^6.1.0",
     "package-directory": "^8.1.0",
     "picocolors": "^1.1.1"
-  },
-  "peerDependencies": {
-    "@hyperse/wizard": ">=1.0.0"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.7",
@@ -60,6 +58,9 @@
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@hyperse/wizard": ">=1.0.0"
   },
   "engines": {
     "node": ">=20.0.0"

@@ -6,7 +6,7 @@ export const printCliVersion = async (noColor?: boolean) => {
   console.info('');
   console.info(terminalColor(['green'], noColor)('  ✔ @hyperse CLI'));
   console.info(
-    '   hyperse CLI Version :',
+    '   @hyperse CLI Version :',
     terminalColor(['magenta'], noColor)(`${cliVersion || ''}`),
     '\n'
   );

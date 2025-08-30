@@ -9,16 +9,16 @@ export const createInfoPlugin = () => {
   return definePlugin({
     name: 'plugins.infoPlugin.name',
     localeMessages: infoPluginMessages,
-    setup: (wizard) => {
+    setup: (wizard, { noColor }) => {
       const cli = wizard.register(
         defineCommand('info', {
           description: 'plugins.infoPlugin.command.description',
           example: 'plugins.infoPlugin.command.example',
         }).process(async () => {
-          await printBanner();
-          await printCliVersion();
-          await printSystemInformation();
-          await printDependency();
+          await printBanner(noColor);
+          await printCliVersion(noColor);
+          await printSystemInformation(noColor);
+          await printDependency(noColor);
         })
       );
 
