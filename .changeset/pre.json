@@ -14,7 +14,10 @@
     "@hyperse/hps-srv-mock": "0.0.1",
     "@hyperse/hps-srv-rolldown": "0.0.1",
     "@hyperse/hps-srv-rspack": "0.0.1",
-    "@hyperse/hps-website": "0.0.1"
+    "@hyperse/hps-website": "0.0.1",
+    "@hyperse/hps-srv-rspack-plugin-import": "0.0.1"
   },
-  "changesets": []
+  "changesets": [
+    "violet-toes-wish"
+  ]
 }
