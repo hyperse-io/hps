@@ -20,18 +20,13 @@ jobs:
           # @link https://github.com/actions/checkout#fetch-all-history-for-all-tags-and-branches
           fetch-depth: 0
 
-      - name: 📥 Setup Rust (actions-rs/toolchain)  
-        uses: actions-rs/toolchain@v1
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
         with:
-          profile: minimal
-          toolchain: stable
-          override: true
+          targets: wasm32-wasip1
           components: rustfmt, clippy
 
-      - name: 📥 Add wasm32-wasip1 target
-        run: rustup target add wasm32-wasip1
-
-      - name: 📥 Verify Rust toolchain  
+      - name: Verify Rust toolchain  
         run: |
           rustup show
           rustup toolchain list

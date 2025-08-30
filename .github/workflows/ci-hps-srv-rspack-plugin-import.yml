@@ -54,11 +54,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-wasip1
+
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
-
-      - name: Add wasm32-wasip1 target
-        run: rustup target add wasm32-wasip1
 
       - name: Build hps-srv-rspack-plugin-import
         working-directory: crates/hps-srv-rspack-plugin-import
