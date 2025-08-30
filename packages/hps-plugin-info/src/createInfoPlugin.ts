@@ -4,8 +4,12 @@ import { printBanner } from './print/printBanner.js';
 import { printCliVersion } from './print/printCliVersion.js';
 import { printDependency } from './print/printDependency.js';
 import { printSystemInformation } from './print/printSystemInformation.js';
+import type { PackageJson } from './types.js';
 
-export const createInfoPlugin = () => {
+export type CreateInfoPluginOptions = {
+  cliPackage?: PackageJson;
+};
+export const createInfoPlugin = (options: CreateInfoPluginOptions) => {
   return definePlugin({
     name: 'plugins.infoPlugin.name',
     localeMessages: infoPluginMessages,
@@ -16,9 +20,16 @@ export const createInfoPlugin = () => {
           example: 'plugins.infoPlugin.command.example',
         }).process(async () => {
           await printBanner();
-          await printCliVersion(noColor);
-          await printSystemInformation(noColor);
-          await printDependency(noColor);
+          await printCliVersion({
+            noColor,
+          });
+          await printSystemInformation({
+            noColor,
+          });
+          await printDependency({
+            cliPackage: options.cliPackage,
+            noColor,
+          });
         })
       );
 

@@ -6,15 +6,20 @@ import { terminalColor } from '../utils/terminalColor.js';
  * Print system information
  * @param noColor Whether to print in color
  */
-export const printSystemInformation = (noColor?: boolean) => {
+export const printSystemInformation = (options: { noColor?: boolean }) => {
   console.info('');
-  console.info(terminalColor(['dim'], noColor)('  ✔ System Information'));
+  console.info(
+    terminalColor(['dim'], options.noColor)('  ✔ System Information')
+  );
   console.info(
     '   OS Version     :',
-    terminalColor(['blue'], noColor)(` ${osName(platform(), release())}`)
+    terminalColor(
+      ['blue'],
+      options.noColor
+    )(` ${osName(platform(), release())}`)
   );
   console.info(
     '   NodeJS Version :',
-    terminalColor(['blue'], noColor)(` ${process.version}`)
+    terminalColor(['blue'], options.noColor)(` ${process.version}`)
   );
 };

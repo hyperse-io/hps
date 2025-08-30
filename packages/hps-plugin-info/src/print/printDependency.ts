@@ -1,4 +1,4 @@
-import { getCliPackage } from '../utils/getCliPackage.js';
+import type { PackageJson } from '../types.js';
 import { rightPad } from '../utils/rightPad.js';
 import { terminalColor } from '../utils/terminalColor.js';
 
@@ -38,12 +38,18 @@ export const dependencyformat = (dependencies: ProjectDependency[]) => {
   return sorted;
 };
 
-export const printDependency = async (noColor?: boolean) => {
+export const printDependency = async (options: {
+  cliPackage?: PackageJson;
+  noColor?: boolean;
+}) => {
   console.info('');
   console.info(
-    terminalColor(['dim'], noColor)('  ✔ @hyperse Platform Information')
+    terminalColor(
+      ['dim'],
+      options.noColor
+    )('  ✔ @hyperse Platform Information')
   );
-  const packageJson = await getCliPackage();
+  const packageJson = options.cliPackage;
   const dependencies: Record<string, unknown> = Object.assign(
     {},
     packageJson?.dependencies || {},
@@ -54,7 +60,7 @@ export const printDependency = async (noColor?: boolean) => {
   dependencyformat(hpsDependencies).forEach((dependency) =>
     console.info(
       '   ' + dependency.name,
-      terminalColor(['blue'], noColor)(`${dependency.version}`)
+      terminalColor(['blue'], options.noColor)(`${dependency.version}`)
     )
   );
   console.info(' ');

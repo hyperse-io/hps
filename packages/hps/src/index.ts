@@ -5,8 +5,10 @@ import { createHelpPlugin } from '@hyperse/wizard-plugin-help';
 import { createLoaderPlugin } from '@hyperse/wizard-plugin-loader';
 import { createVersionPlugin } from '@hyperse/wizard-plugin-version';
 import { hpsCliMessages } from './hpsCliMessages.js';
+import { getCliPackage } from './utils/getCliPackage.js';
 import { resolveVersion } from './version.js';
 
+const cliPackage = await getCliPackage();
 const version = resolveVersion();
 const helpPlugin = createHelpPlugin();
 const versionPlugin = createVersionPlugin();
@@ -15,7 +17,11 @@ const loaderPlugin = await createLoaderPlugin({
   pluginPackPattern: ['hps-plugin-*'],
   pluginSearchDirs: [],
 });
-const infoPlugin = createInfoPlugin();
+
+const infoPlugin = createInfoPlugin({
+  cliPackage,
+});
+
 const cli = createWizard({
   name: 'hps',
   description: 'cli.hpsCli.description',

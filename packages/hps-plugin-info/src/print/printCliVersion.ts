@@ -1,13 +1,13 @@
 import { getCliVersion } from '../utils/getCliVersion.js';
 import { terminalColor } from '../utils/terminalColor.js';
 
-export const printCliVersion = async (noColor?: boolean) => {
+export const printCliVersion = async (options: { noColor?: boolean }) => {
   const cliVersion = await getCliVersion();
   console.info('');
-  console.info(terminalColor(['dim'], noColor)('  ✔ @hyperse CLI'));
+  console.info(terminalColor(['dim'], options.noColor)('  ✔ @hyperse CLI'));
   console.info(
     '   @hyperse CLI Version :',
-    terminalColor(['blue'], noColor)(`${cliVersion || ''}`),
+    terminalColor(['blue'], options.noColor)(`${cliVersion || ''}`),
     '\n'
   );
 };

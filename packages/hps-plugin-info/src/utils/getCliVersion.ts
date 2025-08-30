@@ -1,4 +1,4 @@
-import { getCliPackage } from './getCliPackage.js';
+import { getCliPackage } from '../../../hps/src/utils/getCliPackage.js';
 
 /**
  * Get the version of the CLI

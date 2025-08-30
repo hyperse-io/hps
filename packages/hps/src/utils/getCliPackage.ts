@@ -1,15 +1,15 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { packageDirectory } from 'package-directory';
-import { requireResolve } from './requireResolve.js';
+import type { PackageJson } from '@hyperse/hps-plugin-info';
 
 /**
  * Get the package.json of the CLI
  * @returns The package.json of the CLI
  */
-export const getCliPackage = async () => {
-  const packageMain = await requireResolve(import.meta.url, '@hyperse/hps');
-  const packageDir = await packageDirectory({ cwd: packageMain });
+
+export const getCliPackage = async (): Promise<PackageJson | undefined> => {
+  const packageDir = await packageDirectory({ cwd: import.meta.dirname });
   if (packageDir) {
     const packageJson = JSON.parse(
       readFileSync(join(packageDir, 'package.json'), 'utf-8')
