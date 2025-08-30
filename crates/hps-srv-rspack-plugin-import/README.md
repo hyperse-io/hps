@@ -92,10 +92,10 @@ rustup target list
 5. Build and Publish
 
 ```bash
-cargo build --release -p swc_plugin_import --target wasm32-wasip1
+cargo build --release -p hps_srv_rspack_plugin_import --target wasm32-wasip1
 ```
 
-swc_plugin_import now supports monorepo management, so you can directly use the `yarn build` command for building.
+hps_srv_rspack_plugin_import now supports monorepo management, so you can directly use the `yarn build` command for building.
 
 ## Notes
 

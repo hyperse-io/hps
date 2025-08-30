@@ -4,7 +4,7 @@ import url from 'node:url';
 import { test } from 'vitest';
 import { transform } from '@swc/core';
 
-const pluginName = 'swc_plugin_import.wasm';
+const pluginName = 'hps_srv_rspack_plugin_import.wasm';
 
 const transformCode = async (code: string) => {
   return transform(code, {
