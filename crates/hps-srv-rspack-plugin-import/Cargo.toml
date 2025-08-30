@@ -1,12 +1,12 @@
 [package]
 
-description = "Hps SWC plugin for modular import"
+description = "HPS SWC plugin for modular import"
 
 authors      = { workspace = true }
 edition      = { workspace = true }
 homepage     = { workspace = true }
 license      = { workspace = true }
-name         = "hps_plugin_import"
+name         = "hps_srv_rspack_plugin_import"
 publish      = false
 repository   = { workspace = true }
 rust-version = { workspace = true }

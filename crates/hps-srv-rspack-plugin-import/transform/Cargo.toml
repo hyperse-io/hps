@@ -16,7 +16,7 @@ version      = "1.0.0"
 
 [dependencies]
 cow-utils  = { workspace = true }
-handlebars = "6.3.0"
+handlebars = { workspace = true }
 heck       = { workspace = true }
 rustc-hash = { workspace = true }
 serde      = { workspace = true }
