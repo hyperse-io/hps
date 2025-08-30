@@ -26,7 +26,7 @@
     "build": "rimraf ./dist && mkdir ./dist && cargo build --release -p hps_srv_rspack_plugin_import --target wasm32-wasip1 && cp ../../target/wasm32-wasip1/release/hps_srv_rspack_plugin_import.wasm ./dist/hps_srv_rspack_plugin_import.wasm",
     "build:debug": "rimraf ./dist && mkdir ./dist && cargo build -p hps_srv_rspack_plugin_import --target wasm32-wasip1 && cp ../../target/wasm32-wasip1/debug/hps_srv_rspack_plugin_import.wasm ./dist/hps_srv_rspack_plugin_import.wasm",
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
-    "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
+    "build-release": "rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
     "codegen": "graphql-codegen --config ./codegen.cjs",
     "clean": "rimraf --no-glob ./dist  ./node_modules ./coverage ./__data__ ./config/__data__ ./_release ./tsconfig.tsbuildinfo",
     "test": "yarn build && run-s test-unit",
