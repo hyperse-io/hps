@@ -62,8 +62,20 @@ jobs:
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
 
+      - name: Verify Rust before build
+        run: |
+          which cargo
+          cargo
+          cargo --version
+          rustup target list --installed
+          rustup default stable
+          rustup show
+
       - name: Build hps-srv-rspack-plugin-import
         working-directory: crates/hps-srv-rspack-plugin-import
+        env:
+          RUST_BACKTRACE: 1
+          CARGO_TERM_COLOR: always
         run: |
           yarn build
 

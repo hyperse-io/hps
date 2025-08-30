@@ -33,6 +33,12 @@ jobs:
           rustc --version
           cargo --version
 
+      - name: Set Rust environment
+        run: |
+          echo "RUSTUP_HOME=$HOME/.rustup" >> $GITHUB_ENV
+          echo "CARGO_HOME=$HOME/.cargo" >> $GITHUB_ENV
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
       - name: Use Node.js 20.x
         uses: actions/setup-node@v4
         with:
@@ -41,8 +47,19 @@ jobs:
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
 
+      - name: Verify Rust before build
+        run: |
+          which cargo
+          cargo --version
+          rustup target list --installed
+          rustup default stable
+          rustup show
+
       - name: Build hps-srv-rspack-plugin-import
         working-directory: crates/hps-srv-rspack-plugin-import
+        env:
+          RUST_BACKTRACE: 1
+          CARGO_TERM_COLOR: always
         run: |
           yarn clean
           yarn build
@@ -68,3 +85,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           # Support cargo
           CARGO_TERM_COLOR: always
+          RUST_BACKTRACE: 1
