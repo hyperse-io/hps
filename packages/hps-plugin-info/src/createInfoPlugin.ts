@@ -22,13 +22,14 @@ export const createInfoPlugin = (options: CreateInfoPluginOptions) => {
           await printBanner();
           await printCliVersion({
             noColor,
+            cliPackage: options.cliPackage,
           });
           await printSystemInformation({
             noColor,
           });
           await printDependency({
-            cliPackage: options.cliPackage,
             noColor,
+            cliPackage: options.cliPackage,
           });
         })
       );
