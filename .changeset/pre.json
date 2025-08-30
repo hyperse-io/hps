@@ -18,6 +18,7 @@
     "@hyperse/hps-srv-rspack-plugin-import": "0.0.1"
   },
   "changesets": [
+    "lucky-goats-join",
     "violet-toes-wish"
   ]
 }
