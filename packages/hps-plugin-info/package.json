@@ -41,8 +41,17 @@
     "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
+  "dependencies": {
+    "os-name": "^6.1.0",
+    "package-directory": "^8.1.0",
+    "picocolors": "^1.1.1"
+  },
+  "peerDependencies": {
+    "@hyperse/wizard": ">=1.0.0"
+  },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.7",
+    "@hyperse/wizard": "^1.0.0",
     "@types/node": "^24.3.0",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",

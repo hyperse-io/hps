@@ -6,7 +6,11 @@
     "noImplicitAny": true,
     "noEmit": false,
     "incremental": true,
-    "paths": {},
+    "paths": {
+      "@hyperse/hps-plugin-info": [
+        "../../packages/hps-plugin-info/src/index.ts"
+      ]
+    },
     "types": ["vitest/globals"]
   },
   "include": ["**/*.ts", "**/*.tsx"],

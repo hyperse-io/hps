@@ -2709,19 +2709,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hyperse/hps-plugin-info@workspace:packages/hps-plugin-info":
+"@hyperse/hps-plugin-info@workspace:*, @hyperse/hps-plugin-info@workspace:packages/hps-plugin-info":
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-info@workspace:packages/hps-plugin-info"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/wizard": "npm:^1.0.0"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.34.0"
     npm-run-all: "npm:^4.1.5"
+    os-name: "npm:^6.1.0"
+    package-directory: "npm:^8.1.0"
+    picocolors: "npm:^1.1.1"
     rimraf: "npm:^6.0.1"
     typescript: "npm:^5.9.2"
     vitest: "npm:^3.2.4"
+  peerDependencies:
+    "@hyperse/wizard": ">=1.0.0"
   languageName: unknown
   linkType: soft
 
@@ -2895,6 +2901,7 @@ __metadata:
   resolution: "@hyperse/hps@workspace:packages/hps"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/hps-plugin-info": "workspace:*"
     "@hyperse/ts-node": "npm:^1.0.3"
     "@hyperse/wizard": "npm:^1.0.0"
     "@hyperse/wizard-plugin-error": "npm:^1.0.0"
@@ -12598,6 +12605,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"macos-release@npm:^3.3.0":
+  version: 3.4.0
+  resolution: "macos-release@npm:3.4.0"
+  checksum: 10c0/cb6ea203cc2a2b2cc2214db4658d0da0e52f8298c5c43c94cf9cb9e871daac59e4e56a2559859727a4b43b0afec1123f998ef62c58d1ac6c6c8a5c8a808330cb
+  languageName: node
+  linkType: hard
+
 "magic-string@npm:^0.30.17":
   version: 0.30.17
   resolution: "magic-string@npm:0.30.17"
@@ -14230,6 +14244,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"os-name@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "os-name@npm:6.1.0"
+  dependencies:
+    macos-release: "npm:^3.3.0"
+    windows-release: "npm:^6.1.0"
+  checksum: 10c0/b3c8aec3e93e9696c32043aa6b233c8833edfd38fc450ae7ee4ba53de0ac61c4f8d9139d1aeb5287c34244834474d1de044a0fd4a0773697be9968200f6c3586
+  languageName: node
+  linkType: hard
+
 "os-tmpdir@npm:~1.0.2":
   version: 1.0.2
   resolution: "os-tmpdir@npm:1.0.2"
@@ -14384,6 +14408,15 @@ __metadata:
   version: 2.2.0
   resolution: "p-try@npm:2.2.0"
   checksum: 10c0/c36c19907734c904b16994e6535b02c36c2224d433e01a2f1ab777237f4d86e6289fd5fd464850491e940379d4606ed850c03e0f9ab600b0ebddb511312e177f
+  languageName: node
+  linkType: hard
+
+"package-directory@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "package-directory@npm:8.1.0"
+  dependencies:
+    find-up-simple: "npm:^1.0.0"
+  checksum: 10c0/29eee99ac9979dc852bbaab64968123ba44abaa8f2d49add065101612db81f3d4ac1eb27df3b1893878cd67dd8b5c36186876a139ec4fdd6a755abc810ce2749
   languageName: node
   linkType: hard
 
@@ -17814,6 +17847,15 @@ __metadata:
   version: 1.3.0
   resolution: "wicked-good-xpath@npm:1.3.0"
   checksum: 10c0/6837e1027e75e2ad7fe0620d11def4c42235cbe6c649727258973d7d77c2c5066a5376595e0283d3ba8e2fa22deb3cfe7358db5a02a938bde273b55b9ac57832
+  languageName: node
+  linkType: hard
+
+"windows-release@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "windows-release@npm:6.1.0"
+  dependencies:
+    execa: "npm:^8.0.1"
+  checksum: 10c0/e1283143a774daacabcfea6b63dba462253825e6c23dc84b5fc163c49eb90df1f51c35866ffa5f9dae49ce4b1e76b1313495bdfb3b457f875c88d9fe7f9dc979
   languageName: node
   linkType: hard
 
