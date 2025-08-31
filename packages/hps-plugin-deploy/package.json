@@ -1,18 +1,18 @@
 {
-  "name": "@hyperse/hps-plugin-publish",
+  "name": "@hyperse/hps-plugin-deploy",
   "version": "0.0.1",
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
     "type": "git",
     "url": "https://github.com/hyperse-io/hps",
-    "directory": "packages/hps-plugin-publish"
+    "directory": "packages/hps-plugin-deploy"
   },
+  "license": "SEE LICENSE IN FILE 'LICENSE'",
   "author": {
     "name": "Hyperse",
     "url": "https://github.com/hyperse-io"
   },
   "type": "module",
-  "license": "SEE LICENSE IN FILE 'LICENSE'",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -41,16 +41,27 @@
     "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
+  "dependencies": {
+    "globby": "^14.1.0",
+    "mime-types": "^3.0.1",
+    "yocto-spinner": "^1.0.0"
+  },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.7",
+    "@hyperse/wizard": "^1.0.0",
+    "@types/mime-types": "^3.0.1",
     "@types/node": "^24.3.0",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.34.0",
+    "msw": "^2.11.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@hyperse/wizard": ">=1.0.0"
   },
   "engines": {
     "node": ">=20.0.0"

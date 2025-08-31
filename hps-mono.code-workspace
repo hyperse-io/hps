@@ -37,8 +37,8 @@
       "path": "packages/hps-plugin-update",
     },
     {
-      "name": "hps-plugin-publish",
-      "path": "packages/hps-plugin-publish",
+      "name": "hps-plugin-deploy",
+      "path": "packages/hps-plugin-deploy",
     },
     {
       "name": "hps-srv-mock",
@@ -115,7 +115,7 @@
       "./packages/hps-plugin-info",
       "./packages/hps-plugin-pack",
       "./packages/hps-plugin-update",
-      "./packages/hps-plugin-publish",
+      "./packages/hps-plugin-deploy",
       "./packages/hps-plugin-serve",
       "./packages/hps-plugin-build",
       "./packages/hps-srv-mock",

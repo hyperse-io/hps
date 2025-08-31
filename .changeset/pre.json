@@ -8,7 +8,7 @@
     "@hyperse/hps-plugin-build": "0.0.1",
     "@hyperse/hps-plugin-info": "0.0.1",
     "@hyperse/hps-plugin-pack": "0.0.1",
-    "@hyperse/hps-plugin-publish": "0.0.1",
+    "@hyperse/hps-plugin-deploy": "0.0.1",
     "@hyperse/hps-plugin-serve": "0.0.1",
     "@hyperse/hps-plugin-update": "0.0.1",
     "@hyperse/hps-srv-mock": "0.0.1",
