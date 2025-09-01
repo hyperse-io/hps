@@ -59,7 +59,7 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "@hyperse/wizard": ">=1.0.0"
+    "@hyperse/wizard": ">=1.0.1"
   },
   "engines": {
     "node": ">=20.0.0"

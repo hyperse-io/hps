@@ -1,4 +1,4 @@
-import { server } from './msw-proxy/index.js';
+import { server } from '../index.js';
 
 describe('Update', () => {
   beforeAll(() => server.listen());

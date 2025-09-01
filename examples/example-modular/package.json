@@ -19,9 +19,9 @@
     "build": "npm run clean && rspack build"
   },
   "dependencies": {
-    "@heroui/react": "^2.8.2",
+    "@heroui/react": "^2.8.3",
     "@hyperse/hps": "workspace:*",
-    "@iconify/react": "^6.0.0",
+    "@iconify/react": "^6.0.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",
     "react": "^19.1.1",

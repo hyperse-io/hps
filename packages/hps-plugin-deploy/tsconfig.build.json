@@ -8,7 +8,7 @@
     "paths": {},
     "types": ["node"]
   },
-  "include": ["./src/index.ts"],
+  "include": ["./src/index.ts", "./src/environment.d.ts"],
   "exclude": [
     "**/*.stories.tsx",
     "**/*.stories.mdx",

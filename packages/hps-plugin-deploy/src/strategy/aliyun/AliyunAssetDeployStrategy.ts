@@ -6,10 +6,32 @@ import type {
 } from '../AssetDeployStrategy.js';
 import { type AliyunUploaderOption, uploadToAliyun } from './uploadToAliyun.js';
 
-export class AliyunAssetDeployStrategy implements AssetDeployStrategy {
-  name = 'aliyun';
+/**
+ * Configuration for Aliyun OSS deployment
+ */
+interface AliyunConfig {
+  cdnBaseUrl?: string;
+  uploadApi?: string;
+  accessKeySecret?: string;
+  accessKeyId?: string;
+  bucketName?: string;
+}
 
-  private readonly aliyunConfig: AliyunUploaderOption;
+/**
+ * Aliyun OSS deployment strategy
+ *
+ * This strategy handles deploying assets to Aliyun Object Storage Service (OSS).
+ * It requires the following environment variables to be set:
+ * - REMOTE_CDN_BASE_URL: The base URL for the CDN
+ * - ALIYUN_API_ENDPOINT: The Aliyun API endpoint
+ * - ALIYUN_ACCESS_KEY_SECRET: The access key secret
+ * - ALIYUN_ACCESS_KEY_ID: The access key ID
+ * - ALIYUN_BUCKET_NAME: The bucket name
+ */
+export class AliyunAssetDeployStrategy implements AssetDeployStrategy {
+  readonly name = 'aliyun';
+
+  private readonly aliyunConfig: AliyunConfig;
 
   constructor() {
     this.aliyunConfig = {
@@ -21,44 +43,89 @@ export class AliyunAssetDeployStrategy implements AssetDeployStrategy {
     };
   }
 
-  // If any of the aliyun config is not set, throw an error
-  private checkAliyunConfig() {
+  /**
+   * Validates that all required Aliyun configuration is present
+   *
+   * @throws {Error} If any required configuration is missing
+   */
+  private validateAliyunConfig(): void {
+    const missingConfigs: string[] = [];
+
     if (!this.aliyunConfig.cdnBaseUrl) {
-      throw new Error('REMOTE_CDN_BASE_URL is not set');
+      missingConfigs.push('REMOTE_CDN_BASE_URL');
     }
     if (!this.aliyunConfig.uploadApi) {
-      throw new Error('ALIYUN_API_ENDPOINT is not set');
+      missingConfigs.push('ALIYUN_API_ENDPOINT');
     }
     if (!this.aliyunConfig.accessKeySecret) {
-      throw new Error('ALIYUN_ACCESS_KEY_SECRET is not set');
+      missingConfigs.push('ALIYUN_ACCESS_KEY_SECRET');
     }
     if (!this.aliyunConfig.accessKeyId) {
-      throw new Error('ALIYUN_ACCESS_KEY_ID is not set');
+      missingConfigs.push('ALIYUN_ACCESS_KEY_ID');
     }
     if (!this.aliyunConfig.bucketName) {
-      throw new Error('ALIYUN_BUCKET_NAME is not set');
+      missingConfigs.push('ALIYUN_BUCKET_NAME');
+    }
+
+    if (missingConfigs.length > 0) {
+      throw new Error(
+        `Missing required Aliyun configuration: ${missingConfigs.join(', ')}`
+      );
     }
   }
 
+  /**
+   * Deploy files to Aliyun OSS
+   *
+   * @param filePaths - Array of absolute file paths to deploy
+   * @param options - Deployment configuration options
+   */
   async deploy(
     filePaths: string[],
     options: AssetDeployStrategyOptions
   ): Promise<void> {
-    // Check if the aliyun config is set
-    this.checkAliyunConfig();
+    // Validate configuration before starting deployment
+    this.validateAliyunConfig();
 
-    // Upload the files to the aliyun
+    // Convert config to uploader options
+    const uploaderOptions: AliyunUploaderOption = {
+      cdnBaseUrl: this.aliyunConfig.cdnBaseUrl!,
+      uploadApi: this.aliyunConfig.uploadApi!,
+      accessKeySecret: this.aliyunConfig.accessKeySecret!,
+      accessKeyId: this.aliyunConfig.accessKeyId!,
+      bucketName: this.aliyunConfig.bucketName!,
+    };
+
+    // Deploy each file
     for (const filePath of filePaths) {
-      const relativePath = relative(options.projectCwd, filePath);
-      const relativePathWithPrefix = join(options.prefix, relativePath);
-      const spinner = yoctoSpinner({
-        text: `Uploading ${relativePathWithPrefix} to ${this.name}`,
-      }).start();
+      await this.deploySingleFile(filePath, options, uploaderOptions);
+    }
+  }
 
+  /**
+   * Deploy a single file to Aliyun OSS
+   *
+   * @param filePath - Absolute path to the file to deploy
+   * @param options - Deployment configuration options
+   * @param uploaderOptions - Aliyun uploader configuration
+   */
+  private async deploySingleFile(
+    filePath: string,
+    options: AssetDeployStrategyOptions,
+    uploaderOptions: AliyunUploaderOption
+  ): Promise<void> {
+    const relativePath = relative(options.projectCwd, filePath);
+    const relativePathWithPrefix = join(options.prefix, relativePath);
+
+    const spinner = yoctoSpinner({
+      text: `Uploading ${relativePathWithPrefix} to ${this.name}`,
+    }).start();
+
+    try {
       const result = await uploadToAliyun(
         filePath,
         relativePathWithPrefix,
-        this.aliyunConfig
+        uploaderOptions
       );
 
       if (result) {
@@ -66,6 +133,9 @@ export class AliyunAssetDeployStrategy implements AssetDeployStrategy {
       } else {
         spinner.error();
       }
+    } catch (error) {
+      spinner.error();
+      throw error;
     }
   }
 }

@@ -4,19 +4,37 @@ import { AliyunAssetDeployStrategy } from './strategy/aliyun/AliyunAssetDeploySt
 import { AssetDeployService } from './strategy/AssetDeployService.js';
 import type { AssetDeployStrategy } from './strategy/AssetDeployStrategy.js';
 
+/**
+ * Configuration options for creating a deploy plugin
+ */
 export type CreateDeployPluginOptions = {
   /**
-   * The deploy strategies.
+   * Custom deploy strategies to use in addition to the default ones
    */
   deployStrategies?: AssetDeployStrategy[];
 };
 
-// Default deploy strategies
-const defaultStrategies = [new AliyunAssetDeployStrategy()];
+/**
+ * Default deploy strategies that are always included
+ */
+const DEFAULT_STRATEGIES = [new AliyunAssetDeployStrategy()];
 
-export const createDeployPlugin = (options: CreateDeployPluginOptions) => {
+/**
+ * Creates a deploy plugin for the HPS wizard
+ *
+ * @param options - Configuration options for the plugin
+ * @returns A configured deploy plugin
+ *
+ * @example
+ * ```typescript
+ * const deployPlugin = createDeployPlugin({
+ *   deployStrategies: [new CustomDeployStrategy()]
+ * });
+ * ```
+ */
+export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
   const deployStrategies = [
-    ...defaultStrategies,
+    ...DEFAULT_STRATEGIES,
     ...(options.deployStrategies || []),
   ];
 
@@ -31,10 +49,8 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions) => {
         })
           .flags({
             projectCwd: {
-              alias: 'p',
               description: 'plugins.deployPlugin.flags.projectCwd',
               type: String,
-              default: '',
             },
             target: {
               alias: 't',
@@ -48,6 +64,7 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions) => {
               type: [String],
             },
             prefix: {
+              alias: 'p',
               description: 'plugins.deployPlugin.flags.prefix',
               type: String,
               default: '',
@@ -64,23 +81,28 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions) => {
               type: [String],
               default: [],
             },
+            overrideExistFile: {
+              description: 'plugins.deployPlugin.flags.overrideExistFile',
+              type: Boolean,
+              default: false,
+            },
           })
           .process(async (ctx) => {
             const deployService = new AssetDeployService({
               logger: ctx.logger,
               noColor: ctx.flags.noColor,
-              projectCwd: ctx.flags.projectCwd,
+              projectCwd: ctx.flags.projectCwd || process.cwd(),
               target: ctx.flags.target,
               prefix: ctx.flags.prefix,
               matchPatterns: ctx.flags.match,
               ignorePatterns: ctx.flags.ignore,
+              overrideExistFile: ctx.flags.overrideExistFile,
               deployStrategies,
             });
 
             await deployService.deploy();
           })
       );
-
       return cli;
     },
   });

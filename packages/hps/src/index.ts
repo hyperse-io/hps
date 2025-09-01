@@ -27,12 +27,11 @@ const cli = createWizard({
   description: 'cli.hpsCli.description',
   version: (t) => t('cli.hpsCli.version', { version }),
   localeMessages: hpsCliMessages,
-});
-
-cli.use(helpPlugin);
-cli.use(versionPlugin);
-cli.use(errorPlugin);
-cli.use(loaderPlugin);
-cli.use(infoPlugin);
+})
+  .use(helpPlugin)
+  .use(versionPlugin)
+  .use(errorPlugin)
+  .use(loaderPlugin)
+  .use(infoPlugin);
 
 export { cli };

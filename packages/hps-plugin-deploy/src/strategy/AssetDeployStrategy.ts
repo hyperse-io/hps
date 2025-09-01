@@ -1,24 +1,56 @@
+import type { Logger } from '@hyperse/wizard';
+
+/**
+ * Configuration options for asset deployment strategies
+ */
 export type AssetDeployStrategyOptions = {
+  /** The project's current working directory */
   projectCwd: string;
-  logger: any;
+  /** Logger instance for output */
+  logger: Logger;
+  /** Prefix to add to file paths during deployment */
   prefix: string;
+  /** Whether to disable colored output */
   noColor: boolean;
+  /** Whether to override existing files */
   overrideExistFile: boolean;
 };
 
 /**
- * The asset deploy strategy.
+ * Interface for asset deployment strategies
+ *
+ * This interface defines the contract that all deployment strategies must implement.
+ * Each strategy handles deploying assets to a specific target (e.g., Aliyun OSS, AWS S3, etc.).
  */
 export interface AssetDeployStrategy {
   /**
-   * The name of the strategy.
+   * The unique name of the strategy
+   *
+   * This name is used to identify the strategy when specified as a deployment target.
+   * Must be unique across all registered strategies.
    */
-  name: string;
+  readonly name: string;
+
   /**
-   * The function to deploy the asset.
-   * @param filePaths The file paths of the asset.
-   * @param options The options of the strategy.
-   * @returns The promise to deploy the asset.
+   * Deploy assets to the target platform
+   *
+   * @param filePaths - Array of absolute file paths to deploy
+   * @param options - Configuration options for the deployment
+   * @returns Promise that resolves when deployment is complete
+   *
+   * @example
+   * ```typescript
+   * class MyDeployStrategy implements AssetDeployStrategy {
+   *   readonly name = 'my-target';
+   *
+   *   async deploy(filePaths: string[], options: AssetDeployStrategyOptions): Promise<void> {
+   *     for (const filePath of filePaths) {
+   *       // Deploy each file to your target platform
+   *       await this.uploadFile(filePath, options);
+   *     }
+   *   }
+   * }
+   * ```
    */
   deploy(
     filePaths: string[],
