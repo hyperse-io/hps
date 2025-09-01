@@ -1,5 +1,16 @@
 # @hyperse/hps
 
+## 0.1.0-next.5
+
+### Patch Changes
+
+- [`869a57c`](https://github.com/hyperse-io/hps/commit/869a57c65e81a7f21ab2996fadf168c606747957) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update @hyperse/wizard and related plugins to version 1.0.2; set locale in hps package
+
+- Updated dependencies [[`869a57c`](https://github.com/hyperse-io/hps/commit/869a57c65e81a7f21ab2996fadf168c606747957)]:
+  - @hyperse/hps-plugin-deploy@0.0.2-next.1
+  - @hyperse/hps-plugin-update@0.0.2-next.2
+  - @hyperse/hps-plugin-info@0.1.0-next.4
+
 ## 0.1.0-next.4
 
 ### Patch Changes
