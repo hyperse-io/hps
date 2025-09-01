@@ -31,6 +31,7 @@ const cli = createWizard({
   description: 'cli.hpsCli.description',
   version: (t) => t('cli.hpsCli.version', { version }),
   localeMessages: hpsCliMessages,
+  locale: 'en',
 })
   .use(helpPlugin)
   .use(versionPlugin)

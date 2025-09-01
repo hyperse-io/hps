@@ -2732,7 +2732,7 @@ __metadata:
   resolution: "@hyperse/hps-plugin-deploy@workspace:packages/hps-plugin-deploy"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
-    "@hyperse/wizard": "npm:^1.0.0"
+    "@hyperse/wizard": "npm:^1.0.2"
     "@types/mime-types": "npm:^3.0.1"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
@@ -2756,7 +2756,7 @@ __metadata:
   resolution: "@hyperse/hps-plugin-info@workspace:packages/hps-plugin-info"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
-    "@hyperse/wizard": "npm:^1.0.0"
+    "@hyperse/wizard": "npm:^1.0.2"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -2810,7 +2810,7 @@ __metadata:
   resolution: "@hyperse/hps-plugin-update@workspace:packages/hps-plugin-update"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
-    "@hyperse/wizard": "npm:^1.0.0"
+    "@hyperse/wizard": "npm:^1.0.2"
     "@manypkg/get-packages": "npm:^3.1.0"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
@@ -2938,11 +2938,11 @@ __metadata:
     "@hyperse/hps-plugin-info": "workspace:*"
     "@hyperse/hps-plugin-update": "workspace:*"
     "@hyperse/ts-node": "npm:^1.0.3"
-    "@hyperse/wizard": "npm:^1.0.1"
-    "@hyperse/wizard-plugin-error": "npm:^1.0.1"
-    "@hyperse/wizard-plugin-help": "npm:^1.0.1"
-    "@hyperse/wizard-plugin-loader": "npm:^1.0.1"
-    "@hyperse/wizard-plugin-version": "npm:^1.0.1"
+    "@hyperse/wizard": "npm:^1.0.2"
+    "@hyperse/wizard-plugin-error": "npm:^1.0.2"
+    "@hyperse/wizard-plugin-help": "npm:^1.0.2"
+    "@hyperse/wizard-plugin-loader": "npm:^1.0.2"
+    "@hyperse/wizard-plugin-version": "npm:^1.0.2"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -3041,52 +3041,52 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-error@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@hyperse/wizard-plugin-error@npm:1.0.1"
+"@hyperse/wizard-plugin-error@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@hyperse/wizard-plugin-error@npm:1.0.2"
   dependencies:
-    "@hyperse/wizard": "npm:1.0.1"
+    "@hyperse/wizard": "npm:1.0.2"
     didyoumean2: "npm:^7.0.4"
-  checksum: 10c0/6996bf36932f8fc39fad91f077a7779febd54c5883f97c20ae4667a95f5697d4837c9cafe849b74ebd9ecad760a6171757bc6c726b53c525806789d8f1ed7a01
+  checksum: 10c0/98d6e39d4410a0f8adae771516d280d528c0364594ca77c4c17dca5a0c6da7c2730d83a5342870cd513f87b0db66c7aab66eebe373dd292853dbf667f8c50ff1
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-help@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@hyperse/wizard-plugin-help@npm:1.0.1"
+"@hyperse/wizard-plugin-help@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@hyperse/wizard-plugin-help@npm:1.0.2"
   dependencies:
     "@hyperse/deep-merge": "npm:^1.0.1"
-    "@hyperse/wizard": "npm:1.0.1"
+    "@hyperse/wizard": "npm:1.0.2"
     chalk: "npm:^5.4.1"
     string-width: "npm:^7.2.0"
     text-table: "npm:^0.2.0"
-  checksum: 10c0/d1880df1ec5c19f599ebd89ee48ae7a0446c9bebfc925e2622e28917951d32bb517d3d4347d9ead975afae01bed17f634644bff4e6e279cc7318026a51af7819
+  checksum: 10c0/bfe4976a6446a2fefa045f86144af08127e2cf44bec82237c602eec177fc406c85d8160fa74c69b933801290499752778664a1516c14ef4117fb063cef729511
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-loader@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@hyperse/wizard-plugin-loader@npm:1.0.1"
+"@hyperse/wizard-plugin-loader@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@hyperse/wizard-plugin-loader@npm:1.0.2"
   dependencies:
-    "@hyperse/wizard": "npm:1.0.1"
+    "@hyperse/wizard": "npm:1.0.2"
     globby: "npm:^14.1.0"
     resolve: "npm:^1.22.10"
-  checksum: 10c0/52806c822c3a035929eef167c7241a13e39561fa8dd4ebd26fdf01754e43b366707bb8956b2725119bbfe7f1530459405417ace5d2111406a741f6e48e896d3f
+  checksum: 10c0/8fc666fd7f99158428caed0b676327d81cdf613bff72aace5672a0f86a6b1bf3fa38375945eec2882d3e9a719fbcb823f12843c1c41bd94260b5de970125fb71
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-version@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@hyperse/wizard-plugin-version@npm:1.0.1"
+"@hyperse/wizard-plugin-version@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@hyperse/wizard-plugin-version@npm:1.0.2"
   dependencies:
-    "@hyperse/wizard": "npm:1.0.1"
-  checksum: 10c0/8bdc1b00c9378ba92054513670d2f614ac339f2fd35acb4231bec757b8513db9c57635acf85f0d9e3094444843ddfd98e15bbdf454a7ceeca892f1d8e8cf7638
+    "@hyperse/wizard": "npm:1.0.2"
+  checksum: 10c0/9e50826d3280cdb8d28dcbdecd9a3a9ad0160d4760db6ab1fed972e9f37999a4cad9d8861866b50f5c4c48d5d1c0b87e8fbbdc3ad2c03a34429e79fa16bc8e6e
   languageName: node
   linkType: hard
 
-"@hyperse/wizard@npm:1.0.1, @hyperse/wizard@npm:^1.0.0, @hyperse/wizard@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@hyperse/wizard@npm:1.0.1"
+"@hyperse/wizard@npm:1.0.2, @hyperse/wizard@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@hyperse/wizard@npm:1.0.2"
   dependencies:
     "@hyperse/deep-merge": "npm:^1.0.1"
     "@hyperse/hyper-env": "npm:^1.0.15"
@@ -3097,7 +3097,7 @@ __metadata:
     is-platform: "npm:^1.0.0"
     type-fest: "npm:^4.41.0"
     type-flag: "npm:^3.0.0"
-  checksum: 10c0/ec9c62d74b3aff34e451568caca25e70b22b8eeb69dd0e41ad0dcc0e50a636d71ec948207171372125f16f63b2ba52afb95692992560cf84f43e05767855f26c
+  checksum: 10c0/f40eac906ac1ae3142f41c82e3963fc8bf102e68329a93beb14b356b01da5efa4d9b12fd0b8dbf73efde7a8a081978f9b39f6f4467d305984e183623447970b4
   languageName: node
   linkType: hard
 
