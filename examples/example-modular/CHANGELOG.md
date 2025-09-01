@@ -1,5 +1,12 @@
 # @example/example-modular
 
+## 0.0.2-next.4
+
+### Patch Changes
+
+- Updated dependencies [[`8562785`](https://github.com/hyperse-io/hps/commit/856278589bf5a2377d384e1ff50bf4fa174883a7)]:
+  - @hyperse/hps@0.1.0-next.4
+
 ## 0.0.2-next.3
 
 ### Patch Changes
