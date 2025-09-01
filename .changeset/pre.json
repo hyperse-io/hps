@@ -18,6 +18,7 @@
     "@hyperse/hps-srv-rspack-plugin-import": "0.0.1"
   },
   "changesets": [
+    "little-cats-peel",
     "lucky-goats-join",
     "orange-results-wear",
     "spotty-showers-create",
