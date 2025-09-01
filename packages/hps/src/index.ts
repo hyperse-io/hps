@@ -1,4 +1,6 @@
+import { createDeployPlugin } from '@hyperse/hps-plugin-deploy';
 import { createInfoPlugin } from '@hyperse/hps-plugin-info';
+import { createUpdatePlugin } from '@hyperse/hps-plugin-update';
 import { createWizard } from '@hyperse/wizard';
 import { createErrorPlugin } from '@hyperse/wizard-plugin-error';
 import { createHelpPlugin } from '@hyperse/wizard-plugin-help';
@@ -21,6 +23,8 @@ const loaderPlugin = await createLoaderPlugin({
 const infoPlugin = createInfoPlugin({
   cliPackage,
 });
+const deployPlugin = createDeployPlugin();
+const updatePlugin = createUpdatePlugin();
 
 const cli = createWizard({
   name: 'hps',
@@ -32,6 +36,8 @@ const cli = createWizard({
   .use(versionPlugin)
   .use(errorPlugin)
   .use(loaderPlugin)
-  .use(infoPlugin);
+  .use(infoPlugin)
+  .use(deployPlugin)
+  .use(updatePlugin);
 
 export { cli };

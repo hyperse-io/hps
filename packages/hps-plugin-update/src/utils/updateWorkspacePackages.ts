@@ -24,6 +24,7 @@ export const updateWorkspacePackages = async (
   const cacheFile = writeCacheFile(force);
 
   for (const [dir] of workspaces) {
+    options.logger.info(`Checking and updating dependencies in ${dir}`);
     await ncuUpdate({
       ...ncuOptions,
       cacheFile,

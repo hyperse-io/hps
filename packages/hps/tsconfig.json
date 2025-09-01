@@ -9,6 +9,12 @@
     "paths": {
       "@hyperse/hps-plugin-info": [
         "../../packages/hps-plugin-info/src/index.ts"
+      ],
+      "@hyperse/hps-plugin-deploy": [
+        "../../packages/hps-plugin-deploy/src/index.ts"
+      ],
+      "@hyperse/hps-plugin-update": [
+        "../../packages/hps-plugin-update/src/index.ts"
       ]
     },
     "types": ["vitest/globals"]

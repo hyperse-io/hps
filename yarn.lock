@@ -2727,7 +2727,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hyperse/hps-plugin-deploy@workspace:packages/hps-plugin-deploy":
+"@hyperse/hps-plugin-deploy@workspace:*, @hyperse/hps-plugin-deploy@workspace:packages/hps-plugin-deploy":
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-deploy@workspace:packages/hps-plugin-deploy"
   dependencies:
@@ -2805,7 +2805,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hyperse/hps-plugin-update@workspace:packages/hps-plugin-update":
+"@hyperse/hps-plugin-update@workspace:*, @hyperse/hps-plugin-update@workspace:packages/hps-plugin-update":
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-update@workspace:packages/hps-plugin-update"
   dependencies:
@@ -2934,7 +2934,9 @@ __metadata:
   resolution: "@hyperse/hps@workspace:packages/hps"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/hps-plugin-deploy": "workspace:*"
     "@hyperse/hps-plugin-info": "workspace:*"
+    "@hyperse/hps-plugin-update": "workspace:*"
     "@hyperse/ts-node": "npm:^1.0.3"
     "@hyperse/wizard": "npm:^1.0.1"
     "@hyperse/wizard-plugin-error": "npm:^1.0.1"
