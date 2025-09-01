@@ -1,0 +1,463 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 1`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/examples/example-modular",
+    "name": "@example/example-modular",
+    "relativeDir": "examples/example-modular",
+    "version": "0.0.2-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 2`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/examples/example-single",
+    "name": "@example/example-single",
+    "relativeDir": "examples/example-single",
+    "version": "0.0.2-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 3`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps",
+    "name": "@hyperse/hps",
+    "relativeDir": "packages/hps",
+    "version": "0.1.0-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 4`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-build",
+    "name": "@hyperse/hps-plugin-build",
+    "relativeDir": "packages/hps-plugin-build",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 5`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-deploy",
+    "name": "@hyperse/hps-plugin-deploy",
+    "relativeDir": "packages/hps-plugin-deploy",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 6`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-info",
+    "name": "@hyperse/hps-plugin-info",
+    "relativeDir": "packages/hps-plugin-info",
+    "version": "0.1.0-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 7`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-pack",
+    "name": "@hyperse/hps-plugin-pack",
+    "relativeDir": "packages/hps-plugin-pack",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 8`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-serve",
+    "name": "@hyperse/hps-plugin-serve",
+    "relativeDir": "packages/hps-plugin-serve",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 9`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-update",
+    "name": "@hyperse/hps-plugin-update",
+    "relativeDir": "packages/hps-plugin-update",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 10`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-srv-mock",
+    "name": "@hyperse/hps-srv-mock",
+    "relativeDir": "packages/hps-srv-mock",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 11`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-srv-rolldown",
+    "name": "@hyperse/hps-srv-rolldown",
+    "relativeDir": "packages/hps-srv-rolldown",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 12`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-srv-rspack",
+    "name": "@hyperse/hps-srv-rspack",
+    "relativeDir": "packages/hps-srv-rspack",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 13`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/crates/hps-srv-rspack-plugin-import",
+    "name": "@hyperse/hps-srv-rspack-plugin-import",
+    "relativeDir": "crates/hps-srv-rspack-plugin-import",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct normalize single normal project 14`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/website",
+    "name": "@hyperse/hps-website",
+    "relativeDir": "website",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 1`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/examples/example-modular",
+    "name": "@example/example-modular",
+    "relativeDir": "examples/example-modular",
+    "version": "0.0.2-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 2`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/examples/example-single",
+    "name": "@example/example-single",
+    "relativeDir": "examples/example-single",
+    "version": "0.0.2-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 3`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps",
+    "name": "@hyperse/hps",
+    "relativeDir": "packages/hps",
+    "version": "0.1.0-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 4`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-build",
+    "name": "@hyperse/hps-plugin-build",
+    "relativeDir": "packages/hps-plugin-build",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 5`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-deploy",
+    "name": "@hyperse/hps-plugin-deploy",
+    "relativeDir": "packages/hps-plugin-deploy",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 6`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-info",
+    "name": "@hyperse/hps-plugin-info",
+    "relativeDir": "packages/hps-plugin-info",
+    "version": "0.1.0-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 7`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-pack",
+    "name": "@hyperse/hps-plugin-pack",
+    "relativeDir": "packages/hps-plugin-pack",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 8`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-serve",
+    "name": "@hyperse/hps-plugin-serve",
+    "relativeDir": "packages/hps-plugin-serve",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 9`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-update",
+    "name": "@hyperse/hps-plugin-update",
+    "relativeDir": "packages/hps-plugin-update",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 10`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-srv-mock",
+    "name": "@hyperse/hps-srv-mock",
+    "relativeDir": "packages/hps-srv-mock",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 11`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-srv-rolldown",
+    "name": "@hyperse/hps-srv-rolldown",
+    "relativeDir": "packages/hps-srv-rolldown",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 12`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-srv-rspack",
+    "name": "@hyperse/hps-srv-rspack",
+    "relativeDir": "packages/hps-srv-rspack",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 13`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/crates/hps-srv-rspack-plugin-import",
+    "name": "@hyperse/hps-srv-rspack-plugin-import",
+    "relativeDir": "crates/hps-srv-rspack-plugin-import",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages 14`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/website",
+    "name": "@hyperse/hps-website",
+    "relativeDir": "website",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 1`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/examples/example-modular",
+    "name": "@example/example-modular",
+    "relativeDir": "examples/example-modular",
+    "version": "0.0.2-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 2`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/examples/example-single",
+    "name": "@example/example-single",
+    "relativeDir": "examples/example-single",
+    "version": "0.0.2-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 3`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps",
+    "name": "@hyperse/hps",
+    "relativeDir": "packages/hps",
+    "version": "0.1.0-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 4`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-build",
+    "name": "@hyperse/hps-plugin-build",
+    "relativeDir": "packages/hps-plugin-build",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 5`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-deploy",
+    "name": "@hyperse/hps-plugin-deploy",
+    "relativeDir": "packages/hps-plugin-deploy",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 6`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-info",
+    "name": "@hyperse/hps-plugin-info",
+    "relativeDir": "packages/hps-plugin-info",
+    "version": "0.1.0-next.3",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 7`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-pack",
+    "name": "@hyperse/hps-plugin-pack",
+    "relativeDir": "packages/hps-plugin-pack",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 8`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-serve",
+    "name": "@hyperse/hps-plugin-serve",
+    "relativeDir": "packages/hps-plugin-serve",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 9`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-plugin-update",
+    "name": "@hyperse/hps-plugin-update",
+    "relativeDir": "packages/hps-plugin-update",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 10`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-srv-mock",
+    "name": "@hyperse/hps-srv-mock",
+    "relativeDir": "packages/hps-srv-mock",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 11`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-srv-rolldown",
+    "name": "@hyperse/hps-srv-rolldown",
+    "relativeDir": "packages/hps-srv-rolldown",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 12`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/packages/hps-srv-rspack",
+    "name": "@hyperse/hps-srv-rspack",
+    "relativeDir": "packages/hps-srv-rspack",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 13`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/crates/hps-srv-rspack-plugin-import",
+    "name": "@hyperse/hps-srv-rspack-plugin-import",
+    "relativeDir": "crates/hps-srv-rspack-plugin-import",
+    "version": "0.0.1",
+  },
+}
+`;
+
+exports[`getWorkspacePackages() > Should correct resolve workspace packages for single repo 14`] = `
+{
+  "meta": {
+    "dir": "/Users/tianyingchun/Documents/hyperse-io/hps-mono/website",
+    "name": "@hyperse/hps-website",
+    "relativeDir": "website",
+    "version": "0.0.1",
+  },
+}
+`;
