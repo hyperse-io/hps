@@ -9,7 +9,7 @@ export interface PrepareUploadFilesOptions {
   /** Patterns to match files (glob patterns) */
   matchPatterns: string[];
   /** Patterns to ignore files (glob patterns) */
-  ignorePatterns: string[];
+  ignorePatterns?: string[];
 }
 
 /**
@@ -40,7 +40,7 @@ const DEFAULT_IGNORE_PATTERNS = [
 export const prepareUploadFiles = async (
   options: PrepareUploadFilesOptions
 ): Promise<string[]> => {
-  const { lookupCwd, matchPatterns, ignorePatterns } = options;
+  const { lookupCwd, matchPatterns, ignorePatterns = [] } = options;
 
   // Validate inputs
   if (!lookupCwd || typeof lookupCwd !== 'string') {
@@ -49,10 +49,6 @@ export const prepareUploadFiles = async (
 
   if (!Array.isArray(matchPatterns) || matchPatterns.length === 0) {
     throw new TypeError('matchPatterns must be a non-empty array');
-  }
-
-  if (!Array.isArray(ignorePatterns)) {
-    throw new TypeError('ignorePatterns must be an array');
   }
 
   // Combine default and custom ignore patterns

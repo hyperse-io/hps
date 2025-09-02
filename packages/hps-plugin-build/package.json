@@ -42,7 +42,7 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.4.7",
+    "@hyperse/eslint-config-hyperse": "^1.4.8",
     "@types/node": "^24.3.0",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",

@@ -47,8 +47,8 @@
     "yocto-spinner": "^1.0.0"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.4.7",
-    "@hyperse/wizard": "^1.0.2",
+    "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@hyperse/wizard": "^1.0.3",
     "@types/mime-types": "^3.0.1",
     "@types/node": "^24.3.0",
     "@vitest/coverage-istanbul": "^3.2.4",

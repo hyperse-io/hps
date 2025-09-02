@@ -7,26 +7,11 @@ export const updatePluginMessages = defineLocaleMessages({
       name: 'CLI Update Plugin',
       command: {
         description: 'Updating Workspace Packages',
-        example:
-          'cli update --target <target> --prefix <prefix> --project-cwd <project-cwd>',
+        example: 'cli update --force <force> --project-cwd <project-cwd>',
       },
       flags: {
         projectCwd: 'The project root directory',
         force: 'Force update the dependencies',
-      },
-    },
-  },
-  zh: {
-    updatePlugin: {
-      name: 'CLI更新插件',
-      command: {
-        description: '更新工作区包',
-        example:
-          'cli update --target <target> --prefix <prefix> --project-cwd <project-cwd>',
-      },
-      flags: {
-        projectCwd: '项目根目录',
-        force: '强制更新依赖',
       },
     },
   },

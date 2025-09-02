@@ -16,7 +16,7 @@ export type AssetDeployServiceOptions = AssetDeployStrategyOptions & {
   /** File patterns to include in deployment (e.g., ['**\/*.js', '**\/*.css']) */
   matchPatterns: Array<string>;
   /** File patterns to exclude from deployment (e.g., ['**\/*.map', 'node_modules\/**']) */
-  ignorePatterns: Array<string>;
+  ignorePatterns?: Array<string>;
 };
 
 /**

@@ -1006,7 +1006,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.34.0, @eslint/js@npm:^9.33.0":
+"@eslint/js@npm:9.34.0, @eslint/js@npm:^9.34.0":
   version: 9.34.0
   resolution: "@eslint/js@npm:9.34.0"
   checksum: 10c0/53f1bfd2a374683d9382a6850354555f6e89a88416c34a5d34e9fbbaf717e97c2b06300e8f93e5eddba8bda8951ccab7f93a680e56ded1a3d21d526019e69bab
@@ -2679,14 +2679,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperse/eslint-config-hyperse@npm:^1.4.7":
-  version: 1.4.7
-  resolution: "@hyperse/eslint-config-hyperse@npm:1.4.7"
+"@hyperse/eslint-config-hyperse@npm:^1.4.7, @hyperse/eslint-config-hyperse@npm:^1.4.8":
+  version: 1.4.8
+  resolution: "@hyperse/eslint-config-hyperse@npm:1.4.8"
   dependencies:
-    "@eslint/js": "npm:^9.33.0"
-    "@next/eslint-plugin-next": "npm:^15.4.7"
-    "@typescript-eslint/utils": "npm:^8.40.0"
-    "@vitest/eslint-plugin": "npm:^1.3.4"
+    "@eslint/js": "npm:^9.34.0"
+    "@next/eslint-plugin-next": "npm:^15.5.2"
+    "@typescript-eslint/utils": "npm:^8.41.0"
+    "@vitest/eslint-plugin": "npm:^1.3.5"
     app-root-path: "npm:^3.1.0"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-define-config: "npm:^2.1.0"
@@ -2697,17 +2697,17 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-regexp: "npm:^2.10.0"
     eslint-plugin-simple-import-sort: "npm:^12.1.1"
-    eslint-plugin-sonarjs: "npm:^3.0.4"
+    eslint-plugin-sonarjs: "npm:^3.0.5"
     get-tsconfig: "npm:^4.10.1"
     globals: "npm:^16.3.0"
     prettier: "npm:^3.6.2"
     prettier-plugin-tailwindcss: "npm:^0.6.14"
     tailwindcss: "npm:^4.1.12"
-    typescript-eslint: "npm:^8.40.0"
+    typescript-eslint: "npm:^8.41.0"
   peerDependencies:
     eslint: ">=9.3.0"
     typescript: ^5.4.3
-  checksum: 10c0/790fe01db0f3267caea8d4cbdedbef3cd62646794db89d13e5dc0e51f83ad59d7c2894d4351100e3bcb871f6db3a39b9584113cae7213a90550a419c9db51b36
+  checksum: 10c0/0a7ef114713ecc12a12d9991cf04317b51e0695ed6f59be87a2c83b524a4b6bd6f1b4d2bc0d91e9d6c8fac0e37d5886201da9d485b584808480e6e2618437ee8
   languageName: node
   linkType: hard
 
@@ -2715,7 +2715,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-build@workspace:packages/hps-plugin-build"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -2731,8 +2731,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-deploy@workspace:packages/hps-plugin-deploy"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
-    "@hyperse/wizard": "npm:^1.0.2"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/wizard": "npm:^1.0.3"
     "@types/mime-types": "npm:^3.0.1"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
@@ -2755,8 +2755,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-info@workspace:packages/hps-plugin-info"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
-    "@hyperse/wizard": "npm:^1.0.2"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/wizard": "npm:^1.0.3"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -2777,7 +2777,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-pack@workspace:packages/hps-plugin-pack"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -2793,7 +2793,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-serve@workspace:packages/hps-plugin-serve"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -2809,8 +2809,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-update@workspace:packages/hps-plugin-update"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
-    "@hyperse/wizard": "npm:^1.0.2"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/wizard": "npm:^1.0.3"
     "@manypkg/get-packages": "npm:^3.1.0"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
@@ -2832,7 +2832,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-srv-mock@workspace:packages/hps-srv-mock"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -2848,7 +2848,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-srv-rolldown@workspace:packages/hps-srv-rolldown"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -2864,7 +2864,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-srv-rspack-plugin-import@workspace:crates/hps-srv-rspack-plugin-import"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@swc/core": "npm:^1.13.5"
     "@types/node": "npm:^24.3.0"
     eslint: "npm:^9.34.0"
@@ -2880,7 +2880,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-srv-rspack@workspace:packages/hps-srv-rspack"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -2900,7 +2900,7 @@ __metadata:
     "@commitlint/cli": "npm:^19.8.1"
     "@commitlint/config-conventional": "npm:^19.8.1"
     "@heroui/react": "npm:^2.8.3"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/next-config": "npm:^1.0.6"
     "@tailwindcss/postcss": "npm:^4.1.12"
     "@tailwindcss/typography": "npm:^0.5.16"
@@ -2913,7 +2913,7 @@ __metadata:
     cz-conventional-changelog: "npm:^3.3.0"
     eslint: "npm:^9.34.0"
     framer-motion: "npm:^12.23.12"
-    lint-staged: "npm:^16.1.5"
+    lint-staged: "npm:^16.1.6"
     next: "npm:^15.5.2"
     next-sitemap: "npm:^4.2.3"
     nextra: "npm:alpha"
@@ -2933,16 +2933,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps@workspace:packages/hps"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-plugin-deploy": "workspace:*"
     "@hyperse/hps-plugin-info": "workspace:*"
     "@hyperse/hps-plugin-update": "workspace:*"
     "@hyperse/ts-node": "npm:^1.0.3"
-    "@hyperse/wizard": "npm:^1.0.2"
-    "@hyperse/wizard-plugin-error": "npm:^1.0.2"
-    "@hyperse/wizard-plugin-help": "npm:^1.0.2"
-    "@hyperse/wizard-plugin-loader": "npm:^1.0.2"
-    "@hyperse/wizard-plugin-version": "npm:^1.0.2"
+    "@hyperse/wizard": "npm:^1.0.3"
+    "@hyperse/wizard-plugin-error": "npm:^1.0.3"
+    "@hyperse/wizard-plugin-help": "npm:^1.0.3"
+    "@hyperse/wizard-plugin-loader": "npm:^1.0.3"
+    "@hyperse/wizard-plugin-version": "npm:^1.0.3"
     "@types/node": "npm:^24.3.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -3015,15 +3015,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperse/translator@npm:^1.2.4":
-  version: 1.2.4
-  resolution: "@hyperse/translator@npm:1.2.4"
+"@hyperse/translator@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@hyperse/translator@npm:1.3.0"
   dependencies:
     "@formatjs/fast-memoize": "npm:^2.2.7"
     intl-messageformat: "npm:^10.7.16"
   peerDependencies:
     react: "*"
-  checksum: 10c0/db2024bdc151690bb0ac8077e91a1275cb6cd95896ec65cc23382d90515e814d035d9ba6012c51aa18725a6d304a7a35d08afa67985860a5c25c0a94e3e4cce8
+  peerDependenciesMeta:
+    react:
+      optional: true
+  checksum: 10c0/903f27c7e9c35af609d857b10d9c945153aa7bc2e5d031318ad9583726fb75f1490ecee694a77c4a7ea55600b9e15ddf5a07f4efe10195cb71628b50fe550a0a
   languageName: node
   linkType: hard
 
@@ -3041,63 +3044,63 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-error@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@hyperse/wizard-plugin-error@npm:1.0.2"
+"@hyperse/wizard-plugin-error@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@hyperse/wizard-plugin-error@npm:1.0.3"
   dependencies:
-    "@hyperse/wizard": "npm:1.0.2"
+    "@hyperse/wizard": "npm:1.0.3"
     didyoumean2: "npm:^7.0.4"
-  checksum: 10c0/98d6e39d4410a0f8adae771516d280d528c0364594ca77c4c17dca5a0c6da7c2730d83a5342870cd513f87b0db66c7aab66eebe373dd292853dbf667f8c50ff1
+  checksum: 10c0/0ca7e269529ccec6a7b688d9909ea9b4bed88669c900c1dc613b6b058950d993c20941e8b8d6826d32d86c88bbfc215650f3d283045107054b6cc3b6bc4617ea
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-help@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@hyperse/wizard-plugin-help@npm:1.0.2"
+"@hyperse/wizard-plugin-help@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@hyperse/wizard-plugin-help@npm:1.0.3"
   dependencies:
     "@hyperse/deep-merge": "npm:^1.0.1"
-    "@hyperse/wizard": "npm:1.0.2"
+    "@hyperse/wizard": "npm:1.0.3"
     chalk: "npm:^5.4.1"
     string-width: "npm:^7.2.0"
     text-table: "npm:^0.2.0"
-  checksum: 10c0/bfe4976a6446a2fefa045f86144af08127e2cf44bec82237c602eec177fc406c85d8160fa74c69b933801290499752778664a1516c14ef4117fb063cef729511
+  checksum: 10c0/c49b52282671721b48b77b6734ecf40773cf659a8efe2715351cd14b4d001119f923f0b80fb59d7f35ee76298b226d7b324c91833302bc85a377ee809abf5749
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-loader@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@hyperse/wizard-plugin-loader@npm:1.0.2"
+"@hyperse/wizard-plugin-loader@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@hyperse/wizard-plugin-loader@npm:1.0.3"
   dependencies:
-    "@hyperse/wizard": "npm:1.0.2"
+    "@hyperse/wizard": "npm:1.0.3"
     globby: "npm:^14.1.0"
     resolve: "npm:^1.22.10"
-  checksum: 10c0/8fc666fd7f99158428caed0b676327d81cdf613bff72aace5672a0f86a6b1bf3fa38375945eec2882d3e9a719fbcb823f12843c1c41bd94260b5de970125fb71
+  checksum: 10c0/aacad9f5f4c5c2a3b59cfb3e18a53724040281a3db0047df892a50150f1e1b1ce6816ce3d921e3fb3c8e285f9f918b09cf16f84b5fd2620af94f2523f6020a50
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-version@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@hyperse/wizard-plugin-version@npm:1.0.2"
+"@hyperse/wizard-plugin-version@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@hyperse/wizard-plugin-version@npm:1.0.3"
   dependencies:
-    "@hyperse/wizard": "npm:1.0.2"
-  checksum: 10c0/9e50826d3280cdb8d28dcbdecd9a3a9ad0160d4760db6ab1fed972e9f37999a4cad9d8861866b50f5c4c48d5d1c0b87e8fbbdc3ad2c03a34429e79fa16bc8e6e
+    "@hyperse/wizard": "npm:1.0.3"
+  checksum: 10c0/60637c17ce79f060346fbad9ca4d1ad902b81b36b15996f26d4dcf8659e3ed63607390d0400502e1f58a6497faf0c467a6aede93e2800a33841f0249c8e26dc6
   languageName: node
   linkType: hard
 
-"@hyperse/wizard@npm:1.0.2, @hyperse/wizard@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@hyperse/wizard@npm:1.0.2"
+"@hyperse/wizard@npm:1.0.3, @hyperse/wizard@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@hyperse/wizard@npm:1.0.3"
   dependencies:
     "@hyperse/deep-merge": "npm:^1.0.1"
     "@hyperse/hyper-env": "npm:^1.0.15"
     "@hyperse/logger": "npm:^1.1.7"
     "@hyperse/logger-plugin-stdout": "npm:^1.0.11"
     "@hyperse/pipeline": "npm:^1.0.6"
-    "@hyperse/translator": "npm:^1.2.4"
+    "@hyperse/translator": "npm:^1.3.0"
     is-platform: "npm:^1.0.0"
     type-fest: "npm:^4.41.0"
     type-flag: "npm:^3.0.0"
-  checksum: 10c0/f40eac906ac1ae3142f41c82e3963fc8bf102e68329a93beb14b356b01da5efa4d9b12fd0b8dbf73efde7a8a081978f9b39f6f4467d305984e183623447970b4
+  checksum: 10c0/e2236109d61770b13db0dbed917c3073c58892f76c71948c7175c1c2808976d5f40ff9f273e717fdf73a74b2dbfb6ca76558ee41d17792b7dce83f15ea2f258c
   languageName: node
   linkType: hard
 
@@ -3843,7 +3846,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^15.4.7":
+"@next/eslint-plugin-next@npm:^15.5.2":
   version: 15.5.2
   resolution: "@next/eslint-plugin-next@npm:15.5.2"
   dependencies:
@@ -6796,7 +6799,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:8.41.0":
+"@typescript-eslint/scope-manager@npm:8.41.0, @typescript-eslint/scope-manager@npm:^8.41.0":
   version: 8.41.0
   resolution: "@typescript-eslint/scope-manager@npm:8.41.0"
   dependencies:
@@ -6858,7 +6861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:8.41.0, @typescript-eslint/utils@npm:^8.24.1, @typescript-eslint/utils@npm:^8.40.0":
+"@typescript-eslint/utils@npm:8.41.0, @typescript-eslint/utils@npm:^8.24.1, @typescript-eslint/utils@npm:^8.41.0":
   version: 8.41.0
   resolution: "@typescript-eslint/utils@npm:8.41.0"
   dependencies:
@@ -6943,10 +6946,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/eslint-plugin@npm:^1.3.4":
-  version: 1.3.4
-  resolution: "@vitest/eslint-plugin@npm:1.3.4"
+"@vitest/eslint-plugin@npm:^1.3.5":
+  version: 1.3.6
+  resolution: "@vitest/eslint-plugin@npm:1.3.6"
   dependencies:
+    "@typescript-eslint/scope-manager": "npm:^8.41.0"
     "@typescript-eslint/utils": "npm:^8.24.1"
   peerDependencies:
     eslint: ">= 8.57.0"
@@ -6957,7 +6961,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10c0/26ee3fabfcbd37d55ccf4912bf0e12ee85320c362096ff9537f70dc094364419f25e626c62e7b94d93f758fb732d34811438c669ad58ea080c29d5a4ac459c05
+  checksum: 10c0/b086b6cf4b78e7c6658d7cbd5ef03ebccfc3a44d432e5f780192c9f28742a233f24691763af137880b3b3d035c18c543e906a2991d662940a7fc3af28beb8b84
   languageName: node
   linkType: hard
 
@@ -7697,7 +7701,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^5.0.0, chalk@npm:^5.3.0, chalk@npm:^5.4.1, chalk@npm:^5.5.0":
+"chalk@npm:^5.0.0, chalk@npm:^5.3.0, chalk@npm:^5.4.1, chalk@npm:^5.6.0":
   version: 5.6.0
   resolution: "chalk@npm:5.6.0"
   checksum: 10c0/f8558fc12fd9805f167611803b325b0098bbccdc9f1d3bafead41c9bac61f263357f3c0df0cbe28bc2fd5fca3edcf618b01d6771a5a776b4c15d061482a72b23
@@ -9533,7 +9537,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-sonarjs@npm:^3.0.4":
+"eslint-plugin-sonarjs@npm:^3.0.5":
   version: 3.0.5
   resolution: "eslint-plugin-sonarjs@npm:3.0.5"
   dependencies:
@@ -12154,15 +12158,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^16.1.5":
-  version: 16.1.5
-  resolution: "lint-staged@npm:16.1.5"
+"lint-staged@npm:^16.1.5, lint-staged@npm:^16.1.6":
+  version: 16.1.6
+  resolution: "lint-staged@npm:16.1.6"
   dependencies:
-    chalk: "npm:^5.5.0"
+    chalk: "npm:^5.6.0"
     commander: "npm:^14.0.0"
     debug: "npm:^4.4.1"
     lilconfig: "npm:^3.1.3"
-    listr2: "npm:^9.0.1"
+    listr2: "npm:^9.0.3"
     micromatch: "npm:^4.0.8"
     nano-spawn: "npm:^1.0.2"
     pidtree: "npm:^0.6.0"
@@ -12170,13 +12174,13 @@ __metadata:
     yaml: "npm:^2.8.1"
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 10c0/771e7be871f1d74ed09ef4e4eae5f835ed962965db7709be26cccf71bef8fed34f8d5d92f193b2a6fad32c12d955850aa74008e6180fabea8a7a6666cba2ac39
+  checksum: 10c0/e695edfec7e330f2c7cd0bb0e56220aa95d3b3655fe64a87a02140609a3594df67e1ea7abc2cc4ce69aa010418e406b1b24703ba4bd026c873a5b43a5ab16c6a
   languageName: node
   linkType: hard
 
-"listr2@npm:^9.0.1":
-  version: 9.0.2
-  resolution: "listr2@npm:9.0.2"
+"listr2@npm:^9.0.3":
+  version: 9.0.3
+  resolution: "listr2@npm:9.0.3"
   dependencies:
     cli-truncate: "npm:^4.0.0"
     colorette: "npm:^2.0.20"
@@ -12184,7 +12188,7 @@ __metadata:
     log-update: "npm:^6.1.0"
     rfdc: "npm:^1.4.1"
     wrap-ansi: "npm:^9.0.0"
-  checksum: 10c0/f256ae893d5798d41b50b388b9bb77aa5a50f53e46ab043435956556e10f933931413e130b6c0e36c3e1f03d8becacb42beeec874fe5b10f8eb4e1be0fef229f
+  checksum: 10c0/29978a32f9fb052f1efc11e8ad7745426c5bf706af87151672cb98e49fa11dc83a44f5065267f7f20a299e0942fed85677ab368e1cef8367800243675c50a20e
   languageName: node
   linkType: hard
 
@@ -16971,7 +16975,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^8.40.0":
+"typescript-eslint@npm:^8.41.0":
   version: 8.41.0
   resolution: "typescript-eslint@npm:8.41.0"
   dependencies:

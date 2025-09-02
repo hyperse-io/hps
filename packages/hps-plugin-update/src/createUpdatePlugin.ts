@@ -21,13 +21,14 @@ export const createUpdatePlugin = () => {
             projectCwd: {
               type: String,
               description: 'plugins.updatePlugin.flags.projectCwd',
+              default: process.cwd(),
             },
           })
           .process(async (ctx) => {
             await updateWorkspacePackages({
               logger: ctx.logger,
               noColor: ctx.flags.noColor,
-              projectCwd: ctx.flags.projectCwd || process.cwd(),
+              projectCwd: ctx.flags.projectCwd,
               force: ctx.flags.force,
             });
           })

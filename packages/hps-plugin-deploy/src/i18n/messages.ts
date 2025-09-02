@@ -7,8 +7,7 @@ export const deployPluginMessages = defineLocaleMessages({
       name: 'CLI Deploy Plugin',
       command: {
         description: 'Deploying Static Assets',
-        example:
-          'cli deploy --target <target> --prefix <prefix> --project-cwd <project-cwd>',
+        example: 'cli deploy --target [target] --prefix <prefix>',
       },
       flags: {
         projectCwd: 'The project root directory',
@@ -18,24 +17,6 @@ export const deployPluginMessages = defineLocaleMessages({
         match: 'The match patterns to lookup the files',
         ignore: 'The ignore patterns to exclude the files',
         overrideExistFile: 'Whether to override the existing file',
-      },
-    },
-  },
-  zh: {
-    deployPlugin: {
-      name: 'CLI部署插件',
-      command: {
-        description: '部署静态资源',
-        example:
-          'cli deploy --target <target> --prefix <prefix> --project-cwd <project-cwd>',
-      },
-      flags: {
-        projectCwd: '项目根目录',
-        target: '部署目标，可以指定多个目标({target})',
-        prefix: '部署文件的前缀',
-        match: '匹配文件的规则',
-        ignore: '忽略文件的规则',
-        overrideExistFile: '是否覆盖已存在的文件',
       },
     },
   },

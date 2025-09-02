@@ -6,16 +6,7 @@ export const infoPluginMessages = defineLocaleMessages({
     infoPlugin: {
       name: 'CLI Info Plugin',
       command: {
-        description: 'Show help information',
-        example: 'cli info',
-      },
-    },
-  },
-  zh: {
-    infoPlugin: {
-      name: 'CLI插件',
-      command: {
-        description: 'CLI信息',
+        description: 'Show hyperse cli system information',
         example: 'cli info',
       },
     },

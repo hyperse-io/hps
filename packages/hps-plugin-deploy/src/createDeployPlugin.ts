@@ -51,6 +51,7 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
             projectCwd: {
               description: 'plugins.deployPlugin.flags.projectCwd',
               type: String,
+              default: process.cwd(),
             },
             target: {
               alias: 't',
@@ -62,6 +63,7 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
                     .join(', '),
                 }),
               type: [String],
+              default: [],
             },
             prefix: {
               alias: 'p',
@@ -73,13 +75,12 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
               alias: 'm',
               description: 'plugins.deployPlugin.flags.match',
               type: [String],
-              default: [],
+              default: ['**/*.{png,jpg,jpeg,gif,svg}'],
             },
             ignore: {
               alias: 'i',
               description: 'plugins.deployPlugin.flags.ignore',
               type: [String],
-              default: [],
             },
             overrideExistFile: {
               description: 'plugins.deployPlugin.flags.overrideExistFile',
@@ -91,7 +92,7 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
             const deployService = new AssetDeployService({
               logger: ctx.logger,
               noColor: ctx.flags.noColor,
-              projectCwd: ctx.flags.projectCwd || process.cwd(),
+              projectCwd: ctx.flags.projectCwd,
               target: ctx.flags.target,
               prefix: ctx.flags.prefix,
               matchPatterns: ctx.flags.match,
