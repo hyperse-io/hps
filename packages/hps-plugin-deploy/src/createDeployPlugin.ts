@@ -63,7 +63,6 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
                     .join(', '),
                 }),
               type: [String],
-              default: [],
             },
             prefix: {
               alias: 'p',

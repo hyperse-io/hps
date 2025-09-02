@@ -68,9 +68,22 @@ export class AliyunAssetDeployStrategy implements AssetDeployStrategy {
     }
 
     if (missingConfigs.length > 0) {
-      throw new Error(
-        `Missing required Aliyun configuration: ${missingConfigs.join(', ')}`
-      );
+      const errorMessage = [
+        'Missing required Aliyun configuration. Please ensure the following environment variables are set:',
+        '',
+        'Required environment variables:',
+        ...missingConfigs.map((config) => `  • ${config}`),
+        '',
+        'You can set these variables in your .env file or directly in your environment.',
+        'Example .env file:',
+        '  REMOTE_CDN_BASE_URL=https://your-cdn.example.com',
+        '  ALIYUN_API_ENDPOINT=https://oss-cn-hangzhou.aliyuncs.com',
+        '  ALIYUN_ACCESS_KEY_SECRET=your_access_key_secret',
+        '  ALIYUN_ACCESS_KEY_ID=your_access_key_id',
+        '  ALIYUN_BUCKET_NAME=your_bucket_name',
+      ].join('\n');
+
+      throw new Error(errorMessage);
     }
   }
 

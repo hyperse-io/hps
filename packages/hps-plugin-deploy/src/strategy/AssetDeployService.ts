@@ -44,6 +44,10 @@ export class AssetDeployService {
    * 4. Executes deployment for each target strategy
    */
   async deploy() {
+    if (this.options.target.length === 0) {
+      throw new Error('No target strategies found');
+    }
+
     // Validate that no duplicate strategy names exist
     await this.checkDuplicatedStrategies();
 
