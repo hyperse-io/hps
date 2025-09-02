@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-deploy
 
+## 0.0.2-next.3
+
+### Patch Changes
+
+- [`00ee9d9`](https://github.com/hyperse-io/hps/commit/00ee9d99c3354bb7b8bf6c87dc901bbdf07c7183) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add relativePath option to deploy plugin and update related strategies
+
 ## 0.0.2-next.2
 
 ### Patch Changes
