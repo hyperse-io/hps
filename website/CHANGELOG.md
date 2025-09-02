@@ -1,4 +1,4 @@
-# @hyperse/hps-plugin-serve
+# @hyperse/hps-website
 
 ## 0.0.2-next.0
 
