@@ -11,7 +11,7 @@ export interface RemoteFileCheckOptions {
 /**
  * Default timeout for remote file checks (5 seconds)
  */
-const DEFAULT_TIMEOUT = 5000;
+const DEFAULT_TIMEOUT = 1000 * 60; // 1 minute
 
 /**
  * Checks if a file exists on a remote server by making a HEAD request
@@ -58,9 +58,13 @@ export const isRemoteFileExist = async (
     // Handle different types of errors
     if (error instanceof Error) {
       if (error.name === 'AbortError') {
-        throw new Error(`Request timeout after ${timeout}ms`);
+        throw new Error(
+          `isRemoteFileExist() request timeout after ${timeout}ms`
+        );
       }
-      throw new Error(`Failed to check remote file: ${error.message}`);
+      throw new Error(
+        `isRemoteFileExist() failed to check remote file: ${error.message}`
+      );
     }
 
     // For non-Error objects, return false (file doesn't exist)

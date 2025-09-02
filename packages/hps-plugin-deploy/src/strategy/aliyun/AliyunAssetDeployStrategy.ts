@@ -138,20 +138,23 @@ export class AliyunAssetDeployStrategy implements AssetDeployStrategy {
     const relativePathWithPrefix = join(options.prefix, relativePath);
 
     const spinner = yoctoSpinner({
-      text: `Uploading ${relativePathWithPrefix} to [${this.name}]`,
+      text: `[${this.name}] Uploading ${relativePathWithPrefix}`,
     }).start();
 
     try {
       const result = await uploadToAliyun(
         filePath,
         relativePathWithPrefix,
-        uploaderOptions
+        uploaderOptions,
+        options.logger
       );
 
       if (result) {
         spinner.success();
       } else {
-        spinner.error();
+        spinner.warning(
+          `[${this.name}] Skip uploading ${relativePathWithPrefix}`
+        );
       }
     } catch (error) {
       spinner.error();

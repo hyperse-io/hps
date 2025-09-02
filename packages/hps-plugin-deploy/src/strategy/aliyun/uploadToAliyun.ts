@@ -1,7 +1,7 @@
 import mimeTypes from 'mime-types';
 import { createHash, createHmac } from 'node:crypto';
 import { readFileSync } from 'node:fs';
-import fetch from 'node-fetch';
+import type { Logger } from '@hyperse/wizard';
 import { ensureSlash } from '../../utils/ensureSlash.js';
 import { isRemoteFileExist } from '../../utils/isRemoteFileExist.js';
 
@@ -52,7 +52,6 @@ const generateAuthHeaders = (
   const headers = {
     Authorization: `OSS ${accessKeyId}:${signature}`,
     'Content-Type': contentType,
-    'Content-Length': fileData.length.toString(),
     'Content-MD5': contentMd5,
     Date: date,
   };
@@ -64,22 +63,31 @@ const generateAuthHeaders = (
  * @param filePath The absolute path of the file to upload
  * @param objectKey The key of the object being uploaded.
  * @param aliyunConfig The aliyun connection configurations
+ * @param logger The logger instance
  * @returns If return false indicates `ignored`, otherwise upload success.
  */
 export const uploadToAliyun = async (
   filePath: string,
   objectKey: string,
-  aliyunConfig: AliyunUploaderOption
+  aliyunConfig: AliyunUploaderOption,
+  logger: Logger
 ): Promise<string | false> => {
   // Check if we have cdnBaseUrl or we want forcely override existed file?
   const needCheck =
     aliyunConfig.cdnBaseUrl && aliyunConfig.overrideExistFile !== true;
 
   if (needCheck) {
-    const existed = await isRemoteFileExist(
-      `${ensureSlash(aliyunConfig.cdnBaseUrl, false)}/${objectKey.replace(/^\//, '')}`
-    );
-    if (existed) {
+    try {
+      const existed = await isRemoteFileExist(
+        `${ensureSlash(aliyunConfig.cdnBaseUrl, false)}/${objectKey.replace(/^\//, '')}`
+      );
+      if (existed) {
+        return false;
+      }
+    } catch (err) {
+      logger.error(err instanceof Error ? err.message : 'Unknown error');
+      // ship a new line
+      console.log('');
       return false;
     }
   }
