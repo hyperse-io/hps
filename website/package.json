@@ -1,6 +1,6 @@
 {
   "name": "@hyperse/hps-website",
-  "version": "0.0.1",
+  "version": "0.0.2-next.0",
   "description": "Hyperse documentation website",
   "private": true,
   "homepage": "https://github.com/hyperse-io/hps#readme",

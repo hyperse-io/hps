@@ -1,7 +1,7 @@
 {
   "name": "@hyperse/hps-srv-rspack-plugin-import",
   "homepage": "https://github.com/hyperse-io/hps",
-  "version": "0.0.1",
+  "version": "0.0.2-next.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/hyperse-io/hps",
