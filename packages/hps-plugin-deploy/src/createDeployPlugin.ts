@@ -64,6 +64,11 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
                 }),
               type: [String],
             },
+            relativePath: {
+              description: 'plugins.deployPlugin.flags.relativePath',
+              type: String,
+              default: 'public',
+            },
             prefix: {
               alias: 'p',
               description: 'plugins.deployPlugin.flags.prefix',
@@ -96,6 +101,7 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
               prefix: ctx.flags.prefix,
               matchPatterns: ctx.flags.match,
               ignorePatterns: ctx.flags.ignore,
+              relativePath: ctx.flags.relativePath,
               overrideExistFile: ctx.flags.overrideExistFile,
               deployStrategies,
             });

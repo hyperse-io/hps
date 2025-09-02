@@ -1,3 +1,4 @@
+import { join } from 'node:path';
 import { prepareUploadFiles } from '../utils/prepareUploadFiles.js';
 import type {
   AssetDeployStrategy,
@@ -44,6 +45,7 @@ export class AssetDeployService {
    * 4. Executes deployment for each target strategy
    */
   async deploy() {
+    // Validate that at least one target strategy is available
     if (this.options.target.length === 0) {
       throw new Error('No target strategies found');
     }
@@ -56,7 +58,7 @@ export class AssetDeployService {
 
     // Prepare files for upload by filtering based on patterns
     const waitingUploadFiles = await prepareUploadFiles({
-      lookupCwd: this.options.projectCwd,
+      lookupCwd: join(this.options.projectCwd, this.options.relativePath),
       matchPatterns: this.options.matchPatterns,
       ignorePatterns: this.options.ignorePatterns,
     });
@@ -79,6 +81,9 @@ export class AssetDeployService {
         );
         continue; // Skip this target and continue with others
       }
+
+      // Initialize the deployment strategy
+      await targetStrategy.init();
 
       // Execute the deployment strategy with prepared files
       await targetStrategy.deploy(waitingUploadFiles, {

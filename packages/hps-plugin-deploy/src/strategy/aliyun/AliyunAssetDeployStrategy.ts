@@ -31,9 +31,15 @@ interface AliyunConfig {
 export class AliyunAssetDeployStrategy implements AssetDeployStrategy {
   readonly name = 'aliyun';
 
-  private readonly aliyunConfig: AliyunConfig;
+  private aliyunConfig: AliyunConfig;
 
-  constructor() {
+  /**
+   * Initialize the strategy
+   *
+   * This method is called when the strategy is initialized.
+   * It is used to initialize the strategy with the environment variables.
+   */
+  async init(): Promise<void> {
     this.aliyunConfig = {
       cdnBaseUrl: process.env.REMOTE_CDN_BASE_URL,
       uploadApi: process.env.ALIYUN_API_ENDPOINT,
@@ -127,11 +133,12 @@ export class AliyunAssetDeployStrategy implements AssetDeployStrategy {
     options: AssetDeployStrategyOptions,
     uploaderOptions: AliyunUploaderOption
   ): Promise<void> {
-    const relativePath = relative(options.projectCwd, filePath);
+    const lookupCwd = join(options.projectCwd, options.relativePath);
+    const relativePath = relative(lookupCwd, filePath);
     const relativePathWithPrefix = join(options.prefix, relativePath);
 
     const spinner = yoctoSpinner({
-      text: `Uploading ${relativePathWithPrefix} to ${this.name}`,
+      text: `Uploading ${relativePathWithPrefix} to [${this.name}]`,
     }).start();
 
     try {

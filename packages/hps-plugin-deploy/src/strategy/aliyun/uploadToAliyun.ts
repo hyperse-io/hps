@@ -1,6 +1,7 @@
 import mimeTypes from 'mime-types';
 import { createHash, createHmac } from 'node:crypto';
 import { readFileSync } from 'node:fs';
+import fetch from 'node-fetch';
 import { ensureSlash } from '../../utils/ensureSlash.js';
 import { isRemoteFileExist } from '../../utils/isRemoteFileExist.js';
 

@@ -44,6 +44,7 @@
   "dependencies": {
     "globby": "^14.1.0",
     "mime-types": "^3.0.1",
+    "node-fetch": "^3.3.2",
     "yocto-spinner": "^1.0.0"
   },
   "devDependencies": {

@@ -16,6 +16,7 @@ export const deployPluginMessages = defineLocaleMessages({
         prefix: 'The prefix of the deployed file',
         match: 'The match patterns to lookup the files',
         ignore: 'The ignore patterns to exclude the files',
+        relativePath: 'The relative path of the cwd',
         overrideExistFile: 'Whether to override the existing file',
       },
     },

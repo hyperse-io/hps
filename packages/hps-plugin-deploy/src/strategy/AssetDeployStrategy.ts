@@ -6,6 +6,8 @@ import type { Logger } from '@hyperse/wizard';
 export type AssetDeployStrategyOptions = {
   /** The project's current working directory */
   projectCwd: string;
+  /** The relative path of the cwd */
+  relativePath: string;
   /** Logger instance for output */
   logger: Logger;
   /** Prefix to add to file paths during deployment */
@@ -31,6 +33,13 @@ export interface AssetDeployStrategy {
    */
   readonly name: string;
 
+  /**
+   * Initialize the strategy
+   *
+   * This method is called when the strategy is initialized.
+   * It is used to initialize the strategy with the environment variables.
+   */
+  init(): Promise<void>;
   /**
    * Deploy assets to the target platform
    *
