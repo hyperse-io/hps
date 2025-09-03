@@ -1,5 +1,13 @@
 # @hyperse/hps-plugin-deploy
 
+## 0.0.2-next.4
+
+### Patch Changes
+
+- [`52c12ff`](https://github.com/hyperse-io/hps/commit/52c12ff6e7529a06c16f4d9b1231f24fe7368570) Thanks [@tianyingchun](https://github.com/tianyingchun)! - remove node-fetch dependency and enhance logging in Aliyun upload strategy
+
+- [`c6d645c`](https://github.com/hyperse-io/hps/commit/c6d645c2eb810204e0894b7954e56b7eb6b0ea79) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update @hyperse/wizard and related plugins to version
+
 ## 0.0.2-next.3
 
 ### Patch Changes

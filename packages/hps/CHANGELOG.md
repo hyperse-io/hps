@@ -1,5 +1,16 @@
 # @hyperse/hps
 
+## 0.1.0-next.8
+
+### Patch Changes
+
+- [`c6d645c`](https://github.com/hyperse-io/hps/commit/c6d645c2eb810204e0894b7954e56b7eb6b0ea79) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update @hyperse/wizard and related plugins to version
+
+- Updated dependencies [[`52c12ff`](https://github.com/hyperse-io/hps/commit/52c12ff6e7529a06c16f4d9b1231f24fe7368570), [`c6d645c`](https://github.com/hyperse-io/hps/commit/c6d645c2eb810204e0894b7954e56b7eb6b0ea79)]:
+  - @hyperse/hps-plugin-deploy@0.0.2-next.4
+  - @hyperse/hps-plugin-update@0.0.2-next.4
+  - @hyperse/hps-plugin-info@0.1.0-next.6
+
 ## 0.1.0-next.7
 
 ### Patch Changes
