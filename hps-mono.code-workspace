@@ -41,6 +41,10 @@
       "path": "packages/hps-plugin-deploy",
     },
     {
+      "name": "hps-srv-common",
+      "path": "packages/hps-srv-common",
+    },
+    {
       "name": "hps-srv-mock",
       "path": "packages/hps-srv-mock",
     },
@@ -118,6 +122,7 @@
       "./packages/hps-plugin-deploy",
       "./packages/hps-plugin-serve",
       "./packages/hps-plugin-build",
+      "./packages/hps-srv-common",
       "./packages/hps-srv-mock",
       "./packages/hps-srv-rolldown",
       "./packages/hps-srv-rspack",

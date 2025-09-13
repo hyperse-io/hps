@@ -41,8 +41,31 @@
     "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
+  "dependencies": {
+    "@armit/package": "^0.3.0",
+    "@hyperse/config-loader": "^1.0.5",
+    "@hyperse/hps-srv-common": "workspace:*",
+    "@hyperse/hps-srv-mock": "workspace:*",
+    "@hyperse/hps-srv-rspack-plugin-import": "workspace:*",
+    "@hyperse/html-webpack-plugin-loader": "^1.0.7",
+    "@hyperse/inspector": "^1.1.13",
+    "@hyperse/inspector-babel-plugin": "^1.1.7",
+    "@hyperse/inspector-common": "^1.1.4",
+    "@hyperse/inspector-middleware": "^1.1.7",
+    "@hyperse/inspector-swc-plugin": "^1.1.9",
+    "@rsdoctor/rspack-plugin": "^1.2.3",
+    "@rspack/binding": "~1.5.3",
+    "@rspack/core": "~1.5.3",
+    "@rspack/dev-server": "~1.1.4",
+    "@rspack/plugin-react-refresh": "^1.5.1",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "html-webpack-plugin": "^5.6.3",
+    "image-minimizer-webpack-plugin": "^4.1.3",
+    "lodash": "^4.17.21"
+  },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@types/lodash": "^4.17.20",
     "@types/node": "^24.3.0",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
@@ -51,6 +74,26 @@
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "imagemin-gifsicle": ">=7.0.0",
+    "imagemin-jpegtran": ">=7.0.0",
+    "imagemin-pngquant": ">=9.0.2",
+    "imagemin-svgo": ">=10.0.1"
+  },
+  "peerDependenciesMeta": {
+    "imagemin-gifsicle": {
+      "optional": true
+    },
+    "imagemin-jpegtran": {
+      "optional": true
+    },
+    "imagemin-pngquant": {
+      "optional": true
+    },
+    "imagemin-svgo": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=20.0.0"
