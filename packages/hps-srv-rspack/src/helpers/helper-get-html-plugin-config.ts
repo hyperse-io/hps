@@ -1,6 +1,11 @@
 import { getPackageDir } from '@hyperse/hps-srv-common';
 import { viewportScripts } from '../constants.js';
-import { type MultiHtmlCDNEntryItem } from '../types/types-multi-html.js';
+import {
+  type HtmlPluginConfigConfigData,
+  type HtmlPluginConfigTokenType,
+  type Json,
+  type MultiHtmlCDNEntryItem,
+} from '../types/types-multi-html.js';
 
 export const defaultHtmlPluginConfig: Required<MultiHtmlCDNEntryItem> = {
   // The page title
@@ -26,33 +31,15 @@ export const defaultHtmlPluginConfig: Required<MultiHtmlCDNEntryItem> = {
   // `allowPx2rem` default is true
   viewport: viewportScripts,
   // avoid use cdn
-  excludeCdnEnvs: [],
+  //TODO: remove this
+  // excludeCdnEnvs: [],
   // `minify` is true, `dev` always don't minify.
   htmlMinify: true,
   // Default use It must be an absolute path.
-  templatePath: getPackageDir('templates/index.html'),
+  templatePath: getPackageDir(import.meta.url, 'templates/index.html'),
+  // avoid use cdn
+  cdnDisabled: false,
 };
-
-type Json =
-  | undefined
-  | null
-  | boolean
-  | number
-  | string
-  | Json[]
-  | { [prop: string]: Json };
-
-export type HtmlPluginConfigConfigData = {
-  mode: 'development' | 'production';
-  /**
-   * The random `cdn` for config via `env` template
-   */
-  envCdn: string;
-};
-
-export type HtmlPluginConfigTokenType<T extends Json> =
-  | T
-  | ((configData: HtmlPluginConfigConfigData) => T);
 
 /**
  * 获取html plugin 模版相关定义字段.

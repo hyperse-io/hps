@@ -5,7 +5,7 @@ import { type HpsEvolveRspackOptions } from '../types/types-rspack.js';
 
 export const createResolve = (
   projectCwd: string,
-  webpackOptions?: HpsEvolveRspackOptions
+  rspackOptions?: HpsEvolveRspackOptions
 ) => {
   const resolve: RspackOptions['resolve'] = {
     mainFields: ['browser', 'module', 'main'],
@@ -32,5 +32,5 @@ export const createResolve = (
       configFile: join(projectCwd, 'tsconfig.json'),
     },
   };
-  return mergeOptions(resolve, webpackOptions?.resolve || {});
+  return mergeOptions(resolve, rspackOptions?.resolve || {});
 };

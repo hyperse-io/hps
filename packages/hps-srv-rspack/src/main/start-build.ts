@@ -15,15 +15,13 @@ import { prepareBuild } from './prepare-build.js';
 
 const runRspackTask = async (
   entryMapGroupList: EvolveEntryMap[],
-  newEvolveOptions: HpsEvolveOptions,
-  configLoaderOptions?: ConfigLoaderOptions
+  newEvolveOptions: HpsEvolveOptions
 ) => {
   const buildResults: EvolveBuildResult[] = [];
   for (const entryMapGroupItem of entryMapGroupList) {
     const buildResult = await prepareBuild(
       entryMapGroupItem,
-      newEvolveOptions,
-      configLoaderOptions
+      newEvolveOptions
     ).then((result) => {
       return result;
     });
@@ -79,8 +77,7 @@ export const startBuild = async (
 
   const buildResults: EvolveBuildResult[] = await runRspackTask(
     entryMapGroupList,
-    newEvolveOptions,
-    configLoaderOptions
+    newEvolveOptions
   );
 
   return buildResults;

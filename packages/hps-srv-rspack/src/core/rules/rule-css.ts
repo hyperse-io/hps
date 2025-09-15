@@ -1,8 +1,4 @@
 import { type AcceptedPlugin } from 'postcss';
-import {
-  forgePostcssPluginPixel,
-  type PostcssPluginPixelOptions,
-} from '@flatjs/forge-postcss-plugin-pixel';
 import { requireResolve } from '@hyperse/hps-srv-common';
 import { CssExtractRspackPlugin, type RuleSetRule } from '@rspack/core';
 import { allowPx2remForModule } from '../../helpers/helper-allow-px2rem-for-module.js';
@@ -19,7 +15,8 @@ import { type HpsEvolveOptions } from '../../types/types-options.js';
  * @param pixelOptions The pixel options of `postcss` plugin
  */
 const getPostcssOptions = (
-  pixelOptions: false | PostcssPluginPixelOptions = {},
+  // pixelOptions: false | PostcssPluginPixelOptions = {},
+  pixelOptions: false = false,
   postcssOptions: RuleSetLoaderOptions['postcssOptions'] = {}
 ) => {
   //FIXME: cssnano options is not supported yet
@@ -27,8 +24,9 @@ const getPostcssOptions = (
     AcceptedPlugin | string | [string, Record<string, unknown>]
   > = postcssOptions.plugins || [];
 
+  //TODO：是否废弃
   if (pixelOptions !== false) {
-    postCssPlugins.push(forgePostcssPluginPixel(pixelOptions));
+    // postCssPlugins.push(forgePostcssPluginPixel(pixelOptions));
   }
 
   return {

@@ -6,7 +6,6 @@ import { normalizeEvolveEntryName } from '../../../helpers/helper-normalize-entr
 import { injectFederationScripts } from '../../../helpers/helper-script-injects.js';
 import { type EntryMapItem } from '../../../types/types-entry-map.js';
 import { type ExposesObject } from '../../../types/types-federation.js';
-import { type EvolveMultiCDNConfig } from '../../../types/types-multi-html.js';
 import { type HpsEvolveOptions } from '../../../types/types-options.js';
 import { HtmlInjectScriptPlugin } from '../html-inject-scripts-plugin/html-inject-script-plugin.js';
 import { ExternalTemplateRemotesPlugin } from './external-template-remotes-plugin.js';
@@ -29,8 +28,6 @@ export const createModuleFederationPlugins = (
   evolveOptions: HpsEvolveOptions
 ) => {
   const projectVirtualPath = evolveOptions.projectVirtualPath;
-  const multiCdnConfig: EvolveMultiCDNConfig = evolveOptions.multiHtmlCdn;
-  const multiHtmlCdnResolver = evolveOptions.multiHtmlCdnEnvResolver;
   const plugins: Plugins = [];
 
   for (const entryMapItem of entryMapItemList) {
@@ -115,7 +112,7 @@ export const createModuleFederationPlugins = (
       if (!serveMode) {
         plugins.unshift(
           new HtmlInjectScriptPlugin([
-            injectFederationScripts(multiCdnConfig, multiHtmlCdnResolver),
+            injectFederationScripts(evolveOptions.htmlCdn),
           ])
         );
       }

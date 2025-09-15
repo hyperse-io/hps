@@ -253,10 +253,7 @@ export class CleanPlugin {
            * https://github.com/webpack/webpack/issues/1904
            * https://github.com/johnagan/clean-webpack-plugin/issues/11
            */
-          logger.debug(
-            `clean-webpack-plugin: ${message} ${filename}`,
-            moduleName
-          );
+          logger.debug(`clean-webpack-plugin: ${message} ${filename}`);
         });
       }
     } catch (error) {

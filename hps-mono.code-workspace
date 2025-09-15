@@ -61,6 +61,10 @@
       "path": "crates/hps-srv-rspack-plugin-import",
     },
     {
+      "name": "hps-srv-testing",
+      "path": "packages/hps-srv-testing",
+    },
+    {
       "name": "root",
       "path": ".",
     },
@@ -127,6 +131,7 @@
       "./packages/hps-srv-rolldown",
       "./packages/hps-srv-rspack",
       "./crates/hps-srv-rspack-plugin-import",
+      "./packages/hps-srv-testing",
     ],
     "typescript.tsdk": "root/node_modules/typescript/lib"
   },

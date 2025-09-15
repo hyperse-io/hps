@@ -3,17 +3,10 @@ import { basename } from 'node:path';
 import { ensureSlash } from '@hyperse/hps-srv-common';
 import type { Compiler } from '@rspack/core';
 import rspack from '@rspack/core';
-import { getRuntimeCDNBase } from '../../../helpers/get-runtime-cdn-base.js';
-import {
-  findEnvCdn,
-  httpUrlJoin,
-} from '../../../helpers/helper-script-injects.js';
+import { getRuntimeCDNBase } from '../../../helpers/helper-get-runtime-cdn-base.js';
+import { httpUrlJoin } from '../../../helpers/helper-script-injects.js';
 import type { EntryMapItem } from '../../../types/types-entry-map.js';
-import {
-  type EvolveMultiCDNConfig,
-  type EvolveMultiCDNEnvResolver,
-  type EvolveMultiCdnEnvType,
-} from '../../../types/types-multi-html.js';
+import { type EvolveHtmlCdn } from '../../../types/types-multi-html.js';
 import type { HpsEvolveOptions } from '../../../types/types-options.js';
 
 export class FlatEvolveMultiCdnPlugin {
@@ -22,25 +15,19 @@ export class FlatEvolveMultiCdnPlugin {
   // the bundle public path RuntimeGlobals.publicPath: '__webpack_require__.p';
   private requireFn = rspack.RuntimeGlobals.publicPath;
 
-  private config: EvolveMultiCDNConfig;
-  private cdnResolver: EvolveMultiCDNEnvResolver;
+  private htmlCdn: EvolveHtmlCdn;
   private entryMapItemList: EntryMapItem[];
 
   constructor(
     evolveOptions: HpsEvolveOptions,
     entryMapItemList: EntryMapItem[]
   ) {
-    this.config = evolveOptions.multiHtmlCdn;
+    this.htmlCdn = evolveOptions.htmlCdn;
     this.entryMapItemList = entryMapItemList;
-    this.cdnResolver =
-      evolveOptions.multiHtmlCdnEnvResolver ||
-      function cdnResolver() {
-        return undefined;
-      };
 
     // Make sure we have `prod` configuration for each cdn node at least.
-    if (!this.config?.prod) {
-      throw new Error('We must setup `prod` for each CDN config node!');
+    if (!this.htmlCdn) {
+      throw new Error('We must setup `htmlCdn`!');
     }
   }
 
@@ -66,10 +53,9 @@ export class FlatEvolveMultiCdnPlugin {
           buf.push(
             '// Dynamic assets path override(`@flatjs/evolve`) plugin-multi-html-cdn`)'
           );
-          buf.push(
-            getRuntimeCDNBase(this.config, this.cdnResolver, this.requireFn)
-          );
-          module.source['source'] = Buffer.from(buf.join('\n'), 'utf-8');
+          buf.push(getRuntimeCDNBase(this.htmlCdn));
+          if (module.source?.['source'])
+            module.source['source'] = Buffer.from(buf.join('\n'), 'utf-8');
         }
       });
     });
@@ -89,7 +75,7 @@ export class FlatEvolveMultiCdnPlugin {
             : chunks;
           const { userOptions } = data.plugin as HtmlWebpackPlugin & {
             userOptions: {
-              multiCdn: { env: EvolveMultiCdnEnvType; disabled: boolean };
+              multiCdn: { disabled: boolean };
             };
           };
 
@@ -112,8 +98,10 @@ export class FlatEvolveMultiCdnPlugin {
             if (multiCdn.disabled) {
               return basename(scriptItem);
             }
-            const randomCdn = findEnvCdn(this.config, multiCdn.env);
-            return httpUrlJoin(randomCdn, scriptItem.replace(publicPath, ''));
+            return httpUrlJoin(
+              this.htmlCdn,
+              scriptItem.replace(publicPath, '')
+            );
           });
 
           const styles = assertCssList.map((styleItem) => {
@@ -121,8 +109,7 @@ export class FlatEvolveMultiCdnPlugin {
             if (multiCdn.disabled) {
               return basename(styleItem);
             }
-            const randomCdn = findEnvCdn(this.config, multiCdn.env);
-            return httpUrlJoin(randomCdn, styleItem.replace(publicPath, ''));
+            return httpUrlJoin(this.htmlCdn, styleItem.replace(publicPath, ''));
           });
           data.assets.js = scripts;
           data.assets.css = styles;

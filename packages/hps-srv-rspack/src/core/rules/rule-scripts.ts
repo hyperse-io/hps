@@ -24,13 +24,13 @@ export const ruleScripts = (
   >['plugins'] = [];
 
   // Attach swc plugin for modular import
-  plugins.push([
-    requireResolve(import.meta.url, '@hyperse/hps-srv-rspack-plugin-import'),
-    {
-      //TODO
-      modularImports: {},
-    },
-  ]);
+  // plugins.push([
+  //   requireResolve(import.meta.url, '@hyperse/hps-srv-rspack-plugin-import'),
+  //   {
+  //     //TODO
+  //     modularImports: {},
+  //   },
+  // ]);
 
   // Attach inspector swc plugin
   if (serveMode && inspector) {

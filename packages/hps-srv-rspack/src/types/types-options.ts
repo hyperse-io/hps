@@ -3,11 +3,7 @@ import type { TrustedEditor } from '@hyperse/inspector-common';
 import { type HpsEvolveDevServerOptions } from './types-dev-server.js';
 import { type EvolveEntryMap } from './types-entry-map.js';
 import { type RuleSetLoaderOptions } from './types-loader-options.js';
-import {
-  type EvolveMultiCDNConfig,
-  type EvolveMultiCDNEnvResolver,
-} from './types-multi-html.js';
-import { type EvolvePluginOptions } from './types-plugins.js';
+import type { EvolveHtmlCdn } from './types-multi-html.js';
 import { type HpsEvolveRspackOptions } from './types-rspack.js';
 
 /**
@@ -67,29 +63,7 @@ export interface HpsEvolveOptions {
    * --
    * Note: We do not support `//` as prefix please use `https://` or `http://`
    */
-  multiHtmlCdn: EvolveMultiCDNConfig;
-  /**
-   * Allow us customized to resolve current runtime environment.
-   * ignore resolver if return undefined, otherwise use it to match environment.
-   * NOTE:
-   * 1. Don't using arrow function, because we will inject `envResolver` string to html.
-   * 2. Don't use multiHtmlCdnEnvResolver(url) {} directly
-   * 3. Always use `function` keyword to define `envResolver` function.
-   * @example
-   * ```ts
-   * //
-   *  multiHtmlCdnEnvResolver: function envResolver(url) {
-   *    const env = /.*\.(qa|t)\.*\/.exec('//fex.qa.tcshuke.com/')[1];
-   *    switch(env) {
-   *      case 't':
-   *       return 'rc'
-   *      case 'qa':
-   *       return 'inte'
-   *    }
-   *   }
-   * ```
-   */
-  multiHtmlCdnEnvResolver?: EvolveMultiCDNEnvResolver;
+  htmlCdn: EvolveHtmlCdn;
   /**
    * The regexp patterns to filter dependencies(will be verified) from package.json
    * @default {}

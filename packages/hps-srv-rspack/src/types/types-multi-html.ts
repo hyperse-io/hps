@@ -1,18 +1,6 @@
 import type { TemplateOptions } from '@hyperse/html-webpack-plugin-loader';
 
-export declare type EvolveMultiCdnEnvType =
-  | 'me'
-  | 'dev'
-  | 'uat'
-  | 'inte'
-  | 'inte2'
-  | 'inte3'
-  | 'inte4'
-  | 'rc'
-  | 'prod'
-  | 'ntv';
-
-type Json =
+export type Json =
   | undefined
   | null
   | boolean
@@ -29,20 +17,11 @@ export type HtmlPluginConfigConfigData = {
   envCdn: string;
 };
 
-export type EvolveMultiCDNConfig = {
-  [key in EvolveMultiCdnEnvType]?: string[];
-};
+export type EvolveHtmlCdn = string;
 
 export type HtmlPluginConfigTokenType<T extends Json> =
   | T
   | ((configData: HtmlPluginConfigConfigData) => T);
-
-/**
- * Allow us customized to resolve current runtime environment.
- */
-export type EvolveMultiCDNEnvResolver = (
-  url: string
-) => EvolveMultiCdnEnvType | undefined;
 
 /**
  * The html plugin configuration for each entry item
@@ -123,9 +102,8 @@ export type MultiHtmlCDNEntryItem = {
   >;
 
   /**
-   * Give `env` list to exclude from `multi-cdn` plugin.
-   * Normally for `me`, `dev`,`uat`, `ntv` env we should use relative assets path instead cdn.
-   * @default ['dev', 'ntv']
+   * Indicates if we need to disable `cdn` plugin.
+   * @default false
    */
-  excludeCdnEnvs?: EvolveMultiCdnEnvType[];
+  cdnDisabled?: boolean;
 };

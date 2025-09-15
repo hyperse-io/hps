@@ -25,6 +25,7 @@
     "bin/",
     "dist/",
     "index.js",
+    "templates",
     "README.md",
     "CHANGELOG.md",
     "package.json"
@@ -59,12 +60,21 @@
     "@rspack/dev-server": "~1.1.4",
     "@rspack/plugin-react-refresh": "^1.5.1",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.3",
     "image-minimizer-webpack-plugin": "^4.1.3",
-    "lodash": "^4.17.21"
+    "less": "^4.3.0",
+    "less-loader": "^12.3.0",
+    "lodash": "^4.17.21",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.1.1",
+    "react-refresh": "^0.17.0",
+    "svgo": "^3.3.2"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@hyperse/hps-srv-testing": "workspace:*",
+    "@types/case-sensitive-paths-webpack-plugin": "^2.1.9",
     "@types/lodash": "^4.17.20",
     "@types/node": "^24.3.0",
     "@vitest/coverage-istanbul": "^3.2.4",

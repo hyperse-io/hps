@@ -14,7 +14,6 @@ export const shouldEnableReactFastRefresh = (
   // Inject `react-refresh` if we are using preset `react`
   return (
     serveMode &&
-    evolveOptions.loaderOptions.babelOptions?.usePreset === 'react' &&
     !hasModuleFederation &&
     !isEntryItemLibrary &&
     // No specificed `liveReload` config

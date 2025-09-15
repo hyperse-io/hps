@@ -1,22 +1,5 @@
 import { type AcceptedPlugin } from 'postcss';
-import { type TransformOptions } from '@babel/core';
-import { type PostcssPluginPixelOptions } from '@flatjs/forge-postcss-plugin-pixel';
 import type { LoaderContext } from '@rspack/core';
-import { type ModularImportOption } from './types-modular-import.js';
-
-export type BabelInputOptions = Pick<TransformOptions, 'presets' | 'plugins'>;
-
-/**
- * Builtin babel options, provider default `builin` presets.
- * can be override by customized `presets` & `plugins`
- */
-export type BuiltinBabelOptions = BabelInputOptions & {
-  /**
-   * extra babel `plugins` or `presets`
-   * @default `react`
-   */
-  usePreset?: 'react' | 'vue';
-};
 
 /**
  * The configurations for `css-loader` modules
@@ -100,7 +83,8 @@ export interface RuleSetLoaderOptions {
    * Modular import plugin for babel, compatible with antd, antd-mobile, lodash, material-ui, and so on.
    * @default []
    */
-  modularImports?: ModularImportOption[];
+  //TODO 重构
+  modularImports?: any[];
 
   /**
    * The configration options of `postcss-loader`
@@ -127,13 +111,10 @@ export interface RuleSetLoaderOptions {
   };
 
   /**
-   * The babel options for `babel-loader`
-   */
-  babelOptions?: BuiltinBabelOptions;
-
-  /**
    * The config options fro `@flatjs/forge-postcss-plugin-plugin`
    * If provider it will use default options of `forgePostcssPluginPixel`
    */
-  pixelOptions?: false | Partial<PostcssPluginPixelOptions>;
+  //TODO
+  // pixelOptions?: false | Partial<PostcssPluginPixelOptions>;
+  pixelOptions?: false;
 }

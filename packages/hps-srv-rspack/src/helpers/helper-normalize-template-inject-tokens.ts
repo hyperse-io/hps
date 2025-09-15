@@ -1,10 +1,8 @@
 import _ from 'lodash';
 import type { TemplateOptions } from '@hyperse/html-webpack-plugin-loader';
 import { type EvolveEntryItemOption } from '../types/types-entry-map.js';
-import {
-  getHtmlPluginConfig,
-  type HtmlPluginConfigConfigData,
-} from './helper-get-html-plugin-config.js';
+import type { HtmlPluginConfigConfigData } from '../types/types-multi-html.js';
+import { getHtmlPluginConfig } from './helper-get-html-plugin-config.js';
 
 /**
  * Normalizes the template inject tokens based on the provided configuration data and entry options.

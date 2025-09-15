@@ -2,7 +2,6 @@ import type {
   Configuration,
   LazyCompilationOptions,
   ModuleOptions,
-  Plugins,
   RuleSetRule,
   SwcJsMinimizerRspackPluginOptions,
 } from '@rspack/core';

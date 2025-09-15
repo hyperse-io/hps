@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="20" height="20" stroke-width="16.00" viewBox="-3.00 -3.00 106.00 106.00">
+  <path class="i-spinner-track" fill-opacity="0" stroke="rgba(92, 112, 128, .2)" d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90"></path>
+  <path class="i-spinner-head" fill-opacity="0" stroke="#FFFFFF" stroke-linecap="round" d="M 50,50 m 0,-45 a 45,45 0 1 1 0,90 a 45,45 0 1 1 0,-90" pathLength="280" stroke-dasharray="280 280" stroke-dashoffset="210"></path>
+</svg>

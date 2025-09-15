@@ -28,7 +28,9 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
   rspack: {
     // The default is es5
     target: ['web', 'es5'],
-    plugins: [],
+    plugins: {
+      external: [],
+    },
     ruleSets: [],
     publicPath: 'auto',
     resolve: {},
@@ -36,33 +38,18 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
     outputDir: 'public',
     enableBundleHashName: true,
   },
-  pluginOptions: {},
   loaderOptions: {
     assetDataUrlMaxSize: 4 * 1024,
-    babelOptions: {
-      // 默认值的必须使用object类型, 如果使用函数, 会导致merge默认值失败.
-      usePreset: 'react',
-      plugins: [],
-      presets: [],
-    },
     lessOptions: {},
     postcssOptions: {
       cssnanoOptions: {},
     },
-    pixelOptions: {
-      rootValue: { px: 100, rpx: 1 },
-      outputUnit: 'rem',
-    },
+    pixelOptions: false,
     // Always defined in evolve.config.js
     modularImports: [],
   },
+  htmlCdn: '',
   entryMap: {},
-  // The configurations for plugin `@flatjs/evolve`, `multi-cdn-plugin`
-  multiHtmlCdn: {},
-  // Do not use arrow function here.
-  multiHtmlCdnEnvResolver: function cdnResolver() {
-    return undefined;
-  },
   needVerifyPackages: {},
   packageInstallChecker: {
     enabled: false,

@@ -24,19 +24,16 @@ export const prepareBuild = async (
   }
 
   // Fetch all configuration cdn
-  const cdnPath = evolveOptions.multiHtmlCdn?.prod || [];
+  const htmlCdn = evolveOptions.htmlCdn;
 
-  if (!cdnPath.length) {
+  if (!htmlCdn) {
     throw new Error(
       `No CDN config for env:"prod", groupName: ${firstGroupEntryItem.groupName}`
     );
   }
 
   // Random choose one to publicPath
-  const cdnPublicPath = ensureSlash(
-    cdnPath[Math.floor(Math.random() * cdnPath.length)],
-    true
-  );
+  const cdnPublicPath = ensureSlash(htmlCdn, true);
 
   try {
     const useRelativeAssetPath =

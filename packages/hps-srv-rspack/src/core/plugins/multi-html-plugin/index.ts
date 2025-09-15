@@ -25,18 +25,8 @@ export const createHtmlPlugins = (
     return plugins;
   }
 
-  // Attach `html-webpack-plugin` first
-  const allEnv = Object.keys(
-    evolveOptions.multiHtmlCdn
-  ) as Array<EvolveMultiCdnEnvType>;
-
   plugins.push(
-    ...createMultiHtmlRspackPlugins(
-      serveMode,
-      evolveOptions,
-      entryMapItemList,
-      allEnv
-    )
+    ...createMultiHtmlRspackPlugins(serveMode, evolveOptions, entryMapItemList)
   );
 
   //attach `@flatjs/evolve-plugin-multi-html-cdn` plugin

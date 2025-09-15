@@ -2,8 +2,8 @@ import { join } from 'node:path';
 import { getDirname } from '@armit/file-utility';
 import { searchPackageDir } from '@armit/package';
 
-export const getPackageDir = (...paths: string[]) => {
-  const dir = getDirname(import.meta.url);
+export const getPackageDir = (url: string, ...paths: string[]) => {
+  const dir = getDirname(url);
   const packageDir = searchPackageDir({
     cwd: dir,
   });
