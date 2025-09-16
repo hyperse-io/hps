@@ -11,6 +11,6 @@ declare module '*.webp' {
   export default content;
 }
 
-declare module 'flatjs_evolve_home/Widget';
-declare module 'flatjs_evolve_federation_home/Widget';
+declare module 'hps_evolve_home/Widget';
+declare module 'hps_evolve_federation_home/Widget';
 

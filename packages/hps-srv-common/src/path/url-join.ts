@@ -5,10 +5,10 @@ import { modifyQueryString } from './modify-query-string.js';
  * Url path join generator
  * @example
  * ```ts
- * // input https://flatjs.com, ['path'], {name:'tian'} ==>https://flatjs.com/path?name=tian
+ * // input https://hps.com, ['path'], {name:'tian'} ==>https://hps.com/path?name=tian
  * // input /webview/page, ['path'], {name:'tian'} ==>/webview/page/path?name=tian
  * ```
- * @param baseUrl the http url without query string https://flatjs.com or /webview/test/
+ * @param baseUrl the http url without query string https://hps.com or /webview/test/
  * @param paths array<string> the path fragment
  * @param query query string object
  * @returns combinated url without tail slash.

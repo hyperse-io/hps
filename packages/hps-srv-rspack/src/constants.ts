@@ -1,7 +1,7 @@
 import process from 'node:process';
 import { type EvolveEntryItemOption } from './types/types-entry-map.js';
 
-export const moduleName = `@hps/hps-srv-rspack`;
+export const moduleName = `@hyperse/hps-srv-rspack`;
 
 /**
  * the configuration file of `flat-evolve`

@@ -6,8 +6,8 @@ resolver = "2"
 authors            = ["Yingchun Tian"]
 edition            = "2021"
 license            = "MIT"
-homepage           = "https://gitlab.itcjf.com/flatjs-next/took-kits"
-repository         = "https://gitlab.itcjf.com/flatjs-next/took-kits"
+homepage           = "https://github.com/hyperse-io/hps"
+repository         = "https://github.com/hyperse-io/hps"
 rust-version       = "1.70"
 
 [workspace.dependencies]

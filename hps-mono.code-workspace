@@ -41,6 +41,10 @@
       "path": "packages/hps-plugin-deploy",
     },
     {
+      "name": "hps-srv-testing",
+      "path": "packages/hps-srv-testing",
+    },
+    {
       "name": "hps-srv-common",
       "path": "packages/hps-srv-common",
     },
@@ -57,12 +61,12 @@
       "path": "packages/hps-srv-rspack",
     },
     {
-      "name": "hps-srv-rspack-plugin-import",
-      "path": "crates/hps-srv-rspack-plugin-import",
+      "name": "hps-srv-postcss-plugin-pixel",
+      "path": "packages/hps-srv-postcss-plugin-pixel",
     },
     {
-      "name": "hps-srv-testing",
-      "path": "packages/hps-srv-testing",
+      "name": "hps-srv-rspack-plugin-import",
+      "path": "crates/hps-srv-rspack-plugin-import",
     },
     {
       "name": "root",
@@ -120,6 +124,7 @@
       "./website",
       "./examples/example-single",
       "./examples/example-modular",
+      "./packages/hps-srv-testing",
       "./packages/hps-plugin-info",
       "./packages/hps-plugin-pack",
       "./packages/hps-plugin-update",
@@ -130,8 +135,8 @@
       "./packages/hps-srv-mock",
       "./packages/hps-srv-rolldown",
       "./packages/hps-srv-rspack",
+      "./packages/hps-srv-postcss-plugin-pixel",
       "./crates/hps-srv-rspack-plugin-import",
-      "./packages/hps-srv-testing",
     ],
     "typescript.tsdk": "root/node_modules/typescript/lib"
   },

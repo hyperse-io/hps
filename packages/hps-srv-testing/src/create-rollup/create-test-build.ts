@@ -13,7 +13,7 @@ import {
 } from './create-test-output.js';
 
 /**
- * Normally it will used to do some testings for `@flatjs/forge-plugin-*`
+ * Normally it will used to do some testings for hps
  * @param options
  * @returns
  */

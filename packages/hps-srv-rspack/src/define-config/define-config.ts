@@ -17,7 +17,7 @@ export interface EvolveConfigBase extends ConfigEnvBase {
    */
   command: 'build' | 'serve' | 'static';
   /**
-   * Expose `env`.`resolve` to allow dynamic resolve `esm` node modules from `flatjs-evolve.config.ts`
+   * Expose `env`.`resolve` to allow dynamic resolve `esm` node modules from `hps-evolve.config.ts`
    * @example
    * ```ts
    * export default defineConfig((env) => {

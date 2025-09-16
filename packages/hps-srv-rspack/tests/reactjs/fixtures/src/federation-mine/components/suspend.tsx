@@ -4,10 +4,10 @@ import Button from './button';
 export const SuspendedComp = () => {
   // remoteTypes.d.ts
   const RemoteApp = lazy(() =>
-    import('flatjs_evolve_federation_home/Widget').catch((err) => {
+    import('hps_evolve_federation_home/Widget').catch((err) => {
       console.log(err);
       return import(
-        /* webpackChunkName: "flatjs/evolve/federation-mine/chunks/error" */
+        /* webpackChunkName: "hps/evolve/federation-mine/chunks/error" */
         './error'
       );
     })
@@ -27,7 +27,7 @@ export const SuspendedComp1 = () => {
   const RemoteApp1 = lazy(
     () =>
       import(
-        /* webpackChunkName: "flatjs/evolve/federation-mine/chunks/error" */
+        /* webpackChunkName: "hps/evolve/federation-mine/chunks/error" */
         './error'
       )
   );

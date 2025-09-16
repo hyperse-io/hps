@@ -66,8 +66,8 @@ export interface ExposesConfig {
 
   /**
    * Custom chunk name for the exposed module.
-   * Do not include `normalizedEntryName` e.g.(`flatjs/evolve/home`)
-   * @example `exposed-micro-module-home-widget` => `flatjs/evolve/home/exposed-micro-module-home-widget`
+   * Do not include `normalizedEntryName` e.g.(`hps/evolve/home`)
+   * @example `exposed-micro-module-home-widget` => `hps/evolve/home/exposed-micro-module-home-widget`
    */
   name: string;
 }

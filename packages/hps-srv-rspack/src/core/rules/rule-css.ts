@@ -1,5 +1,7 @@
 import { type AcceptedPlugin } from 'postcss';
 import { requireResolve } from '@hyperse/hps-srv-common';
+import type { PostcssPluginPixelOptions } from '@hyperse/hps-srv-postcss-plugin-pixel';
+import { hpsSrvPostcssPluginPixel } from '@hyperse/hps-srv-postcss-plugin-pixel';
 import { CssExtractRspackPlugin, type RuleSetRule } from '@rspack/core';
 import { allowPx2remForModule } from '../../helpers/helper-allow-px2rem-for-module.js';
 import { type EntryMapItem } from '../../types/types-entry-map.js';
@@ -15,8 +17,7 @@ import { type HpsEvolveOptions } from '../../types/types-options.js';
  * @param pixelOptions The pixel options of `postcss` plugin
  */
 const getPostcssOptions = (
-  // pixelOptions: false | PostcssPluginPixelOptions = {},
-  pixelOptions: false = false,
+  pixelOptions: false | PostcssPluginPixelOptions = {},
   postcssOptions: RuleSetLoaderOptions['postcssOptions'] = {}
 ) => {
   //FIXME: cssnano options is not supported yet
@@ -24,9 +25,8 @@ const getPostcssOptions = (
     AcceptedPlugin | string | [string, Record<string, unknown>]
   > = postcssOptions.plugins || [];
 
-  //TODO：是否废弃
   if (pixelOptions !== false) {
-    // postCssPlugins.push(forgePostcssPluginPixel(pixelOptions));
+    postCssPlugins.push(hpsSrvPostcssPluginPixel(pixelOptions));
   }
 
   return {
@@ -47,7 +47,7 @@ export const ruleCss = (
   evolveOptions: HpsEvolveOptions,
   useCssModule = false
 ): RuleSetRule => {
-  // The value indicates we will enable px2rem using `@flatjs/forge-postcss-plugin-pixel`
+  // The value indicates we will enable px2rem using `@hyperse/hps-srv-postcss-plugin-pixel`
   const {
     pixelOptions,
     cssLoaderOptions = {},
@@ -63,7 +63,7 @@ export const ruleCss = (
           {
             // keep empty to allow user customized css modules options.
             // Depends on the value of the esModule option. If the value of the esModule options is true, this value will also be true, otherwise it will be false.
-            // For now give default value `false` to allow import css module via `import styles from './stye.module.css'`, if we want to use named exports we can set it to `true` via `flatjs-evolve.config.ts`
+            // For now give default value `false` to allow import css module via `import styles from './stye.module.css'`, if we want to use named exports we can set it to `true` via `hps.config.ts`
             namedExport: false,
           },
           modules

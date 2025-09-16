@@ -41,7 +41,7 @@ export const createPlugins = async (
     new CaseSensitivePathsPlugin(),
 
     // Detect modules with circular dependencies when bundling with webpack for `development` mode.
-    ...createCircularDependencyPlugins(serveMode, evolveOptions),
+    ...createCircularDependencyPlugins(serveMode),
 
     // For css minify extractor, Note `"sideEffects": false,` of `package.json` will not emits a file (writes a file to the filesystem)
     new rspack.CssExtractRspackPlugin({

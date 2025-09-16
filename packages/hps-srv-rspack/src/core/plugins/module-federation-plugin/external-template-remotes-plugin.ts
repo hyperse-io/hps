@@ -38,7 +38,7 @@ export class ExternalTemplateRemotesPlugin {
         (assets) => {
           scriptExternalModules.forEach((module) => {
             // get remoteEntry file name
-            // eg: 'external script "flatjs_evolve_home@[window.evolveFetchMicroWidgets()]/flatjs/evolve/home/micro-remote-module.js"'
+            // eg: 'external script "_evolve_home@[window.evolveFetchMicroWidgets()]/hps/evolve/home/micro-remote-module.js"'
             // Use regex to extract the part between double quotes
             const originalStr = module.identifier();
             const originalStrList = originalStr.match(/"([^"]+)"/);

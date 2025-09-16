@@ -1,15 +1,11 @@
 import type { Plugin as RspackPlugin } from '@rspack/core';
 import { type EntryMapItem } from '../../../types/types-entry-map.js';
-import { type EvolveMultiCdnEnvType } from '../../../types/types-multi-html.js';
 import { type HpsEvolveOptions } from '../../../types/types-options.js';
-import { FlatEvolveMultiCdnPlugin } from './multi-html-cdn-plugin.js';
+import { EvolveMultiCdnPlugin } from './multi-html-cdn-plugin.js';
 import { createMultiHtmlRspackPlugins } from './multi-html-rspack-plugin.js';
 
 /**
  * Create `html-webpack-plugin` for this build, refer to best practices
- *
- * IF serveMode is true, not attach any plugins
- * Otherwise, attach `html-webpack-plugin` and `@flatjs/evolve-plugin-multi-html-cdn`
  *
  * @param buildEntryItem the entries for this `build`
  * @param allEnv
@@ -29,8 +25,6 @@ export const createHtmlPlugins = (
     ...createMultiHtmlRspackPlugins(serveMode, evolveOptions, entryMapItemList)
   );
 
-  //attach `@flatjs/evolve-plugin-multi-html-cdn` plugin
-  //`@flatjs/evolve-plugin-multi-html-cdn` must be the last plugin
-  plugins.push(new FlatEvolveMultiCdnPlugin(evolveOptions, entryMapItemList));
+  plugins.push(new EvolveMultiCdnPlugin(evolveOptions, entryMapItemList));
   return plugins;
 };

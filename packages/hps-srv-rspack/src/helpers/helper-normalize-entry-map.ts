@@ -1,4 +1,4 @@
-import { merge } from 'lodash';
+import _ from 'lodash';
 import { posix } from 'node:path';
 import {
   type EvolveEntryMap,
@@ -29,7 +29,7 @@ const normalizeEntryGroupOptions = (
 
 /**
  * Make sure that we have correct `virtualPath` for each webpack `entry`
- * @param entryName the entryName defined via `flatjs-evolve.config.ts`.
+ * @param entryName the entryName defined via `hps-evolve.config.ts`.
  * @param evolveOptions
  * @returns
  */
@@ -48,10 +48,10 @@ export const normalizeEvolveEntryName = (
 };
 
 /**
- * Normalize flatjs.evolve entry map definition data.
+ * Normalize hps.evolve entry map definition data.
  * Merge default entry item configuration values.
  * @param activedEntryMap actived entries
- * @param definedEntryMap defined entries in flatjs.evolve.js
+ * @param definedEntryMap defined entries in hps.evolve.js
  * @param projectVirtualPath virtual path for current `project`
  */
 export const normalizeEvolveEntryMap = (
@@ -72,7 +72,7 @@ export const normalizeEvolveEntryMap = (
         'groupName' | 'groupingSource'
       > = normalizeEntryGroupOptions(itemConfig);
 
-      newActivedEntries[entryKey] = merge(
+      newActivedEntries[entryKey] = _.merge(
         {},
         defaultEntryItemConfig,
         itemConfig,

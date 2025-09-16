@@ -10,6 +10,10 @@ export default defineConfig({
       entry: ['./src/body-audit/index.tsx'],
       options: {},
     },
+    circularPlugin: {
+      entry: ['./src/circular-plugin/index.tsx'],
+      options: {},
+    },
     home: {
       entry: ['./src/home/index.tsx'],
       options: {},
@@ -68,5 +72,5 @@ export default defineConfig({
       },
     },
   },
-  htmlCdn: 'https://dev.cdn.domain.com',
+  htmlCdn: 'https://hps.cdn.domain.com',
 });

@@ -2,17 +2,15 @@ import { type HpsEvolveOptions } from './types/types-options.js';
 
 export const defaultEvolveOptions: HpsEvolveOptions = {
   projectCwd: process.cwd(),
-  projectVirtualPath: 'flatjs/evolve',
+  projectVirtualPath: 'hps/evolve',
   rejectWarnings: false,
   devServer: {
     autoOpen: true,
     pageProxy: '/pages',
-    mockOptions: {
-      mockBaseDir: 'mocks',
-    },
     clientOverlay: {
       errors: true,
       warnings: false,
+      runtimeErrors: true,
     },
     webSocketURL: 'localIp',
     middlewares: [],
@@ -44,7 +42,10 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
     postcssOptions: {
       cssnanoOptions: {},
     },
-    pixelOptions: false,
+    pixelOptions: {
+      rootValue: { px: 100, rpx: 1 },
+      outputUnit: 'rem',
+    },
     // Always defined in evolve.config.js
     modularImports: [],
   },

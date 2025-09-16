@@ -52,7 +52,7 @@ describe('evolve reactjs output library', () => {
       }
     );
 
-    const assets = fileWalkSync(['public/flatjs/evolve/library/*.*'], {
+    const assets = fileWalkSync(['public/hps/evolve/library/*.*'], {
       cwd: projectCwd,
     });
 

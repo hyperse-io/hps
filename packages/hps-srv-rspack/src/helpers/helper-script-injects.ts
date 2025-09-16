@@ -6,7 +6,7 @@ export function httpUrlJoin(first = '', second = '') {
 
 export function injectFederationScripts(htmlCdn: EvolveHtmlCdn) {
   return `window.evolveFetchMicroWidgets = function () {
-    return ${htmlCdn};
+    return ${JSON.stringify(htmlCdn)};
   }
   `;
 }

@@ -8,7 +8,7 @@ export const getPackageDir = (url: string, ...paths: string[]) => {
     cwd: dir,
   });
   if (!packageDir) {
-    throw new Error('Could not resolve package root for `flatjs/evolve`');
+    throw new Error('Could not resolve package root for `hps`');
   }
   return join(packageDir, ...paths);
 };

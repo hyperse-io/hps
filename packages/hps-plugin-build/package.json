@@ -41,8 +41,13 @@
     "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
+  "dependencies": {
+    "@hyperse/hps-srv-common": "workspace:*",
+    "@hyperse/hps-srv-rspack": "workspace:*"
+  },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@hyperse/wizard": "^1.0.4",
     "@types/node": "^24.3.0",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
@@ -51,6 +56,9 @@
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@hyperse/wizard": ">=1.0.1"
   },
   "engines": {
     "node": ">=20.0.0"

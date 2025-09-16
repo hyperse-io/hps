@@ -35,9 +35,9 @@ export const createModuleFederationPlugins = (
     const moduleFederation = entryConfig.options?.moduleFederation;
     if (moduleFederation) {
       const { remotes, exposes, ...restFederationOptions } = moduleFederation;
-      // e.g. `flatjs/evolve/mine` => `flatjs/evolve/home/micro-remote-module.js`
+      // e.g. `hps/evolve/mine` => `hps/evolve/home/micro-remote-module.js`
       const entryRemoteFileName = remoteFileName(entryName);
-      // e.g. `flatjs/evolve/mine` => `flatjs_evolve_mine`
+      // e.g. `hps/evolve/mine` => `hps_evolve_mine`
       const containerName = normalizeWidgetName(entryName);
 
       const patchExposes: ExposesObject[] = exposes
@@ -58,14 +58,14 @@ export const createModuleFederationPlugins = (
       });
 
       const myRemotes = (remotes || []).map(({ name, endpoint }) => {
-        // e.g. `flatjs/evolve/home`
+        // e.g. `hps/evolve/home`
         const normalizedEntryName = normalizeEvolveEntryName(
           name,
           projectVirtualPath
         );
-        // e.g. `flatjs_evolve_home`
+        // e.g. `hps_evolve_home`
         const remoteWidgetName = normalizeWidgetName(normalizedEntryName);
-        // e.g. `flatjs/evolve/home/micro-remote-module.js`
+        // e.g. `hps/evolve/home/micro-remote-module.js`
         const refRemoteEntryFileName = remoteFileName(normalizedEntryName);
         // construct endpoint for remote widget name.
         const endpointPath = endpoint
@@ -87,12 +87,12 @@ export const createModuleFederationPlugins = (
           ...restFederationOptions,
           /**
            * The name of the container
-           * `${projectName}-${moduleName}` e.g. `flatjs_evolve_home`
+           * `${projectName}-${moduleName}` e.g. `hps_evolve_home`
            */
           name: containerName,
           /**
            * The filename of the container as relative path inside the `output.path` directory.
-           * `${entryName}/micro-remote-module.js`, e.g. `flatjs/evolve/home/micro-remote-module.js`
+           * `${entryName}/micro-remote-module.js`, e.g. `hps/evolve/home/micro-remote-module.js`
            */
           filename: entryRemoteFileName,
           /**

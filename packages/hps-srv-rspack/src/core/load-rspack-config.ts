@@ -15,7 +15,7 @@ import { createRuleSets } from './rules/create-rule-sets.js';
  * Try to organization the configuraiton object of `rspack`
  * @param mode Enable production optimizations or development hints.
  * @param entryMap The only single one `servedEntry` or `toBuildEntry`
- * @param overrideOptions The manually override configuration options for flatjsEvolve
+ * @param overrideOptions The manually override configuration options for hps
  */
 export const loadRspackConfig = async (
   mode: 'production' | 'development',

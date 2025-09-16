@@ -11,7 +11,7 @@ export default function HomeWidget() {
     total: 100,
   });
   const Chunk = lazy(
-    () => import(/* webpackChunkName: "flatjs/evolve/federation-home/chunks" */ './chunk')
+    () => import(/* webpackChunkName: "hps/evolve/federation-home/chunks" */ './chunk')
   );
   return (
     <div>

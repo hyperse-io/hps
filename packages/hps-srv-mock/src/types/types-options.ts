@@ -18,24 +18,24 @@ export type MockNextFunction = NextFunction;
  * @example
  * { '/static': '/mocks/statics'}
  */
-export interface FlatMockStaticMap {
+export interface HpsMockStaticMap {
   [context: string]: string;
 }
 
-export interface FlatMockProxyMap {
-  [context: string]: FlatMockProxyConfig;
+export interface HpsMockProxyMap {
+  [context: string]: HpsMockProxyConfig;
 }
 
 /**
  * The `http-proxy-middleware` as below link
  * @link https://github.com/chimurai/http-proxy-middleware
  */
-export type FlatMockProxyConfig = Options;
+export type HpsMockProxyConfig = Options;
 
 /**
  * All flat mock types.
  */
-export type FlatMockTypes = keyof typeof hpsMockTypes;
+export type HpsMockTypes = keyof typeof hpsMockTypes;
 
 /**
  * The customized middlewares for each mock item.
@@ -48,7 +48,7 @@ export type MockItemMiddlewares = {
 /**
  * The local mock item configuration of `mockMap`
  */
-export interface FlatMockMapItem {
+export interface HpsMockMapItem {
   /**
    * The defs folder lookup deep
    * @example { defs: ['folder'] }, default walk through `folder/module.ts(deep:1)`, ignore `folder/child/module.ts(deep:2)`
@@ -58,7 +58,7 @@ export interface FlatMockMapItem {
   /**
    * Values in `"FUNC" | "FUNC_SIMPLE" | "REST" | "OTHER"`
    */
-  type: FlatMockTypes;
+  type: HpsMockTypes;
   /**
    * The folder name relative to `mockBaseDir`, also support nested directory
    * @example [`folder`,`folder/abc`]
@@ -75,11 +75,11 @@ export interface FlatMockMapItem {
  * contxt support `/a/b`、`/a`、`/*`
  * @example `'/product/detail': { defs: [string, ...string[]]; middlewares:[] }`
  */
-export type FlatMockMap = Record<string, FlatMockMapItem> & {
+export type HpsMockMap = Record<string, HpsMockMapItem> & {
   /**
    * The wildcard "/*" support, fallback all nofound request into this.
    */
-  ['/*']?: FlatMockMapItem;
+  ['/*']?: HpsMockMapItem;
 };
 
 export type SecureContextHttps = {
@@ -108,8 +108,9 @@ export interface HpsMockOptions {
 
   /**
    * The node modules which will be imported from `mocks`
-   * @default ['@flatjs/mock','@flatjs/common', 'mockjs', 'lodash', 'class-validator', 'class-transformer',]
+   * @default ['@hyperse/mock','@hyperse/common', 'mockjs', 'lodash', 'class-validator', 'class-transformer',]
    */
+  //TODO
   externals?: Array<RegExp | string>;
   /**
    * Project root
@@ -145,14 +146,14 @@ export interface HpsMockOptions {
    */
   https?: SecureContextHttps;
   /**
-   * The hostname of mock service `dev.flatjs.com`
-   * @default `dev.flatjs.com`
+   * The hostname of mock service `dev.hps.com`
+   * @default `dev.hps.com`
    */
   hostname?: string;
   /**
    * express.static configuration
    */
-  staticMap?: FlatMockStaticMap;
+  staticMap?: HpsMockStaticMap;
   /**
    * The mock api context.
    * @default `/api`
@@ -175,7 +176,7 @@ export interface HpsMockOptions {
    *  },
    * ```
    */
-  proxyMap?: FlatMockProxyMap;
+  proxyMap?: HpsMockProxyMap;
   /**
    * The mock configurations `mockApiContext`
    * @example
@@ -183,7 +184,7 @@ export interface HpsMockOptions {
    * `'/product': { defs: [string, ...string[]]; middlewares:[] }`
    * `'*': { defs: [string, ...string[]]; middlewares:[] }`
    */
-  mockMap?: FlatMockMap;
+  mockMap?: HpsMockMap;
   /**
    * The filter `regex` will ignore some set of mock files globally at serve startup
    * @default undefined

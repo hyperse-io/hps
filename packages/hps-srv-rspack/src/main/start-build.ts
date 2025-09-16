@@ -33,21 +33,12 @@ const runRspackTask = async (
 export const startBuild = async (
   projectCwd: string,
   buildModules: string[],
-  overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {},
-  configLoaderOptions?: ConfigLoaderOptions
+  overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {}
 ): Promise<EvolveBuildResult[]> => {
-  const command: EvolveConfigBase = {
-    projectCwd,
-    command: 'build',
-    resolve: requireResolve,
-  };
-
   // Try to load evolve configuration from `hps-evolve.config.ts`
   const newEvolveOptions = await loadEvolveConfig(
-    command,
     projectCwd,
-    overrideEvolveOptions,
-    configLoaderOptions
+    overrideEvolveOptions
   );
 
   await envVerify(projectCwd, newEvolveOptions);

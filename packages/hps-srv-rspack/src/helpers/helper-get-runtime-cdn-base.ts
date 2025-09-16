@@ -4,7 +4,7 @@ export const getRuntimeCDNBase = (htmlCdn: EvolveHtmlCdn, requireFn = '') => {
   const result: string[] = [
     `
   (function () {
-    var runtimeCDNBase = ${htmlCdn};
+    var runtimeCDNBase = ${JSON.stringify(htmlCdn || '')};
     window.$evolve = window.$evolve || {};
     if (window.$evolve.runtimeCDNBase) {
       // Use injected runtimeCDNBase as higher priority, e.g we have native webview runtime base URL.

@@ -3,7 +3,7 @@ import { lazy } from 'react';
 export const Service = () => {
   const Chunk = lazy(
     () =>
-      import(/*webpackChunkName:"flatjs/evolve/body-audit/chunks" */ './Dyamic')
+      import(/*webpackChunkName:"hps/evolve/body-audit/chunks" */ './Dyamic')
   );
   return (
     <div>

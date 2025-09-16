@@ -31,8 +31,6 @@ export const defaultHtmlPluginConfig: Required<MultiHtmlCDNEntryItem> = {
   // `allowPx2rem` default is true
   viewport: viewportScripts,
   // avoid use cdn
-  //TODO: remove this
-  // excludeCdnEnvs: [],
   // `minify` is true, `dev` always don't minify.
   htmlMinify: true,
   // Default use It must be an absolute path.

@@ -1,4 +1,5 @@
 import { type AcceptedPlugin } from 'postcss';
+import type { PostcssPluginPixelOptions } from '@hyperse/hps-srv-postcss-plugin-pixel';
 import type { LoaderContext } from '@rspack/core';
 
 /**
@@ -111,10 +112,8 @@ export interface RuleSetLoaderOptions {
   };
 
   /**
-   * The config options fro `@flatjs/forge-postcss-plugin-plugin`
-   * If provider it will use default options of `forgePostcssPluginPixel`
+   * The config options fro  `@hyperse/hps-srv-postcss-plugin-pixel`
+   * If provider it will use default options of `hpsSrvPostcssPluginPixel`
    */
-  //TODO
-  // pixelOptions?: false | Partial<PostcssPluginPixelOptions>;
-  pixelOptions?: false;
+  pixelOptions?: false | Partial<PostcssPluginPixelOptions>;
 }

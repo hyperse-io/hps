@@ -24,7 +24,9 @@ export function assertSingleCompiler(
   rspackConfig: Omit<RspackOptions, 'entry'>,
   evolveOptions: HpsEvolveOptions,
   enabledHmr = false
-): RspackOptions {
+): Omit<RspackOptions, 'entry'> & {
+  entry?: RspackEntryObject;
+} {
   const newEntry: RspackEntryObject = {};
   for (const [entryName, entryItem] of Object.entries(servedEntries)) {
     // Make sure that we have correct `virtualPath` for each webpack `entry`
@@ -65,7 +67,11 @@ export function assertSingleCompiler(
 
   const groupName = Object.values(servedEntries)[0].groupName;
 
-  return mergeOptions<RspackOptions>(rspackConfig, {
+  return mergeOptions<
+    Omit<RspackOptions, 'entry'> & {
+      entry?: RspackEntryObject;
+    }
+  >(rspackConfig, {
     name: groupName,
     entry: newEntry,
   });

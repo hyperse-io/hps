@@ -1,10 +1,12 @@
 import { rmSync } from 'node:fs';
 import { join } from 'node:path';
 import type { DeepPartial } from '@hyperse/config-loader';
-import { requireResolve } from '@hyperse/hps-srv-common';
+import { mergeOptions, requireResolve } from '@hyperse/hps-srv-common';
 import { type EvolveConfigBase } from '../src/define-config/define-config.js';
+import { loadEvolveConfigFile } from '../src/load-config/load-evolve-config-file.js';
 import { type ConfigLoaderOptions } from '../src/load-config/types.js';
 import { startBuild } from '../src/main/start-build.js';
+import { startServe } from '../src/main/start-serve.js';
 import type { EvolveBuildResult } from '../src/types/types-build-result.js';
 import { type HpsEvolveOptions } from '../src/types/types-options.js';
 
@@ -33,10 +35,48 @@ export const startTestBuild = async (
   overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {},
   configLoaderOptions?: ConfigLoaderOptions
 ): Promise<EvolveBuildResult[]> => {
-  return startBuild(
+  const command: EvolveConfigBase = {
     projectCwd,
-    buildModules,
-    overrideEvolveOptions,
+    command: 'build',
+    resolve: requireResolve,
+  };
+
+  const evolveFileOptions = await loadEvolveConfigFile(
+    projectCwd,
+    command,
     configLoaderOptions
   );
+
+  const finalEvolveOptions = mergeOptions(
+    evolveFileOptions,
+    overrideEvolveOptions
+  );
+
+  return startBuild(projectCwd, buildModules, finalEvolveOptions);
+};
+
+export const startTestServe = async (
+  projectCwd: string,
+  buildModules: string[],
+  overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {},
+  configLoaderOptions?: ConfigLoaderOptions
+) => {
+  const command: EvolveConfigBase = {
+    projectCwd,
+    command: 'serve',
+    resolve: requireResolve,
+  };
+
+  const evolveFileOptions = await loadEvolveConfigFile(
+    projectCwd,
+    command,
+    configLoaderOptions
+  );
+
+  const finalEvolveOptions = mergeOptions(
+    evolveFileOptions,
+    overrideEvolveOptions
+  );
+
+  await startServe(projectCwd, buildModules, finalEvolveOptions);
 };
