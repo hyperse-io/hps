@@ -1,1 +1,1 @@
-# @hyperse/hps-srv-mock
+# @hyperse/hps-srv-testing

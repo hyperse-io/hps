@@ -1,1 +1,1 @@
-# @hyperse/hps-plugin-info
+# @hyperse/hps-plugin-load-config

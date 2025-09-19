@@ -1,1 +1,1 @@
-# @hyperse/hps-plugin-build
+# @hyperse/hps-plugin-mock
