@@ -1,11 +1,9 @@
 import type { DeepPartial } from '@hyperse/config-loader';
-import { logger, requireResolve } from '@hyperse/hps-srv-common';
-import { type EvolveConfigBase } from '../define-config/define-config.js';
+import { logger } from '@hyperse/hps-srv-common';
 import { filterActivedEntriesByModule } from '../helpers/helper-filter-actived-entries.js';
 import { mergeInspectorEvolveConfig } from '../helpers/helper-merge-inspector-evolve-config.js';
 import { normalizeEvolveEntryMap } from '../helpers/helper-normalize-entry-map.js';
 import { loadEvolveConfig } from '../load-config/load-evolve-config.js';
-import { type ConfigLoaderOptions } from '../load-config/types.js';
 import { type HpsEvolveOptions } from '../types/types-options.js';
 import { prepareServe } from './prepare-serve.js';
 

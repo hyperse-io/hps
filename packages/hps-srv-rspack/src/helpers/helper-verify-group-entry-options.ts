@@ -1,4 +1,4 @@
-import { isDeepEqual } from '../../../hps-srv-common/src/index.js';
+import { isDeepEqual } from '@hyperse/hps-srv-common';
 import { ignoreEntryOptionKeys } from '../constants.js';
 import {
   type EvolveEntryItemOption,

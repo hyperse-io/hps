@@ -12,7 +12,17 @@
     "noEmit": false,
     "incremental": true,
     "paths": {
-      "@hyperse/hps": ["../../packages/hps/src/index.js"]
+      "@hyperse/hps": ["../../packages/hps/src/index.js"],
+      "@hyperse/hps-plugin-build": [
+        "../../packages/hps-plugin-build/src/index.js"
+      ],
+      "@hyperse/hps-plugin-serve": [
+        "../../packages/hps-plugin-serve/src/index.js"
+      ],
+      "@hyperse/hps-plugin-mock": [
+        "../../packages/hps-plugin-mock/src/index.js"
+      ],
+      "@hyperse/hps-srv-rspack": ["../../packages/hps-srv-rspack/src/index.js"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "rspack.config.mjs"],

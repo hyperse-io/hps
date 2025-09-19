@@ -42,11 +42,13 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@hyperse/config-loader": "^1.0.6",
     "@hyperse/hps-srv-common": "workspace:*",
     "@hyperse/hps-srv-rspack": "workspace:*"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@hyperse/hps-srv-testing": "workspace:*",
     "@hyperse/wizard": "^1.0.4",
     "@types/node": "^24.3.0",
     "@vitest/coverage-istanbul": "^3.2.4",
@@ -55,6 +57,7 @@
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
+    "vite-tsconfig-paths": "5.1.4",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {

@@ -21,6 +21,10 @@
   "dependencies": {
     "@heroui/react": "^2.8.3",
     "@hyperse/hps": "workspace:*",
+    "@hyperse/hps-plugin-build": "workspace:*",
+    "@hyperse/hps-plugin-mock": "workspace:*",
+    "@hyperse/hps-plugin-serve": "workspace:*",
+    "@hyperse/hps-srv-rspack": "workspace:*",
     "@iconify/react": "^6.0.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",

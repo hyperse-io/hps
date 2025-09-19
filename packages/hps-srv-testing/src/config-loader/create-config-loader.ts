@@ -2,7 +2,7 @@ import { forgePluginTsPaths } from '@flatjs/forge-plugin-ts-paths';
 
 export const createConfigLoaderOptions = async (
   tsconfig: string,
-  configFile = 'hps',
+  configFile = 'hps-evolve',
   externals: Array<RegExp | string> = ['']
 ) => {
   return {

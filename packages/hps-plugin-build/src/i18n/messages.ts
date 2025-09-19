@@ -6,8 +6,21 @@ export const buildPluginMessages = defineLocaleMessages({
     buildPlugin: {
       name: 'CLI Build Plugin',
       command: {
-        description: 'Building hps application.',
-        example: 'cli build evolve',
+        description: 'Building hps application',
+        example: 'hps build evolve',
+      },
+      subCommands: {
+        evolve: {
+          description:
+            'Build hps application using @hyperse/hps-srv-rspack for web`',
+          example: 'hps build evolve --compress --modules home',
+          flags: {
+            compress:
+              'If true, it will be NODE_ENV=development, no minify, maybe has sourceMap',
+            modules:
+              'Filter you un wanted entry items, make we have best serve & debug performance',
+          },
+        },
       },
     },
   },

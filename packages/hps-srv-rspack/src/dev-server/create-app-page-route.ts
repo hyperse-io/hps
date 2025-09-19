@@ -38,7 +38,7 @@ export const createAppPageRoute = (
     pageProxy,
     ...createPageMiddleware(
       devHostUri,
-      devServer?.apiContext || 'api',
+      devServer?.mockOptions?.apiContext || 'api',
       servedDevServerEntries,
       evolveOptions
     )

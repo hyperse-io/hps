@@ -1,4 +1,3 @@
-import { requireResolve } from '@hyperse/hps-srv-common';
 import type { RuleSetRule, SwcLoaderOptions } from '@rspack/core';
 import { shouldEnableReactFastRefresh } from '../../helpers/helper-should-enable-react-fast-refresh.js';
 import { type EntryMapItem, type HpsEvolveOptions } from '../../types/index.js';
@@ -10,8 +9,6 @@ export const ruleScripts = (
 ): RuleSetRule => {
   const { loaderOptions, projectCwd, inspector } = evolveOptions;
   const { modularImports = [] } = loaderOptions;
-  //TODO
-  // const swcModularImports = assertSwcImportOptions(projectCwd, modularImports);
 
   const enabledHmr = shouldEnableReactFastRefresh(
     serveMode,
@@ -22,15 +19,6 @@ export const ruleScripts = (
   const plugins: Required<
     Required<Required<SwcLoaderOptions>['jsc']>['experimental']
   >['plugins'] = [];
-
-  // Attach swc plugin for modular import
-  // plugins.push([
-  //   requireResolve(import.meta.url, '@hyperse/hps-srv-rspack-plugin-import'),
-  //   {
-  //     //TODO
-  //     modularImports: {},
-  //   },
-  // ]);
 
   // Attach inspector swc plugin
   if (serveMode && inspector) {
@@ -45,6 +33,9 @@ export const ruleScripts = (
         loader: 'builtin:swc-loader',
         /** @type {import('@rspack/core').SwcLoaderOptions} */
         options: {
+          rspackExperiments: {
+            import: modularImports,
+          },
           jsc: {
             parser: {
               decorators: true,

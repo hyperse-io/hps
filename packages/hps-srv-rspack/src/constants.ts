@@ -4,7 +4,7 @@ import { type EvolveEntryItemOption } from './types/types-entry-map.js';
 export const moduleName = `@hyperse/hps-srv-rspack`;
 
 /**
- * the configuration file of `flat-evolve`
+ * the configuration file of `hps-evolve`
  * hps-evolve.config.ts,.mjs,.mts
  */
 export const configFileName = `hps-evolve`;

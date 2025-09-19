@@ -6,7 +6,12 @@
     "allowJs": false,
     "noEmit": false,
     "incremental": true,
-    "paths": {},
+    "paths": {
+      "@hyperse/hps-srv-common": ["../hps-srv-common/src/index.ts"],
+      "@hyperse/hps-srv-rspack": ["../hps-srv-rspack/src/index.ts"],
+      "@hyperse/hps-srv-mock": ["../hps-srv-mock/src/index.ts"],
+      "@hyperse/hps-srv-testing": ["../hps-srv-testing/src/index.ts"]
+    },
     "types": ["vitest/globals", "node"]
   },
   "include": ["**/*.ts", "**/*.tsx"],

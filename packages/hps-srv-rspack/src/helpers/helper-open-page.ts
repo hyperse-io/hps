@@ -1,4 +1,4 @@
-import opn from 'better-opn';
+import open from 'open';
 
 /**
  * A better opn. Reuse the same tab on Chrome for
@@ -8,7 +8,7 @@ import opn from 'better-opn';
  */
 export const openPage = (openUrl: string): void => {
   try {
-    opn(openUrl);
+    open(openUrl);
   } catch {
     console.warn(
       `Unable to open browser. If you are running in a headless environment\n`

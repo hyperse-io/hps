@@ -21,7 +21,6 @@
     "./package.json": "./package.json"
   },
   "types": "./dist/index.d.ts",
-  "bin": "./bin/hps.mjs",
   "files": [
     "bin/",
     "dist/",
@@ -31,7 +30,7 @@
     "package.json"
   ],
   "scripts": {
-    "serve": "node --import=@hyperse/ts-node/register src/index.ts foo",
+    "serve": "yarn node --import=@hyperse/ts-node/register ./tests/evolve/dev-server.ts",
     "build": "rimraf dist && tsc -p ./tsconfig.build.json",
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
@@ -44,8 +43,13 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@hyperse/config-loader": "^1.0.5",
+    "@hyperse/hps-plugin-build": "workspace:*",
     "@hyperse/hps-plugin-deploy": "workspace:*",
     "@hyperse/hps-plugin-info": "workspace:*",
+    "@hyperse/hps-plugin-load-config": "workspace:*",
+    "@hyperse/hps-plugin-mock": "workspace:*",
+    "@hyperse/hps-plugin-serve": "workspace:*",
     "@hyperse/hps-plugin-update": "workspace:*",
     "@hyperse/wizard": "^1.0.4",
     "@hyperse/wizard-plugin-error": "^1.0.4",
@@ -55,7 +59,10 @@
     "package-directory": "^8.1.0"
   },
   "devDependencies": {
+    "@armit/file-utility": "^0.3.1",
     "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@hyperse/hps-srv-rspack": "workspace:*",
+    "@hyperse/hps-srv-testing": "workspace:*",
     "@hyperse/ts-node": "^1.0.3",
     "@types/node": "^24.3.0",
     "@vitest/coverage-istanbul": "^3.2.4",
@@ -64,6 +71,7 @@
     "npm-run-all": "4.1.5",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
+    "vite-tsconfig-paths": "5.1.4",
     "vitest": "^3.2.4"
   },
   "engines": {

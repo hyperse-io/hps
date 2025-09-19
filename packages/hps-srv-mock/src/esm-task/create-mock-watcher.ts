@@ -31,7 +31,7 @@ export const createMockWatcher = async (mockOptions: HpsMockOptions) => {
   // Print user mock filters configuration if have.
   if (mockOptions.mockFilters && mockOptions.mockFilters.length) {
     logger.info(
-      `mockFilters: \n ${JSON.stringify(mockOptions.mockFilters, null, 2)}`
+      `mockFilters: ${JSON.stringify(mockOptions.mockFilters, null, 2)}`
     );
   }
 

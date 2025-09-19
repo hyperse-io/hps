@@ -36,17 +36,10 @@ export const getPageMainHtml = async (
   );
 
   const templateModules = sortedModules.map((module) => {
-    const {
-      entryName,
-      entryContent,
-      isServedEntry,
-      projectVirtualPath,
-      normalizedEntryName,
-    } = module;
+    const { entryName, entryContent, isServedEntry, projectVirtualPath } =
+      module;
 
-    const linkHref = urlJoin(devHostUri, [pageProxy, normalizedEntryName], {
-      env: 'me',
-    });
+    const linkHref = urlJoin(devHostUri, [pageProxy, entryName]);
 
     // Allow customized page main link.
     const servePageMainLinkFn =
@@ -79,7 +72,7 @@ export const getPageMainHtml = async (
   });
 
   const templateData: MainTemplateData = {
-    title: '@hyperse/hps-srv-rspack',
+    title: 'hps serve evolve',
     modules: templateModules.sort((a, b) => {
       return b.isServed - a.isServed;
     }),

@@ -17,16 +17,9 @@ export const createDevServerEntries = async (
   // Create individual devPort for each compiler here.
   const { port: devServerPort, hostUri: devServerHostUri } =
     await getAvailableDomain(
-      mergeOptions(
-        {
-          port: devServer?.port,
-          hostname: devServer?.hostname,
-          isHttps: !!devServer?.https,
-        },
-        {
-          port: lastPort,
-        }
-      )
+      mergeOptions(devServer?.mockOptions || {}, {
+        port: lastPort,
+      })
     );
   // Prepare devServer ports for each served entry.
   for (const [entryName, entryConfig] of Object.entries(servedEntries)) {

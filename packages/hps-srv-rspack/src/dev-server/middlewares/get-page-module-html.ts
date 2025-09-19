@@ -37,10 +37,7 @@ export const getPageModuleHtml = async (
 
   // Find the matching entry name by comparing normalized paths
   const currEntryName = entryNames.find((entryName) => {
-    const normalizedEntryName = normalizeEvolveEntryName(
-      entryName,
-      projectVirtualPath
-    );
+    const normalizedEntryName = entryName.replace(/^\//, '');
 
     return ensureSlash(req.path.replace(/^\//, ''), true).startsWith(
       ensureSlash(normalizedEntryName, true)

@@ -1,4 +1,5 @@
-import { chalk, logger, urlJoin } from '@hyperse/hps-srv-common';
+import { arrayUnique, chalk, logger, urlJoin } from '@hyperse/hps-srv-common';
+import { attachMockMiddlewares } from '@hyperse/hps-srv-mock';
 import { ignoreEntryOptionKeys } from '../constants.js';
 import { startRspackServe } from '../core/start-rspack-serve.js';
 import { createAppPageRoute } from '../dev-server/create-app-page-route.js';
@@ -45,6 +46,21 @@ export const prepareServe = async (
   // Create pure dev server.
   const { app, devPort, devHostUri, publicIp } =
     await createDevServer(evolveOptions);
+
+  // Extract all the mock filters of served entries.
+  const mockFilters = evolveOptions.devServer?.mockOptions?.mockFilters || [];
+
+  // Loop all entries gather all mock files definition from each entry item.
+  for (const [, value] of Object.entries(servedEntries)) {
+    mockFilters.push(...(value.options?.mockFilters || []));
+  }
+
+  // Attach core handlers for mock
+  await attachMockMiddlewares(app, {
+    ...evolveOptions.devServer?.mockOptions,
+    mockFilters: arrayUnique(mockFilters),
+    projectCwd,
+  });
 
   let lastPort = devPort;
   const servedDevServerEntryList: Array<EvolveDevServerEntryMap> = [];

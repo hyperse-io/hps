@@ -21,7 +21,6 @@ export const cleanProjectBuildOutput = (projectCwd: string): void => {
 
 export const configEnv: EvolveConfigBase = {
   projectCwd: '',
-  command: 'serve',
   resolve: requireResolve,
 };
 
@@ -37,7 +36,6 @@ export const startTestBuild = async (
 ): Promise<EvolveBuildResult[]> => {
   const command: EvolveConfigBase = {
     projectCwd,
-    command: 'build',
     resolve: requireResolve,
   };
 
@@ -63,7 +61,6 @@ export const startTestServe = async (
 ) => {
   const command: EvolveConfigBase = {
     projectCwd,
-    command: 'serve',
     resolve: requireResolve,
   };
 

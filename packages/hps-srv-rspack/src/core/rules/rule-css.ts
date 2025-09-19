@@ -1,7 +1,7 @@
 import { type AcceptedPlugin } from 'postcss';
 import { requireResolve } from '@hyperse/hps-srv-common';
-import type { PostcssPluginPixelOptions } from '@hyperse/hps-srv-postcss-plugin-pixel';
-import { hpsSrvPostcssPluginPixel } from '@hyperse/hps-srv-postcss-plugin-pixel';
+import type { PostcssPluginPixelOptions } from '../../../../hps-srv-rspack-plugin-postcss/src/index.js';
+import { hpsSrvPostcssPluginPixel } from '../../../../hps-srv-rspack-plugin-postcss/src/index.js';
 import { CssExtractRspackPlugin, type RuleSetRule } from '@rspack/core';
 import { allowPx2remForModule } from '../../helpers/helper-allow-px2rem-for-module.js';
 import { type EntryMapItem } from '../../types/types-entry-map.js';

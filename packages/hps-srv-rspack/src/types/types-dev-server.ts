@@ -3,6 +3,7 @@ import {
   type ClientConfiguration,
   type WebSocketURL,
 } from 'webpack-dev-server';
+import type { HpsMockOptions, SecureContextHttps } from '@hyperse/hps-srv-mock';
 import type { DevServer } from '@rspack/core';
 import type { EvolveEntryMapContent } from './types-entry-map.js';
 
@@ -132,50 +133,14 @@ export type HpsEvolveDevServerOptions = {
   webSocketURL?: WebSocketURL | 'localIp';
 
   /**
-   * A preferred port or an iterable of preferred ports to use
-   * @default 6001
+   * The customized config options of `@hyperse/hps-srv-mock`, it will override options `HpsMockOptions`
    */
-  port?: number;
-  /**
-   * https://github.com/FiloSottile/mkcert
-   * privateKey `example.com+3-key.pem`
-   * certificate `example.com+3.pem`
-   * @example
-   * ```ts
-   * // 引入秘钥
-   * export const privateKey = fs.readFileSync(
-   *   path.resolve(__dirname, '../certificate/127.0.0.1+6-key.pem'),
-   *   'utf8',
-   * );
-   * // 引入公钥
-   * export const certificate = fs.readFileSync(path.resolve(__dirname, '../certificate/127.0.0.1+6.pem'), 'utf8');
-   *
-   * ```
-   */
-  https?: {
-    /**
-     * The privateKey
-     */
-    key: string;
-    /**
-     * The certificate
-     */
-    cert: string;
-  };
-  /**
-   * The hostname of mock service `dev.hps.com`
-   * @default `dev.hps.com`
-   */
-  hostname?: string;
+  mockOptions?: Omit<HpsMockOptions, 'projectCwd'>;
 
   /**
-   * The api context of dev server `api`
-   *
-   * with global Data `window.GLOBAL.apiBase`
-   *
-   * @default `/api`
+   * Provide your own certificate using the https option
    */
-  apiContext?: string;
+  https?: SecureContextHttps;
 };
 
 export type EvolveDevServerEntryMap = {

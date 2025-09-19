@@ -12,11 +12,11 @@ export const createDevServer = async (
   app: typeof app;
 }> => {
   const app = express();
-  const devServerOptions = evolveOptions.devServer;
+  const mockOptions = evolveOptions.devServer?.mockOptions;
   const { port, hostUri, publicIp } = await getAvailableDomain({
-    port: devServerOptions?.port,
-    hostname: devServerOptions?.hostname,
-    isHttps: !!devServerOptions?.https,
+    port: mockOptions?.port,
+    hostname: mockOptions?.hostname,
+    isHttps: !!mockOptions?.https,
   });
 
   return new Promise<{

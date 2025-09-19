@@ -44,6 +44,12 @@ export interface HpsEvolveOptions {
   projectVirtualPath: string;
 
   /**
+   * The value indicates whether runs typescript type checker and linter on separate process.
+   * @default true
+   */
+  runTsChecker?: boolean;
+
+  /**
    * The configurations of `rspack`
    */
   rspack?: HpsEvolveRspackOptions;

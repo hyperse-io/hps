@@ -1,6 +1,6 @@
 import { type AcceptedPlugin } from 'postcss';
-import type { PostcssPluginPixelOptions } from '@hyperse/hps-srv-postcss-plugin-pixel';
 import type { LoaderContext } from '@rspack/core';
+import type { PostcssPluginPixelOptions } from '../../../hps-srv-rspack-plugin-postcss/src/index.js';
 
 /**
  * The configurations for `css-loader` modules
@@ -84,8 +84,53 @@ export interface RuleSetLoaderOptions {
    * Modular import plugin for babel, compatible with antd, antd-mobile, lodash, material-ui, and so on.
    * @default []
    */
-  //TODO 重构
-  modularImports?: any[];
+  modularImports?: Array<{
+    /**
+     * The library name to be imported. It should be the same as the library name in package.json.
+     */
+    libraryName: string;
+    /**
+     * The library directory to be imported.
+     * @default 'lib'
+     */
+    libraryDirectory?: string;
+    /**
+     * The custom name to be imported.
+     */
+    customName?: string;
+    /**
+     * The style library directory to be imported.
+     * If this is set, `style` option will be ignored
+     */
+    customStyleName?: string;
+    /**
+     * The style library directory to be imported.
+     * @deprecated Recommended to use the css in js solution
+     */
+    style?: string | boolean;
+    /**
+     * The style library directory to be imported.
+     */
+    styleLibraryDirectory?: string;
+    /**
+     * The value indicates whether convert method name from camelCase to kebab cases
+     * @example  `userName` => `user-name`
+     * @default true
+     */
+    camelToDashComponentName?: boolean;
+    /**
+     * Set this option to false if your module does not have a default export.
+     */
+    transformToDefaultImport?: boolean;
+    /**
+     * The value indicates whether ignore es component
+     */
+    ignoreEsComponent?: string[];
+    /**
+     * The value indicates whether ignore style component
+     */
+    ignoreStyleComponent?: string[];
+  }>;
 
   /**
    * The configration options of `postcss-loader`

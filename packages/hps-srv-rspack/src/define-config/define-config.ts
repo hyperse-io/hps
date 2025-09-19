@@ -13,10 +13,6 @@ export interface EvolveConfigBase extends ConfigEnvBase {
    */
   projectCwd: string;
   /**
-   * The command of the current process.
-   */
-  command: 'build' | 'serve' | 'static';
-  /**
    * Expose `env`.`resolve` to allow dynamic resolve `esm` node modules from `hps-evolve.config.ts`
    * @example
    * ```ts

@@ -1,1 +1,0 @@
-# @hyperse/hps-srv-mock

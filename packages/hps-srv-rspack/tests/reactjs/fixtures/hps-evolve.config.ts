@@ -22,6 +22,10 @@ export default defineConfig({
       entry: ['./src/mine/index.tsx'],
       options: {},
     },
+    modular: {
+      entry: ['./src/modular/index.ts'],
+      options: {},
+    },
     titleA: {
       entry: ['./src/title-a/index.tsx'],
       options: {},

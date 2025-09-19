@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/utils/*": ["./src/utils/*"]
+    },
+    "newLine": "LF",
+    "skipLibCheck": false,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "allowJs": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "outDir": "dist",
+    "sourceMap": false,
+    "lib": ["ES2016", "DOM"],
+    "jsx": "preserve",
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "removeComments": false,
+    "experimentalDecorators": true,
+    "rootDir": ".",
+    "target": "esnext",
+    "module": "esnext"
+  },
+  "include": [
+    "scripts/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.vue",
+    "**/*.js",
+    ".eslintrc.js",
+    "jest.config.*.js",
+    "mocks/index.ts"
+  ]
+}

@@ -11,8 +11,8 @@
     "@types/react": "^18.2.27"
   },
   "dependencies": {
-    "@dimjs/lang": "2.0.0",
-    "@dimjs/model-react": "2.0.0",
-    "@dimjs/utils": "2.0.0"
+    "@dimjs/lang": "2.1.1",
+    "@dimjs/model-react": "2.1.1",
+    "@dimjs/utils": "2.1.2"
   }
 }

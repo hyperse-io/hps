@@ -48,8 +48,8 @@
     "@armit/package": "^0.3.0",
     "@hyperse/config-loader": "^1.0.5",
     "@hyperse/hps-srv-common": "workspace:*",
-    "@hyperse/hps-srv-postcss-plugin-pixel": "workspace:*",
-    "@hyperse/hps-srv-rspack-plugin-import": "workspace:*",
+    "@hyperse/hps-srv-mock": "workspace:*",
+    "@hyperse/hps-srv-rspack-plugin-postcss": "workspace:*",
     "@hyperse/html-webpack-plugin-loader": "^1.0.7",
     "@hyperse/inspector": "^1.1.13",
     "@hyperse/inspector-babel-plugin": "^1.1.7",
@@ -57,11 +57,10 @@
     "@hyperse/inspector-middleware": "^1.1.7",
     "@hyperse/inspector-swc-plugin": "^1.1.9",
     "@rsdoctor/rspack-plugin": "^1.2.3",
-    "@rspack/binding": "~1.5.3",
-    "@rspack/core": "~1.5.3",
+    "@rspack/binding": "~1.5.5",
+    "@rspack/core": "~1.5.5",
     "@rspack/dev-server": "~1.1.4",
     "@rspack/plugin-react-refresh": "^1.5.1",
-    "better-opn": "^3.0.2",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "css-loader": "^7.1.2",
     "express": "^5.1.0",
@@ -70,10 +69,12 @@
     "less": "^4.3.0",
     "less-loader": "^12.3.0",
     "lodash": "^4.17.21",
+    "open": "^10.2.0",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.1.1",
     "react-refresh": "^0.17.0",
-    "svgo": "^3.3.2"
+    "svgo": "^3.3.2",
+    "ts-checker-rspack-plugin": "^1.1.5"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
@@ -88,6 +89,7 @@
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
+    "vite-tsconfig-paths": "5.1.4",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {

@@ -1,13 +1,8 @@
 import express from 'express';
 import https from 'node:https';
 import type { DeepPartial } from '@hyperse/config-loader';
-import { requireResolve } from '@hyperse/hps-srv-common';
 import { getAvailableDomain } from '@hyperse/hps-srv-common';
-import { type MockConfigBase } from '../define-config/define-config.js';
-import {
-  type ConfigLoaderOptions,
-  loadMockConfig,
-} from '../load-config/load-mock-config.js';
+import { loadMockConfig } from '../load-config/load-mock-config.js';
 import { type HpsMockOptions } from '../types/types-options.js';
 import { attachMockMiddlewares } from './attach-mock-middlewares.js';
 
@@ -19,21 +14,12 @@ import { attachMockMiddlewares } from './attach-mock-middlewares.js';
  */
 export const startMock = async (
   projectCwd: string = process.cwd(),
-  overrideOptions: DeepPartial<HpsMockOptions> = {},
-  configLoaderOptions?: ConfigLoaderOptions
+  overrideOptions: DeepPartial<HpsMockOptions> = {}
 ): Promise<string> => {
   const app = express();
-  const command: MockConfigBase = {
-    projectCwd,
-    resolve: requireResolve,
-  };
+
   // Dynamic load hps mock configuration from `hps.mock.js`
-  const mockOptions = await loadMockConfig(
-    command,
-    projectCwd,
-    overrideOptions,
-    configLoaderOptions
-  );
+  const mockOptions = await loadMockConfig(projectCwd, overrideOptions);
 
   // Attach mock middlewares
   await attachMockMiddlewares(app, mockOptions);

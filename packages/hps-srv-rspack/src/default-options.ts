@@ -46,7 +46,6 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
       rootValue: { px: 100, rpx: 1 },
       outputUnit: 'rem',
     },
-    // Always defined in evolve.config.js
     modularImports: [],
   },
   htmlCdn: '',
@@ -60,6 +59,7 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
   },
   isolation: false,
   maxEntryGroupSize: 100,
+  runTsChecker: true,
   openRsdoctor: false,
   inspector: {
     keys: ['$mod', 'i'],

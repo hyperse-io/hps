@@ -9,7 +9,8 @@
     "incremental": true,
     "paths": {
       "@hyperse/hps-srv-common": ["../hps-srv-common/src/index.ts"],
-      "@hyperse/hps-srv-rspack": ["../hps-srv-rspack/src/index.ts"]
+      "@hyperse/hps-srv-rspack": ["../hps-srv-rspack/src/index.ts"],
+      "@hyperse/hps-srv-testing": ["../hps-srv-testing/src/index.ts"]
     },
     "types": ["vitest/globals"]
   },

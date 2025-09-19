@@ -4,14 +4,20 @@ const VIEWBOX_REGEX = /viewBox="([^"]*)"/;
 const SVG_REGEX = /<svg[^>]*>|<\/svg>/g;
 const FILL_REGEX = /fill="[^"]*"/g;
 
-const svgOptimize = (buffer, svgoOption: Config) => {
+const svgOptimize = (buffer: string, svgoOption: Config) => {
   const { data } = optimize(buffer, svgoOption);
   return data;
 };
 
-const iconLoader = function iconLoader(source) {
+const iconLoader = function iconLoader(source: string) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   if (this.cacheable) this.cacheable(true);
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const options = this.getOptions() as { svgo: Config };
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const callback = this.async();
 
   try {

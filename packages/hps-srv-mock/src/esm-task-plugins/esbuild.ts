@@ -36,6 +36,8 @@ const getEsbuildFormat = (
   if (rollupFormat === 'cjs' || rollupFormat === 'iife') {
     return rollupFormat;
   }
+
+  return undefined;
 };
 
 export const esbuildMinify = (options?: TransformOptions): Plugin => ({
