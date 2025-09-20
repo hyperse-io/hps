@@ -8,7 +8,11 @@
     "paths": {},
     "types": ["node"]
   },
-  "include": ["./src/index.ts"],
+  "include": [
+    "./src/index.ts",
+    "./src/loaders/loader-icon.cts",
+    "./src/plugins/rspack/progress-plugin/progress-worker.ts"
+  ],
   "exclude": [
     "**/*.stories.tsx",
     "**/*.stories.mdx",

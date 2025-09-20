@@ -5,6 +5,10 @@
 /build
 /_release
 /storybook-static
+**/fixtures/dist
+**/fixtures/public
+**/reactjs/**/dist
+**/reactjs/**/public
 
 # dependencies
 node_modules
@@ -15,3 +19,4 @@ node_modules
 # misc
 .DS_Store
 *.pem
+.cache

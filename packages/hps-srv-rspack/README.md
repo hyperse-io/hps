@@ -1,1 +1,1 @@
-# @hyperse/hps-srv-pack
+# @hyperse/hps-srv-rspack

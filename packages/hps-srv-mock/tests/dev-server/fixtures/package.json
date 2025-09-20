@@ -1,0 +1,12 @@
+{
+  "name": "mock-dev-server",
+  "sideEffects": [
+    "*.css",
+    "*.less"
+  ],
+  "type": "module",
+  "devDependencies": {},
+  "dependencies": {
+    "@hyperse/hps-srv-mock": "*"
+  }
+}

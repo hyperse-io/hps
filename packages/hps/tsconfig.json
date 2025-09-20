@@ -7,6 +7,7 @@
     "noEmit": false,
     "incremental": true,
     "paths": {
+      "@hyperse/hps": ["../../packages/hps/src/index.ts"],
       "@hyperse/hps-plugin-info": [
         "../../packages/hps-plugin-info/src/index.ts"
       ],
@@ -15,10 +16,38 @@
       ],
       "@hyperse/hps-plugin-update": [
         "../../packages/hps-plugin-update/src/index.ts"
+      ],
+      "@hyperse/hps-plugin-build": [
+        "../../packages/hps-plugin-build/src/index.ts"
+      ],
+      "@hyperse/hps-plugin-serve": [
+        "../../packages/hps-plugin-serve/src/index.ts"
+      ],
+      "@hyperse/hps-plugin-mock": [
+        "../../packages/hps-plugin-mock/src/index.ts"
+      ],
+      "@hyperse/hps-plugin-load-config": [
+        "../../packages/hps-plugin-load-config/src/index.ts"
+      ],
+      "@hyperse/hps-srv-common": ["../../packages/hps-srv-common/src/index.ts"],
+      "@hyperse/hps-srv-mock": ["../../packages/hps-srv-mock/src/index.ts"],
+      "@hyperse/hps-srv-rspack": ["../../packages/hps-srv-rspack/src/index.ts"],
+      "@hyperse/hps-srv-postcss-plugin-pixel": [
+        "../hps-srv-rspack-plugin-postcss/src/index.ts"
+      ],
+      "@hyperse/hps-srv-testing": [
+        "../../packages/hps-srv-testing/src/index.ts"
       ]
     },
     "types": ["vitest/globals"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
+  "exclude": [
+    "**/node_modules",
+    "**/.*/",
+    "dist",
+    "build",
+    "**/fixtures/**",
+    "**/_release/**"
+  ]
 }

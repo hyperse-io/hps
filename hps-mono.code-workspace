@@ -1,6 +1,10 @@
 {
   "folders": [
     {
+      "name": "root",
+      "path": ".",
+    },
+    {
       "name": "website",
       "path": "website",
     },
@@ -29,6 +33,14 @@
       "path": "packages/hps-plugin-build",
     },
     {
+      "name": "hps-plugin-mock",
+      "path": "packages/hps-plugin-mock",
+    },
+    {
+      "name": "hps-plugin-load-config",
+      "path": "packages/hps-plugin-load-config",
+    },
+    {
       "name": "hps-plugin-serve",
       "path": "packages/hps-plugin-serve",
     },
@@ -39,6 +51,14 @@
     {
       "name": "hps-plugin-deploy",
       "path": "packages/hps-plugin-deploy",
+    },
+    {
+      "name": "hps-srv-testing",
+      "path": "packages/hps-srv-testing",
+    },
+    {
+      "name": "hps-srv-common",
+      "path": "packages/hps-srv-common",
     },
     {
       "name": "hps-srv-mock",
@@ -53,12 +73,8 @@
       "path": "packages/hps-srv-rspack",
     },
     {
-      "name": "hps-srv-rspack-plugin-import",
-      "path": "crates/hps-srv-rspack-plugin-import",
-    },
-    {
-      "name": "root",
-      "path": ".",
+      "name": "hps-srv-rspack-plugin-postcss",
+      "path": "packages/hps-srv-rspack-plugin-postcss",
     },
   ],
   "extensions": {
@@ -112,16 +128,21 @@
       "./website",
       "./examples/example-single",
       "./examples/example-modular",
+      "./packages/hps",
+      "./packages/hps-srv-testing",
       "./packages/hps-plugin-info",
       "./packages/hps-plugin-pack",
+      "./packages/hps-plugin-load-config",
       "./packages/hps-plugin-update",
       "./packages/hps-plugin-deploy",
       "./packages/hps-plugin-serve",
       "./packages/hps-plugin-build",
+      "./packages/hps-plugin-mock",
+      "./packages/hps-srv-common",
       "./packages/hps-srv-mock",
       "./packages/hps-srv-rolldown",
       "./packages/hps-srv-rspack",
-      "./crates/hps-srv-rspack-plugin-import",
+      "./packages/hps-srv-rspack-plugin-postcss",
     ],
     "typescript.tsdk": "root/node_modules/typescript/lib"
   },

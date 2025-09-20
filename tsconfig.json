@@ -9,6 +9,6 @@
     "paths": {},
     "types": ["vitest/globals", "node"]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "packages/hps-srv-rspack/src/helpers/helper-enable-bundle-hashnamets"],
   "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
 }

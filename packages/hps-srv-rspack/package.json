@@ -25,11 +25,13 @@
     "bin/",
     "dist/",
     "index.js",
+    "templates",
     "README.md",
     "CHANGELOG.md",
     "package.json"
   ],
   "scripts": {
+    "serve": "yarn node --import=@hyperse/ts-node/register ./tests/dev-server/dev-server.ts",
     "build": "rimraf dist && tsc -p ./tsconfig.build.json",
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
@@ -41,16 +43,74 @@
     "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
+  "dependencies": {
+    "@armit/file-utility": "^0.3.1",
+    "@armit/package": "^0.3.1",
+    "@hyperse/config-loader": "^1.0.6",
+    "@hyperse/hps-srv-common": "workspace:*",
+    "@hyperse/hps-srv-mock": "workspace:*",
+    "@hyperse/hps-srv-rspack-plugin-postcss": "workspace:*",
+    "@hyperse/html-webpack-plugin-loader": "^1.0.7",
+    "@hyperse/inspector": "^1.1.14",
+    "@hyperse/inspector-babel-plugin": "^1.1.8",
+    "@hyperse/inspector-common": "^1.1.5",
+    "@hyperse/inspector-middleware": "^1.1.8",
+    "@hyperse/inspector-swc-plugin": "^1.1.10",
+    "@rsdoctor/rspack-plugin": "^1.2.3",
+    "@rspack/binding": "~1.5.5",
+    "@rspack/core": "~1.5.5",
+    "@rspack/dev-server": "~1.1.4",
+    "@rspack/plugin-react-refresh": "^1.5.1",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "css-loader": "^7.1.2",
+    "express": "^5.1.0",
+    "html-webpack-plugin": "^5.6.4",
+    "image-minimizer-webpack-plugin": "^4.1.4",
+    "less": "^4.4.1",
+    "less-loader": "^12.3.0",
+    "lodash": "^4.17.21",
+    "open": "^10.2.0",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.2.0",
+    "react-refresh": "^0.17.0",
+    "svgo": "^4.0.0",
+    "ts-checker-rspack-plugin": "^1.1.5"
+  },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
-    "@types/node": "^24.3.0",
+    "@hyperse/hps-srv-testing": "workspace:*",
+    "@types/case-sensitive-paths-webpack-plugin": "^2.1.9",
+    "@types/express": "^5.0.3",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^24.5.2",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
-    "eslint": "^9.34.0",
+    "eslint": "^9.36.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
+    "vite-tsconfig-paths": "5.1.4",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "imagemin-gifsicle": ">=7.0.0",
+    "imagemin-jpegtran": ">=8.0.0",
+    "imagemin-pngquant": ">=10.0.0",
+    "imagemin-svgo": ">=11.0.1"
+  },
+  "peerDependenciesMeta": {
+    "imagemin-gifsicle": {
+      "optional": true
+    },
+    "imagemin-jpegtran": {
+      "optional": true
+    },
+    "imagemin-pngquant": {
+      "optional": true
+    },
+    "imagemin-svgo": {
+      "optional": true
+    }
   },
   "engines": {
     "node": ">=20.0.0"

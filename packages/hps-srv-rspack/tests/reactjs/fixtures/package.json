@@ -1,0 +1,18 @@
+{
+  "name": "evolve-demo-react",
+  "sideEffects": [
+    "*.css",
+    "*.less"
+  ],
+  "type": "module",
+  "devDependencies": {
+    "antd": "^5.9.4",
+    "react": "^18.2.0",
+    "@types/react": "^18.2.27"
+  },
+  "dependencies": {
+    "@dimjs/lang": "2.1.1",
+    "@dimjs/model-react": "2.1.1",
+    "@dimjs/utils": "2.1.2"
+  }
+}

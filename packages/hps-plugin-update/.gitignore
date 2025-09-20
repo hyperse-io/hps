@@ -15,3 +15,6 @@ node_modules
 # misc
 .DS_Store
 *.pem
+
+# snapshots
+/tests/__snapshots__
