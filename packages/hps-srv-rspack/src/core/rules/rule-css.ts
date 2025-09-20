@@ -47,7 +47,7 @@ export const ruleCss = (
   evolveOptions: HpsEvolveOptions,
   useCssModule = false
 ): RuleSetRule => {
-  // The value indicates we will enable px2rem using `@hyperse/hps-srv-postcss-plugin-pixel`
+  // The value indicates we will enable px2rem using `@hyperse/hps-srv-rspack-plugin-postcss`
   const {
     pixelOptions,
     cssLoaderOptions = {},

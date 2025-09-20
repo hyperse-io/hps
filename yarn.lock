@@ -2410,7 +2410,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flatjs/forge-plugin-ts-paths@npm:2.2.4, @flatjs/forge-plugin-ts-paths@npm:^2.2.4":
+"@flatjs/forge-plugin-ts-paths@npm:2.2.4":
   version: 2.2.4
   resolution: "@flatjs/forge-plugin-ts-paths@npm:2.2.4"
   dependencies:
@@ -4153,8 +4153,7 @@ __metadata:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
-    "@hyperse/hps-srv-testing": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.4"
+    "@hyperse/wizard": "npm:^1.0.5"
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -4174,7 +4173,7 @@ __metadata:
   resolution: "@hyperse/hps-plugin-deploy@workspace:packages/hps-plugin-deploy"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@hyperse/wizard": "npm:^1.0.4"
+    "@hyperse/wizard": "npm:^1.0.5"
     "@types/mime-types": "npm:^3.0.1"
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
@@ -4199,7 +4198,7 @@ __metadata:
   resolution: "@hyperse/hps-plugin-info@workspace:packages/hps-plugin-info"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@hyperse/wizard": "npm:^1.0.4"
+    "@hyperse/wizard": "npm:^1.0.5"
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -4223,7 +4222,7 @@ __metadata:
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.4"
+    "@hyperse/wizard": "npm:^1.0.5"
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -4246,8 +4245,7 @@ __metadata:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-mock": "workspace:*"
-    "@hyperse/hps-srv-testing": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.4"
+    "@hyperse/wizard": "npm:^1.0.5"
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -4288,8 +4286,7 @@ __metadata:
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-mock": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
-    "@hyperse/hps-srv-testing": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.4"
+    "@hyperse/wizard": "npm:^1.0.5"
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -4309,7 +4306,7 @@ __metadata:
   resolution: "@hyperse/hps-plugin-update@workspace:packages/hps-plugin-update"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@hyperse/wizard": "npm:^1.0.4"
+    "@hyperse/wizard": "npm:^1.0.5"
     "@manypkg/get-packages": "npm:^3.1.0"
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
@@ -4338,6 +4335,7 @@ __metadata:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/logger": "npm:^1.1.7"
     "@hyperse/logger-plugin-stdout": "npm:^1.0.11"
+    "@hyperse/wizard": "npm:^1.0.5"
     "@types/ip": "npm:^1.1.3"
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
@@ -4351,6 +4349,8 @@ __metadata:
     typescript: "npm:^5.9.2"
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
+  peerDependencies:
+    "@hyperse/wizard": ">=1.0.5"
   languageName: unknown
   linkType: soft
 
@@ -4365,7 +4365,6 @@ __metadata:
     "@hyperse/delete-empty-folders": "npm:^1.0.1"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
-    "@hyperse/hps-srv-testing": "workspace:*"
     "@rollup/pluginutils": "npm:^5.3.0"
     "@types/express-mung": "npm:0.5.5"
     "@types/listr": "npm:^0.14.9"
@@ -4457,7 +4456,6 @@ __metadata:
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-mock": "workspace:*"
     "@hyperse/hps-srv-rspack-plugin-postcss": "workspace:*"
-    "@hyperse/hps-srv-testing": "workspace:*"
     "@hyperse/html-webpack-plugin-loader": "npm:^1.0.7"
     "@hyperse/inspector": "npm:^1.1.14"
     "@hyperse/inspector-babel-plugin": "npm:^1.1.8"
@@ -4512,28 +4510,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@hyperse/hps-srv-testing@workspace:*, @hyperse/hps-srv-testing@workspace:packages/hps-srv-testing":
-  version: 0.0.0-use.local
-  resolution: "@hyperse/hps-srv-testing@workspace:packages/hps-srv-testing"
-  dependencies:
-    "@armit/file-utility": "npm:^0.3.1"
-    "@armit/package": "npm:^0.3.1"
-    "@flatjs/forge-plugin-ts-paths": "npm:^2.2.4"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@rollup/plugin-commonjs": "npm:^28.0.6"
-    "@rollup/plugin-node-resolve": "npm:^16.0.1"
-    "@types/node": "npm:^24.5.2"
-    "@vitest/coverage-istanbul": "npm:^3.2.4"
-    "@vitest/ui": "npm:^3.2.4"
-    eslint: "npm:^9.36.0"
-    npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.0.1"
-    typescript: "npm:^5.9.2"
-    vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^3.2.4"
-  languageName: unknown
-  linkType: soft
-
 "@hyperse/hps-website@workspace:website":
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-website@workspace:website"
@@ -4585,8 +4561,8 @@ __metadata:
     "@hyperse/hps-plugin-mock": "workspace:*"
     "@hyperse/hps-plugin-serve": "workspace:*"
     "@hyperse/hps-plugin-update": "workspace:*"
+    "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
-    "@hyperse/hps-srv-testing": "workspace:*"
     "@hyperse/ts-node": "npm:^1.0.3"
     "@hyperse/wizard": "npm:^1.0.5"
     "@hyperse/wizard-plugin-error": "npm:^1.0.5"
@@ -4603,6 +4579,8 @@ __metadata:
     typescript: "npm:^5.9.2"
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
+  bin:
+    hps: ./bin/hps.mjs
   languageName: unknown
   linkType: soft
 
@@ -4847,7 +4825,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperse/wizard@npm:1.0.5, @hyperse/wizard@npm:^1.0.4, @hyperse/wizard@npm:^1.0.5":
+"@hyperse/wizard@npm:1.0.5, @hyperse/wizard@npm:^1.0.5":
   version: 1.0.5
   resolution: "@hyperse/wizard@npm:1.0.5"
   dependencies:

@@ -73,7 +73,6 @@
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
-    "@hyperse/hps-srv-testing": "workspace:*",
     "@types/express-mung": "0.5.5",
     "@types/listr": "^0.14.9",
     "@types/node": "^24.5.2",

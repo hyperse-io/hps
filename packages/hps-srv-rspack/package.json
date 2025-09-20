@@ -78,7 +78,6 @@
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
-    "@hyperse/hps-srv-testing": "workspace:*",
     "@types/case-sensitive-paths-webpack-plugin": "^2.1.9",
     "@types/express": "^5.0.3",
     "@types/lodash": "^4.17.20",

@@ -1,18 +1,12 @@
-import { join } from 'node:path';
 import { fileWalkSync, getDirname } from '@armit/file-utility';
 import type { DeepPartial } from '@hyperse/config-loader';
-import { createConfigLoaderOptions } from '@hyperse/hps-srv-testing';
+import { mergeOptions } from '@hyperse/hps-srv-common';
 import type { EvolveEntryMap } from '../../src/types/types-entry-map.js';
 import type { HpsEvolveOptions } from '../../src/types/types-options.js';
 import { startTestBuild } from '../test-utils.js';
+import { hpsEvolveConfig } from './hps-evolve.config.js';
 
 const projectCwd = getDirname(import.meta.url, 'fixtures');
-const tsconfig = join(projectCwd, '../../../tsconfig.json');
-const configLoaderOptions = await createConfigLoaderOptions(
-  tsconfig,
-  'hps-evolve',
-  ['@hyperse/hps-srv-rspack']
-);
 
 describe('evolve reactjs output library', () => {
   const doBuild = async (
@@ -23,8 +17,10 @@ describe('evolve reactjs output library', () => {
     return await startTestBuild(
       projectCwd,
       modulePattern,
-      { ...evolveOptions, entryMap: buildEntries },
-      configLoaderOptions
+      mergeOptions(hpsEvolveConfig, {
+        ...evolveOptions,
+        entryMap: buildEntries,
+      })
     );
   };
 

@@ -32,11 +32,8 @@
       "@hyperse/hps-srv-common": ["../../packages/hps-srv-common/src/index.ts"],
       "@hyperse/hps-srv-mock": ["../../packages/hps-srv-mock/src/index.ts"],
       "@hyperse/hps-srv-rspack": ["../../packages/hps-srv-rspack/src/index.ts"],
-      "@hyperse/hps-srv-postcss-plugin-pixel": [
+      "@hyperse/hps-srv-rspack-plugin-postcss": [
         "../hps-srv-rspack-plugin-postcss/src/index.ts"
-      ],
-      "@hyperse/hps-srv-testing": [
-        "../../packages/hps-srv-testing/src/index.ts"
       ]
     },
     "types": ["vitest/globals"]

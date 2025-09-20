@@ -157,7 +157,7 @@ export interface RuleSetLoaderOptions {
   };
 
   /**
-   * The config options fro  `@hyperse/hps-srv-postcss-plugin-pixel`
+   * The config options fro  `@hyperse/hps-srv-rspack-plugin-postcss`
    * If provider it will use default options of `hpsSrvPostcssPluginPixel`
    */
   pixelOptions?: false | Partial<PostcssPluginPixelOptions>;

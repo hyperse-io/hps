@@ -53,10 +53,6 @@
       "path": "packages/hps-plugin-deploy",
     },
     {
-      "name": "hps-srv-testing",
-      "path": "packages/hps-srv-testing",
-    },
-    {
       "name": "hps-srv-common",
       "path": "packages/hps-srv-common",
     },
@@ -129,7 +125,6 @@
       "./examples/example-single",
       "./examples/example-modular",
       "./packages/hps",
-      "./packages/hps-srv-testing",
       "./packages/hps-plugin-info",
       "./packages/hps-plugin-pack",
       "./packages/hps-plugin-load-config",

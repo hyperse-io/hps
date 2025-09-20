@@ -31,26 +31,9 @@ export const configEnv: EvolveConfigBase = {
 export const startTestBuild = async (
   projectCwd: string,
   buildModules: string[],
-  overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {},
-  configLoaderOptions?: ConfigLoaderOptions
+  evolveOptions: DeepPartial<HpsEvolveOptions> = {}
 ): Promise<EvolveBuildResult[]> => {
-  const command: EvolveConfigBase = {
-    projectCwd,
-    resolve: requireResolve,
-  };
-
-  const evolveFileOptions = await loadEvolveConfigFile(
-    projectCwd,
-    command,
-    configLoaderOptions
-  );
-
-  const finalEvolveOptions = mergeOptions(
-    evolveFileOptions,
-    overrideEvolveOptions
-  );
-
-  return startBuild(projectCwd, buildModules, finalEvolveOptions);
+  return startBuild(projectCwd, buildModules, evolveOptions);
 };
 
 export const startTestServe = async (

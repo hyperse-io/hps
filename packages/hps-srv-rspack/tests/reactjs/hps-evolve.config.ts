@@ -1,6 +1,7 @@
-import { defineConfig } from '@hyperse/hps-srv-rspack';
+import type { DeepPartial } from '@hyperse/config-loader';
+import type { HpsEvolveOptions } from '../../src/index.js';
 
-export default defineConfig({
+export const hpsEvolveConfig: DeepPartial<HpsEvolveOptions> = {
   entryMap: {
     'finance/connect-body/body': {
       entry: ['./src/body/index.tsx'],
@@ -64,7 +65,14 @@ export default defineConfig({
       options: {
         headScripts: (configData) => {
           // direct use random cdn of `env`
-          return [{ id: 'script/parent/child2/envCdn', src: configData.envCdn, position: 'end' , order: 1}];
+          return [
+            {
+              id: 'script/parent/child2/envCdn',
+              src: configData.envCdn,
+              position: 'end',
+              order: 1,
+            },
+          ];
         },
       },
     },
@@ -77,4 +85,4 @@ export default defineConfig({
     },
   },
   htmlCdn: 'https://hps.cdn.domain.com',
-});
+};

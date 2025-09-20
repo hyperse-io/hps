@@ -8,12 +8,15 @@ export const handlerServeEvolve = async (
     staticMode: boolean;
     mockFilters: string[];
   },
-  configOptions: HpsEvolveOptions
+  configOptions: Partial<HpsEvolveOptions>
 ) => {
   const { projectCwd, modules, staticMode } = flags;
-  const normalizedOptions = mergeOptions(configOptions, {
-    projectCwd: flags.projectCwd,
-  });
+  const normalizedOptions = mergeOptions<Partial<HpsEvolveOptions>>(
+    configOptions,
+    {
+      projectCwd: flags.projectCwd,
+    }
+  );
 
   const finalOptions = mergeOptions(normalizedOptions, {
     devServer: {
