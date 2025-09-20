@@ -1,1 +1,1 @@
-export const pluginName = `@hyperse/hps-srv-postcss-plugin-pixel`;
+export const pluginName = `@hyperse/hps-srv-rspack-plugin-postcss`;

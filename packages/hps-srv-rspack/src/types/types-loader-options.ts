@@ -1,6 +1,6 @@
 import { type AcceptedPlugin } from 'postcss';
+import type { PostcssPluginPixelOptions } from '@hyperse/hps-srv-rspack-plugin-postcss';
 import type { LoaderContext } from '@rspack/core';
-import type { PostcssPluginPixelOptions } from '../../../hps-srv-rspack-plugin-postcss/src/index.js';
 
 /**
  * The configurations for `css-loader` modules
