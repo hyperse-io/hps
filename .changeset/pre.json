@@ -23,6 +23,7 @@
   },
   "changesets": [
     "busy-seals-design",
+    "fancy-regions-arrive",
     "five-queens-boil",
     "icy-shirts-dress",
     "little-cats-peel",
