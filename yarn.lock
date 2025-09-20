@@ -2410,7 +2410,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@flatjs/forge-plugin-ts-paths@npm:2.2.4":
+"@flatjs/forge-plugin-ts-paths@npm:2.2.4, @flatjs/forge-plugin-ts-paths@npm:^2.2.4":
   version: 2.2.4
   resolution: "@flatjs/forge-plugin-ts-paths@npm:2.2.4"
   dependencies:
@@ -4507,6 +4507,28 @@ __metadata:
       optional: true
     imagemin-svgo:
       optional: true
+  languageName: unknown
+  linkType: soft
+
+"@hyperse/hps-srv-testing@workspace:packages/hps-srv-testing":
+  version: 0.0.0-use.local
+  resolution: "@hyperse/hps-srv-testing@workspace:packages/hps-srv-testing"
+  dependencies:
+    "@armit/file-utility": "npm:^0.3.1"
+    "@armit/package": "npm:^0.3.1"
+    "@flatjs/forge-plugin-ts-paths": "npm:^2.2.4"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@rollup/plugin-commonjs": "npm:^28.0.6"
+    "@rollup/plugin-node-resolve": "npm:^16.0.1"
+    "@types/node": "npm:^24.5.2"
+    "@vitest/coverage-istanbul": "npm:^3.2.4"
+    "@vitest/ui": "npm:^3.2.4"
+    eslint: "npm:^9.36.0"
+    npm-run-all: "npm:^4.1.5"
+    rimraf: "npm:^6.0.1"
+    typescript: "npm:^5.9.2"
+    vite-tsconfig-paths: "npm:5.1.4"
+    vitest: "npm:^3.2.4"
   languageName: unknown
   linkType: soft
 
