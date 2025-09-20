@@ -15,4 +15,4 @@
 "@hyperse/hps": patch
 ---
 
-fix hps-srv-rspack-plugin-postcss import
+refactor: remove hps-srv-testing package and update related imports across multiple packages

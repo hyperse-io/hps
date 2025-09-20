@@ -3,6 +3,10 @@ import { defineCommand, definePlugin } from '@hyperse/wizard';
 import { handlerServeEvolve } from './handlers/handler-serve-evolve.js';
 import { servePluginMessages } from './i18n/messages.js';
 
+export type EvolveServeCmdContext = Omit<HpsEvolveOptions, 'projectCwd'> & {
+  projectCwd?: string;
+};
+
 export const createServePlugin = () => {
   return definePlugin({
     name: 'plugins.servePlugin.name',
@@ -13,7 +17,7 @@ export const createServePlugin = () => {
           description: 'plugins.servePlugin.command.description',
           example: 'plugins.servePlugin.command.example',
         }).use(
-          defineCommand<'evolve', HpsEvolveOptions>('evolve', {
+          defineCommand<'evolve', EvolveServeCmdContext>('evolve', {
             description: 'plugins.servePlugin.subCommands.evolve.description',
             example: 'plugins.servePlugin.subCommands.evolve.example',
           })

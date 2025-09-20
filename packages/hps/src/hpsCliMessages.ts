@@ -7,12 +7,14 @@ export const hpsCliMessages = defineLocaleMessages({
     hpsCli: {
       description: 'Hps CLI',
       version: '{version}',
+      setCommonLogger: 'Set logger',
     },
   },
   zh: {
     hpsCli: {
       description: 'Hps CLI',
       version: '{version}',
+      setCommonLogger: '设置日志记录器',
     },
   },
 });

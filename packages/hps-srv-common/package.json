@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@hyperse/wizard": "^1.0.5",
     "@types/ip": "^1.1.3",
     "@types/node": "^24.5.2",
     "@vitest/coverage-istanbul": "^3.2.4",
@@ -63,6 +64,9 @@
     "typescript": "^5.9.2",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@hyperse/wizard": ">=1.0.5"
   },
   "engines": {
     "node": ">=20.0.0"

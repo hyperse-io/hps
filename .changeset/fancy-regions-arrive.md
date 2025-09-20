@@ -9,7 +9,6 @@
 "@hyperse/hps-plugin-info": patch
 "@hyperse/hps-plugin-mock": patch
 "@hyperse/hps-plugin-pack": patch
-"@hyperse/hps-srv-testing": patch
 "@hyperse/hps-srv-common": patch
 "@hyperse/hps-srv-rspack": patch
 "@hyperse/hps-srv-mock": patch

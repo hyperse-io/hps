@@ -2,19 +2,14 @@ import { existsSync, readFileSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
 import { getDirname } from '@armit/file-utility';
 import type { DeepPartial } from '@hyperse/config-loader';
-import { createConfigLoaderOptions } from '@hyperse/hps-srv-testing';
+import { mergeOptions } from '@hyperse/hps-srv-common';
 import { type HpsEvolveOptions } from '../../src/index.js';
 import { type EvolveEntryMap } from '../../src/types/types-entry-map.js';
 import { startTestBuild } from '../test-utils.js';
+import { hpsEvolveConfig } from './hps-evolve.config.js';
 
 const projectCwd = getDirname(import.meta.url, 'fixtures');
-const tsconfig = join(projectCwd, '../../../tsconfig.json');
 const publicPath = join(projectCwd, 'public');
-const configLoaderOptions = await createConfigLoaderOptions(
-  tsconfig,
-  'hps-evolve',
-  []
-);
 
 describe('evolve reactjs smoking test for each html', () => {
   beforeAll(() => {
@@ -31,10 +26,13 @@ describe('evolve reactjs smoking test for each html', () => {
     return await startTestBuild(
       projectCwd,
       modulePattern,
-      { ...evolveOptions, entryMap: buildEntries },
-      configLoaderOptions
+      mergeOptions(hpsEvolveConfig, {
+        ...evolveOptions,
+        entryMap: buildEntries,
+      })
     );
   };
+
   it('Customize the title during the group building process`', async () => {
     await doBuild(['titleA', 'titleA_child', 'titleB', 'titleB_child'], {
       titleA: {

@@ -1,5 +1,7 @@
 # @hyperse/hps
 
+<<<<<<< HEAD
+=======
 ## 0.1.0-next.10
 
 ### Patch Changes
@@ -15,6 +17,7 @@
   - @hyperse/hps-plugin-info@0.1.0-next.8
   - @hyperse/hps-plugin-mock@0.0.2-next.2
 
+>>>>>>> upstream/main
 ## 0.1.0-next.9
 
 ### Patch Changes

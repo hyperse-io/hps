@@ -9,7 +9,6 @@
     "noEmit": false,
     "incremental": true,
     "paths": {
-      "@hyperse/hps-srv-testing": ["../hps-srv-testing/src/index.ts"],
       "@hyperse/hps-srv-rspack": ["../hps-srv-rspack/src/index.ts"],
       "@hyperse/hps-srv-mock": ["../hps-srv-mock/src/index.ts"],
       "@hyperse/hps-srv-common": ["../hps-srv-common/src/index.ts"],

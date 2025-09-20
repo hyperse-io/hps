@@ -1,21 +1,12 @@
 import { join } from 'node:path';
+import { getDirname } from '@armit/file-utility';
 import { type DeepPartial } from '@hyperse/config-loader';
-import {
-  createConfigLoaderOptions,
-  getDirname,
-} from '@hyperse/hps-srv-testing';
 import { type HpsEvolveOptions } from '../../src/types/types-options.js';
 import { startTestServe } from '../test-utils.js';
 
 const projectCwd = getDirname(import.meta.url, 'fixtures');
 process.env.NODE_ENV = 'test';
 
-const tsconfig = join(projectCwd, '../../../tsconfig.json');
-const configLoaderOptions = await createConfigLoaderOptions(
-  tsconfig,
-  'hps-evolve',
-  []
-);
 const overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {
   entryMap: {
     home: {
@@ -73,6 +64,5 @@ const overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {
 await startTestServe(
   projectCwd,
   ['home', 'hmr', 'hmrIframe', 'main'],
-  overrideEvolveOptions,
-  configLoaderOptions
+  overrideEvolveOptions
 );

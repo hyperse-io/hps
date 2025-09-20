@@ -9,16 +9,18 @@ import { createLoadConfigPlugin } from '@hyperse/hps-plugin-load-config';
 import { createMockPlugin } from '@hyperse/hps-plugin-mock';
 import { createServePlugin } from '@hyperse/hps-plugin-serve';
 import { createUpdatePlugin } from '@hyperse/hps-plugin-update';
-import { createWizard } from '@hyperse/wizard';
+import { createWizard, definePlugin } from '@hyperse/wizard';
 import { createErrorPlugin } from '@hyperse/wizard-plugin-error';
 import { createHelpPlugin } from '@hyperse/wizard-plugin-help';
 import { createLoaderPlugin } from '@hyperse/wizard-plugin-loader';
 import { createVersionPlugin } from '@hyperse/wizard-plugin-version';
+import { commonLogger } from '../../hps-srv-common/src/index.js';
 import { hpsCliMessages } from './hpsCliMessages.js';
 import type { DefineConfigFn, EvolveConfigBase } from './types/index.js';
 import type { GetNameToContext } from './types/types-get-name-to-context.js';
 import { getCliPackage } from './utils/getCliPackage.js';
 import { resolveVersion } from './version.js';
+export * from './types/index.js';
 
 const cliPackage = await getCliPackage();
 const version = resolveVersion();
@@ -49,6 +51,18 @@ const cli = createWizard({
   localeMessages: hpsCliMessages,
   locale: 'en',
 })
+  .use(
+    definePlugin({
+      name: 'cli.hpsCli.setCommonLogger',
+      setup: (wizard) => {
+        wizard.interceptor(async (ctx, next) => {
+          commonLogger.setupCommonLogger(ctx.logger);
+          await next();
+        });
+        return wizard;
+      },
+    })
+  )
   .use(loadConfigPlugin)
   .use(helpPlugin)
   .use(versionPlugin)
@@ -66,5 +80,9 @@ const defineConfig: DefineConfigFn<GetNameToContext<typeof cli>> = (
 ) => {
   return myDefineConfig(userConfig);
 };
+
+export type CommandConfiguration<
+  Key extends keyof GetNameToContext<typeof cli>,
+> = GetNameToContext<typeof cli>[Key];
 
 export { cli, defineConfig };

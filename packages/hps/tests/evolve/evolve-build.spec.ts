@@ -5,7 +5,6 @@ import { cli } from '../../src/index.js';
 import { createTestLoadConfig } from '../create-test-load-config.js';
 
 const projectCwd = getDirname(import.meta.url, 'fixtures');
-const tsconfig = join(projectCwd, '../../../tsconfig.json');
 const publicCwd = join(projectCwd, 'public');
 
 describe('test build evolve modules', async () => {
@@ -16,7 +15,7 @@ describe('test build evolve modules', async () => {
   });
 
   it('test build evolve modules', async () => {
-    cli.use(createTestLoadConfig({ tsconfig }));
+    cli.use(createTestLoadConfig());
     await cli.parse([
       'build',
       'evolve',

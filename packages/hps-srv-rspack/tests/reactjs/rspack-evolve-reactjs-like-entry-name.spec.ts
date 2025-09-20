@@ -2,18 +2,13 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { getDirname } from '@armit/file-utility';
 import type { DeepPartial } from '@hyperse/config-loader';
-import { createConfigLoaderOptions } from '@hyperse/hps-srv-testing';
+import { mergeOptions } from '@hyperse/hps-srv-common';
 import { type HpsEvolveOptions } from '../../src/index.js';
 import { type EvolveEntryMap } from '../../src/types/types-entry-map.js';
 import { startTestBuild } from '../test-utils.js';
+import { hpsEvolveConfig } from './hps-evolve.config.js';
 
 const projectCwd = getDirname(import.meta.url, 'fixtures');
-const tsconfig = join(projectCwd, '../../../tsconfig.json');
-const configLoaderOptions = await createConfigLoaderOptions(
-  tsconfig,
-  'hps-evolve',
-  []
-);
 
 describe('evolve-reactjs-like-entry-name.spec', () => {
   const doBuild = async (
@@ -24,8 +19,10 @@ describe('evolve-reactjs-like-entry-name.spec', () => {
     return await startTestBuild(
       projectCwd,
       modulePattern,
-      { ...evolveOptions, entryMap: buildEntries },
-      configLoaderOptions
+      mergeOptions(hpsEvolveConfig, {
+        ...evolveOptions,
+        entryMap: buildEntries,
+      })
     );
   };
 

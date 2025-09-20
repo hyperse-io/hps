@@ -28,7 +28,7 @@ describe('test build evolve modules', async () => {
   });
 
   it('test build evolve modules', async () => {
-    cli.use(createTestLoadConfig({ tsconfig }));
+    cli.use(createTestLoadConfig());
     await cli.parse(['mock', '--projectCwd', projectCwd]);
 
     expect(printer).toHaveBeenCalled();
