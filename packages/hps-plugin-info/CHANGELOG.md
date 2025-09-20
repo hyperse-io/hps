@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-info
 
+## 0.1.0-next.8
+
+### Patch Changes
+
+- [#14](https://github.com/hyperse-io/hps/pull/14) [`e4e364e`](https://github.com/hyperse-io/hps/commit/e4e364e5b142da028a8cd81fee0bce019906017d) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - fix hps-srv-rspack-plugin-postcss import
+
 ## 0.1.0-next.7
 
 ### Patch Changes

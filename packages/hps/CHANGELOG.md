@@ -1,5 +1,23 @@
 # @hyperse/hps
 
+<<<<<<< HEAD
+=======
+## 0.1.0-next.10
+
+### Patch Changes
+
+- [#14](https://github.com/hyperse-io/hps/pull/14) [`e4e364e`](https://github.com/hyperse-io/hps/commit/e4e364e5b142da028a8cd81fee0bce019906017d) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - fix hps-srv-rspack-plugin-postcss import
+
+- Updated dependencies [[`e4e364e`](https://github.com/hyperse-io/hps/commit/e4e364e5b142da028a8cd81fee0bce019906017d)]:
+  - @hyperse/hps-plugin-load-config@0.1.0-next.8
+  - @hyperse/hps-plugin-deploy@0.0.2-next.6
+  - @hyperse/hps-plugin-update@0.0.2-next.6
+  - @hyperse/hps-plugin-build@0.0.2-next.2
+  - @hyperse/hps-plugin-serve@0.0.2-next.2
+  - @hyperse/hps-plugin-info@0.1.0-next.8
+  - @hyperse/hps-plugin-mock@0.0.2-next.2
+
+>>>>>>> upstream/main
 ## 0.1.0-next.9
 
 ### Patch Changes
