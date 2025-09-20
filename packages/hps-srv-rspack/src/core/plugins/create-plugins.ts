@@ -1,5 +1,4 @@
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
-import { TsCheckerRspackPlugin } from 'ts-checker-rspack-plugin';
 import { logger } from '@hyperse/hps-srv-common';
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import rspack, { type Plugin as RspackPlugin } from '@rspack/core';

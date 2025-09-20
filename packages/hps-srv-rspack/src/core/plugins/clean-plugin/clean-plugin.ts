@@ -3,7 +3,6 @@ import { relative } from 'node:path';
 import { fileWalkSync } from '@armit/file-utility';
 import { logger } from '@hyperse/hps-srv-common';
 import { type Compilation, type Compiler, type Stats } from '@rspack/core';
-import { moduleName } from '../../../constants.js';
 
 export interface Options {
   /**

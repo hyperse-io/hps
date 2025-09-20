@@ -10,7 +10,6 @@ import {
 } from '../../helpers/helper-get-html-max-order.js';
 import { getHtmlPluginConfig } from '../../helpers/helper-get-html-plugin-config.js';
 import { getRuntimeCDNBase } from '../../helpers/helper-get-runtime-cdn-base.js';
-import { normalizeEvolveEntryName } from '../../helpers/helper-normalize-entry-map.js';
 import { normalizePageProxy } from '../../helpers/helper-normalize-page-proxy.js';
 import { normalizeTemplateInjectTokens } from '../../helpers/helper-normalize-template-inject-tokens.js';
 import { injectFederationScripts } from '../../helpers/helper-script-injects.js';

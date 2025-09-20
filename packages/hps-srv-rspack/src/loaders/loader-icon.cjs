@@ -1,6 +1,7 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
 
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const svgo_1 = require('svgo');
 const VIEWBOX_REGEX = /viewBox="([^"]*)"/;
 const SVG_REGEX = /<svg[^>]*>|<\/svg>/g;

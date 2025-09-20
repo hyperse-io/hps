@@ -1,12 +1,10 @@
 import type { DeepPartial } from '@hyperse/config-loader';
-import { logger, requireResolve } from '@hyperse/hps-srv-common';
+import { logger } from '@hyperse/hps-srv-common';
 import { ignoreEntryOptionKeys } from '../constants.js';
-import type { EvolveConfigBase } from '../define-config/define-config.js';
 import { filterActivedEntriesByModule } from '../helpers/helper-filter-actived-entries.js';
 import { normalizeEvolveEntryMap } from '../helpers/helper-normalize-entry-map.js';
 import { splitToEntryGroup } from '../helpers/helper-split-to-entry-group.js';
 import { loadEvolveConfig } from '../load-config/load-evolve-config.js';
-import type { ConfigLoaderOptions } from '../load-config/types.js';
 import type { EvolveBuildResult } from '../types/types-build-result.js';
 import type { EvolveEntryMap } from '../types/types-entry-map.js';
 import type { HpsEvolveOptions } from '../types/types-options.js';

@@ -29,12 +29,12 @@ jobs:
       - name: 📥 Monorepo install
         uses: ./.github/actions/yarn-nm-install
 
-      - name: Build hps-srv-rspack-plugin-import
-        uses: ./.github/actions/rust-build
-        with:
-          working-directory: crates/hps-srv-rspack-plugin-import
-          build-command: yarn build
-          clean-command: yarn clean
+      # - name: Build hps-srv-rspack-plugin-import
+      #   uses: ./.github/actions/rust-build
+      #   with:
+      #     working-directory: crates/hps-srv-rspack-plugin-import
+      #     build-command: yarn build
+      #     clean-command: yarn clean
 
       # @link https://github.com/changesets/action
       - name: Create Release Pull Request or Publish to npm

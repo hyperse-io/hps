@@ -77,7 +77,6 @@ export const loadRspackConfig = async (
     stats: rspack?.stats ?? {
       preset: 'errors-warnings',
     },
-    //TODO TEST
     lazyCompilation: serveMode
       ? {
           entries: true,

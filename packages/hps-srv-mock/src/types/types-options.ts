@@ -108,9 +108,8 @@ export interface HpsMockOptions {
 
   /**
    * The node modules which will be imported from `mocks`
-   * @default ['@hyperse/mock','@hyperse/common', 'mockjs', 'lodash', 'class-validator', 'class-transformer',]
+   * @default ['@hyperse/hps-srv-mock','@hyperse/hps-srv-common', 'mockjs', 'lodash', 'class-validator', 'class-transformer',]
    */
-  //TODO
   externals?: Array<RegExp | string>;
   /**
    * Project root
