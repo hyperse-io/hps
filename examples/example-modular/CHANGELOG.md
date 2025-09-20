@@ -1,7 +1,14 @@
 # @example/example-modular
 
-<<<<<<< HEAD
-=======
+## 0.0.2-next.11
+
+### Patch Changes
+
+- Updated dependencies [[`ef4a455`](https://github.com/hyperse-io/hps/commit/ef4a455099c954727da0f6aebcc8e495ef41fc67)]:
+  - @hyperse/hps@0.1.0-next.11
+
+# <<<<<<< HEAD
+
 ## 0.0.2-next.10
 
 ### Patch Changes
@@ -9,7 +16,8 @@
 - Updated dependencies [[`e4e364e`](https://github.com/hyperse-io/hps/commit/e4e364e5b142da028a8cd81fee0bce019906017d)]:
   - @hyperse/hps@0.1.0-next.10
 
->>>>>>> upstream/main
+> > > > > > > upstream/main
+
 ## 0.0.2-next.9
 
 ### Patch Changes

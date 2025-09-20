@@ -1,5 +1,14 @@
 # @hyperse/hps-srv-mock
 
+## 0.0.2-next.3
+
+### Patch Changes
+
+- [#16](https://github.com/hyperse-io/hps/pull/16) [`ef4a455`](https://github.com/hyperse-io/hps/commit/ef4a455099c954727da0f6aebcc8e495ef41fc67) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: remove hps-srv-testing package and update related imports across multiple packages
+
+- Updated dependencies [[`ef4a455`](https://github.com/hyperse-io/hps/commit/ef4a455099c954727da0f6aebcc8e495ef41fc67)]:
+  - @hyperse/hps-srv-common@0.0.2-next.3
+
 ## 0.0.2-next.2
 
 ### Patch Changes

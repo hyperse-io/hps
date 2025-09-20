@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-deploy
 
+## 0.0.2-next.7
+
+### Patch Changes
+
+- [#16](https://github.com/hyperse-io/hps/pull/16) [`ef4a455`](https://github.com/hyperse-io/hps/commit/ef4a455099c954727da0f6aebcc8e495ef41fc67) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: remove hps-srv-testing package and update related imports across multiple packages
+
 ## 0.0.2-next.6
 
 ### Patch Changes
