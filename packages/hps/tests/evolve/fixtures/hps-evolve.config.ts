@@ -84,6 +84,7 @@ const evolveOptions = {
     },
     chunkFileVirtualPath: 'runtime-chunks',
   },
+  runTsChecker: false,
 }
 
 export default {

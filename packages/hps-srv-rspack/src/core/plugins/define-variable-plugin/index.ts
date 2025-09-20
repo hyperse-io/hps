@@ -3,11 +3,8 @@ import type { HpsEvolveOptions } from '../../../types/types-options.js';
 /**
  * The DefinePlugin replaces variables in your code with other values or expressions at compile time.
  * ```ts
- * `__SENTRY_DEBUG__`
- * `process.env.FLAT_BUILD_DATE`
- * `process.env.FLAT_COMMIT_HASH`
- * `process.env.FLAT_BRANCH_NAME`
- * `process.env.FLAT_RELEASE_VERSION`
+ * `process.env.HPS_PUBLIC_SERVE_MODE`
+ * `process.env.HPS_PUBLIC_BUILD_DATE`
  * ```
  * @returns
  */
@@ -16,10 +13,23 @@ export const createDefineVariablesPlugins = (
   evolveOptions: HpsEvolveOptions
 ) => {
   const rspack = evolveOptions.rspack || {};
+
+  const processEnv = process.env;
+  const publicEnvs: Record<string, string> = {};
+  if (processEnv) {
+    Object.keys(processEnv)
+      .filter((key) => key.startsWith('HPS_PUBLIC_'))
+      .forEach((key) => {
+        publicEnvs[key] = JSON.stringify(processEnv[key]);
+      });
+  }
   return [
     new DefinePlugin({
-      'process.env.FLAT_SERVE_MODE': JSON.stringify(serveMode),
-      'process.env.FLAT_BUILD_DATE': JSON.stringify(new Date().toISOString()),
+      'process.env.HPS_PUBLIC_SERVE_MODE': JSON.stringify(serveMode),
+      'process.env.HPS_PUBLIC_BUILD_DATE': JSON.stringify(
+        new Date().toISOString()
+      ),
+      ...publicEnvs,
       ...(rspack.plugins?.definePlugin?.variables || {}),
     }),
   ];

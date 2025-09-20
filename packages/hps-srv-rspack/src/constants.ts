@@ -33,11 +33,6 @@ export const ignoreEntryOptionKeys: Array<keyof EvolveEntryItemOption> = [
 ];
 
 /**
- * The directory where the webpack stats files are stored. relative to projectCwd
- */
-export const webpackStatsDir = `.cache/stats`;
-
-/**
  * The spinner frames used for build progress indicator
  * Different frames for Windows and Unix-like systems
  * Windows: simple ASCII characters
@@ -47,14 +42,3 @@ export const buildProgressSpinnerFrames =
   process.platform === 'win32'
     ? ['-', '\\', '|', '/']
     : ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
-
-/**
- * The default domain regex for code checker
- */
-
-export const defaultExtractionRule = [
-  // Standard domain regex (optional protocol + optional userinfo + optional port)
-  '(?:https?:)?\\/\\/(?:[\\w-]+@)?(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z]{2,}(?::\\d+)?',
-  //IP or IP+port regex
-  '(?:https?:)?\\/\\/\\d{1,3}(?:\\.\\d{1,3}){3}(?::\\d+)?',
-];

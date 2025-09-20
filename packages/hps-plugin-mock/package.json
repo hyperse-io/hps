@@ -50,10 +50,10 @@
     "@hyperse/eslint-config-hyperse": "^1.4.8",
     "@hyperse/hps-srv-testing": "workspace:*",
     "@hyperse/wizard": "^1.0.4",
-    "@types/node": "^24.3.0",
+    "@types/node": "^24.5.2",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
-    "eslint": "^9.34.0",
+    "eslint": "^9.36.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2",
@@ -61,7 +61,7 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "@hyperse/wizard": ">=1.0.1"
+    "@hyperse/wizard": ">=1.0.5"
   },
   "engines": {
     "node": ">=20.0.0"

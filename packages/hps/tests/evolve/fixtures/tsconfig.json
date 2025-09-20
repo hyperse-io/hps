@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/utils/*": ["./src/utils/*"]
+      "@/utils": ["./src/utils/index.ts"]
     },
     "newLine": "LF",
     "skipLibCheck": false,
@@ -37,6 +37,6 @@
     "**/*.js",
     ".eslintrc.js",
     "jest.config.*.js",
-    "mocks/index.ts"
+    "mocks/**/*.*"
   ]
 }
