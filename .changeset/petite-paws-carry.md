@@ -1,5 +1,4 @@
 ---
-"@hyperse/hps-srv-rspack-plugin-import": patch
 "@hyperse/hps-plugin-deploy": patch
 "@hyperse/hps-plugin-update": patch
 "@hyperse/hps-plugin-build": patch
