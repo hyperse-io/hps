@@ -1,5 +1,21 @@
 # @hyperse/hps
 
+## 0.1.0-next.12
+
+### Patch Changes
+
+- [#18](https://github.com/hyperse-io/hps/pull/18) [`0c62d0e`](https://github.com/hyperse-io/hps/commit/0c62d0ebe7bf8f860e9863556121a20c478788f7) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: update imports in index.ts and remove hps-srv-testing package files
+
+- Updated dependencies [[`0c62d0e`](https://github.com/hyperse-io/hps/commit/0c62d0ebe7bf8f860e9863556121a20c478788f7)]:
+  - @hyperse/hps-plugin-load-config@0.1.0-next.10
+  - @hyperse/hps-plugin-deploy@0.0.2-next.8
+  - @hyperse/hps-plugin-update@0.0.2-next.8
+  - @hyperse/hps-plugin-build@0.0.2-next.4
+  - @hyperse/hps-plugin-serve@0.0.2-next.4
+  - @hyperse/hps-plugin-info@0.1.0-next.10
+  - @hyperse/hps-plugin-mock@0.0.2-next.4
+  - @hyperse/hps-srv-common@0.0.2-next.4
+
 ## 0.1.0-next.11
 
 ### Patch Changes
