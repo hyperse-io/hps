@@ -77,6 +77,9 @@ export const mergeInspectorEvolveConfig = (
   const entryMap = newEvolveOptions.entryMap;
 
   for (const [_, entryMapItem] of Object.entries(entryMap)) {
+    if (entryMapItem.options?.output?.library) {
+      continue;
+    }
     const entry = entryMapItem.entry;
     entry.unshift(clientEntry);
   }
