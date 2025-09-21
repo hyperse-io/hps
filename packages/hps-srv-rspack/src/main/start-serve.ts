@@ -1,5 +1,6 @@
 import type { DeepPartial } from '@hyperse/config-loader';
 import { logger } from '@hyperse/hps-srv-common';
+import { createGlobalCompiler } from '../compiler/create-global-compiler.js';
 import { filterActivedEntriesByModule } from '../helpers/helper-filter-actived-entries.js';
 import { mergeInspectorEvolveConfig } from '../helpers/helper-merge-inspector-evolve-config.js';
 import { normalizeEvolveEntryMap } from '../helpers/helper-normalize-entry-map.js';
@@ -48,6 +49,8 @@ export const startServe = async (
     servedEntries,
     evolveOptions.entryMap
   );
+
+  await createGlobalCompiler(true, evolveOptions);
 
   return prepareServe(projectCwd, normalizedServedEntries, evolveOptions);
 };

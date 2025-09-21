@@ -39,10 +39,9 @@ describe('evolve reactjs smoking test for each entry points modular', () => {
       }
     );
 
-    const assets = fileWalkSync(['public/hps/evolve/home/*.css'], {
+    const assets = fileWalkSync(['public/hps/evolve/modular/*.js'], {
       cwd: projectCwd,
     });
-
     expect(assets.length).toBe(1);
   });
 });

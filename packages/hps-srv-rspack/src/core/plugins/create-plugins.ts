@@ -15,7 +15,6 @@ import { createDefineVariablesPlugins } from './define-variable-plugin/index.js'
 import { createModuleFederationPlugins } from './module-federation-plugin/index.js';
 import { createHtmlPlugins } from './multi-html-plugin/index.js';
 import { createProgressPlugins } from './progress-plugin/index.js';
-import { createTsCheckerPlugins } from './ts-checker-plugin/index.js';
 
 export const createPlugins = async (
   serveMode: boolean,
@@ -76,9 +75,6 @@ export const createPlugins = async (
 
     // Create all need html plugins
     ...createHtmlPlugins(serveMode, entryMapItemList, evolveOptions),
-
-    // Create ts checker plugins
-    ...createTsCheckerPlugins(serveMode, evolveOptions),
   ];
 
   // Indicates current we use `hot` mode for `webpack-dev-server` hot reload true.

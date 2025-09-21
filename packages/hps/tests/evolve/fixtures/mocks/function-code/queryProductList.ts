@@ -9,7 +9,7 @@ import {
 @mockable()
 export class MockService extends MockBase {
   @alias('queryProductList')
-  test(req: MockRequest, res: MockResponse): void {
+  test(_: MockRequest, res: MockResponse): void {
     res.json(
       this.$mock({
         code: '0000',

@@ -16,11 +16,12 @@ export const createDevServerEntries = async (
 
   // Create individual devPort for each compiler here.
   const { port: devServerPort, hostUri: devServerHostUri } =
-    await getAvailableDomain(
-      mergeOptions(devServer?.mockOptions || {}, {
+    await getAvailableDomain({
+      ...mergeOptions(devServer?.mockOptions || {}, {
         port: lastPort,
-      })
-    );
+      }),
+      isHttps: !!devServer?.mockOptions?.https,
+    });
   // Prepare devServer ports for each served entry.
   for (const [entryName, entryConfig] of Object.entries(servedEntries)) {
     // entryName: `home` should be normalized to ${`projectVirtualPath`}/home
