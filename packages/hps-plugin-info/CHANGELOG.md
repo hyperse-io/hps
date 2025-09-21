@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-info
 
+## 0.1.0-next.10
+
+### Patch Changes
+
+- [#18](https://github.com/hyperse-io/hps/pull/18) [`0c62d0e`](https://github.com/hyperse-io/hps/commit/0c62d0ebe7bf8f860e9863556121a20c478788f7) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: update imports in index.ts and remove hps-srv-testing package files
+
 ## 0.1.0-next.9
 
 ### Patch Changes
