@@ -3,8 +3,12 @@ import { CircularDependencyRspackPlugin, type Plugins } from '@rspack/core';
 import { type HpsEvolveOptions } from '../../../types/types-options.js';
 
 const cutBefore = (str: string, keyword: string) => {
-  const regex = new RegExp(`^[\\s\\S]*?${keyword}/`);
-  return str.replace(regex, '');
+  const regex = new RegExp(`^[\\s\\S]*?${keyword}`);
+  const result = str.replace(regex, '');
+  if (result.includes('!/')) {
+    return `/${result.split('!/')[1]}`; // Add the leading /
+  }
+  return result;
 };
 
 /**
