@@ -4456,6 +4456,7 @@ __metadata:
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-mock": "workspace:*"
     "@hyperse/hps-srv-rspack-plugin-postcss": "workspace:*"
+    "@hyperse/hps-srv-ts-checker": "workspace:*"
     "@hyperse/html-webpack-plugin-loader": "npm:^1.0.7"
     "@hyperse/inspector": "npm:^1.1.14"
     "@hyperse/inspector-babel-plugin": "npm:^1.1.8"
@@ -4473,6 +4474,7 @@ __metadata:
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
+    better-opn: "npm:^3.0.2"
     case-sensitive-paths-webpack-plugin: "npm:^2.4.0"
     css-loader: "npm:^7.1.2"
     eslint: "npm:^9.36.0"
@@ -4483,13 +4485,11 @@ __metadata:
     less-loader: "npm:^12.3.0"
     lodash: "npm:^4.17.21"
     npm-run-all: "npm:^4.1.5"
-    open: "npm:^10.2.0"
     postcss: "npm:^8.5.6"
     postcss-loader: "npm:^8.2.0"
     react-refresh: "npm:^0.17.0"
     rimraf: "npm:^6.0.1"
     svgo: "npm:^4.0.0"
-    ts-checker-rspack-plugin: "npm:^1.1.5"
     typescript: "npm:^5.9.2"
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
@@ -4506,6 +4506,33 @@ __metadata:
     imagemin-pngquant:
       optional: true
     imagemin-svgo:
+      optional: true
+  languageName: unknown
+  linkType: soft
+
+"@hyperse/hps-srv-ts-checker@workspace:*, @hyperse/hps-srv-ts-checker@workspace:packages/hps-srv-ts-checker":
+  version: 0.0.0-use.local
+  resolution: "@hyperse/hps-srv-ts-checker@workspace:packages/hps-srv-ts-checker"
+  dependencies:
+    "@armit/file-utility": "npm:^0.3.1"
+    "@babel/code-frame": "npm:^7.27.1"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/hps-srv-common": "workspace:*"
+    "@rspack/core": "npm:~1.5.5"
+    "@types/babel__code-frame": "npm:^7.0.6"
+    "@types/node": "npm:^24.5.2"
+    "@vitest/coverage-istanbul": "npm:^3.2.4"
+    "@vitest/ui": "npm:^3.2.4"
+    eslint: "npm:^9.36.0"
+    npm-run-all: "npm:^4.1.5"
+    rimraf: "npm:^6.0.1"
+    ts-checker-rspack-plugin: "npm:^1.1.5"
+    typescript: "npm:^5.9.2"
+    vitest: "npm:^3.2.4"
+  peerDependencies:
+    "@rspack/core": ">=1.5.5"
+  peerDependenciesMeta:
+    "@rspack/core":
       optional: true
   languageName: unknown
   linkType: soft
@@ -8773,6 +8800,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/babel__code-frame@npm:^7.0.6":
+  version: 7.0.6
+  resolution: "@types/babel__code-frame@npm:7.0.6"
+  checksum: 10c0/6517ac6ac6b971fb0a8c6f394dc5fc5afbc90d52d85e260dcaba3abdfe97e79b783ac7c6cf05de6494520cafe3b09d934af95c8c6dbc24a62f7846110dd1f838
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.20.5":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
@@ -10629,6 +10663,15 @@ __metadata:
   version: 0.6.1
   resolution: "batch@npm:0.6.1"
   checksum: 10c0/925a13897b4db80d4211082fe287bcf96d297af38e26448c857cee3e095c9792e3b8f26b37d268812e7f38a589f694609de8534a018b1937d7dc9f84e6b387c5
+  languageName: node
+  linkType: hard
+
+"better-opn@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "better-opn@npm:3.0.2"
+  dependencies:
+    open: "npm:^8.0.4"
+  checksum: 10c0/911ef25d44da75aabfd2444ce7a4294a8000ebcac73068c04a60298b0f7c7506b60421aa4cd02ac82502fb42baaff7e4892234b51e6923eded44c5a11185f2f5
   languageName: node
   linkType: hard
 
@@ -19519,7 +19562,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:^10.0.3, open@npm:^10.2.0":
+"open@npm:^10.0.3":
   version: 10.2.0
   resolution: "open@npm:10.2.0"
   dependencies:
@@ -19531,7 +19574,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"open@npm:^8.4.2":
+"open@npm:^8.0.4, open@npm:^8.4.2":
   version: 8.4.2
   resolution: "open@npm:8.4.2"
   dependencies:

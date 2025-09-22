@@ -15,7 +15,6 @@ import { createDefineVariablesPlugins } from './define-variable-plugin/index.js'
 import { createModuleFederationPlugins } from './module-federation-plugin/index.js';
 import { createHtmlPlugins } from './multi-html-plugin/index.js';
 import { createProgressPlugins } from './progress-plugin/index.js';
-import { createTsCheckerPlugins } from './ts-checker-plugin/index.js';
 
 export const createPlugins = async (
   serveMode: boolean,
@@ -42,7 +41,7 @@ export const createPlugins = async (
     new CaseSensitivePathsPlugin(),
 
     // Detect modules with circular dependencies when bundling with webpack for `development` mode.
-    ...createCircularDependencyPlugins(serveMode),
+    ...createCircularDependencyPlugins(serveMode, evolveOptions),
 
     // For css minify extractor, Note `"sideEffects": false,` of `package.json` will not emits a file (writes a file to the filesystem)
     new rspack.CssExtractRspackPlugin({
@@ -76,9 +75,6 @@ export const createPlugins = async (
 
     // Create all need html plugins
     ...createHtmlPlugins(serveMode, entryMapItemList, evolveOptions),
-
-    // Create ts checker plugins
-    ...createTsCheckerPlugins(serveMode, evolveOptions),
   ];
 
   // Indicates current we use `hot` mode for `webpack-dev-server` hot reload true.

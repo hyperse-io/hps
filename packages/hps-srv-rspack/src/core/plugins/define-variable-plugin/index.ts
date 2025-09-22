@@ -20,7 +20,7 @@ export const createDefineVariablesPlugins = (
     Object.keys(processEnv)
       .filter((key) => key.startsWith('HPS_PUBLIC_'))
       .forEach((key) => {
-        publicEnvs[key] = JSON.stringify(processEnv[key]);
+        publicEnvs[`process.env.${key}`] = JSON.stringify(processEnv[key]);
       });
   }
   return [

@@ -1,4 +1,5 @@
 import type { DeepPartial } from '@hyperse/config-loader';
+import { createGlobalCompiler } from '../compiler/create-global-compiler.js';
 import { loadEvolveConfig } from '../load-config/load-evolve-config.js';
 import { type HpsEvolveOptions } from '../types/types-options.js';
 import { prepareStatic } from './prepare-static.js';
@@ -17,6 +18,8 @@ export const startStatic = async (
     projectCwd,
     overrideEvolveOptions
   );
+
+  await createGlobalCompiler(true, evolveOptions);
 
   return prepareStatic(projectCwd, evolveOptions);
 };

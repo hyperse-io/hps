@@ -50,6 +50,7 @@
     "@hyperse/hps-srv-common": "workspace:*",
     "@hyperse/hps-srv-mock": "workspace:*",
     "@hyperse/hps-srv-rspack-plugin-postcss": "workspace:*",
+    "@hyperse/hps-srv-ts-checker": "workspace:*",
     "@hyperse/html-webpack-plugin-loader": "^1.0.7",
     "@hyperse/inspector": "^1.1.14",
     "@hyperse/inspector-babel-plugin": "^1.1.8",
@@ -61,6 +62,7 @@
     "@rspack/core": "~1.5.5",
     "@rspack/dev-server": "~1.1.4",
     "@rspack/plugin-react-refresh": "^1.5.1",
+    "better-opn": "^3.0.2",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "css-loader": "^7.1.2",
     "express": "^5.1.0",
@@ -69,12 +71,10 @@
     "less": "^4.4.1",
     "less-loader": "^12.3.0",
     "lodash": "^4.17.21",
-    "open": "^10.2.0",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.2.0",
     "react-refresh": "^0.17.0",
-    "svgo": "^4.0.0",
-    "ts-checker-rspack-plugin": "^1.1.5"
+    "svgo": "^4.0.0"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",

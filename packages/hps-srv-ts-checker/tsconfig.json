@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "noImplicitAny": true,
+    "noEmit": false,
+    "incremental": true,
+    "paths": {
+      "@hyperse/hps-srv-common": ["../hps-srv-common/src/index.ts"]
+    },
+    "types": ["vitest/globals"]
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
+}

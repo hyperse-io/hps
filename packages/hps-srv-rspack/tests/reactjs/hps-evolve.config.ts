@@ -11,7 +11,7 @@ export const hpsEvolveConfig: DeepPartial<HpsEvolveOptions> = {
       entry: ['./src/body-audit/index.tsx'],
       options: {},
     },
-    circularPlugin: {
+    'circular-plugin': {
       entry: ['./src/circular-plugin/index.tsx'],
       options: {},
     },

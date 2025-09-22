@@ -1,5 +1,6 @@
 import type { DeepPartial } from '@hyperse/config-loader';
 import { logger } from '@hyperse/hps-srv-common';
+import { createGlobalCompiler } from '../compiler/create-global-compiler.js';
 import { ignoreEntryOptionKeys } from '../constants.js';
 import { filterActivedEntriesByModule } from '../helpers/helper-filter-actived-entries.js';
 import { normalizeEvolveEntryMap } from '../helpers/helper-normalize-entry-map.js';
@@ -40,6 +41,8 @@ export const startBuild = async (
   );
 
   await envVerify(projectCwd, newEvolveOptions);
+
+  await createGlobalCompiler(false, newEvolveOptions);
 
   const buildEntries = filterActivedEntriesByModule(
     newEvolveOptions.entryMap,

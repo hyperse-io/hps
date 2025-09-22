@@ -39,10 +39,30 @@ describe('evolve reactjs smoking test for each entry points modular', () => {
       }
     );
 
-    const assets = fileWalkSync(['public/hps/evolve/home/*.css'], {
+    const assets = fileWalkSync(['public/hps/evolve/modular/*.js'], {
       cwd: projectCwd,
     });
+    expect(assets.length).toBe(1);
+  });
 
+  it('The project build `circularPlugin` with shared less assets', async () => {
+    await doBuild(
+      ['circular-plugin'],
+      {
+        'circular-plugin': {
+          entry: ['./src/circular-plugin/index.tsx'],
+        },
+      },
+      {
+        rspack: {
+          minimizer: false,
+        },
+      }
+    );
+
+    const assets = fileWalkSync(['public/hps/evolve/circular-plugin/*.js'], {
+      cwd: projectCwd,
+    });
     expect(assets.length).toBe(1);
   });
 });

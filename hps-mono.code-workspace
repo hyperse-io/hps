@@ -69,6 +69,10 @@
       "path": "packages/hps-srv-rspack",
     },
     {
+      "name": "hps-srv-ts-checker",
+      "path": "packages/hps-srv-ts-checker",
+    },
+    {
       "name": "hps-srv-rspack-plugin-postcss",
       "path": "packages/hps-srv-rspack-plugin-postcss",
     },
@@ -138,6 +142,7 @@
       "./packages/hps-srv-rolldown",
       "./packages/hps-srv-rspack",
       "./packages/hps-srv-rspack-plugin-postcss",
+      "./packages/hps-srv-ts-checker",
     ],
     "typescript.tsdk": "root/node_modules/typescript/lib"
   },

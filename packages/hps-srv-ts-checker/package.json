@@ -1,0 +1,79 @@
+{
+  "name": "@hyperse/hps-srv-ts-checker",
+  "version": "0.0.2-next.2",
+  "homepage": "https://github.com/hyperse-io/hps",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperse-io/hps",
+    "directory": "packages/hps-srv-ts-checker"
+  },
+  "author": {
+    "name": "Hyperse",
+    "url": "https://github.com/hyperse-io"
+  },
+  "type": "module",
+  "license": "SEE LICENSE IN FILE 'LICENSE'",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "bin/",
+    "dist/",
+    "index.js",
+    "README.md",
+    "CHANGELOG.md",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc -p ./tsconfig.build.json && yarn copy-entry",
+    "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
+    "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
+    "copy-entry": "cp -r ./src/compiler/entry.js ./dist/compiler/entry.js",
+    "clean": "rimraf --no-glob ./dist ./_release ./coverage ./tsconfig.tsbuildinfo",
+    "lint": "eslint .",
+    "test": "run-s test-unit",
+    "test-unit": "vitest run",
+    "test-coverage": "vitest run --coverage",
+    "test-unit-watch": "vitest watch --ui",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@armit/file-utility": "^0.3.1",
+    "@babel/code-frame": "^7.27.1",
+    "@hyperse/hps-srv-common": "workspace:*",
+    "ts-checker-rspack-plugin": "^1.1.5"
+  },
+  "devDependencies": {
+    "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@rspack/core": "~1.5.5",
+    "@types/babel__code-frame": "^7.0.6",
+    "@types/node": "^24.5.2",
+    "@vitest/coverage-istanbul": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "eslint": "^9.36.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@rspack/core": ">=1.5.5"
+  },
+  "peerDependenciesMeta": {
+    "@rspack/core": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "_release/package"
+  }
+}

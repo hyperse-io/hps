@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "jsx": "preserve",
+    "noImplicitAny": false,
+    "allowJs": false,
+    "noEmit": false,
+    "noUnusedParameters": false,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "incremental": true,
+    "types": ["vitest/globals", "node"]
+  },
+  "include": ["**/*.ts", "**/*.tsx"]
+}
