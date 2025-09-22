@@ -1,7 +1,3 @@
-import {
-  defineConfig as myDefineConfig,
-  type UserConfigExport,
-} from '@hyperse/config-loader';
 import { createBuildPlugin } from '@hyperse/hps-plugin-build';
 import { createDeployPlugin } from '@hyperse/hps-plugin-deploy';
 import { createInfoPlugin } from '@hyperse/hps-plugin-info';
@@ -15,8 +11,8 @@ import { createErrorPlugin } from '@hyperse/wizard-plugin-error';
 import { createHelpPlugin } from '@hyperse/wizard-plugin-help';
 import { createLoaderPlugin } from '@hyperse/wizard-plugin-loader';
 import { createVersionPlugin } from '@hyperse/wizard-plugin-version';
+import { myDefineConfig } from './define-config/define-config.js';
 import { hpsCliMessages } from './hpsCliMessages.js';
-import type { DefineConfigFn, EvolveConfigBase } from './types/index.js';
 import type { GetNameToContext } from './types/types-get-name-to-context.js';
 import { getCliPackage } from './utils/getCliPackage.js';
 import { resolveVersion } from './version.js';
@@ -75,11 +71,7 @@ const cli = createWizard({
   .use(servePlugin)
   .use(mockPlugin);
 
-const defineConfig: DefineConfigFn<GetNameToContext<typeof cli>> = (
-  userConfig: UserConfigExport<GetNameToContext<typeof cli>, EvolveConfigBase>
-) => {
-  return myDefineConfig(userConfig);
-};
+const defineConfig = myDefineConfig<typeof cli>;
 
 export type CommandConfiguration<
   Key extends keyof GetNameToContext<typeof cli>,

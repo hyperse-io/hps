@@ -46,7 +46,7 @@
   "dependencies": {
     "@armit/file-utility": "^0.3.1",
     "@armit/package": "^0.3.1",
-    "@hyperse/config-loader": "^1.0.6",
+    "@hyperse/config-loader": "^1.0.7",
     "@hyperse/hps-srv-common": "workspace:*",
     "@hyperse/hps-srv-mock": "workspace:*",
     "@hyperse/hps-srv-rspack-plugin-postcss": "workspace:*",

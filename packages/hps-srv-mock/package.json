@@ -46,7 +46,7 @@
     "@armit/file-utility": "^0.3.1",
     "@armit/package": "^0.3.1",
     "@flatjs/forge": "^2.3.9",
-    "@hyperse/config-loader": "^1.0.6",
+    "@hyperse/config-loader": "^1.0.7",
     "@hyperse/delete-empty-folders": "^1.0.1",
     "@hyperse/hps-srv-common": "workspace:*",
     "@rollup/pluginutils": "^5.3.0",

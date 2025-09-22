@@ -1,3 +1,5 @@
+import { myDefineConfig } from '../../../src/define-config';
+
 
 const mockOptions = {
   hostname: 'dev.hps.com',
@@ -87,7 +89,8 @@ const evolveOptions = {
   runTsChecker: false,
 }
 
-export default {
+export default myDefineConfig(()=>{
+  return {
     'build.evolve':()=>{
       return Promise.resolve(evolveOptions)
     },
@@ -95,6 +98,7 @@ export default {
       return Promise.resolve(evolveOptions)
     },
     'mock':mockOptions,
-}
+  }
+})
 
 

@@ -5,7 +5,6 @@ import { cli } from '../../src/index.js';
 import { createTestLoadConfig } from '../create-test-load-config.js';
 
 const projectCwd = getDirname(import.meta.url, 'fixtures');
-const tsconfig = join(projectCwd, '../../../tsconfig.json');
 const publicCwd = join(projectCwd, 'public');
 
 const printer = vi.fn();

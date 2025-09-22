@@ -1,7 +1,6 @@
-import type { DeepPartial } from '@hyperse/config-loader';
-import type { HpsEvolveOptions } from '../../src/index.js';
+import { defineConfig } from '@hyperse/hps-srv-rspack';
 
-export const hpsEvolveConfig: DeepPartial<HpsEvolveOptions> = {
+export default defineConfig(() => ({
   entryMap: {
     'finance/connect-body/body': {
       entry: ['./src/body/index.tsx'],
@@ -85,4 +84,4 @@ export const hpsEvolveConfig: DeepPartial<HpsEvolveOptions> = {
     },
   },
   htmlCdn: 'https://hps.cdn.domain.com',
-};
+}));
