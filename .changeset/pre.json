@@ -22,6 +22,7 @@
     "@hyperse/hps-website": "0.0.2-next.1"
   },
   "changesets": [
+    "big-friends-judge",
     "busy-seals-design",
     "chatty-foxes-lick",
     "chatty-pumas-cough",

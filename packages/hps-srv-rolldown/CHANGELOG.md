@@ -1,5 +1,12 @@
 @hyperse/hps-srv-rolldown
 
+## 0.0.2-next.5
+
+### Patch Changes
+
+- Updated dependencies [[`6a9cae8`](https://github.com/hyperse-io/hps/commit/6a9cae817150b0d2f123da6dcf04f8b310935450)]:
+  - @hyperse/hps-srv-common@0.0.2-next.5
+
 ## 0.0.2-next.4
 
 ### Patch Changes
