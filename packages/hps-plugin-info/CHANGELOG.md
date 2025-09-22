@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-info
 
+## 0.1.0-next.11
+
+### Patch Changes
+
+- [#20](https://github.com/hyperse-io/hps/pull/20) [`6a9cae8`](https://github.com/hyperse-io/hps/commit/6a9cae817150b0d2f123da6dcf04f8b310935450) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - chore: update package versions and enhance circular dependency detection in rspack
+
 ## 0.1.0-next.10
 
 ### Patch Changes
