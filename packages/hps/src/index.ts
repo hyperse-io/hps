@@ -13,7 +13,7 @@ import { createLoaderPlugin } from '@hyperse/wizard-plugin-loader';
 import { createVersionPlugin } from '@hyperse/wizard-plugin-version';
 import { myDefineConfig } from './define-config/define-config.js';
 import { hpsCliMessages } from './hpsCliMessages.js';
-import type { GetNameToContext } from './types/types-get-name-to-context.js';
+import type { NameToContext } from './types/types-name-to-context.js';
 import { getCliPackage } from './utils/getCliPackage.js';
 import { resolveVersion } from './version.js';
 export * from './types/index.js';
@@ -73,8 +73,7 @@ const cli = createWizard({
 
 const defineConfig = myDefineConfig<typeof cli>;
 
-export type CommandConfiguration<
-  Key extends keyof GetNameToContext<typeof cli>,
-> = GetNameToContext<typeof cli>[Key];
+export type CommandConfiguration<Key extends keyof NameToContext<typeof cli>> =
+  NameToContext<typeof cli>[Key];
 
 export { cli, defineConfig };
