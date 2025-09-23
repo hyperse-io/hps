@@ -82,6 +82,10 @@ export default defineConfig(() => ({
         '@': './src',
       },
     },
+    plugins: {
+      multiHtmlPlugin: {
+        htmlCdn: 'https://hps.cdn.domain.com',
+      },
+    },
   },
-  htmlCdn: 'https://hps.cdn.domain.com',
 }));

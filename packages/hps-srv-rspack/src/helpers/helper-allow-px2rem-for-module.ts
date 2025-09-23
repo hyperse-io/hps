@@ -6,7 +6,7 @@ export const allowPx2remForModule = (
   evolveOptions?: HpsEvolveOptions
 ) => {
   // Global settings for `AllowPx2Rem`
-  const globalAllowPx2Rem = evolveOptions?.loaderOptions?.pixelOptions;
+  const globalAllowPx2Rem = evolveOptions?.rspack?.loader?.pixelOptions;
   const currItemPx2Rem =
     (entryItem && entryItem[1]?.options?.allowPx2rem) ?? globalAllowPx2Rem;
 

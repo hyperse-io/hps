@@ -96,17 +96,6 @@ export type EvolveEntryMapContent = {
   groupName?: string;
 
   /**
-   * The basis of the grouping, this configuration takes effect when re-entering a group
-   *
-   * If groupingSource is `manual`, The grouping depends on the manually set groupName
-   *
-   * If groupingSource is `auto`, Grouping depends on whether the entry options are the same
-   *
-   * @default 'auto'
-   */
-  groupingSource?: 'auto' | 'manual';
-
-  /**
    * The base path of the entry module
    */
   entryModuleBase?: string[];

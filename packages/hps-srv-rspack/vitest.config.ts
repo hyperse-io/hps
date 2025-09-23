@@ -1,7 +1,5 @@
-import { resolve } from 'path';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { configDefaults, defineConfig } from 'vitest/config';
-import { requireResolve } from '@armit/package';
 
 export default defineConfig({
   plugins: [tsconfigPaths()],

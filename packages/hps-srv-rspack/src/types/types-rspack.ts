@@ -5,6 +5,7 @@ import type {
   RuleSetRule,
   SwcJsMinimizerRspackPluginOptions,
 } from '@rspack/core';
+import { type RuleSetLoaderOptions } from './types-loader-options.js';
 import type { EvolvePlugins } from './types-plugins.js';
 
 /**
@@ -16,6 +17,11 @@ export interface RspackEntryObject {
 
 export interface HpsEvolveRspackOptions
   extends Pick<Configuration, 'infrastructureLogging'> {
+  /**
+   * The config options of all rule set loaders.
+   */
+  loader: RuleSetLoaderOptions;
+
   /**
    * Options for the performance hints.
    */
@@ -167,7 +173,7 @@ export interface HpsEvolveRspackOptions
   /**
    * The plugins config options
    */
-  plugins?: EvolvePlugins;
+  plugins: EvolvePlugins;
 
   /**
    * `contentehash` bundle file name.

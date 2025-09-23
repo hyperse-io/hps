@@ -78,13 +78,17 @@ const evolveOptions = {
     },
     mockOptions: mockOptions,
   },
-  loaderOptions: {},
-  htmlCdn: 'http://dev.hps.com:4000/public',
   rspack:{
+    loader: {},
     externals:()=>{
       return {}
     },
     chunkFileVirtualPath: 'runtime-chunks',
+    plugins: {
+      multiHtmlPlugin: {
+        htmlCdn: 'http://dev.hps.com:4000/public',
+      },
+    },
   },
   runTsChecker: false,
 }

@@ -24,10 +24,34 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
     bundleDirResolver: (dir) => dir,
   },
   rspack: {
+    loader: {
+      assetDataUrlMaxSize: 4 * 1024,
+      lessOptions: {},
+      postcssOptions: {
+        cssnanoOptions: {},
+      },
+      pixelOptions: {
+        rootValue: { px: 100, rpx: 1 },
+        outputUnit: 'rem',
+      },
+      modularImports: [],
+    },
     // The default is es5
     target: ['web', 'es5'],
     plugins: {
       external: [],
+      definePlugin: {
+        variables: {},
+      },
+      tsCheckerPlugin: {
+        enabled: true,
+      },
+      rsdoctorPlugin: {
+        enabled: false,
+      },
+      multiHtmlPlugin: {
+        htmlCdn: '',
+      },
     },
     ruleSets: [],
     publicPath: 'auto',
@@ -36,31 +60,7 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
     outputDir: 'public',
     enableBundleHashName: true,
   },
-  loaderOptions: {
-    assetDataUrlMaxSize: 4 * 1024,
-    lessOptions: {},
-    postcssOptions: {
-      cssnanoOptions: {},
-    },
-    pixelOptions: {
-      rootValue: { px: 100, rpx: 1 },
-      outputUnit: 'rem',
-    },
-    modularImports: [],
-  },
-  htmlCdn: '',
   entryMap: {},
-  needVerifyPackages: {},
-  packageInstallChecker: {
-    enabled: false,
-    detectModules: ['@dimjs/*'],
-    throwError: false,
-    showAllInstalledGraph: true,
-  },
-  isolation: false,
-  maxEntryGroupSize: 100,
-  runTsChecker: true,
-  openRsdoctor: false,
   inspector: {
     keys: ['$mod', 'i'],
     customLaunchEditorEndpoint: '/__hps_inspector',

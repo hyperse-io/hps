@@ -58,7 +58,6 @@ const overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {
       },
     },
   },
-  isolation: false,
 };
 
 await startTestServe(

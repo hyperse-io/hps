@@ -24,11 +24,11 @@ export const prepareBuild = async (
   }
 
   // Fetch all configuration cdn
-  const htmlCdn = evolveOptions.htmlCdn;
+  const htmlCdn = evolveOptions.rspack.plugins.multiHtmlPlugin.htmlCdn;
 
   if (!htmlCdn) {
     throw new Error(
-      `No CDN config for env:"prod", groupName: ${firstGroupEntryItem.groupName}`
+      `htmlCdn is not configured, groupName: ${firstGroupEntryItem.groupName}`
     );
   }
 

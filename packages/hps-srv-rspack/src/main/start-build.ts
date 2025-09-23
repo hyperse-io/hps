@@ -9,7 +9,6 @@ import { loadEvolveConfig } from '../load-config/load-evolve-config.js';
 import type { EvolveBuildResult } from '../types/types-build-result.js';
 import type { EvolveEntryMap } from '../types/types-entry-map.js';
 import type { HpsEvolveOptions } from '../types/types-options.js';
-import { envVerify } from './env-verify.js';
 import { prepareBuild } from './prepare-build.js';
 
 const runRspackTask = async (
@@ -39,8 +38,6 @@ export const startBuild = async (
     projectCwd,
     overrideEvolveOptions
   );
-
-  await envVerify(projectCwd, newEvolveOptions);
 
   await createGlobalCompiler(false, newEvolveOptions);
 

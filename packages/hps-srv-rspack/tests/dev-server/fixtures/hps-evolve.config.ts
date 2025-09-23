@@ -33,12 +33,16 @@ export default defineConfig(() => ({
       return moduleGlobal();
     },
   },
-  loaderOptions: {},
-  htmlCdn: 'http://dev.hps.com:4000/public',
   rspack:{
     externals:()=>{
       return {}
     },
     chunkFileVirtualPath: 'runtime-chunks',
+    plugins: {
+      multiHtmlPlugin: {
+        htmlCdn: 'http://dev.hps.com:4000/public',
+      },
+    },
+    loader: {},
   },
 }));

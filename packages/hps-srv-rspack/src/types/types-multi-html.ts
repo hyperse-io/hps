@@ -17,8 +17,6 @@ export type HtmlPluginConfigConfigData = {
   envCdn: string;
 };
 
-export type EvolveHtmlCdn = string;
-
 export type HtmlPluginConfigTokenType<T extends Json> =
   | T
   | ((configData: HtmlPluginConfigConfigData) => T);

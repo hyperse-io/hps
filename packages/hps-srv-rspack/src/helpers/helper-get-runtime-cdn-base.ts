@@ -1,6 +1,4 @@
-import type { EvolveHtmlCdn } from '../types/types-multi-html.js';
-
-export const getRuntimeCDNBase = (htmlCdn: EvolveHtmlCdn, requireFn = '') => {
+export const getRuntimeCDNBase = (htmlCdn: string, requireFn = '') => {
   const result: string[] = [
     `
   (function () {

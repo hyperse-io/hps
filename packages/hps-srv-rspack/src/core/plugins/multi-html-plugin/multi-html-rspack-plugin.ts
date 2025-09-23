@@ -37,7 +37,7 @@ export const createMultiHtmlRspackPlugins = (
   const { options } = entryConfig;
   const mode = serveMode ? 'development' : 'production';
   const chunks: string[] = entryMapItemList.map((entryMap) => entryMap[0]);
-  const htmlCdn = evolveOptions.htmlCdn;
+  const htmlCdn = evolveOptions.rspack.plugins.multiHtmlPlugin.htmlCdn;
   const configData: HtmlPluginConfigConfigData = {
     mode,
     envCdn: htmlCdn,

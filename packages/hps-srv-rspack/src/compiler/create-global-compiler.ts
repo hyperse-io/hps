@@ -6,12 +6,12 @@ export const createGlobalCompiler = async (
   serveMode: boolean,
   evolveOptions: HpsEvolveOptions
 ): Promise<boolean> => {
-  const { runTsChecker, projectCwd, devServer } = evolveOptions;
+  const { rspack, projectCwd, devServer } = evolveOptions;
 
   const lastOptions: ForgeTsCheckerOptions = {
     serveMode,
     projectCwd: projectCwd,
-    runTsChecker: runTsChecker,
+    runTsChecker: rspack?.plugins?.tsCheckerPlugin?.enabled,
     watchOptions: devServer?.watchOptions || {},
   };
 

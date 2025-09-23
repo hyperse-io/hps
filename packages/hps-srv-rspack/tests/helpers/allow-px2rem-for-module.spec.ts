@@ -46,8 +46,10 @@ describe('@hyperse/hps-srv-rspack allow-px2rem-for-module', () => {
     expect(allowPx2remForModule(singleEntry, undefined)).toBe(false);
 
     evolveOptions = await loadEvolveConfig(testCwd, {
-      loaderOptions: {
-        pixelOptions: false,
+      rspack: {
+        loader: {
+          pixelOptions: false,
+        },
       },
       entryMap: {
         home: {
