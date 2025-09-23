@@ -21,11 +21,11 @@ export class MainModuleParser extends TemplateParser {
 
   private upsertBodyDocument(templateData: MainTemplateData) {
     const headerFragment = this.parseFragment(
-      `<div class="header"><div class="logo"></div><span>${templateData.title}</span></div>`
+      `<div class="header"><div class="logo"></div><span class="title">${templateData.title}</span><span class="datetime" id="datetime"></span></div>`
     );
 
     const liFragments = templateData.modules.map((module, index) => {
-      return `<li><a href="${module.link}">${index + 1}. ${module.name}</a><span class="${module.flagText}">${module.flagText}</span></li>`;
+      return `<li><a href="${module.link}">${index + 1}.<div class="content"><div>${module.name}</div><div class="desc">${module.link}</div></div></a><span class="flag">${module.flagText}</span></li>`;
     });
 
     const ulFragment = this.parseFragment(`<ul>${liFragments.join('')}</ul>`);
