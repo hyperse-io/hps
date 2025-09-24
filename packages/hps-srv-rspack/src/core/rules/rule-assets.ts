@@ -39,7 +39,7 @@ export const ruleAssets = (
       // Now webpack will automatically choose between resource and inline by following
       // a default condition: a file with size less than 8kb will be treated as a inline module type and resource module type otherwise.
       dataUrlCondition: {
-        maxSize: evolveOptions.rspack.loader.assetDataUrlMaxSize, // 4 * 1024, // 4kb
+        maxSize: evolveOptions.rspack?.loader?.assetDataUrlMaxSize ?? 4 * 1024, // 4 * 1024, // 4kb
       },
     },
   };
