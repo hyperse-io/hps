@@ -57,11 +57,17 @@ const overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {
         },
       },
     },
+    dynamicImport: {
+      entry: ['./src/dynamicImport/index.tsx'],
+      options: {},
+    },
   },
 };
 
-await startTestServe(
+const manifest = await startTestServe(
   projectCwd,
-  ['home', 'hmr', 'hmrIframe', 'main'],
+  ['home', 'hmr', 'hmrIframe', 'main', 'dynamicImport'],
   overrideEvolveOptions
 );
+
+console.log('==========>>>>>manifest', manifest);

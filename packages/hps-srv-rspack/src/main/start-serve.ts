@@ -5,6 +5,7 @@ import { filterActivedEntriesByModule } from '../helpers/helper-filter-actived-e
 import { mergeInspectorEvolveConfig } from '../helpers/helper-merge-inspector-evolve-config.js';
 import { normalizeEvolveEntryMap } from '../helpers/helper-normalize-entry-map.js';
 import { loadEvolveConfig } from '../load-config/load-evolve-config.js';
+import type { EvolveDevServerManifest } from '../types/types-dev-server.js';
 import { type HpsEvolveOptions } from '../types/types-options.js';
 import { prepareServe } from './prepare-serve.js';
 
@@ -19,7 +20,7 @@ export const startServe = async (
   projectCwd: string,
   serveModules: string[],
   overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {}
-) => {
+): Promise<EvolveDevServerManifest | undefined> => {
   // Try to load evolve configuration from `hps-evolve.config.ts`
   let evolveOptions = await loadEvolveConfig(projectCwd, overrideEvolveOptions);
 
@@ -39,7 +40,7 @@ export const startServe = async (
   // Make sure that we have at least one serve entry module.
   if (!servedEntryKeys.length) {
     logger.warn(`No served entries providered!`);
-    return [];
+    return;
   }
 
   logger.info(`servedEntries: ${JSON.stringify(servedEntryKeys, null, 2)}`);

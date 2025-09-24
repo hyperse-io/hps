@@ -25,6 +25,10 @@ export default defineConfig(() => ({
       entry: ['./src/hmrLibrary/index.tsx'],
       options: {},
     },
+    dynamicImport: {
+      entry: ['./src/dynamicImport/index.tsx'],
+      options: {},
+    },
   },
   devServer: {
     port: 4000,
@@ -37,7 +41,9 @@ export default defineConfig(() => ({
     externals:()=>{
       return {}
     },
-    chunkFileVirtualPath: 'runtime-chunks',
+    output: {
+      chunkFileVirtualPath: 'runtime-chunks',
+    },
     plugins: {
       htmlPlugin: {
         htmlCdn: 'http://dev.hps.com:4000/public',
