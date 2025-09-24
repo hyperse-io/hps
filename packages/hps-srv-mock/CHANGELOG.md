@@ -1,5 +1,36 @@
 # @hyperse/hps-srv-mock
 
+## 0.0.2-next.6
+
+### Patch Changes
+
+- [#22](https://github.com/hyperse-io/hps/pull/22) [`6dce79e`](https://github.com/hyperse-io/hps/commit/6dce79eff1d14913194ac39f13d3039559144f39) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - ## 🚀 New Features
+  - **Rspack Plugin Configuration Refactor**: Unify htmlPlugin settings and enhance output options for better build optimization
+  - **Enhanced MultiHtmlPlugin Integration**: Streamlined rspack configuration with improved loader and plugin options
+  - **TypeScript Checker Integration**: Add hps-srv-ts-checker package with integrated TypeScript checker functionality
+  - **Dynamic UI Enhancements**: Enhanced main module layout and styling with improved header, list items, and dynamic datetime display
+
+  ## 🔧 Performance Improvements
+  - **Improved Chunk File Handling**: Better build optimization and chunk management
+  - **Enhanced Circular Dependency Detection**: Improved regex patterns in cutBefore function for better performance
+  - **Streamlined Configuration Merging**: Optimized inspector evolve config processing
+
+  ## 🐞 Bug Fixes
+  - **Environment Variable Handling**: Update public environment variable keys to include process.env prefix
+  - **Browser Opening Functionality**: Replace 'open' with 'better-opn' for improved tab handling
+  - **Library Output Handling**: Skip entries with defined output library in mergeInspectorEvolveConfig
+
+  ## 📖 Documentation Updates
+  - **Enhanced README Files**: Update HPS and plugin documentation with enhanced features, installation instructions, and usage examples
+  - **Improved Developer Experience**: Better documentation across the ecosystem
+
+  ## 🔨 Refactoring
+  - **Configuration Handling**: Update dependencies and refactor configuration handling in hps package
+  - **Code Organization**: Improved import management and code structure across packages
+
+- Updated dependencies [[`6dce79e`](https://github.com/hyperse-io/hps/commit/6dce79eff1d14913194ac39f13d3039559144f39)]:
+  - @hyperse/hps-srv-common@0.0.2-next.6
+
 ## 0.0.2-next.5
 
 ### Patch Changes
