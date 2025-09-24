@@ -1,4 +1,4 @@
-import type { RuleSetRule } from '@rspack/core';
+import type { RuleSetRules } from '@rspack/core';
 import { type EntryMapItem } from '../../types/types-entry-map.js';
 import { type HpsEvolveOptions } from '../../types/types-options.js';
 import { ruleAssets } from './rule-assets.js';
@@ -10,9 +10,9 @@ export const createRuleSets = (
   serveMode: boolean,
   entryMapItemList: EntryMapItem[],
   evolveOptions: HpsEvolveOptions
-): RuleSetRule[] => {
+): RuleSetRules => {
   const entryMapItem = entryMapItemList[0];
-  const rules: RuleSetRule[] = [
+  const rules: RuleSetRules = [
     ruleSvgIcon(),
     ruleAssets(entryMapItemList, evolveOptions),
     // normal css style.
@@ -23,6 +23,6 @@ export const createRuleSets = (
     ruleScripts(serveMode, entryMapItem, evolveOptions),
   ];
 
-  const extraRuleSets = evolveOptions.rspack?.ruleSets || [];
+  const extraRuleSets = evolveOptions.rspack.module?.rules || [];
   return rules.concat(extraRuleSets);
 };

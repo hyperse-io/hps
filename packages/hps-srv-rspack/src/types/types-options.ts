@@ -11,7 +11,7 @@ export interface HpsEvolveOptions {
 
   /**
    * The virtual path for current `project`
-   * e.g. `evolve/test`
+   * e.g. `hps/evolve`
    */
   projectVirtualPath: string;
 

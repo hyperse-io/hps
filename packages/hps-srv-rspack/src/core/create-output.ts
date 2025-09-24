@@ -24,9 +24,9 @@ export const createOutput = async (
 
   // Allow us dynamic return `outputDir`, e.g dev_xxxx, we can create built directory via `branchName`
   const outputDir =
-    typeof rspack?.outputDir === 'function'
-      ? await rspack.outputDir()
-      : rspack?.outputDir || 'public';
+    typeof rspack.output?.outputDir === 'function'
+      ? await rspack.output.outputDir()
+      : rspack.output?.outputDir || 'public';
 
   const rspackOutput: Output = {
     // Formatting devtool sourcemap template file.

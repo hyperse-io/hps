@@ -15,7 +15,7 @@ describe('normalize-entry-absolute-path.spec', () => {
     rspack: {
       loader: {},
       plugins: {
-        multiHtmlPlugin: {
+        htmlPlugin: {
           htmlCdn: '',
         },
       },

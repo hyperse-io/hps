@@ -46,7 +46,9 @@ describe('evolve reactjs dynamic chunk filename', () => {
       },
       {
         rspack: {
-          chunkFileVirtualPath: 'runtime-chunks',
+          output: {
+            chunkFileVirtualPath: 'runtime-chunks',
+          },
         },
       }
     );

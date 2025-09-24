@@ -1,4 +1,4 @@
-export interface MultiHtmlPluginOptions {
+export interface HtmlPluginOptions {
   /**
    * We can define multiple `CDN` for my project.
    * --

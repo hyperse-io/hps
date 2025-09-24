@@ -6,7 +6,7 @@ export const enableBundleHashName = (
   entryItemOption?: EvolveEntryItemOption
 ) => {
   // Global settings for `enableBundleHashName`
-  const globalEnabledStatus = evolveOptions.rspack?.enableBundleHashName;
+  const globalEnabledStatus = evolveOptions.rspack.output?.enableBundleHashName;
 
   const bundleHashNameEnabled =
     entryItemOption?.enableBundleHashName ?? globalEnabledStatus;

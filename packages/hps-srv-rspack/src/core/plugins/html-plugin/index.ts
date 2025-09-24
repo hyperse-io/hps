@@ -1,8 +1,8 @@
 import type { Plugin as RspackPlugin } from '@rspack/core';
 import { type EntryMapItem } from '../../../types/types-entry-map.js';
 import { type HpsEvolveOptions } from '../../../types/types-options.js';
-import { EvolveMultiCdnPlugin } from './multi-html-cdn-plugin.js';
-import { createMultiHtmlRspackPlugins } from './multi-html-rspack-plugin.js';
+import { EvolveCdnPlugin } from './html-cdn-plugin.js';
+import { createHtmlPlugins as createHtmlRspackPlugins } from './html-rspack-plugin.js';
 
 /**
  * Create `html-webpack-plugin` for this build, refer to best practices
@@ -22,9 +22,9 @@ export const createHtmlPlugins = (
   }
 
   plugins.push(
-    ...createMultiHtmlRspackPlugins(serveMode, evolveOptions, entryMapItemList)
+    ...createHtmlRspackPlugins(serveMode, evolveOptions, entryMapItemList)
   );
 
-  plugins.push(new EvolveMultiCdnPlugin(evolveOptions, entryMapItemList));
+  plugins.push(new EvolveCdnPlugin(evolveOptions, entryMapItemList));
   return plugins;
 };

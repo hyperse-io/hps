@@ -28,8 +28,8 @@ export const assertChunkFilename = (
     ? `[id].[contenthash].${extension}`
     : `[id].${extension}`;
 
-  if (rspack?.chunkFileVirtualPath) {
-    chunkFilename = join(rspack.chunkFileVirtualPath, chunkFilename);
+  if (rspack.output?.chunkFileVirtualPath) {
+    chunkFilename = join(rspack.output.chunkFileVirtualPath, chunkFilename);
   }
 
   return chunkFilename;

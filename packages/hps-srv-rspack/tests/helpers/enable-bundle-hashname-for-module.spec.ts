@@ -19,7 +19,7 @@ describe('@hyperse/hps-srv-rspack enable-bundle-hashname-for-module', () => {
       evolveOptions
     )[0];
     let enabled = enableBundleHashName(evolveOptions, entryItem[1].options);
-    expect(evolveOptions.rspack?.enableBundleHashName).toBe(true);
+    expect(evolveOptions.rspack.output?.enableBundleHashName).toBe(true);
     expect(enabled).toBe(true);
     // reload evolve config with entry item options.
     evolveOptions = await loadEvolveConfig(testCwd, {
@@ -32,9 +32,9 @@ describe('@hyperse/hps-srv-rspack enable-bundle-hashname-for-module', () => {
         },
       },
     });
-    expect(evolveOptions.rspack?.enableBundleHashName).toBe(true);
+    expect(evolveOptions.rspack.output?.enableBundleHashName).toBe(true);
     entryItem = assertGroupEntryItem(evolveOptions.entryMap, evolveOptions)[0];
-    expect(evolveOptions.rspack?.enableBundleHashName).toBe(true);
+    expect(evolveOptions.rspack.output?.enableBundleHashName).toBe(true);
     expect(entryItem[1].options?.enableBundleHashName).toBe(false);
     enabled = enableBundleHashName(evolveOptions, entryItem[1].options);
     expect(enabled).toBe(false);

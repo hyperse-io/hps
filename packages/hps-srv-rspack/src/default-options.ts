@@ -3,6 +3,7 @@ import { type HpsEvolveOptions } from './types/types-options.js';
 export const defaultEvolveOptions: HpsEvolveOptions = {
   projectCwd: process.cwd(),
   projectVirtualPath: 'hps/evolve',
+  entryMap: {},
   rejectWarnings: false,
   devServer: {
     autoOpen: true,
@@ -36,10 +37,9 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
       },
       modularImports: [],
     },
-    // The default is es5
     target: ['web', 'es5'],
     plugins: {
-      external: [],
+      externalPlugins: [],
       definePlugin: {
         variables: {},
       },
@@ -49,18 +49,22 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
       rsdoctorPlugin: {
         enabled: false,
       },
-      multiHtmlPlugin: {
+      htmlPlugin: {
         htmlCdn: '',
       },
     },
-    ruleSets: [],
+    output: {
+      outputDir: 'public',
+      chunkFileVirtualPath: '',
+      enableBundleHashName: true,
+    },
+    module: {
+      rules: [],
+    },
     publicPath: 'auto',
     resolve: {},
     externals: {},
-    outputDir: 'public',
-    enableBundleHashName: true,
   },
-  entryMap: {},
   inspector: {
     keys: ['$mod', 'i'],
     customLaunchEditorEndpoint: '/__hps_inspector',

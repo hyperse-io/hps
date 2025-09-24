@@ -24,7 +24,7 @@ export type HtmlPluginConfigTokenType<T extends Json> =
 /**
  * The html plugin configuration for each entry item
  */
-export type MultiHtmlCDNEntryItem = {
+export type HtmlCDNEntryItem = {
   /**
    * webpack relative or absolute path to the template.
    * It must be an absolute path. `path.join(__dirname, `templates/index-{0}.html`)`

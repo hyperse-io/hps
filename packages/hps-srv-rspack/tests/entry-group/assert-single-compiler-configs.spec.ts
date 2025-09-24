@@ -27,7 +27,7 @@ describe('split-to-multi-compiler-configs', () => {
       rspack: {
         loader: {},
         plugins: {
-          multiHtmlPlugin: {
+          htmlPlugin: {
             htmlCdn: '',
           },
         },
@@ -78,7 +78,7 @@ describe('split-to-multi-compiler-configs', () => {
       rspack: {
         loader: {},
         plugins: {
-          multiHtmlPlugin: {
+          htmlPlugin: {
             htmlCdn: '',
           },
         },

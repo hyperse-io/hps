@@ -1,11 +1,11 @@
 import type { Configuration } from '@rspack/core';
 import type { ModuleFederationOptions } from './types-federation.js';
-import type { MultiHtmlCDNEntryItem } from './types-multi-html.js';
+import type { HtmlCDNEntryItem } from './types-multi-html.js';
 
 /**
  * The configuration options for each entry item.
  */
-export interface EvolveEntryItemOption extends MultiHtmlCDNEntryItem {
+export interface EvolveEntryItemOption extends HtmlCDNEntryItem {
   /**
    * The value indicates if we need to Px convert to rem.
    * @default entryItemOption?.allowPx2rem ?? pluginLoaderOptions?.pixelOptions?.enabled

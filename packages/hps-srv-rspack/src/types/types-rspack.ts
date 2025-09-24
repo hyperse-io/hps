@@ -2,7 +2,6 @@ import type {
   Configuration,
   LazyCompilationOptions,
   ModuleOptions,
-  RuleSetRule,
   SwcJsMinimizerRspackPluginOptions,
 } from '@rspack/core';
 import { type RuleSetLoaderOptions } from './types-loader-options.js';
@@ -162,46 +161,41 @@ export interface HpsEvolveRspackOptions
   sourceMap?: 'hidden-source-map' | 'source-map' | false;
 
   /**
-   * The rule sets loaders config options
-   */
-  ruleSets?: Array<
-    Omit<RuleSetRule, 'test'> & {
-      test?: string | RegExp | ((value: string) => boolean);
-    }
-  >;
-
-  /**
    * The plugins config options
    */
   plugins: EvolvePlugins;
 
   /**
-   * `contentehash` bundle file name.
-   * @default true
+   * Configuration for the output of the compilation.
    */
-  enableBundleHashName?: boolean;
+  output?: {
+    /**
+     * The output directory as absolute path, Note we must keep custom outputDir with prefix `public`
+     * e.g. `public/a/b`, `public/c/d`, don't support `a/b`.
+     * @default `public`
+     */
+    outputDir?: string | (() => string | Promise<string>);
 
-  /**
-   * The output directory as absolute path, Note we must keep custom outputDir with prefix `public`
-   * e.g. `public/a/b`, `public/c/d`, don't support `a/b`.
-   * @default `public`
-   */
-  outputDir?: string | (() => string | Promise<string>);
+    /**
+     * The virtual path prefix for output chunk files.
+     * The actual chunk file name will be: `${chunkFileVirtualPath}/${chunkFilename}`
+     * For example: if chunkFileVirtualPath = 'runtime-chunks' and chunkFilename = '[id].js',
+     * the final output path will be 'runtime-chunks/[id].js'.
+     */
+    chunkFileVirtualPath?: string;
 
-  /**
-   * The virtual path prefix for output chunk files.
-   * The actual chunk file name will be: `${chunkFileVirtualPath}/${chunkFilename}`
-   * For example: if chunkFileVirtualPath = 'runtime-chunks' and chunkFilename = '[id].js',
-   * the final output path will be 'runtime-chunks/[id].js'.
-   */
-  chunkFileVirtualPath?: string;
-
+    /**
+     * `contentehash` bundle file name.
+     * @default true
+     */
+    enableBundleHashName?: boolean;
+  };
   /**
    * The extra module options for rspack.
    *
    * @see {@link https://rspack.rs/zh/config/module}
    */
-  module?: Omit<ModuleOptions, 'rules'>;
+  module?: ModuleOptions;
 
   /**
    * The extra optimization options for rspack.

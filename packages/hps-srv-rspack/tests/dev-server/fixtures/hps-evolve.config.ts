@@ -39,7 +39,7 @@ export default defineConfig(() => ({
     },
     chunkFileVirtualPath: 'runtime-chunks',
     plugins: {
-      multiHtmlPlugin: {
+      htmlPlugin: {
         htmlCdn: 'http://dev.hps.com:4000/public',
       },
     },

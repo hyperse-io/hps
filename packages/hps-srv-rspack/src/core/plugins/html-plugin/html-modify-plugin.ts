@@ -18,11 +18,11 @@ const getCurrentEntryOptions = (
 };
 
 /**
- * The MultiHtmlModifyPlugin class is responsible for modifying the HTML output of the webpack compiler.
+ * The HtmlModifyPlugin class is responsible for modifying the HTML output of the webpack compiler.
  * It hooks into the compilation process and replaces occurrences of "<%= title %>" with the title specified in the options.
  */
-export class MultiHtmlModifyPlugin {
-  private pluginName = 'MultiHtmlModifyPlugin';
+export class HtmlModifyPlugin {
+  private pluginName = 'HtmlModifyPlugin';
   private entryMapItemList: EntryMapItem[];
   constructor(list: EntryMapItem[]) {
     this.entryMapItemList = list;

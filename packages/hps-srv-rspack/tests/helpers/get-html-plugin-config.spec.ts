@@ -2,7 +2,7 @@ import {
   defaultHtmlPluginConfig,
   getHtmlPluginConfig,
 } from '../../src/helpers/helper-get-html-plugin-config.js';
-import type { MultiHtmlCDNEntryItem } from '../../src/index.js';
+import type { HtmlCDNEntryItem } from '../../src/index.js';
 import { type EvolveEntryItemOption } from '../../src/types/types-entry-map.js';
 
 describe('@hyperse/hps-srv-rspack get-html-plugin-config', () => {
@@ -64,7 +64,7 @@ describe('@hyperse/hps-srv-rspack get-html-plugin-config', () => {
     for (const [key, value] of Object.entries(entryItemOption)) {
       expect(
         getHtmlPluginConfig(
-          key as keyof MultiHtmlCDNEntryItem,
+          key as keyof HtmlCDNEntryItem,
           { mode: 'development', envCdn: '' },
           value
         )
@@ -74,7 +74,7 @@ describe('@hyperse/hps-srv-rspack get-html-plugin-config', () => {
     for (const item of Object.keys(entryItemOption)) {
       expect(
         getHtmlPluginConfig(item as any, { mode: 'development', envCdn: '' })
-      ).toBe(defaultHtmlPluginConfig[item as keyof MultiHtmlCDNEntryItem]);
+      ).toBe(defaultHtmlPluginConfig[item as keyof HtmlCDNEntryItem]);
     }
   });
 });

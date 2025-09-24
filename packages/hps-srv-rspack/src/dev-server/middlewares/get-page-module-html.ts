@@ -219,7 +219,7 @@ export const getPageModuleHtml = async (
 
   // Add runtime CDN base configuration
   const runtimeCDNBaseScript = getRuntimeCDNBase(
-    evolveOptions.rspack.plugins.multiHtmlPlugin.htmlCdn
+    evolveOptions.rspack.plugins.htmlPlugin.htmlCdn
   );
   headInlineScripts.push({
     id: 'hpsMultiCdn',
@@ -230,7 +230,7 @@ export const getPageModuleHtml = async (
 
   // Add Module Federation scripts for static mode
   const moduleFederationScripts = injectFederationScripts(
-    evolveOptions.rspack.plugins.multiHtmlPlugin.htmlCdn
+    evolveOptions.rspack.plugins.htmlPlugin.htmlCdn
   );
   headInlineScripts.push({
     id: 'evolveFetchMicroWidgets',

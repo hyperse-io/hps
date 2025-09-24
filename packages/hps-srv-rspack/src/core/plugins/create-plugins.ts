@@ -11,8 +11,8 @@ import { type HpsEvolveOptions } from '../../types/types-options.js';
 import { createCircularDependencyPlugins } from './circular-dependency-plugin/index.js';
 import { createCleanPlugins } from './clean-plugin/index.js';
 import { createDefineVariablesPlugins } from './define-variable-plugin/index.js';
+import { createHtmlPlugins } from './html-plugin/index.js';
 import { createModuleFederationPlugins } from './module-federation-plugin/index.js';
-import { createHtmlPlugins } from './multi-html-plugin/index.js';
 import { createProgressPlugins } from './progress-plugin/index.js';
 import { createRsdoctorPlugins } from './rsdoctor-plugin/index.js';
 
@@ -109,6 +109,6 @@ export const createPlugins = async (
     }
   }
 
-  const extraPlugins = evolveOptions.rspack?.plugins?.external || [];
+  const extraPlugins = evolveOptions.rspack.plugins?.externalPlugins || [];
   return builtInPlugins.concat(extraPlugins);
 };

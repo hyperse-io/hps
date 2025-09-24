@@ -50,7 +50,7 @@ const evolveOptions: HpsEvolveOptions = {
   rspack: {
     loader: {},
     plugins: {
-      multiHtmlPlugin: {
+      htmlPlugin: {
         htmlCdn: '',
       },
     },
