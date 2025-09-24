@@ -1,11 +1,11 @@
 import type { Configuration } from '@rspack/core';
 import type { ModuleFederationOptions } from './types-federation.js';
-import type { MultiHtmlCDNEntryItem } from './types-multi-html.js';
+import type { HtmlCDNEntryItem } from './types-multi-html.js';
 
 /**
  * The configuration options for each entry item.
  */
-export interface EvolveEntryItemOption extends MultiHtmlCDNEntryItem {
+export interface EvolveEntryItemOption extends HtmlCDNEntryItem {
   /**
    * The value indicates if we need to Px convert to rem.
    * @default entryItemOption?.allowPx2rem ?? pluginLoaderOptions?.pixelOptions?.enabled
@@ -94,17 +94,6 @@ export type EvolveEntryMapContent = {
    * An alias used when grouping builds
    */
   groupName?: string;
-
-  /**
-   * The basis of the grouping, this configuration takes effect when re-entering a group
-   *
-   * If groupingSource is `manual`, The grouping depends on the manually set groupName
-   *
-   * If groupingSource is `auto`, Grouping depends on whether the entry options are the same
-   *
-   * @default 'auto'
-   */
-  groupingSource?: 'auto' | 'manual';
 
   /**
    * The base path of the entry module

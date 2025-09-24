@@ -9,7 +9,7 @@ import { normalizeTemplateInjectTokens } from '../../../helpers/helper-normalize
 import { type EntryMapItem } from '../../../types/types-entry-map.js';
 import { type HtmlPluginConfigConfigData } from '../../../types/types-multi-html.js';
 import { type HpsEvolveOptions } from '../../../types/types-options.js';
-import { MultiHtmlModifyPlugin } from './multi-html-modify-plugin.js';
+import { HtmlModifyPlugin } from './html-modify-plugin.js';
 
 const minifyOpts = {
   minifyJS: true,
@@ -24,20 +24,18 @@ const minifyOpts = {
  * @param buildEntryItem the entries for this `build`
  * @param allEnv
  */
-export const createMultiHtmlRspackPlugins = (
+export const createHtmlPlugins = (
   serveMode: boolean,
   evolveOptions: HpsEvolveOptions,
   entryMapItemList: EntryMapItem[]
 ): RspackPlugin[] => {
   const firstEntryMap = entryMapItemList[0];
   const [, entryConfig] = firstEntryMap;
-  const htmlPlugins: RspackPlugin[] = [
-    new MultiHtmlModifyPlugin(entryMapItemList),
-  ];
+  const htmlPlugins: RspackPlugin[] = [new HtmlModifyPlugin(entryMapItemList)];
   const { options } = entryConfig;
   const mode = serveMode ? 'development' : 'production';
   const chunks: string[] = entryMapItemList.map((entryMap) => entryMap[0]);
-  const htmlCdn = evolveOptions.htmlCdn;
+  const htmlCdn = evolveOptions.rspack.plugins.htmlPlugin.htmlCdn;
   const configData: HtmlPluginConfigConfigData = {
     mode,
     envCdn: htmlCdn,

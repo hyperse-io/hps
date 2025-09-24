@@ -1,3 +1,5 @@
+import { myDefineConfig } from '../../../src/define-config';
+
 
 const mockOptions = {
   hostname: 'dev.hps.com',
@@ -76,18 +78,30 @@ const evolveOptions = {
     },
     mockOptions: mockOptions,
   },
-  loaderOptions: {},
-  htmlCdn: 'http://dev.hps.com:4000/public',
   rspack:{
+    loader: {},
     externals:()=>{
       return {}
     },
-    chunkFileVirtualPath: 'runtime-chunks',
+    output: {
+      chunkFileVirtualPath: 'runtime-chunks',
+    },
+    plugins: {
+      htmlPlugin: {
+        htmlCdn: 'http://dev.hps.com:4000/public',
+      },
+      tsCheckerPlugin: {
+        enabled: false,
+      },
+      rsdoctorPlugin: {
+        enabled: false,
+      },
+    },
   },
-  runTsChecker: false,
 }
 
-export default {
+export default myDefineConfig(()=>{
+  return {
     'build.evolve':()=>{
       return Promise.resolve(evolveOptions)
     },
@@ -95,6 +109,7 @@ export default {
       return Promise.resolve(evolveOptions)
     },
     'mock':mockOptions,
-}
+  }
+})
 
 

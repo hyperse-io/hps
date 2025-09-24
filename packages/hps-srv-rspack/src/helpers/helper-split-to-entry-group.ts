@@ -141,8 +141,6 @@ export const autoGrouping = (
   serveMode: boolean,
   originalGroupCount: number = 0
 ): Array<EvolveEntryMap> => {
-  const { maxEntryGroupSize = 10 } = evolveOptions;
-
   const autoGroupingReduceMap = autoGroupingReduce(
     autoEntries,
     ignoreOptionKeys,
@@ -152,22 +150,7 @@ export const autoGrouping = (
   const autoGroupEntryMapList: Array<EvolveEntryMap> = [];
   // slice each group
   for (const [, groupItem] of Object.entries(autoGroupingReduceMap)) {
-    const groupKeys = Object.keys(groupItem);
-    if (groupKeys.length > maxEntryGroupSize) {
-      for (let i = 0; i < groupKeys.length; i += maxEntryGroupSize) {
-        const sliceGroupKeys = groupKeys.slice(i, i + maxEntryGroupSize);
-        const sliceEvolveEntryMap = sliceGroupKeys.reduce<EvolveEntryMap>(
-          (prev, curr) => {
-            prev[curr] = groupItem[curr];
-            return prev;
-          },
-          {}
-        );
-        autoGroupEntryMapList.push(sliceEvolveEntryMap);
-      }
-    } else {
-      autoGroupEntryMapList.push(groupItem);
-    }
+    autoGroupEntryMapList.push(groupItem);
   }
 
   return autoAssignGroupName(
@@ -194,18 +177,6 @@ export const splitToEntryGroup = (
   serveMode: boolean,
   originalGroupCount: number = 0
 ): Array<EvolveEntryMap> => {
-  const { isolation = false } = evolveOptions;
-  if (isolation) {
-    const evolveEntryMapList: Array<EvolveEntryMap> = [];
-    for (const [entryName, entryContent] of Object.entries(evolveEntries)) {
-      entryContent.groupName = entryName;
-      evolveEntryMapList.push({
-        [entryName]: entryContent,
-      });
-    }
-    return evolveEntryMapList;
-  }
-
   const evolveEntryFlatList = _.flatMap<
     EvolveEntryMap,
     EvolveEntryMapContent & {
@@ -218,21 +189,13 @@ export const splitToEntryGroup = (
     };
   });
 
-  const evolveEntryGroupMap = _.groupBy(evolveEntryFlatList, (entry) => {
-    return entry.groupingSource;
-  });
-
-  const manualEvolveEntryMapList = manualGrouping(
-    evolveEntryGroupMap['manual']
-  );
-
   const autoEvolveEntryMapList = autoGrouping(
     evolveOptions,
-    evolveEntryGroupMap['auto'],
+    evolveEntryFlatList,
     ignoreOptionKeys,
     serveMode,
     originalGroupCount
   );
 
-  return [...manualEvolveEntryMapList, ...autoEvolveEntryMapList];
+  return autoEvolveEntryMapList;
 };

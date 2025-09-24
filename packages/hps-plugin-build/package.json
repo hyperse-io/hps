@@ -42,7 +42,7 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@hyperse/config-loader": "^1.0.6",
+    "@hyperse/config-loader": "^1.0.7",
     "@hyperse/hps-srv-common": "workspace:*",
     "@hyperse/hps-srv-rspack": "workspace:*"
   },

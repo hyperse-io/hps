@@ -44,7 +44,7 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@hyperse/config-loader": "^1.0.6",
+    "@hyperse/config-loader": "^1.0.7",
     "@hyperse/hps-plugin-build": "workspace:*",
     "@hyperse/hps-plugin-deploy": "workspace:*",
     "@hyperse/hps-plugin-info": "workspace:*",

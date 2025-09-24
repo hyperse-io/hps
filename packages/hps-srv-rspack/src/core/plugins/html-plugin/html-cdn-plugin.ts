@@ -6,23 +6,22 @@ import rspack from '@rspack/core';
 import { getRuntimeCDNBase } from '../../../helpers/helper-get-runtime-cdn-base.js';
 import { httpUrlJoin } from '../../../helpers/helper-script-injects.js';
 import type { EntryMapItem } from '../../../types/types-entry-map.js';
-import { type EvolveHtmlCdn } from '../../../types/types-multi-html.js';
 import type { HpsEvolveOptions } from '../../../types/types-options.js';
 
-export class EvolveMultiCdnPlugin {
-  private pluginName = 'EvolveMultiCdnPlugin';
+export class EvolveCdnPlugin {
+  private pluginName = 'EvolveCdnPlugin';
   // https://github.com/webpack/webpack/blob/3d653290fafe385277b48e5a36807124618b9561/lib/MainTemplate.js#L12
   // the bundle public path RuntimeGlobals.publicPath: '__webpack_require__.p';
   private requireFn = rspack.RuntimeGlobals.publicPath;
 
-  private htmlCdn: EvolveHtmlCdn;
+  private htmlCdn: string;
   private entryMapItemList: EntryMapItem[];
 
   constructor(
     evolveOptions: HpsEvolveOptions,
     entryMapItemList: EntryMapItem[]
   ) {
-    this.htmlCdn = evolveOptions.htmlCdn;
+    this.htmlCdn = evolveOptions.rspack.plugins.htmlPlugin.htmlCdn;
     this.entryMapItemList = entryMapItemList;
 
     // Make sure we have `prod` configuration for each cdn node at least.
@@ -51,7 +50,7 @@ export class EvolveMultiCdnPlugin {
           const buf: string[] = [];
           buf.push('\n');
           buf.push(
-            '// Dynamic assets path override(`@hyperse/hps-srv-rspack`) plugin-multi-html-cdn`)'
+            '// Dynamic assets path override(`@hyperse/hps-srv-rspack`) plugin-html-cdn`)'
           );
           buf.push(getRuntimeCDNBase(this.htmlCdn, this.requireFn));
           if (module.source?.['source'])

@@ -52,7 +52,7 @@ export const ruleCss = (
     pixelOptions,
     cssLoaderOptions = {},
     postcssOptions,
-  } = evolveOptions.loaderOptions;
+  } = evolveOptions.rspack.loader;
 
   const { modules, ...restCssLoaderOptions } = cssLoaderOptions;
   // automatically enable css modules for files with .module.css extension

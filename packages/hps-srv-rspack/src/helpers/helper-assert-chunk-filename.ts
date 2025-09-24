@@ -1,4 +1,4 @@
-import { join } from 'path';
+import { join } from 'path/posix';
 import type { EntryMapItem } from '../types/types-entry-map.js';
 import type { HpsEvolveOptions } from '../types/types-options.js';
 import { enableBundleHashName } from './helper-enable-bundle-hashname.js';
@@ -28,8 +28,9 @@ export const assertChunkFilename = (
     ? `[id].[contenthash].${extension}`
     : `[id].${extension}`;
 
-  if (rspack?.chunkFileVirtualPath) {
-    chunkFilename = join(rspack.chunkFileVirtualPath, chunkFilename);
+  const prefix = rspack.output?.chunkFileVirtualPath;
+  if (prefix) {
+    chunkFilename = join(prefix, chunkFilename);
   }
 
   return chunkFilename;

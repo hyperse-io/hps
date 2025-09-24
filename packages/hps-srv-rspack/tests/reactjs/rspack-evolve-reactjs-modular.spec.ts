@@ -1,12 +1,12 @@
+import { join } from 'path';
 import { fileWalkSync, getDirname } from '@armit/file-utility';
 import type { DeepPartial } from '@hyperse/config-loader';
-import { mergeOptions } from '@hyperse/hps-srv-common';
 import { type HpsEvolveOptions } from '../../src/index.js';
 import { type EvolveEntryMap } from '../../src/types/types-entry-map.js';
 import { startTestBuild } from '../test-utils.js';
-import { hpsEvolveConfig } from './hps-evolve.config.js';
 
 const projectCwd = getDirname(import.meta.url, 'fixtures');
+const tsconfig = join(projectCwd, '../../../tsconfig.json');
 
 describe('evolve reactjs smoking test for each entry points modular', () => {
   const doBuild = async (
@@ -17,10 +17,11 @@ describe('evolve reactjs smoking test for each entry points modular', () => {
     return await startTestBuild(
       projectCwd,
       modulePattern,
-      mergeOptions(hpsEvolveConfig, {
+      {
         ...evolveOptions,
         entryMap: buildEntries,
-      })
+      },
+      tsconfig
     );
   };
 

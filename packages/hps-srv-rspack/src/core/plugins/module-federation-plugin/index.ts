@@ -112,7 +112,9 @@ export const createModuleFederationPlugins = (
       if (!serveMode) {
         plugins.unshift(
           new HtmlInjectScriptPlugin([
-            injectFederationScripts(evolveOptions.htmlCdn),
+            injectFederationScripts(
+              evolveOptions.rspack.plugins.htmlPlugin.htmlCdn
+            ),
           ])
         );
       }

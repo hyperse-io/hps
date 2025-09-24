@@ -1,5 +1,11 @@
-import type { ConfigEnvBase, UserConfigExport } from '@hyperse/config-loader';
+import {
+  type ConfigEnvBase,
+  defineConfig,
+  type UserConfigExport,
+} from '@hyperse/config-loader';
 import { type requireResolve } from '@hyperse/hps-srv-common';
+import type { WizardWithUse } from '@hyperse/wizard';
+import type { NameToContext } from '../types/types-name-to-context.js';
 
 export interface EvolveConfigBase extends ConfigEnvBase {
   /**
@@ -7,7 +13,7 @@ export interface EvolveConfigBase extends ConfigEnvBase {
    */
   projectCwd: string;
   /**
-   * Expose `env`.`resolve` to allow dynamic resolve `esm` node modules from `hps-evolve.config.ts`
+   * Expose `env`.`resolve` to allow dynamic resolve `esm` node modules from `hps.config.ts`
    * @example
    * ```ts
    * export default defineConfig((env) => {
@@ -24,6 +30,8 @@ export interface EvolveConfigBase extends ConfigEnvBase {
   resolve: typeof requireResolve;
 }
 
-export type DefineConfigFn<T> = (
-  userConfig: UserConfigExport<T, EvolveConfigBase>
-) => UserConfigExport<T, EvolveConfigBase>;
+export function myDefineConfig<T extends WizardWithUse>(
+  userConfig: UserConfigExport<NameToContext<T>, EvolveConfigBase>
+): UserConfigExport<NameToContext<T>, EvolveConfigBase> {
+  return defineConfig(userConfig);
+}

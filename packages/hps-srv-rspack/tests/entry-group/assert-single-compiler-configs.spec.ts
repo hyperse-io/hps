@@ -24,8 +24,14 @@ describe('split-to-multi-compiler-configs', () => {
       projectCwd: process.cwd(),
       projectVirtualPath: '/',
       devServer: {},
-      loaderOptions: {},
-      htmlCdn: '',
+      rspack: {
+        loader: {},
+        plugins: {
+          htmlPlugin: {
+            htmlCdn: '',
+          },
+        },
+      },
       entryMap: {},
     };
 
@@ -69,8 +75,14 @@ describe('split-to-multi-compiler-configs', () => {
       projectCwd: process.cwd(),
       projectVirtualPath: '/',
       devServer: {},
-      loaderOptions: {},
-      htmlCdn: '',
+      rspack: {
+        loader: {},
+        plugins: {
+          htmlPlugin: {
+            htmlCdn: '',
+          },
+        },
+      },
       entryMap: {},
     };
 

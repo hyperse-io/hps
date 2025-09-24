@@ -1,13 +1,13 @@
 import { getPackageDir } from '@hyperse/hps-srv-common';
 import { viewportScripts } from '../constants.js';
 import {
+  type HtmlCDNEntryItem,
   type HtmlPluginConfigConfigData,
   type HtmlPluginConfigTokenType,
   type Json,
-  type MultiHtmlCDNEntryItem,
 } from '../types/types-multi-html.js';
 
-export const defaultHtmlPluginConfig: Required<MultiHtmlCDNEntryItem> = {
+export const defaultHtmlPluginConfig: Required<HtmlCDNEntryItem> = {
   // The page title
   title: '',
   // The page favicon url地址

@@ -1,4 +1,4 @@
-export interface DefineVariablesOptions {
+export interface DefineVariablesPluginOptions {
   /**
    * The DefinePlugin replaces variables in your code with other values or expressions at compile time.
    * @default

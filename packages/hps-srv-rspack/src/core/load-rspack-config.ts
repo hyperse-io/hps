@@ -57,11 +57,11 @@ export const loadRspackConfig = async (
     // The base directory, an absolute path, for resolving entry points and loaders from configuration.
     // The context is an absolute string to the directory that contains the entry files.
     context: projectCwd,
-    target: (rspack?.target ?? ['web', 'es5']) as Target,
+    target: (rspack.target ?? ['web', 'es5']) as Target,
     resolve: createResolve(projectCwd, rspack),
     module: {
+      ...(rspack.module || {}),
       rules: moduleRules,
-      ...(rspack?.module || {}),
     },
     devtool: serveMode ? 'source-map' : rspack?.sourceMap || false,
     externalsType: rspack?.externalsType,

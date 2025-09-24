@@ -1,6 +1,5 @@
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import { logger } from '@hyperse/hps-srv-common';
-import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import rspack, { type Plugin as RspackPlugin } from '@rspack/core';
 import ReactRefreshPlugin from '@rspack/plugin-react-refresh';
 import { assertChunkFilename } from '../../helpers/helper-assert-chunk-filename.js';
@@ -12,9 +11,10 @@ import { type HpsEvolveOptions } from '../../types/types-options.js';
 import { createCircularDependencyPlugins } from './circular-dependency-plugin/index.js';
 import { createCleanPlugins } from './clean-plugin/index.js';
 import { createDefineVariablesPlugins } from './define-variable-plugin/index.js';
+import { createHtmlPlugins } from './html-plugin/index.js';
 import { createModuleFederationPlugins } from './module-federation-plugin/index.js';
-import { createHtmlPlugins } from './multi-html-plugin/index.js';
 import { createProgressPlugins } from './progress-plugin/index.js';
+import { createRsdoctorPlugins } from './rsdoctor-plugin/index.js';
 
 export const createPlugins = async (
   serveMode: boolean,
@@ -75,6 +75,9 @@ export const createPlugins = async (
 
     // Create all need html plugins
     ...createHtmlPlugins(serveMode, entryMapItemList, evolveOptions),
+
+    // Create rsdoctor plugin
+    ...createRsdoctorPlugins(evolveOptions),
   ];
 
   // Indicates current we use `hot` mode for `webpack-dev-server` hot reload true.
@@ -106,10 +109,6 @@ export const createPlugins = async (
     }
   }
 
-  if (evolveOptions.openRsdoctor) {
-    builtInPlugins.push(new RsdoctorRspackPlugin());
-  }
-
-  const extraPlugins = evolveOptions.rspack?.plugins?.external || [];
+  const extraPlugins = evolveOptions.rspack.plugins?.externalPlugins || [];
   return builtInPlugins.concat(extraPlugins);
 };

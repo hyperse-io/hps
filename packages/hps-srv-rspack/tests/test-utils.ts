@@ -31,9 +31,31 @@ export const configEnv: EvolveConfigBase = {
 export const startTestBuild = async (
   projectCwd: string,
   buildModules: string[],
-  evolveOptions: DeepPartial<HpsEvolveOptions> = {}
+  overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {},
+  tsconfigPath?: string
 ): Promise<EvolveBuildResult[]> => {
-  return startBuild(projectCwd, buildModules, evolveOptions);
+  const command: EvolveConfigBase = {
+    projectCwd,
+    resolve: requireResolve,
+  };
+
+  const evolveFileOptions = await loadEvolveConfigFile(projectCwd, command, {
+    configFile: 'hps-evolve',
+    loaderOptions: {
+      externals: [/^@hyperse\/.*/],
+      externalExclude: (moduleId: string | RegExp) => {
+        return moduleId.toString().startsWith('@hyperse/');
+      },
+      tsconfig: tsconfigPath,
+    },
+  });
+
+  const finalEvolveOptions = mergeOptions(
+    evolveFileOptions,
+    overrideEvolveOptions
+  );
+
+  return startBuild(projectCwd, buildModules, finalEvolveOptions);
 };
 
 export const startTestServe = async (

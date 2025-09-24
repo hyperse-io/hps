@@ -13,7 +13,6 @@ import { verifyGroupEntryOptions } from '../helpers/helper-verify-group-entry-op
 import type { EvolveDevServerEntryMap } from '../types/types-dev-server.js';
 import { type EvolveEntryMap } from '../types/types-entry-map.js';
 import { type HpsEvolveOptions } from '../types/types-options.js';
-import { envVerify } from './env-verify.js';
 
 /**
  * The main entry to start evolve serve
@@ -26,9 +25,6 @@ export const prepareServe = async (
   servedEntries: EvolveEntryMap,
   evolveOptions: HpsEvolveOptions
 ) => {
-  // Verify if we have an correct project local environment.
-  await envVerify(projectCwd, evolveOptions);
-
   // Group by entry group name
   const entryMapGroupList = splitToEntryGroup(
     servedEntries,

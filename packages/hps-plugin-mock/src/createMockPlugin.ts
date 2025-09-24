@@ -1,5 +1,4 @@
-import { mergeOptions } from '@hyperse/config-loader';
-import { logger } from '@hyperse/hps-srv-common';
+import { logger, mergeOptions } from '@hyperse/hps-srv-common';
 import { chalk } from '@hyperse/hps-srv-common';
 import type { HpsMockOptions } from '@hyperse/hps-srv-mock';
 import { defineCommand, definePlugin } from '@hyperse/wizard';

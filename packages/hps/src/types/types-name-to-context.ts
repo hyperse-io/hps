@@ -3,7 +3,12 @@ import type {
   WizardWithUse,
 } from '@hyperse/wizard';
 
-export type GetNameToContext<Wizard extends WizardWithUse> =
+/**
+ * Get the name to context map from a wizard
+ * @param Wizard - The wizard to get the name to context map from
+ * @returns The name to context map
+ */
+export type NameToContext<Wizard extends WizardWithUse> =
   Wizard extends WizardWithUse<infer NameToContext, any>
     ? WizardCommandContextLoaderResult<NameToContext>
     : never;

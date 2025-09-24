@@ -34,7 +34,7 @@ export const ruleLess = (
   const ruleSet: RuleSetRule = ruleCss(serveMode, entryMapItem, evolveOptions);
   ruleSet.test = /\.less$/i;
   // The Options for Less.
-  const lessOptions = evolveOptions.loaderOptions.lessOptions;
+  const lessOptions = evolveOptions.rspack.loader.lessOptions;
 
   if (Array.isArray(ruleSet.use)) {
     ruleSet.use.push({

@@ -12,8 +12,14 @@ describe('normalize-entry-absolute-path.spec', () => {
     projectCwd: projectCwd,
     projectVirtualPath: '/',
     devServer: {},
-    loaderOptions: {},
-    htmlCdn: '',
+    rspack: {
+      loader: {},
+      plugins: {
+        htmlPlugin: {
+          htmlCdn: '',
+        },
+      },
+    },
     entryMap: {},
   };
 

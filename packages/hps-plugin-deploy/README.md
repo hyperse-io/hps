@@ -17,7 +17,12 @@ A flexible deployment plugin for the HPS (Hyperse) build system that supports de
 ## Installation
 
 ```bash
+# yarn
+yarn add @hyperse/hps-plugin-deploy
+# npm
 npm install @hyperse/hps-plugin-deploy
+# pnpm
+pnpm add @hyperse/hps-plugin-deploy
 ```
 
 ## Quick Start
@@ -172,4 +177,4 @@ The plugin provides comprehensive error handling:
 
 ## License
 
-MIT License - see LICENSE file for details.
+This project is licensed under the [GPLv3 LICENSE](./LICENSE).

@@ -7,8 +7,8 @@ export const ruleScripts = (
   entryMapItem: EntryMapItem,
   evolveOptions: HpsEvolveOptions
 ): RuleSetRule => {
-  const { loaderOptions, projectCwd, inspector } = evolveOptions;
-  const { modularImports = [] } = loaderOptions;
+  const { rspack, projectCwd, inspector } = evolveOptions;
+  const { modularImports = [] } = rspack.loader;
 
   const enabledHmr = shouldEnableReactFastRefresh(
     serveMode,

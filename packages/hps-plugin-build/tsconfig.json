@@ -13,7 +13,8 @@
       "@hyperse/hps-srv-rspack-plugin-postcss": [
         "../hps-srv-rspack-plugin-postcss/src/index.ts"
       ],
-      "@hyperse/hps-srv-mock": ["../hps-srv-mock/src/index.ts"]
+      "@hyperse/hps-srv-mock": ["../hps-srv-mock/src/index.ts"],
+      "@hyperse/hps-srv-ts-checker": ["../hps-srv-ts-checker/src/index.ts"]
     },
     "types": ["vitest/globals"]
   },
