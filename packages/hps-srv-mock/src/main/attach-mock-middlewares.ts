@@ -28,6 +28,7 @@ import {
   type MockRequestHandler,
   type MockResponse,
 } from '../types/types-options.js';
+import { attachGraphqlServe } from './attach-graphql-serve.js';
 
 export const attachMockMiddlewares = async (
   app: Application,
@@ -48,7 +49,6 @@ export const attachMockMiddlewares = async (
 
   // Attach pre-defined express static middlewares.
   attachStaticMiddleware(app, mockCwd, staticMap);
-
   // Attach http proxy middleware
   attachHttpProxyMiddleware(app, proxyMap);
 
@@ -58,6 +58,9 @@ export const attachMockMiddlewares = async (
 
   // Using sub router to handler all `customized` mock.
   const apiRouter = Router({ mergeParams: true });
+
+  // Attach graphql serve
+  await attachGraphqlServe(apiRouter, mockOptions);
 
   // Sort all mock context keys, make sure that we have below
   const mockContexts = sortMockContexts(mockMap);

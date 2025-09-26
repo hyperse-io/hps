@@ -1,6 +1,6 @@
 import { getDirname } from '@armit/file-utility';
-import { requireResolve } from '@hyperse/hps-srv-common';
-import { loadMockConfigFile } from '../../src/index.js';
+import { chalk, logger, requireResolve } from '@hyperse/hps-srv-common';
+import { getGqlServiceUrl, loadMockConfigFile } from '../../src/index.js';
 import { startMock } from '../../src/main/start-mock.js';
 
 const projectCwd = getDirname(import.meta.url, 'fixtures');
@@ -10,6 +10,13 @@ const newMockOptions = await loadMockConfigFile(projectCwd, {
   resolve: requireResolve,
 });
 
-startMock(projectCwd, newMockOptions).catch((err) => {
-  console.log(err);
-});
+startMock(projectCwd, newMockOptions)
+  .then((domain) => {
+    const gqlServices = getGqlServiceUrl();
+    for (const [key, value] of Object.entries(gqlServices)) {
+      logger.info(`${key}: ${chalk(['cyan'])(`${domain}${value}`)}`);
+    }
+  })
+  .catch((err: any) => {
+    console.log(err);
+  });
