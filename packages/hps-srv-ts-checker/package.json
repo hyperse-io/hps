@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@hyperse/wizard": "^1.0.5",
     "@rspack/core": "~1.5.6",
     "@types/babel__code-frame": "^7.0.6",
     "@types/node": "^24.5.2",
@@ -62,9 +63,13 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
+    "@hyperse/wizard": ">=1.0.5",
     "@rspack/core": ">=1.5.6"
   },
   "peerDependenciesMeta": {
+    "@hyperse/wizard": {
+      "optional": true
+    },
     "@rspack/core": {
       "optional": true
     }

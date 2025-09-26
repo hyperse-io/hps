@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@hyperse/wizard": "^1.0.5",
     "@types/node": "^24.5.2",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
@@ -58,9 +59,13 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
+    "@hyperse/wizard": ">=1.0.5",
     "postcss": "^8.5.6"
   },
   "peerDependenciesMeta": {
+    "@hyperse/wizard": {
+      "optional": true
+    },
     "postcss": {
       "optional": true
     }
