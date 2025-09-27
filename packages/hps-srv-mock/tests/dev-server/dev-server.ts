@@ -1,5 +1,5 @@
 import { getDirname } from '@armit/file-utility';
-import { requireResolve } from '@hyperse/hps-srv-common';
+import { logger, requireResolve } from '@hyperse/hps-srv-common';
 import { loadMockConfigFile } from '../../src/index.js';
 import { startMock } from '../../src/main/start-mock.js';
 
@@ -10,6 +10,10 @@ const newMockOptions = await loadMockConfigFile(projectCwd, {
   resolve: requireResolve,
 });
 
-startMock(projectCwd, newMockOptions).catch((err) => {
-  console.log(err);
-});
+startMock(projectCwd, newMockOptions)
+  .then((domain) => {
+    logger.info(`${domain}`);
+  })
+  .catch((err: any) => {
+    console.log(err);
+  });

@@ -65,7 +65,7 @@ export class HtmlInlineScriptRspackPlugin implements RspackPluginInstance {
     compiler.hooks.compilation.tap(
       `${PLUGIN_PREFIX}_compilation`,
       (compilation: Compilation) => {
-        const hooks = htmlWebpackPlugin.getHooks(compilation);
+        const hooks = htmlWebpackPlugin.getHooks(compilation as any);
         hooks.alterAssetTags.tap(`${PLUGIN_PREFIX}_alterAssetTags`, (data) => {
           data.assetTags.scripts = data.assetTags.scripts.map((tag) =>
             this.processScriptTag(publicPath, compilation.assets, tag)

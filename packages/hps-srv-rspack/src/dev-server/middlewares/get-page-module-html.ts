@@ -222,7 +222,7 @@ export const getPageModuleHtml = async (
     evolveOptions.rspack.plugins.htmlPlugin.htmlCdn
   );
   headInlineScripts.push({
-    id: 'hpsMultiCdn',
+    id: 'htmlRuntimeCDN',
     content: runtimeCDNBaseScript,
     position: 'end',
     order: headInlineScriptsMaxOrder + 1,

@@ -1,31 +1,24 @@
-import type { EvolveDevServerEntryMap } from '../../types/types-dev-server.js';
+import type {
+  EvolveDevServerEntryMap,
+  EvolveDevServerManifest,
+} from '../../types/types-dev-server.js';
 import { type HpsEvolveOptions } from '../../types/types-options.js';
 import { getSortedModules } from './get-all-sorted-modules.js';
 import { getBundleAsset } from './get-bundle-asset.js';
 import { getHmrRuntimeChunks } from './get-hmr-runtime-chunks.js';
 
-interface RuntimeManifest {
-  [normalizedEntryName: string]: {
-    entryName: string;
-    styles: string[];
-    scripts: string[];
-    runtimeChunks: string[];
-    isServed: boolean;
-  };
-}
-
 export const getRuntimeManifest = async (
   servedDevServerEntries: EvolveDevServerEntryMap,
   devHostUri: string,
   evolveOptions: HpsEvolveOptions
-) => {
+): Promise<EvolveDevServerManifest> => {
   const sortedModules = getSortedModules(
     evolveOptions,
     servedDevServerEntries,
     devHostUri
   );
 
-  const runtimeManifest: RuntimeManifest = {};
+  const runtimeManifest: EvolveDevServerManifest = {};
   for (const moduleItem of sortedModules) {
     const {
       entryName,

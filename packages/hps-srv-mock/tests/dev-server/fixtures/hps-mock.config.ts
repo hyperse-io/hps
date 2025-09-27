@@ -1,4 +1,5 @@
-import { defineConfig } from '@hyperse/hps-srv-mock';
+import { defineConfig, defineSkipMockFields } from '@hyperse/hps-srv-mock';
+import { type introspection } from '../graphql-admin-env.js';
 
 export default defineConfig({
   projectCwd: process.cwd(),
@@ -8,6 +9,17 @@ export default defineConfig({
   chunkSize: 3,
   staticMap: {
     '/static': 'static',
+  },
+  proxyMap: {
+    '/proxy_mock': {
+      pathRewrite: { '^/proxy_mock': '' },
+      router() {
+        return 'http://localhost:40001/api/vendure-dashboard-shop-api/shop-api';
+      },
+      headers: {
+      },
+      logger: console,
+    },
   },
   mockMap: {
     /**
@@ -56,5 +68,35 @@ export default defineConfig({
      * others
      */
     '/*': { type: 'REST', defs: ['others'], middlewares: {} },
+  },
+  graphqlMockMap: {
+    'vendure-dashboard-admin-api': {
+      apiPath: '/admin-api',
+      url: 'http://localhost:4090/admin-api',
+      mocks: {},
+      skipMockFields: defineSkipMockFields<introspection>({
+        'query':['activedTemplateByRoutePath'],
+        'mutation':['addCustomersToGroup']
+      }),
+      resolvers: {
+        Query: {
+          activeChannel: () => {
+            return {
+              name: 'activedTemplateByRoutePath',
+              changelog: 'changelog',
+            };
+          },
+        },
+      },
+    },
+    'vendure-dashboard-shop-api': {
+      apiPath: '/shop-api',
+      url: 'http://localhost:4090/shop-api',
+      mocks:   {},
+      skipMockFields: {
+        'query':['activePaymentMethods',],
+        'mutation':['addCustomersToGroup']
+      }
+    },
   },
 });

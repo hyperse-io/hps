@@ -166,3 +166,13 @@ export type EvolveDevServerEntryMap = {
     normalizedEntryName: string;
   };
 };
+
+export type EvolveDevServerManifest = {
+  [normalizedEntryName: string]: {
+    entryName: string;
+    styles: string[];
+    scripts: string[];
+    runtimeChunks: string[];
+    isServed: boolean;
+  };
+};

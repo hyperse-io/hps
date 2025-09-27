@@ -5,12 +5,16 @@ import { startRspackServe } from '../core/start-rspack-serve.js';
 import { createAppPageRoute } from '../dev-server/create-app-page-route.js';
 import { createDevServer } from '../dev-server/create-dev-server.js';
 import { createDevServerEntries } from '../dev-server/create-dev-server-entries.js';
+import { getRuntimeManifest } from '../dev-server/middlewares/get-runtime-manifest.js';
 import { flatEntryMap } from '../helpers/helper-flat-entry-map.js';
 import { normalizePageProxy } from '../helpers/helper-normalize-page-proxy.js';
 import { openPage } from '../helpers/helper-open-page.js';
 import { splitToEntryGroup } from '../helpers/helper-split-to-entry-group.js';
 import { verifyGroupEntryOptions } from '../helpers/helper-verify-group-entry-options.js';
-import type { EvolveDevServerEntryMap } from '../types/types-dev-server.js';
+import type {
+  EvolveDevServerEntryMap,
+  EvolveDevServerManifest,
+} from '../types/types-dev-server.js';
 import { type EvolveEntryMap } from '../types/types-entry-map.js';
 import { type HpsEvolveOptions } from '../types/types-options.js';
 
@@ -24,7 +28,7 @@ export const prepareServe = async (
   projectCwd: string,
   servedEntries: EvolveEntryMap,
   evolveOptions: HpsEvolveOptions
-) => {
+): Promise<EvolveDevServerManifest | undefined> => {
   // Group by entry group name
   const entryMapGroupList = splitToEntryGroup(
     servedEntries,
@@ -52,11 +56,18 @@ export const prepareServe = async (
   }
 
   // Attach core handlers for mock
-  await attachMockMiddlewares(app, {
-    ...evolveOptions.devServer?.mockOptions,
-    mockFilters: arrayUnique(mockFilters),
-    projectCwd,
-  });
+  await attachMockMiddlewares(
+    app,
+    {
+      ...evolveOptions.devServer?.mockOptions,
+      mockFilters: arrayUnique(mockFilters),
+      projectCwd,
+    },
+    {
+      hostUri: devHostUri,
+      port: devPort,
+    }
+  );
 
   let lastPort = devPort;
   const servedDevServerEntryList: Array<EvolveDevServerEntryMap> = [];
@@ -108,6 +119,12 @@ export const prepareServe = async (
     serveTasks.push(task);
   }
 
+  const devServerManifest = await getRuntimeManifest(
+    flatServedDevServerEntries,
+    devHostUri,
+    evolveOptions
+  );
+
   return Promise.all(serveTasks).then(() => {
     logger.info(`debug page ➩ ${chalk(['cyan'])(mainPage)}`);
     process.stdin.resume();
@@ -122,6 +139,6 @@ export const prepareServe = async (
         logger.info(`debug page ➩ ${chalk(['cyan'])(mainPage)}`);
       }
     });
-    return app;
+    return devServerManifest;
   });
 };

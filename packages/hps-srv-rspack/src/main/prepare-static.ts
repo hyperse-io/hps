@@ -16,13 +16,20 @@ export const prepareStatic = async (
   evolveOptions: HpsEvolveOptions
 ) => {
   // Create pure dev server.
-  const { app, devHostUri } = await createDevServer(evolveOptions);
+  const { app, devHostUri, devPort } = await createDevServer(evolveOptions);
 
   // Attach core handlers for mock
-  await attachMockMiddlewares(app, {
-    ...evolveOptions.devServer?.mockOptions,
-    projectCwd,
-  });
+  await attachMockMiddlewares(
+    app,
+    {
+      ...evolveOptions.devServer?.mockOptions,
+      projectCwd,
+    },
+    {
+      hostUri: devHostUri,
+      port: devPort,
+    }
+  );
 
   // Create new route `/pages*`,`*` to pure dev server
   createAppPageRoute(projectCwd, app, devHostUri, {}, evolveOptions);

@@ -61,60 +61,56 @@ export class EvolveCdnPlugin {
 
     // Using html webpack plugin hooks to replace `scripts` `styles` before inject to html temlate file.
     compiler.hooks.compilation.tap(this.pluginName, (compilation) => {
-      HtmlWebpackPlugin.getHooks(compilation).beforeAssetTagGeneration.tap(
-        this.pluginName,
-        (data) => {
-          const { assets, plugin, outputName } = data;
+      HtmlWebpackPlugin.getHooks(
+        compilation as any
+      ).beforeAssetTagGeneration.tap(this.pluginName, (data) => {
+        const { assets, plugin, outputName } = data;
 
-          const chunks = plugin?.options?.chunks || [];
-          const currentChunk = Array.isArray(chunks)
-            ? chunks.find((chunk) =>
-                outputName.includes(ensureSlash(chunk, true))
-              )
-            : chunks;
-          const { userOptions } = data.plugin as HtmlWebpackPlugin & {
-            userOptions: {
-              multiCdn: { disabled: boolean };
-            };
+        const chunks = plugin?.options?.chunks || [];
+        const currentChunk = Array.isArray(chunks)
+          ? chunks.find((chunk) =>
+              outputName.includes(ensureSlash(chunk, true))
+            )
+          : chunks;
+        const { userOptions } = data.plugin as HtmlWebpackPlugin & {
+          userOptions: {
+            multiCdn: { disabled: boolean };
           };
+        };
 
-          if (!currentChunk) {
-            throw new Error('We must have current chunk!');
-          }
-
-          const assertJsList = assets.js.filter((jsPath) =>
-            jsPath.includes(ensureSlash(currentChunk, true))
-          );
-
-          const assertCssList = assets.css.filter((jsPath) =>
-            jsPath.includes(ensureSlash(currentChunk, true))
-          );
-
-          const multiCdn = userOptions.multiCdn;
-          const publicPath = assets.publicPath;
-          const scripts = assertJsList.map((scriptItem) => {
-            // Normally for `index-dev.html`  we need to use relative path.
-            if (multiCdn.disabled) {
-              return basename(scriptItem);
-            }
-            return httpUrlJoin(
-              this.htmlCdn,
-              scriptItem.replace(publicPath, '')
-            );
-          });
-
-          const styles = assertCssList.map((styleItem) => {
-            // Normally for `index-dev.html`  we need to use relative path.
-            if (multiCdn.disabled) {
-              return basename(styleItem);
-            }
-            return httpUrlJoin(this.htmlCdn, styleItem.replace(publicPath, ''));
-          });
-          data.assets.js = scripts;
-          data.assets.css = styles;
-          return data;
+        if (!currentChunk) {
+          throw new Error('We must have current chunk!');
         }
-      );
+
+        const assertJsList = assets.js.filter((jsPath) =>
+          jsPath.includes(ensureSlash(currentChunk, true))
+        );
+
+        const assertCssList = assets.css.filter((jsPath) =>
+          jsPath.includes(ensureSlash(currentChunk, true))
+        );
+
+        const multiCdn = userOptions.multiCdn;
+        const publicPath = assets.publicPath;
+        const scripts = assertJsList.map((scriptItem) => {
+          // Normally for `index-dev.html`  we need to use relative path.
+          if (multiCdn.disabled) {
+            return basename(scriptItem);
+          }
+          return httpUrlJoin(this.htmlCdn, scriptItem.replace(publicPath, ''));
+        });
+
+        const styles = assertCssList.map((styleItem) => {
+          // Normally for `index-dev.html`  we need to use relative path.
+          if (multiCdn.disabled) {
+            return basename(styleItem);
+          }
+          return httpUrlJoin(this.htmlCdn, styleItem.replace(publicPath, ''));
+        });
+        data.assets.js = scripts;
+        data.assets.css = styles;
+        return data;
+      });
 
       // Remove html assets if output.library is configured
       compilation.hooks.processAssets.tap(

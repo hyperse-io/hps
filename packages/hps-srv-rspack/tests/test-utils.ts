@@ -80,5 +80,5 @@ export const startTestServe = async (
     overrideEvolveOptions
   );
 
-  await startServe(projectCwd, buildModules, finalEvolveOptions);
+  return await startServe(projectCwd, buildModules, finalEvolveOptions);
 };

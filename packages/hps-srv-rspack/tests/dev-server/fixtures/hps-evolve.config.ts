@@ -25,6 +25,10 @@ export default defineConfig(() => ({
       entry: ['./src/hmrLibrary/index.tsx'],
       options: {},
     },
+    dynamicImport: {
+      entry: ['./src/dynamicImport/index.tsx'],
+      options: {},
+    },
   },
   devServer: {
     port: 4000,
@@ -32,17 +36,58 @@ export default defineConfig(() => ({
     defaultServeGlobalData: async () => {
       return moduleGlobal();
     },
+    mockOptions: {
+      hostname: 'dev.hps.com',
+      mockBaseDir: `./mocks`,
+      port: 40000,
+      chunkSize: 3,
+      staticMap: {
+        '/static': 'static',
+      },
+    graphqlMockMap: {
+      'vendure-dashboard-admin-api': {
+        apiPath: '/admin-api',
+        url: 'http://localhost:4090/admin-api',
+        mocks: {},
+        skipMockFields: {
+          'query':['activedTemplateByRoutePath'],
+          'mutation':['addCustomersToGroup']
+        },
+        resolvers: {
+          Query: {
+            activeChannel: () => {
+              return {
+                name: 'activedTemplateByRoutePath',
+                changelog: 'changelog',
+              };
+            },
+          },
+        },
+      },
+      'vendure-dashboard-shop-api': {
+        apiPath: '/shop-api',
+        url: 'http://localhost:4090/shop-api',
+        mocks:   {},
+        skipMockFields: {
+          'query':['activePaymentMethods'],
+          'mutation':['AddCustomersToGroup']
+        }
+      },
+    },
+    }
   },
   rspack:{
     externals:()=>{
       return {}
     },
-    chunkFileVirtualPath: 'runtime-chunks',
+    output: {
+      chunkFileVirtualPath: 'runtime-chunks',
+    },
     plugins: {
       htmlPlugin: {
         htmlCdn: 'http://dev.hps.com:4000/public',
       },
     },
-    loader: {},
+  
   },
 }));

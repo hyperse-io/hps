@@ -16,6 +16,7 @@ import { hpsCliMessages } from './hpsCliMessages.js';
 import type { NameToContext } from './types/types-name-to-context.js';
 import { getCliPackage } from './utils/getCliPackage.js';
 import { resolveVersion } from './version.js';
+export * from './define-config/index.js';
 export * from './types/index.js';
 
 const cliPackage = await getCliPackage();
