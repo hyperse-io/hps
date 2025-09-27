@@ -1,5 +1,11 @@
 # @hyperse/hps-srv-mock
 
+## 0.0.2-next.8
+
+### Patch Changes
+
+- [#26](https://github.com/hyperse-io/hps/pull/26) [`9d25efd`](https://github.com/hyperse-io/hps/commit/9d25efd21828ffbb75d3be9add9afec68659faee) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: introduce strategy violative operations for GraphQL mocking and remove obsolete skip mock fields functionality
+
 ## 0.0.2-next.7
 
 ### Patch Changes
