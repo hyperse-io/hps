@@ -1,5 +1,15 @@
 # @hyperse/hps-plugin-build
 
+## 0.0.2-next.7
+
+### Patch Changes
+
+- [#24](https://github.com/hyperse-io/hps/pull/24) [`0a19922`](https://github.com/hyperse-io/hps/commit/0a199222465e3cefc9fc9450e9117a234e7f8b24) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: implement GraphQL mocking capabilities with schema generation, introspection downloading, and middleware integration
+
+- Updated dependencies [[`0a19922`](https://github.com/hyperse-io/hps/commit/0a199222465e3cefc9fc9450e9117a234e7f8b24)]:
+  - @hyperse/hps-srv-common@0.0.2-next.7
+  - @hyperse/hps-srv-rspack@0.0.2-next.7
+
 ## 0.0.2-next.6
 
 ### Patch Changes
