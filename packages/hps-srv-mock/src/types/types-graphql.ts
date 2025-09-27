@@ -25,20 +25,29 @@ export type IntrospectionFieldsTuple<
     >
   : string[];
 
-export type SkipMockFields<T extends IntrospectionLike = IntrospectionLike> = {
+export type StrategyViolativeOperationsResult<
+  T extends IntrospectionLike = IntrospectionLike,
+> = {
   query?: IntrospectionFieldsTuple<T, 'Query'>;
   mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
 };
 
-export type DefinedSkipMockFields = <T extends IntrospectionLike>(config: {
+export type StrategyViolativeOperations = <
+  T extends IntrospectionLike,
+>(config: {
   query?: IntrospectionFieldsTuple<T, 'Query'>;
   mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
-}) => SkipMockFields<T>;
+}) => StrategyViolativeOperationsResult<T>;
 
 export type GraphqlMockMap = {
   [serviceName: string]: Pick<
     GraphqlMockMapItem,
-    'url' | 'mocks' | 'apiPath' | 'skipMockFields' | 'resolvers'
+    | 'url'
+    | 'mocks'
+    | 'apiPath'
+    | 'strategy'
+    | 'strategyViolativeOperations'
+    | 'resolvers'
   >;
 };
 
@@ -59,10 +68,20 @@ export type GraphqlMockMapItem = {
    * The API path of the GraphQL service (e.g., /admin-api).
    */
   apiPath?: string;
+
   /**
-   * The fields skip list configuration for queries and mutations.
+   * The mock strategy for the GraphQL service.
+   *
+   * @default 'mock'
    */
-  skipMockFields?: SkipMockFields;
+  strategy?: 'mock' | 'bypass';
+  /**
+   * Configure the list of query and mutation fields that require special handling (operation violations).
+   *
+   * - When strategy === 'bypass', the fields defined in strategyViolativeOperations will NOT be bypassed, but will always use the mock logic (i.e., these fields are always mocked).
+   * - When strategy === 'mock', the fields defined in strategyViolativeOperations will NOT be mocked, but will always be bypassed to the backend (i.e., these fields always request the backend).
+   */
+  strategyViolativeOperations?: StrategyViolativeOperationsResult;
   /**
    * The name of the GraphQL service.
    */

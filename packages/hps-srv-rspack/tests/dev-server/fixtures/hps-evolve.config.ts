@@ -45,11 +45,11 @@ export default defineConfig(() => ({
         '/static': 'static',
       },
     graphqlMockMap: {
-      'vendure-dashboard-admin-api': {
+      'hps-dashboard-admin-api': {
         apiPath: '/admin-api',
         url: 'http://localhost:4090/admin-api',
         mocks: {},
-        skipMockFields: {
+        strategyViolativeOperations: {
           'query':['activedTemplateByRoutePath'],
           'mutation':['addCustomersToGroup']
         },
@@ -64,13 +64,13 @@ export default defineConfig(() => ({
           },
         },
       },
-      'vendure-dashboard-shop-api': {
+      'hps-dashboard-shop-api': {
         apiPath: '/shop-api',
         url: 'http://localhost:4090/shop-api',
         mocks:   {},
-        skipMockFields: {
+        strategyViolativeOperations: {
           'query':['activePaymentMethods'],
-          'mutation':['AddCustomersToGroup']
+          'mutation':['addCustomersToGroup']
         }
       },
     },

@@ -1,4 +1,4 @@
-import { defineConfig, defineSkipMockFields } from '@hyperse/hps-srv-mock';
+import { defineConfig, defineStrategyViolativeOperations } from '@hyperse/hps-srv-mock';
 import { type introspection } from '../graphql-admin-env.js';
 
 export default defineConfig({
@@ -70,11 +70,12 @@ export default defineConfig({
     '/*': { type: 'REST', defs: ['others'], middlewares: {} },
   },
   graphqlMockMap: {
-    'vendure-dashboard-admin-api': {
+    'hps-dashboard-admin-api': {
       apiPath: '/admin-api',
       url: 'http://localhost:4090/admin-api',
       mocks: {},
-      skipMockFields: defineSkipMockFields<introspection>({
+      strategy: 'bypass',
+      strategyViolativeOperations: defineStrategyViolativeOperations<introspection>({
         'query':['activedTemplateByRoutePath'],
         'mutation':['addCustomersToGroup']
       }),
@@ -89,13 +90,24 @@ export default defineConfig({
         },
       },
     },
-    'vendure-dashboard-shop-api': {
+    'hps-dashboard-shop-api': {
       apiPath: '/shop-api',
       url: 'http://localhost:4090/shop-api',
       mocks:   {},
-      skipMockFields: {
+      strategy: 'mock',
+      strategyViolativeOperations: {
         'query':['activePaymentMethods',],
         'mutation':['addCustomersToGroup']
+      }
+    },
+    'hps-portal-admin-api': {
+      apiPath: '/admin-api',
+      url: 'http://localhost:7001/admin-api',
+      mocks:   {},
+      strategy: 'mock',
+      strategyViolativeOperations: {
+        'query':['showcases'],
+        'mutation':[]
       }
     },
   },

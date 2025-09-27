@@ -188,7 +188,6 @@ export const getPageModuleHtml = async (
   // Add global data configuration
   const globalData = {
     hostUrl: devHostUri,
-    apiBase: urlJoin(devHostUri, [apiContext]),
     virtualPath: join(pageProxy, projectVirtualPath),
     moduleName: currEntryName
       .replace(projectVirtualPath, '')
