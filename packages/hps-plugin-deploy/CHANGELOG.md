@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-deploy
 
+## 0.0.2-next.11
+
+### Patch Changes
+
+- [#24](https://github.com/hyperse-io/hps/pull/24) [`0a19922`](https://github.com/hyperse-io/hps/commit/0a199222465e3cefc9fc9450e9117a234e7f8b24) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: implement GraphQL mocking capabilities with schema generation, introspection downloading, and middleware integration
+
 ## 0.0.2-next.10
 
 ### Patch Changes
