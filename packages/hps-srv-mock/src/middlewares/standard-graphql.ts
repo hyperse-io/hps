@@ -40,6 +40,8 @@ const forGraphqlApiRequest = (
       filters = mutation;
     }
 
+    filters = Array.from(new Set(filters));
+
     const skipMock =
       filters.findIndex((filter) => calledFields.fields.includes(filter)) > -1;
 

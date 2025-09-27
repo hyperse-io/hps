@@ -25,13 +25,15 @@ export type IntrospectionFieldsTuple<
     >
   : string[];
 
-export type DefinedSkipMockFields = <T extends IntrospectionLike>(config: {
-  query?: IntrospectionFieldsTuple<T, 'Query'>;
-  mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
-}) => {
+export type SkipMockFields<T extends IntrospectionLike = IntrospectionLike> = {
   query?: IntrospectionFieldsTuple<T, 'Query'>;
   mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
 };
+
+export type DefinedSkipMockFields = <T extends IntrospectionLike>(config: {
+  query?: IntrospectionFieldsTuple<T, 'Query'>;
+  mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
+}) => SkipMockFields<T>;
 
 export type GraphqlMockMap = {
   [serviceName: string]: Pick<
@@ -60,7 +62,7 @@ export type GraphqlMockMapItem = {
   /**
    * The fields skip list configuration for queries and mutations.
    */
-  skipMockFields?: ReturnType<DefinedSkipMockFields>;
+  skipMockFields?: SkipMockFields;
   /**
    * The name of the GraphQL service.
    */

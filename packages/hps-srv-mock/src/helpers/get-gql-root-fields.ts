@@ -7,19 +7,23 @@ export function getGraphqlRootFields(query: string):
       fields: string[];
     }
   | undefined {
-  const ast = parse(query);
-  const root = ast.definitions.find(
-    (def) => def.kind === 'OperationDefinition'
-  );
+  try {
+    const ast = parse(query);
+    const root = ast.definitions.find(
+      (def) => def.kind === 'OperationDefinition'
+    );
 
-  if (!root || root.kind !== 'OperationDefinition') return;
+    if (!root || root.kind !== 'OperationDefinition') return;
 
-  const rootFields = root.selectionSet.selections
-    .filter((sel) => sel.kind === 'Field')
-    .map((field) => field.name.value);
+    const rootFields = root.selectionSet.selections
+      .filter((sel) => sel.kind === 'Field')
+      .map((field) => field.name.value);
 
-  return {
-    type: root.operation,
-    fields: rootFields,
-  };
+    return {
+      type: root.operation,
+      fields: rootFields,
+    };
+  } catch {
+    return;
+  }
 }

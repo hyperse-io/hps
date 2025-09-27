@@ -6,4 +6,4 @@ export * from './load-config/index.js';
 export * from './main/index.js';
 export * from './middlewares/index.js';
 export * from './mock/index.js';
-export * from './types/types-options.js';
+export * from './types/index.js';

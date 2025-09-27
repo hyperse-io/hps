@@ -76,7 +76,7 @@ export default defineConfig({
       mocks: {},
       skipMockFields: defineSkipMockFields<introspection>({
         'query':['activedTemplateByRoutePath'],
-        'mutation':['AddCustomersToGroup']
+        'mutation':['addCustomersToGroup']
       }),
       resolvers: {
         Query: {
@@ -94,8 +94,8 @@ export default defineConfig({
       url: 'http://localhost:4090/shop-api',
       mocks:   {},
       skipMockFields: {
-        'query':['activePaymentMethods'],
-        'mutation':['AddCustomersToGroup']
+        'query':['activePaymentMethods',],
+        'mutation':['addCustomersToGroup']
       }
     },
   },

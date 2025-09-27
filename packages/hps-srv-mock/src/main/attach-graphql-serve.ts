@@ -69,13 +69,9 @@ export const attachGraphqlServe = async (
 
     apiRouter.use(
       routerPath,
-      standardGraphqlMiddleware.forGraphqlApiRequest(schemaFile)
-    );
-
-    apiRouter.use(
-      routerPath,
       cors<cors.CorsRequest>(),
       express.json(),
+      standardGraphqlMiddleware.forGraphqlApiRequest(schemaFile),
       expressMiddleware(server)
     );
 
