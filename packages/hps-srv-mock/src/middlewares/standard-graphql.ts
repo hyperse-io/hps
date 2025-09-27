@@ -1,58 +1,58 @@
-import { OperationTypeNode } from 'graphql';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 import type { ValueOf } from 'type-fest';
-import { fetchGraphqlData } from '../graphql/fetch-graphql-data.js';
+import { getGqlCalledFields } from '../helpers/get-gql-called-fields.js';
 import { getGraphqlRootFields } from '../helpers/get-gql-root-fields.js';
 import {
   type HpsMockOptions,
-  type MockNextFunction,
   type MockRequest,
   type MockRequestHandler,
-  type MockResponse,
 } from '../types/index.js';
 
 const forGraphqlApiRequest = (
   options: ValueOf<Required<HpsMockOptions>['graphqlMockMap']>
 ): MockRequestHandler => {
-  const { query = [], mutation = [] } = options.skipMockFields || {};
+  return createProxyMiddleware({
+    pathFilter(_, req: MockRequest) {
+      if (!req.body || !req.body.query) {
+        return false;
+      }
+      const calledFields = getGraphqlRootFields(req.body.query);
+      if (!calledFields) {
+        return false;
+      }
 
-  return async (
-    req: MockRequest,
-    res: MockResponse,
-    next: MockNextFunction
-  ) => {
-    const body = req.body;
-    if (!body || !body.query) {
-      next();
-      return;
-    }
+      const filters = getGqlCalledFields(options, calledFields);
 
-    const calledFields = getGraphqlRootFields(body.query);
-
-    if (!calledFields) {
-      next();
-      return;
-    }
-
-    let filters: string[] = [];
-    if (calledFields.type === OperationTypeNode.QUERY) {
-      filters = query;
-    } else if (calledFields.type === OperationTypeNode.MUTATION) {
-      filters = mutation;
-    }
-
-    filters = Array.from(new Set(filters));
-
-    const skipMock =
-      filters.findIndex((filter) => calledFields.fields.includes(filter)) > -1;
-
-    if (skipMock) {
-      const response = await fetchGraphqlData(options, req);
-      const data = await response.json();
-      res.status(response.status).json(data);
-      return;
-    }
-    next();
-  };
+      if (options.strategy === 'bypass') {
+        return (
+          filters.findIndex((filter) => {
+            return calledFields.fields.includes(filter);
+          }) === -1
+        );
+      } else if (options.strategy === 'mock') {
+        return (
+          filters.findIndex((filter) => {
+            return calledFields.fields.includes(filter);
+          }) > -1
+        );
+      }
+      return false;
+    },
+    target: options.url,
+    changeOrigin: true,
+    secure: false,
+    cookieDomainRewrite: '',
+    on: {
+      proxyReq: (proxyReq, req) => {
+        if (req.body) {
+          const bodyData = JSON.stringify(req.body);
+          proxyReq.setHeader('Content-Type', 'application/json');
+          proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
+          proxyReq.write(bodyData);
+        }
+      },
+    },
+  });
 };
 
 export const standardGraphqlMiddleware = {
