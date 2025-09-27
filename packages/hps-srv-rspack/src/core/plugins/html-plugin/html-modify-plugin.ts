@@ -29,7 +29,7 @@ export class HtmlModifyPlugin {
   }
   apply(compiler: Compiler) {
     compiler.hooks.compilation.tap(this.pluginName, (compiler) => {
-      const hooks = HtmlWebpackPlugin.getHooks(compiler);
+      const hooks = HtmlWebpackPlugin.getHooks(compiler as any);
       hooks.beforeEmit.tapAsync(this.pluginName, (data, cb) => {
         const entryItemOption = getCurrentEntryOptions(
           this.entryMapItemList,

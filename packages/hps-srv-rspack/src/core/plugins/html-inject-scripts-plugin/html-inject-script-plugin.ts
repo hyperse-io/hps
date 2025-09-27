@@ -29,7 +29,7 @@ export class HtmlInjectScriptPlugin implements RspackPluginInstance {
     compiler.hooks.compilation.tap(
       `${PLUGIN_PREFIX}_compilation`,
       (compilation) => {
-        const hooks = htmlWebpackPlugin.getHooks(compilation);
+        const hooks = htmlWebpackPlugin.getHooks(compilation as any);
         hooks.alterAssetTags.tap(`${PLUGIN_PREFIX}_alterAssetTags`, (data) => {
           data.assetTags.scripts.unshift(...this.processScripts());
           return data;

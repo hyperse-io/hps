@@ -64,10 +64,8 @@ const overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {
   },
 };
 
-const manifest = await startTestServe(
+await startTestServe(
   projectCwd,
   ['home', 'hmr', 'hmrIframe', 'main', 'dynamicImport'],
   overrideEvolveOptions
 );
-
-console.log('==========>>>>>manifest', manifest);
