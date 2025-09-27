@@ -7,11 +7,14 @@ import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@as-integrations/express5';
 import { addMocksToSchema } from '@graphql-tools/mock';
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import { HPS_MOCK_GRAPHQL_SERVICES_PREFIX } from '../constants.js';
+import { chalk, logger } from '@hyperse/hps-srv-common';
 import { defaultGraphqlMocks } from '../graphql/default-mocks.js';
 import { generatedSchema } from '../graphql/generated-schema.js';
 import { standardGraphqlMiddleware } from '../middlewares/standard-graphql.js';
-import type { HpsMockOptions } from '../types/types-options.js';
+import type {
+  HpsMockApplicationOptions,
+  HpsMockOptions,
+} from '../types/types-options.js';
 
 const assertPath = (...paths: string[]) => {
   return paths.join('/').replace(/\/\//g, '/');
@@ -19,7 +22,8 @@ const assertPath = (...paths: string[]) => {
 
 export const attachGraphqlServe = async (
   apiRouter: Router,
-  mockOptions: HpsMockOptions
+  mockOptions: HpsMockOptions,
+  applicationOptions?: HpsMockApplicationOptions
 ) => {
   const { graphqlMockMap } = mockOptions;
   if (!graphqlMockMap) {
@@ -75,12 +79,17 @@ export const attachGraphqlServe = async (
       expressMiddleware(server)
     );
 
-    process.env[
-      `${HPS_MOCK_GRAPHQL_SERVICES_PREFIX}${schemaFile.serviceName}`
-    ] = assertPath(
-      mockOptions.apiContext || '/api',
-      schemaFile.serviceName,
-      schemaFile.apiPath || '/'
-    );
+    if (applicationOptions) {
+      let gqlServiceUrl = assertPath(
+        mockOptions.apiContext || '/api',
+        schemaFile.serviceName,
+        schemaFile.apiPath || '/'
+      );
+
+      gqlServiceUrl = `${applicationOptions.hostUri}${gqlServiceUrl}`;
+      logger.info(
+        `${schemaFile.serviceName}: ${chalk(['cyan'])(gqlServiceUrl)}`
+      );
+    }
   }
 };

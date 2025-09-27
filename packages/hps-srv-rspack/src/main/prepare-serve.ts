@@ -56,11 +56,18 @@ export const prepareServe = async (
   }
 
   // Attach core handlers for mock
-  await attachMockMiddlewares(app, {
-    ...evolveOptions.devServer?.mockOptions,
-    mockFilters: arrayUnique(mockFilters),
-    projectCwd,
-  });
+  await attachMockMiddlewares(
+    app,
+    {
+      ...evolveOptions.devServer?.mockOptions,
+      mockFilters: arrayUnique(mockFilters),
+      projectCwd,
+    },
+    {
+      hostUri: devHostUri,
+      port: devPort,
+    }
+  );
 
   let lastPort = devPort;
   const servedDevServerEntryList: Array<EvolveDevServerEntryMap> = [];

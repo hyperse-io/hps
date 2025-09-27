@@ -1,7 +1,6 @@
 export * from './constants.js';
 export * from './define-config/index.js';
 export * from './graphql/index.js';
-export * from './helpers/get-gql-service-url.js';
 export * from './helpers/get-mock-cwd.js';
 export * from './load-config/index.js';
 export * from './main/index.js';

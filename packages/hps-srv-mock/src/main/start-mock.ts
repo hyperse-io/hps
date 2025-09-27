@@ -21,13 +21,16 @@ export const startMock = async (
   // Dynamic load hps mock configuration from `hps.mock.js`
   const mockOptions = await loadMockConfig(projectCwd, overrideOptions);
 
-  // Attach mock middlewares
-  await attachMockMiddlewares(app, mockOptions);
-
   const { domain, port, hostUri } = await getAvailableDomain({
     port: mockOptions.port,
     hostname: mockOptions.hostname,
     isHttps: !!mockOptions.https,
+  });
+
+  // Attach mock middlewares
+  await attachMockMiddlewares(app, mockOptions, {
+    hostUri: hostUri,
+    port: port,
   });
 
   // Attach hostUri to application instance without last slash `/`.

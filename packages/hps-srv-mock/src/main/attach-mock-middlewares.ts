@@ -20,6 +20,7 @@ import {
   standardRestApiMiddleware,
 } from '../middlewares/index.js';
 import {
+  type HpsMockApplicationOptions,
   type HpsMockMap,
   type HpsMockMapItem,
   type HpsMockOptions,
@@ -32,7 +33,8 @@ import { attachGraphqlServe } from './attach-graphql-serve.js';
 
 export const attachMockMiddlewares = async (
   app: Application,
-  mockOptions: HpsMockOptions
+  mockOptions: HpsMockOptions,
+  applicationOptions?: HpsMockApplicationOptions
 ) => {
   const {
     staticMap,
@@ -60,7 +62,7 @@ export const attachMockMiddlewares = async (
   const apiRouter = Router({ mergeParams: true });
 
   // Attach graphql serve
-  await attachGraphqlServe(apiRouter, mockOptions);
+  await attachGraphqlServe(apiRouter, mockOptions, applicationOptions);
 
   // Sort all mock context keys, make sure that we have below
   const mockContexts = sortMockContexts(mockMap);

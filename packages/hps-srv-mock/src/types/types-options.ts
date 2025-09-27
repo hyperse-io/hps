@@ -208,3 +208,14 @@ export interface HpsMockOptions {
    */
   graphqlMockMap?: GraphqlMockMap;
 }
+
+export interface HpsMockApplicationOptions {
+  /**
+   * The host uri of the mock service.
+   */
+  hostUri: string;
+  /**
+   * The port of the mock service.
+   */
+  port: number;
+}
