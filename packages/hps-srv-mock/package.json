@@ -76,6 +76,7 @@
     "mockjs": "^1.1.0",
     "path-to-regexp": "^8.3.0",
     "serve-favicon": "^2.5.1",
+    "string-width": "^8.1.0",
     "type-fest": "^5.0.1",
     "typescript": "^5.9.2"
   },

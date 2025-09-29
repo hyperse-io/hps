@@ -1,5 +1,5 @@
 import { getIntrospectionQuery } from 'graphql';
-import fs from 'node:fs';
+import fs, { existsSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { logger } from '@hyperse/hps-srv-common';
 
@@ -49,11 +49,8 @@ export async function downloadIntrospectionSchema(
 
     const data = await response.text();
     fs.writeFileSync(outputFilePath, data, 'utf8');
-    return true;
-  } catch (error: any) {
-    logger.error(
-      `Error downloading introspection schema from ${apiPath}: ${error.message}`
-    );
+    return existsSync(outputFilePath);
+  } catch {
     return false;
   }
 }

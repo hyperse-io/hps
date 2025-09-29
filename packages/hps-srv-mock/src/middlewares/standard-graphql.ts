@@ -1,58 +1,109 @@
-import { createProxyMiddleware } from 'http-proxy-middleware';
-import type { ValueOf } from 'type-fest';
-import { getGqlCalledFields } from '../helpers/get-gql-called-fields.js';
-import { getGraphqlRootFields } from '../helpers/get-gql-root-fields.js';
+import { graphqlMockManager } from '../graphql/graphql-mock-manager.js';
 import {
+  type GraphqlMockEndpoint,
+  type GraphqlMockMapItem,
   type HpsMockOptions,
+  type MockNextFunction,
   type MockRequest,
   type MockRequestHandler,
+  type MockResponse,
 } from '../types/index.js';
+import { createGraphqlEndpointMiddleware } from './standard-graphql-endpoint.js';
+
+const searchExecutableEndpoint = async (
+  serviceName: string,
+  query: string,
+  graphqlMockMapItem?: GraphqlMockMapItem
+): Promise<GraphqlMockEndpoint | undefined> => {
+  if (!graphqlMockMapItem) {
+    return;
+  }
+  const { fallbackEndpoint } = graphqlMockMapItem;
+  // 查找支持该操作的端点
+  let endpointManager = await graphqlMockManager.findSupportingEndpoint(
+    serviceName,
+    query
+  );
+  if (!endpointManager) {
+    endpointManager = graphqlMockManager.getEndpointManager(
+      serviceName,
+      fallbackEndpoint
+    );
+  }
+  if (!endpointManager) {
+    return;
+  }
+
+  return endpointManager.endpoint;
+};
 
 const forGraphqlApiRequest = (
-  options: ValueOf<Required<HpsMockOptions>['graphqlMockMap']>
+  _mockOptions: HpsMockOptions,
+  serviceName: string
 ): MockRequestHandler => {
-  return createProxyMiddleware({
-    pathFilter(_, req: MockRequest) {
-      if (!req.body || !req.body.query) {
-        return false;
-      }
-      const calledFields = getGraphqlRootFields(req.body.query);
-      if (!calledFields) {
-        return false;
-      }
+  const proxyMiddlewares = new Map<string, MockRequestHandler>();
+  const graphqlMockManagerItem =
+    graphqlMockManager.getGraphqlMockManagerItem(serviceName);
+  const graphqlMockMapItem = graphqlMockManagerItem?.graphqlMockMapItem;
+  const endpointManagers = graphqlMockManager.getEndpointManagers(serviceName);
 
-      const filters = getGqlCalledFields(options, calledFields);
+  for (const endpointManager of endpointManagers) {
+    proxyMiddlewares.set(
+      endpointManager.endpoint.name,
+      createGraphqlEndpointMiddleware(endpointManager, graphqlMockMapItem)
+    );
+  }
 
-      if (options.strategy === 'bypass') {
-        return (
-          filters.findIndex((filter) => {
-            return calledFields.fields.includes(filter);
-          }) === -1
-        );
-      } else if (options.strategy === 'mock') {
-        return (
-          filters.findIndex((filter) => {
-            return calledFields.fields.includes(filter);
-          }) > -1
-        );
+  return async (
+    req: MockRequest,
+    res: MockResponse,
+    next: MockNextFunction
+  ) => {
+    if (req.path !== '/') {
+      return next();
+    }
+    if (req.method !== 'POST' || !req.body?.query) {
+      return next();
+    }
+    // Note: For exact mount path, there should be no loopback; additional checks unnecessary
+    try {
+      const { query } = req.body;
+      const executableEndpoint = await searchExecutableEndpoint(
+        serviceName,
+        query,
+        graphqlMockMapItem
+      );
+      const middleware = proxyMiddlewares.get(executableEndpoint?.name || '');
+      if (middleware) {
+        return middleware(req, res, next);
       }
-      return false;
-    },
-    target: options.url,
-    changeOrigin: true,
-    secure: false,
-    cookieDomainRewrite: '',
-    on: {
-      proxyReq: (proxyReq, req) => {
-        if (req.body) {
-          const bodyData = JSON.stringify(req.body);
-          proxyReq.setHeader('Content-Type', 'application/json');
-          proxyReq.setHeader('Content-Length', Buffer.byteLength(bodyData));
-          proxyReq.write(bodyData);
-        }
-      },
-    },
-  });
+      res.status(400).json({
+        errors: [
+          {
+            message: 'Operation not supported by any available endpoint',
+            extensions: {
+              code: 'OPERATION_NOT_SUPPORTED',
+              operationName: req.body.operationName,
+              availableEndpoints: endpointManagers.map(
+                (ep) => ep.endpoint.name
+              ),
+            },
+          },
+        ],
+      });
+      return;
+    } catch (error: any) {
+      res.status(500).json({
+        errors: [
+          {
+            message: 'Internal proxy error',
+            content: error.message,
+          },
+        ],
+      });
+      return;
+    }
+  };
 };
 
 export const standardGraphqlMiddleware = {

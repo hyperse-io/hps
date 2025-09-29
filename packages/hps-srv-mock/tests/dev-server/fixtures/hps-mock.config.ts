@@ -70,45 +70,60 @@ export default defineConfig({
     '/*': { type: 'REST', defs: ['others'], middlewares: {} },
   },
   graphqlMockMap: {
-    'hps-dashboard-admin-api': {
-      apiPath: '/admin-api',
-      url: 'http://localhost:4090/admin-api',
-      mocks: {},
-      strategy: 'bypass',
-      strategyViolativeOperations: defineStrategyViolativeOperations<introspection>({
-        'query':['activedTemplateByRoutePath'],
-        'mutation':['addCustomersToGroup']
-      }),
-      resolvers: {
-        Query: {
-          activeChannel: () => {
-            return {
-              name: 'activedTemplateByRoutePath',
-              changelog: 'changelog',
-            };
+    'hps/admin-api': {
+      endpoints: [
+        {
+          name: 'dashboard-admin-api',
+          url: 'http://localhost:4090/admin-api',
+          customMocks: {},
+          priority: 3,
+          strategy: 'bypass',
+          strategyViolativeOperations: defineStrategyViolativeOperations<introspection>({
+            'query':['activeAdministrator',],
+            'mutation':['addCustomersToGroup']
+          }),
+        },
+        {
+          name: 'metrics-admin-api',
+          url: 'http://localhost:4060/admin-api',
+          customMocks: {},
+          priority: 2,
+          strategy: 'bypass',
+          strategyViolativeOperations: {
+            'query':['hpsMetricSummary'],
+            'mutation':[]
           },
         },
-      },
+        {
+          name: 'portal-admin-api',
+          url: 'http://localhost:7001/admin-api',
+          customMocks: {},
+          strategy: 'mock',
+          priority: 1,
+          strategyViolativeOperations: {
+            'query':['login','showcases'],
+            'mutation':[]
+          },
+        },
+      ],
+      fallbackEndpoint: 'backup',
+      enableMocking: true,
     },
-    'hps-dashboard-shop-api': {
-      apiPath: '/shop-api',
-      url: 'http://localhost:4090/shop-api',
-      mocks:   {},
-      strategy: 'mock',
-      strategyViolativeOperations: {
-        'query':['activePaymentMethods',],
-        'mutation':['addCustomersToGroup']
-      }
-    },
-    'hps-portal-admin-api': {
-      apiPath: '/admin-api',
-      url: 'http://localhost:7001/admin-api',
-      mocks:   {},
-      strategy: 'mock',
-      strategyViolativeOperations: {
-        'query':['showcases'],
-        'mutation':[]
-      }
+    'hps/shop-api': {
+      endpoints: [
+        {
+          name: 'dashboard-admin-api',
+          url: 'http://localhost:4090/shop-api',
+          customMocks: {},
+          strategy: 'bypass',
+          strategyViolativeOperations: {
+            'query':['activePaymentMethods'],
+            'mutation':['addCustomersToGroup']
+          },
+        },
+      ],
+      fallbackEndpoint: 'backup',
+      enableMocking: true,
     },
   },
 });

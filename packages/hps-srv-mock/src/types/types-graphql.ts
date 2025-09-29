@@ -39,59 +39,59 @@ export type StrategyViolativeOperations = <
   mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
 }) => StrategyViolativeOperationsResult<T>;
 
-export type GraphqlMockMap = {
-  [serviceName: string]: Pick<
-    GraphqlMockMapItem,
-    | 'url'
-    | 'mocks'
-    | 'apiPath'
-    | 'strategy'
-    | 'strategyViolativeOperations'
-    | 'resolvers'
-  >;
-};
-
-export type GraphqlMockMapItem = {
+export type GraphqlMockEndpoint = {
   /**
-   * The url of the GraphQL service.
+   * The name of the GraphQL endpoint.
+   */
+  name: string;
+  /**
+   * The priority of the GraphQL endpoint.
+   * @default 0
+   */
+  priority: number;
+  /**
+   * The url of the GraphQL endpoint.
    */
   url: string;
   /**
-   * The mocks configuration for the GraphQL service (used for mocking data).
+   * The mocks configuration for the GraphQL endpoint (used for mocking data).
    */
-  mocks?: IMocks<IResolvers>;
+  customMocks?: IMocks<IResolvers>;
   /**
-   * The resolvers for the GraphQL service.
+   * The resolvers for the GraphQL endpoint.
    */
   resolvers?: IResolvers;
   /**
-   * The API path of the GraphQL service (e.g., /admin-api).
-   */
-  apiPath?: string;
-
-  /**
-   * The mock strategy for the GraphQL service.
+   * The mock strategy for the GraphQL endpoint.
    *
    * @default 'mock'
    */
   strategy?: 'mock' | 'bypass';
   /**
-   * Configure the list of query and mutation fields that require special handling (operation violations).
+   * Configure the list of query and mutation fields that require special handling (operation violations) for the GraphQL endpoint.
    *
    * - When strategy === 'bypass', the fields defined in strategyViolativeOperations will NOT be bypassed, but will always use the mock logic (i.e., these fields are always mocked).
    * - When strategy === 'mock', the fields defined in strategyViolativeOperations will NOT be mocked, but will always be bypassed to the backend (i.e., these fields always request the backend).
    */
   strategyViolativeOperations?: StrategyViolativeOperationsResult;
+};
+
+export type GraphqlMockMap = {
+  [serviceName: string]: GraphqlMockMapItem;
+};
+
+export type GraphqlMockMapItem = {
   /**
-   * The name of the GraphQL service.
+   * The endpoints of the GraphQL service.
    */
-  serviceName?: string;
+  endpoints: GraphqlMockEndpoint[];
   /**
-   * The file path to the introspection schema.
+   * The fallback endpoint of the GraphQL service.
    */
-  introspectionSchemaFilePath?: string;
+  fallbackEndpoint: 'backup';
   /**
-   * The file path to the GraphQL schema.
+   * Whether to enable mocking.
+   * @default true
    */
-  graphqlSchemaFilePath?: string;
+  enableMocking: boolean;
 };
