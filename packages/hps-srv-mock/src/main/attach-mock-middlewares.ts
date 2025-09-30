@@ -34,7 +34,7 @@ import { attachGraphqlServe } from './attach-graphql-serve.js';
 export const attachMockMiddlewares = async (
   app: Application,
   mockOptions: HpsMockOptions,
-  applicationOptions?: HpsMockApplicationOptions
+  applicationOptions: HpsMockApplicationOptions
 ) => {
   const {
     staticMap,

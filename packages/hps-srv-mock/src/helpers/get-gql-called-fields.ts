@@ -1,15 +1,17 @@
 import { OperationTypeNode } from 'graphql';
-import type { ValueOf } from 'type-fest';
-import type { HpsMockOptions } from '../types/types-options.js';
+import type { GraphqlMockEndpoint } from '../types/types-graphql.js';
 
 export const getGqlCalledFields = (
-  options: ValueOf<Required<HpsMockOptions>['graphqlMockMap']>,
-  calledFields: {
+  endpoint: GraphqlMockEndpoint,
+  calledFields?: {
     type: OperationTypeNode;
     fields: string[];
   }
 ) => {
-  const { strategyViolativeOperations } = options || {};
+  if (!calledFields) {
+    return [];
+  }
+  const { strategyViolativeOperations } = endpoint || {};
   const { query = [], mutation = [] } = strategyViolativeOperations || {};
 
   let filters: string[] = [];

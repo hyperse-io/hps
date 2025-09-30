@@ -1,11 +1,11 @@
 {
-  "name": "@hyperse/hps-srv-mock",
-  "version": "0.0.2-next.8",
+  "name": "@hyperse/hps-plugin-ts-graphqlsp",
+  "version": "0.0.2-next.7",
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
     "type": "git",
     "url": "https://github.com/hyperse-io/hps",
-    "directory": "packages/hps-srv-mock"
+    "directory": "packages/hps-plugin-ts-graphqlsp"
   },
   "author": {
     "name": "Hyperse",
@@ -30,8 +30,7 @@
     "package.json"
   ],
   "scripts": {
-    "serve": "yarn node --import=@hyperse/ts-node/register ./tests/dev-server/dev-server.ts",
-    "serve-graphql": "yarn node --import=@hyperse/ts-node/register ./tests/graphql/dev-graphql.ts",
+    "serve": "yarn node --import=@hyperse/ts-node/register ./tests/dev-server.ts",
     "build": "rimraf dist && tsc -p ./tsconfig.build.json",
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
@@ -44,65 +43,27 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@apollo/server": "^5.0.0",
     "@armit/file-utility": "^0.3.1",
-    "@armit/package": "^0.3.1",
-    "@as-integrations/express5": "^1.1.2",
-    "@flatjs/forge": "^2.3.9",
-    "@graphql-codegen/cli": "^6.0.0",
-    "@graphql-codegen/schema-ast": "^5.0.0",
-    "@graphql-tools/mock": "^9.0.25",
     "@hyperse/config-loader": "^1.0.7",
-    "@hyperse/delete-empty-folders": "^1.0.1",
     "@hyperse/hps-srv-common": "workspace:*",
-    "@rollup/pluginutils": "^5.3.0",
-    "@types/mockjs": "^1.0.10",
-    "body-parser": "^2.2.0",
-    "casual": "^1.6.2",
-    "chokidar": "^4.0.3",
-    "class-transformer": "^0.5.1",
-    "class-validator": "^0.14.2",
-    "cors": "^2.8.5",
-    "esbuild": "^0.25.10",
-    "express": "^5.1.0",
-    "express-mung": "^0.5.1",
-    "fast-glob": "^3.3.3",
-    "get-tsconfig": "^4.10.1",
-    "gql.tada": "^1.8.13",
-    "http-proxy-middleware": "^3.0.5",
-    "iterare": "^1.2.1",
-    "listr": "^0.14.3",
-    "lodash": "^4.17.21",
-    "mockjs": "^1.1.0",
-    "path-to-regexp": "^8.3.0",
-    "serve-favicon": "^2.5.1",
-    "string-width": "^8.1.0",
-    "type-fest": "^5.0.1",
-    "typescript": "^5.9.2"
+    "@hyperse/hps-srv-mock": "workspace:*"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
-    "@hyperse/wizard": "^1.0.5",
-    "@types/express-mung": "0.5.5",
-    "@types/listr": "^0.14.9",
+    "@types/graphql": "^14.5.0",
     "@types/node": "^24.5.2",
-    "@types/serve-favicon": "^2.5.7",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.36.0",
     "graphql": "^16.11.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
+    "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "@hyperse/wizard": ">=1.0.5",
-    "graphql": ">=16.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@hyperse/wizard": {
-      "optional": true
-    }
+    "graphql": ">=16.0.0",
+    "typescript": ">=5.0.0"
   },
   "engines": {
     "node": ">=20.0.0"

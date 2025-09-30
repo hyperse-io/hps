@@ -1,7 +1,4 @@
-import { getIntrospectionQuery } from 'graphql';
-import fs, { existsSync } from 'node:fs';
-import { dirname } from 'node:path';
-import { logger } from '@hyperse/hps-srv-common';
+import { getIntrospectionQuery, type IntrospectionQuery } from 'graphql';
 
 /**
  * Makes an introspection query to the GraphQL server and writes the result to a
@@ -11,10 +8,9 @@ import { logger } from '@hyperse/hps-srv-common';
  * @param outputFilePath - The file path where the schema should be saved
  * @returns Promise<boolean> - Returns true if successful, false otherwise
  */
-export async function downloadIntrospectionSchema(
-  apiPath: string,
-  outputFilePath: string
-): Promise<boolean> {
+export async function downloadIntrospection(
+  apiPath: string
+): Promise<IntrospectionQuery | false> {
   const body = JSON.stringify({
     query: getIntrospectionQuery({
       inputValueDeprecation: true,
@@ -26,12 +22,6 @@ export async function downloadIntrospectionSchema(
   });
 
   try {
-    // Ensure output directory exists
-    const outputDir = dirname(outputFilePath);
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir, { recursive: true });
-    }
-
     const response = await fetch(apiPath, {
       method: 'POST',
       headers: {
@@ -41,15 +31,16 @@ export async function downloadIntrospectionSchema(
     });
 
     if (!response.ok) {
-      logger.error(
-        `HTTP error! status: ${response.status} ${response.statusText} for ${apiPath}`
-      );
       return false;
     }
 
     const data = await response.text();
-    fs.writeFileSync(outputFilePath, data, 'utf8');
-    return existsSync(outputFilePath);
+    try {
+      const json = JSON.parse(data);
+      return json?.data;
+    } catch {
+      return false;
+    }
   } catch {
     return false;
   }

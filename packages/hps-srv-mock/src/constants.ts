@@ -8,6 +8,8 @@ export const HPS_MOCK_FN_TYPE = `hps-mock-fn-type`;
 export const HPS_MOCK_FN_NAME = `hps-mock-fn-name`;
 export const HPS_MOCK_META = `Hps-Mock-Meta`;
 
+export const HPS_MOCK_GRAPHQL_SCHEMA_DIR = 'graphql-schema';
+
 export enum hpsMockTypes {
   'FUNC' = 'FUNC',
   'FUNC_SIMPLE' = 'FUNC_SIMPLE',
