@@ -29,6 +29,7 @@ export class GraphqlEndpointManager {
   // cached introspection schema
   private introspectionSchema: GraphQLSchema | null = null;
 
+  // cached mock config
   private mockConfig: {
     proxyPath: string;
     serviceUrl: string;
@@ -73,22 +74,23 @@ export class GraphqlEndpointManager {
     );
   }
 
-  private ensureGqlSchemaDir(): void {
+  private ensureGqlSchemaDir() {
     if (!existsSync(this.gqlSchemaDir)) {
       mkdirSync(this.gqlSchemaDir, { recursive: true });
     }
   }
 
-  private setupMockConfig(): void {
+  private setupMockConfig() {
     const serviceUrl = assertPath(
       this.mockOptions.apiContext || '/api',
       this.serviceName,
       this.endpoint.name
     );
     const proxyPath = assertPath('/', this.serviceName, this.endpoint.name);
+    const hostUri = (this.applicationOptions?.hostUri || '').replace(/\/$/, '');
     this.mockConfig = {
       proxyPath,
-      serviceUrl: `${this.applicationOptions?.hostUri}${serviceUrl}`,
+      serviceUrl: `${hostUri}${serviceUrl}`,
     };
   }
 
@@ -99,28 +101,27 @@ export class GraphqlEndpointManager {
     return this.mockConfig;
   }
 
-  public async downloadIntrospectionSchema(): Promise<void> {
+  public async downloadIntrospectionSchema() {
     try {
       const result = await downloadIntrospectionSchema(
         this.endpoint.url,
         this.introspectionSchemaFilePath
       );
-      console.log(this.endpoint.url, result);
       this.hasIntrospectionSchema = result;
       if (!result) {
         logger.warn(
           `Error downloading introspection schema for ${this.endpoint.name}`
         );
       }
-    } catch {
+    } catch (error: any) {
       logger.warn(
-        `Error downloading introspection schema for ${this.endpoint.name}`
+        `Error downloading introspection schema for ${this.endpoint.name}: ${error?.message || error}`
       );
       this.hasIntrospectionSchema = false;
     }
   }
 
-  public async parseAstSchema(): Promise<void> {
+  public async parseAstSchema() {
     if (!this.hasIntrospectionSchema) {
       return;
     }
@@ -140,9 +141,11 @@ export class GraphqlEndpointManager {
       if (!this.hasParsedAstSchema) {
         logger.warn(`GraphQL schema not found for ${this.endpoint.name}`);
       }
-    } catch {
+    } catch (error: any) {
       this.hasParsedAstSchema = false;
-      logger.warn(`GraphQL schema not found for ${this.endpoint.name}`);
+      logger.warn(
+        `GraphQL schema generation failed for ${this.endpoint.name}: ${error?.message || error}`
+      );
     }
   }
 
@@ -160,7 +163,10 @@ export class GraphqlEndpointManager {
     let obj;
     try {
       obj = JSON.parse(result);
-    } catch {
+    } catch (error: any) {
+      logger.warn(
+        `Invalid introspection JSON for ${this.endpoint.name}: ${error?.message || error}`
+      );
       return null;
     }
     if (!obj['data']) {

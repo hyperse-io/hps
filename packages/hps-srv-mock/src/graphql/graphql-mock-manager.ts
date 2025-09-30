@@ -17,6 +17,12 @@ export class GraphqlMockManager {
   private graphqlMockManagerMap: Map<string, GraphqlMockManagerMap> = new Map();
   private allEndpointManagers: GraphqlEndpointManager[] = [];
 
+  /**
+   * Initializes the GraphqlMockManager with the provided mock and application options.
+   * Sets up all endpoint managers and downloads their introspection schemas.
+   * @param mockOptions - The mock options configuration.
+   * @param applicationOptions - The application options configuration.
+   */
   public async setup(
     mockOptions: HpsMockOptions,
     applicationOptions: HpsMockApplicationOptions
@@ -30,6 +36,11 @@ export class GraphqlMockManager {
     }
   }
 
+  /**
+   * Initializes endpoint managers for each service and endpoint defined in the mock options.
+   * Endpoint managers are sorted by priority.
+   * @param applicationOptions - The application options configuration.
+   */
   private initializeEndpointManagers(
     applicationOptions: HpsMockApplicationOptions
   ): void {
@@ -57,16 +68,32 @@ export class GraphqlMockManager {
     }
   }
 
+  /**
+   * Retrieves the GraphqlMockManagerMap for a given service name.
+   * @param serviceName - The name of the service.
+   * @returns The manager map for the service, or undefined if not found.
+   */
   public getGraphqlMockManagerItem(
     serviceName: string
   ): GraphqlMockManagerMap | undefined {
     return this.graphqlMockManagerMap.get(serviceName);
   }
 
+  /**
+   * Retrieves all endpoint managers for a given service.
+   * @param serviceName - The name of the service.
+   * @returns An array of GraphqlEndpointManager instances.
+   */
   public getEndpointManagers(serviceName: string): GraphqlEndpointManager[] {
     return this.graphqlMockManagerMap.get(serviceName)?.endpointManagers || [];
   }
 
+  /**
+   * Retrieves a specific endpoint manager by service and endpoint name.
+   * @param serviceName - The name of the service.
+   * @param endpointName - The name of the endpoint (optional).
+   * @returns The matching GraphqlEndpointManager, or undefined if not found.
+   */
   public getEndpointManager(
     serviceName: string,
     endpointName?: string
@@ -78,6 +105,13 @@ export class GraphqlMockManager {
       );
   }
 
+  /**
+   * Finds the first endpoint manager that supports the given GraphQL operation.
+   * Checks each endpoint in priority order.
+   * @param serviceName - The name of the service.
+   * @param query - The GraphQL query string.
+   * @returns The supporting GraphqlEndpointManager, or undefined if none support the operation.
+   */
   public async findSupportingEndpoint(
     serviceName: string,
     query: string
@@ -87,7 +121,7 @@ export class GraphqlMockManager {
       return;
     }
     const endpointManagers = this.getEndpointManagers(serviceName);
-    // 按优先级顺序检查每个端点
+    // Check each endpoint in priority order
     for (const endpointManager of endpointManagers) {
       const isSupported = await endpointManager.validateOperation(operation);
 
@@ -105,4 +139,7 @@ export class GraphqlMockManager {
   }
 }
 
+/**
+ * Singleton instance of GraphqlMockManager.
+ */
 export const graphqlMockManager = new GraphqlMockManager();

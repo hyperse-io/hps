@@ -5252,6 +5252,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@hyperse/hps-plugin-ts-graphqlsp@workspace:packages/hps-plugin-ts-graphqlsp":
+  version: 0.0.0-use.local
+  resolution: "@hyperse/hps-plugin-ts-graphqlsp@workspace:packages/hps-plugin-ts-graphqlsp"
+  dependencies:
+    "@armit/file-utility": "npm:^0.3.1"
+    "@hyperse/config-loader": "npm:^1.0.7"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/hps-srv-common": "workspace:*"
+    "@hyperse/hps-srv-mock": "workspace:*"
+    "@types/graphql": "npm:^14.5.0"
+    "@types/node": "npm:^24.5.2"
+    "@vitest/coverage-istanbul": "npm:^3.2.4"
+    "@vitest/ui": "npm:^3.2.4"
+    eslint: "npm:^9.36.0"
+    graphql: "npm:^16.11.0"
+    npm-run-all: "npm:^4.1.5"
+    rimraf: "npm:^6.0.1"
+    typescript: "npm:^5.9.2"
+    vitest: "npm:^3.2.4"
+  peerDependencies:
+    graphql: ">=16.0.0"
+    typescript: ">=5.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@hyperse/hps-plugin-update@workspace:*, @hyperse/hps-plugin-update@workspace:packages/hps-plugin-update":
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-update@workspace:packages/hps-plugin-update"
@@ -10596,6 +10621,15 @@ __metadata:
   version: 7946.0.16
   resolution: "@types/geojson@npm:7946.0.16"
   checksum: 10c0/1ff24a288bd5860b766b073ead337d31d73bdc715e5b50a2cee5cb0af57a1ed02cc04ef295f5fa68dc40fe3e4f104dd31282b2b818a5ba3231bc1001ba084e3c
+  languageName: node
+  linkType: hard
+
+"@types/graphql@npm:^14.5.0":
+  version: 14.5.0
+  resolution: "@types/graphql@npm:14.5.0"
+  dependencies:
+    graphql: "npm:*"
+  checksum: 10c0/b55a22e7654d161c6337e90c5ff04277977ef3acf78a8d14d26e4b039d1e8cc98ca108c8d93ea92576530222410b5d4bd47cb75293ef60505d454a9300d487ff
   languageName: node
   linkType: hard
 
@@ -16794,7 +16828,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:^15.5.0 || ^16.0.0 || ^17.0.0, graphql@npm:^16.11.0, graphql@npm:^16.8.1":
+"graphql@npm:*, graphql@npm:^15.5.0 || ^16.0.0 || ^17.0.0, graphql@npm:^16.11.0, graphql@npm:^16.8.1":
   version: 16.11.0
   resolution: "graphql@npm:16.11.0"
   checksum: 10c0/124da7860a2292e9acf2fed0c71fc0f6a9b9ca865d390d112bdd563c1f474357141501c12891f4164fe984315764736ad67f705219c62f7580681d431a85db88

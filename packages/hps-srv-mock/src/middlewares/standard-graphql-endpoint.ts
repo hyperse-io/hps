@@ -1,5 +1,5 @@
 import { createProxyMiddleware } from 'http-proxy-middleware';
-import { logger } from '@hyperse/hps-srv-common';
+import { chalk, logger } from '@hyperse/hps-srv-common';
 import type { GraphqlEndpointManager } from '../graphql/graphql-endpoint-manager.js';
 import { getGqlCalledFields } from '../helpers/get-gql-called-fields.js';
 import { getGraphqlRootFields } from '../helpers/get-gql-root-fields.js';
@@ -32,13 +32,17 @@ export const createGraphqlEndpointMiddleware = (
           return calledFields?.fields.includes(filter);
         }) > -1;
       if (endpoint.strategy === 'bypass') {
-        // 找到的应该是走 mock 的，未找到的走 remote
+        // The fields found should be mocked, and the fields not found should be bypassed to the remote
         targetUrl = findIndex ? mockUrl : remoteUrl;
       } else if (endpoint.strategy === 'mock') {
-        // 找到的应该是走 remote 的，未找到的走 mock
+        // The fields found should be bypassed to the remote, and the fields not found should be mocked
         targetUrl = findIndex ? remoteUrl : mockUrl;
       }
-      logger.info(`targetUrl: ${targetUrl}`);
+      logger.info(
+        `${calledFields?.fields.join(', ')} ${chalk(['cyan'])(
+          '->'
+        )} ${targetUrl}`
+      );
       return targetUrl;
     },
     on: {

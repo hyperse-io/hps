@@ -4,7 +4,7 @@ import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@as-integrations/express5';
 import { addMocksToSchema } from '@graphql-tools/mock';
 import { makeExecutableSchema } from '@graphql-tools/schema';
-import { chalk } from '../../../hps-srv-common/src/index.js';
+import { chalk } from '@hyperse/hps-srv-common';
 import { defaultGraphqlMocks } from '../graphql/default-mocks.js';
 import type { GraphqlEndpointManager } from '../graphql/graphql-endpoint-manager.js';
 import { graphqlMockManager } from '../graphql/graphql-mock-manager.js';
@@ -59,7 +59,7 @@ export const attachGraphqlMockItem = async (
   apiRouter.use(routerPath, graphqlMiddleware);
 
   const endpointManagers = graphqlMockManager.getEndpointManagers(serviceName);
-  const printData = [];
+  const printData: string[] = [];
   for (const endpointManager of endpointManagers) {
     const server = await startApolloServer(endpointManager);
     if (!server) {

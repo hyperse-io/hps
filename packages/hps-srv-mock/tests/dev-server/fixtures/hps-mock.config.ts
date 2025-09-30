@@ -101,8 +101,8 @@ export default defineConfig({
           strategy: 'mock',
           priority: 1,
           strategyViolativeOperations: {
-            'query':['login','showcases'],
-            'mutation':[]
+            'query':['showcases'],
+            'mutation':['login']
           },
         },
       ],
