@@ -23,6 +23,7 @@
     "@hyperse/hps-website": "0.0.2-next.1"
   },
   "changesets": [
+    "all-mice-marry",
     "big-friends-judge",
     "busy-seals-design",
     "busy-steaks-swim",
