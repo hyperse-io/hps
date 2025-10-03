@@ -1,5 +1,5 @@
 import { defineConfig, defineStrategyViolativeOperations } from '@hyperse/hps-srv-mock';
-import { type introspection } from '../graphql-admin-env.js';
+import { type Operations } from '../graphql-admin-env.js';
 
 export default defineConfig({
   projectCwd: process.cwd(),
@@ -78,8 +78,8 @@ export default defineConfig({
           customMocks: {},
           priority: 3,
           strategy: 'bypass',
-          strategyViolativeOperations: defineStrategyViolativeOperations<introspection>({
-            'query':['activeAdministrator',],
+          strategyViolativeOperations: defineStrategyViolativeOperations<Operations>({
+            'query':['activeAdministrator'],
             'mutation':['addCustomersToGroup']
           }),
         },
@@ -106,7 +106,6 @@ export default defineConfig({
           },
         },
       ],
-      fallbackEndpoint: 'backup',
       enableMocking: true,
     },
     'hps/shop-api': {
@@ -122,7 +121,6 @@ export default defineConfig({
           },
         },
       ],
-      fallbackEndpoint: 'backup',
       enableMocking: true,
     },
   },

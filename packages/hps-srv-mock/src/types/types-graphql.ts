@@ -1,43 +1,15 @@
-import type { RequiredDeep } from 'type-fest';
 import type { IMocks } from '@graphql-tools/mock';
 import type { IResolvers } from '@graphql-tools/utils';
 
-export type IntrospectionLike = {
-  types: {
-    Query?: {
-      fields: Record<string, any>;
-    };
-    Mutation?: {
-      fields: Record<string, any>;
-    };
-  };
-};
-
 export type IntrospectionFieldsTuple<
-  T extends IntrospectionLike,
+  T extends { types: any },
   K extends keyof T['types'],
-> = RequiredDeep<T['types']>[K] extends { fields: Record<string, any> }
-  ? Array<
-      keyof Extract<
-        RequiredDeep<T['types']>[K],
-        { fields: Record<string, any> }
-      >['fields']
-    >
-  : string[];
+> = T['types'][K] extends string ? Array<T['types'][K]> : never;
 
-export type StrategyViolativeOperationsResult<
-  T extends IntrospectionLike = IntrospectionLike,
-> = {
+export type StrategyViolativeOperations<T extends { types: any }> = {
   query?: IntrospectionFieldsTuple<T, 'Query'>;
   mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
 };
-
-export type StrategyViolativeOperations = <
-  T extends IntrospectionLike,
->(config: {
-  query?: IntrospectionFieldsTuple<T, 'Query'>;
-  mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
-}) => StrategyViolativeOperationsResult<T>;
 
 export type GraphqlMockEndpoint = {
   /**
@@ -73,7 +45,7 @@ export type GraphqlMockEndpoint = {
    * - When strategy === 'bypass', the fields defined in strategyViolativeOperations will NOT be bypassed, but will always use the mock logic (i.e., these fields are always mocked).
    * - When strategy === 'mock', the fields defined in strategyViolativeOperations will NOT be mocked, but will always be bypassed to the backend (i.e., these fields always request the backend).
    */
-  strategyViolativeOperations?: StrategyViolativeOperationsResult;
+  strategyViolativeOperations?: StrategyViolativeOperations<any>;
 };
 
 export type GraphqlMockMap = {
@@ -86,12 +58,8 @@ export type GraphqlMockMapItem = {
    */
   endpoints: GraphqlMockEndpoint[];
   /**
-   * The fallback endpoint of the GraphQL service.
-   */
-  fallbackEndpoint: 'backup';
-  /**
    * Whether to enable mocking.
    * @default true
    */
-  enableMocking: boolean;
+  enableMocking?: boolean;
 };

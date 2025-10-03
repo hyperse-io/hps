@@ -1,7 +1,9 @@
 import type ts from 'typescript';
-import { logger } from '@hyperse/hps-srv-common';
 import { codegenDocument } from './codegen-document.js';
-import type { TypesGraphqlspConfig } from './types/types-graphqlsp-config.js';
+import type {
+  Logger,
+  TypesGraphqlspConfig,
+} from './types/types-graphqlsp-config.js';
 
 function createBasicDecorator(info: ts.server.PluginCreateInfo) {
   const proxy: ts.LanguageService = Object.create(null);
@@ -17,11 +19,19 @@ function createBasicDecorator(info: ts.server.PluginCreateInfo) {
 }
 
 const create = (info: ts.server.PluginCreateInfo) => {
+  const logger: Logger = (msg: string) =>
+    info.project.projectService.logger.info(`[GraphQLSP] ${msg}`);
+
   const config: TypesGraphqlspConfig = info.config;
+
+  if (!config.projectCwd) {
+    config.projectCwd = info.project.getCurrentDirectory();
+  }
+
   if (config.outputDir) {
-    codegenDocument(config);
+    codegenDocument(config, logger);
   } else {
-    logger.warn('Not found config.outputDir, skip codegen document');
+    logger('Not found config.outputDir, skip codegen document');
   }
   return createBasicDecorator(info);
 };

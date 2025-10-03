@@ -14,5 +14,12 @@
     "types": ["vitest/globals"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
+  "exclude": [
+    "**/node_modules",
+    "**/.*/",
+    "dist",
+    "build",
+    "**/fixtures/**",
+    "**/_release/**"
+  ]
 }

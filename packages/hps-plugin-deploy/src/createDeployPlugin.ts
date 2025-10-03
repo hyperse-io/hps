@@ -65,7 +65,6 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
               default: 'public',
             },
             prefix: {
-              alias: 'p',
               description: 'plugins.deployPlugin.flags.prefix',
               type: String,
               default: '',

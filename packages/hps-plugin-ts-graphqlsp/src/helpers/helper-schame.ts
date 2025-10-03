@@ -36,7 +36,10 @@ export const generateDTS = (
     schema.subscriptionType?.name
   );
 
-  const output = `export type Operations = {
+  const output = `
+  /* eslint-disable */
+  
+  export type Operations = {
     types: {
       Query: ${queryFields};
       Mutation: ${mutationFields};

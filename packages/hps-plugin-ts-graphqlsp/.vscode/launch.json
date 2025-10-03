@@ -13,6 +13,13 @@
       "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
       "args": ["${relativeFile}"],
       "env": {}
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to tsserver",
+      "port": 9229,
+      "sourceMaps": true
     }
   ]
 }
