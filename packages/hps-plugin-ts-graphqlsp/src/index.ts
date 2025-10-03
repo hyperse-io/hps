@@ -19,7 +19,6 @@ function createBasicDecorator(info: ts.server.PluginCreateInfo) {
 }
 
 const create = (info: ts.server.PluginCreateInfo) => {
-  debugger;
   const logger: Logger = (msg: string) =>
     info.project.projectService.logger.info(`[GraphQLSP] ${msg}`);
 
@@ -29,7 +28,6 @@ const create = (info: ts.server.PluginCreateInfo) => {
     config.projectCwd = info.project.getCurrentDirectory();
   }
 
-  logger(`hps-plugin-ts-graphqlsp config: ${JSON.stringify(config)}`);
   if (config.outputDir) {
     codegenDocument(config, logger);
   } else {

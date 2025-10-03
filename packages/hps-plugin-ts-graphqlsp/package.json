@@ -47,7 +47,6 @@
   },
   "dependencies": {
     "@armit/file-utility": "^0.3.1",
-    "@hyperse/config-loader": "^1.0.7",
     "@hyperse/hps-srv-common": "workspace:*",
     "@hyperse/hps-srv-mock": "workspace:*"
   },

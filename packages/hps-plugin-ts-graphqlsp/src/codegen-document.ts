@@ -2,7 +2,6 @@ import { existsSync, mkdirSync } from 'fs';
 import { join, resolve } from 'path';
 import { downloadIntrospection } from './helpers/helper-download-introspection.js';
 import { generateDTS } from './helpers/helper-schame.js';
-import { searchGraphqlMap } from './helpers/helper-search-graphql-map.js';
 import type {
   Logger,
   TypesGraphqlspConfig,
@@ -14,23 +13,11 @@ export const codegenDocument = async (
 ) => {
   const { outputDir, projectCwd, schemas } = config;
   try {
-    let endpoints = [];
-    if (schemas) {
-      endpoints = schemas;
-    } else {
-      const graphqlMockMap = await searchGraphqlMap(config);
-      if (!graphqlMockMap) {
-        return;
-      }
-      endpoints = Object.values(graphqlMockMap).flatMap(
-        (item) => item?.endpoints || []
-      );
-    }
     const absOutputDir = resolve(projectCwd, outputDir);
     if (!existsSync(absOutputDir)) {
       mkdirSync(absOutputDir, { recursive: true });
     }
-    for (const item of endpoints) {
+    for (const item of schemas) {
       const fileName = `${item.name}.d.ts`;
       const outputFile = join(absOutputDir, fileName);
       if (existsSync(outputFile)) {
@@ -39,7 +26,7 @@ export const codegenDocument = async (
         );
         continue;
       }
-      const result = await downloadIntrospection(item.url);
+      const result = await downloadIntrospection(item.schema);
       if (!result) {
         logger(`Error downloading introspection schema for ${item.name}`);
         continue;
