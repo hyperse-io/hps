@@ -1,4 +1,6 @@
+import { join } from 'path';
 import type { GraphqlMockMap, HpsMockOptions } from '@hyperse/hps-srv-mock';
+import type { TypesGraphqlspConfig } from '../types/types-graphqlsp-config.js';
 import { loadHpsConfigFile } from './helper-load-hps-config.js';
 
 type HpsConfig = {
@@ -8,9 +10,9 @@ type HpsConfig = {
 const hspMockConfigKeys = ['serve.evolve', 'build.evolve', 'mock'];
 
 export const searchGraphqlMap = async (
-  config: HpsMockOptions
+  config: TypesGraphqlspConfig
 ): Promise<GraphqlMockMap | undefined> => {
-  const { projectCwd = process.cwd() } = config;
+  const { projectCwd } = config;
   try {
     const hpsConfig = await loadHpsConfigFile<HpsConfig>(projectCwd, {
       configFile: 'hps',
@@ -19,6 +21,7 @@ export const searchGraphqlMap = async (
         externalExclude: (moduleId: string | RegExp) => {
           return moduleId.toString().startsWith('@hyperse/');
         },
+        tsconfig: join(projectCwd, 'tsconfig.json'),
       },
     });
 

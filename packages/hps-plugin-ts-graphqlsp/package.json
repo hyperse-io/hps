@@ -13,10 +13,13 @@
   },
   "type": "module",
   "license": "SEE LICENSE IN FILE 'LICENSE'",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./package.json": "./package.json"
   },
@@ -31,7 +34,7 @@
   ],
   "scripts": {
     "serve": "yarn node --import=@hyperse/ts-node/register ./tests/dev-server.ts",
-    "build": "rimraf dist && tsc -p ./tsconfig.build.json",
+    "build": "node --import @hyperse/ts-node/register ./scripts/build.ts",
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
     "clean": "rimraf --no-glob ./dist ./_release ./coverage ./tsconfig.tsbuildinfo",
@@ -58,6 +61,7 @@
     "graphql": "^16.11.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
+    "tsup": "^8.5.0",
     "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },

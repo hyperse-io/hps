@@ -21,6 +21,7 @@
   "dependencies": {
     "@heroui/react": "^2.8.4",
     "@hyperse/hps": "workspace:*",
+    "@hyperse/hps-plugin-ts-graphqlsp": "workspace:*",
     "@iconify/react": "^6.0.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.16",

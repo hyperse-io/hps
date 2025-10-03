@@ -6,11 +6,19 @@
     "allowJs": false,
     "noImplicitAny": true,
     "noEmit": false,
+    "sourceMap": true, // ✅ 必须有
+    "inlineSources": true, // ✅ 推荐，方便关联源码
     "incremental": true,
     "paths": {
       "@hyperse/hps-srv-common": ["../hps-srv-common/src/index.ts"],
       "@hyperse/hps-srv-mock": ["../hps-srv-mock/src/index.ts"]
     },
+    "plugins": [
+      {
+        "name": "/Users/wangshunquan/work/me/hyperse-io/hps/packages/hps-plugin-ts-graphqlsp/dist/index.cjs",
+        "outputDir": "/Users/wangshunquan/work/me/hyperse-io/hps/packages/hps-plugin-ts-graphqlsp/typings"
+      }
+    ],
     "types": ["vitest/globals"]
   },
   "include": ["**/*.ts", "**/*.tsx"],

@@ -18,11 +18,6 @@ export const createUpdatePlugin = () => {
               default: false,
               description: 'plugins.updatePlugin.flags.force',
             },
-            projectCwd: {
-              type: String,
-              description: 'plugins.updatePlugin.flags.projectCwd',
-              default: process.cwd(),
-            },
           })
           .process(async (ctx) => {
             await updateWorkspacePackages({

@@ -12,7 +12,7 @@ export const createTsService = (config: TypesGraphqlspConfig) => {
       }
       return undefined;
     },
-    getCurrentDirectory: () => process.cwd(),
+    getCurrentDirectory: () => config.projectCwd,
     getCompilationSettings: () => ({}),
     getDefaultLibFileName: ts.getDefaultLibFilePath,
     readFile: (fileName) => {
@@ -35,7 +35,7 @@ export const createTsService = (config: TypesGraphqlspConfig) => {
     serverHost: ts.sys as any,
     project: {
       projectService: {
-        logger: { info: console.log } as any, // 简单替代 tsserver logger
+        logger: { info: console.log } as any,
       },
     } as any,
     config: config,

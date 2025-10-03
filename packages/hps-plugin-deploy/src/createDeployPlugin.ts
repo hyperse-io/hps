@@ -48,11 +48,6 @@ export const createDeployPlugin = (options: CreateDeployPluginOptions = {}) => {
           example: 'plugins.deployPlugin.command.example',
         })
           .flags({
-            projectCwd: {
-              description: 'plugins.deployPlugin.flags.projectCwd',
-              type: String,
-              default: process.cwd(),
-            },
             target: {
               alias: 't',
               required: true,
