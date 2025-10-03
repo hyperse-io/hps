@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-deploy
 
+## 0.0.2-next.13
+
+### Patch Changes
+
+- [`0cb6407`](https://github.com/hyperse-io/hps/commit/0cb640770d6627d73848844b7aa80617801698a3) Thanks [@tianyingchun](https://github.com/tianyingchun)! - remove projectCwd flag, improved `hps update`
+
 ## 0.0.2-next.12
 
 ### Patch Changes
