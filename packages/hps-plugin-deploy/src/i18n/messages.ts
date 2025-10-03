@@ -10,7 +10,6 @@ export const deployPluginMessages = defineLocaleMessages({
         example: 'cli deploy --target [target] --prefix <prefix>',
       },
       flags: {
-        projectCwd: 'The project root directory',
         target:
           'The target to deploy, multiple targets ({target}) can be specified',
         prefix: 'The prefix of the deployed file',

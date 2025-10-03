@@ -22,6 +22,7 @@ export const writeNcuConfig = (cwd: string) => {
       )
     );
   }
+  return ncuConfigFile;
 };
 
 /**

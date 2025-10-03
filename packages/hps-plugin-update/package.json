@@ -1,6 +1,6 @@
 {
   "name": "@hyperse/hps-plugin-update",
-  "version": "0.0.2-next.11",
+  "version": "0.0.2-next.13",
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
     "type": "git",
@@ -42,9 +42,10 @@
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {
+    "@hyperse/config-loader": "^1.0.7",
     "@manypkg/get-packages": "^3.1.0",
     "has-yarn": "^4.0.0",
-    "npm-check-updates": "^18.3.0",
+    "npm-check-updates": "^19.0.0",
     "package-up": "^5.0.0"
   },
   "devDependencies": {
