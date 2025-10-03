@@ -19,7 +19,6 @@ const searchExecutableEndpoint = async (
     return;
   }
   const { fallbackEndpoint } = graphqlMockMapItem;
-  // 查找支持该操作的端点
   let endpointManager = await graphqlMockManager.findSupportingEndpoint(
     serviceName,
     query
