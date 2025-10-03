@@ -106,7 +106,6 @@ export default defineConfig({
           },
         },
       ],
-      fallbackEndpoint: 'backup',
       enableMocking: true,
     },
     'hps/shop-api': {
@@ -122,7 +121,6 @@ export default defineConfig({
           },
         },
       ],
-      fallbackEndpoint: 'backup',
       enableMocking: true,
     },
   },

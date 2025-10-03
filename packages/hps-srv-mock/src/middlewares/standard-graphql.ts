@@ -18,21 +18,13 @@ const searchExecutableEndpoint = async (
   if (!graphqlMockMapItem) {
     return;
   }
-  const { fallbackEndpoint } = graphqlMockMapItem;
   let endpointManager = await graphqlMockManager.findSupportingEndpoint(
     serviceName,
     query
   );
   if (!endpointManager) {
-    endpointManager = graphqlMockManager.getEndpointManager(
-      serviceName,
-      fallbackEndpoint
-    );
-  }
-  if (!endpointManager) {
     return;
   }
-
   return endpointManager.endpoint;
 };
 

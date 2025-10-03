@@ -58,10 +58,6 @@ export type GraphqlMockMapItem = {
    */
   endpoints: GraphqlMockEndpoint[];
   /**
-   * The fallback endpoint of the GraphQL service.
-   */
-  fallbackEndpoint?: string;
-  /**
    * Whether to enable mocking.
    * @default true
    */
