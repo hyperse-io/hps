@@ -10,13 +10,7 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "noEmit": false,
-    "incremental": true,
-    "plugins": [
-      {
-        "name": "@hyperse/hps-plugin-ts-graphqlsp",
-        "outputDir": "/Users/wangshunquan/work/me/hyperse-io/hps/examples/example-modular/typings"
-      }
-    ]
+    "incremental": true
   },
   "include": ["**/*.ts", "**/*.tsx", "webpack.config.mjs"],
   "exclude": ["**/node_modules", "**/.*/", "dist", "build"]
