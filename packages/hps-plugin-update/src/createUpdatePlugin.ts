@@ -18,10 +18,22 @@ export const createUpdatePlugin = () => {
               default: false,
               description: 'plugins.updatePlugin.flags.force',
             },
-            projectCwd: {
-              type: String,
-              description: 'plugins.updatePlugin.flags.projectCwd',
-              default: process.cwd(),
+            filter: {
+              alias: 'f',
+              type: [String],
+              description: 'plugins.updatePlugin.flags.filter',
+              default: [],
+            },
+            reject: {
+              alias: 'r',
+              type: [String],
+              description: 'plugins.updatePlugin.flags.reject',
+              default: [],
+            },
+            verbose: {
+              type: Boolean,
+              description: 'plugins.updatePlugin.flags.verbose',
+              default: false,
             },
           })
           .process(async (ctx) => {
@@ -30,6 +42,9 @@ export const createUpdatePlugin = () => {
               noColor: ctx.flags.noColor,
               projectCwd: ctx.flags.projectCwd,
               force: ctx.flags.force,
+              filter: ctx.flags.filter,
+              reject: ctx.flags.reject,
+              verbose: ctx.flags.verbose,
             });
           })
       );

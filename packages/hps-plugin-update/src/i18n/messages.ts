@@ -10,8 +10,12 @@ export const updatePluginMessages = defineLocaleMessages({
         example: 'cli update --force <force> --project-cwd <project-cwd>',
       },
       flags: {
-        projectCwd: 'The project root directory',
         force: 'Force update the dependencies',
+        filter:
+          'Include only package names matching the given string, wildcard, glob, comma-or-space-delimited list, /regex/.',
+        reject:
+          'Exclude packages matching the given string, wildcard, glob, comma-or-space-delimited list, /regex/.',
+        verbose: 'Log additional information for debugging.',
       },
     },
   },

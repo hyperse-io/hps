@@ -6,18 +6,19 @@ export type NcuUpdateOptions = Pick<
   | 'cwd'
   | 'filter'
   | 'reject'
-  | 'rejectVersion'
   | 'registry'
   | 'timeout'
   | 'silent'
   | 'cacheFile'
+  | 'verbose'
+  | 'dep'
 >;
 
 export async function ncuUpdate(options: NcuUpdateOptions) {
   await run({
     cacheExpiration: 20,
-    deep: false,
-    mergeConfig: false,
+    deep: true,
+    mergeConfig: true,
     jsonUpgraded: false,
     packageManager: projectHasYarn() ? 'yarn' : 'npm',
     upgrade: true,
@@ -25,10 +26,11 @@ export async function ncuUpdate(options: NcuUpdateOptions) {
     cwd: options.cwd,
     cacheFile: options.cacheFile,
     filter: options.filter,
+    reject: options.reject,
     timeout: options.timeout || 30000,
     registry: options.registry,
-    reject: options.reject,
-    rejectVersion: options.rejectVersion,
     silent: options.silent,
+    verbose: options.verbose,
+    dep: options.dep,
   });
 }

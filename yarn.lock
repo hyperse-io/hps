@@ -5281,6 +5281,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-update@workspace:packages/hps-plugin-update"
   dependencies:
+    "@hyperse/config-loader": "npm:^1.0.7"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/wizard": "npm:^1.0.5"
     "@manypkg/get-packages": "npm:^3.1.0"
@@ -5289,7 +5290,7 @@ __metadata:
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.36.0"
     has-yarn: "npm:^4.0.0"
-    npm-check-updates: "npm:^18.3.0"
+    npm-check-updates: "npm:^19.0.0"
     npm-run-all: "npm:^4.1.5"
     package-up: "npm:^5.0.0"
     rimraf: "npm:^6.0.1"
@@ -21337,13 +21338,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^18.0.1, npm-check-updates@npm:^18.3.0":
+"npm-check-updates@npm:^18.0.1":
   version: 18.3.0
   resolution: "npm-check-updates@npm:18.3.0"
   bin:
     ncu: build/cli.js
     npm-check-updates: build/cli.js
   checksum: 10c0/208adc14a9a19d0d4b7d1dd34959f45777157fc9e50fc40d779d4361cfb731751b6db10ece324ad81a3172b33e796951b74a23a1b2afea632c8374c886eb71ea
+  languageName: node
+  linkType: hard
+
+"npm-check-updates@npm:^19.0.0":
+  version: 19.0.0
+  resolution: "npm-check-updates@npm:19.0.0"
+  bin:
+    ncu: build/cli.js
+    npm-check-updates: build/cli.js
+  checksum: 10c0/8b461b59539a5bd6de617461f3de3423badb197a63ee37ad6de46dc60b654d6b22f84e189f079ac6e69982c47eb38a398d4bbf44fd5f1be9e0fc24a04ccfd7d3
   languageName: node
   linkType: hard
 
