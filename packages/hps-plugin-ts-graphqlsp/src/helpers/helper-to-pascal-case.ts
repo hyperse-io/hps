@@ -1,6 +1,6 @@
 /**
  * @description
- * Convert string to camel case format
+ * Convert string to PascalCase format
  */
 export const toPascalCase = (str: string) => {
   return (str || '')

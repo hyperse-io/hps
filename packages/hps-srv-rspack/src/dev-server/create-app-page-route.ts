@@ -1,4 +1,7 @@
 import { type Application } from 'express';
+import express from 'express';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 import { type TrustedEditor } from '@hyperse/inspector-common';
 import { createLaunchEditorMiddleware } from '@hyperse/inspector-middleware';
 import { normalizePageProxy } from '../helpers/helper-normalize-page-proxy.js';
@@ -43,6 +46,13 @@ export const createAppPageRoute = (
       evolveOptions
     )
   );
+
+  //attach static assets for main dashboard
+  const mainTemplateStaticPath = join(
+    dirname(fileURLToPath(import.meta.url)),
+    '../../templates/main'
+  );
+  app.use('/hps_dashboard_static', express.static(mainTemplateStaticPath));
 
   // handle all no-matched page request.
   app.use('*splat', createPublicAssetsMiddleware(projectCwd, pageProxy));

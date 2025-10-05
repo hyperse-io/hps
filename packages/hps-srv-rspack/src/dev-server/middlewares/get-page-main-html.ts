@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { getPackageDir, urlJoin } from '@hyperse/hps-srv-common';
+import { parseTemplate } from '@hyperse/html-webpack-plugin-loader';
 import { normalizePageProxy } from '../../helpers/helper-normalize-page-proxy.js';
 import type { EvolveDevServerEntryMap } from '../../types/types-dev-server.js';
 import { type HpsEvolveOptions } from '../../types/types-options.js';
@@ -8,11 +9,18 @@ import {
   getSortedModules,
   type SortedModuleItem,
 } from './get-all-sorted-modules.js';
-import type {
-  MainTemplateData,
-  MainTemplateModuleItemData,
-} from './main-module-parser.js';
-import { MainModuleParser } from './main-module-parser.js';
+
+export interface MainTemplateModuleItemData {
+  name: string;
+  link: string;
+  flagText: string;
+  isServed: 1 | 0;
+}
+
+export interface MainTemplateData {
+  title: string;
+  modules: MainTemplateModuleItemData[];
+}
 
 export const getPageMainHtml = async (
   servedDevServerEntries: EvolveDevServerEntryMap,
@@ -21,7 +29,7 @@ export const getPageMainHtml = async (
 ): Promise<string> => {
   const evolveCwd = getPackageDir(import.meta.url);
   const templateStr = readFileSync(
-    join(evolveCwd, './templates/main.html'),
+    join(evolveCwd, './templates/main/index.html'),
     'utf-8'
   );
 
@@ -78,7 +86,36 @@ export const getPageMainHtml = async (
     }),
   };
 
-  const mainModuleParser = new MainModuleParser(templateStr, templateData);
+  const mainModuleParser = parseTemplate(templateStr);
+
+  mainModuleParser.upsertHeadInlineScripts([
+    {
+      id: 'main-dashboard-data',
+      order: 1,
+      position: 'end',
+      content: `window.HPS_MAIN_DASHBOARD_DATA = ${JSON.stringify(
+        templateData
+      )}`,
+    },
+  ]);
+
+  mainModuleParser.upsertBodyScripts([
+    {
+      id: 'main-bundle.js',
+      order: 1,
+      position: 'end',
+      src: urlJoin(devHostUri, ['/hps_dashboard_static/bundle.js']),
+    },
+  ]);
+
+  mainModuleParser.upsertHeadStyles([
+    {
+      id: 'main-css.js',
+      order: 1,
+      position: 'end',
+      href: urlJoin(devHostUri, ['/hps_dashboard_static/bundle.css']),
+    },
+  ]);
 
   return mainModuleParser.serialize();
 };
