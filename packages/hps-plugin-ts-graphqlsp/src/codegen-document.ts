@@ -31,7 +31,7 @@ export const codegenDocument = async (
         logger(`Error downloading introspection schema for ${item.name}`);
         continue;
       }
-      generateDTS(result, outputFile);
+      generateDTS(item, result, outputFile);
     }
   } catch (error: any) {
     logger('Error generating dts: ' + error.message);
