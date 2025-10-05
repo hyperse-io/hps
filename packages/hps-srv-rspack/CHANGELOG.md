@@ -1,5 +1,17 @@
 # @hyperse/hps-srv-rspack
 
+## 0.0.2-next.10
+
+### Patch Changes
+
+- [#31](https://github.com/hyperse-io/hps/pull/31) [`b5cd647`](https://github.com/hyperse-io/hps/commit/b5cd6471f97177edd47bbb9fcc525c69883b9b8d) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - chore: clean up tsconfig.json by removing unused plugin configuration and retaining incremental build option
+
+- Updated dependencies [[`b5cd647`](https://github.com/hyperse-io/hps/commit/b5cd6471f97177edd47bbb9fcc525c69883b9b8d)]:
+  - @hyperse/hps-srv-rspack-plugin-postcss@0.0.2-next.9
+  - @hyperse/hps-srv-ts-checker@0.0.2-next.7
+  - @hyperse/hps-srv-common@0.0.2-next.9
+  - @hyperse/hps-srv-mock@0.0.2-next.10
+
 ## 0.0.2-next.9
 
 ### Patch Changes
