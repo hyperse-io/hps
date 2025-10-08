@@ -38,11 +38,18 @@ export const createGraphqlEndpointMiddleware = (
         // The fields found should be bypassed to the remote, and the fields not found should be mocked
         targetUrl = findIndex ? remoteUrl : mockUrl;
       }
-      logger.info(
-        `${calledFields?.fields.join(', ')} ${chalk(['cyan'])(
-          '->'
-        )} ${targetUrl}`
-      );
+
+      const log = ['[ '];
+      log.push(chalk(['cyan'])(`${endpoint.name} (${endpoint.strategy})`));
+      log.push(' ] ');
+      if (calledFields?.fields) {
+        log.push('[ ');
+        log.push(chalk(['magenta'])(calledFields.fields.join(', ')));
+        log.push(' ] ');
+      }
+      log.push(chalk(['cyan'])('-> '));
+      log.push(targetUrl);
+      logger.info(log.join(''));
       return targetUrl;
     },
     on: {

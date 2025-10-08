@@ -45,14 +45,9 @@
     "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
-  "dependencies": {
-    "@armit/file-utility": "^0.3.1",
-    "@hyperse/hps-srv-common": "workspace:*",
-    "@hyperse/hps-srv-mock": "workspace:*"
-  },
   "devDependencies": {
+    "@armit/file-utility": "^0.3.1",
     "@hyperse/eslint-config-hyperse": "^1.4.8",
-    "@hyperse/wizard": "^1.0.5",
     "@types/graphql": "^14.5.0",
     "@types/node": "^24.5.2",
     "@vitest/coverage-istanbul": "^3.2.4",
@@ -66,7 +61,6 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "@hyperse/wizard": ">=1.0.5",
     "graphql": ">=16.0.0",
     "typescript": ">=5.0.0"
   },

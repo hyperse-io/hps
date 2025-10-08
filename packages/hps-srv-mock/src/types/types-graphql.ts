@@ -11,6 +11,11 @@ export type StrategyViolativeOperations<T extends { types: any }> = {
   mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
 };
 
+export type IgnoreOperations<T extends { types: any }> = {
+  query?: IntrospectionFieldsTuple<T, 'Query'>;
+  mutation?: IntrospectionFieldsTuple<T, 'Mutation'>;
+};
+
 export type GraphqlMockEndpoint = {
   /**
    * The name of the GraphQL endpoint.
@@ -50,7 +55,7 @@ export type GraphqlMockEndpoint = {
   /**
    * Ignore Operations for this endpoint
    */
-  ignoreOperations?: StrategyViolativeOperations<any>;
+  ignoreOperations?: IgnoreOperations<any>;
 };
 
 export type GraphqlMockMap = {

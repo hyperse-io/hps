@@ -5259,9 +5259,6 @@ __metadata:
   dependencies:
     "@armit/file-utility": "npm:^0.3.1"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@hyperse/hps-srv-common": "workspace:*"
-    "@hyperse/hps-srv-mock": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
     "@types/graphql": "npm:^14.5.0"
     "@types/node": "npm:^24.5.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
@@ -5274,7 +5271,6 @@ __metadata:
     typescript: "npm:^5.9.2"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
     graphql: ">=16.0.0"
     typescript: ">=5.0.0"
   languageName: unknown
