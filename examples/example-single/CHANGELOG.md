@@ -1,5 +1,16 @@
 # @example/example-single
 
+## 0.0.2-next.20
+
+### Patch Changes
+
+- Updated dependencies [[`837c76a`](https://github.com/hyperse-io/hps/commit/837c76a17d1ae01cba2279b58e91a1652b8da8c1)]:
+  - @hyperse/hps-srv-rspack@0.0.2-next.11
+  - @hyperse/hps@0.1.0-next.20
+  - @hyperse/hps-plugin-build@0.0.2-next.11
+  - @hyperse/hps-plugin-serve@0.0.2-next.11
+  - @hyperse/hps-plugin-mock@0.0.2-next.11
+
 ## 0.0.2-next.19
 
 ### Patch Changes

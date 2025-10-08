@@ -1,5 +1,14 @@
 @hyperse/hps-plugin-ts-graphqlsp
 
+## 0.0.2-next.10
+
+### Patch Changes
+
+- [#34](https://github.com/hyperse-io/hps/pull/34) [`b004a21`](https://github.com/hyperse-io/hps/commit/b004a21cf05118e0023a0701edbf1741fcbcfde0) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: update generateDTS function to accept schemaItem and improve operation name generation
+
+- Updated dependencies [[`b004a21`](https://github.com/hyperse-io/hps/commit/b004a21cf05118e0023a0701edbf1741fcbcfde0)]:
+  - @hyperse/hps-srv-mock@0.0.2-next.11
+
 ## 0.0.2-next.9
 
 ### Patch Changes
