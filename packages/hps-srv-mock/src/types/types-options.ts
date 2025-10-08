@@ -192,19 +192,6 @@ export interface HpsMockOptions {
   mockFilters?: Array<string | RegExp>;
   /**
    * The mock configurations for graphql.
-   *
-   * @example
-   * {
-   *   'vendure-dashboard-admin-api': {
-   *     apiPath: '/admin-api',
-   *     url: 'http://localhost:4090/admin-api',
-   *     mocks: {},
-   *     skipMockFields: defineSkipMockFields<introspection>({
-   *       query: ['activedTemplateByRoutePath'],
-   *       mutation: ['AddCustomersToGroup']
-   *     })
-   *   }
-   * }
    */
   graphqlMockMap?: GraphqlMockMap;
 }

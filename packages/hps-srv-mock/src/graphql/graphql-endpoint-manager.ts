@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, rmSync } from 'fs';
 import type { GraphQLSchema } from 'graphql';
-import { buildClientSchema, validate } from 'graphql';
+import { buildClientSchema, OperationTypeNode, validate } from 'graphql';
 import { join } from 'path';
 import { generate } from '@graphql-codegen/cli';
 import type { Types } from '@graphql-codegen/plugin-helpers';
@@ -196,6 +196,26 @@ export class GraphqlEndpointManager {
     operation: GraphqlOperationInfo
   ): Promise<boolean> {
     try {
+      if (this.endpoint.ignoreOperations) {
+        const calledFields = operation.fields || [];
+        const ignoreFields =
+          operation.operationType === OperationTypeNode.QUERY
+            ? this.endpoint.ignoreOperations.query || []
+            : this.endpoint.ignoreOperations.mutation || [];
+
+        let findField;
+        const find = ignoreFields.some((field) => {
+          findField = calledFields.find((f) => f === field);
+          return !!findField;
+        });
+
+        if (find) {
+          logger.debug(
+            `Operation ${findField} is ignored for endpoint ${this.endpoint.name}`
+          );
+          return false;
+        }
+      }
       const schema = this.getIntrospectionSchema();
       if (!schema) {
         return false;
