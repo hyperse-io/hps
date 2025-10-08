@@ -1,5 +1,14 @@
 # @hyperse/hps-srv-rspack
 
+## 0.0.2-next.11
+
+### Patch Changes
+
+- [#34](https://github.com/hyperse-io/hps/pull/34) [`837c76a`](https://github.com/hyperse-io/hps/commit/837c76a17d1ae01cba2279b58e91a1652b8da8c1) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: add main HTML template and remove unused GraphQL mock configurations from hps-evolve.config.ts
+
+- Updated dependencies [[`b004a21`](https://github.com/hyperse-io/hps/commit/b004a21cf05118e0023a0701edbf1741fcbcfde0)]:
+  - @hyperse/hps-srv-mock@0.0.2-next.11
+
 ## 0.0.2-next.10
 
 ### Patch Changes
