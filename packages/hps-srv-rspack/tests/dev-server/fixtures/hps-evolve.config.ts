@@ -44,36 +44,6 @@ export default defineConfig(() => ({
       staticMap: {
         '/static': 'static',
       },
-    graphqlMockMap: {
-      'hps-dashboard-admin-api': {
-        apiPath: '/admin-api',
-        url: 'http://localhost:4090/admin-api',
-        mocks: {},
-        strategyViolativeOperations: {
-          'query':['activedTemplateByRoutePath'],
-          'mutation':['addCustomersToGroup']
-        },
-        resolvers: {
-          Query: {
-            activeChannel: () => {
-              return {
-                name: 'activedTemplateByRoutePath',
-                changelog: 'changelog',
-              };
-            },
-          },
-        },
-      },
-      'hps-dashboard-shop-api': {
-        apiPath: '/shop-api',
-        url: 'http://localhost:4090/shop-api',
-        mocks:   {},
-        strategyViolativeOperations: {
-          'query':['activePaymentMethods'],
-          'mutation':['addCustomersToGroup']
-        }
-      },
-    },
     }
   },
   rspack:{
@@ -88,6 +58,5 @@ export default defineConfig(() => ({
         htmlCdn: 'http://dev.hps.com:4000/public',
       },
     },
-  
   },
 }));

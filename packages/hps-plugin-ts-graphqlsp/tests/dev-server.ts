@@ -20,7 +20,7 @@ const tsService = createTsService({
       schema: 'http://localhost:7001/admin-api',
     },
     {
-      name: 'dashboard-shop-api',
+      name: 'dashboard_shop_api',
       schema: 'http://localhost:4090/shop-api',
     },
   ],

@@ -46,6 +46,11 @@ export type GraphqlMockEndpoint = {
    * - When strategy === 'mock', the fields defined in strategyViolativeOperations will NOT be mocked, but will always be bypassed to the backend (i.e., these fields always request the backend).
    */
   strategyViolativeOperations?: StrategyViolativeOperations<any>;
+
+  /**
+   * Ignore Operations for this endpoint
+   */
+  ignoreOperations?: StrategyViolativeOperations<any>;
 };
 
 export type GraphqlMockMap = {

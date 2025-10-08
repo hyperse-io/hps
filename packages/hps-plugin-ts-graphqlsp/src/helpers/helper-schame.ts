@@ -1,5 +1,7 @@
 import { writeFileSync } from 'fs';
 import type { IntrospectionObjectType, IntrospectionQuery } from 'graphql';
+import type { TypesGraphqlspConfig } from '../types/types-graphqlsp-config.js';
+import { toPascalCase } from './helper-to-pascal-case.js';
 
 const getObjectType = (
   introspection: IntrospectionQuery,
@@ -22,9 +24,11 @@ const getFieldsUnion = (
 };
 
 export const generateDTS = (
+  schemaItem: TypesGraphqlspConfig['schemas'][0],
   introspection: IntrospectionQuery,
   outputPath: string
 ) => {
+  const { name } = schemaItem;
   const schema = introspection.__schema;
   const queryFields = getFieldsUnion(introspection, schema.queryType?.name);
   const mutationFields = getFieldsUnion(
@@ -36,16 +40,16 @@ export const generateDTS = (
     schema.subscriptionType?.name
   );
 
-  const output = `
-  /* eslint-disable */
+  const operationName = toPascalCase(`${name} operations`);
+  const output = `/* eslint-disable */
   
-  export type Operations = {
-    types: {
-      Query: ${queryFields};
-      Mutation: ${mutationFields};
-      Subscription: ${subscriptionFields};
-    }
-  };
+export type ${operationName} = {
+  types: {
+    Query: ${queryFields};
+    Mutation: ${mutationFields};
+    Subscription: ${subscriptionFields};
+  }
+};
   `;
   writeFileSync(outputPath, output);
 };
