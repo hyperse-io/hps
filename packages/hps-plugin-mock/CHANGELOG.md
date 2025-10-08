@@ -1,5 +1,12 @@
 # @hyperse/hps-plugin-mock
 
+## 0.0.2-next.11
+
+### Patch Changes
+
+- Updated dependencies [[`b004a21`](https://github.com/hyperse-io/hps/commit/b004a21cf05118e0023a0701edbf1741fcbcfde0)]:
+  - @hyperse/hps-srv-mock@0.0.2-next.11
+
 ## 0.0.2-next.10
 
 ### Patch Changes
