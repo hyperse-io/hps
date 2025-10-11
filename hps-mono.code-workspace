@@ -53,8 +53,8 @@
       "path": "packages/hps-plugin-deploy",
     },
     {
-      "name": "hps-plugin-ts-graphqlsp",
-      "path": "packages/hps-plugin-ts-graphqlsp",
+      "name": "hps-graphqlsp",
+      "path": "packages/hps-graphqlsp",
     },
     {
       "name": "hps-srv-common",
@@ -141,7 +141,7 @@
       "./packages/hps-plugin-serve",
       "./packages/hps-plugin-build",
       "./packages/hps-plugin-mock",
-      "./packages/hps-plugin-ts-graphqlsp",
+      "./packages/hps-graphqlsp",
       "./packages/hps-srv-common",
       "./packages/hps-srv-mock",
       "./packages/hps-srv-rolldown",

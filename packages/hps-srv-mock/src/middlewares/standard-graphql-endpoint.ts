@@ -1,22 +1,29 @@
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { chalk, logger } from '@hyperse/hps-srv-common';
 import type { GraphqlEndpointManager } from '../graphql/graphql-endpoint-manager.js';
+import { formatEndpointName } from '../helpers/format-endpoint-name.js';
 import { getGqlCalledFields } from '../helpers/get-gql-called-fields.js';
 import { getGraphqlRootFields } from '../helpers/get-gql-root-fields.js';
-import { type MockRequest, type MockRequestHandler } from '../types/index.js';
+import {
+  type HpsMockOptions,
+  type MockRequest,
+  type MockRequestHandler,
+} from '../types/index.js';
 import type { GraphqlMockMapItem } from '../types/types-graphql.js';
 
 export const createGraphqlEndpointMiddleware = (
+  mockOptions: HpsMockOptions,
   endpointManager: GraphqlEndpointManager,
   graphqlMockManagerItem?: GraphqlMockMapItem
 ): MockRequestHandler => {
+  const allEndpointNameMap = formatEndpointName(mockOptions);
   return createProxyMiddleware({
     changeOrigin: true,
     secure: false,
     cookieDomainRewrite: '',
     router: (req: MockRequest) => {
       const { query } = req.body;
-      const { endpoint } = endpointManager;
+      const { endpoint, name: endpointName } = endpointManager;
       const mockUrl = endpointManager.getMockConfig().serviceUrl;
       const remoteUrl = endpoint.url;
       const { enableMocking = true } = graphqlMockManagerItem || {};
@@ -40,14 +47,12 @@ export const createGraphqlEndpointMiddleware = (
       }
 
       const log = ['[ '];
-      log.push(chalk(['cyan'])(`${endpoint.name} (${endpoint.strategy})`));
+      log.push(chalk(['cyan'])(`${allEndpointNameMap[endpointName]}`));
       log.push(' ] ');
       if (calledFields?.fields) {
-        log.push('[ ');
         log.push(chalk(['magenta'])(calledFields.fields.join(', ')));
-        log.push(' ] ');
       }
-      log.push(chalk(['cyan'])('-> '));
+      log.push(chalk(['cyan'])(' -> '));
       log.push(targetUrl);
       logger.info(log.join(''));
       return targetUrl;
@@ -62,7 +67,7 @@ export const createGraphqlEndpointMiddleware = (
         }
       },
       error: (_, _req, res) => {
-        res.end(` Something went wrong. ${endpointManager.endpoint.name} `);
+        res.end(` Something went wrong. ${endpointManager.name} `);
       },
     },
   });

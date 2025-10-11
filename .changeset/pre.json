@@ -12,7 +12,6 @@
     "@hyperse/hps-plugin-mock": "0.0.2-next.7",
     "@hyperse/hps-plugin-pack": "0.0.2-next.7",
     "@hyperse/hps-plugin-serve": "0.0.2-next.7",
-    "@hyperse/hps-plugin-ts-graphqlsp": "0.0.2-next.7",
     "@hyperse/hps-plugin-update": "0.0.2-next.11",
     "@hyperse/hps-srv-common": "0.0.2-next.7",
     "@hyperse/hps-srv-mock": "0.0.2-next.7",

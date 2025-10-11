@@ -1,11 +1,11 @@
 {
-  "name": "@hyperse/hps-plugin-ts-graphqlsp",
+  "name": "@hyperse/hps-graphqlsp",
   "version": "0.0.2-next.10",
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
     "type": "git",
     "url": "https://github.com/hyperse-io/hps",
-    "directory": "packages/hps-plugin-ts-graphqlsp"
+    "directory": "packages/hps-graphqlsp"
   },
   "author": {
     "name": "Hyperse",

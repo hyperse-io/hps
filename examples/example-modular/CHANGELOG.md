@@ -5,7 +5,6 @@
 ### Patch Changes
 
 - Updated dependencies [[`b004a21`](https://github.com/hyperse-io/hps/commit/b004a21cf05118e0023a0701edbf1741fcbcfde0)]:
-  - @hyperse/hps-plugin-ts-graphqlsp@0.0.2-next.10
   - @hyperse/hps@0.1.0-next.20
 
 ## 0.0.2-next.19
@@ -13,7 +12,6 @@
 ### Patch Changes
 
 - Updated dependencies [[`b5cd647`](https://github.com/hyperse-io/hps/commit/b5cd6471f97177edd47bbb9fcc525c69883b9b8d)]:
-  - @hyperse/hps-plugin-ts-graphqlsp@0.0.2-next.9
   - @hyperse/hps@0.1.0-next.19
 
 ## 0.0.2-next.18

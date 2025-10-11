@@ -193,7 +193,7 @@ export interface HpsMockOptions {
   /**
    * The mock configurations for graphql.
    */
-  graphqlMockMap?: GraphqlMockMap;
+  graphqlMockMap?: GraphqlMockMap<any>;
 }
 
 export interface HpsMockApplicationOptions {

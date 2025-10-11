@@ -1,7 +1,5 @@
 import { graphqlMockManager } from '../graphql/graphql-mock-manager.js';
 import {
-  type GraphqlMockEndpoint,
-  type GraphqlMockMapItem,
   type HpsMockOptions,
   type MockNextFunction,
   type MockRequest,
@@ -12,12 +10,17 @@ import { createGraphqlEndpointMiddleware } from './standard-graphql-endpoint.js'
 
 const searchExecutableEndpoint = async (
   serviceName: string,
-  query: string,
-  graphqlMockMapItem?: GraphqlMockMapItem
-): Promise<GraphqlMockEndpoint | undefined> => {
-  if (!graphqlMockMapItem) {
-    return;
+  query: string
+): Promise<string | undefined> => {
+  // 1. Check for redirect endpoint first
+  const redirectEndpointManager = await graphqlMockManager.findRedirectEndpoint(
+    serviceName,
+    query
+  );
+  if (redirectEndpointManager) {
+    return redirectEndpointManager.name;
   }
+  // 2. Then check for supporting endpoint
   const endpointManager = await graphqlMockManager.findSupportingEndpoint(
     serviceName,
     query
@@ -25,11 +28,11 @@ const searchExecutableEndpoint = async (
   if (!endpointManager) {
     return;
   }
-  return endpointManager.endpoint;
+  return endpointManager.name;
 };
 
 const forGraphqlApiRequest = (
-  _mockOptions: HpsMockOptions,
+  mockOptions: HpsMockOptions,
   serviceName: string
 ): MockRequestHandler => {
   const proxyMiddlewares = new Map<string, MockRequestHandler>();
@@ -40,8 +43,12 @@ const forGraphqlApiRequest = (
 
   for (const endpointManager of endpointManagers) {
     proxyMiddlewares.set(
-      endpointManager.endpoint.name,
-      createGraphqlEndpointMiddleware(endpointManager, graphqlMockMapItem)
+      endpointManager.name,
+      createGraphqlEndpointMiddleware(
+        mockOptions,
+        endpointManager,
+        graphqlMockMapItem
+      )
     );
   }
 
@@ -59,12 +66,11 @@ const forGraphqlApiRequest = (
     // Note: For exact mount path, there should be no loopback; additional checks unnecessary
     try {
       const { query } = req.body;
-      const executableEndpoint = await searchExecutableEndpoint(
+      const executableEndpointName = await searchExecutableEndpoint(
         serviceName,
-        query,
-        graphqlMockMapItem
+        query
       );
-      const middleware = proxyMiddlewares.get(executableEndpoint?.name || '');
+      const middleware = proxyMiddlewares.get(executableEndpointName || '');
       if (middleware) {
         return middleware(req, res, next);
       }
@@ -75,9 +81,7 @@ const forGraphqlApiRequest = (
             extensions: {
               code: 'OPERATION_NOT_SUPPORTED',
               operationName: req.body.operationName,
-              availableEndpoints: endpointManagers.map(
-                (ep) => ep.endpoint.name
-              ),
+              availableEndpoints: endpointManagers.map((ep) => ep.name),
             },
           },
         ],

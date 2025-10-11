@@ -67,9 +67,7 @@ export const attachGraphqlMockItem = async (
     }
     const { proxyPath, serviceUrl } = endpointManager.getMockConfig();
     apiRouter.use(proxyPath, expressMiddleware(server));
-    printData.push(
-      `${endpointManager.endpoint.name}  ${chalk(['blue'])(serviceUrl)}`
-    );
+    printData.push(`${endpointManager.name}  ${chalk(['blue'])(serviceUrl)}`);
   }
   printGqlServices(`GraphQL mock services for ${serviceName}`, printData);
 };
