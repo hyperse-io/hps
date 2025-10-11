@@ -83,7 +83,7 @@ export const generateIndex = (
 
   const content = `/* eslint-disable */
 // @ts-nocheck
-
+import type * as HpsSrvMock from "@hyperse/hps-srv-mock";
 ${importLines.join('\n')}
 
 declare module "@hyperse/hps-srv-mock" {

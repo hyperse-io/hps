@@ -61,6 +61,9 @@ export const codegenDocument = async (
     // generate index.ts
     if (serviceResult.length > 0) {
       const indexOutputFile = join(absOutputDir, 'index.ts');
+      if (existsSync(indexOutputFile)) {
+        return;
+      }
       generateIndex(serviceResult, indexOutputFile);
     }
   } catch (error: any) {

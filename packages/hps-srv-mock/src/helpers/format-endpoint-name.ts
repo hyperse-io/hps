@@ -13,7 +13,7 @@ export const formatEndpointName = (mockOptions: HpsMockOptions) => {
       for (const [name, config] of Object.entries(endpoints)) {
         rawNames.push({
           name,
-          content: `${name} (${config?.strategy})`,
+          content: `${name} (${config?.strategy ?? 'mock'})`,
         });
       }
     }
