@@ -1,7 +1,10 @@
-import type { StrategyViolativeOperations } from '../types/types-graphql.js';
+import type {
+  GraphqlMockMap,
+  GraphqlMockMapping,
+} from '../types/types-graphql.js';
 
-export function defineStrategyViolativeOperations<T extends { types: any }>(
-  config: StrategyViolativeOperations<T>
-): StrategyViolativeOperations<T> {
+export function defineGraphqlMock<
+  T extends GraphqlMockMapping = GraphqlMockMapping,
+>(config: GraphqlMockMap<T>): GraphqlMockMap<T> {
   return config;
 }

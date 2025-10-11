@@ -1,5 +1,4 @@
 ---
-"@hyperse/hps-plugin-ts-graphqlsp": patch
 "@hyperse/hps-srv-mock": patch
 ---
 

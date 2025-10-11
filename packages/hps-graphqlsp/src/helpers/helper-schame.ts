@@ -1,7 +1,6 @@
 import { writeFileSync } from 'fs';
 import type { IntrospectionObjectType, IntrospectionQuery } from 'graphql';
-import type { TypesGraphqlspConfig } from '../types/types-graphqlsp-config.js';
-import { toPascalCase } from './helper-to-pascal-case.js';
+import type { GenerateIndexService } from '../types/types-generate.js';
 
 const getObjectType = (
   introspection: IntrospectionQuery,
@@ -24,11 +23,10 @@ const getFieldsUnion = (
 };
 
 export const generateDTS = (
-  schemaItem: TypesGraphqlspConfig['schemas'][0],
+  exportedName: string,
   introspection: IntrospectionQuery,
   outputPath: string
 ) => {
-  const { name } = schemaItem;
   const schema = introspection.__schema;
   const queryFields = getFieldsUnion(introspection, schema.queryType?.name);
   const mutationFields = getFieldsUnion(
@@ -40,10 +38,9 @@ export const generateDTS = (
     schema.subscriptionType?.name
   );
 
-  const operationName = toPascalCase(`${name} operations`);
   const output = `/* eslint-disable */
   
-export type ${operationName} = {
+export type ${exportedName} = {
   types: {
     Query: ${queryFields};
     Mutation: ${mutationFields};
@@ -52,4 +49,49 @@ export type ${operationName} = {
 };
   `;
   writeFileSync(outputPath, output);
+};
+
+export const generateIndex = (
+  options: GenerateIndexService[],
+  outputPath: string
+) => {
+  const importLines: string[] = [];
+  const mappingLines: string[] = [];
+
+  options.forEach((service) => {
+    service.endpoints.forEach((endpoint) => {
+      importLines.push(
+        `import type { ${endpoint.exportedName} } from "${endpoint.filePath}";`
+      );
+    });
+
+    const endpointsContent = service.endpoints
+      .map(
+        (ep) =>
+          `        "${ep.name}": {
+          Query: ${ep.exportedName}["types"]["Query"];
+          Mutation: ${ep.exportedName}["types"]["Mutation"];
+          Subscription: ${ep.exportedName}["types"]["Subscription"];
+        }`
+      )
+      .join(',\n');
+
+    mappingLines.push(
+      `    "${service.serviceName}": {\n      endpoints: {\n${endpointsContent}\n      }\n    }`
+    );
+  });
+
+  const content = `/* eslint-disable */
+// @ts-nocheck
+import type * as HpsSrvMock from "@hyperse/hps-srv-mock";
+${importLines.join('\n')}
+
+declare module "@hyperse/hps-srv-mock" {
+  interface GraphqlMockMapping {
+${mappingLines.join(',\n')}
+  }
+}
+`;
+
+  writeFileSync(outputPath, content);
 };

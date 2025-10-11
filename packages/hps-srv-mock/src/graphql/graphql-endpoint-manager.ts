@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, rmSync } from 'fs';
 import type { GraphQLSchema } from 'graphql';
-import { buildClientSchema, OperationTypeNode, validate } from 'graphql';
+import { buildClientSchema, validate } from 'graphql';
 import { join } from 'path';
 import { generate } from '@graphql-codegen/cli';
 import type { Types } from '@graphql-codegen/plugin-helpers';
@@ -38,6 +38,7 @@ export class GraphqlEndpointManager {
   constructor(
     private readonly mockOptions: HpsMockOptions,
     private readonly serviceName: string,
+    public readonly name: string,
     public readonly endpoint: GraphqlMockEndpoint,
     private readonly applicationOptions: HpsMockApplicationOptions
   ) {
@@ -48,12 +49,9 @@ export class GraphqlEndpointManager {
     );
     this.introspectionSchemaFilePath = join(
       this.gqlSchemaDir,
-      endpoint.name + '.json'
+      this.name + '.json'
     );
-    this.astSchemaFilePath = join(
-      this.gqlSchemaDir,
-      endpoint.name + '.graphql'
-    );
+    this.astSchemaFilePath = join(this.gqlSchemaDir, this.name + '.graphql');
     this.ensureGqlSchemaDir();
     this.cleanEndpointCache();
     this.hasIntrospectionSchema = false;
@@ -84,9 +82,9 @@ export class GraphqlEndpointManager {
     const serviceUrl = assertPath(
       this.mockOptions.apiContext || '/api',
       this.serviceName,
-      this.endpoint.name
+      this.name
     );
-    const proxyPath = assertPath('/', this.serviceName, this.endpoint.name);
+    const proxyPath = assertPath('/', this.serviceName, this.name);
     const hostUri = (this.applicationOptions?.hostUri || '').replace(/\/$/, '');
     this.mockConfig = {
       proxyPath,
@@ -109,13 +107,11 @@ export class GraphqlEndpointManager {
       );
       this.hasIntrospectionSchema = result;
       if (!result) {
-        logger.warn(
-          `Error downloading introspection schema for ${this.endpoint.name}`
-        );
+        logger.warn(`Error downloading introspection schema for ${this.name}`);
       }
     } catch (error: any) {
       logger.warn(
-        `Error downloading introspection schema for ${this.endpoint.name}: ${error?.message || error}`
+        `Error downloading introspection schema for ${this.name}: ${error?.message || error}`
       );
       this.hasIntrospectionSchema = false;
     }
@@ -139,12 +135,12 @@ export class GraphqlEndpointManager {
       const filePaths = result.map((result) => result.filename);
       this.hasParsedAstSchema = filePaths.includes(this.astSchemaFilePath);
       if (!this.hasParsedAstSchema) {
-        logger.warn(`GraphQL schema not found for ${this.endpoint.name}`);
+        logger.warn(`GraphQL schema not found for ${this.name}`);
       }
     } catch (error: any) {
       this.hasParsedAstSchema = false;
       logger.warn(
-        `GraphQL schema generation failed for ${this.endpoint.name}: ${error?.message || error}`
+        `GraphQL schema generation failed for ${this.name}: ${error?.message || error}`
       );
     }
   }
@@ -165,7 +161,7 @@ export class GraphqlEndpointManager {
       obj = JSON.parse(result);
     } catch (error: any) {
       logger.warn(
-        `Invalid introspection JSON for ${this.endpoint.name}: ${error?.message || error}`
+        `Invalid introspection JSON for ${this.name}: ${error?.message || error}`
       );
       return null;
     }
@@ -196,26 +192,6 @@ export class GraphqlEndpointManager {
     operation: GraphqlOperationInfo
   ): Promise<boolean> {
     try {
-      if (this.endpoint.ignoreOperations) {
-        const calledFields = operation.fields || [];
-        const ignoreFields =
-          operation.operationType === OperationTypeNode.QUERY
-            ? this.endpoint.ignoreOperations.query || []
-            : this.endpoint.ignoreOperations.mutation || [];
-
-        let findField;
-        const find = ignoreFields.some((field) => {
-          findField = calledFields.find((f) => f === field);
-          return !!findField;
-        });
-
-        if (find) {
-          logger.debug(
-            `Operation ${findField} is ignored for endpoint ${this.endpoint.name}`
-          );
-          return false;
-        }
-      }
       const schema = this.getIntrospectionSchema();
       if (!schema) {
         return false;
@@ -224,7 +200,7 @@ export class GraphqlEndpointManager {
       return errors.length === 0;
     } catch (error: any) {
       logger.debug(
-        `Validation error for endpoint ${this.endpoint.name}: ${error.message}`
+        `Validation error for endpoint ${this.name}: ${error.message}`
       );
       return false;
     }

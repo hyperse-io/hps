@@ -1,3 +1,4 @@
+import { OperationTypeNode } from 'graphql';
 import { logger } from '@hyperse/hps-srv-common';
 import { parseOperation } from '../helpers/parse-gql-operation.js';
 import type { GraphqlMockMapItem } from '../types/types-graphql.js';
@@ -48,22 +49,29 @@ export class GraphqlMockManager {
     for (const [serviceName, graphqlMockMapItem] of Object.entries(
       graphqlMockMap
     )) {
-      const sortedEndpoints = graphqlMockMapItem.endpoints.sort(
-        (a, b) => (a.priority || 0) - (b.priority || 0)
-      );
-      const endpointManagers = sortedEndpoints.map(
-        (endpoint) =>
-          new GraphqlEndpointManager(
-            this.mockOptions,
-            serviceName,
-            endpoint,
-            applicationOptions
-          )
-      );
+      const allEndpoints = graphqlMockMapItem?.endpoints || {};
+      const allEndpointKeys = Object.keys(allEndpoints);
+      const sortedEndpointKeys = allEndpointKeys.sort((a, b) => {
+        const previousEndpoint = allEndpoints[a];
+        const nextEndpoint = allEndpoints[b];
+        return (
+          (previousEndpoint?.priority || 0) - (nextEndpoint?.priority || 0)
+        );
+      });
+      const endpointManagers = sortedEndpointKeys.map((key) => {
+        const currentEndpoint = allEndpoints[key];
+        return new GraphqlEndpointManager(
+          this.mockOptions,
+          serviceName,
+          key,
+          currentEndpoint!,
+          applicationOptions
+        );
+      });
       this.allEndpointManagers.push(...endpointManagers);
       this.graphqlMockManagerMap.set(serviceName, {
         endpointManagers,
-        graphqlMockMapItem,
+        graphqlMockMapItem: graphqlMockMapItem!,
       });
     }
   }
@@ -101,7 +109,7 @@ export class GraphqlMockManager {
     return this.graphqlMockManagerMap
       .get(serviceName)
       ?.endpointManagers.find(
-        (endpointManager) => endpointManager.endpoint.name === endpointName
+        (endpointManager) => endpointManager.name === endpointName
       );
   }
 
@@ -127,7 +135,7 @@ export class GraphqlMockManager {
 
       if (isSupported) {
         logger.debug(
-          `Operation ${operation.operationName || 'anonymous'} supported by ${endpointManager.endpoint.name}`
+          `Operation ${operation.operationName || 'anonymous'} supported by ${endpointManager.name}`
         );
         return endpointManager;
       }
@@ -135,6 +143,45 @@ export class GraphqlMockManager {
     logger.debug(
       `No endpoint supports operation: ${operation.operationName || 'anonymous'}`
     );
+    return;
+  }
+
+  public async findRedirectEndpoint(serviceName: string, query: string) {
+    const operation = parseOperation(query);
+    if (!operation) {
+      return;
+    }
+
+    const endpointManagers = this.getEndpointManagers(serviceName);
+
+    let findEndpointName: string | null = null;
+
+    for (const endpointManager of endpointManagers) {
+      const redirectOperations = endpointManager.endpoint.redirectOperations;
+      if (redirectOperations) {
+        const calledFields = operation.fields || [];
+        const findTargetEndpoint = redirectOperations.find((rule) => {
+          const redirectFields =
+            operation.operationType === OperationTypeNode.QUERY
+              ? rule?.operations?.query || []
+              : rule?.operations?.mutation || [];
+
+          return redirectFields.some((field) => {
+            return calledFields.find((f) => f === field);
+          });
+        });
+
+        if (findTargetEndpoint) {
+          findEndpointName = findTargetEndpoint.targetEndpoint;
+          break;
+        }
+      }
+    }
+
+    if (findEndpointName) {
+      return this.getEndpointManager(serviceName, findEndpointName);
+    }
+
     return;
   }
 }
