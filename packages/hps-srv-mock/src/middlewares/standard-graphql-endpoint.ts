@@ -52,7 +52,7 @@ export const createGraphqlEndpointMiddleware = (
       if (calledFields?.fields) {
         log.push(chalk(['magenta'])(calledFields.fields.join(', ')));
       }
-      log.push(chalk(['cyan'])(' -> '));
+      log.push(chalk(['cyan'])(' ➞ '));
       log.push(targetUrl);
       logger.info(log.join(''));
       return targetUrl;

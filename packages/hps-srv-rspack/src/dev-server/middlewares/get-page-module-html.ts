@@ -26,7 +26,6 @@ export const getPageModuleHtml = async (
   servedDevServerEntries: EvolveDevServerEntryMap,
   req: Request,
   devHostUri: string,
-  apiContext: string,
   evolveOptions: HpsEvolveOptions
 ): Promise<string> => {
   const { entryMap, projectVirtualPath } = evolveOptions;

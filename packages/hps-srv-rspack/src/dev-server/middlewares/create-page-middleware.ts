@@ -10,14 +10,12 @@ import { getRuntimeManifest } from './get-runtime-manifest.js';
  * @example `http://dev.hps.com:3001/pages`
  * @param mode The mode of this dev server instance.
  * @param hostUri The main host base url.
- * @param apiContext apiBase e.g. `api`
  * @param servedDevServerEntries The served webpack entries
  * @param forPageMiddlewares Allow us provider customized middlewares for `page`, `modules`
  * @param evolveOptions The evolve config options
  */
 export const createPageMiddleware = (
   devHostUri: string,
-  apiContext: string,
   servedDevServerEntries: EvolveDevServerEntryMap,
   evolveOptions: HpsEvolveOptions
 ): RequestHandler[] => {
@@ -46,7 +44,6 @@ export const createPageMiddleware = (
         servedDevServerEntries,
         req,
         devHostUri,
-        apiContext,
         evolveOptions
       );
     }

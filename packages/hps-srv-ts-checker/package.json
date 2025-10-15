@@ -46,25 +46,25 @@
     "@armit/file-utility": "^0.3.1",
     "@babel/code-frame": "^7.27.1",
     "@hyperse/hps-srv-common": "workspace:*",
-    "ts-checker-rspack-plugin": "^1.1.5"
+    "ts-checker-rspack-plugin": "^1.1.6"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
     "@hyperse/wizard": "^1.0.5",
     "@rspack/core": "~1.5.6",
     "@types/babel__code-frame": "^7.0.6",
-    "@types/node": "^24.5.2",
+    "@types/node": "^24.7.2",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
-    "eslint": "^9.36.0",
+    "eslint": "^9.37.0",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "@hyperse/wizard": ">=1.0.5",
-    "@rspack/core": ">=1.5.6"
+    "@rspack/core": ">=1.5.8"
   },
   "peerDependenciesMeta": {
     "@hyperse/wizard": {

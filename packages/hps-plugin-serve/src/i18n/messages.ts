@@ -16,6 +16,7 @@ export const servePluginMessages = defineLocaleMessages({
           example: 'hps serve evolve --static-mode --modules home',
           flags: {
             staticMode: 'Start an evolve serve with static mode',
+            port: 'The port corresponding to the current service',
             modules:
               'Filter you un wanted entry items, make we have best serve & debug performance',
             mockFilters:

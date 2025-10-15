@@ -39,12 +39,7 @@ export const createAppPageRoute = (
   // Attach request handlers for context `/page/*`
   app.use(
     pageProxy,
-    ...createPageMiddleware(
-      devHostUri,
-      devServer?.mockOptions?.apiContext || 'api',
-      servedDevServerEntries,
-      evolveOptions
-    )
+    ...createPageMiddleware(devHostUri, servedDevServerEntries, evolveOptions)
   );
 
   //attach static assets for main dashboard

@@ -9,5 +9,5 @@ export default defineConfig(
       },
     },
   ],
-  ['./templates/*.html']
+  ['./templates/**/*.html', './templates/**/*.js', './templates/**/*.css']
 );

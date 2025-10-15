@@ -8,10 +8,11 @@ export const handlerServeEvolve = async (
     modules: string[];
     staticMode: boolean;
     mockFilters: string[];
+    port?: number;
   },
   configOptions: Partial<HpsEvolveOptions>
 ) => {
-  const { projectCwd, modules, staticMode } = flags;
+  const { projectCwd, modules, staticMode, port } = flags;
   const normalizedOptions = mergeOptions<Partial<HpsEvolveOptions>>(
     configOptions,
     {
@@ -26,6 +27,7 @@ export const handlerServeEvolve = async (
       devServer: {
         mockOptions: {
           mockFilters: flags.mockFilters,
+          port: port,
         },
       },
     });
