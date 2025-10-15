@@ -1,5 +1,21 @@
 # @hyperse/hps
 
+## 0.1.0-next.22
+
+### Patch Changes
+
+- [#39](https://github.com/hyperse-io/hps/pull/39) [`6565548`](https://github.com/hyperse-io/hps/commit/6565548923570188524ae1edbf21dd1ff0d67142) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - chore: update package dependencies across multiple packages; enhance type definitions and add new flags for serve plugin
+
+- Updated dependencies [[`dc98408`](https://github.com/hyperse-io/hps/commit/dc9840828bbd2300dfaf9fd4f2cc91f226d8c947), [`6565548`](https://github.com/hyperse-io/hps/commit/6565548923570188524ae1edbf21dd1ff0d67142)]:
+  - @hyperse/hps-plugin-update@0.0.2-next.15
+  - @hyperse/hps-plugin-load-config@0.1.0-next.16
+  - @hyperse/hps-plugin-deploy@0.0.2-next.15
+  - @hyperse/hps-plugin-build@0.0.2-next.13
+  - @hyperse/hps-plugin-serve@0.0.2-next.13
+  - @hyperse/hps-plugin-info@0.1.0-next.16
+  - @hyperse/hps-plugin-mock@0.0.2-next.13
+  - @hyperse/hps-srv-common@0.0.2-next.10
+
 ## 0.1.0-next.21
 
 ### Patch Changes

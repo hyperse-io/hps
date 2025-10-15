@@ -1,18 +1,18 @@
 {
-  "name": "@hyperse/hps-plugin-pack",
-  "version": "0.0.2-next.10",
+  "name": "@hyperse/hps-plugin-load-config",
+  "version": "0.1.0-next.16",
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
     "type": "git",
     "url": "https://github.com/hyperse-io/hps",
-    "directory": "packages/hps-plugin-pack"
+    "directory": "packages/hps-plugin-load-config"
   },
+  "license": "SEE LICENSE IN FILE 'LICENSE'",
   "author": {
     "name": "Hyperse",
     "url": "https://github.com/hyperse-io"
   },
   "type": "module",
-  "license": "SEE LICENSE IN FILE 'LICENSE'",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -41,9 +41,13 @@
     "test-unit-watch": "vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
+  "dependencies": {
+    "@hyperse/hps-srv-common": "workspace:*"
+  },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
-    "@types/node": "^24.8.0",
+    "@hyperse/wizard": "^1.0.5",
+    "@types/node": "^24.7.2",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.37.0",
@@ -52,6 +56,9 @@
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "@hyperse/wizard": ">=1.0.5"
   },
   "engines": {
     "node": ">=20.0.0"
