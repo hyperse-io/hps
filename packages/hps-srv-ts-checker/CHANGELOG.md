@@ -1,5 +1,14 @@
 @hyperse/hps-srv-ts-checker
 
+## 0.0.2-next.8
+
+### Patch Changes
+
+- [#39](https://github.com/hyperse-io/hps/pull/39) [`6565548`](https://github.com/hyperse-io/hps/commit/6565548923570188524ae1edbf21dd1ff0d67142) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - chore: update package dependencies across multiple packages; enhance type definitions and add new flags for serve plugin
+
+- Updated dependencies [[`6565548`](https://github.com/hyperse-io/hps/commit/6565548923570188524ae1edbf21dd1ff0d67142)]:
+  - @hyperse/hps-srv-common@0.0.2-next.10
+
 ## 0.0.2-next.7
 
 ### Patch Changes

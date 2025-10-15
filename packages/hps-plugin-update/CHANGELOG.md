@@ -1,5 +1,13 @@
 # @hyperse/hps-plugin-update
 
+## 0.0.2-next.15
+
+### Patch Changes
+
+- [`dc98408`](https://github.com/hyperse-io/hps/commit/dc9840828bbd2300dfaf9fd4f2cc91f226d8c947) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add 'deep' flag to update plugin for recursive updates and update related messages
+
+- [#39](https://github.com/hyperse-io/hps/pull/39) [`6565548`](https://github.com/hyperse-io/hps/commit/6565548923570188524ae1edbf21dd1ff0d67142) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - chore: update package dependencies across multiple packages; enhance type definitions and add new flags for serve plugin
+
 ## 0.0.2-next.14
 
 ### Patch Changes
