@@ -11,7 +11,7 @@ export const createRsdoctorPlugins = (
   evolveOptions: HpsEvolveOptions
 ): Plugins => {
   const { rspack } = evolveOptions;
-  if (!rspack?.plugins?.rsdoctorPlugin?.enabled) {
+  if (!rspack.plugins.rsdoctorPlugin?.enabled) {
     return [];
   }
   return [new RsdoctorRspackPlugin({})];

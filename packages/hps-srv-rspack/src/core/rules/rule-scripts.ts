@@ -27,12 +27,15 @@ export const ruleScripts = (
 
   return {
     test: /\.(jsx|tsx|ts|js|mjs|cjs|mts|cts)$/,
-    exclude: /node_modules/,
+    // Don't exclude anythings because of we need to import node_modules from `@hps`
+    // exclude: /node_modules/,
     use: [
       {
         loader: 'builtin:swc-loader',
         /** @type {import('@rspack/core').SwcLoaderOptions} */
         options: {
+          //support cjs and esm
+          isModule: 'unknown',
           rspackExperiments: {
             import: modularImports,
           },

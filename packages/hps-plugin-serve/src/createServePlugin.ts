@@ -29,6 +29,11 @@ export const createServePlugin = () => {
                   'plugins.servePlugin.subCommands.evolve.flags.staticMode',
                 default: false,
               },
+              port: {
+                type: Number,
+                description:
+                  'plugins.servePlugin.subCommands.evolve.flags.port',
+              },
               modules: {
                 type: [String],
                 alias: 'm',
