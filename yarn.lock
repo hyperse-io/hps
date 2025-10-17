@@ -5559,6 +5559,7 @@ __metadata:
   resolution: "@hyperse/hps@workspace:packages/hps"
   dependencies:
     "@armit/file-utility": "npm:^0.3.1"
+    "@armit/package": "npm:^0.3.1"
     "@hyperse/config-loader": "npm:^1.0.7"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-plugin-build": "workspace:*"

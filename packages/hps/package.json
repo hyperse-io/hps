@@ -61,6 +61,7 @@
   },
   "devDependencies": {
     "@armit/file-utility": "^0.3.1",
+    "@armit/package": "^0.3.1",
     "@hyperse/eslint-config-hyperse": "^1.4.8",
     "@hyperse/hps-srv-rspack": "workspace:*",
     "@hyperse/ts-node": "^1.0.3",
