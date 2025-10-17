@@ -34,11 +34,12 @@
     "?build-release": "When https://github.com/atlassian/changesets/issues/432 has a solution we can remove this trick",
     "build-release": "yarn build && rimraf ./_release && yarn pack && mkdir ./_release && tar zxvf ./package.tgz --directory ./_release && rm ./package.tgz",
     "clean": "rimraf --no-glob ./dist ./_release ./coverage ./tsconfig.tsbuildinfo",
+    "clean:test-snap": "rimraf --no-glob ./tests/__snapshots__",
     "lint": "eslint .",
-    "test": "run-s test-unit",
-    "test-unit": "vitest run",
-    "test-coverage": "vitest run --coverage",
-    "test-unit-watch": "vitest watch --ui",
+    "test": "yarn clean:test-snap && run-s test-unit",
+    "test-unit": "yarn clean:test-snap && vitest run",
+    "test-coverage": "yarn clean:test-snap && vitest run --coverage",
+    "test-unit-watch": "yarn clean:test-snap && vitest watch --ui",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {

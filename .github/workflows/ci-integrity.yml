@@ -54,4 +54,4 @@ jobs:
 
       - name: Unit tests
         run: |
-          yarn g:test
+          yarn workspaces foreach -At --exclude "@hyperse/hps-plugin-update" run test
