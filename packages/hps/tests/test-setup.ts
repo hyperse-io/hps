@@ -6,9 +6,6 @@ import { execNpmInstaller } from '@armit/package';
 export const checkNodeModules = async (projectCwd: string) => {
   const nodeModulesPath = join(projectCwd, 'node_modules');
   if (existsSync(nodeModulesPath)) {
-    console.log(
-      'The node_modules in the test environment are being installed. Skipping.'
-    );
     return;
   }
 
