@@ -11,12 +11,6 @@ const publicPath = join(projectCwd, 'public');
 const tsconfig = join(projectCwd, '../../../tsconfig.json');
 
 describe('evolve reactjs smoking test for each html', () => {
-  beforeAll(() => {
-    if (existsSync(publicPath)) {
-      rmSync(publicPath, { recursive: true });
-    }
-  });
-
   const doBuild = async (
     modulePattern: string[],
     buildEntries: DeepPartial<EvolveEntryMap>,
@@ -32,6 +26,12 @@ describe('evolve reactjs smoking test for each html', () => {
       tsconfig
     );
   };
+
+  beforeAll(async () => {
+    if (existsSync(publicPath)) {
+      rmSync(publicPath, { recursive: true });
+    }
+  });
 
   it('Customize the title during the group building process`', async () => {
     await doBuild(['titleA', 'titleA_child', 'titleB', 'titleB_child'], {

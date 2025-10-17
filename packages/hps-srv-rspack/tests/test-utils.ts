@@ -1,5 +1,6 @@
-import { rmSync } from 'node:fs';
+import { existsSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
+import { execNpmInstaller } from '@armit/package';
 import type { DeepPartial } from '@hyperse/config-loader';
 import { mergeOptions, requireResolve } from '@hyperse/hps-srv-common';
 import { type EvolveConfigBase } from '../src/define-config/define-config.js';
@@ -81,4 +82,13 @@ export const startTestServe = async (
   );
 
   return await startServe(projectCwd, buildModules, finalEvolveOptions);
+};
+
+export const checkNodeModules = async (projectCwd: string) => {
+  const nodeModulesPath = join(projectCwd, 'node_modules');
+  if (existsSync(nodeModulesPath)) {
+    return;
+  }
+  console.log('Start install node_modules...');
+  await execNpmInstaller(projectCwd);
 };
