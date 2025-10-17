@@ -16,6 +16,7 @@ export const updatePluginMessages = defineLocaleMessages({
         reject:
           'Exclude packages matching the given string, wildcard, glob, comma-or-space-delimited list, /regex/.',
         verbose: 'Log additional information for debugging.',
+        deep: 'Run updates recursively in current working directory.',
       },
     },
   },

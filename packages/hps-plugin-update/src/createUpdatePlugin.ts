@@ -24,6 +24,11 @@ export const createUpdatePlugin = () => {
               description: 'plugins.updatePlugin.flags.filter',
               default: [],
             },
+            deep: {
+              type: Boolean,
+              description: 'plugins.updatePlugin.flags.deep',
+              default: false,
+            },
             reject: {
               alias: 'r',
               type: [String],
@@ -45,6 +50,7 @@ export const createUpdatePlugin = () => {
               filter: ctx.flags.filter,
               reject: ctx.flags.reject,
               verbose: ctx.flags.verbose,
+              deep: ctx.flags.deep,
             });
           })
       );

@@ -12,12 +12,13 @@ export type NcuUpdateOptions = Pick<
   | 'cacheFile'
   | 'verbose'
   | 'dep'
+  | 'deep'
 >;
 
 export async function ncuUpdate(options: NcuUpdateOptions) {
   await run({
     cacheExpiration: 20,
-    deep: true,
+    deep: options.deep,
     mergeConfig: true,
     jsonUpgraded: false,
     packageManager: projectHasYarn() ? 'yarn' : 'npm',

@@ -3,6 +3,7 @@ import type { Logger } from '@hyperse/wizard';
 import { getWorkspacePackages } from './getWorkspacePackages.js';
 import { ncuUpdate } from './ncuUpdate.js';
 import { writeCacheFile, writeNcuConfig } from './writeConfigFile.js';
+
 export type UpdateWorkspacePackagesOptions = {
   logger: Logger;
   noColor: boolean;
@@ -11,12 +12,14 @@ export type UpdateWorkspacePackagesOptions = {
   filter?: string[];
   reject?: string[];
   verbose?: boolean;
+  deep?: boolean;
 };
 
 type NcuConfig = {
   dep: string[];
   reject: string[];
 };
+
 export const updateWorkspacePackages = async (
   options: UpdateWorkspacePackagesOptions
 ) => {
@@ -46,6 +49,7 @@ export const updateWorkspacePackages = async (
       cwd: dir,
       dep: ncuDeps,
       reject: ncuReject || ncuOptions?.reject,
+      deep: ncuOptions.deep || false,
     });
   }
 };
