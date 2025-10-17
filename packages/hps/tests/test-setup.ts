@@ -6,12 +6,17 @@ import { execNpmInstaller } from '@armit/package';
 export const checkNodeModules = async (projectCwd: string) => {
   const nodeModulesPath = join(projectCwd, 'node_modules');
   if (existsSync(nodeModulesPath)) {
+    console.log(
+      'The node_modules in the test environment are being installed. Skipping.'
+    );
     return;
   }
+
   console.log('Start install node_modules...');
   await execNpmInstaller(projectCwd);
 };
 
-const projectCwd = getDirname(import.meta.url, 'evolve/fixtures');
-
-await checkNodeModules(projectCwd);
+export default async function setup() {
+  const projectCwd = getDirname(import.meta.url, 'evolve/fixtures');
+  await checkNodeModules(projectCwd);
+}

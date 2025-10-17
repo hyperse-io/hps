@@ -7,7 +7,7 @@ export default defineConfig({
     globals: true,
     testTimeout: 5000 * 10000,
     hookTimeout: 5000 * 10000,
-    setupFiles: './tests/test-setup.ts',
+    globalSetup: './tests/test-setup.ts',
     reporters: [['verbose', { summary: true }]],
     exclude: [...configDefaults.exclude],
     include: ['**/?(*.){test,spec}.?(c|m)[jt]s?(x)'],
