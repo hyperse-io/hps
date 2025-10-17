@@ -15,6 +15,7 @@ export const createMockPlugin = () => {
         defineCommand<'mock', MockCmdContext>('mock', {
           description: 'plugins.mockPlugin.command.description',
           example: 'plugins.mockPlugin.command.example',
+          loadConfig: true,
         })
           .flags({
             hostname: {

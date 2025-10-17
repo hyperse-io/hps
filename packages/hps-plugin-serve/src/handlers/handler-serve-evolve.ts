@@ -1,5 +1,4 @@
 import { logger, mergeOptions } from '@hyperse/hps-srv-common';
-import { getMockCwd } from '@hyperse/hps-srv-mock';
 import type { HpsEvolveOptions } from '@hyperse/hps-srv-rspack';
 
 export const handlerServeEvolve = async (
@@ -40,7 +39,11 @@ export const handlerServeEvolve = async (
     }
 
     // Dynamic resolve mock work root directory
-    const mockCwd = getMockCwd(finalOptions?.devServer?.mockOptions || {});
+    const mockModule = await import('@hyperse/hps-srv-mock');
+    const mockCwd = mockModule.getMockCwd({
+      ...(finalOptions?.devServer?.mockOptions || {}),
+      projectCwd: projectCwd,
+    });
 
     // always push mockCwd into watchOptions ignored.
     if (Array.isArray(finalOptions.devServer?.watchOptions?.ignored)) {

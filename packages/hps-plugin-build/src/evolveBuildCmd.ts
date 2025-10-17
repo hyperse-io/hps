@@ -11,6 +11,7 @@ export const evolveBuildCmd = defineCommand<'evolve', EvolveBuildCmdContext>(
   {
     description: 'plugins.buildPlugin.subCommands.evolve.description',
     example: 'plugins.buildPlugin.subCommands.evolve.example',
+    loadConfig: true,
   }
 )
   .flags({

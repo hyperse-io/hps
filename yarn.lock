@@ -2504,7 +2504,7 @@ __metadata:
     "@hyperse/hps-graphqlsp": "workspace:*"
     "@iconify/react": "npm:^6.0.2"
     "@tailwindcss/postcss": "npm:^4.1.14"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     autoprefixer: "npm:^10.4.21"
     clsx: "npm:^2.1.1"
     framer-motion: "npm:^12.23.24"
@@ -2527,10 +2527,10 @@ __metadata:
     "@hyperse/hps-plugin-mock": "workspace:*"
     "@hyperse/hps-plugin-serve": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
+    "@hyperse/wizard": "npm:^1.0.6"
     "@iconify/react": "npm:^6.0.2"
     "@tailwindcss/postcss": "npm:^4.1.14"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     autoprefixer: "npm:^10.4.21"
     clsx: "npm:^2.1.1"
     framer-motion: "npm:^12.23.24"
@@ -2541,7 +2541,7 @@ __metadata:
     tailwindcss: "npm:^4.1.14"
     typescript: "npm:^5.9.3"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
   linkType: soft
 
@@ -5088,7 +5088,7 @@ __metadata:
     "@armit/file-utility": "npm:^0.3.1"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@types/graphql": "npm:^14.5.0"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5096,7 +5096,7 @@ __metadata:
     npm-run-all: "npm:^4.1.5"
     rimraf: "npm:^6.0.1"
     tsup: "npm:^8.5.0"
-    typescript: "npm:^5.9.2"
+    typescript: "npm:^5.9.3"
     vitest: "npm:^3.2.4"
   peerDependencies:
     graphql: ">=16.11.0"
@@ -5112,8 +5112,8 @@ __metadata:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@types/node": "npm:^24.7.2"
+    "@hyperse/wizard": "npm:^1.0.6"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5123,7 +5123,7 @@ __metadata:
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
   linkType: soft
 
@@ -5132,9 +5132,9 @@ __metadata:
   resolution: "@hyperse/hps-plugin-deploy@workspace:packages/hps-plugin-deploy"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@hyperse/wizard": "npm:^1.0.5"
+    "@hyperse/wizard": "npm:^1.0.6"
     "@types/mime-types": "npm:^3.0.1"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5148,7 +5148,7 @@ __metadata:
     vitest: "npm:^3.2.4"
     yocto-spinner: "npm:^1.0.0"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
   linkType: soft
 
@@ -5157,8 +5157,8 @@ __metadata:
   resolution: "@hyperse/hps-plugin-info@workspace:packages/hps-plugin-info"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@types/node": "npm:^24.7.2"
+    "@hyperse/wizard": "npm:^1.0.6"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     cfonts: "npm:^3.3.1"
@@ -5171,28 +5171,7 @@ __metadata:
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
-  languageName: unknown
-  linkType: soft
-
-"@hyperse/hps-plugin-load-config@workspace:*, @hyperse/hps-plugin-load-config@workspace:packages/hps-plugin-load-config":
-  version: 0.0.0-use.local
-  resolution: "@hyperse/hps-plugin-load-config@workspace:packages/hps-plugin-load-config"
-  dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@hyperse/hps-srv-common": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@types/node": "npm:^24.7.2"
-    "@vitest/coverage-istanbul": "npm:^3.2.4"
-    "@vitest/ui": "npm:^3.2.4"
-    eslint: "npm:^9.37.0"
-    npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.0.1"
-    typescript: "npm:^5.9.3"
-    vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^3.2.4"
-  peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
   linkType: soft
 
@@ -5204,8 +5183,8 @@ __metadata:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-mock": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@types/node": "npm:^24.7.2"
+    "@hyperse/wizard": "npm:^1.0.6"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5215,7 +5194,7 @@ __metadata:
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
   linkType: soft
 
@@ -5224,7 +5203,7 @@ __metadata:
   resolution: "@hyperse/hps-plugin-pack@workspace:packages/hps-plugin-pack"
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5245,8 +5224,8 @@ __metadata:
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-mock": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@types/node": "npm:^24.7.2"
+    "@hyperse/wizard": "npm:^1.0.6"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5256,7 +5235,7 @@ __metadata:
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
   linkType: soft
 
@@ -5266,14 +5245,14 @@ __metadata:
   dependencies:
     "@hyperse/config-loader": "npm:^1.0.7"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
-    "@hyperse/wizard": "npm:^1.0.5"
+    "@hyperse/wizard": "npm:^1.0.6"
     "@manypkg/get-packages": "npm:^3.1.0"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
     has-yarn: "npm:^4.0.0"
-    npm-check-updates: "npm:^19.1.0"
+    npm-check-updates: "npm:^19.1.1"
     npm-run-all: "npm:^4.1.5"
     package-up: "npm:^5.0.0"
     rimraf: "npm:^6.0.1"
@@ -5281,7 +5260,7 @@ __metadata:
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
   linkType: soft
 
@@ -5295,9 +5274,9 @@ __metadata:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/logger": "npm:^1.1.7"
     "@hyperse/logger-plugin-stdout": "npm:^1.0.11"
-    "@hyperse/wizard": "npm:^1.0.5"
+    "@hyperse/wizard": "npm:^1.0.6"
     "@types/ip": "npm:^1.1.3"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5310,7 +5289,7 @@ __metadata:
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
   linkType: soft
 
@@ -5330,12 +5309,12 @@ __metadata:
     "@hyperse/delete-empty-folders": "npm:^1.0.1"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
+    "@hyperse/wizard": "npm:^1.0.6"
     "@rollup/pluginutils": "npm:^5.3.0"
     "@types/express-mung": "npm:0.5.5"
     "@types/listr": "npm:^0.14.9"
     "@types/mockjs": "npm:^1.0.10"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     "@types/serve-favicon": "npm:^2.5.7"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -5367,7 +5346,7 @@ __metadata:
     typescript: "npm:^5.9.3"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
     graphql: ">=16.11.0"
   peerDependenciesMeta:
     "@hyperse/wizard":
@@ -5384,8 +5363,8 @@ __metadata:
     "@armit/terminal": "npm:^0.3.0"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@types/node": "npm:^24.7.2"
+    "@hyperse/wizard": "npm:^1.0.6"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5396,7 +5375,7 @@ __metadata:
     typescript: "npm:^5.9.3"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
   peerDependenciesMeta:
     "@hyperse/wizard":
       optional: true
@@ -5409,8 +5388,8 @@ __metadata:
   dependencies:
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@types/node": "npm:^24.7.2"
+    "@hyperse/wizard": "npm:^1.0.6"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5421,7 +5400,7 @@ __metadata:
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
     postcss: ^8.5.6
   peerDependenciesMeta:
     "@hyperse/wizard":
@@ -5449,8 +5428,8 @@ __metadata:
     "@hyperse/inspector-common": "npm:^1.1.5"
     "@hyperse/inspector-middleware": "npm:^1.1.8"
     "@hyperse/inspector-swc-plugin": "npm:^1.1.10"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@rsdoctor/rspack-plugin": "npm:~1.3.2"
+    "@hyperse/wizard": "npm:^1.0.6"
+    "@rsdoctor/rspack-plugin": "npm:~1.3.3"
     "@rspack/binding": "npm:~1.5.8"
     "@rspack/core": "npm:~1.5.8"
     "@rspack/dev-server": "npm:~1.1.4"
@@ -5458,7 +5437,7 @@ __metadata:
     "@types/case-sensitive-paths-webpack-plugin": "npm:^2.1.9"
     "@types/express": "npm:^5.0.3"
     "@types/lodash": "npm:^4.17.20"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     "@types/react": "npm:^19.2.2"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
@@ -5475,16 +5454,16 @@ __metadata:
     npm-run-all: "npm:^4.1.5"
     postcss: "npm:^8.5.6"
     postcss-loader: "npm:^8.2.0"
-    react: "npm:^19.1.1"
+    react: "npm:^19.2.0"
     react-refresh: "npm:^0.18.0"
     rimraf: "npm:^6.0.1"
     svgo: "npm:^4.0.0"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^3.2.4"
-    webpack: "npm:^5.101.3"
+    webpack: "npm:^5.102.1"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
     imagemin-gifsicle: ">=7.0.0"
     imagemin-jpegtran: ">=8.0.0"
     imagemin-pngquant: ">=10.0.0"
@@ -5515,10 +5494,10 @@ __metadata:
     "@babel/code-frame": "npm:^7.27.1"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
     "@hyperse/hps-srv-common": "workspace:*"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@rspack/core": "npm:~1.5.6"
+    "@hyperse/wizard": "npm:^1.0.6"
+    "@rspack/core": "npm:~1.5.8"
     "@types/babel__code-frame": "npm:^7.0.6"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5528,7 +5507,7 @@ __metadata:
     typescript: "npm:^5.9.3"
     vitest: "npm:^3.2.4"
   peerDependencies:
-    "@hyperse/wizard": ">=1.0.5"
+    "@hyperse/wizard": ">=1.0.6"
     "@rspack/core": ">=1.5.8"
   peerDependenciesMeta:
     "@hyperse/wizard":
@@ -5550,7 +5529,7 @@ __metadata:
     "@hyperse/next-config": "npm:^1.0.7"
     "@tailwindcss/postcss": "npm:^4.1.14"
     "@tailwindcss/typography": "npm:^0.5.19"
-    "@types/node": "npm:^24.7.2"
+    "@types/node": "npm:^24.8.0"
     "@types/react": "npm:^19.2.2"
     "@types/react-dom": "npm:^19.2.2"
     clsx: "npm:^2.1.1"
@@ -5585,19 +5564,18 @@ __metadata:
     "@hyperse/hps-plugin-build": "workspace:*"
     "@hyperse/hps-plugin-deploy": "workspace:*"
     "@hyperse/hps-plugin-info": "workspace:*"
-    "@hyperse/hps-plugin-load-config": "workspace:*"
     "@hyperse/hps-plugin-mock": "workspace:*"
     "@hyperse/hps-plugin-serve": "workspace:*"
     "@hyperse/hps-plugin-update": "workspace:*"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
     "@hyperse/ts-node": "npm:^1.0.3"
-    "@hyperse/wizard": "npm:^1.0.5"
-    "@hyperse/wizard-plugin-error": "npm:^1.0.5"
-    "@hyperse/wizard-plugin-help": "npm:^1.0.5"
-    "@hyperse/wizard-plugin-loader": "npm:^1.0.5"
-    "@hyperse/wizard-plugin-version": "npm:^1.0.5"
-    "@types/node": "npm:^24.7.2"
+    "@hyperse/wizard": "npm:^1.0.6"
+    "@hyperse/wizard-plugin-error": "npm:^1.0.6"
+    "@hyperse/wizard-plugin-help": "npm:^1.0.6"
+    "@hyperse/wizard-plugin-loader": "npm:^1.0.6"
+    "@hyperse/wizard-plugin-version": "npm:^1.0.6"
+    "@types/node": "npm:^24.8.0"
     "@vitest/coverage-istanbul": "npm:^3.2.4"
     "@vitest/ui": "npm:^3.2.4"
     eslint: "npm:^9.37.0"
@@ -5770,7 +5748,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperse/translator@npm:^1.3.1":
+"@hyperse/translator@npm:^1.3.2":
   version: 1.3.2
   resolution: "@hyperse/translator@npm:1.3.2"
   dependencies:
@@ -5810,63 +5788,66 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-error@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@hyperse/wizard-plugin-error@npm:1.0.5"
+"@hyperse/wizard-plugin-error@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@hyperse/wizard-plugin-error@npm:1.0.6"
   dependencies:
-    "@hyperse/wizard": "npm:1.0.5"
+    "@hyperse/wizard": "npm:1.0.6"
     didyoumean2: "npm:^7.0.4"
-  checksum: 10c0/a6832ddb2af5b18cd3797139d679d5de551c339706399a1f5920461a76e7f68a25af76d5ab2bf4f5fdf81babf2f1dd430c7aa7f8151e8c8a4aa635ea92d5d7e1
+  checksum: 10c0/921a9eb392a1d3f8b10deba3a0b1502be56cf232c004f7a79c9b148f093b8c9e1f92e338ab18d94144d29bce8ad0a9e6bddee9051af3db7350d04ab3309c115a
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-help@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@hyperse/wizard-plugin-help@npm:1.0.5"
+"@hyperse/wizard-plugin-help@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@hyperse/wizard-plugin-help@npm:1.0.6"
   dependencies:
     "@hyperse/deep-merge": "npm:^1.0.1"
-    "@hyperse/wizard": "npm:1.0.5"
-    chalk: "npm:^5.6.0"
+    "@hyperse/wizard": "npm:1.0.6"
+    chalk: "npm:^5.6.2"
     string-width: "npm:^8.1.0"
     text-table: "npm:^0.2.0"
-  checksum: 10c0/0fe031bab96df347644ac67b9e8d05a497dc1072096577bd50235bd592e029e54f13b23962b36fc59534e44e85674cc481c6e21a6c6e00a5fee2d73f3a54b2ac
+  checksum: 10c0/64e2f8c21383d6a1f8ace30fc9f1639f8ee8c8264debbca2128020837c9d322428625570361a46f1e7dc9434483184cddb6c3acaa70a087118c3c191c9652049
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-loader@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@hyperse/wizard-plugin-loader@npm:1.0.5"
+"@hyperse/wizard-plugin-loader@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@hyperse/wizard-plugin-loader@npm:1.0.6"
   dependencies:
-    "@hyperse/wizard": "npm:1.0.5"
-    globby: "npm:^14.1.0"
+    "@hyperse/wizard": "npm:1.0.6"
+    globby: "npm:^15.0.0"
     resolve: "npm:^1.22.10"
-  checksum: 10c0/678e00c243b9f25e010d6223c57a13ce53617b8fb6bed32c7e3a4bb6629a0fdd226912d05a475e6c811317f1221dde59914b908ee881bc83c0feaebf3c138a07
+  checksum: 10c0/cb157e8296e16b17b394de764ed578d86cdd94c6a3ba0251995f3b1f52b5a6599dae284905975ee3fef18718abf26a809360b0aebba03f20011f24af3a15301d
   languageName: node
   linkType: hard
 
-"@hyperse/wizard-plugin-version@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@hyperse/wizard-plugin-version@npm:1.0.5"
+"@hyperse/wizard-plugin-version@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@hyperse/wizard-plugin-version@npm:1.0.6"
   dependencies:
-    "@hyperse/wizard": "npm:1.0.5"
-  checksum: 10c0/2ce6acdf6055cb33a204f84083e9dc862d4a05529453ecb3bfebaa085d403d561a85eeeb892864dfb6ba43c74a57ee825ac578c3a47ff4b4ded8e1137c7645df
+    "@hyperse/wizard": "npm:1.0.6"
+  checksum: 10c0/664e0e3d9583d1b0ec6fa78a9a48cd23d47722cfb6b9b0dc252f3c2830552d9f65f1086780bcff2ca99962f8c4a40f4fe0224dce0a4fc4cc8afcf3d8b3bd7d89
   languageName: node
   linkType: hard
 
-"@hyperse/wizard@npm:1.0.5, @hyperse/wizard@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "@hyperse/wizard@npm:1.0.5"
+"@hyperse/wizard@npm:1.0.6, @hyperse/wizard@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@hyperse/wizard@npm:1.0.6"
   dependencies:
+    "@hyperse/config-loader": "npm:^1.0.7"
     "@hyperse/deep-merge": "npm:^1.0.1"
     "@hyperse/hyper-env": "npm:^1.0.17"
     "@hyperse/logger": "npm:^1.1.7"
     "@hyperse/logger-plugin-stdout": "npm:^1.0.11"
     "@hyperse/pipeline": "npm:^1.0.6"
-    "@hyperse/translator": "npm:^1.3.1"
+    "@hyperse/translator": "npm:^1.3.2"
+    import-meta-resolve: "npm:^4.2.0"
     is-platform: "npm:^1.0.0"
-    type-fest: "npm:^4.41.0"
+    type-fest: "npm:^5.1.0"
     type-flag: "npm:^3.0.0"
-  checksum: 10c0/fa94f807a9621aae86f807eaffbf2c19ce9bae7a20e88f3538b24dab7c07b7756f2ea407adf8c82912a70b2bcb8dab5d9906ce3f7961faae012cd878dcc009e5
+    yocto-spinner: "npm:^1.0.0"
+  checksum: 10c0/d8e58e26553dacf2bae5df4a7554e549083f1b19e9e066073ba04fb732e76634ea15bc2589d9aba029f863ee5004b9bf0e46b98ab956a28398558fc6cf47eb7d
   languageName: node
   linkType: hard
 
@@ -9128,83 +9109,83 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rsdoctor/client@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@rsdoctor/client@npm:1.3.2"
-  checksum: 10c0/00b2812c74ba7ea225cf1927a94ca90b933de2c3f93c4de06eecd93ef04bc6a7454fd1ced0940d21f11191829bee6352505c6108a3684d857404e713450a55ee
+"@rsdoctor/client@npm:1.3.3":
+  version: 1.3.3
+  resolution: "@rsdoctor/client@npm:1.3.3"
+  checksum: 10c0/bafc4529dbcf4a893a5caaa7c39d7e1016c8bfb03ff849791d95a0b6702ce181cc4c5e1c327466bfeaed851ac5cc17269950c288f4ea8ca8b2d326de9f0b9aef
   languageName: node
   linkType: hard
 
-"@rsdoctor/core@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@rsdoctor/core@npm:1.3.2"
+"@rsdoctor/core@npm:1.3.3":
+  version: 1.3.3
+  resolution: "@rsdoctor/core@npm:1.3.3"
   dependencies:
     "@rsbuild/plugin-check-syntax": "npm:1.4.0"
-    "@rsdoctor/graph": "npm:1.3.2"
-    "@rsdoctor/sdk": "npm:1.3.2"
-    "@rsdoctor/types": "npm:1.3.2"
-    "@rsdoctor/utils": "npm:1.3.2"
+    "@rsdoctor/graph": "npm:1.3.3"
+    "@rsdoctor/sdk": "npm:1.3.3"
+    "@rsdoctor/types": "npm:1.3.3"
+    "@rsdoctor/utils": "npm:1.3.3"
     browserslist-load-config: "npm:^1.0.1"
     enhanced-resolve: "npm:5.12.0"
     filesize: "npm:^10.1.6"
     fs-extra: "npm:^11.1.1"
-    lodash-es: "npm:^4.17.21"
+    lodash: "npm:^4.17.21"
     semver: "npm:^7.7.3"
     source-map: "npm:^0.7.6"
-  checksum: 10c0/d615eed997199086883411a92ed83115a9e70d6f27f383990e75b7533df4fdc4657c740c231ae395a683a65cdfbeb34c9a74893229ef16937cc23759fbafae94
+  checksum: 10c0/110a2515057afaa3d432e9d6dc913123fb24d767465789c6a08abe75cb8c413c2de6cf5dcb55630c293b54c84d743b3ab4453f42f988727e56e97d4be7c4e30b
   languageName: node
   linkType: hard
 
-"@rsdoctor/graph@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@rsdoctor/graph@npm:1.3.2"
+"@rsdoctor/graph@npm:1.3.3":
+  version: 1.3.3
+  resolution: "@rsdoctor/graph@npm:1.3.3"
   dependencies:
-    "@rsdoctor/types": "npm:1.3.2"
-    "@rsdoctor/utils": "npm:1.3.2"
+    "@rsdoctor/types": "npm:1.3.3"
+    "@rsdoctor/utils": "npm:1.3.3"
     lodash.unionby: "npm:^4.8.0"
     path-browserify: "npm:1.0.1"
     source-map: "npm:^0.7.6"
-  checksum: 10c0/5087b9e92e40f52ca86289e3aae2e48468ec67e063d247904f36625a44000faf1698ea24edb23422fe33109d83c01d0a979caba083cd3578e29b9ebb5a263680
+  checksum: 10c0/3d6dc62aa562c6e890b69d608fbb05c7887dfa0889c4470a45263e8ee479a1e335fb6a13683ecaff780325c703ac52f971a48e00eab7606333d79e87b172fb7f
   languageName: node
   linkType: hard
 
-"@rsdoctor/rspack-plugin@npm:~1.3.2":
-  version: 1.3.2
-  resolution: "@rsdoctor/rspack-plugin@npm:1.3.2"
+"@rsdoctor/rspack-plugin@npm:~1.3.3":
+  version: 1.3.3
+  resolution: "@rsdoctor/rspack-plugin@npm:1.3.3"
   dependencies:
-    "@rsdoctor/core": "npm:1.3.2"
-    "@rsdoctor/graph": "npm:1.3.2"
-    "@rsdoctor/sdk": "npm:1.3.2"
-    "@rsdoctor/types": "npm:1.3.2"
-    "@rsdoctor/utils": "npm:1.3.2"
+    "@rsdoctor/core": "npm:1.3.3"
+    "@rsdoctor/graph": "npm:1.3.3"
+    "@rsdoctor/sdk": "npm:1.3.3"
+    "@rsdoctor/types": "npm:1.3.3"
+    "@rsdoctor/utils": "npm:1.3.3"
     lodash-es: "npm:^4.17.21"
   peerDependencies:
     "@rspack/core": "*"
   peerDependenciesMeta:
     "@rspack/core":
       optional: true
-  checksum: 10c0/7a511d73531e4adf0248c8f6c1d90693ffe0f99c7e838e8dc1477158c07506fe0c52e7995e2a40fde69354e41f0a63000a594532a82b244bf25622227afcb917
+  checksum: 10c0/7f7248ff7916ba6a7dd8b4475500e0951790bc01fbf023ba4a0e9fedecb8520c66c040472af9c0494778d784fe91f9393671594a3dcc59c1402f03f3bb926291
   languageName: node
   linkType: hard
 
-"@rsdoctor/sdk@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@rsdoctor/sdk@npm:1.3.2"
+"@rsdoctor/sdk@npm:1.3.3":
+  version: 1.3.3
+  resolution: "@rsdoctor/sdk@npm:1.3.3"
   dependencies:
-    "@rsdoctor/client": "npm:1.3.2"
-    "@rsdoctor/graph": "npm:1.3.2"
-    "@rsdoctor/types": "npm:1.3.2"
-    "@rsdoctor/utils": "npm:1.3.2"
+    "@rsdoctor/client": "npm:1.3.3"
+    "@rsdoctor/graph": "npm:1.3.3"
+    "@rsdoctor/types": "npm:1.3.3"
+    "@rsdoctor/utils": "npm:1.3.3"
     safer-buffer: "npm:2.1.2"
     socket.io: "npm:4.8.1"
     tapable: "npm:2.2.3"
-  checksum: 10c0/0b605cf3340418832ace537181e7463a2c307c46d5e772c5bb6ac39e8aab18af90882c1cb6a03d1fd79a1abcba1cb15731bb22550b85fc7ecc6928b2c78b5c86
+  checksum: 10c0/ce725507434b64688fa399e31f3135bd7a26300a25416a076eb13808d4af0bcb3037341dde40260da3af0abc68a81dc5501542d20f95e0a2200127c669cdb9c0
   languageName: node
   linkType: hard
 
-"@rsdoctor/types@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@rsdoctor/types@npm:1.3.2"
+"@rsdoctor/types@npm:1.3.3":
+  version: 1.3.3
+  resolution: "@rsdoctor/types@npm:1.3.3"
   dependencies:
     "@types/connect": "npm:3.4.38"
     "@types/estree": "npm:1.0.5"
@@ -9218,22 +9199,22 @@ __metadata:
       optional: true
     webpack:
       optional: true
-  checksum: 10c0/81fb950db33bb4fcb7c7620890794c3ddd4843b4116504317bbe79d12c38701366604267ade6646f0ec383c44e0d9f44bcd9b05e317b6f2615ea9d8354aaa887
+  checksum: 10c0/2c9a886fb07b01e0966ba8230075cd05175e5ac10523560aec4f618eae9908649257b80ec3250d95ae447abd34628707fbb05d085db392acfc64545fa96e305f
   languageName: node
   linkType: hard
 
-"@rsdoctor/utils@npm:1.3.2":
-  version: 1.3.2
-  resolution: "@rsdoctor/utils@npm:1.3.2"
+"@rsdoctor/utils@npm:1.3.3":
+  version: 1.3.3
+  resolution: "@rsdoctor/utils@npm:1.3.3"
   dependencies:
     "@babel/code-frame": "npm:7.26.2"
-    "@rsdoctor/types": "npm:1.3.2"
+    "@rsdoctor/types": "npm:1.3.3"
     "@types/estree": "npm:1.0.5"
     acorn: "npm:^8.10.0"
     acorn-import-attributes: "npm:^1.9.5"
     acorn-walk: "npm:8.3.4"
     deep-eql: "npm:4.1.4"
-    envinfo: "npm:7.14.0"
+    envinfo: "npm:7.18.0"
     fs-extra: "npm:^11.1.1"
     get-port: "npm:5.1.1"
     json-stream-stringify: "npm:3.0.1"
@@ -9241,7 +9222,7 @@ __metadata:
     picocolors: "npm:^1.1.1"
     rslog: "npm:^1.2.11"
     strip-ansi: "npm:^6.0.1"
-  checksum: 10c0/49f49bfefa8855dbf9e37628191245655e9ce1693bdb9f5130e8cc3dbccd7e834a50d2ef51a320dd3e743c0a2eb5fe6e41a1a90996622ab923f2e3c0c9db09a8
+  checksum: 10c0/479289e0d21e84b772011be88dd82e160c0eb3731f15385b861c8a56bf647fa95e96d9e4c2e1779f3cd45e9f41ddafff55e756c0014dd1f7d3205b1d48a85eee
   languageName: node
   linkType: hard
 
@@ -9356,7 +9337,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rspack/core@npm:~1.5.6, @rspack/core@npm:~1.5.8":
+"@rspack/core@npm:~1.5.8":
   version: 1.5.8
   resolution: "@rspack/core@npm:1.5.8"
   dependencies:
@@ -10675,12 +10656,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^24.7.2":
-  version: 24.7.2
-  resolution: "@types/node@npm:24.7.2"
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^24.8.0":
+  version: 24.8.0
+  resolution: "@types/node@npm:24.8.0"
   dependencies:
     undici-types: "npm:~7.14.0"
-  checksum: 10c0/03f662f10e4b89bc97016e067101cbabe55025b54c24afb581fb50992d5eeaaf417bdae34bbc668ae8759d3cdbbbadf35fc8b9b29d26f52ede2525d48e919e49
+  checksum: 10c0/6ba1a268dec49b46c3301193394bfe6203a8d44453e32d6666e5daa35d2b5251425e7ac81444edae4c7f5bd12feed3324eba338c52b5630b258ff0e5040cd646
   languageName: node
   linkType: hard
 
@@ -12561,7 +12542,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^5.0.0, chalk@npm:^5.2.0, chalk@npm:^5.3.0, chalk@npm:^5.6.0":
+"chalk@npm:^5.0.0, chalk@npm:^5.2.0, chalk@npm:^5.3.0, chalk@npm:^5.6.2":
   version: 5.6.2
   resolution: "chalk@npm:5.6.2"
   checksum: 10c0/99a4b0f0e7991796b1e7e3f52dceb9137cae2a9dfc8fc0784a550dc4c558e15ab32ed70b14b21b52beb2679b4892b41a0aa44249bcb996f01e125d58477c6976
@@ -14715,12 +14696,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"envinfo@npm:7.14.0":
-  version: 7.14.0
-  resolution: "envinfo@npm:7.14.0"
+"envinfo@npm:7.18.0":
+  version: 7.18.0
+  resolution: "envinfo@npm:7.18.0"
   bin:
     envinfo: dist/cli.js
-  checksum: 10c0/059a031eee101e056bd9cc5cbfe25c2fab433fe1780e86cf0a82d24a000c6931e327da6a8ffb3dce528a24f83f256e7efc0b36813113eff8fdc6839018efe327
+  checksum: 10c0/9d8002558932be577e0d5113917cee065846dbf4ba35521d60f18b6e71866bfd6b22d9037d7cf0e32c3a1a7b32faded7f32c812730a045947b162ea46e0cdc4d
   languageName: node
   linkType: hard
 
@@ -21276,13 +21257,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^19.1.0":
-  version: 19.1.0
-  resolution: "npm-check-updates@npm:19.1.0"
+"npm-check-updates@npm:^19.1.1":
+  version: 19.1.1
+  resolution: "npm-check-updates@npm:19.1.1"
   bin:
     ncu: build/cli.js
     npm-check-updates: build/cli.js
-  checksum: 10c0/2085cf3690a363ec4d321a51ca5cd83b4cf8ba3f61f981e2981dd1425c5c8a651bb9bf630c121642d580e374ad93e5ac40edb4c94564a99a35c8b857f5a60c09
+  checksum: 10c0/518fe4d94a40a42fadadc6bee1c4a3334d3acb7c7bfa465564297c75df19c8d1690518c55b87f14656b6c051cc66d554f31bc75c81cc95f86d782a2595f5ca41
   languageName: node
   linkType: hard
 
@@ -26007,7 +25988,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:>=5, typescript@npm:>=5.0.2, typescript@npm:^5.9.2, typescript@npm:^5.9.3":
+"typescript@npm:>=5, typescript@npm:>=5.0.2, typescript@npm:^5.9.3":
   version: 5.9.3
   resolution: "typescript@npm:5.9.3"
   bin:
@@ -26017,7 +25998,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A>=5#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A>=5.0.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.9.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.9.3#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A>=5#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A>=5.0.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.9.3#optional!builtin<compat/typescript>":
   version: 5.9.3
   resolution: "typescript@patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"
   bin:
@@ -26969,7 +26950,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.101.3":
+"webpack@npm:^5.102.1":
   version: 5.102.1
   resolution: "webpack@npm:5.102.1"
   dependencies:

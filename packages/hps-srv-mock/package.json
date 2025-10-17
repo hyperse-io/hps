@@ -82,10 +82,10 @@
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
-    "@hyperse/wizard": "^1.0.5",
+    "@hyperse/wizard": "^1.0.6",
     "@types/express-mung": "0.5.5",
     "@types/listr": "^0.14.9",
-    "@types/node": "^24.7.2",
+    "@types/node": "^24.8.0",
     "@types/serve-favicon": "^2.5.7",
     "@vitest/coverage-istanbul": "^3.2.4",
     "@vitest/ui": "^3.2.4",
@@ -96,7 +96,7 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "@hyperse/wizard": ">=1.0.5",
+    "@hyperse/wizard": ">=1.0.6",
     "graphql": ">=16.11.0"
   },
   "peerDependenciesMeta": {

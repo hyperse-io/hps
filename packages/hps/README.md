@@ -88,7 +88,6 @@ HPS integrates first-party plugins out of the box:
 - [`@hyperse/hps-plugin-mock`](../hps-plugin-mock/README.md)
 - [`@hyperse/hps-plugin-deploy`](../hps-plugin-deploy/README.md)
 - [`@hyperse/hps-plugin-update`](../hps-plugin-update/README.md)
-- [`@hyperse/hps-plugin-load-config`](../hps-plugin-load-config/README.md)
 
 Plus helpful middleware:
 

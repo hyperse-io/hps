@@ -26,9 +26,6 @@
       "@hyperse/hps-plugin-mock": [
         "../../packages/hps-plugin-mock/src/index.ts"
       ],
-      "@hyperse/hps-plugin-load-config": [
-        "../../packages/hps-plugin-load-config/src/index.ts"
-      ],
       "@hyperse/hps-srv-common": ["../../packages/hps-srv-common/src/index.ts"],
       "@hyperse/hps-srv-mock": ["../../packages/hps-srv-mock/src/index.ts"],
       "@hyperse/hps-srv-rspack": ["../../packages/hps-srv-rspack/src/index.ts"],

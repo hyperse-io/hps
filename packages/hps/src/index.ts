@@ -1,7 +1,6 @@
 import { createBuildPlugin } from '@hyperse/hps-plugin-build';
 import { createDeployPlugin } from '@hyperse/hps-plugin-deploy';
 import { createInfoPlugin } from '@hyperse/hps-plugin-info';
-import { createLoadConfigPlugin } from '@hyperse/hps-plugin-load-config';
 import { createMockPlugin } from '@hyperse/hps-plugin-mock';
 import { createServePlugin } from '@hyperse/hps-plugin-serve';
 import { createUpdatePlugin } from '@hyperse/hps-plugin-update';
@@ -37,9 +36,6 @@ const updatePlugin = createUpdatePlugin();
 const buildPlugin = createBuildPlugin();
 const servePlugin = createServePlugin();
 const mockPlugin = createMockPlugin();
-const loadConfigPlugin = createLoadConfigPlugin({
-  configFile: 'hps',
-});
 
 const cli = createWizard({
   name: 'hps',
@@ -47,6 +43,12 @@ const cli = createWizard({
   version: (t) => t('cli.hpsCli.version', { version }),
   localeMessages: hpsCliMessages,
   locale: 'en',
+  configLoaderOptions: {
+    configFile: 'hps',
+    loaderOptions: {
+      externals: [/^@hyperse\/.*/],
+    },
+  },
 })
   .use(
     definePlugin({
@@ -60,7 +62,6 @@ const cli = createWizard({
       },
     })
   )
-  .use(loadConfigPlugin)
   .use(helpPlugin)
   .use(versionPlugin)
   .use(errorPlugin)
