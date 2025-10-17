@@ -36,23 +36,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js Environment
-        uses: ./.github/actions/node-env
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: 📥 Monorepo install
-        uses: ./.github/actions/yarn-nm-install
+      - name: 📥 Install Dependencies
+        run: yarn --frozen-lockfile
 
-      - name: Check for duplicate dependencies in lock file
+      - name: Linter
         run: |
-          yarn dedupe --check
+          yarn g:lint
 
-      - name: Check for yarn constraints.pro
+      - name: typecheck
         run: |
-          yarn constraints
+          yarn g:typecheck
 
-      # https://github.com/sverweij/dependency-cruiser
-      # - name: Check monorepo dependency graph
-      #   run: |
-      #     yarn check:install
+      - name: Unit tests
+        run: |
+          yarn g:test
