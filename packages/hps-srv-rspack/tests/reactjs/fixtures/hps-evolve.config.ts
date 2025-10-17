@@ -86,6 +86,9 @@ export default defineConfig(() => ({
       htmlPlugin: {
         htmlCdn: 'https://hps.cdn.domain.com',
       },
+      tsCheckerPlugin:{
+        enabled: false
+      }
     },
   },
 }));
