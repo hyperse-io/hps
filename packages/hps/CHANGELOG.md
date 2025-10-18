@@ -1,5 +1,20 @@
 # @hyperse/hps
 
+## 0.1.0-next.23
+
+### Patch Changes
+
+- [#40](https://github.com/hyperse-io/hps/pull/40) [`127ea64`](https://github.com/hyperse-io/hps/commit/127ea644045174924a1a9d68fdd934166ca21735) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: remove hps-plugin-load-config package and update related dependencies; enhance type definitions across multiple packages
+
+- Updated dependencies [[`127ea64`](https://github.com/hyperse-io/hps/commit/127ea644045174924a1a9d68fdd934166ca21735)]:
+  - @hyperse/hps-plugin-deploy@0.0.2-next.16
+  - @hyperse/hps-plugin-update@0.0.2-next.16
+  - @hyperse/hps-plugin-build@0.0.2-next.14
+  - @hyperse/hps-plugin-serve@0.0.2-next.14
+  - @hyperse/hps-plugin-info@0.1.0-next.17
+  - @hyperse/hps-plugin-mock@0.0.2-next.14
+  - @hyperse/hps-srv-common@0.0.2-next.11
+
 ## 0.1.0-next.22
 
 ### Patch Changes
