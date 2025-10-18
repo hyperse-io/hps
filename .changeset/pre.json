@@ -9,7 +9,6 @@
     "@hyperse/hps-plugin-build": "0.0.2-next.11",
     "@hyperse/hps-plugin-deploy": "0.0.2-next.14",
     "@hyperse/hps-plugin-info": "0.1.0-next.15",
-    "@hyperse/hps-plugin-load-config": "0.1.0-next.15",
     "@hyperse/hps-plugin-mock": "0.0.2-next.11",
     "@hyperse/hps-plugin-pack": "0.0.2-next.9",
     "@hyperse/hps-plugin-serve": "0.0.2-next.11",

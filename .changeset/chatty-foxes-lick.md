@@ -1,6 +1,5 @@
 ---
 "@hyperse/hps-srv-rspack-plugin-postcss": patch
-"@hyperse/hps-plugin-load-config": patch
 "@hyperse/hps-plugin-deploy": patch
 "@hyperse/hps-plugin-update": patch
 "@hyperse/hps-plugin-build": patch
