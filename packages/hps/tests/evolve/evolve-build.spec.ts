@@ -1,8 +1,7 @@
 import { existsSync, rmSync } from 'fs';
 import { join } from 'path';
 import { fileWalkSync, getDirname } from '@armit/file-utility';
-import { cli } from '../../src/index.js';
-import { createTestLoadConfig } from '../create-test-load-config.js';
+import { testCli } from '../test-cli.js';
 
 const projectCwd = getDirname(import.meta.url, 'fixtures');
 const publicCwd = join(projectCwd, 'public');
@@ -15,8 +14,7 @@ describe('test build evolve modules', async () => {
   });
 
   it('test build evolve modules', async () => {
-    cli.use(createTestLoadConfig());
-    await cli.parse([
+    await testCli.parse([
       'build',
       'evolve',
       '--projectCwd',

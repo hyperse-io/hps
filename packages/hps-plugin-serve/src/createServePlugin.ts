@@ -20,6 +20,7 @@ export const createServePlugin = () => {
           defineCommand<'evolve', EvolveServeCmdContext>('evolve', {
             description: 'plugins.servePlugin.subCommands.evolve.description',
             example: 'plugins.servePlugin.subCommands.evolve.example',
+            loadConfig: true,
           })
             .flags({
               staticMode: {

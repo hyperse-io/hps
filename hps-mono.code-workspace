@@ -37,10 +37,6 @@
       "path": "packages/hps-plugin-mock",
     },
     {
-      "name": "hps-plugin-load-config",
-      "path": "packages/hps-plugin-load-config",
-    },
-    {
       "name": "hps-plugin-serve",
       "path": "packages/hps-plugin-serve",
     },
@@ -135,7 +131,6 @@
       "./packages/hps",
       "./packages/hps-plugin-info",
       "./packages/hps-plugin-pack",
-      "./packages/hps-plugin-load-config",
       "./packages/hps-plugin-update",
       "./packages/hps-plugin-deploy",
       "./packages/hps-plugin-serve",

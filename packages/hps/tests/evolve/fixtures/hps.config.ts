@@ -1,6 +1,5 @@
 import { myDefineConfig } from '../../../src/define-config';
 
-
 const mockOptions = {
   hostname: 'dev.hps.com',
   mockBaseDir: `./mocks`,
