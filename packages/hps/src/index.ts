@@ -14,12 +14,10 @@ import { myDefineConfig } from './define-config/define-config.js';
 import { hpsCliMessages } from './hpsCliMessages.js';
 import type { NameToContext } from './types/types-name-to-context.js';
 import { getCliPackage } from './utils/getCliPackage.js';
-import { resolveVersion } from './version.js';
 export * from './define-config/index.js';
 export * from './types/index.js';
 
 const cliPackage = await getCliPackage();
-const version = resolveVersion();
 const helpPlugin = createHelpPlugin();
 const versionPlugin = createVersionPlugin();
 const errorPlugin = createErrorPlugin();
@@ -36,6 +34,7 @@ const updatePlugin = createUpdatePlugin();
 const buildPlugin = createBuildPlugin();
 const servePlugin = createServePlugin();
 const mockPlugin = createMockPlugin();
+const version = cliPackage?.version ?? '0.0.0';
 
 const cli = createWizard({
   name: 'hps',
