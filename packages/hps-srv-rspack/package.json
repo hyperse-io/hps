@@ -62,6 +62,7 @@
     "@rspack/core": "~1.5.8",
     "@rspack/dev-server": "~1.1.4",
     "@rspack/plugin-react-refresh": "^1.5.1",
+    "@swc/helpers": "^0.5.17",
     "better-opn": "^3.0.2",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "css-loader": "^7.1.2",
@@ -79,6 +80,7 @@
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.4.8",
     "@hyperse/wizard": "^1.0.6",
+    "@swc/core": "1.13.5",
     "@types/case-sensitive-paths-webpack-plugin": "^2.1.9",
     "@types/express": "^5.0.3",
     "@types/lodash": "^4.17.20",
