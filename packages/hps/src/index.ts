@@ -39,7 +39,8 @@ const version = cliPackage?.version ?? '0.0.0';
 const cli = createWizard({
   name: 'hps',
   description: 'cli.hpsCli.description',
-  version: (t) => t('cli.hpsCli.version', { version }),
+  version: (t) =>
+    t('cli.hpsCli.version', { version: cliPackage?.version || '' }),
   localeMessages: hpsCliMessages,
   locale: 'en',
   configLoaderOptions: {
