@@ -1,5 +1,11 @@
 # @hyperse/hps-srv-rspack
 
+## 0.0.2-next.15
+
+### Patch Changes
+
+- [#43](https://github.com/hyperse-io/hps/pull/43) [`9787afb`](https://github.com/hyperse-io/hps/commit/9787afba77165355c0770839e210a3d41e86a8be) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: add @swc/helpers and @swc/core dependencies in hps-srv-rspack; replace static version resolution with dynamic cliPackage?.version in hps
+
 ## 0.0.2-next.14
 
 ### Patch Changes

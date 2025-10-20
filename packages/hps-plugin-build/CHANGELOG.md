@@ -1,5 +1,12 @@
 # @hyperse/hps-plugin-build
 
+## 0.0.2-next.15
+
+### Patch Changes
+
+- Updated dependencies [[`9787afb`](https://github.com/hyperse-io/hps/commit/9787afba77165355c0770839e210a3d41e86a8be)]:
+  - @hyperse/hps-srv-rspack@0.0.2-next.15
+
 ## 0.0.2-next.14
 
 ### Patch Changes

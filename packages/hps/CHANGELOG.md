@@ -1,5 +1,17 @@
 # @hyperse/hps
 
+## 0.1.0-next.24
+
+### Patch Changes
+
+- [#43](https://github.com/hyperse-io/hps/pull/43) [`9787afb`](https://github.com/hyperse-io/hps/commit/9787afba77165355c0770839e210a3d41e86a8be) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: add @swc/helpers and @swc/core dependencies in hps-srv-rspack; replace static version resolution with dynamic cliPackage?.version in hps
+
+- [`00f9f13`](https://github.com/hyperse-io/hps/commit/00f9f13db4f9091c0eae0b5fa6e85de8e42600b4) Thanks [@tianyingchun](https://github.com/tianyingchun)! - enable compile cache and update version retrieval in hps CLI
+
+- Updated dependencies []:
+  - @hyperse/hps-plugin-build@0.0.2-next.15
+  - @hyperse/hps-plugin-serve@0.0.2-next.15
+
 ## 0.1.0-next.23
 
 ### Patch Changes

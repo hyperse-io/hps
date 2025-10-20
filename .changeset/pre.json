@@ -22,6 +22,7 @@
     "@hyperse/hps-website": "0.0.2-next.1"
   },
   "changesets": [
+    "afraid-clubs-lick",
     "all-mice-marry",
     "big-friends-judge",
     "busy-seals-design",
@@ -34,6 +35,7 @@
     "easy-dancers-press",
     "fancy-regions-arrive",
     "five-queens-boil",
+    "free-rice-divide",
     "heavy-buttons-dance",
     "icy-shirts-dress",
     "late-doors-push",
