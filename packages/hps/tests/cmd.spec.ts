@@ -23,16 +23,18 @@ describe('test cmd', async () => {
     expect(printer).toHaveBeenCalled();
     let result = printer.mock.calls;
     let hasResult = result.map((msg) => msg[0])[0];
-    expect(hasResult).toContain('hps help       Show help information');
-    expect(hasResult).toContain('hps version    Show CLI version');
+    expect(hasResult).toContain('hps help          Show help information');
+    expect(hasResult).toContain('hps version       Show CLI version');
     expect(hasResult).toContain(
-      'hps info       Show hyperse cli system information'
+      'hps info          Show hyperse cli system information'
     );
-    expect(hasResult).toContain('hps deploy     Deploying Static Assets');
-    expect(hasResult).toContain('hps update     Updating Workspace Packages');
-    expect(hasResult).toContain('hps build      Building hps application');
-    expect(hasResult).toContain('hps serve      Serving hps application');
-    expect(hasResult).toContain('hps mock       Start a mock service');
+    expect(hasResult).toContain('hps deploy        Deploying Static Assets');
+    expect(hasResult).toContain(
+      'hps update        Updating Workspace Packages'
+    );
+    expect(hasResult).toContain('hps build         Building hps application');
+    expect(hasResult).toContain('hps serve         Serving hps application');
+    expect(hasResult).toContain('hps mock          Start a mock service');
 
     printer.mockClear();
     await cli.parse(['build', '-h']);
