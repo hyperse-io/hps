@@ -38,7 +38,6 @@ HPS provides a rich plugin ecosystem for common CLI functionality:
 - **@hyperse/hps-plugin-mock** - Spin up a local mock server for API development
 - **@hyperse/hps-plugin-deploy** - Deploy artifacts to your target environment
 - **@hyperse/hps-plugin-update** - Check for and apply CLI/plugin updates
-- **@hyperse/hps-plugin-load-config** - Load and merge project configuration
 - **@hyperse/hps-plugin-pack** - Package and bundle outputs for distribution
 
 ## License

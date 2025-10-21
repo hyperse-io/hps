@@ -1,5 +1,23 @@
 # @hyperse/hps-srv-rspack
 
+## 0.0.2-next.15
+
+### Patch Changes
+
+- [#43](https://github.com/hyperse-io/hps/pull/43) [`9787afb`](https://github.com/hyperse-io/hps/commit/9787afba77165355c0770839e210a3d41e86a8be) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: add @swc/helpers and @swc/core dependencies in hps-srv-rspack; replace static version resolution with dynamic cliPackage?.version in hps
+
+## 0.0.2-next.14
+
+### Patch Changes
+
+- [#40](https://github.com/hyperse-io/hps/pull/40) [`127ea64`](https://github.com/hyperse-io/hps/commit/127ea644045174924a1a9d68fdd934166ca21735) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - refactor: remove hps-plugin-load-config package and update related dependencies; enhance type definitions across multiple packages
+
+- Updated dependencies [[`127ea64`](https://github.com/hyperse-io/hps/commit/127ea644045174924a1a9d68fdd934166ca21735)]:
+  - @hyperse/hps-srv-rspack-plugin-postcss@0.0.2-next.11
+  - @hyperse/hps-srv-ts-checker@0.0.2-next.9
+  - @hyperse/hps-srv-common@0.0.2-next.11
+  - @hyperse/hps-srv-mock@0.0.2-next.14
+
 ## 0.0.2-next.13
 
 ### Patch Changes

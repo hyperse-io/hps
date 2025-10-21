@@ -36,6 +36,7 @@ const updatePlugin = createUpdatePlugin();
 const buildPlugin = createBuildPlugin();
 const servePlugin = createServePlugin();
 const mockPlugin = createMockPlugin();
+const version = cliPackage?.version ?? '0.0.0';
 
 const cli = createWizard({
   name: 'hps',
