@@ -5574,6 +5574,7 @@ __metadata:
     "@hyperse/hps-srv-rspack": "workspace:*"
     "@hyperse/ts-node": "npm:^1.0.3"
     "@hyperse/wizard": "npm:^1.0.6"
+    "@hyperse/wizard-plugin-completion": "npm:^1.0.3"
     "@hyperse/wizard-plugin-error": "npm:^1.0.6"
     "@hyperse/wizard-plugin-help": "npm:^1.0.6"
     "@hyperse/wizard-plugin-loader": "npm:^1.0.6"
@@ -5788,6 +5789,15 @@ __metadata:
   peerDependencies:
     "@swc/core": ">=1.3.42"
   checksum: 10c0/e081fbc0890e25fe113b2f86dd07ebb2f7b403baa6d8ce59b607ba149377e422bd6178ef0667a35fc3b4aef2f487355e5d802664e748bb7300a3cb22ea51bd63
+  languageName: node
+  linkType: hard
+
+"@hyperse/wizard-plugin-completion@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@hyperse/wizard-plugin-completion@npm:1.0.3"
+  dependencies:
+    "@hyperse/wizard": "npm:1.0.6"
+  checksum: 10c0/6eaf21354be566c1b05eafc4b96032f7dbc6eadd52ed7ec3511449b2a44b7342cf79a7d816af00a5f6195a709183223b3038881f0153e09da859cec6386cde1e
   languageName: node
   linkType: hard
 

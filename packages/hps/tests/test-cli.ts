@@ -3,15 +3,17 @@ import { createMockPlugin } from '@hyperse/hps-plugin-mock';
 import { createServePlugin } from '@hyperse/hps-plugin-serve';
 import { commonLogger, requireResolve } from '@hyperse/hps-srv-common';
 import { createWizard, definePlugin } from '@hyperse/wizard';
+import { createCompletionPlugin } from '@hyperse/wizard-plugin-completion';
 import { createErrorPlugin } from '@hyperse/wizard-plugin-error';
 
 const errorPlugin = createErrorPlugin();
+const completionPlugin = createCompletionPlugin();
 
 const buildPlugin = createBuildPlugin();
 const servePlugin = createServePlugin();
 const mockPlugin = createMockPlugin();
 
-export const testCli = createWizard({
+const testCli = createWizard({
   name: 'testCli',
   description: () => 'test cli',
   version: () => 'test v1.0.1',
@@ -42,4 +44,7 @@ export const testCli = createWizard({
   .use(errorPlugin)
   .use(buildPlugin)
   .use(servePlugin)
-  .use(mockPlugin);
+  .use(mockPlugin)
+  .use(completionPlugin);
+
+export { testCli };
