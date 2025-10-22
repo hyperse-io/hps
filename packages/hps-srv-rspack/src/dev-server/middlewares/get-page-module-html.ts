@@ -154,7 +154,6 @@ export const getPageModuleHtml = async (
 
   // ===== Head Scripts Configuration =====
   const headScripts = templateInjectTokens.headScripts || [];
-  const headScriptsMaxOrder = getHtmlMaxOrder(headScripts);
   const headScriptsMinOrder = getHtmlMinOrder(headScripts);
 
   // Add HMR runtime chunks for hot reloading
@@ -172,7 +171,7 @@ export const getPageModuleHtml = async (
       id: runtimeChunk,
       src: runtimeChunk,
       position: 'end',
-      order: headScriptsMaxOrder - 1,
+      order: headScriptsMinOrder - 1,
     });
   });
 

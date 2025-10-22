@@ -6,6 +6,7 @@ import { createServePlugin } from '@hyperse/hps-plugin-serve';
 import { createUpdatePlugin } from '@hyperse/hps-plugin-update';
 import { commonLogger } from '@hyperse/hps-srv-common';
 import { createWizard, definePlugin } from '@hyperse/wizard';
+import { createCompletionPlugin } from '@hyperse/wizard-plugin-completion';
 import { createErrorPlugin } from '@hyperse/wizard-plugin-error';
 import { createHelpPlugin } from '@hyperse/wizard-plugin-help';
 import { createLoaderPlugin } from '@hyperse/wizard-plugin-loader';
@@ -21,6 +22,7 @@ const cliPackage = await getCliPackage();
 const helpPlugin = createHelpPlugin();
 const versionPlugin = createVersionPlugin();
 const errorPlugin = createErrorPlugin();
+const completionPlugin = createCompletionPlugin();
 const loaderPlugin = await createLoaderPlugin({
   pluginPackPattern: ['hps-plugin-*'],
   pluginSearchDirs: [],
@@ -64,6 +66,7 @@ const cli = createWizard({
   )
   .use(helpPlugin)
   .use(versionPlugin)
+  .use(completionPlugin)
   .use(errorPlugin)
   .use(loaderPlugin)
   .use(infoPlugin)
