@@ -30,6 +30,12 @@ export default createNextConfig(
       unoptimized:
         buildEnv.NEXT_BUILD_ENV_OUTPUT === 'export' ? true : undefined,
     },
+    turbopack: {
+      resolveAlias: {
+        // Fixed next-mdx-import-source-file can’t be resolved
+        'next-mdx-import-source-file': './mdx-components.tsx',
+      },
+    },
   },
   [withNextra]
 );

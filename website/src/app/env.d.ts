@@ -13,7 +13,3 @@ declare module '*.mdx' {
   }>;
   export default ReactComponent;
 }
-
-declare module 'next-mdx-import-source-file' {
-  export { useMDXComponents } from 'nextra/mdx-components';
-}
