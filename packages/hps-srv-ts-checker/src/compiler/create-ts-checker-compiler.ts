@@ -60,11 +60,14 @@ export const createTsCheckerCompiler = async (
   }
 
   return new Promise((resolve, reject) => {
-    rspack(config, (err) => {
+    const compiler = rspack(config, (err) => {
       if (err) {
         return reject(err.message);
       }
       resolve(true);
+    });
+    process.on('exit', () => {
+      compiler?.close(() => {});
     });
   });
 };
