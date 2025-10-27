@@ -12,6 +12,7 @@ const meta: MetaRecord = {
   showcase: {
     type: 'page',
     theme: {
+      copyPage: true,
       typesetting: 'article',
       layout: 'full',
       timestamp: false,
@@ -21,6 +22,7 @@ const meta: MetaRecord = {
   about: {
     type: 'page',
     theme: {
+      copyPage: true,
       typesetting: 'article',
     },
   },
