@@ -71,6 +71,26 @@ export const getPageMainHtml = async (
     } satisfies MainTemplateModuleItemData;
   });
 
+  // Add staticPages from evolveOptions.devServer.staticPages
+  const staticPages = evolveOptions.devServer?.staticPages || [];
+
+  staticPages.forEach((staticPage) => {
+    const { entryName } = staticPage;
+
+    const link = urlJoin(devHostUri, [pageProxy, entryName]);
+
+    const displayName = entryName
+      .replace(evolveOptions.projectVirtualPath, '')
+      .replace(/^\//, '');
+
+    templateModules.push({
+      link,
+      name: displayName,
+      flagText: `static`,
+      isServed: 0,
+    });
+  });
+
   // Add `runtime manifest` to the main page modules list
   templateModules.push({
     flagText: 'serve',
