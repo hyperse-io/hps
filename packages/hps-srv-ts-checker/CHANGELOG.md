@@ -1,5 +1,11 @@
 @hyperse/hps-srv-ts-checker
 
+## 0.0.2-next.10
+
+### Patch Changes
+
+- [#46](https://github.com/hyperse-io/hps/pull/46) [`4fc2ccc`](https://github.com/hyperse-io/hps/commit/4fc2ccc357a492ff76acdc8efd02ee84ce1d2995) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - fix: ensure compiler cleanup on process exit in TypeScript checker
+
 ## 0.0.2-next.9
 
 ### Patch Changes
