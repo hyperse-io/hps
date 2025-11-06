@@ -41,6 +41,28 @@ export type HpsEvolveDevServerOptions = {
   pageProxy?: string;
 
   /**
+   * Static pages configurations
+   *
+   * The static pages will be served from the specified `htmlPath`.
+   *
+   * @example
+   * ```ts
+   * staticPages: [
+   *   {
+   *     routePath: '/about', // The route path to access this static page
+   *     htmlPath: '/absolute/path/to/about.html', // The absolute path to the HTML file
+   *     entryName: 'about', // The entry name for this static page
+   *   },
+   * ],
+   * ```
+   */
+  staticPages?: Array<{
+    routePath: string | ((targetPath: string) => boolean);
+    htmlPath: string;
+    entryName: string;
+  }>;
+
+  /**
    * Allow us provider customized middlewares for `page`, `modules`
    */
   middlewares?: RequestHandler[];

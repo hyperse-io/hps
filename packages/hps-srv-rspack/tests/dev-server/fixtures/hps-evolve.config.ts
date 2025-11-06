@@ -1,5 +1,8 @@
 import { defineConfig } from '@hyperse/hps-srv-rspack';
 import { moduleGlobal } from './mocks/index.js';
+import { getDirname } from '@armit/file-utility';
+import { join } from 'path';
+const root=getDirname(import.meta.url);
 
 // Notes: We must direct `import` mjs module, don't using dynamic import `await import('./xxx')`
 // because we need to bundle all dependencies into one `bundle`
@@ -44,7 +47,19 @@ export default defineConfig(() => ({
       staticMap: {
         '/static': 'static',
       },
-    }
+    },
+    staticPages: [
+        {
+          entryName: 'login',
+          htmlPath: join(root, './staticPages/login/index.html'),
+          routePath: '/login',
+        },
+        {
+          entryName: '403',
+          htmlPath: join(root, './staticPages/403/index.html'),
+          routePath: '/403',
+        },
+      ],
   },
   rspack:{
     externals:()=>{
