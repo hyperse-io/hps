@@ -1,5 +1,14 @@
 # @hyperse/hps-srv-rspack
 
+## 0.0.2-next.16
+
+### Patch Changes
+
+- [#46](https://github.com/hyperse-io/hps/pull/46) [`f24517f`](https://github.com/hyperse-io/hps/commit/f24517fa68f362c98e9f429e7c1e267f6dfa47c1) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: add static pages support in dev server middleware and configuration
+
+- Updated dependencies [[`4fc2ccc`](https://github.com/hyperse-io/hps/commit/4fc2ccc357a492ff76acdc8efd02ee84ce1d2995)]:
+  - @hyperse/hps-srv-ts-checker@0.0.2-next.10
+
 ## 0.0.2-next.15
 
 ### Patch Changes

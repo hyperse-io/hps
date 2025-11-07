@@ -1,5 +1,19 @@
 # @hyperse/hps
 
+## 0.1.0-next.26
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @hyperse/hps-plugin-build@0.0.2-next.16
+  - @hyperse/hps-plugin-serve@0.0.2-next.16
+
+## 0.1.0-next.25
+
+### Patch Changes
+
+- [#44](https://github.com/hyperse-io/hps/pull/44) [`baca892`](https://github.com/hyperse-io/hps/commit/baca8921a65594c1f5ad6fe77678111846051b6e) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: add @hyperse/wizard-plugin-completion to hps; integrate completion plugin into CLI and test setup
+
 ## 0.1.0-next.24
 
 ### Patch Changes
