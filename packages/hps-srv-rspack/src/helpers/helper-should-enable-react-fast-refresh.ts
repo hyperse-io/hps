@@ -33,7 +33,7 @@ export const getDisabledReasonWithHMR = (
   // Check if the entry item is a library, The library module can not run in the browser individually.
   const isEntryItemLibrary = !!entryItemOption.options?.output?.library;
   // Inject `react-refresh` if we are using preset `react`
-  const reason = ['React Fast Refresh is disabled because:'];
+  const reason = ['HMR is disabled because:'];
 
   if (!serveMode) {
     reason.push(chalk(['magenta'])('The build is not in serve mode.'));
