@@ -33,24 +33,18 @@ export const getDisabledReasonWithHMR = (
   // Check if the entry item is a library, The library module can not run in the browser individually.
   const isEntryItemLibrary = !!entryItemOption.options?.output?.library;
   // Inject `react-refresh` if we are using preset `react`
-  const reason = ['HMR is disabled because:'];
+  let reason: string = '';
 
   if (!serveMode) {
-    reason.push(chalk(['magenta'])('The build is not in serve mode.'));
+    reason = 'The build is not in serve mode.';
   } else if (evolveOptions.devServer?.liveReload) {
-    reason.push(
-      chalk(['magenta'])(
-        'liveReload is explicitly enabled in devServer options.'
-      )
-    );
+    reason = 'liveReload is explicitly enabled in devServer options.';
   } else if (hasModuleFederation) {
-    reason.push(
-      chalk(['magenta'])('Module Federation is enabled for this entry.')
-    );
+    reason = 'Module Federation is enabled for this entry.';
   } else if (isEntryItemLibrary) {
-    reason.push(chalk(['magenta'])('This entry is configured as a library.'));
+    reason = 'This entry is configured as a library.';
   } else {
-    reason.push(chalk(['magenta'])('of unknown reasons.'));
+    reason = 'Unknown reasons.';
   }
-  return reason.join(' ');
+  return ['HMR is disabled because:', chalk(['magenta'])(reason)].join(' ');
 };
