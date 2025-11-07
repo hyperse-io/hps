@@ -19,7 +19,6 @@ import { type HpsEvolveOptions } from '../../types/types-options.js';
 import { ErrorModuleParser } from './error-module-parser.js';
 import { getBundleAsset } from './get-bundle-asset.js';
 import { getDevServerHostUri } from './get-dev-server-host-uri.js';
-import { getHmrRuntimeChunks } from './get-hmr-runtime-chunks.js';
 import { getNormalizedEntryName } from './get-normalized-entry-name.js';
 
 export const getPageModuleHtml = async (
@@ -155,26 +154,6 @@ export const getPageModuleHtml = async (
   // ===== Head Scripts Configuration =====
   const headScripts = templateInjectTokens.headScripts || [];
   const headScriptsMinOrder = getHtmlMinOrder(headScripts);
-
-  // Add HMR runtime chunks for hot reloading
-  const devRuntimeChunks = getHmrRuntimeChunks(
-    servedDevServerEntries,
-    currEntryName,
-    normalizedEntryName,
-    currEntryItem,
-    evolveOptions,
-    devServerHostUri
-  );
-
-  devRuntimeChunks.forEach((runtimeChunk) => {
-    headScripts.unshift({
-      id: runtimeChunk,
-      src: runtimeChunk,
-      position: 'end',
-      order: headScriptsMinOrder - 1,
-    });
-  });
-
   templateParser.upsertHeadScripts(headScripts);
 
   // ===== Head Inline Scripts Configuration =====

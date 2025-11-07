@@ -38,8 +38,7 @@ describe('split-to-multi-compiler-configs', () => {
     const result = assertSingleCompiler(
       servedEntries,
       rspackConfig,
-      evolveOptions,
-      true
+      evolveOptions
     );
 
     expect(result).toBeDefined();
@@ -47,8 +46,6 @@ describe('split-to-multi-compiler-configs', () => {
     expect(result.devServer?.host).toBe('localhost');
     expect(result.entry).toHaveProperty('home');
     expect(result.entry).toHaveProperty('mine');
-    expect(result.entry).toHaveProperty('home/reactRefreshSetup');
-    expect(result.entry).toHaveProperty('mine/reactRefreshSetup');
     expect(result.entry?.['home']).toBe(servedEntries.home.entry);
     expect(result.entry?.['mine']).toBe(servedEntries.mine.entry);
     expect(result.name).toBe('home');
@@ -89,8 +86,7 @@ describe('split-to-multi-compiler-configs', () => {
     const result = assertSingleCompiler(
       servedEntries,
       rspackConfig,
-      evolveOptions,
-      true
+      evolveOptions
     );
 
     expect(result).toBeDefined();
@@ -98,8 +94,6 @@ describe('split-to-multi-compiler-configs', () => {
     expect(result.devServer?.host).toBe('localhost');
     expect(result.entry).toHaveProperty('home');
     expect(result.entry).toHaveProperty('mine');
-    expect(result.entry).toHaveProperty('home/reactRefreshSetup');
-    expect(result.entry).toHaveProperty('mine/reactRefreshSetup');
     expect(result.entry?.['home']).toBe(servedEntries.home.entry);
     expect(result.entry?.['mine']).toBe(servedEntries.mine.entry);
     expect(result.name).toBe('home');
