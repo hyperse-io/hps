@@ -25,7 +25,7 @@ export const createPlugins = async (
   evolveOptions: HpsEvolveOptions
 ): Promise<RspackPlugin[]> => {
   const firstEntryMapItem = entryMapItemList[0];
-  const [entryName, entryItemOption] = firstEntryMapItem;
+  const [, entryItemOption] = firstEntryMapItem;
   const bundleHashNameEnabled = enableBundleHashName(
     evolveOptions,
     entryItemOption?.options
