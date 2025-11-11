@@ -1,4 +1,3 @@
-import readline from 'node:readline';
 import { arrayUnique, chalk, logger, urlJoin } from '@hyperse/hps-srv-common';
 import { attachMockMiddlewares } from '@hyperse/hps-srv-mock';
 import { ignoreEntryOptionKeys } from '../constants.js';
@@ -130,18 +129,6 @@ export const prepareServe = async (
   return Promise.all(serveTasks).then(() => {
     logger.info(`debug page ➩ ${chalk(['cyan'])(mainPage)}`);
     bindCLIShortcuts({ mainPage });
-    // process.stdin.resume();
-    // process.stdin.setEncoding('utf8');
-    // process.stdin.on('data', (data) => {
-    //   const input = data.toString();
-    //   if (input.charCodeAt(0) === 12) {
-    //     // Ctrl + L
-    //     console.clear();
-    //   } else if ([102, 70].includes(input.charCodeAt(0))) {
-    //     // F | f
-    //     logger.info(`debug page ➩ ${chalk(['cyan'])(mainPage)}`);
-    //   }
-    // });
     return devServerManifest;
   });
 };
