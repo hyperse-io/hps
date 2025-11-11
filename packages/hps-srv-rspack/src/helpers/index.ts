@@ -16,6 +16,7 @@ export * from './helper-print-log.js';
 export * from './helper-resolve-entry-map-input-files.js';
 export * from './helper-resolve-public-path.js';
 export * from './helper-script-injects.js';
+export * from './helper-shortcuts.js';
 export * from './helper-should-enable-react-fast-refresh.js';
 export * from './helper-split-to-entry-group.js';
 export * from './helper-verify-group-entry-options.js';

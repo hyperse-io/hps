@@ -1,3 +1,4 @@
+import readline from 'node:readline';
 import { arrayUnique, chalk, logger, urlJoin } from '@hyperse/hps-srv-common';
 import { attachMockMiddlewares } from '@hyperse/hps-srv-mock';
 import { ignoreEntryOptionKeys } from '../constants.js';
@@ -9,6 +10,7 @@ import { getRuntimeManifest } from '../dev-server/middlewares/get-runtime-manife
 import { flatEntryMap } from '../helpers/helper-flat-entry-map.js';
 import { normalizePageProxy } from '../helpers/helper-normalize-page-proxy.js';
 import { openPage } from '../helpers/helper-open-page.js';
+import { bindCLIShortcuts } from '../helpers/helper-shortcuts.js';
 import { splitToEntryGroup } from '../helpers/helper-split-to-entry-group.js';
 import { verifyGroupEntryOptions } from '../helpers/helper-verify-group-entry-options.js';
 import type {
@@ -127,18 +129,19 @@ export const prepareServe = async (
 
   return Promise.all(serveTasks).then(() => {
     logger.info(`debug page ➩ ${chalk(['cyan'])(mainPage)}`);
-    process.stdin.resume();
-    process.stdin.setEncoding('utf8');
-    process.stdin.on('data', (data) => {
-      const input = data.toString();
-      if (input.charCodeAt(0) === 12) {
-        // Ctrl + L
-        console.clear();
-      } else if ([102, 70].includes(input.charCodeAt(0))) {
-        // F | f
-        logger.info(`debug page ➩ ${chalk(['cyan'])(mainPage)}`);
-      }
-    });
+    bindCLIShortcuts({ mainPage });
+    // process.stdin.resume();
+    // process.stdin.setEncoding('utf8');
+    // process.stdin.on('data', (data) => {
+    //   const input = data.toString();
+    //   if (input.charCodeAt(0) === 12) {
+    //     // Ctrl + L
+    //     console.clear();
+    //   } else if ([102, 70].includes(input.charCodeAt(0))) {
+    //     // F | f
+    //     logger.info(`debug page ➩ ${chalk(['cyan'])(mainPage)}`);
+    //   }
+    // });
     return devServerManifest;
   });
 };
