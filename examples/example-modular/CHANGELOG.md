@@ -1,5 +1,13 @@
 # @example/example-modular
 
+## 0.0.2-next.27
+
+### Patch Changes
+
+- Updated dependencies [[`fee8db6`](https://github.com/hyperse-io/hps/commit/fee8db6d791a8999688082d7c5008c2bb78f29f3)]:
+  - @hyperse/hps-graphqlsp@0.0.2-next.14
+  - @hyperse/hps@0.1.0-next.27
+
 ## 0.0.2-next.26
 
 ### Patch Changes
