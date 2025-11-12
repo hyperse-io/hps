@@ -5,7 +5,6 @@ import type {
 import { type HpsEvolveOptions } from '../../types/types-options.js';
 import { getSortedModules } from './get-all-sorted-modules.js';
 import { getBundleAsset } from './get-bundle-asset.js';
-import { getHmrRuntimeChunks } from './get-hmr-runtime-chunks.js';
 
 export const getRuntimeManifest = async (
   servedDevServerEntries: EvolveDevServerEntryMap,
@@ -20,13 +19,8 @@ export const getRuntimeManifest = async (
 
   const runtimeManifest: EvolveDevServerManifest = {};
   for (const moduleItem of sortedModules) {
-    const {
-      entryName,
-      isServedEntry,
-      entryContent,
-      devServerHostUri,
-      normalizedEntryName,
-    } = moduleItem;
+    const { entryName, isServedEntry, devServerHostUri, normalizedEntryName } =
+      moduleItem;
 
     const bundleScripts = [
       getBundleAsset(devServerHostUri, normalizedEntryName, '.js'),
@@ -34,22 +28,12 @@ export const getRuntimeManifest = async (
     const bundleStyles = [
       getBundleAsset(devServerHostUri, normalizedEntryName, '.css'),
     ];
-
-    const hmrRuntimeChunks = getHmrRuntimeChunks(
-      servedDevServerEntries,
-      entryName,
-      normalizedEntryName,
-      entryContent,
-      evolveOptions,
-      devServerHostUri
-    );
-
     runtimeManifest[normalizedEntryName] = {
       entryName,
       styles: bundleStyles,
       scripts: bundleScripts,
       isServed: isServedEntry,
-      runtimeChunks: hmrRuntimeChunks,
+      runtimeChunks: [],
     };
   }
   return runtimeManifest;

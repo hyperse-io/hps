@@ -74,8 +74,7 @@ export const startRspackServe = async (
   const config = assertSingleCompiler(
     devEvolveEntryMap,
     rspackConfig,
-    evolveOptions,
-    enabledHmr
+    evolveOptions
   );
   const compiler: Compiler = rspack(config);
 

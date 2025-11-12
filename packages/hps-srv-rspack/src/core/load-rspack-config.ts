@@ -69,7 +69,7 @@ export const loadRspackConfig = async (
     // Simply move it into entry options.
     externals: createExternals(rspack?.externals, firstEntryMap),
     performance: createPerformance(serveMode, rspack?.performance),
-    optimization: createOptimization(serveMode, evolveOptions, firstEntryMap),
+    optimization: createOptimization(serveMode, evolveOptions),
     // Setup logging level for `infrastructure` like. `rspack-dev-server`
     infrastructureLogging: rspack?.infrastructureLogging ?? {
       level: 'warn',

@@ -5,7 +5,10 @@ import ReactRefreshPlugin from '@rspack/plugin-react-refresh';
 import { assertChunkFilename } from '../../helpers/helper-assert-chunk-filename.js';
 import { enableBundleHashName } from '../../helpers/helper-enable-bundle-hashname.js';
 import { getBundleFileName } from '../../helpers/helper-get-bundle-file-name.js';
-import { shouldEnableReactFastRefresh } from '../../helpers/helper-should-enable-react-fast-refresh.js';
+import {
+  getDisabledReasonWithHMR,
+  shouldEnableReactFastRefresh,
+} from '../../helpers/helper-should-enable-react-fast-refresh.js';
 import { type EntryMapItem } from '../../types/types-entry-map.js';
 import { type HpsEvolveOptions } from '../../types/types-options.js';
 import { createCircularDependencyPlugins } from './circular-dependency-plugin/index.js';
@@ -22,7 +25,7 @@ export const createPlugins = async (
   evolveOptions: HpsEvolveOptions
 ): Promise<RspackPlugin[]> => {
   const firstEntryMapItem = entryMapItemList[0];
-  const [entryName, entryItemOption] = firstEntryMapItem;
+  const [, entryItemOption] = firstEntryMapItem;
   const bundleHashNameEnabled = enableBundleHashName(
     evolveOptions,
     entryItemOption?.options
@@ -93,20 +96,17 @@ export const createPlugins = async (
     builtInPlugins.push(
       new ReactRefreshPlugin({
         // Always use webpack-dev-server `client` overlay!
-        overlay: false,
-        exclude: [/node_modules/],
-      }) as unknown as RspackPlugin
+      })
     );
   }
 
   if (!enabledHmr && serveMode) {
-    if (evolveOptions.devServer?.liveReload) {
-      logger.warn(`The HMR disabled cause of "liveReload" specificed`);
-    } else {
-      logger.warn(
-        `The HMR disabled cause of \`"moduleFederation":"${entryName}"\``
-      );
-    }
+    const reason = getDisabledReasonWithHMR(
+      serveMode,
+      firstEntryMapItem,
+      evolveOptions
+    );
+    logger.warn(reason);
   }
 
   const extraPlugins = evolveOptions.rspack.plugins?.externalPlugins || [];

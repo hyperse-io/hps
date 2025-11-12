@@ -1,8 +1,5 @@
-import { dirname, join, posix } from 'path';
-import { searchPackageDir } from '@armit/package';
-import { mergeOptions, requireResolve } from '@hyperse/hps-srv-common';
+import { mergeOptions } from '@hyperse/hps-srv-common';
 import { type RspackOptions } from '@rspack/core';
-import { devReactFastRefresh } from '../constants.js';
 import { type EvolveEntryMap } from '../types/types-entry-map.js';
 import { type HpsEvolveOptions } from '../types/types-options.js';
 import { type RspackEntryObject } from '../types/types-rspack.js';
@@ -22,8 +19,7 @@ import { normalizeEvolveEntryName } from './helper-normalize-entry-map.js';
 export function assertSingleCompiler(
   servedEntries: EvolveEntryMap,
   rspackConfig: Omit<RspackOptions, 'entry'>,
-  evolveOptions: HpsEvolveOptions,
-  enabledHmr = false
+  evolveOptions: HpsEvolveOptions
 ): Omit<RspackOptions, 'entry'> & {
   entry?: RspackEntryObject;
 } {
@@ -36,33 +32,6 @@ export function assertSingleCompiler(
     );
 
     newEntry[normalizedEntryName] = entryItem.entry;
-
-    if (enabledHmr) {
-      // `${virtualPath}/module/reactRefreshSetup`
-      const fastRefreshEntryName = posix.join(
-        normalizedEntryName,
-        devReactFastRefresh.reactRefreshSetup
-      );
-      const reactRefresh = requireResolve(
-        import.meta.url,
-        '@rspack/plugin-react-refresh'
-      );
-      const reactRefreshPackageDir = searchPackageDir({
-        cwd: dirname(reactRefresh),
-      });
-
-      // Make sure that we have a correct `react-refresh-webpack-plugin` package directory
-      // Sometimes the dynamic load package has been deduped and the package directory is not correct
-      if (!reactRefreshPackageDir) {
-        throw new Error(
-          'react-refresh-webpack-plugin package directory not found'
-        );
-      }
-
-      newEntry[fastRefreshEntryName] = [
-        join(reactRefreshPackageDir, 'client', 'reactRefreshEntry.js'),
-      ];
-    }
   }
 
   const groupName = Object.values(servedEntries)[0].groupName;

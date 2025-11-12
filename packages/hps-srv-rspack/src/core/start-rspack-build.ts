@@ -26,8 +26,7 @@ export const startRspackBuild = async (
   const currCompiler = assertSingleCompiler(
     groupBuildEntry,
     rspackConfig,
-    evolveOptions,
-    false
+    evolveOptions
   );
 
   // Run the single build.
