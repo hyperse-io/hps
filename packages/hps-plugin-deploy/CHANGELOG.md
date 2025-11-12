@@ -1,5 +1,13 @@
 # @hyperse/hps-plugin-deploy
 
+## 0.0.2-next.17
+
+### Patch Changes
+
+- [#48](https://github.com/hyperse-io/hps/pull/48) [`fee8db6`](https://github.com/hyperse-io/hps/commit/fee8db6d791a8999688082d7c5008c2bb78f29f3) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: remove the manually injected reactRefreshRuntime and reactRefreshSetup in rspack.
+  chore: bump versions of swc_core
+  chore: bump versions of code_inspector
+
 ## 0.0.2-next.16
 
 ### Patch Changes
