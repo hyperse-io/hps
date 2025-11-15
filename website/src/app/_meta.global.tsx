@@ -5,25 +5,48 @@ const meta: MetaRecord = {
     type: 'page',
     display: 'hidden',
   },
-  docs: {
+  guide: {
     type: 'page',
-    title: 'Documentation',
+    title: 'Guide',
   },
-  showcase: {
+  config: {
     type: 'page',
-    theme: {
-      copyPage: true,
-      typesetting: 'article',
-      layout: 'full',
-      timestamp: false,
-      toc: false,
+    title: 'Config',
+  },
+  plugins: {
+    type: 'page',
+    title: 'Plugins',
+  },
+  resources: {
+    type: 'menu',
+    title: 'Resources',
+    items: {
+      about: {
+        title: 'About',
+        href: '/resources/about',
+      },
+      releases: {
+        title: 'Releases',
+        href: '/resources/releases',
+      },
+      blog: {
+        title: 'Blog',
+        href: '/resources/blog',
+      },
     },
   },
-  about: {
-    type: 'page',
-    theme: {
-      copyPage: true,
-      typesetting: 'article',
+  version: {
+    type: 'menu',
+    title: 'v1.0.0',
+    items: {
+      changelog: {
+        title: 'Changelog',
+        href: 'https://github.com/hyperse-io/hps/blob/main/packages/hps/CHANGELOG.md',
+      },
+      contributing: {
+        title: 'Contributing',
+        href: 'https://github.com/hyperse-io/hps/blob/main/CONTRIBUTING.md',
+      },
     },
   },
 };

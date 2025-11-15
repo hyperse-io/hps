@@ -66,7 +66,7 @@
     "@hyperse/eslint-config-hyperse": "^1.4.8",
     "@hyperse/hps-srv-rspack": "workspace:*",
     "@hyperse/ts-node": "^1.0.3",
-    "@types/node": "^24.10.0",
+    "@types/node": "^24.10.1",
     "@vitest/coverage-istanbul": "^4.0.8",
     "@vitest/ui": "^4.0.8",
     "eslint": "^9.39.1",
