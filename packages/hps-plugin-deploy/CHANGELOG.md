@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-deploy
 
+## 0.0.2-next.18
+
+### Patch Changes
+
+- [`74e4f0c`](https://github.com/hyperse-io/hps/commit/74e4f0c7a9adf750a99706ed04db3c8807484d34) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add overrideExistFile option to AliyunAssetDeployStrategy for file deployment
+
 ## 0.0.2-next.17
 
 ### Patch Changes
