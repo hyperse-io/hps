@@ -101,20 +101,22 @@ describe('test cmd', async () => {
     try {
       await cli.parse(['serve', 'evolve2']);
     } catch {
-      expect(printer.mock.calls[0][0]).toBeDefined();
-      expect(printer.mock.calls[0][0]).toContain(
-        'Command "serve evolve2" not found. Did you mean "serve evolve"? '
-      );
+      // do nothing
     }
+    expect(printer.mock.calls[0][0]).toBeDefined();
+    expect(printer.mock.calls[0][0]).toContain(
+      'Command "serve evolve2" not found. Did you mean "serve evolve"? '
+    );
 
+    printer.mockClear();
     try {
-      printer.mockClear();
       await cli.parse(['build', 'evolve', 'mini']);
     } catch {
-      expect(printer.mock.calls[0][0]).toBeDefined();
-      expect(printer.mock.calls[0][0]).toContain(
-        'Command "build evolve mini" not found. Did you mean "build evolve"? '
-      );
+      // do nothing
     }
+    expect(printer.mock.calls[0][0]).toBeDefined();
+    expect(printer.mock.calls[0][0]).toContain(
+      'Command "build evolve mini" not found. Did you mean "build evolve"? '
+    );
   });
 });

@@ -1,5 +1,12 @@
 # @hyperse/hps
 
+## 0.1.0-next.28
+
+### Patch Changes
+
+- Updated dependencies [[`74e4f0c`](https://github.com/hyperse-io/hps/commit/74e4f0c7a9adf750a99706ed04db3c8807484d34)]:
+  - @hyperse/hps-plugin-deploy@0.0.2-next.18
+
 ## 0.1.0-next.27
 
 ### Patch Changes

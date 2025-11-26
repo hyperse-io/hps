@@ -100,7 +100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/server@npm:^5.1.0":
+"@apollo/server@npm:^5.2.0":
   version: 5.2.0
   resolution: "@apollo/server@npm:5.2.0"
   dependencies:
@@ -2694,7 +2694,7 @@ __metadata:
     postcss: "npm:^8.5.6"
     react: "npm:^19.2.0"
     react-dom: "npm:^19.2.0"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     tailwindcss: "npm:^4.1.17"
     typescript: "npm:^5.9.3"
   languageName: unknown
@@ -2720,7 +2720,7 @@ __metadata:
     postcss: "npm:^8.5.6"
     react: "npm:^19.2.0"
     react-dom: "npm:^19.2.0"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     tailwindcss: "npm:^4.1.17"
     typescript: "npm:^5.9.3"
   peerDependencies:
@@ -3091,7 +3091,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-codegen/cli@npm:^6.0.2":
+"@graphql-codegen/cli@npm:^6.1.0":
   version: 6.1.0
   resolution: "@graphql-codegen/cli@npm:6.1.0"
   dependencies:
@@ -3326,17 +3326,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/batch-execute@npm:^10.0.3":
-  version: 10.0.3
-  resolution: "@graphql-tools/batch-execute@npm:10.0.3"
+"@graphql-tools/batch-execute@npm:^10.0.4":
+  version: 10.0.4
+  resolution: "@graphql-tools/batch-execute@npm:10.0.4"
   dependencies:
-    "@graphql-tools/utils": "npm:^10.10.1"
+    "@graphql-tools/utils": "npm:^10.10.3"
     "@whatwg-node/promise-helpers": "npm:^1.3.2"
     dataloader: "npm:^2.2.3"
     tslib: "npm:^2.8.1"
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/83d81ea364d00ae4b5ba6934740b7857fe62c153df63cacb85fafd789f5312ed3f45ea40fa4fe0ccfb8af3f668a4bf9488883b9a7e12c955f748ff6470c2944c
+  checksum: 10c0/280250e2a895386b9462f033935cc9a5b0a80b0504f57d246f830d1425263e8088d05e6c2d222e6841ed38f7f6c59b403badd917f2ba9a08ec6e7892bc809392
   languageName: node
   linkType: hard
 
@@ -3388,21 +3388,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/delegate@npm:^11.1.2":
-  version: 11.1.2
-  resolution: "@graphql-tools/delegate@npm:11.1.2"
+"@graphql-tools/delegate@npm:^11.1.3":
+  version: 11.1.3
+  resolution: "@graphql-tools/delegate@npm:11.1.3"
   dependencies:
-    "@graphql-tools/batch-execute": "npm:^10.0.3"
-    "@graphql-tools/executor": "npm:^1.4.11"
-    "@graphql-tools/schema": "npm:^10.0.27"
-    "@graphql-tools/utils": "npm:^10.10.1"
+    "@graphql-tools/batch-execute": "npm:^10.0.4"
+    "@graphql-tools/executor": "npm:^1.4.13"
+    "@graphql-tools/schema": "npm:^10.0.29"
+    "@graphql-tools/utils": "npm:^10.10.3"
     "@repeaterjs/repeater": "npm:^3.0.6"
     "@whatwg-node/promise-helpers": "npm:^1.3.2"
     dataloader: "npm:^2.2.3"
     tslib: "npm:^2.8.1"
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/6becd999fff1011fcac146ae98923899fbd5400692a0cdc5226d01a9d96a5dd7765762f9db8ef11cefa8c34c4ee415df448d78850fa369e40018f9ee1cc9283f
+  checksum: 10c0/19942fe32c370e5784ace9bd3cdda9db434ed3f1515b45c2cb5f5f99a4da661c7cfddbcacc8d3ac582653b3e40a7bf7978bb49a8b3806eeabdd09427f23b4457
   languageName: node
   linkType: hard
 
@@ -3442,15 +3442,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/executor-common@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@graphql-tools/executor-common@npm:1.0.4"
+"@graphql-tools/executor-common@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@graphql-tools/executor-common@npm:1.0.5"
   dependencies:
     "@envelop/core": "npm:^5.4.0"
-    "@graphql-tools/utils": "npm:^10.10.1"
+    "@graphql-tools/utils": "npm:^10.10.3"
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/87071f8c96fb332848b9f425bb62cbd534301f86c3492f87a1277017fa18788516008ff0b977ee516d83c70ad759ef1c4eb57a63b66818ed2aa9e4da036bd0e7
+  checksum: 10c0/68fd9023dca0951283bcc7c881bf2ae353627a55ecdac3210f3b0c27d025db5e84886ffdf270d9a70adc6aa743dd7314cab66b2a9ebe116e6f6a74e1bbd766d0
   languageName: node
   linkType: hard
 
@@ -3472,11 +3472,11 @@ __metadata:
   linkType: hard
 
 "@graphql-tools/executor-graphql-ws@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "@graphql-tools/executor-graphql-ws@npm:3.1.2"
+  version: 3.1.3
+  resolution: "@graphql-tools/executor-graphql-ws@npm:3.1.3"
   dependencies:
-    "@graphql-tools/executor-common": "npm:^1.0.4"
-    "@graphql-tools/utils": "npm:^10.10.1"
+    "@graphql-tools/executor-common": "npm:^1.0.5"
+    "@graphql-tools/utils": "npm:^10.10.3"
     "@whatwg-node/disposablestack": "npm:^0.0.6"
     graphql-ws: "npm:^6.0.6"
     isows: "npm:^1.0.7"
@@ -3484,7 +3484,7 @@ __metadata:
     ws: "npm:^8.18.3"
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/21a1f5aceee79dba31260480ba2b2fc2e1c1f815e3bbce25684c3b6ba3515130eea2b021571d0bb78e050f32d9aa3bf2a030028d9e9c9c6c84f40ad4ea00228d
+  checksum: 10c0/6679e9a62ba77fe44251c27b745e8854a5398d1016ff1e0359d7ef38626805d4022b21b3c8b2c3de098531228e1471f219b9138185a337e344a679e935073c51
   languageName: node
   linkType: hard
 
@@ -3508,21 +3508,21 @@ __metadata:
   linkType: hard
 
 "@graphql-tools/executor-http@npm:^3.0.6":
-  version: 3.0.6
-  resolution: "@graphql-tools/executor-http@npm:3.0.6"
+  version: 3.0.7
+  resolution: "@graphql-tools/executor-http@npm:3.0.7"
   dependencies:
     "@graphql-hive/signal": "npm:^2.0.0"
-    "@graphql-tools/executor-common": "npm:^1.0.4"
-    "@graphql-tools/utils": "npm:^10.10.1"
+    "@graphql-tools/executor-common": "npm:^1.0.5"
+    "@graphql-tools/utils": "npm:^10.10.3"
     "@repeaterjs/repeater": "npm:^3.0.4"
     "@whatwg-node/disposablestack": "npm:^0.0.6"
-    "@whatwg-node/fetch": "npm:^0.10.12"
+    "@whatwg-node/fetch": "npm:^0.10.13"
     "@whatwg-node/promise-helpers": "npm:^1.3.2"
     meros: "npm:^1.3.2"
     tslib: "npm:^2.8.1"
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/6baff601607c8ee635901be9fe3665604eaee0cd858aa8bebe90ee109bef438bd615cd43d6e833e22833d9ece4ed5e1ed0b4203d8ff3c9a9202e7f304f90cecb
+  checksum: 10c0/1f4fc3ba2440aaea46be0a5c60e1708059f507151a78dc679186c218f2d6f4049f0b9be472ad096e70de7ec9e373442d852c9473096c413089473cb8df0c64ef
   languageName: node
   linkType: hard
 
@@ -3541,7 +3541,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/executor@npm:^1.4.11, @graphql-tools/executor@npm:^1.4.9":
+"@graphql-tools/executor@npm:^1.4.13, @graphql-tools/executor@npm:^1.4.9":
   version: 1.4.13
   resolution: "@graphql-tools/executor@npm:1.4.13"
   dependencies:
@@ -3731,7 +3731,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/schema@npm:^10.0.0, @graphql-tools/schema@npm:^10.0.25, @graphql-tools/schema@npm:^10.0.27, @graphql-tools/schema@npm:^10.0.29":
+"@graphql-tools/schema@npm:^10.0.0, @graphql-tools/schema@npm:^10.0.25, @graphql-tools/schema@npm:^10.0.29":
   version: 10.0.29
   resolution: "@graphql-tools/schema@npm:10.0.29"
   dependencies:
@@ -3788,7 +3788,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/utils@npm:^10.0.0, @graphql-tools/utils@npm:^10.10.1, @graphql-tools/utils@npm:^10.10.3, @graphql-tools/utils@npm:^10.8.1, @graphql-tools/utils@npm:^10.9.1":
+"@graphql-tools/utils@npm:^10.0.0, @graphql-tools/utils@npm:^10.10.3, @graphql-tools/utils@npm:^10.8.1, @graphql-tools/utils@npm:^10.9.1":
   version: 10.10.3
   resolution: "@graphql-tools/utils@npm:10.10.3"
   dependencies:
@@ -3818,17 +3818,17 @@ __metadata:
   linkType: hard
 
 "@graphql-tools/wrap@npm:^11.0.0":
-  version: 11.0.4
-  resolution: "@graphql-tools/wrap@npm:11.0.4"
+  version: 11.0.5
+  resolution: "@graphql-tools/wrap@npm:11.0.5"
   dependencies:
-    "@graphql-tools/delegate": "npm:^11.1.2"
-    "@graphql-tools/schema": "npm:^10.0.27"
-    "@graphql-tools/utils": "npm:^10.10.1"
+    "@graphql-tools/delegate": "npm:^11.1.3"
+    "@graphql-tools/schema": "npm:^10.0.29"
+    "@graphql-tools/utils": "npm:^10.10.3"
     "@whatwg-node/promise-helpers": "npm:^1.3.2"
     tslib: "npm:^2.8.1"
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-  checksum: 10c0/e2cc643061092432f846789f2951305e51bed0ab4421808e136e5b5d79e67d0fd71fca30d7cfca51187930beade61e3368bfda9f2d340fe6e485b02c41891135
+  checksum: 10c0/01b7cad18ba47132b262893cc35ac2aa0b48c78089ecc9c808760d9aeb7ffaeb4ca4fdb706abd0cec650ec658b2e47caf13ab718cf7deef6f4ee9d713104db41
   languageName: node
   linkType: hard
 
@@ -5362,7 +5362,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperse/eslint-config-hyperse@npm:^1.4.8, @hyperse/eslint-config-hyperse@npm:^1.5.0":
+"@hyperse/eslint-config-hyperse@npm:^1.5.0":
   version: 1.5.0
   resolution: "@hyperse/eslint-config-hyperse@npm:1.5.0"
   dependencies:
@@ -5408,18 +5408,18 @@ __metadata:
   resolution: "@hyperse/hps-graphqlsp@workspace:packages/hps-graphqlsp"
   dependencies:
     "@armit/file-utility": "npm:^0.3.1"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@types/graphql": "npm:^14.5.0"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     graphql: "npm:^16.12.0"
     npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     tsup: "npm:^8.5.1"
     typescript: "npm:^5.9.3"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     graphql: ">=16.12.0"
     typescript: ">=5.9.3"
@@ -5431,19 +5431,19 @@ __metadata:
   resolution: "@hyperse/hps-plugin-build@workspace:packages/hps-plugin-build"
   dependencies:
     "@hyperse/config-loader": "npm:^1.0.7"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
     "@hyperse/wizard": "npm:^1.0.6"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
@@ -5453,21 +5453,21 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-deploy@workspace:packages/hps-plugin-deploy"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/wizard": "npm:^1.0.6"
     "@types/mime-types": "npm:^3.0.1"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
-    globby: "npm:^15.0.0"
-    mime-types: "npm:^3.0.1"
-    msw: "npm:^2.12.1"
+    globby: "npm:^16.0.0"
+    mime-types: "npm:^3.0.2"
+    msw: "npm:^2.12.3"
     npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
     yocto-spinner: "npm:^1.0.0"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
@@ -5478,20 +5478,20 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-info@workspace:packages/hps-plugin-info"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/wizard": "npm:^1.0.6"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     cfonts: "npm:^3.3.1"
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:^4.1.5"
     os-name: "npm:^6.1.0"
     picocolors: "npm:^1.1.1"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
@@ -5502,19 +5502,19 @@ __metadata:
   resolution: "@hyperse/hps-plugin-mock@workspace:packages/hps-plugin-mock"
   dependencies:
     "@hyperse/config-loader": "npm:^1.0.7"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-mock": "workspace:*"
     "@hyperse/wizard": "npm:^1.0.6"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
@@ -5524,16 +5524,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-plugin-pack@workspace:packages/hps-plugin-pack"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   languageName: unknown
   linkType: soft
 
@@ -5542,20 +5542,20 @@ __metadata:
   resolution: "@hyperse/hps-plugin-serve@workspace:packages/hps-plugin-serve"
   dependencies:
     "@hyperse/config-loader": "npm:^1.0.7"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-mock": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
     "@hyperse/wizard": "npm:^1.0.6"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
@@ -5566,21 +5566,21 @@ __metadata:
   resolution: "@hyperse/hps-plugin-update@workspace:packages/hps-plugin-update"
   dependencies:
     "@hyperse/config-loader": "npm:^1.0.7"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/wizard": "npm:^1.0.6"
     "@manypkg/get-packages": "npm:^3.1.0"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     has-yarn: "npm:^4.0.0"
     npm-check-updates: "npm:^19.1.2"
     npm-run-all: "npm:^4.1.5"
     package-up: "npm:^5.0.0"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
@@ -5593,23 +5593,23 @@ __metadata:
     "@armit/file-utility": "npm:^0.3.1"
     "@armit/package": "npm:^0.3.1"
     "@armit/terminal": "npm:^0.3.0"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/logger": "npm:^1.1.7"
     "@hyperse/logger-plugin-stdout": "npm:^1.0.11"
     "@hyperse/wizard": "npm:^1.0.6"
     "@types/ip": "npm:^1.1.3"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     get-port: "npm:^7.1.0"
     import-meta-resolve: "npm:^4.2.0"
     ip: "npm:^2.0.1"
     npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
   languageName: unknown
@@ -5619,17 +5619,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-srv-mock@workspace:packages/hps-srv-mock"
   dependencies:
-    "@apollo/server": "npm:^5.1.0"
+    "@apollo/server": "npm:^5.2.0"
     "@armit/file-utility": "npm:^0.3.1"
     "@armit/package": "npm:^0.3.1"
     "@as-integrations/express5": "npm:^1.1.2"
     "@flatjs/forge": "npm:^2.3.10"
-    "@graphql-codegen/cli": "npm:^6.0.2"
+    "@graphql-codegen/cli": "npm:^6.1.0"
     "@graphql-codegen/schema-ast": "npm:^5.0.0"
     "@graphql-tools/mock": "npm:^9.1.3"
     "@hyperse/config-loader": "npm:^1.0.7"
     "@hyperse/delete-empty-folders": "npm:^1.0.1"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/wizard": "npm:^1.0.6"
     "@rollup/pluginutils": "npm:^5.3.0"
@@ -5638,13 +5638,13 @@ __metadata:
     "@types/mockjs": "npm:^1.0.10"
     "@types/node": "npm:^24.10.1"
     "@types/serve-favicon": "npm:^2.5.7"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
-    body-parser: "npm:^2.2.0"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
+    body-parser: "npm:^2.2.1"
     casual: "npm:^1.6.2"
-    chokidar: "npm:^4.0.3"
+    chokidar: "npm:^5.0.0"
     class-transformer: "npm:^0.5.1"
-    class-validator: "npm:^0.14.2"
+    class-validator: "npm:^0.14.3"
     cors: "npm:^2.8.5"
     esbuild: "npm:^0.27.0"
     eslint: "npm:^9.39.1"
@@ -5661,12 +5661,12 @@ __metadata:
     mockjs: "npm:^1.1.0"
     npm-run-all: "npm:^4.1.5"
     path-to-regexp: "npm:^8.3.0"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     serve-favicon: "npm:^2.5.1"
     string-width: "npm:^8.1.0"
     type-fest: "npm:^5.2.0"
     typescript: "npm:^5.9.3"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
     graphql: ">=16.12.0"
@@ -5683,19 +5683,19 @@ __metadata:
     "@armit/file-utility": "npm:^0.3.1"
     "@armit/package": "npm:^0.3.1"
     "@armit/terminal": "npm:^0.3.0"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/wizard": "npm:^1.0.6"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.1.0"
-    rolldown: "npm:^1.0.0-beta.50"
+    rimraf: "npm:^6.1.2"
+    rolldown: "npm:^1.0.0-beta.51"
     type-fest: "npm:^5.2.0"
     typescript: "npm:^5.9.3"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
   peerDependenciesMeta:
@@ -5708,19 +5708,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@hyperse/hps-srv-rspack-plugin-postcss@workspace:packages/hps-srv-rspack-plugin-postcss"
   dependencies:
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/wizard": "npm:^1.0.6"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:^4.1.5"
     postcss: "npm:8.5.6"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
     postcss: ^8.5.6
@@ -5739,7 +5739,7 @@ __metadata:
     "@armit/file-utility": "npm:^0.3.1"
     "@armit/package": "npm:^0.3.1"
     "@hyperse/config-loader": "npm:^1.0.7"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-mock": "workspace:*"
     "@hyperse/hps-srv-rspack-plugin-postcss": "workspace:*"
@@ -5750,26 +5750,26 @@ __metadata:
     "@hyperse/inspector-middleware": "npm:^2.0.0"
     "@hyperse/inspector-swc-plugin": "npm:^2.0.0"
     "@hyperse/wizard": "npm:^1.0.6"
-    "@rsdoctor/rspack-plugin": "npm:~1.3.9"
-    "@rspack/binding": "npm:~1.6.3"
-    "@rspack/core": "npm:~1.6.3"
+    "@rsdoctor/rspack-plugin": "npm:~1.3.11"
+    "@rspack/binding": "npm:~1.6.5"
+    "@rspack/core": "npm:~1.6.5"
     "@rspack/dev-server": "npm:~1.1.4"
     "@rspack/plugin-react-refresh": "npm:^1.5.3"
-    "@swc/core": "npm:1.15.1"
+    "@swc/core": "npm:1.15.3"
     "@swc/helpers": "npm:^0.5.17"
     "@types/case-sensitive-paths-webpack-plugin": "npm:^2.1.9"
     "@types/express": "npm:^5.0.5"
-    "@types/lodash": "npm:^4.17.20"
+    "@types/lodash": "npm:^4.17.21"
     "@types/node": "npm:^24.10.1"
-    "@types/react": "npm:^19.2.4"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@types/react": "npm:^19.2.7"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     better-opn: "npm:^3.0.2"
     case-sensitive-paths-webpack-plugin: "npm:^2.4.0"
     css-loader: "npm:^7.1.2"
     eslint: "npm:^9.39.1"
     express: "npm:^5.1.0"
-    html-webpack-plugin: "npm:^5.6.4"
+    html-webpack-plugin: "npm:^5.6.5"
     image-minimizer-webpack-plugin: "npm:^4.1.4"
     less: "npm:^4.4.2"
     less-loader: "npm:^12.3.0"
@@ -5779,11 +5779,11 @@ __metadata:
     postcss-loader: "npm:^8.2.0"
     react: "npm:^19.2.0"
     react-refresh: "npm:^0.18.0"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     svgo: "npm:^4.0.0"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
     webpack: "npm:^5.102.1"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
@@ -5792,7 +5792,7 @@ __metadata:
     imagemin-pngquant: ">=10.0.0"
     imagemin-svgo: ">=11.0.1"
     react: ">=19.2.0"
-    webpack: ">=5.102.1"
+    webpack: ">=5.103.0"
   peerDependenciesMeta:
     "@hyperse/wizard":
       optional: true
@@ -5815,23 +5815,23 @@ __metadata:
   dependencies:
     "@armit/file-utility": "npm:^0.3.1"
     "@babel/code-frame": "npm:^7.27.1"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/wizard": "npm:^1.0.6"
     "@rspack/core": "npm:~1.6.1"
     "@types/babel__code-frame": "npm:^7.0.6"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:^4.1.5"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     ts-checker-rspack-plugin: "npm:^1.2.0"
     typescript: "npm:^5.9.3"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
-    "@rspack/core": ">=1.6.3"
+    "@rspack/core": ">=1.6.5"
   peerDependenciesMeta:
     "@hyperse/wizard":
       optional: true
@@ -5872,7 +5872,7 @@ __metadata:
     react-dom: "npm:^19.2.0"
     tailwindcss: "npm:^4.1.17"
     typescript: "npm:^5.9.3"
-    vitest: "npm:^4.0.13"
+    vitest: "npm:^4.0.14"
     zod: "npm:^4.1.13"
   languageName: unknown
   linkType: soft
@@ -5884,7 +5884,7 @@ __metadata:
     "@armit/file-utility": "npm:^0.3.1"
     "@armit/package": "npm:^0.3.1"
     "@hyperse/config-loader": "npm:^1.0.7"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.8"
+    "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-plugin-build": "workspace:*"
     "@hyperse/hps-plugin-deploy": "workspace:*"
     "@hyperse/hps-plugin-info": "workspace:*"
@@ -5893,7 +5893,7 @@ __metadata:
     "@hyperse/hps-plugin-update": "workspace:*"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/hps-srv-rspack": "workspace:*"
-    "@hyperse/ts-node": "npm:^1.0.3"
+    "@hyperse/ts-node": "npm:^1.1.0"
     "@hyperse/wizard": "npm:^1.0.6"
     "@hyperse/wizard-plugin-completion": "npm:^1.0.3"
     "@hyperse/wizard-plugin-error": "npm:^1.0.6"
@@ -5901,15 +5901,15 @@ __metadata:
     "@hyperse/wizard-plugin-loader": "npm:^1.0.6"
     "@hyperse/wizard-plugin-version": "npm:^1.0.6"
     "@types/node": "npm:^24.10.1"
-    "@vitest/coverage-istanbul": "npm:^4.0.8"
-    "@vitest/ui": "npm:^4.0.8"
+    "@vitest/coverage-istanbul": "npm:^4.0.14"
+    "@vitest/ui": "npm:^4.0.14"
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:4.1.5"
     package-directory: "npm:^8.1.0"
-    rimraf: "npm:^6.1.0"
+    rimraf: "npm:^6.1.2"
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
-    vitest: "npm:^4.0.8"
+    vitest: "npm:^4.0.14"
   bin:
     hps: ./bin/hps.mjs
   languageName: unknown
@@ -6084,7 +6084,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperse/ts-node@npm:^1.0.3":
+"@hyperse/ts-node@npm:^1.0.3, @hyperse/ts-node@npm:^1.1.0":
   version: 1.1.0
   resolution: "@hyperse/ts-node@npm:1.1.0"
   dependencies:
@@ -9483,7 +9483,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rsdoctor/rspack-plugin@npm:~1.3.9":
+"@rsdoctor/rspack-plugin@npm:~1.3.11":
   version: 1.3.11
   resolution: "@rsdoctor/rspack-plugin@npm:1.3.11"
   dependencies:
@@ -9631,7 +9631,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rspack/binding@npm:1.6.5, @rspack/binding@npm:~1.6.3":
+"@rspack/binding@npm:1.6.5, @rspack/binding@npm:~1.6.5":
   version: 1.6.5
   resolution: "@rspack/binding@npm:1.6.5"
   dependencies:
@@ -9670,7 +9670,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rspack/core@npm:~1.6.1, @rspack/core@npm:~1.6.3":
+"@rspack/core@npm:~1.6.1, @rspack/core@npm:~1.6.5":
   version: 1.6.5
   resolution: "@rspack/core@npm:1.6.5"
   dependencies:
@@ -9892,24 +9892,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-darwin-arm64@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-darwin-arm64@npm:1.15.1"
-  conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
 "@swc/core-darwin-arm64@npm:1.15.3":
   version: 1.15.3
   resolution: "@swc/core-darwin-arm64@npm:1.15.3"
   conditions: os=darwin & cpu=arm64
-  languageName: node
-  linkType: hard
-
-"@swc/core-darwin-x64@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-darwin-x64@npm:1.15.1"
-  conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
@@ -9920,24 +9906,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm-gnueabihf@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-linux-arm-gnueabihf@npm:1.15.1"
-  conditions: os=linux & cpu=arm
-  languageName: node
-  linkType: hard
-
 "@swc/core-linux-arm-gnueabihf@npm:1.15.3":
   version: 1.15.3
   resolution: "@swc/core-linux-arm-gnueabihf@npm:1.15.3"
   conditions: os=linux & cpu=arm
-  languageName: node
-  linkType: hard
-
-"@swc/core-linux-arm64-gnu@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-linux-arm64-gnu@npm:1.15.1"
-  conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
 
@@ -9948,24 +9920,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-linux-arm64-musl@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-linux-arm64-musl@npm:1.15.1"
-  conditions: os=linux & cpu=arm64 & libc=musl
-  languageName: node
-  linkType: hard
-
 "@swc/core-linux-arm64-musl@npm:1.15.3":
   version: 1.15.3
   resolution: "@swc/core-linux-arm64-musl@npm:1.15.3"
   conditions: os=linux & cpu=arm64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@swc/core-linux-x64-gnu@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-linux-x64-gnu@npm:1.15.1"
-  conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
 
@@ -9976,24 +9934,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-linux-x64-musl@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-linux-x64-musl@npm:1.15.1"
-  conditions: os=linux & cpu=x64 & libc=musl
-  languageName: node
-  linkType: hard
-
 "@swc/core-linux-x64-musl@npm:1.15.3":
   version: 1.15.3
   resolution: "@swc/core-linux-x64-musl@npm:1.15.3"
   conditions: os=linux & cpu=x64 & libc=musl
-  languageName: node
-  linkType: hard
-
-"@swc/core-win32-arm64-msvc@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-win32-arm64-msvc@npm:1.15.1"
-  conditions: os=win32 & cpu=arm64
   languageName: node
   linkType: hard
 
@@ -10004,24 +9948,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core-win32-ia32-msvc@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-win32-ia32-msvc@npm:1.15.1"
-  conditions: os=win32 & cpu=ia32
-  languageName: node
-  linkType: hard
-
 "@swc/core-win32-ia32-msvc@npm:1.15.3":
   version: 1.15.3
   resolution: "@swc/core-win32-ia32-msvc@npm:1.15.3"
   conditions: os=win32 & cpu=ia32
-  languageName: node
-  linkType: hard
-
-"@swc/core-win32-x64-msvc@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core-win32-x64-msvc@npm:1.15.1"
-  conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
 
@@ -10032,53 +9962,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@swc/core@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@swc/core@npm:1.15.1"
-  dependencies:
-    "@swc/core-darwin-arm64": "npm:1.15.1"
-    "@swc/core-darwin-x64": "npm:1.15.1"
-    "@swc/core-linux-arm-gnueabihf": "npm:1.15.1"
-    "@swc/core-linux-arm64-gnu": "npm:1.15.1"
-    "@swc/core-linux-arm64-musl": "npm:1.15.1"
-    "@swc/core-linux-x64-gnu": "npm:1.15.1"
-    "@swc/core-linux-x64-musl": "npm:1.15.1"
-    "@swc/core-win32-arm64-msvc": "npm:1.15.1"
-    "@swc/core-win32-ia32-msvc": "npm:1.15.1"
-    "@swc/core-win32-x64-msvc": "npm:1.15.1"
-    "@swc/counter": "npm:^0.1.3"
-    "@swc/types": "npm:^0.1.25"
-  peerDependencies:
-    "@swc/helpers": ">=0.5.17"
-  dependenciesMeta:
-    "@swc/core-darwin-arm64":
-      optional: true
-    "@swc/core-darwin-x64":
-      optional: true
-    "@swc/core-linux-arm-gnueabihf":
-      optional: true
-    "@swc/core-linux-arm64-gnu":
-      optional: true
-    "@swc/core-linux-arm64-musl":
-      optional: true
-    "@swc/core-linux-x64-gnu":
-      optional: true
-    "@swc/core-linux-x64-musl":
-      optional: true
-    "@swc/core-win32-arm64-msvc":
-      optional: true
-    "@swc/core-win32-ia32-msvc":
-      optional: true
-    "@swc/core-win32-x64-msvc":
-      optional: true
-  peerDependenciesMeta:
-    "@swc/helpers":
-      optional: true
-  checksum: 10c0/259fff78455d532c689bb825bc8ae7011041c4cd5fb2e9f98d76f1a5dea51db497cabe9e53e4a2a0643b4448a0bdf942702df97136034c6cf335407712a26427
-  languageName: node
-  linkType: hard
-
-"@swc/core@npm:^1.13.5, @swc/core@npm:^1.15.3":
+"@swc/core@npm:1.15.3, @swc/core@npm:^1.13.5, @swc/core@npm:^1.15.3":
   version: 1.15.3
   resolution: "@swc/core@npm:1.15.3"
   dependencies:
@@ -11034,7 +10918,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.17.20":
+"@types/lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "@types/lodash@npm:4.17.21"
   checksum: 10c0/73cb006e047d8871e9d63f3a165543bf16c44a5b6fe3f9f6299e37cb8d67a7b1d55ac730959a81f9def510fd07232ff7e30e05413e5d5a12793baad84ebe36c3
@@ -11167,7 +11051,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.2.4, @types/react@npm:^19.2.7":
+"@types/react@npm:^19.2.7":
   version: 19.2.7
   resolution: "@types/react@npm:19.2.7"
   dependencies:
@@ -11538,7 +11422,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-istanbul@npm:^4.0.8":
+"@vitest/coverage-istanbul@npm:^4.0.14":
   version: 4.0.14
   resolution: "@vitest/coverage-istanbul@npm:4.0.14"
   dependencies:
@@ -11646,7 +11530,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/ui@npm:^4.0.8":
+"@vitest/ui@npm:^4.0.14":
   version: 4.0.14
   resolution: "@vitest/ui@npm:4.0.14"
   dependencies:
@@ -11834,7 +11718,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@whatwg-node/fetch@npm:^0.10.0, @whatwg-node/fetch@npm:^0.10.12, @whatwg-node/fetch@npm:^0.10.13, @whatwg-node/fetch@npm:^0.10.4":
+"@whatwg-node/fetch@npm:^0.10.0, @whatwg-node/fetch@npm:^0.10.13, @whatwg-node/fetch@npm:^0.10.4":
   version: 0.10.13
   resolution: "@whatwg-node/fetch@npm:0.10.13"
   dependencies:
@@ -12526,11 +12410,11 @@ __metadata:
   linkType: hard
 
 "baseline-browser-mapping@npm:^2.8.25":
-  version: 2.8.28
-  resolution: "baseline-browser-mapping@npm:2.8.28"
+  version: 2.8.31
+  resolution: "baseline-browser-mapping@npm:2.8.31"
   bin:
     baseline-browser-mapping: dist/cli.js
-  checksum: 10c0/d157d73de33bff69cf3413983dc1b2421063cd1c895e9edabc22dcb6667f7e17762b46ebeee5eee7496271351754c12750867c6ea5cb432f1bbe33dc5c62d1e6
+  checksum: 10c0/e0b2fcb41bf36c5e27e122a4d4cc9e5f6b9747d31cd0bd1f771aee9c490eb1e01cd11a31db32286bd4b9221139ee332b5ab7e3893c18a4dbd0ce8915a9e180ed
   languageName: node
   linkType: hard
 
@@ -12617,7 +12501,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"body-parser@npm:^2.2.0":
+"body-parser@npm:^2.2.0, body-parser@npm:^2.2.1":
   version: 2.2.1
   resolution: "body-parser@npm:2.2.1"
   dependencies:
@@ -12884,9 +12768,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001579, caniuse-lite@npm:^1.0.30001754":
-  version: 1.0.30001754
-  resolution: "caniuse-lite@npm:1.0.30001754"
-  checksum: 10c0/d38709ab11abc36eea28068d241434eba925c4d3462916ccaa17a34a6227dfdeb58ab0e1eb614bab12fb393c7d527db392a0f477b48c33d70d8e466954f381ba
+  version: 1.0.30001757
+  resolution: "caniuse-lite@npm:1.0.30001757"
+  checksum: 10c0/3ccb71fa2bf1f8c96ff1bf9b918b08806fed33307e20a3ce3259155fda131eaf96cfcd88d3d309c8fd7f8285cc71d89a3b93648a1c04814da31c301f98508d42
   languageName: node
   linkType: hard
 
@@ -13118,6 +13002,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chokidar@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "chokidar@npm:5.0.0"
+  dependencies:
+    readdirp: "npm:^5.0.0"
+  checksum: 10c0/42fc907cb2a7ff5c9e220f84dae75380a77997f851c2a5e7865a2cf9ae45dd407a23557208cdcdbf3ac8c93341135a1748e4c48c31855f3bfa095e5159b6bdec
+  languageName: node
+  linkType: hard
+
 "chownr@npm:^3.0.0":
   version: 3.0.0
   resolution: "chownr@npm:3.0.0"
@@ -13153,7 +13046,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"class-validator@npm:^0.14.2":
+"class-validator@npm:^0.14.3":
   version: 0.14.3
   resolution: "class-validator@npm:0.14.3"
   dependencies:
@@ -14986,9 +14879,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.5.249":
-  version: 1.5.251
-  resolution: "electron-to-chromium@npm:1.5.251"
-  checksum: 10c0/2781fd81efbe415ba3c0a246a3de258183fcdfe9b1e6c2f6b88437fbab2f54fcecf8140dd689db3987fd0744282960884ca764e411828d7807ec6055b09b6c9c
+  version: 1.5.260
+  resolution: "electron-to-chromium@npm:1.5.260"
+  checksum: 10c0/5be308adbe7f9b370f628eb3ae35528bccc8e8592ee4848f9dfa308af658deaa87e915dd6929b6993e712929e7e6828f40434814506476ae11051381ee423fdf
   languageName: node
   linkType: hard
 
@@ -17169,6 +17062,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"globby@npm:^16.0.0":
+  version: 16.0.0
+  resolution: "globby@npm:16.0.0"
+  dependencies:
+    "@sindresorhus/merge-streams": "npm:^4.0.0"
+    fast-glob: "npm:^3.3.3"
+    ignore: "npm:^7.0.5"
+    is-path-inside: "npm:^4.0.0"
+    slash: "npm:^5.1.0"
+    unicorn-magic: "npm:^0.4.0"
+  checksum: 10c0/70f3fe767491d7add94e9152577e883d7d800d7dd147781cf3e99fa41f1f87aaf34ab17490c59e3841cf76bc00b38840042241c654ae572dca72b1a5c77e7379
+  languageName: node
+  linkType: hard
+
 "globrex@npm:^0.1.2":
   version: 0.1.2
   resolution: "globrex@npm:0.1.2"
@@ -17722,7 +17629,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-webpack-plugin@npm:^5.6.4":
+"html-webpack-plugin@npm:^5.6.5":
   version: 5.6.5
   resolution: "html-webpack-plugin@npm:5.6.5"
   dependencies:
@@ -21062,7 +20969,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-types@npm:^3.0.0, mime-types@npm:^3.0.1":
+"mime-types@npm:^3.0.0, mime-types@npm:^3.0.1, mime-types@npm:^3.0.2":
   version: 3.0.2
   resolution: "mime-types@npm:3.0.2"
   dependencies:
@@ -21320,7 +21227,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"msw@npm:^2.12.1":
+"msw@npm:^2.12.3":
   version: 2.12.3
   resolution: "msw@npm:2.12.3"
   dependencies:
@@ -23500,6 +23407,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"readdirp@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "readdirp@npm:5.0.0"
+  checksum: 10c0/faf1ec57cff2020f473128da3f8d2a57813cc3a08a36c38cae1c9af32c1579906cc50ba75578043b35bade77e945c098233665797cf9730ba3613a62d6e79219
+  languageName: node
+  linkType: hard
+
 "readdirp@npm:~3.6.0":
   version: 3.6.0
   resolution: "readdirp@npm:3.6.0"
@@ -24162,7 +24076,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^6.0.1, rimraf@npm:^6.1.0, rimraf@npm:^6.1.2":
+"rimraf@npm:^6.0.1, rimraf@npm:^6.1.2":
   version: 6.1.2
   resolution: "rimraf@npm:6.1.2"
   dependencies:
@@ -24181,7 +24095,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rolldown@npm:^1.0.0-beta.50":
+"rolldown@npm:^1.0.0-beta.51":
   version: 1.0.0-beta.9-commit.d91dfb5
   resolution: "rolldown@npm:1.0.0-beta.9-commit.d91dfb5"
   dependencies:
@@ -26610,6 +26524,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"unicorn-magic@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "unicorn-magic@npm:0.4.0"
+  checksum: 10c0/cd6eff90967a5528dfa2016bdb5b38b0cd64c8558f9ba04fb5c2c23f3a232a67dfe2bfa4c45af3685d5f1a40dbac6a36d48e053f80f97ae4da1e0f6a55431685
+  languageName: node
+  linkType: hard
+
 "unified-engine@npm:^11.2.2":
   version: 11.2.2
   resolution: "unified-engine@npm:11.2.2"
@@ -27197,7 +27118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitest@npm:^4.0.13, vitest@npm:^4.0.8":
+"vitest@npm:^4.0.14":
   version: 4.0.14
   resolution: "vitest@npm:4.0.14"
   dependencies:

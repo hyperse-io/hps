@@ -113,6 +113,7 @@ export class AliyunAssetDeployStrategy implements AssetDeployStrategy {
       accessKeySecret: this.aliyunConfig.accessKeySecret!,
       accessKeyId: this.aliyunConfig.accessKeyId!,
       bucketName: this.aliyunConfig.bucketName!,
+      overrideExistFile: options.overrideExistFile,
     };
 
     // Deploy each file

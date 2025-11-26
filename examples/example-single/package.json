@@ -1,6 +1,6 @@
 {
   "name": "@example/example-single",
-  "version": "0.0.2-next.27",
+  "version": "0.0.2-next.28",
   "private": true,
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
@@ -37,7 +37,7 @@
     "@types/node": "^24.10.1",
     "autoprefixer": "^10.4.22",
     "postcss": "^8.5.6",
-    "rimraf": "^6.1.0",
+    "rimraf": "^6.1.2",
     "tailwindcss": "^4.1.17",
     "typescript": "^5.9.3"
   },

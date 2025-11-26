@@ -47,17 +47,17 @@
     "picocolors": "^1.1.1"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.4.8",
+    "@hyperse/eslint-config-hyperse": "^1.5.0",
     "@hyperse/wizard": "^1.0.6",
     "@types/node": "^24.10.1",
-    "@vitest/coverage-istanbul": "^4.0.8",
-    "@vitest/ui": "^4.0.8",
+    "@vitest/coverage-istanbul": "^4.0.14",
+    "@vitest/ui": "^4.0.14",
     "eslint": "^9.39.1",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^6.1.0",
+    "rimraf": "^6.1.2",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.14"
   },
   "peerDependencies": {
     "@hyperse/wizard": ">=1.0.6"
