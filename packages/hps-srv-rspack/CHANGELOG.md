@@ -1,5 +1,11 @@
 # @hyperse/hps-srv-rspack
 
+## 0.0.2-next.18
+
+### Patch Changes
+
+- [#51](https://github.com/hyperse-io/hps/pull/51) [`97a5e3c`](https://github.com/hyperse-io/hps/commit/97a5e3c2f702804c11828ce37d904c1118f9f359) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - chore: improve dev server manifest handling
+
 ## 0.0.2-next.17
 
 ### Patch Changes
