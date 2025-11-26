@@ -4,6 +4,7 @@ import { Banner, Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import cn from 'clsx';
+import { Terminal } from 'lucide-react';
 import { Logo } from '@/components/Icons/Logo';
 import './globals.css';
 
@@ -57,22 +58,19 @@ const navbar = (
   <Navbar
     logo={
       <div className="flex items-center gap-2">
-        <Logo
-          height="20"
-          className={cn(
-            'hover:transition-all hover:duration-1000 motion-reduce:hover:transition-none',
-            '[mask-image:linear-gradient(60deg,#000_25%,rgba(0,0,0,.2)_50%,#000_75%)] [mask-size:400%] [mask-position:0]',
-            'hover:[mask-position:100%]'
-          )}
-        />
-        <span className="font-extralight">Hyperse Hps</span>
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/20">
+          <Terminal className="h-6 w-6 text-white" />
+        </div>
+        <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-xl font-bold text-transparent">
+          HPS
+        </span>
       </div>
     }
     projectLink="https://github.com/hyperse-io/hps"
   />
 );
 const footer = (
-  <Footer className="flex-col items-center md:items-start">
+  <Footer className="bg-[rgba(255, 255, 255, 0.05)] flex-col items-center md:items-start">
     <a
       className="x:focus-visible:nextra-focus flex items-center gap-1"
       target="_blank"
@@ -104,7 +102,9 @@ const RootLayout: FC<{
           docsRepositoryBase="https://github.com/hyperse-io/hps/tree/main/website"
           editLink="Edit this page on GitHub"
           sidebar={{ defaultMenuCollapseLevel: 1 }}
-          footer={footer}
+          nextThemes={{
+            forcedTheme: 'dark',
+          }}
         >
           {children}
         </Layout>
