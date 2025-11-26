@@ -20,8 +20,8 @@ const mate: MetaRecord = {
       collapsed: false,
     },
   },
-  apis: {
-    title: 'APIs',
+  api: {
+    title: 'API',
     theme: {
       copyPage: true,
       collapsed: false,
