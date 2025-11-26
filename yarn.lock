@@ -5692,7 +5692,7 @@ __metadata:
     eslint: "npm:^9.39.1"
     npm-run-all: "npm:^4.1.5"
     rimraf: "npm:^6.1.2"
-    rolldown: "npm:^1.0.0-beta.51"
+    rolldown: "npm:^1.0.0-beta.52"
     type-fest: "npm:^5.2.0"
     typescript: "npm:^5.9.3"
     vitest: "npm:^4.0.14"
@@ -5784,7 +5784,7 @@ __metadata:
     typescript: "npm:^5.9.3"
     vite-tsconfig-paths: "npm:5.1.4"
     vitest: "npm:^4.0.14"
-    webpack: "npm:^5.102.1"
+    webpack: "npm:^5.103.0"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
     imagemin-gifsicle: ">=7.0.0"
@@ -5818,7 +5818,7 @@ __metadata:
     "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/hps-srv-common": "workspace:*"
     "@hyperse/wizard": "npm:^1.0.6"
-    "@rspack/core": "npm:~1.6.1"
+    "@rspack/core": "npm:~1.6.5"
     "@types/babel__code-frame": "npm:^7.0.6"
     "@types/node": "npm:^24.10.1"
     "@vitest/coverage-istanbul": "npm:^4.0.14"
@@ -9670,7 +9670,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rspack/core@npm:~1.6.1, @rspack/core@npm:~1.6.5":
+"@rspack/core@npm:~1.6.5":
   version: 1.6.5
   resolution: "@rspack/core@npm:1.6.5"
   dependencies:
@@ -19664,7 +19664,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loader-runner@npm:^4.2.0":
+"loader-runner@npm:^4.3.1":
   version: 4.3.1
   resolution: "loader-runner@npm:4.3.1"
   checksum: 10c0/a523b6329f114e0a98317158e30a7dfce044b731521be5399464010472a93a15ece44757d1eaed1d8845019869c5390218bc1c7c3110f4eeaef5157394486eac
@@ -24095,7 +24095,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rolldown@npm:^1.0.0-beta.51":
+"rolldown@npm:^1.0.0-beta.52":
   version: 1.0.0-beta.9-commit.d91dfb5
   resolution: "rolldown@npm:1.0.0-beta.9-commit.d91dfb5"
   dependencies:
@@ -27360,9 +27360,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.102.1":
-  version: 5.102.1
-  resolution: "webpack@npm:5.102.1"
+"webpack@npm:^5.103.0":
+  version: 5.103.0
+  resolution: "webpack@npm:5.103.0"
   dependencies:
     "@types/eslint-scope": "npm:^3.7.7"
     "@types/estree": "npm:^1.0.8"
@@ -27381,7 +27381,7 @@ __metadata:
     glob-to-regexp: "npm:^0.4.1"
     graceful-fs: "npm:^4.2.11"
     json-parse-even-better-errors: "npm:^2.3.1"
-    loader-runner: "npm:^4.2.0"
+    loader-runner: "npm:^4.3.1"
     mime-types: "npm:^2.1.27"
     neo-async: "npm:^2.6.2"
     schema-utils: "npm:^4.3.3"
@@ -27394,7 +27394,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 10c0/74c3afeef50a5414e58399f1c0123fe5cdb3d8d081c206fae74b8334097d5ff6b729147154dbb4af48e662ba756a89e06d550b3390917153fa1d7ce285f96777
+  checksum: 10c0/d0cf86f8cac249874d6f36292e25011413ebb5bae82c48fa78a165a217e63db00b1a1f563f5195070eb17a055c6da4b6ab89fbdd37f781abdda862aa8c0bd623
   languageName: node
   linkType: hard
 

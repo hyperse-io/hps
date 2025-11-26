@@ -94,7 +94,7 @@
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "^4.0.14",
-    "webpack": "^5.102.1"
+    "webpack": "^5.103.0"
   },
   "peerDependencies": {
     "@hyperse/wizard": ">=1.0.6",
