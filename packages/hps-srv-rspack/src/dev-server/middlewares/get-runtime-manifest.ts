@@ -1,3 +1,5 @@
+import { urlJoin } from '@hyperse/hps-srv-common';
+import { normalizePageProxy } from '../../helpers/helper-normalize-page-proxy.js';
 import type {
   EvolveDevServerEntryMap,
   EvolveDevServerManifest,
@@ -16,11 +18,20 @@ export const getRuntimeManifest = async (
     servedDevServerEntries,
     devHostUri
   );
+  const pageProxy = normalizePageProxy(
+    evolveOptions.devServer?.pageProxy || '/pages'
+  );
 
   const runtimeManifest: EvolveDevServerManifest = {};
   for (const moduleItem of sortedModules) {
-    const { entryName, isServedEntry, devServerHostUri, normalizedEntryName } =
-      moduleItem;
+    const {
+      entryName,
+      entryContent,
+      isServedEntry,
+      devServerHostUri,
+      normalizedEntryName,
+      projectVirtualPath,
+    } = moduleItem;
 
     const bundleScripts = [
       getBundleAsset(devServerHostUri, normalizedEntryName, '.js'),
@@ -28,8 +39,22 @@ export const getRuntimeManifest = async (
     const bundleStyles = [
       getBundleAsset(devServerHostUri, normalizedEntryName, '.css'),
     ];
+
+    const linkHref = urlJoin(devHostUri, [pageProxy, entryName]);
+
+    // Allow customized page main link.
+    const servePageMainLinkFn =
+      entryContent.options?.servePageMainLinkFn || ((link: string) => link);
+
+    const link = servePageMainLinkFn(linkHref, {
+      hostUri: devHostUri,
+      entryName,
+      virtualPath: projectVirtualPath,
+    });
+
     runtimeManifest[normalizedEntryName] = {
       entryName,
+      link,
       styles: bundleStyles,
       scripts: bundleScripts,
       isServed: isServedEntry,
