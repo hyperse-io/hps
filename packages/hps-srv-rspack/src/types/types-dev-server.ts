@@ -192,6 +192,7 @@ export type EvolveDevServerEntryMap = {
 export type EvolveDevServerManifest = {
   [normalizedEntryName: string]: {
     entryName: string;
+    link: string;
     styles: string[];
     scripts: string[];
     runtimeChunks: string[];
