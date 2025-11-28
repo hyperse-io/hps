@@ -54,7 +54,7 @@ export const createOutput = async (
     // The filename of non-entry chunks as relative path inside the output.path directory.
     chunkFilename: assertChunkFilename(evolveOptions, entryItem),
     // A unique name of the Rspack build to avoid multiple Rspack runtimes to conflict when using globals.
-    uniqueName: uniqueName,
+    uniqueName: serveMode ? uniqueName : undefined,
     // Extends / overrides the default output configuration
     ...otherEntryOutputOptions,
   };
