@@ -1,5 +1,11 @@
 # @hyperse/hps-srv-rspack
 
+## 0.0.2-next.19
+
+### Patch Changes
+
+- [#53](https://github.com/hyperse-io/hps/pull/53) [`c3fce5c`](https://github.com/hyperse-io/hps/commit/c3fce5c36e98b9bf69f2f8f63bf764dd4ea20439) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: enhance output configuration and improve react fast refresh checks
+
 ## 0.0.2-next.18
 
 ### Patch Changes
