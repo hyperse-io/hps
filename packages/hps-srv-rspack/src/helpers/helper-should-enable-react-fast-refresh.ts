@@ -10,13 +10,10 @@ export const shouldEnableReactFastRefresh = (
   const entryItemOption = entryMapItem[1];
   // Check if the entry item has module federation
   const hasModuleFederation = !!entryItemOption.options?.moduleFederation;
-  // Check if the entry item is a library, The library module can not run in the browser individually.
-  const isEntryItemLibrary = !!entryItemOption.options?.output?.library;
   // Inject `react-refresh` if we are using preset `react`
   return (
     serveMode &&
     !hasModuleFederation &&
-    !isEntryItemLibrary &&
     // No specificed `liveReload` config
     evolveOptions.devServer?.liveReload !== true
   );
