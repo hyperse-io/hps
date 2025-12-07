@@ -24,8 +24,9 @@ export const createDefineVariablesPlugins = (
       });
   }
 
-  if (rspack.mode && rspack.mode === 'development') {
+  if (rspack.mode && rspack.mode !== 'none') {
     // If the mode is development, set the NODE_ENV to development
+    // If the mode is production, set the NODE_ENV to production
     publicEnvs[`process.env.NODE_ENV`] = JSON.stringify(rspack.mode);
   }
 

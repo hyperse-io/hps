@@ -94,7 +94,7 @@ describe('test build evolve modules', async () => {
     }
   });
 
-  it('test build evolve modules with mode none', async () => {
+  it('test build evolve modules with default mode', async () => {
     await testCli.parse([
       'build',
       'evolve',

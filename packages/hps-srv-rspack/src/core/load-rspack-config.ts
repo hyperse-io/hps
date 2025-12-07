@@ -12,7 +12,7 @@ import { createPlugins } from './plugins/create-plugins.js';
 import { createRuleSets } from './rules/create-rule-sets.js';
 
 /**
- * Try to organization the configuration object of `rspack`
+ * Try to organize the configuration object of `rspack`
  * @param serveMode Whether the current mode is `serve` mode.
  * @param entryMap The only single one `servedEntry` or `toBuildEntry`
  * @param overrideOptions The manually override configuration options for hps
@@ -45,12 +45,9 @@ export const loadRspackConfig = async (
   // If `mode` is not set, we will use `serveMode` to determine the mode.
   // For `serve` mode, we will use `development` mode.
   // For `build` mode, we will use `production` mode.
-  let mode: RspackOptions['mode'];
-  if (rspack.mode && rspack.mode !== 'none') {
-    mode = rspack.mode;
-  } else {
-    mode = serveMode ? 'development' : 'production';
-  }
+  const mode: RspackOptions['mode'] =
+    rspack.mode ?? (serveMode ? 'development' : 'production');
+
   const rspackConfig: RspackOptions = {
     mode,
     plugins,
