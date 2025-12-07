@@ -1,6 +1,6 @@
 {
   "name": "@hyperse/hps-srv-ts-checker",
-  "version": "0.0.2-next.11",
+  "version": "0.1.0",
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
     "type": "git",
