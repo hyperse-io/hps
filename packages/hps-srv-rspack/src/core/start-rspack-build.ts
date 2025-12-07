@@ -19,7 +19,7 @@ export const startRspackBuild = async (
 ): Promise<EvolveBuildResult> => {
   // Try to load rspack configuration
   const rspackConfig = await loadRspackConfig(
-    'production',
+    false,
     groupBuildEntry,
     evolveOptions
   );

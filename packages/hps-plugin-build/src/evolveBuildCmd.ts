@@ -6,6 +6,16 @@ export type EvolveBuildCmdContext = Omit<HpsEvolveOptions, 'projectCwd'> & {
   projectCwd?: string;
 };
 
+const modes = ['production', 'development', 'none'] as const;
+
+const Mode = (mode: (typeof modes)[number]) => {
+  if (!modes.includes(mode)) {
+    throw new Error(`Invalid mode: "${mode}"`);
+  }
+
+  return mode;
+};
+
 export const evolveBuildCmd = defineCommand<'evolve', EvolveBuildCmdContext>(
   'evolve',
   {
@@ -20,6 +30,10 @@ export const evolveBuildCmd = defineCommand<'evolve', EvolveBuildCmdContext>(
       alias: 'c',
       description: 'plugins.buildPlugin.subCommands.evolve.flags.compress',
       default: true,
+    },
+    mode: {
+      type: Mode,
+      description: 'plugins.buildPlugin.subCommands.evolve.flags.mode',
     },
     modules: {
       type: [String],
@@ -48,6 +62,7 @@ export const evolveBuildCmd = defineCommand<'evolve', EvolveBuildCmdContext>(
           projectCwd: flags.projectCwd,
           rspack: {
             minimizer: flags.compress === false ? false : undefined,
+            mode: flags.mode ? flags.mode : undefined,
           },
         }
       );
