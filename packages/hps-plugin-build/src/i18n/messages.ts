@@ -13,12 +13,14 @@ export const buildPluginMessages = defineLocaleMessages({
         evolve: {
           description:
             'Build hps application using @hyperse/hps-srv-rspack for web`',
-          example: 'hps build evolve --compress --modules home',
+          example:
+            'hps build evolve --compress --modules home --mode production',
           flags: {
             compress:
               'If true, it will be NODE_ENV=development, no minify, maybe has sourceMap',
             modules:
               'Filter you un wanted entry items, make we have best serve & debug performance',
+            mode: 'The mode configuration is used to set the build mode of Rspack to enable the default optimization strategy.',
           },
         },
       },
