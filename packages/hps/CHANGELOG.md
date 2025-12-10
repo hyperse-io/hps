@@ -1,5 +1,13 @@
 # @hyperse/hps
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @hyperse/hps-plugin-build@0.1.1
+  - @hyperse/hps-plugin-serve@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes

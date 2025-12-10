@@ -1,5 +1,11 @@
 # @hyperse/hps-srv-rspack
 
+## 0.1.1
+
+### Patch Changes
+
+- [#58](https://github.com/hyperse-io/hps/pull/58) [`5cac41c`](https://github.com/hyperse-io/hps/commit/5cac41cda9dbe9f61cbc3d1ccae515aa2de2fb54) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - chore: update @types/node to version 24.10.2 across multiple packages and enhance example single page with a new Dashboard component
+
 ## 0.1.0
 
 ### Minor Changes
