@@ -5,7 +5,7 @@ export default function Widget() {
   const [targetData,setTargetData]=useState<{
     name:string
   } | undefined>()
-  const ref=useRef<any>()
+  const ref=useRef<any>(null)
 
 
   const clickHandler=()=>{

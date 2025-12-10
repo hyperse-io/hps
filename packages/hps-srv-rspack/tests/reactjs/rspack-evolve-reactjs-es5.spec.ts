@@ -60,7 +60,7 @@ describe('evolve reactjs smoking test for each entry points', () => {
     const bundleContent = readFileSync(assets[0], 'utf-8');
     expect(
       bundleContent.includes(
-        'var r = "boolean" == typeof n || null == n ? void 0 : n.behavior;'
+        'var l = "boolean" == typeof r || null == r ? void 0 : r.behavior'
       )
     ).toBeTruthy();
   });

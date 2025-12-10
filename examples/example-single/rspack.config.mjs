@@ -24,16 +24,31 @@ const config = {
   },
   output: {
     publicPath,
-    filename: '[name].[hash].js',
-    chunkFilename: '[id].[hash].chunk.js',
-    assetModuleFilename: '[name].[hash].[ext]',
+    filename: 'bundle.js',
+    chunkFilename: 'bundle.chunk.js',
+    assetModuleFilename: 'bundle.[ext]',
     uniqueName: Math.random().toString(36).slice(2),
   },
   devtool: false,
   optimization: {
     minimize: false,
+    runtimeChunk: false,
+    splitChunks: {
+      // It is recommended to set splitChunks.name to false for production builds
+      // so that it doesn't change names unnecessarily.
+      name: false,
+      // include all types of chunks
+      // chunks: 'async',
+      chunks: 'all',
+      // 2.3841858(MB)
+      minSize: 2500000,
+      // disable vendors~loadsh.js...
+      cacheGroups: {
+        default: false,
+        defaultVendors: false,
+      },
+    },
   },
-
   resolve: {
     extensions: ['...', '.ts', '.tsx', '.css', '.less'],
   },

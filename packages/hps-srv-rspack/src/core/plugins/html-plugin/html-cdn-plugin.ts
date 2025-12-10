@@ -40,19 +40,21 @@ export class EvolveCdnPlugin {
   apply(compiler: Compiler): void {
     // Handle chunk assets while  `Compilation:before-chunk-assets`
     // https://github.com/webpack/webpack/blob/3d653290fafe385277b48e5a36807124618b9561/lib/MainTemplate.js#L58
+
     compiler.hooks.compilation.tap(this.pluginName, (compilation) => {
       compilation.hooks.runtimeModule.tap(this.pluginName, (module, chunk) => {
         const findEntryMapItem = this.entryMapItemList.find(
           (item) => item[0] === chunk.name
         );
-
         if (module.name === 'public_path' && findEntryMapItem) {
           const buf: string[] = [];
           buf.push('\n');
           buf.push(
             '// Dynamic assets path override(`@hyperse/hps-srv-rspack`) plugin-html-cdn`)'
           );
-          buf.push(getRuntimeCDNBase(this.htmlCdn, this.requireFn));
+          buf.push(
+            getRuntimeCDNBase(this.htmlCdn, this.requireFn as unknown as string)
+          );
           if (module.source?.['source'])
             module.source['source'] = Buffer.from(buf.join('\n'), 'utf-8');
         }

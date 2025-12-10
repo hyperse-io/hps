@@ -47,12 +47,12 @@
     "@armit/terminal": "^0.3.0",
     "@hyperse/hps-srv-common": "workspace:*",
     "rolldown": "^1.0.0-beta.53",
-    "type-fest": "^5.3.0"
+    "type-fest": "^5.3.1"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.5.0",
     "@hyperse/wizard": "^1.0.6",
-    "@types/node": "^24.10.1",
+    "@types/node": "^24.10.2",
     "@vitest/coverage-istanbul": "^4.0.15",
     "@vitest/ui": "^4.0.15",
     "eslint": "^9.39.1",
