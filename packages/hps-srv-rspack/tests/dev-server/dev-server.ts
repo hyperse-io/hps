@@ -14,7 +14,7 @@ const overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {
       options: {
         title: 'Home',
         favicon: {
-          href: '/favicon.ico',
+          href: '/hps_dashboard_static/favicon.ico',
           rel: 'icon',
           attributes: {
             type: 'image/x-icon',
