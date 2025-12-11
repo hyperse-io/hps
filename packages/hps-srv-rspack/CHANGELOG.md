@@ -1,5 +1,17 @@
 # @hyperse/hps-srv-rspack
 
+## 0.1.2
+
+### Patch Changes
+
+- [#60](https://github.com/hyperse-io/hps/pull/60) [`b04fb81`](https://github.com/hyperse-io/hps/commit/b04fb8155be7e901bd726d4a2862fd631a66fddc) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - feat: update favicon and logo assets for improved branding and user experience
+
+- Updated dependencies [[`b04fb81`](https://github.com/hyperse-io/hps/commit/b04fb8155be7e901bd726d4a2862fd631a66fddc), [`b7fe871`](https://github.com/hyperse-io/hps/commit/b7fe871bef1878a48bed49f5b5119713d382bd98)]:
+  - @hyperse/hps-srv-mock@0.1.1
+  - @hyperse/hps-srv-common@0.1.1
+  - @hyperse/hps-srv-rspack-plugin-postcss@0.1.1
+  - @hyperse/hps-srv-ts-checker@0.1.1
+
 ## 0.1.1
 
 ### Patch Changes
