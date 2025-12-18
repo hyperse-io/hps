@@ -9,9 +9,9 @@ const meta: MetaRecord = {
     type: 'page',
     title: 'Guide',
   },
-  config: {
+  configuration: {
     type: 'page',
-    title: 'Config',
+    title: 'Configuration',
   },
   plugins: {
     type: 'page',
@@ -22,22 +22,18 @@ const meta: MetaRecord = {
     title: 'Resources',
     items: {
       about: {
-        title: 'About',
+        title: 'About Hyperse',
         href: '/resources/about',
       },
-      releases: {
-        title: 'Releases',
-        href: '/resources/releases',
-      },
       blog: {
-        title: 'Blog',
-        href: '/resources/blog',
+        title: 'Hyperse Blog',
+        href: 'https://www.hyperse.net/blog',
       },
     },
   },
   version: {
     type: 'menu',
-    title: 'v1.0.0',
+    title: 'v0.1.2',
     items: {
       changelog: {
         title: 'Changelog',

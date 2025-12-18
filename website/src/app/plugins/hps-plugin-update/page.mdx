@@ -1,0 +1,472 @@
+---
+sidebarTitle: HPS Plugin Update
+description: A workspace dependency updater plugin for the HPS (Hyperse) build system that automates updating package dependencies across monorepo workspaces.
+---
+
+# HPS Plugin Update
+
+## Overview
+
+The HPS Plugin Update is a workspace dependency updater plugin for the HPS (Hyperse) build system. It automates the process of updating package dependencies across all packages in a monorepo workspace. The plugin provides:
+
+- **Monorepo Support**: Automatically iterates through all workspace packages using `@manypkg/get-packages`
+- **Smart Package Manager Detection**: Auto-detects Yarn vs NPM for upgrades
+- **Sensible Defaults**: Generates `.ncurc.json` configuration file on first run
+- **Caching**: Persistent cache to speed up repeated checks; can be cleared with `--force`
+- **Flexible Filtering**: Include or exclude specific packages using filters and reject patterns
+- **Deep Updates**: Optional recursive updates across workspace packages
+- **Verbose Logging**: Additional debugging information when needed
+
+This plugin is essential for maintaining up-to-date dependencies across monorepo workspaces, making it easy to keep all packages synchronized with the latest versions.
+
+## Installation
+
+The update plugin is typically included with the HPS CLI. If you need to install it separately:
+
+```sh npm2yarn
+npm install @hyperse/hps-plugin-update
+```
+
+## Usage
+
+### Basic Setup
+
+The update plugin is automatically registered in the HPS CLI. You can use it directly without additional setup:
+
+```bash
+# Update all workspace package dependencies
+hps update
+
+# Force refresh cache (slower, ensures latest info)
+hps update --force
+
+# Update with package filtering
+hps update --filter "react" "typescript"
+
+# Exclude specific packages
+hps update --reject "eslint" "prettier"
+
+# Enable verbose logging
+hps update --verbose
+
+# Run deep recursive updates
+hps update --deep
+```
+
+### Command Syntax
+
+```bash
+hps update [flags]
+```
+
+**Flags:**
+
+- `--force`: Force refresh NCU cache
+- `--filter, -f`: Include only packages matching patterns
+- `--reject, -r`: Exclude packages matching patterns
+- `--verbose`: Log additional information for debugging
+- `--deep`: Run updates recursively in current working directory
+
+## API Reference
+
+### `createUpdatePlugin`
+
+Creates and returns an update plugin instance for HPS.
+
+**Type Signature:**
+
+```typescript
+function createUpdatePlugin(): Plugin;
+```
+
+**Returns:**
+
+- **Type**: `Plugin`
+- **Description**: A configured HPS plugin that adds the `update` command.
+
+### `update` Command
+
+The internal command definition that handles the dependency update process. This command is automatically registered when using `createUpdatePlugin()`.
+
+**Type Signature:**
+
+```typescript
+defineCommand('update', options);
+```
+
+### Command Flags
+
+#### `force`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Force refresh the npm-check-updates cache. When enabled, the cache file is removed and recreated, ensuring the latest package information is fetched. This makes the update process slower but more accurate.
+
+**Usage:**
+
+```bash
+# Force refresh cache
+hps update --force
+```
+
+**Behavior:**
+
+- Removes existing cache file if present
+- Forces fresh package version checks
+- Slower execution but ensures latest information
+
+#### `filter`
+
+- **Type**: `string[]`
+- **Alias**: `f`
+- **Default**: `[]`
+- **Description**: Include only package names matching the given patterns. Supports strings, wildcards, globs, comma-or-space-delimited lists, and regex patterns. Multiple filters can be specified.
+
+**Usage:**
+
+```bash
+# Filter specific packages
+hps update --filter "react" "typescript"
+
+# Filter with wildcards
+hps update --filter "react-*" "@hyperse/*"
+
+# Filter with regex
+hps update --filter "/^react/"
+
+# Multiple filters
+hps update --filter "react" "typescript" "@hyperse/*"
+```
+
+**Pattern Rules:**
+
+- String: Exact package name match
+- Wildcard: `*` matches any characters
+- Glob: Standard glob patterns
+- Regex: Patterns starting with `/` and ending with `/`
+- Comma/space delimited: Multiple patterns in one string
+
+#### `reject`
+
+- **Type**: `string[]`
+- **Alias**: `r`
+- **Default**: `[]`
+- **Description**: Exclude packages matching the given patterns. Supports strings, wildcards, globs, comma-or-space-delimited lists, and regex patterns. Multiple reject patterns can be specified.
+
+**Usage:**
+
+```bash
+# Reject specific packages
+hps update --reject "eslint" "prettier"
+
+# Reject with wildcards
+hps update --reject "*-test" "@types/*"
+
+# Reject with regex
+hps update --reject "/^eslint/"
+
+# Multiple reject patterns
+hps update --reject "eslint" "prettier" "@types/*"
+```
+
+**Pattern Rules:**
+
+- Same pattern matching rules as `filter`
+- Packages matching reject patterns will be excluded from updates
+- Reject patterns take precedence over filter patterns
+
+#### `verbose`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Log additional information for debugging. When enabled, the plugin outputs detailed information about the update process, including package discovery, cache operations, and update decisions.
+
+**Usage:**
+
+```bash
+# Enable verbose logging
+hps update --verbose
+```
+
+**Output includes:**
+
+- Workspace package discovery details
+- Cache file operations
+- Package filtering decisions
+- Update process steps
+
+#### `deep`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Run updates recursively in the current working directory. When enabled, the plugin performs deep dependency updates, checking and updating nested dependencies in addition to direct dependencies.
+
+**Usage:**
+
+```bash
+# Enable deep updates
+hps update --deep
+```
+
+**Behavior:**
+
+- Updates direct dependencies (default behavior)
+- Also updates nested/transitive dependencies when `deep` is enabled
+- More thorough but potentially more disruptive updates
+
+### Configuration Options
+
+The update command uses configuration from `.ncurc.json` files. The plugin automatically generates a default configuration file on first run.
+
+#### Generated `.ncurc.json`
+
+On first run, the plugin generates a minimal `.ncurc.json` at the repository root if it doesn't exist:
+
+```json
+{
+  "dep": ["prod", "dev", "optional", "packageManager"],
+  "reject": []
+}
+```
+
+#### Configuration Structure
+
+**Root Configuration** (`.ncurc.json` at repo root):
+
+```typescript
+type NcuConfig = {
+  dep?: string[]; // Dependency types to update
+  reject?: string[]; // Packages to exclude
+};
+```
+
+**Nested Configuration** (`.ncurc.json` in workspace packages):
+
+- Each workspace package can have its own `.ncurc.json`
+- Nested configs override root config for that package
+- If no nested config exists, root config is used
+
+#### Configuration Options
+
+##### `dep`
+
+- **Type**: `string[]`
+- **Default**: `["prod", "dev", "optional", "packageManager"]`
+- **Description**: Dependency types to update. Valid values:
+  - `"prod"`: Production dependencies
+  - `"dev"`: Development dependencies
+  - `"optional"`: Optional dependencies
+  - `"packageManager"`: Package manager version (e.g., `engines.node`)
+
+**Example:**
+
+```json
+{
+  "dep": ["prod", "dev"]
+}
+```
+
+##### `reject`
+
+- **Type**: `string[]`
+- **Default**: `[]`
+- **Description**: Packages to exclude from updates. Uses the same pattern matching as the `--reject` flag.
+
+**Example:**
+
+```json
+{
+  "reject": ["eslint", "prettier", "@types/*"]
+}
+```
+
+### Update Process
+
+The update process follows these steps:
+
+1. **Workspace Discovery**: Scans for all workspace packages using `@manypkg/get-packages`
+2. **Configuration Loading**: Loads `.ncurc.json` from root and each workspace package
+3. **Cache Management**: Creates or refreshes cache file based on `--force` flag
+4. **Package Iteration**: Processes each workspace package in alphabetical order
+5. **Dependency Update**: Runs `npm-check-updates` for each package
+6. **Package Manager Detection**: Auto-detects Yarn or NPM and uses appropriate commands
+
+## Output
+
+The update command provides feedback during the update process:
+
+### Normal Output
+
+```
+Updating workspace packages...
+[Update progress for each package]
+```
+
+### Verbose Output
+
+When `--verbose` is enabled:
+
+```
+Discovering workspace packages...
+Found 5 packages:
+  - package-a
+  - package-b
+  - package-c
+  - package-d
+  - package-e
+
+Updating package-a...
+[Detailed update information]
+```
+
+### Cache Operations
+
+```
+Writing cache file...
+Cache file location: /path/to/cache
+```
+
+When `--force` is used:
+
+```
+Removing existing cache...
+Creating new cache...
+```
+
+### Update Results
+
+The plugin uses `npm-check-updates` which updates `package.json` files directly. The output shows:
+
+- Which packages are being updated
+- Version changes for each dependency
+- Any errors or warnings during the update process
+
+## Examples
+
+### Example: Integration in HPS CLI
+
+The update plugin is integrated into the main HPS CLI. Here's a typical update workflow:
+
+**1. Initial Setup (First Run):**
+
+```bash
+# Run update command for the first time
+hps update
+```
+
+This will:
+
+- Generate `.ncurc.json` at the repository root
+- Create cache file for faster subsequent runs
+- Update all workspace package dependencies
+
+**2. Generated `.ncurc.json`:**
+
+```json
+{
+  "dep": ["prod", "dev", "optional", "packageManager"],
+  "reject": []
+}
+```
+
+**3. Customize Configuration:**
+
+Edit `.ncurc.json` to customize update behavior:
+
+```json
+{
+  "dep": ["prod", "dev"],
+  "reject": ["eslint", "prettier", "@types/*"]
+}
+```
+
+**4. Update with Filters:**
+
+```bash
+# Update only React-related packages
+hps update --filter "react" "react-*"
+
+# Update only Hyperse packages
+hps update --filter "@hyperse/*"
+
+# Update specific packages, exclude test packages
+hps update --filter "typescript" "eslint" --reject "*-test"
+```
+
+**5. Force Cache Refresh:**
+
+```bash
+# Force refresh to get latest package versions
+hps update --force
+```
+
+**6. Deep Updates:**
+
+```bash
+# Update including nested dependencies
+hps update --deep
+```
+
+**7. Verbose Mode:**
+
+```bash
+# Get detailed update information
+hps update --verbose
+```
+
+**Expected Output:**
+
+```
+Discovering workspace packages...
+Found 3 packages:
+  - @hyperse/hps-plugin-build
+  - @hyperse/hps-plugin-serve
+  - @hyperse/hps-plugin-mock
+
+Updating @hyperse/hps-plugin-build...
+  Checking dependencies...
+  Updating package.json...
+  ✓ Updated 5 dependencies
+
+Updating @hyperse/hps-plugin-serve...
+  Checking dependencies...
+  Updating package.json...
+  ✓ Updated 3 dependencies
+
+Updating @hyperse/hps-plugin-mock...
+  Checking dependencies...
+  Updating package.json...
+  ✓ Updated 2 dependencies
+
+✓ All workspace packages updated successfully
+```
+
+**8. Workspace-Specific Configuration:**
+
+Create `.ncurc.json` in a specific workspace package to override root config:
+
+```json
+// packages/my-package/.ncurc.json
+{
+  "dep": ["prod"],
+  "reject": ["react", "react-dom"]
+}
+```
+
+This package will only update production dependencies and exclude React packages, regardless of root configuration.
+
+**9. After Updates:**
+
+After running the update command:
+
+- `package.json` files are updated with new versions
+- Lock files (e.g., `yarn.lock`, `package-lock.json`) need to be regenerated
+- Run your package manager's install command:
+
+```bash
+# If using Yarn
+yarn install
+
+# If using NPM
+npm install
+```

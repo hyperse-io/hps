@@ -102,8 +102,9 @@ export const Performance: React.FC = () => {
             Unmatched Performance
           </h2>
           <p className="max-w-2xl text-lg leading-relaxed text-gray-400">
-            Performance isn't just a feature; it's our core philosophy. HPS is
-            engineered to eliminate bottlenecks in your development lifecycle.
+            Performance isn&apos;t just a feature; it&apos;s our core
+            philosophy. HPS is engineered to eliminate bottlenecks in your
+            development lifecycle.
           </p>
         </div>
 

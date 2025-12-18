@@ -1,0 +1,210 @@
+---
+sidebarTitle: HPS Plugin Info
+description: A CLI information plugin for the HPS (Hyperse) build system. It prints a banner, CLI version, system information, and the versions of installed `@hyperse/*` dependencies.
+---
+
+# HPS Plugin Info
+
+## Overview
+
+The HPS Plugin Info is a CLI information plugin for the HPS (Hyperse) build system. It provides a comprehensive information display command that shows:
+
+- **Beautiful ASCII Banner**: Displays a styled banner with gradient effects
+- **CLI Version**: Shows the current version of the HPS CLI
+- **System Information**: Displays operating system and Node.js version details
+- **Hyperse Dependencies**: Lists all installed `@hyperse/*` dependency versions from your project
+
+This plugin is useful for quickly checking your development environment setup and verifying installed Hyperse package versions.
+
+## Installation
+
+Install the plugin using your preferred package manager:
+
+```sh npm2yarn
+npm install @hyperse/hps-plugin-info
+```
+
+## Usage
+
+### Basic Setup
+
+To use the HPS Plugin Info, you need to create and register the plugin with your HPS wizard instance:
+
+```typescript
+import { createInfoPlugin } from '@hyperse/hps-plugin-info';
+import { createWizard } from '@hyperse/wizard';
+
+const infoPlugin = createInfoPlugin({
+  cliPackage: require('./package.json'),
+});
+
+const wizard = createWizard({
+  name: 'hps',
+  // ... other wizard configuration
+});
+
+wizard.use(infoPlugin);
+```
+
+### Running the Command
+
+Once the plugin is registered, you can run the `info` command:
+
+```bash
+hps info
+```
+
+The command respects global CLI flags:
+
+- `--no-color`: Disable colored output for terminal environments that don't support colors
+
+## API Reference
+
+### `createInfoPlugin`
+
+Creates and returns an info plugin instance for HPS.
+
+**Type Signature:**
+
+```typescript
+function createInfoPlugin(options: CreateInfoPluginOptions): Plugin;
+```
+
+**Parameters:**
+
+#### `options`
+
+- **Type**: `CreateInfoPluginOptions`
+- **Required**: No
+- **Description**: Configuration options for the info plugin.
+
+##### `cliPackage`
+
+- **Type**: `PackageJson | undefined`
+- **Required**: No
+- **Default**: `undefined`
+- **Description**: The `package.json` object containing CLI metadata. If provided, the plugin will extract and display:
+  - CLI version from `package.json.version`
+  - Hyperse dependencies from `dependencies`, `devDependencies`, and `peerDependencies` fields
+
+**Type Definition:**
+
+```typescript
+type PackageJson = {
+  name: string;
+  version: string;
+  dependencies: Record<string, string>;
+  devDependencies: Record<string, string>;
+  peerDependencies: Record<string, string>;
+};
+```
+
+**Returns:**
+
+- **Type**: `Plugin`
+- **Description**: A configured HPS plugin that adds the `info` command to your CLI.
+
+## Output
+
+The `hps info` command displays information in the following sections:
+
+### 1. Banner
+
+A styled ASCII art banner displaying "hyperse" with gradient colors (gray to blue) and the tagline:
+
+```
+✨ Next-Generation CLI • Powered by Hyperse
+```
+
+### 2. CLI Version
+
+Displays the version of the HPS CLI:
+
+```
+✔ @hyperse CLI
+ @hyperse CLI Version : 0.1.0
+```
+
+The version is extracted from `options.cliPackage.version` if provided.
+
+### 3. System Information
+
+Shows operating system and Node.js runtime information:
+
+```
+✔ System Information
+ OS Version     : macOS 14.6.1
+ NodeJS Version : v20.12.2
+```
+
+- **OS Version**: Detected using `os-name` package, showing the full OS name and version
+- **NodeJS Version**: Shows `process.version` from the running Node.js process
+
+### 4. Hyperse Platform Information
+
+Lists all installed `@hyperse/*` dependencies with their versions:
+
+```
+✔ @hyperse Platform Information
+ hps-srv-common ➞ version : 1.2.3
+ hps-plugin-serve ➞ version : 0.0.2
+ hps-plugin-build ➞ version : 0.1.0
+```
+
+The plugin:
+
+- Scans `dependencies`, `devDependencies`, and `peerDependencies` from the provided `package.json`
+- Filters packages that start with `@hyperse/`
+- Displays them in a formatted list with aligned version numbers
+- Removes version prefixes (`^` and `~`) for cleaner display
+
+### Complete Output Example
+
+```
+hyperse  (styled banner with gradient)
+  ✨ Next-Generation CLI • Powered by Hyperse
+
+  ✔ @hyperse CLI
+   @hyperse CLI Version : 0.1.0
+
+  ✔ System Information
+   OS Version     : macOS 14.6.1
+   NodeJS Version : v20.12.2
+
+  ✔ @hyperse Platform Information
+   hps-srv-common ➞ version : 1.2.3
+   hps-plugin-serve ➞ version : 0.0.2
+   hps-plugin-build ➞ version : 0.1.0
+   hps-plugin-info ➞ version : 0.1.0
+```
+
+## Examples
+
+### Example : Integration in HPS Main CLI
+
+Here's how the plugin is integrated in the main HPS CLI (from `hps/src/index.ts`):
+
+```typescript
+import { createInfoPlugin } from '@hyperse/hps-plugin-info';
+import { createWizard } from '@hyperse/wizard';
+import { getCliPackage } from './utils/getCliPackage.js';
+
+// Get the CLI package.json
+const cliPackage = await getCliPackage();
+
+// Create the info plugin with package information
+const infoPlugin = createInfoPlugin({
+  cliPackage,
+});
+
+// Create wizard and register plugin
+const cli = createWizard({
+  name: 'hps',
+  // ... other configuration
+})
+  .use(infoPlugin)
+  // ... register other plugins
+  .use(/* other plugins */);
+```
+
+This allows users to run `hps info` and see comprehensive information about their HPS installation and environment.

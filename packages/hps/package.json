@@ -41,6 +41,7 @@
     "test-unit": "vitest run",
     "test-coverage": "vitest run --coverage",
     "test-unit-watch": "vitest watch --ui",
+    "test-cli": "yarn node --import=@hyperse/ts-node/register ./tests/test-cli.ts",
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
   "dependencies": {

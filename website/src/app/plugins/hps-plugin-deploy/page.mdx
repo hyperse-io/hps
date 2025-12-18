@@ -1,0 +1,423 @@
+---
+sidebarTitle: HPS Plugin Deploy
+description: A deployment plugin for the HPS (Hyperse) build system that provides deployment capabilities for web applications.
+---
+
+# HPS Plugin Deploy
+
+## Overview
+
+The HPS Plugin Deploy is a flexible deployment plugin for the HPS (Hyperse) build system that enables you to deploy static assets to various cloud storage providers. It provides:
+
+- **Multi-Provider Support**: Deploy to different cloud storage providers (currently supports Aliyun OSS)
+- **Flexible File Matching**: Use glob patterns to specify which files to deploy
+- **Progress Tracking**: Real-time upload progress with visual indicators
+- **Error Handling**: Comprehensive error handling and validation
+- **Extensible Architecture**: Easy to add custom deployment strategies
+- **File Filtering**: Include/exclude files using match and ignore patterns
+
+This plugin is essential for automating the deployment of build artifacts to CDN and cloud storage services.
+
+## Installation
+
+The deploy plugin is typically included with the HPS CLI. If you need to install it separately:
+
+```sh npm2yarn
+npm install @hyperse/hps-plugin-deploy
+```
+
+## Usage
+
+### Basic Setup
+
+The deploy plugin is automatically registered in the HPS CLI. You can use it directly without additional setup:
+
+```bash
+# Deploy to Aliyun OSS
+hps deploy --target aliyun --match "public/**/*"
+
+# Deploy with custom prefix
+hps deploy --target aliyun --prefix "v1.0.0" --match "public/**/*"
+
+# Deploy specific file types
+hps deploy --target aliyun --match "public/**/*.js" "public/**/*.css"
+
+# Deploy multiple targets
+hps deploy --target aliyun --target custom --match "public/**/*"
+```
+
+### Command Syntax
+
+```bash
+hps deploy [flags]
+```
+
+**Flags:**
+
+- `--target, -t`: Deployment target(s) - required, can specify multiple
+- `--relativePath`: Relative path from project root (default: `"public"`)
+- `--prefix`: Path prefix for uploaded files (default: `""`)
+- `--match, -m`: File patterns to match (default: `["**/*.{png,jpg,jpeg,gif,svg}"]`)
+- `--ignore, -i`: File patterns to ignore
+- `--overrideExistFile`: Whether to override existing files (default: `false`)
+
+## API Reference
+
+### `createDeployPlugin`
+
+Creates and returns a deploy plugin instance for HPS.
+
+**Type Signature:**
+
+```typescript
+function createDeployPlugin(options?: CreateDeployPluginOptions): Plugin;
+```
+
+**Parameters:**
+
+#### `options`
+
+- **Type**: `CreateDeployPluginOptions`
+- **Required**: No
+- **Description**: Configuration options for the deploy plugin.
+
+##### `deployStrategies`
+
+- **Type**: `AssetDeployStrategy[]`
+- **Required**: No
+- **Description**: Custom deploy strategies to use in addition to the default ones. The plugin includes `AliyunAssetDeployStrategy` by default. You can add custom strategies for other cloud providers.
+
+**Returns:**
+
+- **Type**: `Plugin`
+- **Description**: A configured HPS plugin that adds the `deploy` command.
+
+### Command Flags
+
+#### `target`
+
+- **Type**: `string[]`
+- **Alias**: `t`
+- **Required**: Yes
+- **Description**: The deployment target(s) to use. Multiple targets can be specified. Available targets depend on registered strategies. By default, `aliyun` is available. The target name must match the `name` property of a registered `AssetDeployStrategy`.
+
+**Usage:**
+
+```bash
+# Single target
+hps deploy --target aliyun
+
+# Multiple targets
+hps deploy --target aliyun --target custom
+```
+
+#### `relativePath`
+
+- **Type**: `string`
+- **Required**: No
+- **Default**: `"public"`
+- **Description**: The relative path from the project root directory where files to deploy are located. This path is combined with `projectCwd` to form the lookup directory.
+
+**Usage:**
+
+```bash
+hps deploy --target aliyun --relativePath dist
+```
+
+#### `prefix`
+
+- **Type**: `string`
+- **Required**: No
+- **Default**: `""`
+- **Description**: The path prefix to add to all deployed file paths. This is useful for versioning or organizing files in the cloud storage. The prefix is prepended to the relative file path.
+
+**Usage:**
+
+```bash
+# Deploy with version prefix
+hps deploy --target aliyun --prefix "v1.0.0"
+
+# Deploy with environment prefix
+hps deploy --target aliyun --prefix "production/assets"
+```
+
+#### `match`
+
+- **Type**: `string[]`
+- **Alias**: `m`
+- **Required**: No
+- **Default**: `["**/*.{png,jpg,jpeg,gif,svg}"]`
+- **Description**: Glob patterns to match files for deployment. Multiple patterns can be specified. Files matching any pattern will be included. Uses [globby](https://github.com/sindresorhus/globby) for pattern matching.
+
+**Usage:**
+
+```bash
+# Match all files
+hps deploy --target aliyun --match "public/**/*"
+
+# Match specific file types
+hps deploy --target aliyun --match "public/**/*.js" "public/**/*.css"
+
+# Match multiple patterns
+hps deploy --target aliyun --match "public/**/*.js" "public/**/*.css" "public/**/*.png"
+```
+
+#### `ignore`
+
+- **Type**: `string[]`
+- **Alias**: `i`
+- **Required**: No
+- **Description**: Glob patterns to exclude files from deployment. Files matching these patterns will be excluded even if they match the `match` patterns. Default ignore patterns are always applied:
+  - `**/__MACOSX/**`
+  - `**/*.DS_Store`
+  - `**/node_modules/**`
+  - `**/.git/**`
+
+**Usage:**
+
+```bash
+# Ignore source maps
+hps deploy --target aliyun --match "public/**/*" --ignore "**/*.map"
+
+# Ignore test files
+hps deploy --target aliyun --match "public/**/*" --ignore "**/*.test.*" "**/*.spec.*"
+```
+
+#### `overrideExistFile`
+
+- **Type**: `boolean`
+- **Required**: No
+- **Default**: `false`
+- **Description**: Whether to override existing files in the cloud storage. When `false`, existing files will be skipped. When `true`, files will be uploaded even if they already exist.
+
+**Usage:**
+
+```bash
+# Override existing files
+hps deploy --target aliyun --overrideExistFile --match "public/**/*"
+```
+
+### Deployment Strategy Interface
+
+The plugin uses a strategy pattern for deployment. Each strategy must implement the `AssetDeployStrategy` interface:
+
+```typescript
+interface AssetDeployStrategy {
+  readonly name: string;
+  init(): Promise<void>;
+  deploy(
+    filePaths: string[],
+    options: AssetDeployStrategyOptions
+  ): Promise<void>;
+}
+```
+
+#### `AssetDeployStrategyOptions`
+
+Configuration options passed to deployment strategies:
+
+- **`projectCwd`**: The project's current working directory
+- **`relativePath`**: The relative path of the cwd
+- **`logger`**: Logger instance for output
+- **`prefix`**: Prefix to add to file paths during deployment
+- **`noColor`**: Whether to disable colored output
+- **`overrideExistFile`**: Whether to override existing files
+
+## Environment Variables
+
+### Aliyun OSS Configuration
+
+For Aliyun OSS deployment, the following environment variables must be set:
+
+#### `REMOTE_CDN_BASE_URL`
+
+- **Type**: `string`
+- **Required**: Yes
+- **Description**: The base URL for the CDN where deployed files will be accessible.
+
+#### `ALIYUN_ACCESS_KEY_ID`
+
+- **Type**: `string`
+- **Required**: Yes
+- **Description**: Your Aliyun access key ID for authentication.
+
+#### `ALIYUN_ACCESS_KEY_SECRET`
+
+- **Type**: `string`
+- **Required**: Yes
+- **Description**: Your Aliyun access key secret for authentication.
+
+#### `ALIYUN_API_ENDPOINT`
+
+- **Type**: `string`
+- **Required**: Yes
+- **Description**: The Aliyun OSS API endpoint (e.g., `https://oss-cn-hangzhou.aliyuncs.com`).
+
+#### `ALIYUN_BUCKET_NAME`
+
+- **Type**: `string`
+- **Required**: Yes
+- **Description**: The name of the Aliyun OSS bucket where files will be uploaded.
+
+**Example `.env` file:**
+
+```bash
+REMOTE_CDN_BASE_URL=https://your-cdn.example.com
+ALIYUN_API_ENDPOINT=https://oss-cn-hangzhou.aliyuncs.com
+ALIYUN_ACCESS_KEY_SECRET=your_access_key_secret
+ALIYUN_ACCESS_KEY_ID=your_access_key_id
+ALIYUN_BUCKET_NAME=your_bucket_name
+```
+
+## Output
+
+The deploy command provides real-time feedback during the deployment process:
+
+### Upload Progress
+
+For each file being uploaded, a spinner is displayed:
+
+```
+[aliyun] Uploading v1.0.0/assets/main.js ✓
+[aliyun] Uploading v1.0.0/assets/style.css ✓
+[aliyun] Uploading v1.0.0/images/logo.png ✓
+```
+
+### Success Messages
+
+When a file is successfully uploaded, the spinner shows a success indicator (✓).
+
+### Warning Messages
+
+If a file is skipped (e.g., file already exists and `overrideExistFile` is `false`):
+
+```
+⚠ [aliyun] Skip uploading v1.0.0/assets/main.js
+```
+
+### Error Messages
+
+If deployment fails, error messages are displayed:
+
+```
+✗ [aliyun] Failed to upload v1.0.0/assets/main.js
+Error: Missing required Aliyun configuration...
+```
+
+### Validation Messages
+
+If no files are found to deploy:
+
+```
+⚠ No files to deploy
+```
+
+If target strategies are not found:
+
+```
+✗ No deploy strategies found for target: invalid-target, available targets: aliyun
+```
+
+## Examples
+
+### Example: Integration in HPS CLI
+
+The deploy plugin is integrated into the main HPS CLI. Here's a typical deployment workflow:
+
+**1. Set up environment variables:**
+
+```bash
+# .env file
+REMOTE_CDN_BASE_URL=https://cdn.example.com
+ALIYUN_API_ENDPOINT=https://oss-cn-hangzhou.aliyuncs.com
+ALIYUN_ACCESS_KEY_SECRET=your_secret
+ALIYUN_ACCESS_KEY_ID=your_key_id
+ALIYUN_BUCKET_NAME=your_bucket
+```
+
+**2. Build your application:**
+
+```bash
+hps build evolve
+```
+
+**3. Deploy build artifacts:**
+
+```bash
+# Deploy all files from public directory
+hps deploy --target aliyun --match "public/**/*"
+
+# Deploy with version prefix
+hps deploy --target aliyun --prefix "v1.0.0" --match "public/**/*"
+
+# Deploy only JavaScript and CSS files
+hps deploy --target aliyun --match "public/**/*.js" "public/**/*.css"
+
+# Deploy excluding source maps
+hps deploy --target aliyun --match "public/**/*" --ignore "**/*.map"
+
+# Deploy with override enabled
+hps deploy --target aliyun --overrideExistFile --match "public/**/*"
+```
+
+**Expected Output:**
+
+```
+[aliyun] Uploading v1.0.0/runtime-chunks/0.js ✓
+[aliyun] Uploading v1.0.0/runtime-chunks/1.js ✓
+[aliyun] Uploading v1.0.0/home/index.html ✓
+[aliyun] Uploading v1.0.0/home/index.css ✓
+[aliyun] Uploading v1.0.0/home/index.js ✓
+```
+
+**4. Access deployed files:**
+
+Files will be accessible at:
+
+```
+https://cdn.example.com/v1.0.0/runtime-chunks/0.js
+https://cdn.example.com/v1.0.0/home/index.html
+```
+
+### Custom Deployment Strategy
+
+You can create custom deployment strategies for other cloud providers:
+
+```typescript
+import {
+  AssetDeployStrategy,
+  AssetDeployStrategyOptions,
+} from '@hyperse/hps-plugin-deploy';
+import { createDeployPlugin } from '@hyperse/hps-plugin-deploy';
+
+class CustomDeployStrategy implements AssetDeployStrategy {
+  readonly name = 'custom';
+
+  async init(): Promise<void> {
+    // Initialize your strategy (e.g., validate environment variables)
+  }
+
+  async deploy(
+    filePaths: string[],
+    options: AssetDeployStrategyOptions
+  ): Promise<void> {
+    // Implement your deployment logic
+    for (const filePath of filePaths) {
+      // Upload file to your cloud provider
+      await this.uploadFile(filePath, options);
+    }
+  }
+
+  private async uploadFile(
+    filePath: string,
+    options: AssetDeployStrategyOptions
+  ): Promise<void> {
+    // Your upload implementation
+  }
+}
+
+// Use custom strategy
+const deployPlugin = createDeployPlugin({
+  deployStrategies: [new CustomDeployStrategy()],
+});
+```

@@ -1,11 +1,9 @@
 import type { FC, ReactNode } from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Banner, Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
-import cn from 'clsx';
-import { Terminal } from 'lucide-react';
-import { Logo } from '@/components/Icons/Logo';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -52,15 +50,13 @@ export const metadata: Metadata = {
 };
 
 const banner = (
-  <Banner dismissible={false}>🎉🎉🎉Hyperse Hps 1.0 is released.</Banner>
+  <Banner dismissible={false}>🎉🎉🎉Hyperse Hps 0.1.2 is released.</Banner>
 );
 const navbar = (
   <Navbar
     logo={
       <div className="flex items-center gap-2">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/20">
-          <Terminal className="h-6 w-6 text-white" />
-        </div>
+        <Image src="/hps/logo.svg" alt="HPS" width={48} height={48} />
         <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-xl font-bold text-transparent">
           HPS
         </span>

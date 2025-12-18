@@ -1,5 +1,5 @@
 import React from 'react';
-import { Disc, Github, Terminal, Twitter } from 'lucide-react';
+import { Icon } from '@iconify/react';
 
 export const Footer: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
         <div className="mb-12 grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <div className="mb-4 flex items-center gap-2">
-              <Terminal className="h-6 w-6 text-cyan-500" />
+              <Icon icon="mdi:terminal" className="size-6 text-cyan-500" />
               <span className="text-xl font-bold text-white">HPS</span>
             </div>
             <p className="mb-4 text-sm text-gray-500">
@@ -17,47 +17,61 @@ export const Footer: React.FC = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://github.com/hyperse-io"
+                target="_blank"
+                rel="noreferrer"
                 className="text-gray-400 transition-colors hover:text-white"
               >
-                <Github className="h-5 w-5" />
+                <Icon icon="mdi:github" className="size-6" />
               </a>
               <a
-                href="#"
+                href="https://x.com/hyperse_net"
+                target="_blank"
+                rel="noreferrer"
                 className="text-gray-400 transition-colors hover:text-white"
               >
-                <Twitter className="h-5 w-5" />
+                <Icon icon="mdi:twitter" className="size-6" />
               </a>
               <a
-                href="#"
+                href="https://facebook.com/hyperse_net"
+                target="_blank"
+                rel="noreferrer"
                 className="text-gray-400 transition-colors hover:text-white"
               >
-                <Disc className="h-5 w-5" />
+                <Icon icon="mdi:facebook" className="size-6" />
+              </a>
+              <a
+                href="https://discord.com/invite/tj3ahjXXzM"
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-400 transition-colors hover:text-white"
+              >
+                <Icon icon="mdi:discord" className="size-6" />
               </a>
             </div>
           </div>
 
           <div>
-            <h4 className="mb-4 font-semibold text-white">Product</h4>
+            <h4 className="mb-4 font-semibold text-white">Hyperse</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Features
+                <a
+                  href="https://github.com/hyperse-io"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-cyan-400"
+                >
+                  Hyperse.io
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Integrations
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Migration
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Roadmap
+                <a
+                  href="https://www.hyperse.net"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-cyan-400"
+                >
+                  Hyperse.net
                 </a>
               </li>
             </ul>
@@ -67,49 +81,59 @@ export const Footer: React.FC = () => {
             <h4 className="mb-4 font-semibold text-white">Resources</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Documentation
+                <a
+                  href="/hps/resources/about"
+                  className="transition-colors hover:text-cyan-400"
+                >
+                  About Hyperse
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  API Reference
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Community
-                </a>
-              </li>
-              <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Blog
+                <a
+                  href="https://www.hyperse.net/blog"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-cyan-400"
+                >
+                  Hyperse Blog
                 </a>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-4 font-semibold text-white">Company</h4>
+            <h4 className="mb-4 font-semibold text-white">Related Projects</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  About
+                <a
+                  href="https://hyperse-io.github.io/wizard/"
+                  className="transition-colors hover:text-cyan-400"
+                >
+                  Wizard
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Careers
+                <a
+                  href="https://github.com/hyperse-io/pipeline"
+                  className="transition-colors hover:text-cyan-400"
+                >
+                  Pipeline
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Contact
+                <a
+                  href="https://github.com/hyperse-io/ts-node"
+                  className="transition-colors hover:text-cyan-400"
+                >
+                  TS Node
                 </a>
               </li>
               <li>
-                <a href="#" className="transition-colors hover:text-cyan-400">
-                  Partners
+                <a
+                  href="https://github.com/hyperse-io/code-inspector"
+                  className="transition-colors hover:text-cyan-400"
+                >
+                  Code Inspector
                 </a>
               </li>
             </ul>
@@ -118,7 +142,7 @@ export const Footer: React.FC = () => {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
           <p className="text-sm text-gray-600">
-            © {new Date().getFullYear()} Hyperse.io. All rights reserved.
+            © {new Date().getFullYear()} Hyperse Inc. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,35 +1,126 @@
 ---
-sidebarTitle: About
-description:
-  Learn about Hyperse's history, team, and contributors, and explore how
-  open-source technologies power Hyperse's features.
+title: About Hyperse
+description: Learn about Hyperse's history, team, and contributors, and explore how open-source technologies power Hyperse's features.
 ---
 
 # About Hyperse
 
-Hyperse is an open-source full-stack development suite that provides front-end components, architecture patterns, and tech solutions. Built with `TypeScript`, `GraphQL`, and `Node.js`.
+## Introduction
 
-## Related Projects
+Hyperse is an open-source full-stack development suite that provides comprehensive front-end components, architecture patterns, and technical solutions for modern web applications. Built with cutting-edge technologies including `TypeScript`, `GraphQL`, and `Node.js`, Hyperse empowers developers to build scalable, maintainable, and high-performance web applications with ease.
 
-Hyperse is powered by these incredible open source projects:
+At the heart of Hyperse is **HPS** (Hyperse), a blazing-fast frontend build tool based on Rspack that powers the next generation of web applications. HPS delivers instant startup, lightning-fast Hot Module Replacement (HMR), and zero-config deployment, making it the ideal choice for modern web development workflows.
 
-- https://github.com/hyperse-io/hps
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-info
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-pack
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-update
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-deploy
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-serve
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-build
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-mock
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-graphqlsp
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-common
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-mock
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-rolldown
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-rspack
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-rspack-plugin-postcss
-- https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-ts-checker
+## Technology Stack & Research
+
+Hyperse is built on a modern, type-safe technology stack and actively researches and adopts the latest web technologies:
+
+### Core Technologies
+
+- **TypeScript**: Full type safety across the entire codebase, providing robust developer experience with autocompletion and compile-time error checking
+- **GraphQL**: Modern API query language for efficient data fetching and manipulation
+- **Node.js**: Server-side JavaScript runtime for building scalable backend services
+- **Rspack**: Ultra-fast Rust-based bundler with Webpack-compatible API, delivering Vite-like speed with Webpack's ecosystem compatibility
+- **React**: Popular UI library for building component-based user interfaces
+
+### Build & Development Tools
+
+- **Rspack**: Core bundling engine providing 10x faster builds compared to traditional bundlers
+- **PostCSS**: Advanced CSS processing with plugin ecosystem
+- **TypeScript Compiler**: Fast type checking service for development and CI
+- **Module Federation**: Native support for micro-frontend architectures
+
+### Research Areas
+
+Hyperse actively researches and contributes to:
+
+- **Build Performance**: Optimizing bundle sizes, compilation speed, and HMR performance
+- **Developer Experience**: Zero-config defaults, intelligent conventions, and helpful error messages
+- **Monorepo Architecture**: Workspace management, package boundaries, and dependency resolution
+- **Type Safety**: Advanced TypeScript patterns, type inference, and compile-time guarantees
+- **Modern Web Standards**: ES modules, CSS modules, and latest web APIs
+
+## Services
+
+Hyperse provides a comprehensive suite of services through the HPS ecosystem:
+
+### Development Services
+
+- **Development Server**: Fast Rspack-powered dev server with instant HMR and live reload
+- **Mock Server**: Integrated API mocking capabilities for frontend development without backend dependencies
+- **Type Checking**: Fast TypeScript type checking service for immediate feedback
+- **Hot Module Replacement**: Instant updates during development without full page reloads
+
+### Build & Deployment Services
+
+- **Production Builds**: Optimized builds with code-splitting, tree-shaking, and minification
+- **Asset Deployment**: One-click deployment to cloud storage providers (e.g., Aliyun OSS)
+- **Static Asset Serving**: Efficient serving of static files and assets
+- **Module Federation**: Support for scalable micro-frontend architectures
+
+### Developer Tools
+
+- **CLI Tools**: Comprehensive command-line interface for all development workflows
+- **Plugin System**: Extensible plugin architecture for custom functionality
+- **Workspace Management**: Monorepo support with intelligent package discovery
+- **Dependency Management**: Automated dependency updates across workspace packages
+
+## Vision
+
+Hyperse envisions a future where web development is:
+
+- **Fast by Default**: Build tools that are 10x faster, enabling developers to iterate quickly
+- **Zero Configuration**: Sensible defaults that work out of the box, with the ability to customize when needed
+- **Type Safe**: Full type safety from development to production, catching errors before they reach users
+- **Developer Friendly**: Tools that understand developer intent and provide helpful feedback
+- **Community Driven**: Open-source solutions that benefit the entire web development community
+
+Our mission is to empower developers to build the next generation of web applications by providing:
+
+- **Performance**: Ultra-fast build times and instant HMR for productive development
+- **Simplicity**: Zero-config defaults that eliminate setup complexity
+- **Flexibility**: Extensible architecture that adapts to any project needs
+- **Reliability**: Type-safe, well-tested tools that developers can trust
+- **Innovation**: Continuous research and adoption of cutting-edge web technologies
+
+## Open Source Libraries & Solutions
+
+Hyperse maintains a rich ecosystem of open-source libraries and solutions:
+
+### Core Framework
+
+- **[HPS](https://github.com/hyperse-io/hps)**: The core CLI and build tool that orchestrates all Hyperse services
+
+### Plugin Ecosystem
+
+- **[@hyperse/hps-plugin-info](https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-info)**: Display environment, dependency, and CLI information
+- **[@hyperse/hps-plugin-serve](https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-serve)**: Fast Rspack-powered development server with HMR
+- **[@hyperse/hps-plugin-build](https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-build)**: Optimized production builds with code-splitting
+- **[@hyperse/hps-plugin-mock](https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-mock)**: Standalone mock server for API development
+- **[@hyperse/hps-plugin-deploy](https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-deploy)**: Deploy artifacts to cloud storage providers
+- **[@hyperse/hps-plugin-update](https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-update)**: Update workspace package dependencies
+- **[@hyperse/hps-plugin-pack](https://github.com/hyperse-io/hps/tree/main/packages/hps-plugin-pack)**: Package and bundle utilities
+
+### Service Layer
+
+- **[@hyperse/hps-srv-rspack](https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-rspack)**: Rspack bundler integration and build services
+- **[@hyperse/hps-srv-rolldown](https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-rolldown)**: Rolldown bundler integration
+- **[@hyperse/hps-srv-mock](https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-mock)**: Mock server implementation with REST and GraphQL support
+- **[@hyperse/hps-srv-ts-checker](https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-ts-checker)**: TypeScript type checking service
+- **[@hyperse/hps-srv-common](https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-common)**: Common utilities and shared services
+- **[@hyperse/hps-srv-rspack-plugin-postcss](https://github.com/hyperse-io/hps/tree/main/packages/hps-srv-rspack-plugin-postcss)**: PostCSS integration for Rspack
+
+All packages are available on [npm](https://www.npmjs.com/org/hyperse) and source code is hosted on [GitHub](https://github.com/hyperse-io/hps).
 
 ## License
 
-The Hyperse project and themes are licensed under
-[the GPLv3 license](https://github.com/hyperse-io/hps/blob/main/LICENSE).
+The Hyperse project and all related packages are licensed under [the GPLv3 license](https://github.com/hyperse-io/hps/blob/main/LICENSE).
+
+This means you are free to:
+
+- **Use** Hyperse for any purpose, including commercial projects
+- **Modify** the source code to fit your needs
+- **Distribute** your modified versions
+- **Contribute** improvements back to the community
+
+We believe in open-source software and the power of community collaboration. By choosing GPLv3, we ensure that improvements to Hyperse benefit everyone in the community.

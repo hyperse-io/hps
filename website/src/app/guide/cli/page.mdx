@@ -1,0 +1,673 @@
+---
+icon: BrushIcon
+---
+
+# CLI Commands
+
+## Introduction
+
+The HPS (Hyperse) CLI is a next-generation command-line interface designed for modern web application development. Built on a plugin-based architecture, it provides a comprehensive toolchain for development, building, deployment, and maintenance of web applications.
+
+**Key Features:**
+
+- **Plugin Architecture**: Modular commands via first-party plugins
+- **Zero-Config Defaults**: Sensible defaults with override capability
+- **Typed Configuration**: Strongly-typed config via `defineConfig`
+- **Multi-Environment**: Works across development and production
+- **Helpful Output**: Clear logs, errors, and timing information
+- **Fast Performance**: Powered by Rspack for blazing-fast builds
+
+The CLI orchestrates plugins for development, build, deployment, updates, and diagnostics with a consistent developer experience across all commands.
+
+## Overview
+
+Run `hps --help` to see all available commands and options:
+
+```bash
+Name:     hps
+Version:  0.1.2
+Description:
+      Hps CLI
+
+Usage:
+      $ hps
+
+Commands:
+      hps help          Show help information
+      hps version       Show CLI version
+      hps completion    Provides intelligent and context-aware CLI command autocompletion based on Fig, supporting a wide range of completions for various commands and supporting both Fig and Amazon Q scenarios.
+      hps info          Show hyperse cli system information
+      hps deploy        Deploying Static Assets
+      hps update        Updating Workspace Packages
+      hps build         Building hps application
+      hps serve         Serving hps application
+      hps mock          Start a mock service
+
+Global Flags:
+          --no-color      [boolean]    Disable colored output in terminal                         (Default: false)
+          --log-level     <value>      Set log level. options: Error, Warn, Info, Debug, Verbose
+          --hps-app-env   [string]     Process env key, default: APP_ENV                          (Default: APP_ENV)
+          --hps-env-path  <string>     Process env file path
+      -p, --project-cwd   [string]     Project working directory                                  (Default: /Users/wangshunquan)
+      -h, --help          [boolean]    Show help information                                      (Default: false)
+      -v, --version       [boolean]    Show CLI version                                           (Default: false)
+```
+
+## Global Options
+
+All commands support the following global options. These flags can be used with any HPS command to customize behavior.
+
+### `--help`
+
+- **Type**: `boolean`
+- **Alias**: `-h`
+- **Default**: `false`
+- **Description**: Display help information for a command. Shows command usage, available flags, and examples.
+
+**Usage:**
+
+```bash
+# Show general help
+hps --help
+
+# Show help for specific command
+hps serve --help
+hps build --help
+```
+
+### `--version`
+
+- **Type**: `boolean`
+- **Alias**: `-v`
+- **Default**: `false`
+- **Description**: Display the CLI version number.
+
+**Usage:**
+
+```bash
+hps --version
+# Output: 0.1.2
+```
+
+### `--no-color`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Disable colored output in terminal. Useful for CI/CD environments or when terminal doesn't support colors.
+
+**Usage:**
+
+```bash
+hps info --no-color
+hps build --no-color
+```
+
+### `--log-level`
+
+- **Type**: `string`
+- **Description**: Set the log level for command output. Controls the verbosity of logging information.
+
+**Options:**
+
+- `Error`: Only error messages
+- `Warn`: Warnings and errors
+- `Info`: Informational messages, warnings, and errors (default)
+- `Debug`: Debug information and above
+- `Verbose`: All log messages including verbose details
+
+**Usage:**
+
+```bash
+# Set log level to debug
+hps serve evolve --log-level Debug
+
+# Set log level to error only
+hps build evolve --log-level Error
+```
+
+### `--hps-app-env`
+
+- **Type**: `string`
+- **Default**: `APP_ENV`
+- **Description**: Process environment variable key. Used to determine the application environment (e.g., development, production, staging). The CLI will read the value from `process.env[APP_ENV]` or the specified key.
+
+**Usage:**
+
+```bash
+# Use custom environment variable key
+hps serve evolve --hps-app-env NODE_ENV
+
+# Default behavior (uses APP_ENV)
+hps build evolve
+```
+
+### `--hps-env-path`
+
+- **Type**: `string`
+- **Description**: Process environment file path. Specifies the path to a `.env` file that will be loaded before command execution. If not specified, the CLI will look for `.env` files in the project directory.
+
+**Usage:**
+
+```bash
+# Load environment from specific file
+hps serve evolve --hps-env-path .env.development
+
+# Load from custom path
+hps build evolve --hps-env-path /path/to/.env.production
+```
+
+### `--project-cwd`
+
+- **Type**: `string`
+- **Alias**: `-p`
+- **Default**: Current working directory
+- **Description**: Project working directory. Specifies the root directory of the project. All relative paths in configuration will be resolved relative to this directory.
+
+**Usage:**
+
+```bash
+# Specify project directory
+hps serve evolve --project-cwd /path/to/project
+
+# Use alias
+hps build evolve -p /path/to/project
+```
+
+## Built-in Commands
+
+### `help`
+
+Display help information for commands.
+
+**Syntax:**
+
+```bash
+hps help [command]
+```
+
+**Description:**
+Shows help information for the CLI or a specific command. This is equivalent to using the `--help` flag.
+
+**Usage:**
+
+```bash
+# Show general help
+hps help
+
+# Show help for specific command
+hps help serve
+hps help build
+```
+
+### `version`
+
+Display the CLI version.
+
+**Syntax:**
+
+```bash
+hps version
+```
+
+**Description:**
+Prints the current version of the HPS CLI. This is equivalent to using the `--version` flag.
+
+**Usage:**
+
+```bash
+hps version
+# Output: 0.1.2
+```
+
+### `completion`
+
+Generate shell completion scripts for the HPS CLI.
+
+**Syntax:**
+
+```bash
+hps completion [shell]
+```
+
+**Description:**
+Provides intelligent and context-aware CLI command autocompletion based on Fig, supporting a wide range of completions for various commands and supporting both Fig and Amazon Q scenarios.
+
+**Usage:**
+
+```bash
+# Generate completion script for current shell
+hps completion
+
+# Generate for specific shell
+hps completion bash
+hps completion zsh
+hps completion fish
+
+# Install completion (example for bash)
+hps completion bash >> ~/.bashrc
+source ~/.bashrc
+```
+
+### `info`
+
+Display system information, CLI version, and platform dependencies.
+
+**Syntax:**
+
+```bash
+hps info
+```
+
+**Description:**
+Prints comprehensive information about the HPS CLI installation, including:
+
+- ASCII banner with Hyperse branding
+- CLI version information
+- System information (OS version, Node.js version)
+- @hyperse platform dependencies and their versions
+
+**Flags:**
+
+This command does not accept any specific flags (only global flags).
+
+**Example Output:**
+
+```bash
+  _  _  _    _   ___   ___   ___   ___   ___
+ | || | \ \ / / | _ \ | __| | _ \ / __| | __|
+ | __ |  \ V /  |  _/ | _|  |   / \__ \ | _|
+ |_||_|   |_|   |_|   |___| |_|_\ |___/ |___|
+
+
+  ✨ Next-Generation CLI • Powered by Hyperse
+
+  ✔ @hyperse CLI
+   @hyperse CLI Version : 0.1.0-next.25
+
+
+  ✔ System Information
+   OS Version     :  macOS Tahoe
+   NodeJS Version :  v22.13.1
+
+  ✔ @hyperse Platform Information
+   wizard-plugin-completion ➞ version : 1.0.3
+   wizard-plugin-version ➞ version    : 1.0.6
+   eslint-config-hyperse ➞ version    : 1.4.8
+   wizard-plugin-loader ➞ version     : 1.0.6
+   wizard-plugin-error ➞ version      : 1.0.6
+   wizard-plugin-help ➞ version       : 1.0.6
+   ...
+```
+
+**Usage:**
+
+```bash
+# Display system information
+hps info
+
+# Without colors
+hps info --no-color
+```
+
+### `serve`
+
+Start the development server with hot module replacement and optional API mocking.
+
+**Syntax:**
+
+```bash
+hps serve evolve [flags]
+```
+
+**Description:**
+Starts a development server with Rspack bundler integration, providing:
+
+- Hot Module Replacement (HMR) for instant updates
+- React Fast Refresh support
+- TypeScript type checking
+- GraphQL and REST API mocking (if configured)
+- Static page serving
+- Live reload capabilities
+
+**Flags:**
+
+#### `staticMode`
+
+- **Type**: `boolean`
+- **Alias**: `s`
+- **Default**: `false`
+- **Description**: Start the server in static mode. When enabled, serves pre-built static assets instead of running the development build process.
+
+#### `port`
+
+- **Type**: `number`
+- **Description**: The port number for the development server. If not specified, uses the port from configuration or a default port.
+
+#### `modules`
+
+- **Type**: `string[]`
+- **Alias**: `m`
+- **Default**: `[".*"]`
+- **Description**: Filter entry modules for selective loading. Supports regex patterns. Multiple modules can be specified.
+
+#### `mockFilters`
+
+- **Type**: `string[]`
+- **Default**: `[".*"]`
+- **Description**: Regex patterns for filtering mock files at serve startup. Use `!` prefix to exclude patterns.
+
+**Example Usage:**
+
+```bash
+# Start dev server for all entries
+hps serve evolve
+
+# Start with specific modules
+hps serve evolve --modules home dashboard
+
+# Start in static mode
+hps serve evolve --static-mode
+
+# Start with custom port
+hps serve evolve --port 3000
+
+# Start with mock filters
+hps serve evolve --mock-filters "api/.*" "!api/test/.*"
+```
+
+**Example Output:**
+
+```
+Serve an evolve app...
+[webpack-dev-server] Project is running at:
+[webpack-dev-server] Loopback: http://localhost:3000/
+[webpack-dev-server] On Your Network: http://192.168.1.100:3000/
+[HMR] Waiting for update signal from WDS...
+[Compiled successfully]
+✓ Serve an evolve app successfully
+```
+
+### `build`
+
+Create an optimized production build.
+
+**Syntax:**
+
+```bash
+hps build evolve [flags]
+```
+
+**Description:**
+Executes a production build using Rspack bundler, applying:
+
+- Code minification and compression
+- Tree shaking for dead code elimination
+- Code splitting with configurable chunk sizes
+- CSS extraction and optimization
+- Source map generation (optional)
+- Asset optimization
+
+**Flags:**
+
+#### `compress`
+
+- **Type**: `boolean`
+- **Alias**: `c`
+- **Default**: `true`
+- **Description**: Enable code compression and minification. When set to `false`, disables minification and may include source maps.
+
+#### `mode`
+
+- **Type**: `'production' | 'development' | 'none'`
+- **Description**: Set the build mode of Rspack. If not specified, determined by the `compress` flag.
+
+#### `modules`
+
+- **Type**: `string[]`
+- **Alias**: `m`
+- **Default**: `[".*"]`
+- **Description**: Filter entry modules for selective building. Supports regex patterns.
+
+**Example Usage:**
+
+```bash
+# Build all entries with compression
+hps build evolve
+
+# Build without compression
+hps build evolve --no-compress
+
+# Build specific modules
+hps build evolve --modules home
+
+# Build with custom mode
+hps build evolve --mode production
+```
+
+**Example Output:**
+
+```
+Building...
+[Compilation logs from Rspack]
+Building success in 1234ms
+```
+
+### `mock`
+
+Start a standalone mock server for API development.
+
+**Syntax:**
+
+```bash
+hps mock [flags]
+```
+
+**Description:**
+Starts a dedicated mock server for REST and GraphQL APIs without running the full development server. Useful for:
+
+- Backend team development
+- API contract testing
+- Frontend development without backend dependency
+- Integration testing
+
+**Flags:**
+
+#### `hostname`
+
+- **Type**: `string`
+- **Description**: The hostname for the mock server. If not specified, uses the hostname from configuration or defaults to `"dev.hps.com"`.
+
+#### `port`
+
+- **Type**: `number`
+- **Description**: The port number for the mock server. If not specified, uses the port from configuration or defaults to `4000`.
+
+#### `mockFilters`
+
+- **Type**: `string[]`
+- **Default**: `[".*"]`
+- **Description**: Regex patterns for filtering mock files at serve startup. Use `!` prefix to exclude patterns.
+
+**Example Usage:**
+
+```bash
+# Start mock server with default settings
+hps mock
+
+# Start with custom hostname and port
+hps mock --hostname "api.localhost" --port 3001
+
+# Start with mock file filters
+hps mock --mock-filters "api/.*" "!api/test/.*"
+```
+
+**Example Output:**
+
+```
+Start an mock service on "http://dev.hps.com:4000"
+```
+
+### `deploy`
+
+Deploy build artifacts to cloud storage providers.
+
+**Syntax:**
+
+```bash
+hps deploy [flags]
+```
+
+**Description:**
+Uploads build artifacts to cloud storage providers (currently supports Aliyun OSS). Supports:
+
+- Recursive directory upload
+- MIME type detection
+- Progress indication with visual feedback
+- Custom path prefixes for versioning
+- File filtering with glob patterns
+
+**Flags:**
+
+#### `target`
+
+- **Type**: `string[]`
+- **Alias**: `t`
+- **Required**: Yes
+- **Description**: The deployment target(s). Multiple targets can be specified. Available targets depend on registered strategies (default: `aliyun`).
+
+#### `relativePath`
+
+- **Type**: `string`
+- **Default**: `"public"`
+- **Description**: The relative path from project root where files to deploy are located.
+
+#### `prefix`
+
+- **Type**: `string`
+- **Default**: `""`
+- **Description**: Path prefix to add to all deployed file paths. Useful for versioning or organizing files.
+
+#### `match`
+
+- **Type**: `string[]`
+- **Alias**: `m`
+- **Default**: `["**/*.{png,jpg,jpeg,gif,svg}"]`
+- **Description**: Glob patterns to match files for deployment.
+
+#### `ignore`
+
+- **Type**: `string[]`
+- **Alias**: `i`
+- **Description**: Glob patterns to exclude files from deployment.
+
+#### `overrideExistFile`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Whether to override existing files in cloud storage.
+
+**Example Usage:**
+
+```bash
+# Deploy to Aliyun OSS
+hps deploy --target aliyun --match "public/**/*"
+
+# Deploy with version prefix
+hps deploy --target aliyun --prefix "v1.0.0" --match "public/**/*"
+
+# Deploy excluding source maps
+hps deploy --target aliyun --match "public/**/*" --ignore "**/*.map"
+```
+
+**Example Output:**
+
+```
+[aliyun] Uploading v1.0.0/runtime-chunks/0.js ✓
+[aliyun] Uploading v1.0.0/runtime-chunks/1.js ✓
+[aliyun] Uploading v1.0.0/home/index.html ✓
+```
+
+### `update`
+
+Update workspace dependencies to their latest versions.
+
+**Syntax:**
+
+```bash
+hps update [flags]
+```
+
+**Description:**
+Updates package dependencies using `npm-check-updates` to find and upgrade to the latest versions. In monorepo setups, processes all workspace packages automatically.
+
+**Features:**
+
+- Detects workspace packages using `@manypkg/get-packages`
+- Updates `package.json` files directly
+- Supports both shallow (direct) and deep (recursive) updates
+- Preserves package manager lockfiles
+- Configurable filtering and exclusion patterns
+
+**Flags:**
+
+#### `force`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Force refresh the npm-check-updates cache. Removes existing cache and fetches latest package information.
+
+#### `filter`
+
+- **Type**: `string[]`
+- **Alias**: `f`
+- **Default**: `[]`
+- **Description**: Include only packages matching the given patterns. Supports strings, wildcards, globs, comma-or-space-delimited lists, and regex patterns.
+
+#### `reject`
+
+- **Type**: `string[]`
+- **Alias**: `r`
+- **Default**: `[]`
+- **Description**: Exclude packages matching the given patterns. Supports the same pattern formats as `filter`.
+
+#### `verbose`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Log additional information for debugging, including package discovery, cache operations, and update decisions.
+
+#### `deep`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Run updates recursively in the current working directory. Updates nested/transitive dependencies in addition to direct dependencies.
+
+**Example Usage:**
+
+```bash
+# Update all dependencies
+hps update
+
+# Force refresh cache
+hps update --force
+
+# Update specific packages
+hps update --filter "react" "typescript"
+
+# Exclude specific packages
+hps update --reject "eslint" "prettier"
+
+# Deep recursive updates
+hps update --deep
+
+# Verbose output
+hps update --verbose
+```
+
+**Example Output:**
+
+```
+Updating workspace packages...
+[Update progress for each package]
+✓ All workspace packages updated successfully
+```
