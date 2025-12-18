@@ -56,10 +56,8 @@ const navbar = (
   <Navbar
     logo={
       <div className="flex items-center gap-2">
-        <Image src="/hps/logo.svg" alt="HPS" width={48} height={48} />
-        <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-xl font-bold text-transparent">
-          HPS
-        </span>
+        <Image src="/hps/logo.svg" alt="HPS" width={24} height={24} />
+        <span className="text-xl font-bold text-white">HPS</span>
       </div>
     }
     projectLink="https://github.com/hyperse-io/hps"

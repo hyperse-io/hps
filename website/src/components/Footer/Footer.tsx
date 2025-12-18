@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
         <div className="mb-12 grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <div className="mb-4 flex items-center gap-2">
-              <Image src="/hps/logo.svg" alt="HPS" width={36} height={36} />
+              <Image src="/hps/logo.svg" alt="HPS" width={24} height={24} />
               <span className="text-xl font-bold text-white">HPS</span>
             </div>
             <p className="mb-4 text-sm text-gray-500">
