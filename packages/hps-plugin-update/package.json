@@ -46,21 +46,21 @@
     "@hyperse/config-loader": "^1.0.7",
     "@manypkg/get-packages": "^3.1.0",
     "has-yarn": "^4.0.0",
-    "npm-check-updates": "^19.1.2",
+    "npm-check-updates": "^19.2.0",
     "package-up": "^5.0.0"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.5.0",
     "@hyperse/wizard": "^1.0.6",
-    "@types/node": "^24.10.2",
-    "@vitest/coverage-istanbul": "^4.0.15",
-    "@vitest/ui": "^4.0.15",
-    "eslint": "^9.39.1",
+    "@types/node": "^25.0.3",
+    "@vitest/coverage-istanbul": "^4.0.16",
+    "@vitest/ui": "^4.0.16",
+    "eslint": "^9.39.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.1.2",
     "typescript": "^5.9.3",
-    "vite-tsconfig-paths": "5.1.4",
-    "vitest": "^4.0.15"
+    "vite-tsconfig-paths": "6.0.2",
+    "vitest": "^4.0.16"
   },
   "peerDependencies": {
     "@hyperse/wizard": ">=1.0.6"

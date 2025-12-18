@@ -50,16 +50,16 @@
     "@hyperse/eslint-config-hyperse": "^1.5.0",
     "@hyperse/wizard": "^1.0.6",
     "@types/mime-types": "^3.0.1",
-    "@types/node": "^24.10.2",
-    "@vitest/coverage-istanbul": "^4.0.15",
-    "@vitest/ui": "^4.0.15",
-    "eslint": "^9.39.1",
+    "@types/node": "^25.0.3",
+    "@vitest/coverage-istanbul": "^4.0.16",
+    "@vitest/ui": "^4.0.16",
+    "eslint": "^9.39.2",
     "msw": "^2.12.4",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.1.2",
     "typescript": "^5.9.3",
-    "vite-tsconfig-paths": "5.1.4",
-    "vitest": "^4.0.15"
+    "vite-tsconfig-paths": "6.0.2",
+    "vitest": "^4.0.16"
   },
   "peerDependencies": {
     "@hyperse/wizard": ">=1.0.6"
