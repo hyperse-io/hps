@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Icon } from '@iconify/react';
 
 export const Footer: React.FC = () => {
@@ -8,7 +9,7 @@ export const Footer: React.FC = () => {
         <div className="mb-12 grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <div className="mb-4 flex items-center gap-2">
-              <Icon icon="mdi:terminal" className="size-6 text-cyan-500" />
+              <Image src="/hps/logo.svg" alt="HPS" width={36} height={36} />
               <span className="text-xl font-bold text-white">HPS</span>
             </div>
             <p className="mb-4 text-sm text-gray-500">
