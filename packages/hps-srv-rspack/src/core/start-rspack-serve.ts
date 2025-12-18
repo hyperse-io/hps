@@ -56,7 +56,7 @@ export const startRspackServe = async (
   const servePublicPath = urlJoin(devServerHostUri, ['public']);
 
   const rspackConfig = await loadRspackConfig(
-    'development',
+    true,
     devEvolveEntryMap,
     mergeOptions(evolveOptions, {
       rspack: {

@@ -1,0 +1,59 @@
+export const Logo = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 103.104038 155.826734"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <filter
+          x="-6.8%"
+          y="-4.9%"
+          width="113.6%"
+          height="119.7%"
+          filterUnits="objectBoundingBox"
+          id="filter-1"
+        >
+          <feOffset
+            dx="0"
+            dy="14"
+            in="SourceAlpha"
+            result="shadowOffsetOuter1"
+          ></feOffset>
+          <feColorMatrix
+            values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0"
+            type="matrix"
+            in="shadowOffsetOuter1"
+            result="shadowMatrixOuter1"
+          ></feColorMatrix>
+          <feMerge>
+            <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+            <feMergeNode in="SourceGraphic"></feMergeNode>
+          </feMerge>
+        </filter>
+      </defs>
+      <g
+        id="页面-1"
+        stroke="none"
+        stroke-width="1"
+        fill="none"
+        fill-rule="evenodd"
+      >
+        <g id="编组-20备份-3" fill="#FFFFFF" filter="url(#filter-1)">
+          <path
+            d="M0,10.4277347 L1.04835027,105.902802 C45.5371585,129.85209 67.7815626,141.826734 67.7815626,141.826734 C67.7815626,141.826734 66.8789991,88.9823816 66.8789991,88.9823816 C66.8789991,88.9823816 58.7529893,84.4169284 42.5009696,75.2860219 C42.8920003,91.6921147 43.0875156,99.8951611 43.0875156,99.8951611 C43.0875156,99.8951611 37.1216142,96.6234198 25.1898114,90.0799372 C24.0477062,45.578297 23.7621799,23.5011967 24.3332325,23.8486363 C24.9042851,24.196076 16.7932076,19.7224421 0,10.4277347 Z"
+            id="路径-65"
+          ></path>
+          <path
+            d="M35.3224757,0 L36.370826,95.4750674 C80.8596342,119.424355 103.104038,131.398999 103.104038,131.398999 C103.104038,131.398999 102.201475,78.5546469 102.201475,78.5546469 C102.201475,78.5546469 94.075465,73.9891937 77.8234454,64.8582872 C78.214476,81.26438 78.4099914,89.4674264 78.4099914,89.4674264 C78.4099914,89.4674264 72.4440899,86.1956851 60.5122871,79.6522025 L59.6557082,13.4209016 L35.3224757,0 Z"
+            id="路径-65"
+            transform="translate(69.2133, 65.6995) scale(-1, -1) translate(-69.2133, -65.6995)"
+          ></path>
+        </g>
+      </g>
+    </svg>
+  );
+};

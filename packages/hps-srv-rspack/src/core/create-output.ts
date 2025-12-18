@@ -28,6 +28,9 @@ export const createOutput = async (
       ? await rspack.output.outputDir()
       : rspack.output?.outputDir || 'public';
 
+  const { uniqueName = entryItem[0], ...otherEntryOutputOptions } =
+    entryItemOption.options?.output || {};
+
   const rspackOutput: Output = {
     // Formatting devtool sourcemap template file.
     devtoolModuleFilenameTemplate: ({ namespace, resourcePath }) => {
@@ -50,8 +53,10 @@ export const createOutput = async (
     // hotUpdateMainFilename: '[runtime].[fullhash].hot-update.json',
     // The filename of non-entry chunks as relative path inside the output.path directory.
     chunkFilename: assertChunkFilename(evolveOptions, entryItem),
+    // A unique name of the Rspack build to avoid multiple Rspack runtimes to conflict when using globals.
+    uniqueName: serveMode ? uniqueName : undefined,
     // Extends / overrides the default output configuration
-    ...(entryItemOption.options?.output as Output),
+    ...otherEntryOutputOptions,
   };
   return rspackOutput;
 };

@@ -23,6 +23,13 @@ export const createDefineVariablesPlugins = (
         publicEnvs[`process.env.${key}`] = JSON.stringify(processEnv[key]);
       });
   }
+
+  if (rspack.mode && rspack.mode !== 'none') {
+    // If the mode is development, set the NODE_ENV to development
+    // If the mode is production, set the NODE_ENV to production
+    publicEnvs[`process.env.NODE_ENV`] = JSON.stringify(rspack.mode);
+  }
+
   return [
     new DefinePlugin({
       'process.env.HPS_PUBLIC_SERVE_MODE': JSON.stringify(serveMode),

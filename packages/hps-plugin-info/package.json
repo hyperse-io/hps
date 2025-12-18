@@ -1,6 +1,6 @@
 {
   "name": "@hyperse/hps-plugin-info",
-  "version": "0.1.0-next.18",
+  "version": "0.1.0",
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
     "type": "git",
@@ -49,15 +49,15 @@
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.5.0",
     "@hyperse/wizard": "^1.0.6",
-    "@types/node": "^24.10.1",
-    "@vitest/coverage-istanbul": "^4.0.14",
-    "@vitest/ui": "^4.0.14",
+    "@types/node": "^24.10.2",
+    "@vitest/coverage-istanbul": "^4.0.15",
+    "@vitest/ui": "^4.0.15",
     "eslint": "^9.39.1",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.1.2",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "5.1.4",
-    "vitest": "^4.0.14"
+    "vitest": "^4.0.15"
   },
   "peerDependencies": {
     "@hyperse/wizard": ">=1.0.6"

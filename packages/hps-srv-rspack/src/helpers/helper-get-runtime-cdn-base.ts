@@ -1,4 +1,4 @@
-export const getRuntimeCDNBase = (htmlCdn: string, requireFn = '') => {
+export const getRuntimeCDNBase = (htmlCdn: string, requireFn?: string) => {
   const result: string[] = [
     `
   (function () {

@@ -64,6 +64,9 @@ describe('test cmd', async () => {
     expect(hasResult).toContain(
       '-m, --modules   [value]      Filter you un wanted entry items, make we have best serve & debug performance'
     );
+    expect(hasResult).toContain(
+      '    --mode      <value>      The mode configuration is used to set the build mode of Rspack to enable the default optimization strategy.'
+    );
 
     printer.mockClear();
     await cli.parse(['serve', 'evolve', '-h']);

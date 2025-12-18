@@ -17,6 +17,18 @@ export interface RspackEntryObject {
 export interface HpsEvolveRspackOptions
   extends Pick<Configuration, 'infrastructureLogging'> {
   /**
+   * The mode configuration is used to set the build mode of Rspack to enable the default optimization strategy.
+   *
+   * If not set, it will be determined by the `serveMode` parameter.
+   * For `serve` mode, it will be `development`.
+   * For `build` mode, it will be `production`.
+   *
+   *
+   * @type 'production' | 'development' | 'none'
+   * @default 'production'
+   */
+  mode?: Configuration['mode'];
+  /**
    * The config options of all rule set loaders.
    */
   loader: RuleSetLoaderOptions;
