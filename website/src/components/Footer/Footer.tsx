@@ -108,6 +108,8 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="https://hyperse-io.github.io/wizard/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="transition-colors hover:text-cyan-400"
                 >
                   Wizard
@@ -116,6 +118,8 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="https://github.com/hyperse-io/pipeline"
+                  target="_blank"
+                  rel="noreferrer"
                   className="transition-colors hover:text-cyan-400"
                 >
                   Pipeline
@@ -124,6 +128,8 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="https://github.com/hyperse-io/ts-node"
+                  target="_blank"
+                  rel="noreferrer"
                   className="transition-colors hover:text-cyan-400"
                 >
                   TS Node
@@ -132,6 +138,8 @@ export const Footer: React.FC = () => {
               <li>
                 <a
                   href="https://github.com/hyperse-io/code-inspector"
+                  target="_blank"
+                  rel="noreferrer"
                   className="transition-colors hover:text-cyan-400"
                 >
                   Code Inspector
