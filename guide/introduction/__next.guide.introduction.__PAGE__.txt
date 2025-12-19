@@ -1,21 +1,22 @@
 1:"$Sreact.fragment"
-2:I[355169,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"TOCProvider"]
-3:I[700769,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"Sidebar"]
-4:I[347486,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"ClientWrapper"]
-d:I[763894,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"HeadingAnchor"]
-e:I[190232,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"Mermaid"]
-f:I[897367,["/hps/_next/static/chunks/d96012bcfc98706a.js","/hps/_next/static/chunks/f6bc5d34ba2276c8.js"],"OutletBoundary"]
-10:"$Sreact.suspense"
-5:T89c,---
+2:I[55169,["/hps/_next/static/chunks/85c6c707ba44596e.js","/hps/_next/static/chunks/61314e1dfe4dcad6.js","/hps/_next/static/chunks/0911fd0eb0d39021.js","/hps/_next/static/chunks/202dd25156174745.js","/hps/_next/static/chunks/6f5debbbfc06c217.js","/hps/_next/static/chunks/beff0684b6368ab7.js","/hps/_next/static/chunks/9211e2614554bdbd.js"],"TOCProvider"]
+3:I[769,["/hps/_next/static/chunks/85c6c707ba44596e.js","/hps/_next/static/chunks/61314e1dfe4dcad6.js","/hps/_next/static/chunks/0911fd0eb0d39021.js","/hps/_next/static/chunks/202dd25156174745.js","/hps/_next/static/chunks/6f5debbbfc06c217.js","/hps/_next/static/chunks/beff0684b6368ab7.js","/hps/_next/static/chunks/9211e2614554bdbd.js"],"Sidebar"]
+4:I[47486,["/hps/_next/static/chunks/85c6c707ba44596e.js","/hps/_next/static/chunks/61314e1dfe4dcad6.js","/hps/_next/static/chunks/0911fd0eb0d39021.js","/hps/_next/static/chunks/202dd25156174745.js","/hps/_next/static/chunks/6f5debbbfc06c217.js","/hps/_next/static/chunks/beff0684b6368ab7.js","/hps/_next/static/chunks/9211e2614554bdbd.js"],"ClientWrapper"]
+6:I[63894,["/hps/_next/static/chunks/85c6c707ba44596e.js","/hps/_next/static/chunks/61314e1dfe4dcad6.js","/hps/_next/static/chunks/0911fd0eb0d39021.js","/hps/_next/static/chunks/202dd25156174745.js","/hps/_next/static/chunks/6f5debbbfc06c217.js","/hps/_next/static/chunks/beff0684b6368ab7.js","/hps/_next/static/chunks/9211e2614554bdbd.js"],"HeadingAnchor"]
+c:I[5500,["/hps/_next/static/chunks/85c6c707ba44596e.js","/hps/_next/static/chunks/61314e1dfe4dcad6.js","/hps/_next/static/chunks/0911fd0eb0d39021.js","/hps/_next/static/chunks/202dd25156174745.js","/hps/_next/static/chunks/6f5debbbfc06c217.js","/hps/_next/static/chunks/beff0684b6368ab7.js","/hps/_next/static/chunks/9211e2614554bdbd.js"],"Image"]
+d:I[97367,["/hps/_next/static/chunks/ff1a16fafef87110.js","/hps/_next/static/chunks/5f2b72be5e6f08ea.js"],"OutletBoundary"]
+e:"$Sreact.suspense"
+5:T59a,---
 asIndexPage: true
 ---
 
+import Image from 'next/image';
 import { compileMdx } from 'nextra/compile';
 import { MDXRemote } from 'nextra/mdx-remote';
 
 # Introduction
 
-HPS (@hyperse-io/hps) is the next-generation build tool designed for modern web apps. Built on Rspack, it delivers instant startup, lightning-fast HMR, and zero-config deployment.
+HPS (@hyperse-io/hps) is the next-generation build tool designed for modern web apps. Built on Rspack, it delivers instant startup, lightning-fast HMR, and minimal-config deployment.
 
 ## Three-Tier Architecture
 
@@ -31,47 +32,16 @@ Each layer has well-defined responsibilities and dependencies flow downward: CLI
 
 ### Layer Interaction Diagram
 
-```mermaid
-graph TB
-    CLI["@hyperse/hps<br/>createWizard()"]
-
-    subgraph "Plugin Layer"
-        BUILD["createBuildPlugin()"]
-        SERVE["createServePlugin()"]
-        MOCK["createMockPlugin()"]
-        DEPLOY["createDeployPlugin()"]
-        UPDATE["createUpdatePlugin()"]
-        INFO["createInfoPlugin()"]
-    end
-
-    subgraph "Service Layer"
-        RSPACK["hps-srv-rspack<br/>loadRspackConfig()<br/>RspackDevServerBuilder"]
-        MOCK_SRV["hps-srv-mock<br/>GraphqlMockManager<br/>defineGraphqlMock()"]
-        TS_CHECKER["hps-srv-ts-checker<br/>ts-checker-rspack-plugin"]
-        COMMON["hps-srv-common<br/>commonLogger<br/>requireResolve()"]
-    end
-
-    CLI --> BUILD
-    CLI --> SERVE
-    CLI --> MOCK
-    CLI --> DEPLOY
-    CLI --> UPDATE
-    CLI --> INFO
-
-    BUILD --> RSPACK
-    SERVE --> RSPACK
-    SERVE --> MOCK_SRV
-    MOCK --> MOCK_SRV
-
-    RSPACK --> TS_CHECKER
-    RSPACK --> COMMON
-    MOCK_SRV --> COMMON
-```0:{"buildId":"5fk2bM6qY1wiPMs3pzKVJ","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$L2",null,{"value":[{"value":"Three-Tier Architecture","id":"three-tier-architecture","depth":2},{"value":"Layer Interaction Diagram","id":"layer-interaction-diagram","depth":3}],"children":[["$","$L3",null,{}],["$","$L4",null,{"metadata":{"asIndexPage":true,"title":"Introduction","filePath":"src/app/guide/introduction/page.mdx","timestamp":1766127261000},"sourceCode":"$5","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Introduction","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"HPS (@hyperse-io/hps) is the next-generation build tool designed for modern web apps. Built on Rspack, it delivers instant startup, lightning-fast HMR, and zero-config deployment."}],"\n",["$","h2",null,{"id":"three-tier-architecture","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Three-Tier Architecture","$L6"]}],"\n","$L7","\n","$L8","\n","$L9","\n","$La","\n","$Lb"]}]]}]]}]}],null,"$Lc"]}],"loading":null,"isPartial":false}
-6:["$","$Ld",null,{"id":"three-tier-architecture"}]
-7:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The HPS system follows a clear separation of concerns across three architectural layers:"}]
-8:["$","table",null,{"className":"x:block x:overflow-x-auto nextra-scrollbar x:not-first:mt-[1.25em] x:p-0","children":[["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"children":"Layer","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Purpose","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Package Pattern","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Examples","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]}],["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","td",null,{"children":["$","strong",null,{"children":"CLI"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"User interface, command orchestration","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":["$","strong",null,{"children":"@hyperse/hps"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Core CLI, command parsing","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":["$","strong",null,{"children":"Plugin"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Feature implementation","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":["$","strong",null,{"children":"@hyperse/hps-plugin-*"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"build, serve, mock, deploy, update, info, pack","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":["$","strong",null,{"children":"Service"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Technical implementation","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":["$","strong",null,{"children":"@hyperse/hps-srv-*"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"rspack, rolldown, mock, ts-checker, common","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]]}]]}]
-9:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Each layer has well-defined responsibilities and dependencies flow downward: CLI depends on Plugins, Plugins depend on Services."}]
-a:["$","h3",null,{"id":"layer-interaction-diagram","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Layer Interaction Diagram",["$","$Ld",null,{"id":"layer-interaction-diagram"}]]}]
-b:["$","$Le",null,{"chart":"graph TB\\n    CLI[\"@hyperse/hps<br/>createWizard()\"]\\n\\n    subgraph \"Plugin Layer\"\\n        BUILD[\"createBuildPlugin()\"]\\n        SERVE[\"createServePlugin()\"]\\n        MOCK[\"createMockPlugin()\"]\\n        DEPLOY[\"createDeployPlugin()\"]\\n        UPDATE[\"createUpdatePlugin()\"]\\n        INFO[\"createInfoPlugin()\"]\\n    end\\n\\n    subgraph \"Service Layer\"\\n        RSPACK[\"hps-srv-rspack<br/>loadRspackConfig()<br/>RspackDevServerBuilder\"]\\n        MOCK_SRV[\"hps-srv-mock<br/>GraphqlMockManager<br/>defineGraphqlMock()\"]\\n        TS_CHECKER[\"hps-srv-ts-checker<br/>ts-checker-rspack-plugin\"]\\n        COMMON[\"hps-srv-common<br/>commonLogger<br/>requireResolve()\"]\\n    end\\n\\n    CLI --> BUILD\\n    CLI --> SERVE\\n    CLI --> MOCK\\n    CLI --> DEPLOY\\n    CLI --> UPDATE\\n    CLI --> INFO\\n\\n    BUILD --> RSPACK\\n    SERVE --> RSPACK\\n    SERVE --> MOCK_SRV\\n    MOCK --> MOCK_SRV\\n\\n    RSPACK --> TS_CHECKER\\n    RSPACK --> COMMON\\n    MOCK_SRV --> COMMON"}]
-c:["$","$Lf",null,{"children":["$","$10",null,{"name":"Next.MetadataOutlet","children":"$@11"}]}]
-11:null
+<Image
+  src="/hps/framework.svg"
+  alt="HPS Framework"
+  width={1200}
+  height={600}
+  style={{ width: '100%', height: 'auto' }}
+/>0:{"buildId":"BE_qfIBTxQCL5CWyhOouc","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$L2",null,{"value":[{"value":"Three-Tier Architecture","id":"three-tier-architecture","depth":2},{"value":"Layer Interaction Diagram","id":"layer-interaction-diagram","depth":3}],"children":[["$","$L3",null,{}],["$","$L4",null,{"metadata":{"asIndexPage":true,"title":"Introduction","filePath":"src/app/guide/introduction/page.mdx","timestamp":1766137926000},"sourceCode":"$5","children":[["$","div",null,{"id":"nextra-skip-nav"}],["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Introduction","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"HPS (@hyperse-io/hps) is the next-generation build tool designed for modern web apps. Built on Rspack, it delivers instant startup, lightning-fast HMR, and minimal-config deployment."}],"\n",["$","h2",null,{"id":"three-tier-architecture","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Three-Tier Architecture",["$","$L6",null,{"id":"three-tier-architecture"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The HPS system follows a clear separation of concerns across three architectural layers:"}],"\n",["$","table",null,{"className":"x:block x:overflow-x-auto nextra-scrollbar x:not-first:mt-[1.25em] x:p-0","children":[["$","thead",null,{"children":["$","tr",null,{"children":[["$","th",null,{"children":"Layer","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Purpose","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Package Pattern","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}],["$","th",null,{"children":"Examples","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:font-semibold x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]}],"$L7"]}],"\n","$L8","\n","$L9","\n","$La"]}]]}]]}]}],null,"$Lb"]}],"loading":null,"isPartial":false}
+7:["$","tbody",null,{"children":[["$","tr",null,{"children":[["$","td",null,{"children":["$","strong",null,{"children":"CLI"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"User interface, command orchestration","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":["$","strong",null,{"children":"@hyperse/hps"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Core CLI, command parsing","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":["$","strong",null,{"children":"Plugin"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Feature implementation","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":["$","strong",null,{"children":"@hyperse/hps-plugin-*"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"build, serve, mock, deploy, update, info, pack","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}],["$","tr",null,{"children":[["$","td",null,{"children":["$","strong",null,{"children":"Service"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"Technical implementation","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":["$","strong",null,{"children":"@hyperse/hps-srv-*"}],"className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}],["$","td",null,{"children":"rspack, rolldown, mock, ts-checker, common","className":"x:m-0 x:border x:border-gray-300 x:px-4 x:py-2 x:dark:border-gray-600"}]],"className":"x:m-0 x:border-t x:border-gray-300 x:p-0 x:dark:border-gray-600 x:even:bg-gray-100 x:even:dark:bg-gray-600/20"}]]}]
+8:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Each layer has well-defined responsibilities and dependencies flow downward: CLI depends on Plugins, Plugins depend on Services."}]
+9:["$","h3",null,{"id":"layer-interaction-diagram","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Layer Interaction Diagram",["$","$L6",null,{"id":"layer-interaction-diagram"}]]}]
+a:["$","$Lc",null,{"src":"/hps/framework.svg","alt":"HPS Framework","width":1200,"height":600,"style":{"width":"100%","height":"auto"}}]
+b:["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]
+f:null
