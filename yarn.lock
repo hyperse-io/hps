@@ -2135,6 +2135,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dimjs/lang@npm:2.1.1":
+  version: 2.1.1
+  resolution: "@dimjs/lang@npm:2.1.1"
+  checksum: 10c0/e548ecbbd63475b5932e210062f3af2c865ebe0a4c713b8398cc7cf1a28f1acf34ad5fb368c0099d87cb541d37cacf76b6aded8eec60d2da313c2d7a08ef12ea
+  languageName: node
+  linkType: hard
+
+"@dimjs/utils@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@dimjs/utils@npm:2.1.2"
+  dependencies:
+    "@dimjs/lang": "npm:2.1.1"
+  checksum: 10c0/688ffac234bb214e3988f45219b243e33d03ce8be90a4bb0e6fa11dfa91ee0f683ab2bd327eda9788bbe3f2c574c4f8c9fe267b78ce8f824e2a16a6d996daf10
+  languageName: node
+  linkType: hard
+
 "@discoveryjs/json-ext@npm:0.5.7, @discoveryjs/json-ext@npm:^0.5.7":
   version: 0.5.7
   resolution: "@discoveryjs/json-ext@npm:0.5.7"
@@ -5853,6 +5869,7 @@ __metadata:
     "@changesets/changelog-github": "npm:^0.5.2"
     "@commitlint/cli": "npm:^20.2.0"
     "@commitlint/config-conventional": "npm:^20.2.0"
+    "@dimjs/utils": "npm:^2.1.2"
     "@heroui/react": "npm:^2.8.6"
     "@hyperse/eslint-config-hyperse": "npm:^1.5.0"
     "@hyperse/next-config": "npm:^1.0.7"

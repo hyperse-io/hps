@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Banner, Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
+import { Provider } from '@/components/Provider';
+import { fetchReleaseVersion } from '@/services';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -49,10 +51,14 @@ export const metadata: Metadata = {
   },
 };
 
-const banner = (
-  <Banner dismissible={false}>🎉🎉🎉Hyperse Hps 0.1.2 is released.</Banner>
-);
-const navbar = (
+const BannerComponent = ({ version }: { version: string }) =>
+  version ? (
+    <Banner dismissible={false}>
+      🎉🎉🎉Hyperse Hps {version} is released.
+    </Banner>
+  ) : null;
+
+const NavbarComponent = () => (
   <Navbar
     logo={
       <div className="flex items-center gap-2">
@@ -63,35 +69,20 @@ const navbar = (
     projectLink="https://github.com/hyperse-io/hps"
   />
 );
-const footer = (
-  <Footer className="bg-[rgba(255, 255, 255, 0.05)] flex-col items-center md:items-start">
-    <a
-      className="x:focus-visible:nextra-focus flex items-center gap-1"
-      target="_blank"
-      rel="noreferrer"
-      title="Hyperse on GitHub"
-      href="https://github.com/hyperse-io"
-    >
-      Powered by Hyperse
-    </a>
-    <p className="mt-6 text-xs">
-      {`© ${new Date().getFullYear()}`} Hyperse Inc. All rights reserved.
-    </p>
-  </Footer>
-);
 
 const RootLayout: FC<{
   children: ReactNode;
 }> = async ({ children }) => {
   const pageMap = await getPageMap();
+  const releaseVersion = await fetchReleaseVersion();
 
   return (
     <html lang="en" suppressHydrationWarning>
       <Head />
       <body>
         <Layout
-          banner={banner}
-          navbar={navbar}
+          banner={<BannerComponent version={releaseVersion} />}
+          navbar={<NavbarComponent />}
           pageMap={pageMap}
           docsRepositoryBase="https://github.com/hyperse-io/hps/tree/main/website"
           editLink="Edit this page on GitHub"
@@ -100,7 +91,7 @@ const RootLayout: FC<{
             forcedTheme: 'dark',
           }}
         >
-          {children}
+          <Provider version={releaseVersion}>{children}</Provider>
         </Layout>
       </body>
     </html>

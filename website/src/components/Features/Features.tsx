@@ -19,7 +19,7 @@ const features = [
     border: 'border-yellow-400/20',
   },
   {
-    title: 'Zero Configuration',
+    title: 'Minimal Configuration',
     description:
       "Start developing immediately with sensible defaults. HPS handles the complex setup so you don't have to.",
     icon: Settings,

@@ -81,7 +81,7 @@ export const Hero: React.FC = () => {
             <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-gray-400 lg:mx-0">
               HPS (@hyperse-io/hps) is the next-generation build tool designed
               for modern web apps. Built on Rspack, it delivers instant startup,
-              lightning-fast HMR, and zero-config deployment.
+              lightning-fast HMR, and minimal-config deployment.
             </p>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
@@ -112,7 +112,7 @@ export const Hero: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Box className="h-4 w-4 text-blue-400" />
-                <span>Zero Config</span>
+                <span>Minimal Config</span>
               </div>
               <div className="flex items-center gap-2">
                 <Rocket className="h-4 w-4 text-green-400" />

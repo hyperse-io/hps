@@ -10,6 +10,10 @@
   --animate-float: float 6s ease-in-out infinite;
 }
 
+:where([title="Change theme"]) {
+  visibility: hidden;
+}
+
 @keyframes float {
   0% {
     transform: translateY(0);
