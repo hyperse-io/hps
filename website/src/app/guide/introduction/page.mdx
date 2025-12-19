@@ -2,12 +2,13 @@
 asIndexPage: true
 ---
 
+import Image from 'next/image';
 import { compileMdx } from 'nextra/compile';
 import { MDXRemote } from 'nextra/mdx-remote';
 
 # Introduction
 
-HPS (@hyperse-io/hps) is the next-generation build tool designed for modern web apps. Built on Rspack, it delivers instant startup, lightning-fast HMR, and zero-config deployment.
+HPS (@hyperse-io/hps) is the next-generation build tool designed for modern web apps. Built on Rspack, it delivers instant startup, lightning-fast HMR, and minimal-config deployment.
 
 ## Three-Tier Architecture
 
@@ -23,39 +24,10 @@ Each layer has well-defined responsibilities and dependencies flow downward: CLI
 
 ### Layer Interaction Diagram
 
-```mermaid
-graph TB
-    CLI["@hyperse/hps<br/>createWizard()"]
-
-    subgraph "Plugin Layer"
-        BUILD["createBuildPlugin()"]
-        SERVE["createServePlugin()"]
-        MOCK["createMockPlugin()"]
-        DEPLOY["createDeployPlugin()"]
-        UPDATE["createUpdatePlugin()"]
-        INFO["createInfoPlugin()"]
-    end
-
-    subgraph "Service Layer"
-        RSPACK["hps-srv-rspack<br/>loadRspackConfig()<br/>RspackDevServerBuilder"]
-        MOCK_SRV["hps-srv-mock<br/>GraphqlMockManager<br/>defineGraphqlMock()"]
-        TS_CHECKER["hps-srv-ts-checker<br/>ts-checker-rspack-plugin"]
-        COMMON["hps-srv-common<br/>commonLogger<br/>requireResolve()"]
-    end
-
-    CLI --> BUILD
-    CLI --> SERVE
-    CLI --> MOCK
-    CLI --> DEPLOY
-    CLI --> UPDATE
-    CLI --> INFO
-
-    BUILD --> RSPACK
-    SERVE --> RSPACK
-    SERVE --> MOCK_SRV
-    MOCK --> MOCK_SRV
-
-    RSPACK --> TS_CHECKER
-    RSPACK --> COMMON
-    MOCK_SRV --> COMMON
-```
+<Image
+  src="/hps/framework.svg"
+  alt="HPS Framework"
+  width={1200}
+  height={600}
+  style={{ width: '100%', height: 'auto' }}
+/>

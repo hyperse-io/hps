@@ -1,4 +1,11 @@
+import { useMemo } from 'react';
 import type { MetaRecord } from 'nextra';
+import { fetchReleaseVersion } from '@/services';
+
+const VersionComponent = async () => {
+  const version = await fetchReleaseVersion();
+  return <div>{version}</div>;
+};
 
 const meta: MetaRecord = {
   index: {
@@ -33,7 +40,7 @@ const meta: MetaRecord = {
   },
   version: {
     type: 'menu',
-    title: 'v0.1.2',
+    title: <VersionComponent />,
     items: {
       changelog: {
         title: 'Changelog',
