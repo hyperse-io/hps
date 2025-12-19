@@ -1,0 +1,564 @@
+1:"$Sreact.fragment"
+2:I[355169,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"TOCProvider"]
+3:I[700769,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"Sidebar"]
+4:I[347486,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"ClientWrapper"]
+9:I[763894,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"HeadingAnchor"]
+a:I[421712,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"Tabs"]
+b:I[421712,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"Tab"]
+c:I[283987,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"ToggleWordWrapButton"]
+d:I[440493,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"CopyToClipboard"]
+6d:I[897367,["/hps/_next/static/chunks/d96012bcfc98706a.js","/hps/_next/static/chunks/f6bc5d34ba2276c8.js"],"OutletBoundary"]
+6e:"$Sreact.suspense"
+70:I[522016,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],""]
+5:T29b0,---
+sidebarTitle: HPS Plugin Serve
+description: A development server plugin for the HPS (Hyperse) build system that provides a development server with hot module replacement and live reload for web applications.
+---
+
+# HPS Plugin Serve
+
+## Overview
+
+The HPS Plugin Serve is a development server plugin for the HPS (Hyperse) build system that provides a fast development server with hot module replacement (HMR) and integrated mocking capabilities. It offers:
+
+- **Hot Module Replacement**: Fast development server with real-time updates
+- **Integrated Mocking**: Built-in mock server with configurable filters
+- **Static Mode**: Serve pre-built static assets for production-like testing
+- **Module Filtering**: Selective module loading for better performance and debugging
+- **Rspack Integration**: Powered by `@hyperse/hps-srv-rspack` for fast builds
+- **Configurable Options**: Flexible configuration through HPS config system
+
+This plugin is essential for local development, providing a seamless development experience with hot reloading and API mocking support.
+
+## Installation
+
+The serve plugin is typically included with the HPS CLI. If you need to install it separately:
+
+```sh npm2yarn
+npm install @hyperse/hps-plugin-serve
+```
+
+## Usage
+
+### Basic Setup
+
+The serve plugin is automatically registered in the HPS CLI. You can use it directly without additional setup:
+
+```bash
+# Start development server with hot reload
+hps serve evolve
+
+# Start with specific modules only (better performance)
+hps serve evolve --modules home
+
+# Start with static mode (serve pre-built assets)
+hps serve evolve --static-mode
+
+# Configure mock filters
+hps serve evolve --mock-filters "api/.*" "!api/test/.*"
+
+# Specify custom port
+hps serve evolve --port 3000
+```
+
+### Command Syntax
+
+```bash
+hps serve evolve [flags]
+```
+
+**Subcommand:**
+
+- `evolve`: Main development server using Rspack for web applications
+
+**Flags:**
+
+- `--static-mode, -s`: Start server in static mode (default: `false`)
+- `--port`: The port for the development server
+- `--modules, -m`: Filter entry modules for selective loading (default: `[".*"]`)
+- `--mock-filters`: Regex patterns for mock file filtering (default: `[".*"]`)
+
+## API Reference
+
+### `createServePlugin`
+
+Creates and returns a serve plugin instance for HPS.
+
+**Type Signature:**
+
+```typescript
+function createServePlugin(): Plugin;
+```
+
+**Returns:**
+
+- **Type**: `Plugin`
+- **Description**: A configured HPS plugin that adds the `serve` command with `evolve` subcommand.
+
+### `evolve` Command
+
+The internal command definition that handles the serve process. This command is automatically registered when using `createServePlugin()`.
+
+**Type Signature:**
+
+```typescript
+defineCommand<'evolve', EvolveServeCmdContext>('evolve', options);
+```
+
+**Context Type:**
+
+```typescript
+type EvolveServeCmdContext = Omit<HpsEvolveOptions, 'projectCwd'> & {
+  projectCwd?: string;
+};
+```
+
+The context extends `HpsEvolveOptions` (see [Configuration Documentation](/config)) with an optional `projectCwd` field.
+
+### Command Flags
+
+#### `staticMode`
+
+- **Type**: `boolean`
+- **Alias**: `s`
+- **Default**: `false`
+- **Description**: Start the server in static mode. When enabled, the server serves pre-built static assets instead of running the development build process. This is useful for testing production builds locally.
+
+**Usage:**
+
+```bash
+# Enable static mode
+hps serve evolve --static-mode
+
+# Or use short alias
+hps serve evolve -s
+```
+
+**Behavior:**
+
+- Serves pre-built static assets from the output directory
+- Skips development build process
+- Provides production-like serving environment
+- Useful for testing built applications
+
+#### `port`
+
+- **Type**: `number`
+- **Required**: No
+- **Description**: The port number for the development server. If not specified, the port from the configuration file will be used, or a default port will be assigned.
+
+**Usage:**
+
+```bash
+# Specify custom port
+hps serve evolve --port 3000
+
+# Port will be used for both dev server and mock server
+hps serve evolve --port 4000
+```
+
+**Note:** The port is also used for the mock server if mock options are configured.
+
+#### `modules`
+
+- **Type**: `string[]`
+- **Alias**: `m`
+- **Default**: `[".*"]`
+- **Description**: Filter entry modules for selective loading. This helps improve performance and debugging by only loading specific entry points. Supports regex patterns. Multiple modules can be specified.
+
+**Usage:**
+
+```bash
+# Load all modules (default)
+hps serve evolve --modules ".*"
+
+# Load specific modules
+hps serve evolve --modules home dashboard
+
+# Load modules matching a pattern
+hps serve evolve --modules "api/.*"
+
+# Multiple patterns
+hps serve evolve --modules home "api/.*"
+```
+
+**Benefits:**
+
+- Faster startup time
+- Reduced memory usage
+- Better debugging performance
+- Focused development on specific modules
+
+#### `mockFilters`
+
+- **Type**: `string[]`
+- **Default**: `[".*"]`
+- **Description**: Regex patterns for filtering mock files at serve startup. Files matching these patterns will be loaded by the mock server. Use `!` prefix to exclude patterns. Multiple filters can be specified.
+
+**Usage:**
+
+```bash
+# Load all mock files (default)
+hps serve evolve --mock-filters ".*"
+
+# Load specific mock patterns
+hps serve evolve --mock-filters "api/.*" "graphql/.*"
+
+# Exclude specific patterns
+hps serve evolve --mock-filters ".*" "!api/test/.*"
+
+# Multiple filters
+hps serve evolve --mock-filters "api/.*" "!api/test/.*" "graphql/.*"
+```
+
+**Pattern Rules:**
+
+- Use regex patterns to match mock file paths
+- Prefix with `!` to exclude patterns
+- Patterns are evaluated in order
+- Default pattern `".*"` matches all files
+
+### Configuration Options
+
+The serve command loads configuration from your `hps.config.ts` file under the `serve.evolve` key. The configuration type is `EvolveServeCmdContext`, which extends `HpsEvolveOptions`.
+
+#### Configuration Structure
+
+The configuration supports all options from `HpsEvolveOptions`:
+
+- **`projectCwd`**: Optional project workspace directory
+- **`projectVirtualPath`**: Virtual path for the current project
+- **`rspack`**: Rspack build tool configurations
+- **`devServer`**: Development server configurations (see [Configuration Documentation](/config) for details)
+- **`entryMap`**: All rspack entries configuration
+- **`rejectWarnings`**: Whether to interrupt compilation on warnings
+- **`inspector`**: Code inspector options
+
+#### Mock Server Configuration
+
+The plugin automatically configures the mock server with:
+
+- **Dynamic Mock Directory**: Automatically resolves mock working directory using `getMockCwd()`
+- **HTTPS Support**: Inherits HTTPS settings from `devServer.https` if not explicitly set in `mockOptions`
+- **Watch Ignore**: Automatically adds mock directory to `watchOptions.ignored` patterns
+- **Filter Support**: Applies `mockFilters` to mock files
+
+#### Static Mode Behavior
+
+When `staticMode` is enabled:
+
+- The server serves pre-built static assets from the output directory
+- Development build process is skipped
+- No hot module replacement is available
+- Useful for testing production builds locally
+
+## Output
+
+The serve command provides real-time feedback during server startup and operation:
+
+### Server Startup
+
+```
+Serve an evolve app...
+[Compilation logs from Rspack]
+[Dev server startup logs...]
+```
+
+### Static Mode Startup
+
+```
+Serve an evolve app `static` mode...
+[Static server startup logs...]
+Serve an evolve app `static` mode successfully
+```
+
+### Success Messages
+
+When the server starts successfully:
+
+```
+Serve an evolve app successfully
+```
+
+### Development Server Output
+
+The development server typically displays:
+
+- Compilation status and progress
+- Hot module replacement updates
+- Server URLs and access information
+- Error and warning messages
+- Mock server status (if enabled)
+
+**Example Output:**
+
+```
+Serve an evolve app...
+[webpack-dev-server] Project is running at:
+[webpack-dev-server] Loopback: http://localhost:3000/
+[webpack-dev-server] On Your Network: http://192.168.1.100:3000/
+[webpack-dev-server] Content not from webpack is served from /public
+[HMR] Waiting for update signal from WDS...
+[Compiled successfully]
+Serve an evolve app successfully
+```
+
+### Error Messages
+
+If the server fails to start, error messages are displayed:
+
+```
+✗ serve evolve configOptions is required
+```
+
+Or if mock configuration fails:
+
+```
+✗ Missing required mock configuration...
+```
+
+## Examples
+
+### Example: Integration in HPS CLI
+
+The serve plugin is integrated into the main HPS CLI. Here's a typical development workflow:
+
+**1. Configure your `hps.config.ts`:**
+
+```typescript
+import { myDefineConfig } from '@hyperse/hps';
+
+const evolveOptions = {
+  projectCwd: process.cwd(),
+  projectVirtualPath: 'hps/evolve',
+  entryMap: {
+    home: {
+      entry: ['./src/home/index.tsx'],
+      options: {
+        title: 'Home Page',
+      },
+    },
+    dashboard: {
+      entry: ['./src/dashboard/index.tsx'],
+      options: {
+        title: 'Dashboard',
+      },
+    },
+  },
+  devServer: {
+    port: 3000,
+    pageProxy: '/pages',
+    autoOpen: true,
+    mockOptions: {
+      mockFilters: ['api/.*'],
+    },
+    watchOptions: {
+      ignored: ['node_modules/**'],
+    },
+  },
+  rspack: {
+    mode: 'development',
+    loader: {
+      cssLoaderOptions: {
+        modules: true,
+      },
+    },
+    plugins: {
+      htmlPlugin: {
+        htmlCdn: 'http://localhost:3000/public',
+      },
+    },
+  },
+};
+
+export default myDefineConfig(() => {
+  return {
+    'serve.evolve': () => {
+      return Promise.resolve(evolveOptions);
+    },
+  };
+});
+```
+
+**2. Start the development server:**
+
+```bash
+# Start with all modules
+hps serve evolve
+
+# Start with specific modules for better performance
+hps serve evolve --modules home
+
+# Start with custom port
+hps serve evolve --port 4000
+
+# Start with mock filters
+hps serve evolve --mock-filters "api/.*" "!api/test/.*"
+
+# Start in static mode
+hps serve evolve --static-mode
+```
+
+**Expected Output:**
+
+```
+Serve an evolve app...
+[webpack-dev-server] Project is running at:
+[webpack-dev-server] Loopback: http://localhost:3000/
+[webpack-dev-server] On Your Network: http://192.168.1.100:3000/
+[HMR] Waiting for update signal from WDS...
+[Compiled successfully]
+✓ Serve an evolve app successfully
+```
+
+**3. Access your application:**
+
+- Development server: `http://localhost:3000`
+- Mock server: `http://localhost:3000` (if configured)
+- Hot module replacement: Automatically enabled
+
+**4. Development workflow:**
+
+- Edit your source files
+- Changes are automatically detected
+- Hot module replacement updates the browser
+- Mock server handles API requests based on filters
+- TypeScript errors are displayed in the console0:{"buildId":"5fk2bM6qY1wiPMs3pzKVJ","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$L2",null,{"value":[{"value":"Overview","id":"overview","depth":2},{"value":"Installation","id":"installation","depth":2},{"value":"Usage","id":"usage","depth":2},{"value":"Basic Setup","id":"basic-setup","depth":3},{"value":"Command Syntax","id":"command-syntax","depth":3},{"value":"API Reference","id":"api-reference","depth":2},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"createServePlugin"}]]}]],"id":"createserveplugin","depth":3},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"evolve"}]," Command"]}]],"id":"evolve-command","depth":3},{"value":"Command Flags","id":"command-flags","depth":3},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"staticMode"}]]}]],"id":"staticmode","depth":4},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"port"}]]}]],"id":"port","depth":4},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"modules"}]]}]],"id":"modules","depth":4},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"mockFilters"}]]}]],"id":"mockfilters","depth":4},{"value":"Configuration Options","id":"configuration-options","depth":3},{"value":"Configuration Structure","id":"configuration-structure","depth":4},{"value":"Mock Server Configuration","id":"mock-server-configuration","depth":4},{"value":"Static Mode Behavior","id":"static-mode-behavior","depth":4},{"value":"Output","id":"output","depth":2},{"value":"Server Startup","id":"server-startup","depth":3},{"value":"Static Mode Startup","id":"static-mode-startup","depth":3},{"value":"Success Messages","id":"success-messages","depth":3},{"value":"Development Server Output","id":"development-server-output","depth":3},{"value":"Error Messages","id":"error-messages","depth":3},{"value":"Examples","id":"examples","depth":2},{"value":"Example: Integration in HPS CLI","id":"example-integration-in-hps-cli","depth":3}],"children":[["$","$L3",null,{}],["$","$L4",null,{"metadata":{"sidebarTitle":"HPS Plugin Serve","description":"A development server plugin for the HPS (Hyperse) build system that provides a development server with hot module replacement and live reload for web applications.","title":"HPS Plugin Serve","filePath":"src/app/plugins/hps-plugin-serve/page.mdx","timestamp":1766127261000},"sourceCode":"$5","children":["$L6","$L7"]}]]}]}],null,"$L8"]}],"loading":null,"isPartial":false}
+6:["$","div",null,{"id":"nextra-skip-nav"}]
+7:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["HPS Plugin Serve","$undefined"]}],"\n",["$","h2",null,{"id":"overview","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Overview",["$","$L9",null,{"id":"overview"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The HPS Plugin Serve is a development server plugin for the HPS (Hyperse) build system that provides a fast development server with hot module replacement (HMR) and integrated mocking capabilities. It offers:"}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Hot Module Replacement"}],": Fast development server with real-time updates"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Integrated Mocking"}],": Built-in mock server with configurable filters"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Static Mode"}],": Serve pre-built static assets for production-like testing"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Module Filtering"}],": Selective module loading for better performance and debugging"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Rspack Integration"}],": Powered by ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"@hyperse/hps-srv-rspack"}]," for fast builds"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Configurable Options"}],": Flexible configuration through HPS config system"]}],"\n"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"This plugin is essential for local development, providing a seamless development experience with hot reloading and API mocking support."}],"\n",["$","h2",null,{"id":"installation","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Installation",["$","$L9",null,{"id":"installation"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The serve plugin is typically included with the HPS CLI. If you need to install it separately:"}],"\n",["$","$La",null,{"items":["npm","pnpm","yarn","bun"],"storageKey":"selectedPackageManager","children":[["$","$Lb",null,{"children":["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"npm"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" install"}],"$Le"]}]}]]}]]}]}],"$Lf","$L10","$L11"]}],"\n","$L12","\n","$L13","\n","$L14","\n","$L15","\n","$L16","\n","$L17","\n","$L18","\n","$L19","\n","$L1a","\n","$L1b","\n","$L1c","\n","$L1d","\n","$L1e","\n","$L1f","\n","$L20","\n","$L21","\n","$L22","\n","$L23","\n","$L24","\n","$L25","\n","$L26","\n","$L27","\n","$L28","\n","$L29","\n","$L2a","\n","$L2b","\n","$L2c","\n","$L2d","\n","$L2e","\n","$L2f","\n","$L30","\n","$L31","\n","$L32","\n","$L33","\n","$L34","\n","$L35","\n","$L36","\n","$L37","\n","$L38","\n","$L39","\n","$L3a","\n","$L3b","\n","$L3c","\n","$L3d","\n","$L3e","\n","$L3f","\n","$L40","\n","$L41","\n","$L42","\n","$L43","\n","$L44","\n","$L45","\n","$L46","\n","$L47","\n","$L48","\n","$L49","\n","$L4a","\n","$L4b","\n","$L4c","\n","$L4d","\n","$L4e","\n","$L4f","\n","$L50","\n","$L51","\n","$L52","\n","$L53","\n","$L54","\n","$L55","\n","$L56","\n","$L57","\n","$L58","\n","$L59","\n","$L5a","\n","$L5b","\n","$L5c","\n","$L5d","\n","$L5e","\n","$L5f","\n","$L60","\n","$L61","\n","$L62","\n","$L63","\n","$L64","\n","$L65","\n","$L66","\n","$L67","\n","$L68","\n","$L69","\n","$L6a","\n","$L6b","\n","$L6c"]}]
+8:["$","$L6d",null,{"children":["$","$6e",null,{"name":"Next.MetadataOutlet","children":"$@6f"}]}]
+e:["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" @hyperse/hps-plugin-serve"}]
+f:["$","$Lb",null,{"children":["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"pnpm"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" add"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" @hyperse/hps-plugin-serve"}]]}]}]]}]]}]}]
+10:["$","$Lb",null,{"children":["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"yarn"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" add"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" @hyperse/hps-plugin-serve"}]]}]}]]}]]}]}]
+11:["$","$Lb",null,{"children":["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"bun"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" add"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" @hyperse/hps-plugin-serve"}]]}]}]]}]]}]}]
+12:["$","h2",null,{"id":"usage","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Usage",["$","$L9",null,{"id":"usage"}]]}]
+13:["$","h3",null,{"id":"basic-setup","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Basic Setup",["$","$L9",null,{"id":"basic-setup"}]]}]
+14:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The serve plugin is automatically registered in the HPS CLI. You can use it directly without additional setup:"}]
+15:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Start development server with hot reload"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Start with specific modules only (better performance)"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --modules"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" home"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Start with static mode (serve pre-built assets)"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --static-mode"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Configure mock filters"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --mock-filters"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"api/.*\""}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"!api/test/.*\""}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Specify custom port"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --port"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" 3000"}]]}]]}]]}]]}]
+16:["$","h3",null,{"id":"command-syntax","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Command Syntax",["$","$L9",null,{"id":"command-syntax"}]]}]
+17:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" [flags]"}]]}]}]]}]]}]
+18:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Subcommand:"}]}]
+19:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"evolve"}],": Main development server using Rspack for web applications"]}],"\n"]}]
+1a:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Flags:"}]}]
+1b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"--static-mode, -s"}],": Start server in static mode (default: ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false"}],")"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"--port"}],": The port for the development server"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"--modules, -m"}],": Filter entry modules for selective loading (default: ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[\".*\"]"}],")"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"--mock-filters"}],": Regex patterns for mock file filtering (default: ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[\".*\"]"}],")"]}],"\n"]}]
+1c:["$","h2",null,{"id":"api-reference","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["API Reference",["$","$L9",null,{"id":"api-reference"}]]}]
+1d:["$","h3",null,{"id":"createserveplugin","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"createServePlugin"}],["$","$L9",null,{"id":"createserveplugin"}]]}]
+1e:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Creates and returns a serve plugin instance for HPS."}]
+1f:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Type Signature:"}]}]
+20:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"function"}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":" createServePlugin"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"()"}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":":"}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":" Plugin"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":";"}]]}]}]]}]]}]
+21:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Returns:"}]}]
+22:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Plugin"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": A configured HPS plugin that adds the ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serve"}]," command with ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"evolve"}]," subcommand."]}],"\n"]}]
+23:["$","h3",null,{"id":"evolve-command","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"evolve"}]," Command"],["$","$L9",null,{"id":"evolve-command"}]]}]
+24:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The internal command definition that handles the serve process. This command is automatically registered when using ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"createServePlugin()"}],"."]}]
+25:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Type Signature:"}]}]
+26:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"defineCommand"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"<"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'evolve'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":", "}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"EvolveServeCmdContext"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":">("}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'evolve'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":", options);"}]]}]}]]}]]}]
+27:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Context Type:"}]}]
+28:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"type"}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":" EvolveServeCmdContext"}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":" ="}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":" Omit"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"<"}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"HpsEvolveOptions"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":", "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'projectCwd'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"> "}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"&"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" {"}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#E36209","--shiki-dark":"#FFAB70"},"children":"  projectCwd"}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"?:"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" string"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":";"}]]}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"};"}]}]]}]]}]]}]
+29:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The context extends ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HpsEvolveOptions"}]," (see ",["$","$L70",null,{"href":"/config","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Configuration Documentation"}],") with an optional ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"projectCwd"}]," field."]}]
+2a:["$","h3",null,{"id":"command-flags","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Command Flags",["$","$L9",null,{"id":"command-flags"}]]}]
+2b:["$","h4",null,{"id":"staticmode","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"staticMode"}],["$","$L9",null,{"id":"staticmode"}]]}]
+2c:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Alias"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"s"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Start the server in static mode. When enabled, the server serves pre-built static assets instead of running the development build process. This is useful for testing production builds locally."]}],"\n"]}]
+2d:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Usage:"}]}]
+2e:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Enable static mode"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --static-mode"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Or use short alias"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" -s"}]]}]]}]]}]]}]
+2f:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Behavior:"}]}]
+30:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"Serves pre-built static assets from the output directory"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Skips development build process"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Provides production-like serving environment"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Useful for testing built applications"}],"\n"]}]
+31:["$","h4",null,{"id":"port","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"port"}],["$","$L9",null,{"id":"port"}]]}]
+32:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"number"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Required"}],": No"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The port number for the development server. If not specified, the port from the configuration file will be used, or a default port will be assigned."]}],"\n"]}]
+33:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Usage:"}]}]
+34:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Specify custom port"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --port"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" 3000"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Port will be used for both dev server and mock server"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --port"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" 4000"}]]}]]}]]}]]}]
+35:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","strong",null,{"children":"Note:"}]," The port is also used for the mock server if mock options are configured."]}]
+36:["$","h4",null,{"id":"modules","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"modules"}],["$","$L9",null,{"id":"modules"}]]}]
+37:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Alias"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"m"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[\".*\"]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Filter entry modules for selective loading. This helps improve performance and debugging by only loading specific entry points. Supports regex patterns. Multiple modules can be specified."]}],"\n"]}]
+38:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Usage:"}]}]
+39:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Load all modules (default)"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --modules"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \".*\""}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Load specific modules"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --modules"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" home"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" dashboard"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Load modules matching a pattern"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --modules"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"api/.*\""}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Multiple patterns"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --modules"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" home"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"api/.*\""}]]}]]}]]}]]}]
+3a:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Benefits:"}]}]
+3b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"Faster startup time"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Reduced memory usage"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Better debugging performance"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Focused development on specific modules"}],"\n"]}]
+3c:["$","h4",null,{"id":"mockfilters","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"mockFilters"}],["$","$L9",null,{"id":"mockfilters"}]]}]
+3d:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[\".*\"]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Regex patterns for filtering mock files at serve startup. Files matching these patterns will be loaded by the mock server. Use ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"!"}]," prefix to exclude patterns. Multiple filters can be specified."]}],"\n"]}]
+3e:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Usage:"}]}]
+3f:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Load all mock files (default)"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --mock-filters"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \".*\""}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Load specific mock patterns"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --mock-filters"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"api/.*\""}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"graphql/.*\""}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Exclude specific patterns"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --mock-filters"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \".*\""}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"!api/test/.*\""}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Multiple filters"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --mock-filters"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"api/.*\""}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"!api/test/.*\""}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"graphql/.*\""}]]}]]}]]}]]}]
+40:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Pattern Rules:"}]}]
+41:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"Use regex patterns to match mock file paths"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Prefix with ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"!"}]," to exclude patterns"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Patterns are evaluated in order"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Default pattern ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"\".*\""}]," matches all files"]}],"\n"]}]
+42:["$","h3",null,{"id":"configuration-options","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Configuration Options",["$","$L9",null,{"id":"configuration-options"}]]}]
+43:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The serve command loads configuration from your ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"hps.config.ts"}]," file under the ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serve.evolve"}]," key. The configuration type is ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"EvolveServeCmdContext"}],", which extends ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HpsEvolveOptions"}],"."]}]
+44:["$","h4",null,{"id":"configuration-structure","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":["Configuration Structure",["$","$L9",null,{"id":"configuration-structure"}]]}]
+45:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The configuration supports all options from ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HpsEvolveOptions"}],":"]}]
+46:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":["$","code",null,{"className":"nextra-code","dir":"ltr","children":"projectCwd"}]}],": Optional project workspace directory"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":["$","code",null,{"className":"nextra-code","dir":"ltr","children":"projectVirtualPath"}]}],": Virtual path for the current project"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":["$","code",null,{"className":"nextra-code","dir":"ltr","children":"rspack"}]}],": Rspack build tool configurations"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":["$","code",null,{"className":"nextra-code","dir":"ltr","children":"devServer"}]}],": Development server configurations (see ",["$","$L70",null,{"href":"/config","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":"Configuration Documentation"}]," for details)"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":["$","code",null,{"className":"nextra-code","dir":"ltr","children":"entryMap"}]}],": All rspack entries configuration"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":["$","code",null,{"className":"nextra-code","dir":"ltr","children":"rejectWarnings"}]}],": Whether to interrupt compilation on warnings"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":["$","code",null,{"className":"nextra-code","dir":"ltr","children":"inspector"}]}],": Code inspector options"]}],"\n"]}]
+47:["$","h4",null,{"id":"mock-server-configuration","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":["Mock Server Configuration",["$","$L9",null,{"id":"mock-server-configuration"}]]}]
+48:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The plugin automatically configures the mock server with:"}]
+49:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Dynamic Mock Directory"}],": Automatically resolves mock working directory using ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"getMockCwd()"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"HTTPS Support"}],": Inherits HTTPS settings from ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"devServer.https"}]," if not explicitly set in ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"mockOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Watch Ignore"}],": Automatically adds mock directory to ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"watchOptions.ignored"}]," patterns"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Filter Support"}],": Applies ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"mockFilters"}]," to mock files"]}],"\n"]}]
+4a:["$","h4",null,{"id":"static-mode-behavior","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":["Static Mode Behavior",["$","$L9",null,{"id":"static-mode-behavior"}]]}]
+4b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["When ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"staticMode"}]," is enabled:"]}]
+4c:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"The server serves pre-built static assets from the output directory"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Development build process is skipped"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"No hot module replacement is available"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Useful for testing production builds locally"}],"\n"]}]
+4d:["$","h2",null,{"id":"output","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Output",["$","$L9",null,{"id":"output"}]]}]
+4e:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The serve command provides real-time feedback during server startup and operation:"}]
+4f:["$","h3",null,{"id":"server-startup","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Server Startup",["$","$L9",null,{"id":"server-startup"}]]}]
+50:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"children":"Serve an evolve app..."}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[Compilation logs from Rspack]"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[Dev server startup logs...]"}]}]]}]]}]]}]
+51:["$","h3",null,{"id":"static-mode-startup","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Static Mode Startup",["$","$L9",null,{"id":"static-mode-startup"}]]}]
+52:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"children":"Serve an evolve app `static` mode..."}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[Static server startup logs...]"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"Serve an evolve app `static` mode successfully"}]}]]}]]}]]}]
+53:["$","h3",null,{"id":"success-messages","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Success Messages",["$","$L9",null,{"id":"success-messages"}]]}]
+54:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"When the server starts successfully:"}]
+55:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":["$","span",null,{"children":"Serve an evolve app successfully"}]}]}]]}]]}]
+56:["$","h3",null,{"id":"development-server-output","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Development Server Output",["$","$L9",null,{"id":"development-server-output"}]]}]
+57:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The development server typically displays:"}]
+58:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"Compilation status and progress"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Hot module replacement updates"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Server URLs and access information"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Error and warning messages"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Mock server status (if enabled)"}],"\n"]}]
+59:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Example Output:"}]}]
+5a:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"children":"Serve an evolve app..."}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[webpack-dev-server] Project is running at:"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[webpack-dev-server] Loopback: http://localhost:3000/"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[webpack-dev-server] On Your Network: http://192.168.1.100:3000/"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[webpack-dev-server] Content not from webpack is served from /public"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[HMR] Waiting for update signal from WDS..."}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[Compiled successfully]"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"Serve an evolve app successfully"}]}]]}]]}]]}]
+5b:["$","h3",null,{"id":"error-messages","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Error Messages",["$","$L9",null,{"id":"error-messages"}]]}]
+5c:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"If the server fails to start, error messages are displayed:"}]
+5d:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":["$","span",null,{"children":"✗ serve evolve configOptions is required"}]}]}]]}]]}]
+5e:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Or if mock configuration fails:"}]
+5f:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":["$","span",null,{"children":["$","span",null,{"children":"✗ Missing required mock configuration..."}]}]}]]}]]}]
+60:["$","h2",null,{"id":"examples","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Examples",["$","$L9",null,{"id":"examples"}]]}]
+61:["$","h3",null,{"id":"example-integration-in-hps-cli","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":["Example: Integration in HPS CLI",["$","$L9",null,{"id":"example-integration-in-hps-cli"}]]}]
+62:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The serve plugin is integrated into the main HPS CLI. Here’s a typical development workflow:"}]
+63:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":["1. Configure your ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"hps.config.ts"}],":"]}]}]
+64:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"import"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" { myDefineConfig } "}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"from"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" '@hyperse/hps'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":";"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"const"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" evolveOptions"}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":" ="}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" {"}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  projectCwd: process."}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"cwd"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"(),"}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  projectVirtualPath: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'hps/evolve'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  entryMap: {"}]}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    home: {"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      entry: ["}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'./src/home/index.tsx'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"],"}]]}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      options: {"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        title: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'Home Page'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      },"}]}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    },"}]}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    dashboard: {"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      entry: ["}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'./src/dashboard/index.tsx'"}],"$L71"]}],"\n","$L72","\n","$L73","\n","$L74","\n","$L75","\n","$L76","\n","$L77","\n","$L78","\n","$L79","\n","$L7a","\n","$L7b","\n","$L7c","\n","$L7d","\n","$L7e","\n","$L7f","\n","$L80","\n","$L81","\n","$L82","\n","$L83","\n","$L84","\n","$L85","\n","$L86","\n","$L87","\n","$L88","\n","$L89","\n","$L8a","\n","$L8b","\n","$L8c","\n","$L8d","\n","$L8e","\n","$L8f","\n","$L90","\n","$L91","\n","$L92","\n","$L93","\n","$L94","\n","$L95","\n","$L96","\n","$L97"]}]]}]]}]
+65:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"2. Start the development server:"}]}]
+66:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Start with all modules"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Start with specific modules for better performance"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --modules"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" home"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Start with custom port"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --port"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" 4000"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Start with mock filters"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --mock-filters"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"api/.*\""}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" \"!api/test/.*\""}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"# Start in static mode"}]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"hps"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" serve"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" evolve"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" --static-mode"}]]}]]}]]}]]}]
+67:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"Expected Output:"}]}]
+68:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$Lc",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$Ld",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":["$","span",null,{"children":"Serve an evolve app..."}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[webpack-dev-server] Project is running at:"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[webpack-dev-server] Loopback: http://localhost:3000/"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[webpack-dev-server] On Your Network: http://192.168.1.100:3000/"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[HMR] Waiting for update signal from WDS..."}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"[Compiled successfully]"}]}],"\n",["$","span",null,{"children":["$","span",null,{"children":"✓ Serve an evolve app successfully"}]}]]}]]}]]}]
+69:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"3. Access your application:"}]}]
+6a:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["Development server: ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"http://localhost:3000"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["Mock server: ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"http://localhost:3000"}]," (if configured)"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Hot module replacement: Automatically enabled"}],"\n"]}]
+6b:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["$","strong",null,{"children":"4. Development workflow:"}]}]
+6c:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":"Edit your source files"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Changes are automatically detected"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Hot module replacement updates the browser"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"Mock server handles API requests based on filters"}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":"TypeScript errors are displayed in the console"}],"\n"]}]
+6f:null
+71:["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"],"}]
+72:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      options: {"}]}]
+73:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        title: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'Dashboard'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+74:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      },"}]}]
+75:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    },"}]}]
+76:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  },"}]}]
+77:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  devServer: {"}]}]
+78:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    port: "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"3000"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+79:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    pageProxy: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'/pages'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+7a:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    autoOpen: "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"true"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+7b:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    mockOptions: {"}]}]
+7c:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      mockFilters: ["}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'api/.*'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"],"}]]}]
+7d:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    },"}]}]
+7e:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    watchOptions: {"}]}]
+7f:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      ignored: ["}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'node_modules/**'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"],"}]]}]
+80:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    },"}]}]
+81:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  },"}]}]
+82:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  rspack: {"}]}]
+83:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    mode: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'development'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+84:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    loader: {"}]}]
+85:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      cssLoaderOptions: {"}]}]
+86:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        modules: "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"true"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+87:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      },"}]}]
+88:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    },"}]}]
+89:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    plugins: {"}]}]
+8a:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      htmlPlugin: {"}]}]
+8b:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        htmlCdn: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'http://localhost:3000/public'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+8c:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      },"}]}]
+8d:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    },"}]}]
+8e:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  },"}]}]
+8f:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"};"}]}]
+90:["$","span",null,{"children":" "}]
+91:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"export"}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":" default"}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":" myDefineConfig"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"(() "}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"=>"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" {"}]]}]
+92:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"  return"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" {"}]]}]
+93:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"    'serve.evolve'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":": () "}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"=>"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" {"}]]}]
+94:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"      return"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" Promise"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"."}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"resolve"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"(evolveOptions);"}]]}]
+95:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    },"}]}]
+96:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  };"}]}]
+97:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"});"}]}]

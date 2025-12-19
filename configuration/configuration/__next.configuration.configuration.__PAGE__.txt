@@ -1,0 +1,966 @@
+1:"$Sreact.fragment"
+2:I[355169,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"TOCProvider"]
+44:I[700769,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"Sidebar"]
+45:I[347486,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"ClientWrapper"]
+49:I[897367,["/hps/_next/static/chunks/d96012bcfc98706a.js","/hps/_next/static/chunks/f6bc5d34ba2276c8.js"],"OutletBoundary"]
+4a:"$Sreact.suspense"
+4c:I[763894,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"HeadingAnchor"]
+10f:I[283987,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"ToggleWordWrapButton"]
+110:I[440493,["/hps/_next/static/chunks/3abbe9ec6f44b60b.js","/hps/_next/static/chunks/56ff33fee789e46e.js","/hps/_next/static/chunks/56cc3bde366ead97.js","/hps/_next/static/chunks/26e7416f366554eb.js","/hps/_next/static/chunks/61d6575956432c6c.js","/hps/_next/static/chunks/ccace40a28a7bbbe.js","/hps/_next/static/chunks/17f1a37f91287733.js"],"CopyToClipboard"]
+0:{"buildId":"5fk2bM6qY1wiPMs3pzKVJ","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"x:mx-auto x:flex x:max-w-(--nextra-content-width)","children":["$","$L2",null,{"value":[{"value":"Overview","id":"overview","depth":2},{"value":"Basic","id":"basic","depth":2},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"projectCwd"}]]}]],"id":"projectcwd","depth":3},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"projectVirtualPath"}]]}]],"id":"projectvirtualpath","depth":3},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"rejectWarnings"}]]}]],"id":"rejectwarnings","depth":3},{"value":"Entry","id":"entry","depth":2},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"entryMap"}]]}]],"id":"entrymap","depth":3},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"entry"}]]}]],"id":"entry-1","depth":4},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"entryModuleBase"}]]}]],"id":"entrymodulebase","depth":4},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"groupName"}]]}]],"id":"groupname","depth":4},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"options"}]]}]],"id":"options","depth":4},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"allowPx2rem"}]]}]],"id":"allowpx2rem","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"externals"}]]}]],"id":"externals","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"enableBundleHashName"}]]}]],"id":"enablebundlehashname","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"servePageMainLinkFn"}]]}]],"id":"servepagemainlinkfn","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"serveGlobalData"}]]}]],"id":"serveglobaldata","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"moduleFederation"}]]}]],"id":"modulefederation","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"useRelativeAssetPath"}]]}]],"id":"userelativeassetpath","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"mockFilters"}]]}]],"id":"mockfilters","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"output"}]]}]],"id":"output","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"templatePath"}]]}]],"id":"templatepath","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"htmlMinify"}]]}]],"id":"htmlminify","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"viewport"}]]}]],"id":"viewport","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"title"}]]}]],"id":"title","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"favicon"}]]}]],"id":"favicon","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"headMetaTags"}]]}]],"id":"headmetatags","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"headStyles"}]]}]],"id":"headstyles","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"headScripts"}]]}]],"id":"headscripts","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"bodyScripts"}]]}]],"id":"bodyscripts","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"headInlineScripts"}]]}]],"id":"headinlinescripts","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"headInlineStyles"}]]}]],"id":"headinlinestyles","depth":5},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"cdnDisabled"}]]}]],"id":"cdndisabled","depth":5},{"value":"Rspack","id":"rspack","depth":2},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"mode"}]]}]],"id":"mode","depth":3},{"value":[["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"loader"}]]}]],"id":"loader","depth":3},{"value":["$L3"],"id":"assetdataurlmaxsize","depth":4},{"value":["$L4"],"id":"cssloaderoptions","depth":4},{"value":["$L5"],"id":"lessoptions","depth":4},{"value":["$L6"],"id":"modularimports","depth":4},{"value":["$L7"],"id":"postcssoptions","depth":4},{"value":["$L8"],"id":"pixeloptions","depth":4},{"value":["$L9"],"id":"performance","depth":3},{"value":["$La"],"id":"hints","depth":4},{"value":["$Lb"],"id":"maxassetsize","depth":4},{"value":["$Lc"],"id":"maxentrypointsize","depth":4},{"value":["$Ld"],"id":"stats","depth":3},{"value":["$Le"],"id":"preset","depth":4},{"value":["$Lf"],"id":"resolve","depth":3},{"value":["$L10"],"id":"alias","depth":4},{"value":["$L11"],"id":"fallback","depth":4},{"value":["$L12"],"id":"externalstype","depth":3},{"value":["$L13"],"id":"externals-1","depth":3},{"value":["$L14"],"id":"publicpath","depth":3},{"value":["$L15"],"id":"target","depth":3},{"value":["$L16"],"id":"minimizer","depth":3},{"value":["$L17"],"id":"terseroptions","depth":4},{"value":["$L18"],"id":"imagemin","depth":4},{"value":["$L19"],"id":"sourcemap","depth":3},{"value":["$L1a"],"id":"plugins","depth":3},{"value":["$L1b"],"id":"externalplugins","depth":4},{"value":["$L1c"],"id":"defineplugin","depth":4},{"value":["$L1d"],"id":"tscheckerplugin","depth":4},{"value":["$L1e"],"id":"rsdoctorplugin","depth":4},{"value":["$L1f"],"id":"htmlplugin","depth":4},{"value":["$L20"],"id":"output-1","depth":3},{"value":["$L21"],"id":"outputdir","depth":4},{"value":["$L22"],"id":"chunkfilevirtualpath","depth":4},{"value":["$L23"],"id":"enablebundlehashname-1","depth":4},{"value":["$L24"],"id":"module","depth":3},{"value":["$L25"],"id":"lazycompilation","depth":3},{"value":["$L26"],"id":"infrastructurelogging","depth":3},{"value":"Dev Server","id":"dev-server","depth":2},{"value":["$L27"],"id":"pageproxy","depth":3},{"value":["$L28"],"id":"staticpages","depth":3},{"value":["$L29"],"id":"routepath","depth":4},{"value":["$L2a"],"id":"htmlpath","depth":4},{"value":["$L2b"],"id":"entryname","depth":4},{"value":["$L2c"],"id":"middlewares","depth":3},{"value":["$L2d"],"id":"watchoptions","depth":3},{"value":["$L2e"],"id":"aggregatetimeout","depth":4},{"value":["$L2f"],"id":"followsymlinks","depth":4},{"value":["$L30"],"id":"ignored","depth":4},{"value":["$L31"],"id":"poll","depth":4},{"value":["$L32"],"id":"devbeforemiddlewares","depth":3},{"value":["$L33"],"id":"devaftermiddlewares","depth":3},{"value":["$L34"],"id":"defaultserveglobaldata","depth":3},{"value":["$L35"],"id":"bundledirresolver","depth":3},{"value":["$L36"],"id":"autoopen","depth":3},{"value":["$L37"],"id":"livereload","depth":3},{"value":["$L38"],"id":"clientoverlay","depth":3},{"value":["$L39"],"id":"websocketurl","depth":3},{"value":["$L3a"],"id":"mockoptions","depth":3},{"value":["$L3b"],"id":"https","depth":3},{"value":"Inspector","id":"inspector","depth":2},{"value":["$L3c"],"id":"inspector-1","depth":3},{"value":["$L3d"],"id":"keys","depth":3},{"value":["$L3e"],"id":"injectclient","depth":3},{"value":["$L3f"],"id":"customlauncheditorendpoint","depth":3},{"value":["$L40"],"id":"trustededitor","depth":3},{"value":"Configuration Example","id":"configuration-example","depth":2}],"children":["$L41","$L42"]}]}],null,"$L43"]}],"loading":null,"isPartial":false}
+3:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"assetDataUrlMaxSize"}]]}]
+4:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"cssLoaderOptions"}]]}]
+5:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"lessOptions"}]]}]
+6:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"modularImports"}]]}]
+7:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"postcssOptions"}]]}]
+8:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"pixelOptions"}]]}]
+9:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"performance"}]]}]
+a:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"hints"}]]}]
+b:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"maxAssetSize"}]]}]
+c:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"maxEntrypointSize"}]]}]
+d:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"stats"}]]}]
+e:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"preset"}]]}]
+f:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"resolve"}]]}]
+10:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"alias"}]]}]
+11:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"fallback"}]]}]
+12:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"externalsType"}]]}]
+13:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"externals"}]]}]
+14:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"publicPath"}]]}]
+15:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"target"}]]}]
+16:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"minimizer"}]]}]
+17:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"terserOptions"}]]}]
+18:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"imageMin"}]]}]
+19:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"sourceMap"}]]}]
+1a:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"plugins"}]]}]
+1b:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"externalPlugins"}]]}]
+1c:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"definePlugin"}]]}]
+1d:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"tsCheckerPlugin"}]]}]
+1e:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"rsdoctorPlugin"}]]}]
+1f:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"htmlPlugin"}]]}]
+20:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"output"}]]}]
+21:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"outputDir"}]]}]
+22:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"chunkFileVirtualPath"}]]}]
+23:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"enableBundleHashName"}]]}]
+24:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"module"}]]}]
+25:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"lazyCompilation"}]]}]
+26:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"infrastructureLogging"}]]}]
+27:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"pageProxy"}]]}]
+28:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"staticPages"}]]}]
+29:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"routePath"}]]}]
+2a:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"htmlPath"}]]}]
+2b:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"entryName"}]]}]
+2c:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"middlewares"}]]}]
+2d:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"watchOptions"}]]}]
+2e:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"aggregateTimeout"}]]}]
+2f:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"followSymlinks"}]]}]
+30:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"ignored"}]]}]
+31:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"poll"}]]}]
+32:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"devBeforeMiddlewares"}]]}]
+33:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"devAfterMiddlewares"}]]}]
+34:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"defaultServeGlobalData"}]]}]
+35:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"bundleDirResolver"}]]}]
+36:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"autoOpen"}]]}]
+37:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"liveReload"}]]}]
+38:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"clientOverlay"}]]}]
+39:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"webSocketURL"}]]}]
+3a:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"mockOptions"}]]}]
+3b:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"https"}]]}]
+3c:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"inspector"}]]}]
+3d:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"keys"}]]}]
+3e:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"injectClient"}]]}]
+3f:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"customLaunchEditorEndpoint"}]]}]
+40:["$","$1",".0",{"children":[["$","code",".0",{"className":"nextra-code","dir":"ltr","children":"trustedEditor"}]]}]
+41:["$","$L44",null,{}]
+46:T4b67,---
+sidebarTitle: Configuration
+description: Learn about the configuration options for the HPS CLI.
+---
+
+# Configuration
+
+The HPS CLI provides comprehensive configuration options for the development server and production build. All configuration options are defined in the `HpsEvolveOptions` interface.
+
+## Overview
+
+The HPS configuration is organized into several main sections:
+
+- **Basic Configuration**: Project workspace and virtual path settings
+- **Entry Configuration**: Entry point definitions for your application modules
+- **Rspack Configuration**: Build tool settings including mode, loaders, optimization, and output
+- **Dev Server Configuration**: Development server settings including proxy, middleware, and HMR
+- **Inspector Configuration**: Code inspector settings for debugging
+
+## Basic
+
+### `projectCwd`
+
+- **Type**: `string`
+- **Required**: Yes
+- **Description**: The project workspace directory (absolute path).
+
+### `projectVirtualPath`
+
+- **Type**: `string`
+- **Required**: Yes
+- **Description**: The virtual path for the current project. This is used as a prefix for routing and asset paths.
+- **Example**: `'hps/evolve'`
+
+### `rejectWarnings`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: For production mode, when set to `true`, the compilation process will be interrupted if warnings are received during the build.
+
+## Entry
+
+The `entryMap` option defines all Rspack entry configurations.
+
+### `entryMap`
+
+- **Type**: `EvolveEntryMapContent`
+- **Required**: Yes
+- **Description**: Entry configuration for each module.
+
+#### `entry`
+
+- **Type**: `string[]`
+- **Required**: Yes
+- **Description**: Array of entry file paths.
+
+#### `entryModuleBase`
+
+- **Type**: `string[]`
+- **Description**: The base path of the entry module.
+
+#### `groupName`
+
+- **Type**: `string`
+- **Description**: An alias used when grouping builds.
+
+#### `options`
+
+- **Type**: `EvolveEntryItemOption`
+- **Description**: Configuration options for each entry item.
+
+##### `allowPx2rem`
+
+- **Type**: `boolean`
+- **Description**: Whether to convert Px to rem. Defaults to `entryItemOption?.allowPx2rem ?? pluginLoaderOptions?.pixelOptions?.enabled`.
+
+##### `externals`
+
+- **Type**: `Record<string, string>`
+- **Description**: Specify dependencies that shouldn't be resolved by webpack for this entry. It will be merged with global externals configuration.
+
+##### `enableBundleHashName`
+
+- **Type**: `boolean`
+- **Default**: `true`
+- **Description**: Whether to use `contenthash` bundle name.
+
+##### `servePageMainLinkFn`
+
+- **Type**: `(link: string, options: ServePageMainLinkOptions) => string`
+- **Description**: Allow customized module `link` on `/pages`.
+
+##### `serveGlobalData`
+
+- **Type**: `Record<string, unknown>`
+- **Default**: `{}`
+- **Description**: For `serve` mode. Attach fixed global data for specified entry. Will be merged into `window.GLOBAL = {...globalData}`.
+
+##### `moduleFederation`
+
+- **Type**: `ModuleFederationOptions`
+- **Description**: Multiple separate builds should form a single application. This is often known as Micro-Frontends.
+
+##### `useRelativeAssetPath`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Whether to build relative asset public path.
+
+##### `mockFilters`
+
+- **Type**: `Array<string | RegExp>`
+- **Description**: Filter which mock defs files will be loaded for this `entryItem` while `serve`.
+
+##### `output`
+
+- **Type**: `Omit<Required<Configuration>['output'], 'chunkFilename' | 'cssChunkFilename'>`
+- **Description**: Extends the default `output` configuration for each entry item. Normally used with `output.library` to define the global variable name.
+- **Note**: React fast refresh is not supported for library target because the library module cannot run in the browser individually.
+
+<Callout>
+  `HTML Plugin Options`: The following options are part of `HtmlCDNEntryItem`
+  and can be configured per entry:
+</Callout>
+
+##### `templatePath`
+
+- **Type**: `string`
+- **Description**: Webpack relative or absolute path to the template. Must be an absolute path.
+- **Default**: `join(evolveRoot, '/templates/html-plugin/index-{0}.html')`
+
+##### `htmlMinify`
+
+- **Type**: `boolean`
+- **Description**: Indicates if we need to minify HTML.
+- **Default**: `true`
+
+##### `viewport`
+
+- **Type**: `string`
+- **Description**: Support inject viewport scripts in each module. It only available while `allowPx2rem` = true. This script will be injected into `headInlineScripts` of the html file, position is 'beginning'.
+- **Default**: `''`
+
+##### `title`
+
+- **Type**: `string`
+- **Description**: The title to use for the generated HTML document.
+- **Default**: `''`
+
+##### `favicon`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['favicon']>`
+- **Description**: The favicon url to use for the generated HTML document. Should be a path of (32 x 32).png.
+
+##### `headMetaTags`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headMetaTags']>`
+- **Description**: Allow customized head meta tags into compiled html template.
+- **Default**: `[]`
+
+##### `headStyles`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headStyles']>`
+- **Description**: The head styles of the page.
+- **Default**: `[]`
+
+##### `headScripts`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headScripts']>`
+- **Description**: The head scripts of the page.
+- **Default**: `[]`
+
+##### `bodyScripts`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['bodyScripts']>`
+- **Description**: The body scripts of the page.
+- **Default**: `[]`
+
+##### `headInlineScripts`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headInlineScripts']>`
+- **Description**: The head inline scripts of the page.
+- **Default**: `[]`
+
+##### `headInlineStyles`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headInlineStyles']>`
+- **Description**: The head inline styles of the page.
+- **Default**: `[]`
+
+##### `cdnDisabled`
+
+- **Type**: `boolean`
+- **Description**: Indicates if we need to disable `cdn` plugin.
+- **Default**: `false`
+
+## Rspack
+
+The `rspack` option contains all Rspack build tool configurations.
+
+### `mode`
+
+- **Type**: `'production' | 'development' | 'none'`
+- **Default**: `'production'`
+- **Description**: Sets the build mode of Rspack to enable the default optimization strategy. If not set, it will be determined by the `serveMode` parameter:
+  - For `serve` mode: `'development'`
+  - For `build` mode: `'production'`
+
+### `loader`
+
+- **Type**: `RuleSetLoaderOptions`
+- **Required**: Yes
+- **Description**: Configuration options for all rule set loaders.
+
+#### `assetDataUrlMaxSize`
+
+- **Type**: `number`
+- **Default**: `4 * 1024` (4KB)
+- **Description**: Files smaller than this size will be treated as inline modules.
+
+#### `cssLoaderOptions`
+
+- **Type**: `CssLoaderOptions`
+- **Description**: Configuration for `css-loader`, including CSS modules support.
+
+#### `lessOptions`
+
+- **Type**: `Record<string, unknown>`
+- **Description**: Configuration options for Less compiler.
+
+#### `modularImports`
+
+- **Type**: `Array<ModularImportConfig>`
+- **Default**: `[]`
+- **Description**: Modular import plugin configuration for babel, compatible with antd, antd-mobile, lodash, material-ui, etc.
+
+#### `postcssOptions`
+
+- **Type**: `PostcssOptions`
+- **Description**: Configuration for `postcss-loader`, including custom plugins and cssnano options.
+
+#### `pixelOptions`
+
+- **Type**: `false | Partial<PostcssPluginPixelOptions>`
+- **Description**: Configuration for px to rem conversion plugin.
+
+### `performance`
+
+- **Type**: `false | PerformanceOptions`
+- **Description**: Options for performance hints.
+
+#### `hints`
+
+- **Type**: `false | 'error' | 'warning'`
+- **Description**: Sets the format of the hints: warnings, errors, or nothing at all.
+
+#### `maxAssetSize`
+
+- **Type**: `number`
+- **Description**: File size limit (in bytes) when exceeded, Rspack will provide performance hints.
+
+#### `maxEntrypointSize`
+
+- **Type**: `number`
+- **Description**: Total size of an entry point (in bytes).
+
+### `stats`
+
+- **Type**: `StatsOptions`
+- **Description**: Options for build statistics output.
+
+#### `preset`
+
+- **Type**: `boolean | 'normal' | 'none' | 'verbose' | 'errors-only' | 'errors-warnings' | 'minimal' | 'detailed' | 'summary'`
+- **Description**: Sets the preset for stats or enables/disables them.
+
+### `resolve`
+
+- **Type**: `ResolveOptions`
+- **Description**: Options that change how modules are resolved.
+
+#### `alias`
+
+- **Type**: `Record<string, string>`
+- **Description**: Only allows `key:value` alias format (e.g., `{'@xxx': './src/xxx'}`). Usually you don't need to specify an alias, the framework will automatically support `paths` alias from `tsconfig.json`. Less `@import` is also supported via `paths` of `tsconfig.json` with prefix `~`.
+
+#### `fallback`
+
+- **Type**: `Record<string, string | false | string[]>`
+- **Description**: Redirect module requests when normal resolving fails.
+
+### `externalsType`
+
+- **Type**: `string`
+- **Description**: Specify the default type of externals.
+- **Example**: `'window'`
+
+### `externals`
+
+- **Type**: `Record<string, string> | (() => Record<string, string>)`
+- **Default**: `{}`
+- **Description**: Specify dependencies that shouldn't be resolved by Rspack, but should become dependencies of the resulting bundle. If using a function, it will override default externals.
+- **Note**: React 19 is supported by default. For React 18 support, you need to manually add the externals configuration.
+- **Example**:
+  ```ts
+  externals: () => ({
+    vue: 'Vue',
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  });
+  ```
+
+### `publicPath`
+
+- **Type**: `string`
+- **Default**: `'auto'`
+- **Description**: The public path for output assets. Defaults to `'auto'` with web and web-worker targets.
+
+### `target`
+
+- **Type**: `string | false | string[]`
+- **Default**: `['web', 'es5']`
+- **Description**: Environment to build for. An array of environments to build for all of them when possible.
+
+### `minimizer`
+
+- **Type**: `false | MinimizerOptions`
+- **Default**: Terser minimizer enabled for production
+- **Description**: Minimizer(s) to use for minimizing the output. For `serve` mode, `minimize` is always `false`.
+
+#### `terserOptions`
+
+- **Type**: `false | SwcJsMinimizerRspackPluginOptions`
+- **Description**: Allow to disable terser minimizer or customize terser options. Uses SwcJsMinimizerRspackPlugin.
+
+#### `imageMin`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Enable image minification.
+
+### `sourceMap`
+
+- **Type**: `'hidden-source-map' | 'source-map' | false`
+- **Default**: `false`
+- **Description**: A developer tool to enhance debugging. See [Rspack devtool documentation](https://rs/config/devtool).
+
+### `plugins`
+
+- **Type**: `EvolvePlugins`
+- **Required**: Yes
+- **Description**: The plugins configuration options.
+
+#### `externalPlugins`
+
+- **Type**: `Plugins`
+- **Description**: External Rspack plugins.
+
+#### `definePlugin`
+
+- **Type**: `DefineVariablesPluginOptions`
+- **Description**: Configuration for define variables plugin.
+
+#### `tsCheckerPlugin`
+
+- **Type**: `TsCheckerPluginOptions`
+- **Description**: Configuration for TypeScript checker plugin.
+
+#### `rsdoctorPlugin`
+
+- **Type**: `RsdoctorPluginOptions`
+- **Description**: Configuration for Rsdoctor plugin.
+
+#### `htmlPlugin`
+
+- **Type**: `HtmlPluginOptions`
+- **Required**: Yes
+- **Description**: Configuration for HTML plugin.
+
+### `output`
+
+- **Type**: `OutputOptions`
+- **Description**: Configuration for the output of the compilation.
+
+#### `outputDir`
+
+- **Type**: `string | (() => string | Promise<string>)`
+- **Default**: `'public'`
+- **Description**: The output directory as absolute path. Note: custom `outputDir` must have prefix `public` (e.g., `public/a/b`, `public/c/d`). Don't support `a/b`.
+
+#### `chunkFileVirtualPath`
+
+- **Type**: `string`
+- **Description**: The virtual path prefix for output chunk files. The actual chunk file name will be: `${chunkFileVirtualPath}/${chunkFilename}`.
+
+#### `enableBundleHashName`
+
+- **Type**: `boolean`
+- **Default**: `true`
+- **Description**: Enable `contenthash` bundle file names.
+
+### `module`
+
+- **Type**: `ModuleOptions`
+- **Description**: Extra module options for Rspack. See [Rspack module documentation](https://rspack.rs/zh/config/module).
+
+### `lazyCompilation`
+
+- **Type**: `LazyCompilationOptions`
+- **Description**: Extra optimization options for Rspack. See [Rspack optimization documentation](https://rspack.rs/zh/config/optimization).
+
+### `infrastructureLogging`
+
+- **Type**: `InfrastructureLogging`
+- **Description**: Infrastructure logging options for Rspack.
+
+## Dev Server
+
+The `devServer` option contains all development server configurations. This section is optional and only applies to development mode.
+
+### `pageProxy`
+
+- **Type**: `string`
+- **Default**: `'/pages'`
+- **Description**: The page proxy path. Must have prefix slash `/`.
+
+### `staticPages`
+
+- **Type**: `Array<StaticPageConfig>`
+- **Description**: Static pages configurations. The static pages will be served from the specified `htmlPath`.
+
+#### `routePath`
+
+- **Type**: `string | ((targetPath: string) => boolean)`
+- **Description**: The route path to access this static page.
+
+#### `htmlPath`
+
+- **Type**: `string`
+- **Description**: The absolute path to the HTML file.
+
+#### `entryName`
+
+- **Type**: `string`
+- **Description**: The entry name for this static page.
+
+### `middlewares`
+
+- **Type**: `RequestHandler[]`
+- **Description**: Custom Express middlewares for `page` and `modules`.
+
+### `watchOptions`
+
+- **Type**: `WebpackWatchOptions`
+- **Description**: Watch mode options. This configuration will be merged into `webpack-dev-server`.
+
+#### `aggregateTimeout`
+
+- **Type**: `number`
+- **Description**: Delay the rebuilt after the first change. Value is a time in ms.
+
+#### `followSymlinks`
+
+- **Type**: `boolean`
+- **Description**: Resolve symlinks and watch symlink and real file.
+
+#### `ignored`
+
+- **Type**: `string[]`
+- **Description**: Ignore some files from watching.
+
+#### `poll`
+
+- **Type**: `number | boolean`
+- **Description**: Enable polling mode for watching.
+
+### `devBeforeMiddlewares`
+
+- **Type**: `RspackMiddleware[]`
+- **Default**: `[]`
+- **Description**: Provides the ability to execute a custom function and apply custom middleware(s) before default middlewares. See [webpack-dev-server setupMiddlewares](https://webpack.js.org/configuration/dev-server/#devserversetupmiddlewares).
+
+### `devAfterMiddlewares`
+
+- **Type**: `RspackMiddleware[]`
+- **Default**: `[]`
+- **Description**: Provides the ability to execute a custom function and apply custom middleware(s) after default middlewares. See [webpack-dev-server setupMiddlewares](https://webpack.js.org/configuration/dev-server/#devserversetupmiddlewares).
+
+### `defaultServeGlobalData`
+
+- **Type**: `(entryItem: EvolveEntryMapContent, hostUrl: string) => Promise<Record<string, unknown>> | Record<string, unknown>`
+- **Description**: Customized global serve data injected into `window.GLOBAL = {...globalData}`.
+
+### `bundleDirResolver`
+
+- **Type**: `(dir: string, data: BundleDirResolverData) => string`
+- **Default**: `(dir) => dir`
+- **Description**: Customized `styles`, `scripts` bundle path lookup resolver. The full directory path such as `/public/${virtualPath}/${entryName}/bundle.js`.
+
+### `autoOpen`
+
+- **Type**: `boolean`
+- **Default**: `true`
+- **Description**: Whether to automatically open browser page for `serve`.
+
+### `liveReload`
+
+- **Type**: `true`
+- **Default**: `undefined`
+- **Description**: Enables reload/refresh the page(s) when file changes are detected (`auto` by default).
+
+### `clientOverlay`
+
+- **Type**: `ClientConfiguration['overlay']`
+- **Default**: `{ errors: true, warnings: false }`
+- **Description**: Enables a full-screen overlay in the browser when there are compiler errors or warnings.
+
+### `webSocketURL`
+
+- **Type**: `WebSocketURL | 'localIp'`
+- **Description**: Allows specifying URL to web socket server (useful when you're proxying dev server and client script does not always know where to connect to).
+- **Example**: Use `'localIp'` for remote mobile devices HMR, it will convert to local IP `ws://10.10.100.3/ws`.
+
+### `mockOptions`
+
+- **Type**: `Omit<HpsMockOptions, 'projectCwd'>`
+- **Description**: The customized config options of `@hyperse/hps-srv-mock`, it will override options `HpsMockOptions`.
+
+### `https`
+
+- **Type**: `SecureContextHttps`
+- **Description**: Provide your own certificate using the https option.
+
+## Inspector
+
+The `inspector` option configures the code inspector for debugging. If `serveMode` is `false`, it will be ignored and the code inspector will be closed.
+
+### `inspector`
+
+- **Type**: `false | InspectorOptions`
+- **Description**: The options of code inspector.
+
+### `keys`
+
+- **Type**: `string[]`
+- **Default**: `['$mod', 'i']` on macOS, `['Ctrl', 'i']` on other platforms
+- **Description**: Inspector Component toggle hotkeys.
+
+### `injectClient`
+
+- **Type**: `boolean`
+- **Default**: `true`
+- **Description**: Whether to automatically inject the code inspector client entry.
+
+### `customLaunchEditorEndpoint`
+
+- **Type**: `string`
+- **Default**: `'/__hps_inspector'`
+- **Description**: The base path of the launch editor endpoint.
+
+### `trustedEditor`
+
+- **Type**: `${TrustedEditor}`
+- **Default**: `'code'`
+- **Description**: The trusted editors that can be launched from browser. Supported values include: `'code'`, `'code-insiders'`, `'vscodium'`, `'vscodium-insiders'`, `'codium'`, `'cursor'`, `'webstorm'`, `'appcode'`, `'idea'`, `'phpstorm'`, `'pycharm'`, `'rubymine'`, `'goland'`, `'rider'`, `'subl'`, `'zed'`, `'atom'`, `'vim'`, `'nvim'`, `'emacs'`.
+
+## Configuration Example
+
+Here's a complete configuration example:
+
+```ts
+import { myDefineConfig } from '@hyperse/hps';
+
+export default myDefineConfig(() => {
+  return {
+    'build.evolve': () => {
+      return Promise.resolve({
+        projectCwd: process.cwd(),
+        projectVirtualPath: 'hps/evolve',
+        rejectWarnings: false,
+        entryMap: {
+          home: {
+            entry: ['./src/home/index.tsx'],
+            options: {
+              title: 'Home Page',
+              allowPx2rem: true,
+            },
+          },
+          mine: {
+            entry: ['./src/mine/index.tsx'],
+            options: {
+              title: 'Mine Page',
+            },
+          },
+        },
+        rspack: {
+          mode: 'production',
+          loader: {
+            cssLoaderOptions: {
+              modules: true,
+            },
+          },
+          plugins: {
+            htmlPlugin: {
+              htmlCdn: 'http://dev.hps.com:4000/public',
+            },
+            tsCheckerPlugin: {
+              enabled: false,
+            },
+          },
+          output: {
+            outputDir: 'public',
+            chunkFileVirtualPath: 'runtime-chunks',
+          },
+        },
+        devServer: {
+          pageProxy: '/pages',
+          autoOpen: true,
+          mockOptions: {
+            // mock configuration
+          },
+        },
+        inspector: {
+          keys: ['$mod', 'i'],
+          injectClient: true,
+          trustedEditor: 'code',
+        },
+      });
+    },
+    'serve.evolve': () => {
+      // Similar configuration for serve mode
+      return Promise.resolve({
+        // ... same as build.evolve
+      });
+    },
+  };
+});
+```42:["$","$L45",null,{"metadata":{"sidebarTitle":"Configuration","description":"Learn about the configuration options for the HPS CLI.","title":"Configuration","filePath":"src/app/configuration/configuration/page.mdx","timestamp":1766127261000},"sourceCode":"$46","children":["$L47","$L48"]}]
+43:["$","$L49",null,{"children":["$","$4a",null,{"name":"Next.MetadataOutlet","children":"$@4b"}]}]
+47:["$","div",null,{"id":"nextra-skip-nav"}]
+48:["$","main",null,{"data-pagefind-body":true,"children":[["$","h1",null,{"className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-bold x:mt-2 x:text-4xl","children":["Configuration","$undefined"]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The HPS CLI provides comprehensive configuration options for the development server and production build. All configuration options are defined in the ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HpsEvolveOptions"}]," interface."]}],"\n",["$","h2",null,{"id":"overview","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Overview",["$","$L4c",null,{"id":"overview"}]]}],"\n",["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"The HPS configuration is organized into several main sections:"}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Basic Configuration"}],": Project workspace and virtual path settings"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Entry Configuration"}],": Entry point definitions for your application modules"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Rspack Configuration"}],": Build tool settings including mode, loaders, optimization, and output"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Dev Server Configuration"}],": Development server settings including proxy, middleware, and HMR"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Inspector Configuration"}],": Code inspector settings for debugging"]}],"\n"]}],"\n",["$","h2",null,{"id":"basic","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Basic",["$","$L4c",null,{"id":"basic"}]]}],"\n",["$","h3",null,{"id":"projectcwd","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"projectCwd"}],["$","$L4c",null,{"id":"projectcwd"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Required"}],": Yes"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The project workspace directory (absolute path)."]}],"\n"]}],"\n",["$","h3",null,{"id":"projectvirtualpath","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"projectVirtualPath"}],["$","$L4c",null,{"id":"projectvirtualpath"}]]}],"\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Required"}],": Yes"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The virtual path for the current project. This is used as a prefix for routing and asset paths."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Example"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'hps/evolve'"}]]}],"\n"]}],"\n","$L4d","\n","$L4e","\n","$L4f","\n","$L50","\n","$L51","\n","$L52","\n","$L53","\n","$L54","\n","$L55","\n","$L56","\n","$L57","\n","$L58","\n","$L59","\n","$L5a","\n","$L5b","\n","$L5c","\n","$L5d","\n","$L5e","\n","$L5f","\n","$L60","\n","$L61","\n","$L62","\n","$L63","\n","$L64","\n","$L65","\n","$L66","\n","$L67","\n","$L68","\n","$L69","\n","$L6a","\n","$L6b","\n","$L6c","\n","$L6d","\n","$L6e","\n","$L6f","\n","$L70","\n","$L71","\n","$L72","\n","$L73","\n","$L74","\n","$L75","\n","$L76","\n","$L77","\n","$L78","\n","$L79","\n","$L7a","\n","$L7b","\n","$L7c","\n","$L7d","\n","$L7e","\n","$L7f","\n","$L80","\n","$L81","\n","$L82","\n","$L83","\n","$L84","\n","$L85","\n","$L86","\n","$L87","\n","$L88","\n","$L89","\n","$L8a","\n","$L8b","\n","$L8c","\n","$L8d","\n","$L8e","\n","$L8f","\n","$L90","\n","$L91","\n","$L92","\n","$L93","\n","$L94","\n","$L95","\n","$L96","\n","$L97","\n","$L98","\n","$L99","\n","$L9a","\n","$L9b","\n","$L9c","\n","$L9d","\n","$L9e","\n","$L9f","\n","$La0","\n","$La1","\n","$La2","\n","$La3","\n","$La4","\n","$La5","\n","$La6","\n","$La7","\n","$La8","\n","$La9","\n","$Laa","\n","$Lab","\n","$Lac","\n","$Lad","\n","$Lae","\n","$Laf","\n","$Lb0","\n","$Lb1","\n","$Lb2","\n","$Lb3","\n","$Lb4","\n","$Lb5","\n","$Lb6","\n","$Lb7","\n","$Lb8","\n","$Lb9","\n","$Lba","\n","$Lbb","\n","$Lbc","\n","$Lbd","\n","$Lbe","\n","$Lbf","\n","$Lc0","\n","$Lc1","\n","$Lc2","\n","$Lc3","\n","$Lc4","\n","$Lc5","\n","$Lc6","\n","$Lc7","\n","$Lc8","\n","$Lc9","\n","$Lca","\n","$Lcb","\n","$Lcc","\n","$Lcd","\n","$Lce","\n","$Lcf","\n","$Ld0","\n","$Ld1","\n","$Ld2","\n","$Ld3","\n","$Ld4","\n","$Ld5","\n","$Ld6","\n","$Ld7","\n","$Ld8","\n","$Ld9","\n","$Lda","\n","$Ldb","\n","$Ldc","\n","$Ldd","\n","$Lde","\n","$Ldf","\n","$Le0","\n","$Le1","\n","$Le2","\n","$Le3","\n","$Le4","\n","$Le5","\n","$Le6","\n","$Le7","\n","$Le8","\n","$Le9","\n","$Lea","\n","$Leb","\n","$Lec","\n","$Led","\n","$Lee","\n","$Lef","\n","$Lf0","\n","$Lf1","\n","$Lf2","\n","$Lf3","\n","$Lf4","\n","$Lf5","\n","$Lf6","\n","$Lf7","\n","$Lf8","\n","$Lf9","\n","$Lfa","\n","$Lfb","\n","$Lfc","\n","$Lfd","\n","$Lfe","\n","$Lff","\n","$L100","\n","$L101","\n","$L102","\n","$L103","\n","$L104","\n","$L105","\n","$L106","\n","$L107","\n","$L108","\n","$L109","\n","$L10a","\n","$L10b","\n","$L10c","\n","$L10d","\n","$L10e"]}]
+4b:null
+4d:["$","h3",null,{"id":"rejectwarnings","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"rejectWarnings"}],["$","$L4c",null,{"id":"rejectwarnings"}]]}]
+4e:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": For production mode, when set to ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"true"}],", the compilation process will be interrupted if warnings are received during the build."]}],"\n"]}]
+4f:["$","h2",null,{"id":"entry","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Entry",["$","$L4c",null,{"id":"entry"}]]}]
+50:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"entryMap"}]," option defines all Rspack entry configurations."]}]
+51:["$","h3",null,{"id":"entrymap","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"entryMap"}],["$","$L4c",null,{"id":"entrymap"}]]}]
+52:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"EvolveEntryMapContent"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Required"}],": Yes"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Entry configuration for each module."]}],"\n"]}]
+53:["$","h4",null,{"id":"entry-1","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"entry"}],["$","$L4c",null,{"id":"entry-1"}]]}]
+54:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Required"}],": Yes"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Array of entry file paths."]}],"\n"]}]
+55:["$","h4",null,{"id":"entrymodulebase","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"entryModuleBase"}],["$","$L4c",null,{"id":"entrymodulebase"}]]}]
+56:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The base path of the entry module."]}],"\n"]}]
+57:["$","h4",null,{"id":"groupname","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"groupName"}],["$","$L4c",null,{"id":"groupname"}]]}]
+58:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": An alias used when grouping builds."]}],"\n"]}]
+59:["$","h4",null,{"id":"options","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"options"}],["$","$L4c",null,{"id":"options"}]]}]
+5a:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"EvolveEntryItemOption"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration options for each entry item."]}],"\n"]}]
+5b:["$","h5",null,{"id":"allowpx2rem","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"allowPx2rem"}],["$","$L4c",null,{"id":"allowpx2rem"}]]}]
+5c:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Whether to convert Px to rem. Defaults to ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"entryItemOption?.allowPx2rem ?? pluginLoaderOptions?.pixelOptions?.enabled"}],"."]}],"\n"]}]
+5d:["$","h5",null,{"id":"externals","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"externals"}],["$","$L4c",null,{"id":"externals"}]]}]
+5e:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Record<string, string>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Specify dependencies that shouldn’t be resolved by webpack for this entry. It will be merged with global externals configuration."]}],"\n"]}]
+5f:["$","h5",null,{"id":"enablebundlehashname","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"enableBundleHashName"}],["$","$L4c",null,{"id":"enablebundlehashname"}]]}]
+60:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"true"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Whether to use ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"contenthash"}]," bundle name."]}],"\n"]}]
+61:["$","h5",null,{"id":"servepagemainlinkfn","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"servePageMainLinkFn"}],["$","$L4c",null,{"id":"servepagemainlinkfn"}]]}]
+62:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"(link: string, options: ServePageMainLinkOptions) => string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Allow customized module ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"link"}]," on ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"/pages"}],"."]}],"\n"]}]
+63:["$","h5",null,{"id":"serveglobaldata","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serveGlobalData"}],["$","$L4c",null,{"id":"serveglobaldata"}]]}]
+64:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Record<string, unknown>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"{}"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": For ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serve"}]," mode. Attach fixed global data for specified entry. Will be merged into ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"window.GLOBAL = {...globalData}"}],"."]}],"\n"]}]
+65:["$","h5",null,{"id":"modulefederation","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"moduleFederation"}],["$","$L4c",null,{"id":"modulefederation"}]]}]
+66:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"ModuleFederationOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Multiple separate builds should form a single application. This is often known as Micro-Frontends."]}],"\n"]}]
+67:["$","h5",null,{"id":"userelativeassetpath","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"useRelativeAssetPath"}],["$","$L4c",null,{"id":"userelativeassetpath"}]]}]
+68:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Whether to build relative asset public path."]}],"\n"]}]
+69:["$","h5",null,{"id":"mockfilters","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"mockFilters"}],["$","$L4c",null,{"id":"mockfilters"}]]}]
+6a:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Array<string | RegExp>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Filter which mock defs files will be loaded for this ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"entryItem"}]," while ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serve"}],"."]}],"\n"]}]
+6b:["$","h5",null,{"id":"output","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"output"}],["$","$L4c",null,{"id":"output"}]]}]
+6c:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Omit<Required<Configuration>['output'], 'chunkFilename' | 'cssChunkFilename'>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Extends the default ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"output"}]," configuration for each entry item. Normally used with ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"output.library"}]," to define the global variable name."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Note"}],": React fast refresh is not supported for library target because the library module cannot run in the browser individually."]}],"\n"]}]
+6d:["$","div",null,{"className":"nextra-callout x:overflow-x-auto x:not-first:mt-[1.25em] x:flex x:rounded-lg x:border x:py-[.5em] x:pe-[1em] x:contrast-more:border-current! x:bg-green-100 x:dark:bg-green-900/30 x:text-green-700 x:dark:text-green-500 x:border-green-700 x:dark:border-green-800","children":[["$","div",null,{"className":"x:select-none x:text-[1.25em] x:ps-[.6em] x:pe-[.4em]","style":{"fontFamily":"\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\""},"data-pagefind-ignore":"all","children":["$","svg",null,{"viewBox":"0 0 16 16","fill":"currentColor","height":".8em","className":"x:mt-[.3em]","children":["$","path",null,{"d":"M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"}]}]}],["$","div",null,{"className":"x:w-full x:min-w-0","children":["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HTML Plugin Options"}],": The following options are part of ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HtmlCDNEntryItem"}],"\nand can be configured per entry:"]}]}]]}]
+6e:["$","h5",null,{"id":"templatepath","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"templatePath"}],["$","$L4c",null,{"id":"templatepath"}]]}]
+6f:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Webpack relative or absolute path to the template. Must be an absolute path."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"join(evolveRoot, '/templates/html-plugin/index-{0}.html')"}]]}],"\n"]}]
+70:["$","h5",null,{"id":"htmlminify","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"htmlMinify"}],["$","$L4c",null,{"id":"htmlminify"}]]}]
+71:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Indicates if we need to minify HTML."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"true"}]]}],"\n"]}]
+72:["$","h5",null,{"id":"viewport","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"viewport"}],["$","$L4c",null,{"id":"viewport"}]]}]
+73:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Support inject viewport scripts in each module. It only available while ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"allowPx2rem"}]," = true. This script will be injected into ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"headInlineScripts"}]," of the html file, position is ‘beginning’."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"''"}]]}],"\n"]}]
+74:["$","h5",null,{"id":"title","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"title"}],["$","$L4c",null,{"id":"title"}]]}]
+75:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The title to use for the generated HTML document."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"''"}]]}],"\n"]}]
+76:["$","h5",null,{"id":"favicon","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"favicon"}],["$","$L4c",null,{"id":"favicon"}]]}]
+77:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HtmlPluginConfigTokenType<TemplateOptions['favicon']>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The favicon url to use for the generated HTML document. Should be a path of (32 x 32).png."]}],"\n"]}]
+78:["$","h5",null,{"id":"headmetatags","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"headMetaTags"}],["$","$L4c",null,{"id":"headmetatags"}]]}]
+79:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HtmlPluginConfigTokenType<TemplateOptions['headMetaTags']>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Allow customized head meta tags into compiled html template."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[]"}]]}],"\n"]}]
+7a:["$","h5",null,{"id":"headstyles","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"headStyles"}],["$","$L4c",null,{"id":"headstyles"}]]}]
+7b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HtmlPluginConfigTokenType<TemplateOptions['headStyles']>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The head styles of the page."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[]"}]]}],"\n"]}]
+7c:["$","h5",null,{"id":"headscripts","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"headScripts"}],["$","$L4c",null,{"id":"headscripts"}]]}]
+7d:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HtmlPluginConfigTokenType<TemplateOptions['headScripts']>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The head scripts of the page."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[]"}]]}],"\n"]}]
+7e:["$","h5",null,{"id":"bodyscripts","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"bodyScripts"}],["$","$L4c",null,{"id":"bodyscripts"}]]}]
+7f:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HtmlPluginConfigTokenType<TemplateOptions['bodyScripts']>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The body scripts of the page."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[]"}]]}],"\n"]}]
+80:["$","h5",null,{"id":"headinlinescripts","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"headInlineScripts"}],["$","$L4c",null,{"id":"headinlinescripts"}]]}]
+81:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HtmlPluginConfigTokenType<TemplateOptions['headInlineScripts']>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The head inline scripts of the page."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[]"}]]}],"\n"]}]
+82:["$","h5",null,{"id":"headinlinestyles","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"headInlineStyles"}],["$","$L4c",null,{"id":"headinlinestyles"}]]}]
+83:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HtmlPluginConfigTokenType<TemplateOptions['headInlineStyles']>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The head inline styles of the page."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[]"}]]}],"\n"]}]
+84:["$","h5",null,{"id":"cdndisabled","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-lg","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"cdnDisabled"}],["$","$L4c",null,{"id":"cdndisabled"}]]}]
+85:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Indicates if we need to disable ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"cdn"}]," plugin."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false"}]]}],"\n"]}]
+86:["$","h2",null,{"id":"rspack","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Rspack",["$","$L4c",null,{"id":"rspack"}]]}]
+87:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"rspack"}]," option contains all Rspack build tool configurations."]}]
+88:["$","h3",null,{"id":"mode","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"mode"}],["$","$L4c",null,{"id":"mode"}]]}]
+89:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'production' | 'development' | 'none'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'production'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Sets the build mode of Rspack to enable the default optimization strategy. If not set, it will be determined by the ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serveMode"}]," parameter:","\n",["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":["For ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serve"}]," mode: ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'development'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":["For ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"build"}]," mode: ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'production'"}]]}],"\n"]}],"\n"]}],"\n"]}]
+8a:["$","h3",null,{"id":"loader","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"loader"}],["$","$L4c",null,{"id":"loader"}]]}]
+8b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"RuleSetLoaderOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Required"}],": Yes"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration options for all rule set loaders."]}],"\n"]}]
+8c:["$","h4",null,{"id":"assetdataurlmaxsize","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"assetDataUrlMaxSize"}],["$","$L4c",null,{"id":"assetdataurlmaxsize"}]]}]
+8d:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"number"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"4 * 1024"}]," (4KB)"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Files smaller than this size will be treated as inline modules."]}],"\n"]}]
+8e:["$","h4",null,{"id":"cssloaderoptions","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"cssLoaderOptions"}],["$","$L4c",null,{"id":"cssloaderoptions"}]]}]
+8f:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"CssLoaderOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration for ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"css-loader"}],", including CSS modules support."]}],"\n"]}]
+90:["$","h4",null,{"id":"lessoptions","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"lessOptions"}],["$","$L4c",null,{"id":"lessoptions"}]]}]
+91:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Record<string, unknown>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration options for Less compiler."]}],"\n"]}]
+92:["$","h4",null,{"id":"modularimports","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"modularImports"}],["$","$L4c",null,{"id":"modularimports"}]]}]
+93:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Array<ModularImportConfig>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Modular import plugin configuration for babel, compatible with antd, antd-mobile, lodash, material-ui, etc."]}],"\n"]}]
+94:["$","h4",null,{"id":"postcssoptions","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"postcssOptions"}],["$","$L4c",null,{"id":"postcssoptions"}]]}]
+95:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"PostcssOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration for ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"postcss-loader"}],", including custom plugins and cssnano options."]}],"\n"]}]
+96:["$","h4",null,{"id":"pixeloptions","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"pixelOptions"}],["$","$L4c",null,{"id":"pixeloptions"}]]}]
+97:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false | Partial<PostcssPluginPixelOptions>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration for px to rem conversion plugin."]}],"\n"]}]
+98:["$","h3",null,{"id":"performance","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"performance"}],["$","$L4c",null,{"id":"performance"}]]}]
+99:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false | PerformanceOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Options for performance hints."]}],"\n"]}]
+9a:["$","h4",null,{"id":"hints","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"hints"}],["$","$L4c",null,{"id":"hints"}]]}]
+9b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false | 'error' | 'warning'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Sets the format of the hints: warnings, errors, or nothing at all."]}],"\n"]}]
+9c:["$","h4",null,{"id":"maxassetsize","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"maxAssetSize"}],["$","$L4c",null,{"id":"maxassetsize"}]]}]
+9d:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"number"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": File size limit (in bytes) when exceeded, Rspack will provide performance hints."]}],"\n"]}]
+9e:["$","h4",null,{"id":"maxentrypointsize","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"maxEntrypointSize"}],["$","$L4c",null,{"id":"maxentrypointsize"}]]}]
+9f:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"number"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Total size of an entry point (in bytes)."]}],"\n"]}]
+a0:["$","h3",null,{"id":"stats","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"stats"}],["$","$L4c",null,{"id":"stats"}]]}]
+a1:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"StatsOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Options for build statistics output."]}],"\n"]}]
+a2:["$","h4",null,{"id":"preset","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"preset"}],["$","$L4c",null,{"id":"preset"}]]}]
+a3:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean | 'normal' | 'none' | 'verbose' | 'errors-only' | 'errors-warnings' | 'minimal' | 'detailed' | 'summary'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Sets the preset for stats or enables/disables them."]}],"\n"]}]
+a4:["$","h3",null,{"id":"resolve","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"resolve"}],["$","$L4c",null,{"id":"resolve"}]]}]
+a5:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"ResolveOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Options that change how modules are resolved."]}],"\n"]}]
+a6:["$","h4",null,{"id":"alias","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"alias"}],["$","$L4c",null,{"id":"alias"}]]}]
+a7:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Record<string, string>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Only allows ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"key:value"}]," alias format (e.g., ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"{'@xxx': './src/xxx'}"}],"). Usually you don’t need to specify an alias, the framework will automatically support ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"paths"}]," alias from ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"tsconfig.json"}],". Less ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"@import"}]," is also supported via ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"paths"}]," of ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"tsconfig.json"}]," with prefix ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"~"}],"."]}],"\n"]}]
+a8:["$","h4",null,{"id":"fallback","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"fallback"}],["$","$L4c",null,{"id":"fallback"}]]}]
+a9:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Record<string, string | false | string[]>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Redirect module requests when normal resolving fails."]}],"\n"]}]
+aa:["$","h3",null,{"id":"externalstype","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"externalsType"}],["$","$L4c",null,{"id":"externalstype"}]]}]
+ab:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Specify the default type of externals."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Example"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'window'"}]]}],"\n"]}]
+ac:["$","h3",null,{"id":"externals-1","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"externals"}],["$","$L4c",null,{"id":"externals-1"}]]}]
+ad:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Record<string, string> | (() => Record<string, string>)"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"{}"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Specify dependencies that shouldn’t be resolved by Rspack, but should become dependencies of the resulting bundle. If using a function, it will override default externals."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Note"}],": React 19 is supported by default. For React 18 support, you need to manually add the externals configuration."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Example"}],":","\n",["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$L10f",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$L110",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"externals"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":": () "}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"=>"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" ({"}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  vue: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'Vue'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  react: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'React'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"  'react-dom'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":": "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'ReactDOM'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}],"\n",["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"});"}]}]]}]]}]]}],"\n"]}],"\n"]}]
+ae:["$","h3",null,{"id":"publicpath","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"publicPath"}],["$","$L4c",null,{"id":"publicpath"}]]}]
+af:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'auto'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The public path for output assets. Defaults to ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'auto'"}]," with web and web-worker targets."]}],"\n"]}]
+b0:["$","h3",null,{"id":"target","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"target"}],["$","$L4c",null,{"id":"target"}]]}]
+b1:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string | false | string[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"['web', 'es5']"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Environment to build for. An array of environments to build for all of them when possible."]}],"\n"]}]
+b2:["$","h3",null,{"id":"minimizer","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"minimizer"}],["$","$L4c",null,{"id":"minimizer"}]]}]
+b3:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false | MinimizerOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": Terser minimizer enabled for production"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Minimizer(s) to use for minimizing the output. For ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serve"}]," mode, ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"minimize"}]," is always ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false"}],"."]}],"\n"]}]
+b4:["$","h4",null,{"id":"terseroptions","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"terserOptions"}],["$","$L4c",null,{"id":"terseroptions"}]]}]
+b5:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false | SwcJsMinimizerRspackPluginOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Allow to disable terser minimizer or customize terser options. Uses SwcJsMinimizerRspackPlugin."]}],"\n"]}]
+b6:["$","h4",null,{"id":"imagemin","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"imageMin"}],["$","$L4c",null,{"id":"imagemin"}]]}]
+b7:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Enable image minification."]}],"\n"]}]
+b8:["$","h3",null,{"id":"sourcemap","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"sourceMap"}],["$","$L4c",null,{"id":"sourcemap"}]]}]
+b9:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'hidden-source-map' | 'source-map' | false"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": A developer tool to enhance debugging. See ",["$","a",null,{"href":"https://rs/config/devtool","target":"_blank","rel":"noreferrer","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":["Rspack devtool documentation",[" ",["$","svg",null,{"fill":"none","stroke":"currentColor","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":1.7,"viewBox":"0 0 24 24","height":"1em","className":"x:inline x:align-baseline x:shrink-0","children":[["$","path",null,{"d":"M7 17L17 7"}],["$","path",null,{"d":"M7 7h10v10"}]]}]]]}],"."]}],"\n"]}]
+ba:["$","h3",null,{"id":"plugins","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"plugins"}],["$","$L4c",null,{"id":"plugins"}]]}]
+bb:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"EvolvePlugins"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Required"}],": Yes"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The plugins configuration options."]}],"\n"]}]
+bc:["$","h4",null,{"id":"externalplugins","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"externalPlugins"}],["$","$L4c",null,{"id":"externalplugins"}]]}]
+bd:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Plugins"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": External Rspack plugins."]}],"\n"]}]
+be:["$","h4",null,{"id":"defineplugin","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"definePlugin"}],["$","$L4c",null,{"id":"defineplugin"}]]}]
+bf:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"DefineVariablesPluginOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration for define variables plugin."]}],"\n"]}]
+c0:["$","h4",null,{"id":"tscheckerplugin","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"tsCheckerPlugin"}],["$","$L4c",null,{"id":"tscheckerplugin"}]]}]
+c1:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"TsCheckerPluginOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration for TypeScript checker plugin."]}],"\n"]}]
+c2:["$","h4",null,{"id":"rsdoctorplugin","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"rsdoctorPlugin"}],["$","$L4c",null,{"id":"rsdoctorplugin"}]]}]
+c3:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"RsdoctorPluginOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration for Rsdoctor plugin."]}],"\n"]}]
+c4:["$","h4",null,{"id":"htmlplugin","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"htmlPlugin"}],["$","$L4c",null,{"id":"htmlplugin"}]]}]
+c5:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HtmlPluginOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Required"}],": Yes"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration for HTML plugin."]}],"\n"]}]
+c6:["$","h3",null,{"id":"output-1","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"output"}],["$","$L4c",null,{"id":"output-1"}]]}]
+c7:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"OutputOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Configuration for the output of the compilation."]}],"\n"]}]
+c8:["$","h4",null,{"id":"outputdir","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"outputDir"}],["$","$L4c",null,{"id":"outputdir"}]]}]
+c9:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string | (() => string | Promise<string>)"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'public'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The output directory as absolute path. Note: custom ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"outputDir"}]," must have prefix ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"public"}]," (e.g., ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"public/a/b"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"public/c/d"}],"). Don’t support ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"a/b"}],"."]}],"\n"]}]
+ca:["$","h4",null,{"id":"chunkfilevirtualpath","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"chunkFileVirtualPath"}],["$","$L4c",null,{"id":"chunkfilevirtualpath"}]]}]
+cb:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The virtual path prefix for output chunk files. The actual chunk file name will be: ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"$${chunkFileVirtualPath}/${chunkFilename}"}],"."]}],"\n"]}]
+cc:["$","h4",null,{"id":"enablebundlehashname-1","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"enableBundleHashName"}],["$","$L4c",null,{"id":"enablebundlehashname-1"}]]}]
+cd:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"true"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Enable ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"contenthash"}]," bundle file names."]}],"\n"]}]
+ce:["$","h3",null,{"id":"module","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"module"}],["$","$L4c",null,{"id":"module"}]]}]
+cf:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"ModuleOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Extra module options for Rspack. See ",["$","a",null,{"href":"https://rspack.rs/zh/config/module","target":"_blank","rel":"noreferrer","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":["Rspack module documentation",[" ",["$","svg",null,{"fill":"none","stroke":"currentColor","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":1.7,"viewBox":"0 0 24 24","height":"1em","className":"x:inline x:align-baseline x:shrink-0","children":[["$","path",null,{"d":"M7 17L17 7"}],["$","path",null,{"d":"M7 7h10v10"}]]}]]]}],"."]}],"\n"]}]
+d0:["$","h3",null,{"id":"lazycompilation","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"lazyCompilation"}],["$","$L4c",null,{"id":"lazycompilation"}]]}]
+d1:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"LazyCompilationOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Extra optimization options for Rspack. See ",["$","a",null,{"href":"https://rspack.rs/zh/config/optimization","target":"_blank","rel":"noreferrer","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":["Rspack optimization documentation",[" ",["$","svg",null,{"fill":"none","stroke":"currentColor","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":1.7,"viewBox":"0 0 24 24","height":"1em","className":"x:inline x:align-baseline x:shrink-0","children":[["$","path",null,{"d":"M7 17L17 7"}],["$","path",null,{"d":"M7 7h10v10"}]]}]]]}],"."]}],"\n"]}]
+d2:["$","h3",null,{"id":"infrastructurelogging","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"infrastructureLogging"}],["$","$L4c",null,{"id":"infrastructurelogging"}]]}]
+d3:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"InfrastructureLogging"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Infrastructure logging options for Rspack."]}],"\n"]}]
+d4:["$","h2",null,{"id":"dev-server","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Dev Server",["$","$L4c",null,{"id":"dev-server"}]]}]
+d5:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"devServer"}]," option contains all development server configurations. This section is optional and only applies to development mode."]}]
+d6:["$","h3",null,{"id":"pageproxy","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"pageProxy"}],["$","$L4c",null,{"id":"pageproxy"}]]}]
+d7:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'/pages'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The page proxy path. Must have prefix slash ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"/"}],"."]}],"\n"]}]
+d8:["$","h3",null,{"id":"staticpages","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"staticPages"}],["$","$L4c",null,{"id":"staticpages"}]]}]
+d9:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Array<StaticPageConfig>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Static pages configurations. The static pages will be served from the specified ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"htmlPath"}],"."]}],"\n"]}]
+da:["$","h4",null,{"id":"routepath","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"routePath"}],["$","$L4c",null,{"id":"routepath"}]]}]
+db:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string | ((targetPath: string) => boolean)"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The route path to access this static page."]}],"\n"]}]
+dc:["$","h4",null,{"id":"htmlpath","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"htmlPath"}],["$","$L4c",null,{"id":"htmlpath"}]]}]
+dd:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The absolute path to the HTML file."]}],"\n"]}]
+de:["$","h4",null,{"id":"entryname","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"entryName"}],["$","$L4c",null,{"id":"entryname"}]]}]
+df:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The entry name for this static page."]}],"\n"]}]
+e0:["$","h3",null,{"id":"middlewares","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"middlewares"}],["$","$L4c",null,{"id":"middlewares"}]]}]
+e1:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"RequestHandler[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Custom Express middlewares for ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"page"}]," and ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"modules"}],"."]}],"\n"]}]
+e2:["$","h3",null,{"id":"watchoptions","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"watchOptions"}],["$","$L4c",null,{"id":"watchoptions"}]]}]
+e3:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"WebpackWatchOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Watch mode options. This configuration will be merged into ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"webpack-dev-server"}],"."]}],"\n"]}]
+e4:["$","h4",null,{"id":"aggregatetimeout","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"aggregateTimeout"}],["$","$L4c",null,{"id":"aggregatetimeout"}]]}]
+e5:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"number"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Delay the rebuilt after the first change. Value is a time in ms."]}],"\n"]}]
+e6:["$","h4",null,{"id":"followsymlinks","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"followSymlinks"}],["$","$L4c",null,{"id":"followsymlinks"}]]}]
+e7:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Resolve symlinks and watch symlink and real file."]}],"\n"]}]
+e8:["$","h4",null,{"id":"ignored","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"ignored"}],["$","$L4c",null,{"id":"ignored"}]]}]
+e9:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Ignore some files from watching."]}],"\n"]}]
+ea:["$","h4",null,{"id":"poll","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"poll"}],["$","$L4c",null,{"id":"poll"}]]}]
+eb:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"number | boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Enable polling mode for watching."]}],"\n"]}]
+ec:["$","h3",null,{"id":"devbeforemiddlewares","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"devBeforeMiddlewares"}],["$","$L4c",null,{"id":"devbeforemiddlewares"}]]}]
+ed:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"RspackMiddleware[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Provides the ability to execute a custom function and apply custom middleware(s) before default middlewares. See ",["$","a",null,{"href":"https://webpack.js.org/configuration/dev-server/#devserversetupmiddlewares","target":"_blank","rel":"noreferrer","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":["webpack-dev-server setupMiddlewares",[" ",["$","svg",null,{"fill":"none","stroke":"currentColor","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":1.7,"viewBox":"0 0 24 24","height":"1em","className":"x:inline x:align-baseline x:shrink-0","children":[["$","path",null,{"d":"M7 17L17 7"}],["$","path",null,{"d":"M7 7h10v10"}]]}]]]}],"."]}],"\n"]}]
+ee:["$","h3",null,{"id":"devaftermiddlewares","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"devAfterMiddlewares"}],["$","$L4c",null,{"id":"devaftermiddlewares"}]]}]
+ef:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"RspackMiddleware[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Provides the ability to execute a custom function and apply custom middleware(s) after default middlewares. See ",["$","a",null,{"href":"https://webpack.js.org/configuration/dev-server/#devserversetupmiddlewares","target":"_blank","rel":"noreferrer","className":"x:focus-visible:nextra-focus x:text-primary-600 x:underline x:hover:no-underline x:decoration-from-font x:[text-underline-position:from-font]","children":["webpack-dev-server setupMiddlewares",[" ",["$","svg",null,{"fill":"none","stroke":"currentColor","strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":1.7,"viewBox":"0 0 24 24","height":"1em","className":"x:inline x:align-baseline x:shrink-0","children":[["$","path",null,{"d":"M7 17L17 7"}],["$","path",null,{"d":"M7 7h10v10"}]]}]]]}],"."]}],"\n"]}]
+f0:["$","h3",null,{"id":"defaultserveglobaldata","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"defaultServeGlobalData"}],["$","$L4c",null,{"id":"defaultserveglobaldata"}]]}]
+f1:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"(entryItem: EvolveEntryMapContent, hostUrl: string) => Promise<Record<string, unknown>> | Record<string, unknown>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Customized global serve data injected into ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"window.GLOBAL = {...globalData}"}],"."]}],"\n"]}]
+f2:["$","h3",null,{"id":"bundledirresolver","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"bundleDirResolver"}],["$","$L4c",null,{"id":"bundledirresolver"}]]}]
+f3:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"(dir: string, data: BundleDirResolverData) => string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"(dir) => dir"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Customized ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"styles"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"scripts"}]," bundle path lookup resolver. The full directory path such as ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"/public/${virtualPath}/${entryName}/bundle.js"}],"."]}],"\n"]}]
+f4:["$","h3",null,{"id":"autoopen","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"autoOpen"}],["$","$L4c",null,{"id":"autoopen"}]]}]
+f5:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"true"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Whether to automatically open browser page for ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serve"}],"."]}],"\n"]}]
+f6:["$","h3",null,{"id":"livereload","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"liveReload"}],["$","$L4c",null,{"id":"livereload"}]]}]
+f7:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"true"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"undefined"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Enables reload/refresh the page(s) when file changes are detected (",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"auto"}]," by default)."]}],"\n"]}]
+f8:["$","h3",null,{"id":"clientoverlay","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"clientOverlay"}],["$","$L4c",null,{"id":"clientoverlay"}]]}]
+f9:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"ClientConfiguration['overlay']"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"{ errors: true, warnings: false }"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Enables a full-screen overlay in the browser when there are compiler errors or warnings."]}],"\n"]}]
+fa:["$","h3",null,{"id":"websocketurl","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"webSocketURL"}],["$","$L4c",null,{"id":"websocketurl"}]]}]
+fb:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"WebSocketURL | 'localIp'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Allows specifying URL to web socket server (useful when you’re proxying dev server and client script does not always know where to connect to)."]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Example"}],": Use ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'localIp'"}]," for remote mobile devices HMR, it will convert to local IP ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"ws://10.10.100.3/ws"}],"."]}],"\n"]}]
+fc:["$","h3",null,{"id":"mockoptions","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"mockOptions"}],["$","$L4c",null,{"id":"mockoptions"}]]}]
+fd:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"Omit<HpsMockOptions, 'projectCwd'>"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The customized config options of ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"@hyperse/hps-srv-mock"}],", it will override options ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"HpsMockOptions"}],"."]}],"\n"]}]
+fe:["$","h3",null,{"id":"https","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"https"}],["$","$L4c",null,{"id":"https"}]]}]
+ff:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"SecureContextHttps"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Provide your own certificate using the https option."]}],"\n"]}]
+100:["$","h2",null,{"id":"inspector","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Inspector",["$","$L4c",null,{"id":"inspector"}]]}]
+101:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":["The ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"inspector"}]," option configures the code inspector for debugging. If ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"serveMode"}]," is ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false"}],", it will be ignored and the code inspector will be closed."]}]
+102:["$","h3",null,{"id":"inspector-1","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"inspector"}],["$","$L4c",null,{"id":"inspector-1"}]]}]
+103:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"false | InspectorOptions"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The options of code inspector."]}],"\n"]}]
+104:["$","h3",null,{"id":"keys","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"keys"}],["$","$L4c",null,{"id":"keys"}]]}]
+105:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string[]"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"['$mod', 'i']"}]," on macOS, ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"['Ctrl', 'i']"}]," on other platforms"]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Inspector Component toggle hotkeys."]}],"\n"]}]
+106:["$","h3",null,{"id":"injectclient","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"injectClient"}],["$","$L4c",null,{"id":"injectclient"}]]}]
+107:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"boolean"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"true"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": Whether to automatically inject the code inspector client entry."]}],"\n"]}]
+108:["$","h3",null,{"id":"customlauncheditorendpoint","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"customLaunchEditorEndpoint"}],["$","$L4c",null,{"id":"customlauncheditorendpoint"}]]}]
+109:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"string"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'/__hps_inspector'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The base path of the launch editor endpoint."]}],"\n"]}]
+10a:["$","h3",null,{"id":"trustededitor","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-8 x:text-2xl","children":[["$","code",null,{"className":"nextra-code","dir":"ltr","children":"trustedEditor"}],["$","$L4c",null,{"id":"trustededitor"}]]}]
+10b:["$","ul",null,{"className":"x:[:is(ol,ul)_&]:my-[.75em] x:not-first:mt-[1.25em] x:list-disc x:ms-[1.5em]","children":["\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Type"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"$${TrustedEditor}"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Default"}],": ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'code'"}]]}],"\n",["$","li",null,{"className":"x:my-[.5em]","children":[["$","strong",null,{"children":"Description"}],": The trusted editors that can be launched from browser. Supported values include: ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'code'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'code-insiders'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'vscodium'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'vscodium-insiders'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'codium'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'cursor'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'webstorm'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'appcode'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'idea'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'phpstorm'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'pycharm'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'rubymine'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'goland'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'rider'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'subl'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'zed'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'atom'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'vim'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'nvim'"}],", ",["$","code",null,{"className":"nextra-code","dir":"ltr","children":"'emacs'"}],"."]}],"\n"]}]
+10c:["$","h2",null,{"id":"configuration-example","className":"x:tracking-tight x:text-slate-900 x:dark:text-slate-100 x:font-semibold x:target:animate-[fade-in_1.5s] x:mt-10 x:border-b x:pb-1 x:text-3xl nextra-border","children":["Configuration Example",["$","$L4c",null,{"id":"configuration-example"}]]}]
+10d:["$","p",null,{"className":"x:not-first:mt-[1.25em] x:leading-7","children":"Here’s a complete configuration example:"}]
+10e:["$","div",null,{"data-pagefind-ignore":"all","className":"nextra-code x:relative x:not-first:mt-[1.25em]","children":["$undefined",["$","pre",null,{"className":"x:group x:focus-visible:nextra-focus x:overflow-x-auto x:subpixel-antialiased x:text-[.9em] x:bg-white x:dark:bg-black x:py-4 x:ring-1 x:ring-inset x:ring-gray-300 x:dark:ring-neutral-700 x:contrast-more:ring-gray-900 x:contrast-more:dark:ring-gray-50 x:contrast-more:contrast-150 x:rounded-md not-prose","tabIndex":"0","children":[["$","div",null,{"className":"x:group-hover:opacity-100 x:group-focus:opacity-100 x:opacity-0 x:transition x:focus-within:opacity-100 x:flex x:gap-1 x:absolute x:right-4 x:top-2","children":[["$","$L10f",null,{"children":["$","svg",null,{"viewBox":"0 0 24 24","fill":"currentColor","height":"1em","children":["$","path",null,{"d":"M4 19h6v-2H4v2zM20 5H4v2h16V5zm-3 6H4v2h13.25c1.1 0 2 .9 2 2s-.9 2-2 2H15v-2l-3 3l3 3v-2h2c2.21 0 4-1.79 4-4s-1.79-4-4-4z"}]}]}],["$","$L110",null,{"className":""}]]}],["$","code",null,{"className":"nextra-code","dir":"ltr","children":[["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"import"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" { myDefineConfig } "}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"from"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" '@hyperse/hps'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":";"}]]}],"\n",["$","span",null,{"children":" "}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"export"}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":" default"}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":" myDefineConfig"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"(() "}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"=>"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" {"}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"  return"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" {"}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"    'build.evolve'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":": () "}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"=>"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" {"}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"      return"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" Promise"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"."}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"resolve"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"({"}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        projectCwd: process."}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"cwd"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"(),"}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        projectVirtualPath: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'hps/evolve'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}],"\n",["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        rejectWarnings: "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"false"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}],"\n",["$","span",null,{"children":"$L111"}],"\n","$L112","\n","$L113","\n","$L114","\n","$L115","\n","$L116","\n","$L117","\n","$L118","\n","$L119","\n","$L11a","\n","$L11b","\n","$L11c","\n","$L11d","\n","$L11e","\n","$L11f","\n","$L120","\n","$L121","\n","$L122","\n","$L123","\n","$L124","\n","$L125","\n","$L126","\n","$L127","\n","$L128","\n","$L129","\n","$L12a","\n","$L12b","\n","$L12c","\n","$L12d","\n","$L12e","\n","$L12f","\n","$L130","\n","$L131","\n","$L132","\n","$L133","\n","$L134","\n","$L135","\n","$L136","\n","$L137","\n","$L138","\n","$L139","\n","$L13a","\n","$L13b","\n","$L13c","\n","$L13d","\n","$L13e","\n","$L13f","\n","$L140","\n","$L141","\n","$L142","\n","$L143","\n","$L144","\n","$L145","\n","$L146","\n","$L147","\n","$L148","\n","$L149"]}]]}]]}]
+111:["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        entryMap: {"}]
+112:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          home: {"}]}]
+113:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            entry: ["}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'./src/home/index.tsx'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"],"}]]}]
+114:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            options: {"}]}]
+115:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"              title: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'Home Page'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+116:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"              allowPx2rem: "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"true"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+117:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            },"}]}]
+118:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          },"}]}]
+119:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          mine: {"}]}]
+11a:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            entry: ["}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'./src/mine/index.tsx'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"],"}]]}]
+11b:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            options: {"}]}]
+11c:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"              title: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'Mine Page'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+11d:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            },"}]}]
+11e:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          },"}]}]
+11f:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        },"}]}]
+120:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        rspack: {"}]}]
+121:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          mode: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'production'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+122:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          loader: {"}]}]
+123:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            cssLoaderOptions: {"}]}]
+124:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"              modules: "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"true"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+125:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            },"}]}]
+126:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          },"}]}]
+127:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          plugins: {"}]}]
+128:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            htmlPlugin: {"}]}]
+129:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"              htmlCdn: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'http://dev.hps.com:4000/public'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+12a:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            },"}]}]
+12b:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            tsCheckerPlugin: {"}]}]
+12c:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"              enabled: "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"false"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+12d:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            },"}]}]
+12e:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          },"}]}]
+12f:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          output: {"}]}]
+130:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            outputDir: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'public'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+131:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"            chunkFileVirtualPath: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'runtime-chunks'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+132:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          },"}]}]
+133:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        },"}]}]
+134:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        devServer: {"}]}]
+135:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          pageProxy: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'/pages'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+136:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          autoOpen: "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"true"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+137:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          mockOptions: {"}]}]
+138:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"            // mock configuration"}]}]
+139:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          },"}]}]
+13a:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        },"}]}]
+13b:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        inspector: {"}]}]
+13c:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          keys: ["}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'$mod'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":", "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'i'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"],"}]]}]
+13d:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          injectClient: "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"true"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+13e:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"          trustedEditor: "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"'code'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":","}]]}]
+13f:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"        },"}]}]
+140:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      });"}]}]
+141:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    },"}]}]
+142:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"    'serve.evolve'"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":": () "}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"=>"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":" {"}]]}]
+143:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"      // Similar configuration for serve mode"}]}]
+144:["$","span",null,{"children":[["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":"      return"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":" Promise"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"."}],["$","span",null,{"style":{"--shiki-light":"#6F42C1","--shiki-dark":"#B392F0"},"children":"resolve"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"({"}]]}]
+145:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#6A737D","--shiki-dark":"#6A737D"},"children":"        // ... same as build.evolve"}]}]
+146:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"      });"}]}]
+147:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"    },"}]}]
+148:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"  };"}]}]
+149:["$","span",null,{"children":["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"});"}]}]
