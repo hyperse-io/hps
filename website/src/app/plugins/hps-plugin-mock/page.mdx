@@ -1,0 +1,533 @@
+---
+sidebarTitle: HPS Plugin Mock
+description: A standalone mock server plugin for the HPS (Hyperse) build system that provides API mocking capabilities with configurable filters, hostname, and port settings for development and testing.
+---
+
+# HPS Plugin Mock
+
+## Overview
+
+The HPS Plugin Mock is a standalone mock server plugin for the HPS (Hyperse) build system that provides comprehensive API mocking capabilities. It enables you to:
+
+- **Standalone Mock Server**: Run an independent mock service separately from development servers
+- **REST API Mocking**: Mock REST APIs with configurable routes and responses
+- **GraphQL API Mocking**: Mock GraphQL queries and mutations
+- **Configurable Hostname**: Custom hostname configuration for mock endpoints
+- **Port Management**: Flexible port configuration with automatic port detection
+- **Mock File Filtering**: Regex-based filtering to control which mock files are loaded
+- **Static File Serving**: Serve static files through configurable static maps
+- **Proxy Support**: Proxy requests to real APIs when needed
+- **HTTPS Support**: Secure mock server with custom certificates
+
+This plugin is essential for frontend development, allowing you to work independently of backend services and test various API scenarios.
+
+## Installation
+
+The mock plugin is typically included with the HPS CLI. If you need to install it separately:
+
+```sh npm2yarn
+npm install @hyperse/hps-plugin-mock
+```
+
+## Usage
+
+### Basic Setup
+
+The mock plugin is automatically registered in the HPS CLI. You can use it directly without additional setup:
+
+```bash
+# Start mock server with default settings
+hps mock
+
+# Start with custom hostname and port
+hps mock --hostname "api.localhost" --port 3001
+
+# Start with mock file filters
+hps mock --mock-filters "api/.*" "!api/test/.*"
+```
+
+### Command Syntax
+
+```bash
+hps mock [flags]
+```
+
+**Flags:**
+
+- `--hostname`: The hostname for the mock server
+- `--port`: The port number for the mock server
+- `--mock-filters`: Regex patterns for mock file filtering (default: `[".*"]`)
+
+## API Reference
+
+### `createMockPlugin`
+
+Creates and returns a mock plugin instance for HPS.
+
+**Type Signature:**
+
+```typescript
+function createMockPlugin(): Plugin;
+```
+
+**Returns:**
+
+- **Type**: `Plugin`
+- **Description**: A configured HPS plugin that adds the `mock` command.
+
+### `mock` Command
+
+The internal command definition that handles the mock server startup. This command is automatically registered when using `createMockPlugin()`.
+
+**Type Signature:**
+
+```typescript
+defineCommand<'mock', MockCmdContext>('mock', options);
+```
+
+**Context Type:**
+
+```typescript
+type MockCmdContext = HpsMockOptions;
+```
+
+The context uses `HpsMockOptions` type for configuration.
+
+### Command Flags
+
+#### `hostname`
+
+- **Type**: `string`
+- **Required**: No
+- **Description**: The hostname for the mock server. If not specified, the hostname from the configuration file will be used, or defaults to `"dev.hps.com"`.
+
+**Usage:**
+
+```bash
+# Specify custom hostname
+hps mock --hostname "api.localhost"
+
+# Use with port
+hps mock --hostname "api.localhost" --port 3001
+```
+
+#### `port`
+
+- **Type**: `number`
+- **Required**: No
+- **Description**: The port number for the mock server. If not specified, the port from the configuration file will be used, or defaults to `4000`. The server will automatically find an available port if the specified port is in use.
+
+**Usage:**
+
+```bash
+# Specify custom port
+hps mock --port 3001
+
+# Use with hostname
+hps mock --hostname "api.localhost" --port 3001
+```
+
+#### `mockFilters`
+
+- **Type**: `string[]`
+- **Default**: `[".*"]`
+- **Description**: Regex patterns for filtering mock files at serve startup. Files matching these patterns will be loaded by the mock server. Use `!` prefix to exclude patterns. Multiple filters can be specified.
+
+**Usage:**
+
+```bash
+# Load all mock files (default)
+hps mock --mock-filters ".*"
+
+# Load specific mock patterns
+hps mock --mock-filters "api/.*" "graphql/.*"
+
+# Exclude specific patterns
+hps mock --mock-filters ".*" "!api/test/.*"
+
+# Multiple filters
+hps mock --mock-filters "api/.*" "!api/test/.*" "graphql/.*"
+```
+
+**Pattern Rules:**
+
+- Use regex patterns to match mock file paths
+- Prefix with `!` to exclude patterns
+- Patterns are evaluated in order
+- Default pattern `".*"` matches all files
+
+### Configuration Options
+
+The mock command loads configuration from your `hps.config.ts` file under the `mock` key. The configuration type is `HpsMockOptions`.
+
+#### `projectCwd`
+
+- **Type**: `string`
+- **Default**: `process.cwd()`
+- **Description**: The project root directory. This is the workspace directory where mock files are located.
+
+#### `mockBaseDir`
+
+- **Type**: `string`
+- **Default**: `"./mocks"`
+- **Description**: The base directory for mock files, relative to `projectCwd`. All mock files should be organized under this directory.
+
+#### `apiContext`
+
+- **Type**: `string`
+- **Default**: `"/api"`
+- **Description**: The API context path prefix. All mock API routes will be prefixed with this path.
+
+#### `hostname`
+
+- **Type**: `string`
+- **Default**: `"dev.hps.com"`
+- **Description**: The hostname for the mock server. This is used to construct the server URL.
+
+#### `port`
+
+- **Type**: `number`
+- **Default**: `4000`
+- **Description**: The preferred port for the mock server. If the port is in use, an available port will be automatically selected.
+
+#### `https`
+
+- **Type**: `SecureContextHttps | undefined`
+- **Description**: HTTPS configuration for the mock server. Requires private key and certificate files.
+
+**Type:**
+
+```typescript
+type SecureContextHttps = {
+  key: string; // Private key content
+  cert: string; // Certificate content
+};
+```
+
+**Usage:**
+
+```typescript
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+
+export default {
+  mock: {
+    https: {
+      key: readFileSync(resolve(__dirname, '../certificate/key.pem'), 'utf8'),
+      cert: readFileSync(resolve(__dirname, '../certificate/cert.pem'), 'utf8'),
+    },
+  },
+};
+```
+
+#### `chunkSize`
+
+- **Type**: `number`
+- **Default**: `100`
+- **Description**: The number of files to process in each chunk. This affects how mock files are loaded and processed.
+
+#### `externals`
+
+- **Type**: `Array<RegExp | string>`
+- **Default**: `['@hyperse/hps-srv-mock', '@hyperse/hps-srv-common', 'mockjs', 'lodash', 'class-validator', 'class-transformer']`
+- **Description**: Node modules that will be imported from the mock files. These modules are made available to mock file handlers.
+
+#### `bodyParserJson`
+
+- **Type**: `OptionsJson`
+- **Default**: `{ limit: '100kb' }`
+- **Description**: Customized options for `body-parser.json`, such as size limits.
+
+#### `staticMap`
+
+- **Type**: `HpsMockStaticMap`
+- **Description**: Express static file serving configuration. Maps URL paths to local directories.
+
+**Type:**
+
+```typescript
+type HpsMockStaticMap = {
+  [context: string]: string; // URL path -> local directory
+};
+```
+
+**Example:**
+
+```typescript
+{
+  mock: {
+    staticMap: {
+      '/static': './mocks/statics',
+      '/assets': './public/assets',
+    },
+  },
+}
+```
+
+#### `proxyMap`
+
+- **Type**: `HpsMockProxyMap`
+- **Description**: HTTP proxy configuration using `http-proxy-middleware`. Maps URL paths to proxy targets.
+
+**Type:**
+
+```typescript
+type HpsMockProxyMap = {
+  [context: string]: HpsMockProxyConfig; // http-proxy-middleware Options
+};
+```
+
+**Example:**
+
+```typescript
+{
+  mock: {
+    proxyMap: {
+      '/ME_PROXY': {
+        target: 'https://api.example.com',
+        changeOrigin: true,
+        pathRewrite: { '^/ME_PROXY': '' },
+        headers: {
+          origin: 'https://api.example.com',
+        },
+      },
+    },
+  },
+}
+```
+
+#### `mockMap`
+
+- **Type**: `HpsMockMap`
+- **Description**: The mock API route configuration. Defines which mock files to use for each API route.
+
+**Type:**
+
+```typescript
+type HpsMockMap = Record<string, HpsMockMapItem> & {
+  ['/*']?: HpsMockMapItem; // Wildcard fallback
+};
+
+interface HpsMockMapItem {
+  type: 'FUNC' | 'FUNC_SIMPLE' | 'REST' | 'OTHER';
+  defs: string[]; // Folder names relative to mockBaseDir
+  defsDeep?: number; // Lookup depth (default: 1)
+  middlewares?: {
+    req?: MockRequestHandler[];
+    res?: MockRequestHandler[];
+  };
+}
+```
+
+**Example:**
+
+```typescript
+{
+  mock: {
+    mockMap: {
+      '/api/users': {
+        type: 'REST',
+        defs: ['users'],
+        middlewares: {
+          req: [],
+          res: [],
+        },
+      },
+      '/api/products': {
+        type: 'REST',
+        defs: ['products'],
+        defsDeep: 2,
+      },
+      '/*': {
+        type: 'REST',
+        defs: [],
+      },
+    },
+  },
+}
+```
+
+#### `mockFilters`
+
+- **Type**: `Array<string | RegExp>`
+- **Description**: Global filter patterns to ignore mock files at serve startup. Files matching these patterns will be excluded.
+
+#### `graphqlMockMap`
+
+- **Type**: `GraphqlMockMap<any>`
+- **Description**: GraphQL mock configuration. Defines how to mock GraphQL queries and mutations.
+
+## Output
+
+The mock command provides feedback during server startup:
+
+### Server Startup
+
+```
+Start an mock service on "http://dev.hps.com:4000"
+```
+
+Or with HTTPS:
+
+```
+Start an mock service on "https://dev.hps.com:4000"
+```
+
+### Error Messages
+
+If configuration is missing:
+
+```
+✗ mock configOptions is required
+```
+
+If the server fails to start, error messages will be displayed with details about the issue.
+
+## Examples
+
+### Example: Integration in HPS CLI
+
+The mock plugin is integrated into the main HPS CLI. Here's a typical mock server setup:
+
+**1. Configure your `hps.config.ts`:**
+
+```typescript
+import { myDefineConfig } from '@hyperse/hps';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
+
+const mockOptions = {
+  projectCwd: process.cwd(),
+  mockBaseDir: './mocks',
+  apiContext: '/api',
+  hostname: 'dev.hps.com',
+  port: 4000,
+  mockFilters: ['api/.*', '!api/test/.*'],
+  staticMap: {
+    '/static': './mocks/statics',
+  },
+  mockMap: {
+    '/api/users': {
+      type: 'REST',
+      defs: ['users'],
+      middlewares: {
+        req: [],
+        res: [],
+      },
+    },
+    '/api/products': {
+      type: 'REST',
+      defs: ['products'],
+      defsDeep: 2,
+    },
+    '/*': {
+      type: 'REST',
+      defs: [],
+    },
+  },
+  // Optional: HTTPS configuration
+  // https: {
+  //   key: readFileSync(resolve(__dirname, '../certificate/key.pem'), 'utf8'),
+  //   cert: readFileSync(resolve(__dirname, '../certificate/cert.pem'), 'utf8'),
+  // },
+};
+
+export default myDefineConfig(() => {
+  return {
+    mock: () => {
+      return Promise.resolve(mockOptions);
+    },
+  };
+});
+```
+
+**2. Organize your mock files:**
+
+```
+project/
+├── mocks/
+│   ├── users/
+│   │   ├── GET.js
+│   │   ├── POST.js
+│   │   └── [id]/
+│   │       ├── GET.js
+│   │       └── PUT.js
+│   └── products/
+│       ├── GET.js
+│       └── [id]/
+│           └── GET.js
+└── hps.config.ts
+```
+
+**3. Create mock files:**
+
+```javascript
+// mocks/users/GET.js
+module.exports = {
+  status: 200,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: {
+    users: [
+      { id: 1, name: 'John Doe', email: 'john@example.com' },
+      { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
+    ],
+  },
+};
+```
+
+```javascript
+// mocks/users/POST.js
+module.exports = (req) => {
+  return {
+    status: 201,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: {
+      id: Date.now(),
+      name: req.body.name,
+      email: req.body.email,
+      createdAt: new Date().toISOString(),
+    },
+  };
+};
+```
+
+**4. Start the mock server:**
+
+```bash
+# Start with default settings
+hps mock
+
+# Start with custom hostname and port
+hps mock --hostname "api.localhost" --port 3001
+
+# Start with mock filters
+hps mock --mock-filters "api/.*" "!api/test/.*"
+```
+
+**Expected Output:**
+
+```
+Start an mock service on "http://dev.hps.com:4000"
+```
+
+**5. Access your mock APIs:**
+
+- Users API: `http://dev.hps.com:4000/api/users`
+- Products API: `http://dev.hps.com:4000/api/products`
+- Static files: `http://dev.hps.com:4000/static/...`
+
+**6. Test your APIs:**
+
+```bash
+# GET request
+curl http://dev.hps.com:4000/api/users
+
+# POST request
+curl -X POST http://dev.hps.com:4000/api/users \
+  -H "Content-Type: application/json" \
+  -d '{"name": "New User", "email": "new@example.com"}'
+```

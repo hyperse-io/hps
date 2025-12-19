@@ -1,0 +1,312 @@
+---
+sidebarTitle: HPS Plugin Build
+description: A production build plugin for the HPS (Hyperse) build system that provides optimized builds using Rspack with configurable compression, module filtering, and build timing for web applications.
+---
+
+# HPS Plugin Build
+
+## Overview
+
+The HPS Plugin Build is a production build plugin for the HPS (Hyperse) build system. It provides optimized builds for web applications using Rspack, with support for:
+
+- **Configurable Compression**: Enable or disable code minification and compression
+- **Module Filtering**: Build specific modules or filter unwanted entries for better performance
+- **Build Modes**: Support for production, development, and none build modes
+- **Build Timing**: Track and display build duration
+- **Configuration Integration**: Seamlessly integrates with HPS configuration files
+
+This plugin is essential for building production-ready applications with optimized bundles and efficient build processes.
+
+## Installation
+
+The build plugin is typically included with the HPS CLI. If you need to install it separately:
+
+```sh npm2yarn
+npm install @hyperse/hps-plugin-build
+```
+
+## Usage
+
+### Basic Setup
+
+The build plugin is automatically registered in the HPS CLI. You can use it directly without additional setup:
+
+```bash
+# Build all modules with default settings
+hps build evolve
+
+# Build with compression disabled
+hps build evolve --no-compress
+
+# Build specific modules
+hps build evolve --modules home
+
+# Build with custom mode
+hps build evolve --mode production
+```
+
+### Command Syntax
+
+```bash
+hps build evolve [flags]
+```
+
+**Subcommand:**
+
+- `evolve`: Main build command using Rspack for web applications
+
+**Flags:**
+
+- `--compress, -c`: Enable/disable compression and minification (default: `true`)
+- `--mode`: Set the build mode - `production`, `development`, or `none`
+- `--modules, -m`: Filter entry modules for selective building (default: `[".*"]`)
+
+## API Reference
+
+### `createBuildPlugin`
+
+Creates and returns a build plugin instance for HPS.
+
+**Type Signature:**
+
+```typescript
+function createBuildPlugin(): Plugin;
+```
+
+**Returns:**
+
+- **Type**: `Plugin`
+- **Description**: A configured HPS plugin that adds the `build` command with `evolve` subcommand.
+
+### `evolveBuildCmd`
+
+The internal command definition that handles the build process. This command is automatically registered when using `createBuildPlugin()`.
+
+**Type Signature:**
+
+```typescript
+defineCommand<'evolve', EvolveBuildCmdContext>('evolve', options);
+```
+
+**Context Type:**
+
+```typescript
+type EvolveBuildCmdContext = Omit<HpsEvolveOptions, 'projectCwd'> & {
+  projectCwd?: string;
+};
+```
+
+The context extends `HpsEvolveOptions` (see [Configuration Documentation](/config)) with an optional `projectCwd` field.
+
+### Command Flags
+
+#### `compress`
+
+- **Type**: `boolean`
+- **Alias**: `c`
+- **Default**: `true`
+- **Description**: Controls whether code compression and minification are enabled. When set to `false`, it sets `NODE_ENV=development`, disables minification, and may include source maps for debugging.
+
+**Usage:**
+
+```bash
+# Enable compression (default)
+hps build evolve --compress
+
+# Disable compression
+hps build evolve --no-compress
+```
+
+#### `mode`
+
+- **Type**: `'production' | 'development' | 'none'`
+- **Required**: No
+- **Description**: Sets the build mode of Rspack to enable the default optimization strategy. If not specified, the mode is determined by the `compress` flag:
+  - When `compress` is `true`: defaults to `production` mode
+  - When `compress` is `false`: defaults to `development` mode
+
+**Usage:**
+
+```bash
+# Production mode with full optimization
+hps build evolve --mode production
+
+# Development mode with minimal optimization
+hps build evolve --mode development
+
+# No optimization
+hps build evolve --mode none
+```
+
+#### `modules`
+
+- **Type**: `string[]`
+- **Alias**: `m`
+- **Default**: `[".*"]`
+- **Description**: Filters entry items to build only specified modules. This helps improve build performance and debugging by excluding unwanted entries. Supports regex patterns for flexible module selection.
+
+**Usage:**
+
+```bash
+# Build all modules (default)
+hps build evolve --modules ".*"
+
+# Build specific modules
+hps build evolve --modules home dashboard
+
+# Build modules matching a pattern
+hps build evolve --modules "api/.*"
+
+# Exclude test modules
+hps build evolve --modules ".*" "!.*test.*"
+```
+
+### Configuration Options
+
+The build command loads configuration from your `hps.config.ts` file under the `build.evolve` key. The configuration type is `EvolveBuildCmdContext`, which extends `HpsEvolveOptions`.
+
+#### Configuration Structure
+
+The configuration supports all options from `HpsEvolveOptions`:
+
+- **`projectCwd`**: Optional project workspace directory
+- **`projectVirtualPath`**: Virtual path for the current project
+- **`rspack`**: Rspack build tool configurations
+- **`devServer`**: Development server configurations (not used in build mode)
+- **`entryMap`**: All rspack entries configuration
+- **`rejectWarnings`**: Whether to interrupt compilation on warnings
+- **`inspector`**: Code inspector options (not used in build mode)
+
+For detailed information about these options, see the [Configuration Documentation](/config).
+
+## Output
+
+The build command provides real-time feedback during the build process:
+
+### Build Process Output
+
+```
+Building...
+[Build progress logs from Rspack]
+Building success in 1234ms
+```
+
+### Build Results
+
+The build process returns an array of `EvolveBuildResult` objects:
+
+```typescript
+type EvolveBuildResult = {
+  name?: string[];
+  warningStats?: unknown;
+};
+```
+
+Each result contains:
+
+- **`name`**: Array of entry names that were built
+- **`warningStats`**: Warning statistics from the build process
+
+### Error Handling
+
+If the build fails, the plugin will:
+
+1. Log the error using the HPS logger
+2. Display error details in the console
+3. Exit with an appropriate error code
+
+### Warning Messages
+
+If no build entries are provided, a warning is displayed:
+
+```
+⚠ No build entries provided!
+```
+
+## Examples
+
+### Example: Integration in HPS CLI
+
+The build plugin is integrated into the main HPS CLI. Here's how it's configured in `hps.config.ts`:
+
+```typescript
+import { myDefineConfig } from '@hyperse/hps';
+
+const evolveOptions = {
+  projectCwd: process.cwd(),
+  projectVirtualPath: 'hps/evolve',
+  entryMap: {
+    home: {
+      entry: ['./src/home/index.tsx'],
+      options: {
+        title: 'Home Page',
+      },
+    },
+    dashboard: {
+      entry: ['./src/dashboard/index.tsx'],
+      options: {
+        title: 'Dashboard',
+      },
+    },
+  },
+  rspack: {
+    mode: 'production',
+    loader: {
+      cssLoaderOptions: {
+        modules: true,
+      },
+    },
+    plugins: {
+      htmlPlugin: {
+        htmlCdn: 'https://cdn.example.com/public',
+      },
+      tsCheckerPlugin: {
+        enabled: false,
+      },
+    },
+    output: {
+      outputDir: 'public',
+      chunkFileVirtualPath: 'runtime-chunks',
+      enableBundleHashName: true,
+    },
+  },
+  rejectWarnings: false,
+};
+
+export default myDefineConfig(() => {
+  return {
+    'build.evolve': () => {
+      return Promise.resolve(evolveOptions);
+    },
+  };
+});
+```
+
+**Usage:**
+
+```bash
+# Build all modules with default settings
+hps build evolve
+
+# Build only the home module
+hps build evolve --modules home
+
+# Build without compression (for debugging)
+hps build evolve --no-compress
+
+# Build with production mode explicitly
+hps build evolve --mode production --compress
+
+# Build specific modules with custom mode
+hps build evolve --modules home dashboard --mode development
+```
+
+**Expected Output:**
+
+```
+Building...
+[Compilation logs...]
+Building success in 2345ms
+```
+
+The build will generate optimized bundles in the configured output directory (default: `public/`) with all assets properly hashed and optimized for production deployment.

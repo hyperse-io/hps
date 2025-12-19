@@ -1,0 +1,103 @@
+---
+asIndexPage: true
+---
+
+## Overview
+
+HPS is a CLI-based development toolchain built on the Wizard framework that provides:
+
+- **Development** Server with hot module replacement (HMR) and React Fast Refresh
+- **Production** Builds with Rspack bundler
+- **GraphQL/HTTP** Mocking for API development
+- **TypeScript** Type Checking during development
+- **Multi-Entry** Applications with shared configuration
+
+The system operates through a plugin architecture where the `@hyperse/hps` CLI orchestrates specialized plugins (`hps-plugin-serve`, `hps-plugin-build`, etc.) that delegate to service implementations (`hps-srv-rspack`, `hps-srv-mock`).
+
+## Prerequisites
+
+Before installing HPS, ensure your environment meets these requirements:
+
+> Node.js ≥20.0.0
+
+## Installation
+
+```sh npm2yarn
+npm install --save-dev @hyperse/hps
+```
+
+The package includes the **hps** binary at `packages/hps/bin/hps.mjs` which enables compile caching and bootstraps the CLI.
+
+## Project Setup
+
+**Creating the Configuration File**
+
+Create a configuration file named **hps-evolve.config.ts** in your project root. This file defines entry points, development server options, and bundler configuration.
+
+**Minimal Configuration Example**
+
+```ts twoslash
+// @filename: @hyperse/hps/dist/index.d.ts
+import { myDefineConfig } from '@hyperse/hps';
+
+const mockOptions = {
+  hostname: 'dev.hps.com',
+  mockBaseDir: `./mocks`,
+  port: 40000,
+  chunkSize: 3,
+  staticMap: {
+    '/static': 'static',
+  },
+  mockMap: {
+    '/*': { type: 'REST', defs: ['others'], middlewares: {} },
+  },
+};
+
+const evolveOptions = {
+  entryMap: {
+    home: {
+      entry: ['./src/home/index.tsx'],
+      options: {},
+    },
+    mine: {
+      entry: ['./src/mine/index.tsx'],
+      options: {},
+    },
+  },
+  devServer: {
+    port: 4000,
+    pageProxy: '/route',
+    defaultServeGlobalData: async () => {
+      return {};
+    },
+    mockOptions: mockOptions,
+  },
+  rspack: {
+    loader: {},
+    externals: () => {
+      return {};
+    },
+    output: {
+      chunkFileVirtualPath: 'runtime-chunks',
+    },
+    plugins: {
+      htmlPlugin: {
+        htmlCdn: 'http://dev.hps.com:4000/public',
+      },
+      tsCheckerPlugin: {
+        enabled: false,
+      },
+      rsdoctorPlugin: {
+        enabled: false,
+      },
+    },
+  },
+};
+
+export default myDefineConfig(() => {
+  return {
+    'build.evolve': evolveOptions,
+    'serve.evolve': evolveOptions,
+  };
+});
+```

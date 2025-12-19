@@ -19,23 +19,23 @@
     "build": "npm run clean && rspack build"
   },
   "dependencies": {
-    "@heroui/react": "^2.8.5",
+    "@heroui/react": "^2.8.6",
     "@hyperse/hps": "workspace:*",
     "@hyperse/hps-graphqlsp": "workspace:*",
     "@hyperse/inspector-babel-plugin": "^2.0.0",
     "@iconify/react": "^6.0.2",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.23.25",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "framer-motion": "^12.23.26",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.17",
-    "@types/node": "^24.10.2",
-    "autoprefixer": "^10.4.22",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^25.0.3",
+    "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",
     "rimraf": "^6.1.2",
-    "tailwindcss": "^4.1.17",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
   },
   "browserslist": {

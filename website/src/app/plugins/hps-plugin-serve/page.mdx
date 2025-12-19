@@ -1,0 +1,414 @@
+---
+sidebarTitle: HPS Plugin Serve
+description: A development server plugin for the HPS (Hyperse) build system that provides a development server with hot module replacement and live reload for web applications.
+---
+
+# HPS Plugin Serve
+
+## Overview
+
+The HPS Plugin Serve is a development server plugin for the HPS (Hyperse) build system that provides a fast development server with hot module replacement (HMR) and integrated mocking capabilities. It offers:
+
+- **Hot Module Replacement**: Fast development server with real-time updates
+- **Integrated Mocking**: Built-in mock server with configurable filters
+- **Static Mode**: Serve pre-built static assets for production-like testing
+- **Module Filtering**: Selective module loading for better performance and debugging
+- **Rspack Integration**: Powered by `@hyperse/hps-srv-rspack` for fast builds
+- **Configurable Options**: Flexible configuration through HPS config system
+
+This plugin is essential for local development, providing a seamless development experience with hot reloading and API mocking support.
+
+## Installation
+
+The serve plugin is typically included with the HPS CLI. If you need to install it separately:
+
+```sh npm2yarn
+npm install @hyperse/hps-plugin-serve
+```
+
+## Usage
+
+### Basic Setup
+
+The serve plugin is automatically registered in the HPS CLI. You can use it directly without additional setup:
+
+```bash
+# Start development server with hot reload
+hps serve evolve
+
+# Start with specific modules only (better performance)
+hps serve evolve --modules home
+
+# Start with static mode (serve pre-built assets)
+hps serve evolve --static-mode
+
+# Configure mock filters
+hps serve evolve --mock-filters "api/.*" "!api/test/.*"
+
+# Specify custom port
+hps serve evolve --port 3000
+```
+
+### Command Syntax
+
+```bash
+hps serve evolve [flags]
+```
+
+**Subcommand:**
+
+- `evolve`: Main development server using Rspack for web applications
+
+**Flags:**
+
+- `--static-mode, -s`: Start server in static mode (default: `false`)
+- `--port`: The port for the development server
+- `--modules, -m`: Filter entry modules for selective loading (default: `[".*"]`)
+- `--mock-filters`: Regex patterns for mock file filtering (default: `[".*"]`)
+
+## API Reference
+
+### `createServePlugin`
+
+Creates and returns a serve plugin instance for HPS.
+
+**Type Signature:**
+
+```typescript
+function createServePlugin(): Plugin;
+```
+
+**Returns:**
+
+- **Type**: `Plugin`
+- **Description**: A configured HPS plugin that adds the `serve` command with `evolve` subcommand.
+
+### `evolve` Command
+
+The internal command definition that handles the serve process. This command is automatically registered when using `createServePlugin()`.
+
+**Type Signature:**
+
+```typescript
+defineCommand<'evolve', EvolveServeCmdContext>('evolve', options);
+```
+
+**Context Type:**
+
+```typescript
+type EvolveServeCmdContext = Omit<HpsEvolveOptions, 'projectCwd'> & {
+  projectCwd?: string;
+};
+```
+
+The context extends `HpsEvolveOptions` (see [Configuration Documentation](/config)) with an optional `projectCwd` field.
+
+### Command Flags
+
+#### `staticMode`
+
+- **Type**: `boolean`
+- **Alias**: `s`
+- **Default**: `false`
+- **Description**: Start the server in static mode. When enabled, the server serves pre-built static assets instead of running the development build process. This is useful for testing production builds locally.
+
+**Usage:**
+
+```bash
+# Enable static mode
+hps serve evolve --static-mode
+
+# Or use short alias
+hps serve evolve -s
+```
+
+**Behavior:**
+
+- Serves pre-built static assets from the output directory
+- Skips development build process
+- Provides production-like serving environment
+- Useful for testing built applications
+
+#### `port`
+
+- **Type**: `number`
+- **Required**: No
+- **Description**: The port number for the development server. If not specified, the port from the configuration file will be used, or a default port will be assigned.
+
+**Usage:**
+
+```bash
+# Specify custom port
+hps serve evolve --port 3000
+
+# Port will be used for both dev server and mock server
+hps serve evolve --port 4000
+```
+
+**Note:** The port is also used for the mock server if mock options are configured.
+
+#### `modules`
+
+- **Type**: `string[]`
+- **Alias**: `m`
+- **Default**: `[".*"]`
+- **Description**: Filter entry modules for selective loading. This helps improve performance and debugging by only loading specific entry points. Supports regex patterns. Multiple modules can be specified.
+
+**Usage:**
+
+```bash
+# Load all modules (default)
+hps serve evolve --modules ".*"
+
+# Load specific modules
+hps serve evolve --modules home dashboard
+
+# Load modules matching a pattern
+hps serve evolve --modules "api/.*"
+
+# Multiple patterns
+hps serve evolve --modules home "api/.*"
+```
+
+**Benefits:**
+
+- Faster startup time
+- Reduced memory usage
+- Better debugging performance
+- Focused development on specific modules
+
+#### `mockFilters`
+
+- **Type**: `string[]`
+- **Default**: `[".*"]`
+- **Description**: Regex patterns for filtering mock files at serve startup. Files matching these patterns will be loaded by the mock server. Use `!` prefix to exclude patterns. Multiple filters can be specified.
+
+**Usage:**
+
+```bash
+# Load all mock files (default)
+hps serve evolve --mock-filters ".*"
+
+# Load specific mock patterns
+hps serve evolve --mock-filters "api/.*" "graphql/.*"
+
+# Exclude specific patterns
+hps serve evolve --mock-filters ".*" "!api/test/.*"
+
+# Multiple filters
+hps serve evolve --mock-filters "api/.*" "!api/test/.*" "graphql/.*"
+```
+
+**Pattern Rules:**
+
+- Use regex patterns to match mock file paths
+- Prefix with `!` to exclude patterns
+- Patterns are evaluated in order
+- Default pattern `".*"` matches all files
+
+### Configuration Options
+
+The serve command loads configuration from your `hps.config.ts` file under the `serve.evolve` key. The configuration type is `EvolveServeCmdContext`, which extends `HpsEvolveOptions`.
+
+#### Configuration Structure
+
+The configuration supports all options from `HpsEvolveOptions`:
+
+- **`projectCwd`**: Optional project workspace directory
+- **`projectVirtualPath`**: Virtual path for the current project
+- **`rspack`**: Rspack build tool configurations
+- **`devServer`**: Development server configurations (see [Configuration Documentation](/config) for details)
+- **`entryMap`**: All rspack entries configuration
+- **`rejectWarnings`**: Whether to interrupt compilation on warnings
+- **`inspector`**: Code inspector options
+
+#### Mock Server Configuration
+
+The plugin automatically configures the mock server with:
+
+- **Dynamic Mock Directory**: Automatically resolves mock working directory using `getMockCwd()`
+- **HTTPS Support**: Inherits HTTPS settings from `devServer.https` if not explicitly set in `mockOptions`
+- **Watch Ignore**: Automatically adds mock directory to `watchOptions.ignored` patterns
+- **Filter Support**: Applies `mockFilters` to mock files
+
+#### Static Mode Behavior
+
+When `staticMode` is enabled:
+
+- The server serves pre-built static assets from the output directory
+- Development build process is skipped
+- No hot module replacement is available
+- Useful for testing production builds locally
+
+## Output
+
+The serve command provides real-time feedback during server startup and operation:
+
+### Server Startup
+
+```
+Serve an evolve app...
+[Compilation logs from Rspack]
+[Dev server startup logs...]
+```
+
+### Static Mode Startup
+
+```
+Serve an evolve app `static` mode...
+[Static server startup logs...]
+Serve an evolve app `static` mode successfully
+```
+
+### Success Messages
+
+When the server starts successfully:
+
+```
+Serve an evolve app successfully
+```
+
+### Development Server Output
+
+The development server typically displays:
+
+- Compilation status and progress
+- Hot module replacement updates
+- Server URLs and access information
+- Error and warning messages
+- Mock server status (if enabled)
+
+**Example Output:**
+
+```
+Serve an evolve app...
+[webpack-dev-server] Project is running at:
+[webpack-dev-server] Loopback: http://localhost:3000/
+[webpack-dev-server] On Your Network: http://192.168.1.100:3000/
+[webpack-dev-server] Content not from webpack is served from /public
+[HMR] Waiting for update signal from WDS...
+[Compiled successfully]
+Serve an evolve app successfully
+```
+
+### Error Messages
+
+If the server fails to start, error messages are displayed:
+
+```
+✗ serve evolve configOptions is required
+```
+
+Or if mock configuration fails:
+
+```
+✗ Missing required mock configuration...
+```
+
+## Examples
+
+### Example: Integration in HPS CLI
+
+The serve plugin is integrated into the main HPS CLI. Here's a typical development workflow:
+
+**1. Configure your `hps.config.ts`:**
+
+```typescript
+import { myDefineConfig } from '@hyperse/hps';
+
+const evolveOptions = {
+  projectCwd: process.cwd(),
+  projectVirtualPath: 'hps/evolve',
+  entryMap: {
+    home: {
+      entry: ['./src/home/index.tsx'],
+      options: {
+        title: 'Home Page',
+      },
+    },
+    dashboard: {
+      entry: ['./src/dashboard/index.tsx'],
+      options: {
+        title: 'Dashboard',
+      },
+    },
+  },
+  devServer: {
+    port: 3000,
+    pageProxy: '/pages',
+    autoOpen: true,
+    mockOptions: {
+      mockFilters: ['api/.*'],
+    },
+    watchOptions: {
+      ignored: ['node_modules/**'],
+    },
+  },
+  rspack: {
+    mode: 'development',
+    loader: {
+      cssLoaderOptions: {
+        modules: true,
+      },
+    },
+    plugins: {
+      htmlPlugin: {
+        htmlCdn: 'http://localhost:3000/public',
+      },
+    },
+  },
+};
+
+export default myDefineConfig(() => {
+  return {
+    'serve.evolve': () => {
+      return Promise.resolve(evolveOptions);
+    },
+  };
+});
+```
+
+**2. Start the development server:**
+
+```bash
+# Start with all modules
+hps serve evolve
+
+# Start with specific modules for better performance
+hps serve evolve --modules home
+
+# Start with custom port
+hps serve evolve --port 4000
+
+# Start with mock filters
+hps serve evolve --mock-filters "api/.*" "!api/test/.*"
+
+# Start in static mode
+hps serve evolve --static-mode
+```
+
+**Expected Output:**
+
+```
+Serve an evolve app...
+[webpack-dev-server] Project is running at:
+[webpack-dev-server] Loopback: http://localhost:3000/
+[webpack-dev-server] On Your Network: http://192.168.1.100:3000/
+[HMR] Waiting for update signal from WDS...
+[Compiled successfully]
+✓ Serve an evolve app successfully
+```
+
+**3. Access your application:**
+
+- Development server: `http://localhost:3000`
+- Mock server: `http://localhost:3000` (if configured)
+- Hot module replacement: Automatically enabled
+
+**4. Development workflow:**
+
+- Edit your source files
+- Changes are automatically detected
+- Hot module replacement updates the browser
+- Mock server handles API requests based on filters
+- TypeScript errors are displayed in the console

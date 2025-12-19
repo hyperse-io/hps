@@ -1,0 +1,638 @@
+---
+sidebarTitle: Configuration
+description: Learn about the configuration options for the HPS CLI.
+---
+
+# Configuration
+
+The HPS CLI provides comprehensive configuration options for the development server and production build. All configuration options are defined in the `HpsEvolveOptions` interface.
+
+## Overview
+
+The HPS configuration is organized into several main sections:
+
+- **Basic Configuration**: Project workspace and virtual path settings
+- **Entry Configuration**: Entry point definitions for your application modules
+- **Rspack Configuration**: Build tool settings including mode, loaders, optimization, and output
+- **Dev Server Configuration**: Development server settings including proxy, middleware, and HMR
+- **Inspector Configuration**: Code inspector settings for debugging
+
+## Basic
+
+### `projectCwd`
+
+- **Type**: `string`
+- **Required**: Yes
+- **Description**: The project workspace directory (absolute path).
+
+### `projectVirtualPath`
+
+- **Type**: `string`
+- **Required**: Yes
+- **Description**: The virtual path for the current project. This is used as a prefix for routing and asset paths.
+- **Example**: `'hps/evolve'`
+
+### `rejectWarnings`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: For production mode, when set to `true`, the compilation process will be interrupted if warnings are received during the build.
+
+## Entry
+
+The `entryMap` option defines all Rspack entry configurations.
+
+### `entryMap`
+
+- **Type**: `EvolveEntryMapContent`
+- **Required**: Yes
+- **Description**: Entry configuration for each module.
+
+#### `entry`
+
+- **Type**: `string[]`
+- **Required**: Yes
+- **Description**: Array of entry file paths.
+
+#### `entryModuleBase`
+
+- **Type**: `string[]`
+- **Description**: The base path of the entry module.
+
+#### `groupName`
+
+- **Type**: `string`
+- **Description**: An alias used when grouping builds.
+
+#### `options`
+
+- **Type**: `EvolveEntryItemOption`
+- **Description**: Configuration options for each entry item.
+
+##### `allowPx2rem`
+
+- **Type**: `boolean`
+- **Description**: Whether to convert Px to rem. Defaults to `entryItemOption?.allowPx2rem ?? pluginLoaderOptions?.pixelOptions?.enabled`.
+
+##### `externals`
+
+- **Type**: `Record<string, string>`
+- **Description**: Specify dependencies that shouldn't be resolved by webpack for this entry. It will be merged with global externals configuration.
+
+##### `enableBundleHashName`
+
+- **Type**: `boolean`
+- **Default**: `true`
+- **Description**: Whether to use `contenthash` bundle name.
+
+##### `servePageMainLinkFn`
+
+- **Type**: `(link: string, options: ServePageMainLinkOptions) => string`
+- **Description**: Allow customized module `link` on `/pages`.
+
+##### `serveGlobalData`
+
+- **Type**: `Record<string, unknown>`
+- **Default**: `{}`
+- **Description**: For `serve` mode. Attach fixed global data for specified entry. Will be merged into `window.GLOBAL = {...globalData}`.
+
+##### `moduleFederation`
+
+- **Type**: `ModuleFederationOptions`
+- **Description**: Multiple separate builds should form a single application. This is often known as Micro-Frontends.
+
+##### `useRelativeAssetPath`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Whether to build relative asset public path.
+
+##### `mockFilters`
+
+- **Type**: `Array<string | RegExp>`
+- **Description**: Filter which mock defs files will be loaded for this `entryItem` while `serve`.
+
+##### `output`
+
+- **Type**: `Omit<Required<Configuration>['output'], 'chunkFilename' | 'cssChunkFilename'>`
+- **Description**: Extends the default `output` configuration for each entry item. Normally used with `output.library` to define the global variable name.
+- **Note**: React fast refresh is not supported for library target because the library module cannot run in the browser individually.
+
+<Callout>
+  `HTML Plugin Options`: The following options are part of `HtmlCDNEntryItem`
+  and can be configured per entry:
+</Callout>
+
+##### `templatePath`
+
+- **Type**: `string`
+- **Description**: Webpack relative or absolute path to the template. Must be an absolute path.
+- **Default**: `join(evolveRoot, '/templates/html-plugin/index-{0}.html')`
+
+##### `htmlMinify`
+
+- **Type**: `boolean`
+- **Description**: Indicates if we need to minify HTML.
+- **Default**: `true`
+
+##### `viewport`
+
+- **Type**: `string`
+- **Description**: Support inject viewport scripts in each module. It only available while `allowPx2rem` = true. This script will be injected into `headInlineScripts` of the html file, position is 'beginning'.
+- **Default**: `''`
+
+##### `title`
+
+- **Type**: `string`
+- **Description**: The title to use for the generated HTML document.
+- **Default**: `''`
+
+##### `favicon`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['favicon']>`
+- **Description**: The favicon url to use for the generated HTML document. Should be a path of (32 x 32).png.
+
+##### `headMetaTags`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headMetaTags']>`
+- **Description**: Allow customized head meta tags into compiled html template.
+- **Default**: `[]`
+
+##### `headStyles`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headStyles']>`
+- **Description**: The head styles of the page.
+- **Default**: `[]`
+
+##### `headScripts`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headScripts']>`
+- **Description**: The head scripts of the page.
+- **Default**: `[]`
+
+##### `bodyScripts`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['bodyScripts']>`
+- **Description**: The body scripts of the page.
+- **Default**: `[]`
+
+##### `headInlineScripts`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headInlineScripts']>`
+- **Description**: The head inline scripts of the page.
+- **Default**: `[]`
+
+##### `headInlineStyles`
+
+- **Type**: `HtmlPluginConfigTokenType<TemplateOptions['headInlineStyles']>`
+- **Description**: The head inline styles of the page.
+- **Default**: `[]`
+
+##### `cdnDisabled`
+
+- **Type**: `boolean`
+- **Description**: Indicates if we need to disable `cdn` plugin.
+- **Default**: `false`
+
+## Rspack
+
+The `rspack` option contains all Rspack build tool configurations.
+
+### `mode`
+
+- **Type**: `'production' | 'development' | 'none'`
+- **Default**: `'production'`
+- **Description**: Sets the build mode of Rspack to enable the default optimization strategy. If not set, it will be determined by the `serveMode` parameter:
+  - For `serve` mode: `'development'`
+  - For `build` mode: `'production'`
+
+### `loader`
+
+- **Type**: `RuleSetLoaderOptions`
+- **Required**: Yes
+- **Description**: Configuration options for all rule set loaders.
+
+#### `assetDataUrlMaxSize`
+
+- **Type**: `number`
+- **Default**: `4 * 1024` (4KB)
+- **Description**: Files smaller than this size will be treated as inline modules.
+
+#### `cssLoaderOptions`
+
+- **Type**: `CssLoaderOptions`
+- **Description**: Configuration for `css-loader`, including CSS modules support.
+
+#### `lessOptions`
+
+- **Type**: `Record<string, unknown>`
+- **Description**: Configuration options for Less compiler.
+
+#### `modularImports`
+
+- **Type**: `Array<ModularImportConfig>`
+- **Default**: `[]`
+- **Description**: Modular import plugin configuration for babel, compatible with antd, antd-mobile, lodash, material-ui, etc.
+
+#### `postcssOptions`
+
+- **Type**: `PostcssOptions`
+- **Description**: Configuration for `postcss-loader`, including custom plugins and cssnano options.
+
+#### `pixelOptions`
+
+- **Type**: `false | Partial<PostcssPluginPixelOptions>`
+- **Description**: Configuration for px to rem conversion plugin.
+
+### `performance`
+
+- **Type**: `false | PerformanceOptions`
+- **Description**: Options for performance hints.
+
+#### `hints`
+
+- **Type**: `false | 'error' | 'warning'`
+- **Description**: Sets the format of the hints: warnings, errors, or nothing at all.
+
+#### `maxAssetSize`
+
+- **Type**: `number`
+- **Description**: File size limit (in bytes) when exceeded, Rspack will provide performance hints.
+
+#### `maxEntrypointSize`
+
+- **Type**: `number`
+- **Description**: Total size of an entry point (in bytes).
+
+### `stats`
+
+- **Type**: `StatsOptions`
+- **Description**: Options for build statistics output.
+
+#### `preset`
+
+- **Type**: `boolean | 'normal' | 'none' | 'verbose' | 'errors-only' | 'errors-warnings' | 'minimal' | 'detailed' | 'summary'`
+- **Description**: Sets the preset for stats or enables/disables them.
+
+### `resolve`
+
+- **Type**: `ResolveOptions`
+- **Description**: Options that change how modules are resolved.
+
+#### `alias`
+
+- **Type**: `Record<string, string>`
+- **Description**: Only allows `key:value` alias format (e.g., `{'@xxx': './src/xxx'}`). Usually you don't need to specify an alias, the framework will automatically support `paths` alias from `tsconfig.json`. Less `@import` is also supported via `paths` of `tsconfig.json` with prefix `~`.
+
+#### `fallback`
+
+- **Type**: `Record<string, string | false | string[]>`
+- **Description**: Redirect module requests when normal resolving fails.
+
+### `externalsType`
+
+- **Type**: `string`
+- **Description**: Specify the default type of externals.
+- **Example**: `'window'`
+
+### `externals`
+
+- **Type**: `Record<string, string> | (() => Record<string, string>)`
+- **Default**: `{}`
+- **Description**: Specify dependencies that shouldn't be resolved by Rspack, but should become dependencies of the resulting bundle. If using a function, it will override default externals.
+- **Note**: React 19 is supported by default. For React 18 support, you need to manually add the externals configuration.
+- **Example**:
+  ```ts
+  externals: () => ({
+    vue: 'Vue',
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  });
+  ```
+
+### `publicPath`
+
+- **Type**: `string`
+- **Default**: `'auto'`
+- **Description**: The public path for output assets. Defaults to `'auto'` with web and web-worker targets.
+
+### `target`
+
+- **Type**: `string | false | string[]`
+- **Default**: `['web', 'es5']`
+- **Description**: Environment to build for. An array of environments to build for all of them when possible.
+
+### `minimizer`
+
+- **Type**: `false | MinimizerOptions`
+- **Default**: Terser minimizer enabled for production
+- **Description**: Minimizer(s) to use for minimizing the output. For `serve` mode, `minimize` is always `false`.
+
+#### `terserOptions`
+
+- **Type**: `false | SwcJsMinimizerRspackPluginOptions`
+- **Description**: Allow to disable terser minimizer or customize terser options. Uses SwcJsMinimizerRspackPlugin.
+
+#### `imageMin`
+
+- **Type**: `boolean`
+- **Default**: `false`
+- **Description**: Enable image minification.
+
+### `sourceMap`
+
+- **Type**: `'hidden-source-map' | 'source-map' | false`
+- **Default**: `false`
+- **Description**: A developer tool to enhance debugging. See [Rspack devtool documentation](https://rs/config/devtool).
+
+### `plugins`
+
+- **Type**: `EvolvePlugins`
+- **Required**: Yes
+- **Description**: The plugins configuration options.
+
+#### `externalPlugins`
+
+- **Type**: `Plugins`
+- **Description**: External Rspack plugins.
+
+#### `definePlugin`
+
+- **Type**: `DefineVariablesPluginOptions`
+- **Description**: Configuration for define variables plugin.
+
+#### `tsCheckerPlugin`
+
+- **Type**: `TsCheckerPluginOptions`
+- **Description**: Configuration for TypeScript checker plugin.
+
+#### `rsdoctorPlugin`
+
+- **Type**: `RsdoctorPluginOptions`
+- **Description**: Configuration for Rsdoctor plugin.
+
+#### `htmlPlugin`
+
+- **Type**: `HtmlPluginOptions`
+- **Required**: Yes
+- **Description**: Configuration for HTML plugin.
+
+### `output`
+
+- **Type**: `OutputOptions`
+- **Description**: Configuration for the output of the compilation.
+
+#### `outputDir`
+
+- **Type**: `string | (() => string | Promise<string>)`
+- **Default**: `'public'`
+- **Description**: The output directory as absolute path. Note: custom `outputDir` must have prefix `public` (e.g., `public/a/b`, `public/c/d`). Don't support `a/b`.
+
+#### `chunkFileVirtualPath`
+
+- **Type**: `string`
+- **Description**: The virtual path prefix for output chunk files. The actual chunk file name will be: `${chunkFileVirtualPath}/${chunkFilename}`.
+
+#### `enableBundleHashName`
+
+- **Type**: `boolean`
+- **Default**: `true`
+- **Description**: Enable `contenthash` bundle file names.
+
+### `module`
+
+- **Type**: `ModuleOptions`
+- **Description**: Extra module options for Rspack. See [Rspack module documentation](https://rspack.rs/zh/config/module).
+
+### `lazyCompilation`
+
+- **Type**: `LazyCompilationOptions`
+- **Description**: Extra optimization options for Rspack. See [Rspack optimization documentation](https://rspack.rs/zh/config/optimization).
+
+### `infrastructureLogging`
+
+- **Type**: `InfrastructureLogging`
+- **Description**: Infrastructure logging options for Rspack.
+
+## Dev Server
+
+The `devServer` option contains all development server configurations. This section is optional and only applies to development mode.
+
+### `pageProxy`
+
+- **Type**: `string`
+- **Default**: `'/pages'`
+- **Description**: The page proxy path. Must have prefix slash `/`.
+
+### `staticPages`
+
+- **Type**: `Array<StaticPageConfig>`
+- **Description**: Static pages configurations. The static pages will be served from the specified `htmlPath`.
+
+#### `routePath`
+
+- **Type**: `string | ((targetPath: string) => boolean)`
+- **Description**: The route path to access this static page.
+
+#### `htmlPath`
+
+- **Type**: `string`
+- **Description**: The absolute path to the HTML file.
+
+#### `entryName`
+
+- **Type**: `string`
+- **Description**: The entry name for this static page.
+
+### `middlewares`
+
+- **Type**: `RequestHandler[]`
+- **Description**: Custom Express middlewares for `page` and `modules`.
+
+### `watchOptions`
+
+- **Type**: `WebpackWatchOptions`
+- **Description**: Watch mode options. This configuration will be merged into `webpack-dev-server`.
+
+#### `aggregateTimeout`
+
+- **Type**: `number`
+- **Description**: Delay the rebuilt after the first change. Value is a time in ms.
+
+#### `followSymlinks`
+
+- **Type**: `boolean`
+- **Description**: Resolve symlinks and watch symlink and real file.
+
+#### `ignored`
+
+- **Type**: `string[]`
+- **Description**: Ignore some files from watching.
+
+#### `poll`
+
+- **Type**: `number | boolean`
+- **Description**: Enable polling mode for watching.
+
+### `devBeforeMiddlewares`
+
+- **Type**: `RspackMiddleware[]`
+- **Default**: `[]`
+- **Description**: Provides the ability to execute a custom function and apply custom middleware(s) before default middlewares. See [webpack-dev-server setupMiddlewares](https://webpack.js.org/configuration/dev-server/#devserversetupmiddlewares).
+
+### `devAfterMiddlewares`
+
+- **Type**: `RspackMiddleware[]`
+- **Default**: `[]`
+- **Description**: Provides the ability to execute a custom function and apply custom middleware(s) after default middlewares. See [webpack-dev-server setupMiddlewares](https://webpack.js.org/configuration/dev-server/#devserversetupmiddlewares).
+
+### `defaultServeGlobalData`
+
+- **Type**: `(entryItem: EvolveEntryMapContent, hostUrl: string) => Promise<Record<string, unknown>> | Record<string, unknown>`
+- **Description**: Customized global serve data injected into `window.GLOBAL = {...globalData}`.
+
+### `bundleDirResolver`
+
+- **Type**: `(dir: string, data: BundleDirResolverData) => string`
+- **Default**: `(dir) => dir`
+- **Description**: Customized `styles`, `scripts` bundle path lookup resolver. The full directory path such as `/public/${virtualPath}/${entryName}/bundle.js`.
+
+### `autoOpen`
+
+- **Type**: `boolean`
+- **Default**: `true`
+- **Description**: Whether to automatically open browser page for `serve`.
+
+### `liveReload`
+
+- **Type**: `true`
+- **Default**: `undefined`
+- **Description**: Enables reload/refresh the page(s) when file changes are detected (`auto` by default).
+
+### `clientOverlay`
+
+- **Type**: `ClientConfiguration['overlay']`
+- **Default**: `{ errors: true, warnings: false }`
+- **Description**: Enables a full-screen overlay in the browser when there are compiler errors or warnings.
+
+### `webSocketURL`
+
+- **Type**: `WebSocketURL | 'localIp'`
+- **Description**: Allows specifying URL to web socket server (useful when you're proxying dev server and client script does not always know where to connect to).
+- **Example**: Use `'localIp'` for remote mobile devices HMR, it will convert to local IP `ws://10.10.100.3/ws`.
+
+### `mockOptions`
+
+- **Type**: `Omit<HpsMockOptions, 'projectCwd'>`
+- **Description**: The customized config options of `@hyperse/hps-srv-mock`, it will override options `HpsMockOptions`.
+
+### `https`
+
+- **Type**: `SecureContextHttps`
+- **Description**: Provide your own certificate using the https option.
+
+## Inspector
+
+The `inspector` option configures the code inspector for debugging. If `serveMode` is `false`, it will be ignored and the code inspector will be closed.
+
+### `inspector`
+
+- **Type**: `false | InspectorOptions`
+- **Description**: The options of code inspector.
+
+### `keys`
+
+- **Type**: `string[]`
+- **Default**: `['$mod', 'i']` on macOS, `['Ctrl', 'i']` on other platforms
+- **Description**: Inspector Component toggle hotkeys.
+
+### `injectClient`
+
+- **Type**: `boolean`
+- **Default**: `true`
+- **Description**: Whether to automatically inject the code inspector client entry.
+
+### `customLaunchEditorEndpoint`
+
+- **Type**: `string`
+- **Default**: `'/__hps_inspector'`
+- **Description**: The base path of the launch editor endpoint.
+
+### `trustedEditor`
+
+- **Type**: `${TrustedEditor}`
+- **Default**: `'code'`
+- **Description**: The trusted editors that can be launched from browser. Supported values include: `'code'`, `'code-insiders'`, `'vscodium'`, `'vscodium-insiders'`, `'codium'`, `'cursor'`, `'webstorm'`, `'appcode'`, `'idea'`, `'phpstorm'`, `'pycharm'`, `'rubymine'`, `'goland'`, `'rider'`, `'subl'`, `'zed'`, `'atom'`, `'vim'`, `'nvim'`, `'emacs'`.
+
+## Configuration Example
+
+Here's a complete configuration example:
+
+```ts
+import { myDefineConfig } from '@hyperse/hps';
+
+export default myDefineConfig(() => {
+  return {
+    'build.evolve': () => {
+      return Promise.resolve({
+        projectCwd: process.cwd(),
+        projectVirtualPath: 'hps/evolve',
+        rejectWarnings: false,
+        entryMap: {
+          home: {
+            entry: ['./src/home/index.tsx'],
+            options: {
+              title: 'Home Page',
+              allowPx2rem: true,
+            },
+          },
+          mine: {
+            entry: ['./src/mine/index.tsx'],
+            options: {
+              title: 'Mine Page',
+            },
+          },
+        },
+        rspack: {
+          mode: 'production',
+          loader: {
+            cssLoaderOptions: {
+              modules: true,
+            },
+          },
+          plugins: {
+            htmlPlugin: {
+              htmlCdn: 'http://dev.hps.com:4000/public',
+            },
+            tsCheckerPlugin: {
+              enabled: false,
+            },
+          },
+          output: {
+            outputDir: 'public',
+            chunkFileVirtualPath: 'runtime-chunks',
+          },
+        },
+        devServer: {
+          pageProxy: '/pages',
+          autoOpen: true,
+          mockOptions: {
+            // mock configuration
+          },
+        },
+        inspector: {
+          keys: ['$mod', 'i'],
+          injectClient: true,
+          trustedEditor: 'code',
+        },
+      });
+    },
+    'serve.evolve': () => {
+      // Similar configuration for serve mode
+      return Promise.resolve({
+        // ... same as build.evolve
+      });
+    },
+  };
+});
+```
