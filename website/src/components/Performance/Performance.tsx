@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Activity, ArrowUpRight, Cpu, Layers, Timer, Zap } from 'lucide-react';
 import {
   Bar,
@@ -79,6 +79,140 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     );
   }
   return null;
+};
+
+// Chart wrapper component with error boundary and size validation
+const ChartWrapper: React.FC<{
+  data: { name: string; value: number; color: string; unit: string }[];
+}> = ({ data }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isReady, setIsReady] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  // Check container dimensions and ensure it's ready
+  useEffect(() => {
+    const checkDimensions = () => {
+      if (containerRef.current) {
+        const { width, height } = containerRef.current.getBoundingClientRect();
+        // Only render chart if container has valid dimensions
+        if (width > 0 && height > 0) {
+          setIsReady(true);
+          setHasError(false);
+        } else {
+          setIsReady(false);
+        }
+      }
+    };
+
+    // Initial check
+    checkDimensions();
+
+    // Use ResizeObserver to monitor container size changes
+    let resizeObserver: ResizeObserver | null = null;
+    if (containerRef.current && typeof ResizeObserver !== 'undefined') {
+      resizeObserver = new ResizeObserver(() => {
+        checkDimensions();
+      });
+      resizeObserver.observe(containerRef.current);
+    }
+
+    // Fallback to window resize if ResizeObserver is not available
+    let resizeTimer: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(checkDimensions, 100);
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+
+    return () => {
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
+      clearTimeout(resizeTimer);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
+  }, []);
+
+  // Error boundary effect to catch rendering errors
+  useEffect(() => {
+    const errorHandler = (event: ErrorEvent) => {
+      // Only catch errors related to chart rendering
+      if (
+        event.error &&
+        (event.error.message?.includes('chart') ||
+          event.error.message?.includes('recharts') ||
+          event.error.message?.includes('ResponsiveContainer') ||
+          event.error.message?.includes('width') ||
+          event.error.message?.includes('height'))
+      ) {
+        event.preventDefault();
+        setHasError(true);
+        setIsReady(false);
+      }
+    };
+
+    window.addEventListener('error', errorHandler);
+    return () => {
+      window.removeEventListener('error', errorHandler);
+    };
+  }, []);
+
+  // Show placeholder if error occurred or container not ready
+  if (hasError || !isReady) {
+    return (
+      <div
+        ref={containerRef}
+        className="flex h-full w-full items-center justify-center"
+      >
+        <div className="text-center text-gray-400">
+          <p className="text-sm">Chart loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div ref={containerRef} className="h-full min-h-0 w-full min-w-0">
+      <ResponsiveContainer
+        width="100%"
+        height="100%"
+        minWidth={0}
+        minHeight={0}
+        debounce={150}
+      >
+        <BarChart
+          data={data}
+          layout="vertical"
+          margin={{ top: 0, right: 20, left: 0, bottom: 0 }}
+          barGap={20}
+          barSize={48}
+        >
+          <CartesianGrid horizontal={false} stroke="rgba(255,255,255,0.05)" />
+          <XAxis type="number" hide />
+          <YAxis
+            dataKey="name"
+            type="category"
+            tick={{ fill: '#94a3b8', fontSize: 13, fontWeight: 500 }}
+            axisLine={false}
+            tickLine={false}
+            width={100}
+          />
+          <Tooltip
+            content={<CustomTooltip />}
+            cursor={{ fill: 'rgba(255,255,255,0.03)' }}
+          />
+          <Bar dataKey="value" radius={[0, 6, 6, 0]} animationDuration={1000}>
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
 };
 
 export const Performance: React.FC = () => {
@@ -183,42 +317,7 @@ export const Performance: React.FC = () => {
               </div>
 
               <div className="flex-grow">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={currentMetric.data}
-                    layout="vertical"
-                    margin={{ top: 0, right: 20, left: 0, bottom: 0 }}
-                    barGap={20}
-                    barSize={48}
-                  >
-                    <CartesianGrid
-                      horizontal={false}
-                      stroke="rgba(255,255,255,0.05)"
-                    />
-                    <XAxis type="number" hide />
-                    <YAxis
-                      dataKey="name"
-                      type="category"
-                      tick={{ fill: '#94a3b8', fontSize: 13, fontWeight: 500 }}
-                      axisLine={false}
-                      tickLine={false}
-                      width={100}
-                    />
-                    <Tooltip
-                      content={<CustomTooltip />}
-                      cursor={{ fill: 'rgba(255,255,255,0.03)' }}
-                    />
-                    <Bar
-                      dataKey="value"
-                      radius={[0, 6, 6, 0]}
-                      animationDuration={1000}
-                    >
-                      {currentMetric.data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
+                <ChartWrapper data={currentMetric.data} />
               </div>
 
               {/* Legend/Summary for chart */}
