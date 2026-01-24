@@ -1,4 +1,7 @@
-import getPort, { portNumbers } from 'get-port';
+import getPort, {
+  clearLockedPorts as clearLockedPortsFn,
+  portNumbers,
+} from 'get-port';
 
 /**
  * Returns a Promise for a port number.
@@ -11,4 +14,18 @@ export const getAvailablePort = (
 ): Promise<number> => {
   const portRanage = portNumbers(defaultPort, Number(defaultPort) + 10);
   return getPort({ port: portRanage, host });
+};
+
+/**
+ * Reset locked ports
+ * @example
+ * ```ts
+ * const port = await getAvailablePort(4001);
+ * clearLockedPorts();
+ * const port2 = await getAvailablePort(4001);
+ * console.log(port2);
+ * ```
+ */
+export const clearLockedPorts = () => {
+  clearLockedPortsFn();
 };
