@@ -206,6 +206,7 @@ const ChartWrapper: React.FC<{
           />
           <Bar dataKey="value" radius={[0, 6, 6, 0]} animationDuration={1000}>
             {data.map((entry, index) => (
+              // eslint-disable-next-line @typescript-eslint/no-deprecated
               <Cell key={`cell-${index}`} fill={entry.color} />
             ))}
           </Bar>

@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { type Application } from 'express';
 import https from 'node:https';
 import { getAvailableDomain } from '@hyperse/hps-srv-common';
 import { type HpsEvolveOptions } from '../types/types-options.js';
@@ -9,7 +9,7 @@ export const createDevServer = async (
   devPort: number;
   devHostUri: string;
   publicIp: string;
-  app: typeof app;
+  app: Application;
 }> => {
   const app = express();
   const mockOptions = evolveOptions.devServer?.mockOptions;
@@ -23,7 +23,7 @@ export const createDevServer = async (
     devPort: number;
     devHostUri: string;
     publicIp: string;
-    app: typeof app;
+    app: Application;
   }>((resolve) => {
     // Https
     const httpsServer = evolveOptions.devServer?.https

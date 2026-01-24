@@ -44,27 +44,27 @@
   },
   "dependencies": {
     "@armit/file-utility": "^0.3.1",
-    "@babel/code-frame": "^7.27.1",
+    "@babel/code-frame": "^7.28.6",
     "@hyperse/hps-srv-common": "workspace:*",
-    "ts-checker-rspack-plugin": "^1.2.2"
+    "ts-checker-rspack-plugin": "^1.2.6"
   },
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.5.0",
     "@hyperse/wizard": "^1.0.6",
-    "@rspack/core": "~1.6.8",
-    "@types/babel__code-frame": "^7.0.6",
-    "@types/node": "^25.0.3",
-    "@vitest/coverage-istanbul": "^4.0.16",
-    "@vitest/ui": "^4.0.16",
+    "@rspack/core": "~1.7.3",
+    "@types/babel__code-frame": "^7.27.0",
+    "@types/node": "^25.0.10",
+    "@vitest/coverage-istanbul": "^4.0.18",
+    "@vitest/ui": "^4.0.18",
     "eslint": "^9.39.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.1.2",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.16"
+    "vitest": "^4.0.18"
   },
   "peerDependencies": {
     "@hyperse/wizard": ">=1.0.6",
-    "@rspack/core": ">=1.6.7"
+    "@rspack/core": ">=1.7.2"
   },
   "peerDependenciesMeta": {
     "@hyperse/wizard": {
