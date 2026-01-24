@@ -78,7 +78,14 @@ const RootLayout: FC<{
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head />
+      <Head>
+        <link
+          rel="icon"
+          href="/hps/favicon.ico"
+          type="image/png"
+          sizes="32x32"
+        />
+      </Head>
       <body>
         <Layout
           banner={<BannerComponent version={releaseVersion} />}

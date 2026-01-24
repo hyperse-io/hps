@@ -28,7 +28,6 @@ export const createCircularDependencyPlugins = (
   const { projectCwd } = evolveOptions;
   return [
     new CircularDependencyRspackPlugin({
-      allowAsyncCycles: false,
       exclude: /node_modules/,
       failOnError: false,
       onDetected(_, modules) {
