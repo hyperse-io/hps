@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-pack
 
+## 0.1.1
+
+### Patch Changes
+
+- [#65](https://github.com/hyperse-io/hps/pull/65) [`80ea496`](https://github.com/hyperse-io/hps/commit/80ea4963a70a5a08d71ccea822bf6544432f21e8) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - chore: update package dependencies and versions across multiple packages, including @commitlint, framer-motion, and various @hyperse packages
+
 ## 0.1.0
 
 ### Minor Changes
