@@ -30,7 +30,7 @@ export const getDisabledReasonWithHMR = (
   // Check if the entry item is a library, The library module can not run in the browser individually.
   const isEntryItemLibrary = !!entryItemOption.options?.output?.library;
   // Inject `react-refresh` if we are using preset `react`
-  let reason: string = '';
+  let reason: string;
 
   if (!serveMode) {
     reason = 'The build is not in serve mode.';

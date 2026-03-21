@@ -21,6 +21,7 @@ export const mockPluginMessages = defineLocaleMessages({
 
 declare module '@hyperse/wizard' {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  export interface PluginLocaleMessages
-    extends DefineMessageType<typeof mockPluginMessages> {}
+  export interface PluginLocaleMessages extends DefineMessageType<
+    typeof mockPluginMessages
+  > {}
 }

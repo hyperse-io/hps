@@ -21,7 +21,9 @@ export const Shadow = ({
 
     try {
       const root = nodeRef.current.attachShadow({ mode });
-      setShadowRoot(root);
+      queueMicrotask(() => {
+        setShadowRoot(root);
+      });
     } catch (error) {
       console.warn('Failed to attach shadow root:', error);
     }

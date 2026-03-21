@@ -22,8 +22,9 @@ export const hpsCliMessages = defineLocaleMessages({
 // merge cli locale messages
 declare module '@hyperse/wizard' {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  export interface CliLocaleMessages
-    extends DefineMessageType<typeof hpsCliMessages> {
+  export interface CliLocaleMessages extends DefineMessageType<
+    typeof hpsCliMessages
+  > {
     //
   }
 }

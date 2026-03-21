@@ -95,12 +95,14 @@ const ChartWrapper: React.FC<{
       if (containerRef.current) {
         const { width, height } = containerRef.current.getBoundingClientRect();
         // Only render chart if container has valid dimensions
-        if (width > 0 && height > 0) {
-          setIsReady(true);
-          setHasError(false);
-        } else {
-          setIsReady(false);
-        }
+        queueMicrotask(() => {
+          if (width > 0 && height > 0) {
+            setIsReady(true);
+            setHasError(false);
+          } else {
+            setIsReady(false);
+          }
+        });
       }
     };
 

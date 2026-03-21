@@ -22,7 +22,7 @@ export const loadMockConfigFile = async (
     ...loaderOptions,
     projectCwd,
   });
-  let localData = {};
+  let localData;
   if (typeof data?.config === 'function') {
     localData = await data?.config(configEnv);
   } else {

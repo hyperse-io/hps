@@ -14,8 +14,10 @@ export interface RspackEntryObject {
   [index: string]: string[];
 }
 
-export interface HpsEvolveRspackOptions
-  extends Pick<Configuration, 'infrastructureLogging'> {
+export interface HpsEvolveRspackOptions extends Pick<
+  Configuration,
+  'infrastructureLogging'
+> {
   /**
    * The mode configuration is used to set the build mode of Rspack to enable the default optimization strategy.
    *

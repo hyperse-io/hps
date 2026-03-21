@@ -24,6 +24,7 @@ export const updatePluginMessages = defineLocaleMessages({
 
 declare module '@hyperse/wizard' {
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  export interface PluginLocaleMessages
-    extends DefineMessageType<typeof updatePluginMessages> {}
+  export interface PluginLocaleMessages extends DefineMessageType<
+    typeof updatePluginMessages
+  > {}
 }
