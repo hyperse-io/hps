@@ -1,5 +1,11 @@
 @hyperse/hps-srv-ts-checker
 
+## 0.1.3
+
+### Patch Changes
+
+- [`4cee4f0`](https://github.com/hyperse-io/hps/commit/4cee4f00e395ae0817cb6a4f4c4e0eb8a0f06fdb) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add tsConfigPath option to global compiler and ts-checker plugin for improved TypeScript configuration
+
 ## 0.1.2
 
 ### Patch Changes
