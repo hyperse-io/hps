@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-update
 
+## 0.1.2
+
+### Patch Changes
+
+- [`8ddec87`](https://github.com/hyperse-io/hps/commit/8ddec870c8792b131c17a0035a98425623374956) Thanks [@tianyingchun](https://github.com/tianyingchun)! - enhance updateWorkspacePackages function to include logger and improve directory handling
+
 ## 0.1.1
 
 ### Patch Changes
