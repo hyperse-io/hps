@@ -2,6 +2,7 @@ import type {
   Configuration,
   LazyCompilationOptions,
   ModuleOptions,
+  ResolveOptions,
   SwcJsMinimizerRspackPluginOptions,
 } from '@rspack/core';
 import { type RuleSetLoaderOptions } from './types-loader-options.js';
@@ -77,36 +78,23 @@ export interface HpsEvolveRspackOptions
       | 'detailed'
       | 'summary';
   };
-
   /**
    * These options change how modules are resolved.
+   * Only allow pass `key:value` alias `{'@xxx':'./src/xxx'}`
+   * Note: Usually you don't need to specify an alias, the framework will auto support `paths` alias of tsconfig.json
+   * less `@import` is also supported via `paths` of tsconfig.json only need to with prefix `~`
+   * @example
+   * ```less
+   * //@import '~@/utils/xxx.less'`
+   * //@import url('./child.less');`
+   * //@import url('~@/react/less/alias.less');
+   * //@import '~@/react/less/alias2.less';
+   * //@import '~@/utils/shared.less';
+   * ```
    */
-  resolve?: Omit<Configuration['resolve'], 'fallback'> & {
-    /**
-     * Only allow pass `key:value` alias `{'@xxx':'./src/xxx'}`
-     * Note: Usually you don't need to specify an alias, the framework will auto support `paths` alias of tsconfig.json
-     * less `@import` is also supported via `paths` of tsconfig.json only need to with prefix `~`
-     * @example
-     * ```less
-     * //@import '~@/utils/xxx.less'`
-     * //@import url('./child.less');`
-     * //@import url('~@/react/less/alias.less');
-     * //@import '~@/react/less/alias2.less';
-     * //@import '~@/utils/shared.less';
-     * ```
-     */
-    alias?: Record<string, string>;
-
-    /**
-     * Redirect module requests when normal resolving fails.
-     *
-     * Compatible with both rspack and webpack, using intersection of their types.
-     */
-    fallback?: {
-      [x: string]: string | false | string[];
-    };
+  resolve?: Omit<ResolveOptions, 'tsConfig'> & {
+    tsConfig?: string;
   };
-
   /**
    * Specify the default type of externals.
    * @example `externalsType: 'window'`

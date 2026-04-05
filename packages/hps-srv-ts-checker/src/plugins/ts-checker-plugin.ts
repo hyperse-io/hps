@@ -1,3 +1,4 @@
+import { resolve } from 'node:path';
 import { TsCheckerRspackPlugin } from 'ts-checker-rspack-plugin';
 import { logger } from '@hyperse/hps-srv-common';
 import type { Plugins } from '@rspack/core';
@@ -11,6 +12,7 @@ export const createTsCheckerPlugins = (
     serveMode,
     runTsChecker = true,
     projectCwd = process.cwd(),
+    tsConfigPath,
   } = options;
 
   const plugins: Plugins = [];
@@ -33,6 +35,9 @@ export const createTsCheckerPlugins = (
         typescript: {
           context: projectCwd,
           memoryLimit: 2048 * 4,
+          configFile: tsConfigPath
+            ? resolve(projectCwd, tsConfigPath)
+            : undefined,
         },
       })
     );

@@ -13,6 +13,7 @@ export const createGlobalCompiler = async (
     projectCwd: projectCwd,
     runTsChecker: rspack?.plugins?.tsCheckerPlugin?.enabled,
     watchOptions: devServer?.watchOptions || {},
+    tsConfigPath: rspack?.resolve?.tsConfig,
   };
 
   return await createTsCheckerCompiler(lastOptions);
