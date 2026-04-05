@@ -25,7 +25,7 @@ export const updateWorkspacePackages = async (
 ) => {
   const cwd = options.projectCwd;
   const workspaces = await getWorkspacePackages(cwd);
-  const { force, ...ncuOptions } = options;
+  const { force, logger, ...ncuOptions } = options;
 
   // write the ncu config file
   writeNcuConfig(cwd);
@@ -35,7 +35,16 @@ export const updateWorkspacePackages = async (
   const ncuConfig = explorer?.config;
   const deps = ncuConfig?.dep;
   const reject = ncuConfig?.reject;
-  for (const [dir] of workspaces) {
+  const dirsToUpdate = [
+    cwd,
+    ...[...workspaces.keys()].filter((d) => d !== cwd),
+  ];
+  logger.debug({
+    name: 'updateWorkspacePackages:\n',
+    message: dirsToUpdate.join('\n'),
+  });
+
+  for (const dir of dirsToUpdate) {
     const nestedConfig = await searchConfig<NcuConfig>('ncu', dir);
     const nestedNcuConfig = nestedConfig?.config;
     const nestedDeps = nestedNcuConfig?.dep;
