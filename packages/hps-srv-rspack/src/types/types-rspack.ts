@@ -80,20 +80,23 @@ export interface HpsEvolveRspackOptions
   };
   /**
    * These options change how modules are resolved.
-   * Only allow pass `key:value` alias `{'@xxx':'./src/xxx'}`
-   * Note: Usually you don't need to specify an alias, the framework will auto support `paths` alias of tsconfig.json
-   * less `@import` is also supported via `paths` of tsconfig.json only need to with prefix `~`
-   * @example
-   * ```less
-   * //@import '~@/utils/xxx.less'`
-   * //@import url('./child.less');`
-   * //@import url('~@/react/less/alias.less');
-   * //@import '~@/react/less/alias2.less';
-   * //@import '~@/utils/shared.less';
-   * ```
    */
-  resolve?: Omit<ResolveOptions, 'tsConfig'> & {
+  resolve?: Omit<ResolveOptions, 'tsConfig' | 'alias'> & {
     tsConfig?: string;
+    /**
+     * Only allow pass `key:value` alias `{'@xxx':'./src/xxx'}`
+     * Note: Usually you don't need to specify an alias, the framework will auto support `paths` alias of tsconfig.json
+     * less `@import` is also supported via `paths` of tsconfig.json only need to with prefix `~`
+     * @example
+     * ```less
+     * //@import '~@/utils/xxx.less'`
+     * //@import url('./child.less');`
+     * //@import url('~@/react/less/alias.less');
+     * //@import '~@/react/less/alias2.less';
+     * //@import '~@/utils/shared.less';
+     * ```
+     */
+    alias?: Record<string, string>;
   };
   /**
    * Specify the default type of externals.
