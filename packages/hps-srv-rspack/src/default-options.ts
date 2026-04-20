@@ -69,6 +69,5 @@ export const defaultEvolveOptions: HpsEvolveOptions = {
     keys: ['$mod', 'i'],
     customLaunchEditorEndpoint: '/__hps_inspector',
     trustedEditor: 'code',
-    injectClient: true,
   },
 };

@@ -26,7 +26,8 @@ export const startServe = async (
 
   // Merge inspector client entry
   const { inspector } = evolveOptions;
-  if (inspector && inspector?.injectClient) {
+  const { injectClient = true } = inspector || {};
+  if (inspector && injectClient) {
     evolveOptions = mergeInspectorEvolveConfig(evolveOptions);
   }
 
