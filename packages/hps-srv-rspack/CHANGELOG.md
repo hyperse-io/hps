@@ -1,5 +1,14 @@
 # @hyperse/hps-srv-rspack
 
+## 0.1.5
+
+### Patch Changes
+
+- [`a5d2bcb`](https://github.com/hyperse-io/hps/commit/a5d2bcb2271376cef892c9524226d5287b17243c) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update createResolve and related functions to improve tsConfig handling and add tests
+
+- Updated dependencies [[`a5d2bcb`](https://github.com/hyperse-io/hps/commit/a5d2bcb2271376cef892c9524226d5287b17243c)]:
+  - @hyperse/hps-srv-ts-checker@0.1.4
+
 ## 0.1.4
 
 ### Patch Changes
