@@ -14,8 +14,6 @@ export const Provider = ({
     return version || 'latest';
   }, [version]);
   return (
-    <GlobalContext.Provider value={{ version: nextVersion }}>
-      {children}
-    </GlobalContext.Provider>
+    <GlobalContext value={{ version: nextVersion }}>{children}</GlobalContext>
   );
 };

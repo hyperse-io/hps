@@ -55,7 +55,10 @@ export interface HpsEvolveOptions {
 
         /**
          * Whether to automatically inject the code inspector client entry.
-         * @default true
+         *
+         * If `serveMode` is `true`, default is `true`.
+         *
+         * If `serveMode` is `false`, default is `false`.
          */
         injectClient?: boolean;
 

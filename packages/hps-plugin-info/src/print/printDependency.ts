@@ -44,10 +44,7 @@ export const printDependency = async (options: {
 }) => {
   console.info('');
   console.info(
-    terminalColor(
-      ['dim'],
-      options.noColor
-    )('  ✔ @hyperse Platform Information')
+    terminalColor(['dim'], options.noColor)('  ✔ @hyperse Platform Information')
   );
   const packageJson = options.cliPackage;
   const dependencies: Record<string, unknown> = Object.assign(

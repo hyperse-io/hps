@@ -36,6 +36,7 @@
     "copy-entry": "cp -r ./src/compiler/entry.js ./dist/compiler/entry.js",
     "clean": "rimraf --no-glob ./dist ./_release ./coverage ./tsconfig.tsbuildinfo",
     "lint": "eslint .",
+    "fix-all-files": "eslint . --fix",
     "test": "run-s test-unit",
     "test-unit": "vitest run",
     "test-coverage": "vitest run --coverage",
@@ -44,27 +45,27 @@
   },
   "dependencies": {
     "@armit/file-utility": "^0.3.1",
-    "@babel/code-frame": "^7.28.6",
+    "@babel/code-frame": "^7.29.0",
     "@hyperse/hps-srv-common": "workspace:*",
-    "ts-checker-rspack-plugin": "^1.2.6"
+    "ts-checker-rspack-plugin": "^1.3.0"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.5.0",
+    "@hyperse/eslint-config-hyperse": "^1.7.1",
     "@hyperse/wizard": "^1.0.6",
-    "@rspack/core": "~1.7.3",
+    "@rspack/core": "~1.7.9",
     "@types/babel__code-frame": "^7.27.0",
-    "@types/node": "^25.0.10",
-    "@vitest/coverage-istanbul": "^4.0.18",
-    "@vitest/ui": "^4.0.18",
-    "eslint": "^9.39.2",
+    "@types/node": "^25.5.0",
+    "@vitest/coverage-istanbul": "^4.1.2",
+    "@vitest/ui": "^4.1.2",
+    "eslint": "^10.1.0",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^6.1.2",
-    "typescript": "^5.9.3",
-    "vitest": "^4.0.18"
+    "rimraf": "^6.1.3",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.2"
   },
   "peerDependencies": {
     "@hyperse/wizard": ">=1.0.6",
-    "@rspack/core": ">=1.7.2"
+    "@rspack/core": ">=1.7.10"
   },
   "peerDependenciesMeta": {
     "@hyperse/wizard": {

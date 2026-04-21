@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
 
 export const Footer: React.FC = () => {
+  const copyRight = useMemo(() => {
+    return `© ${new Date().getFullYear()} Hyperse Inc. All rights reserved.`;
+  }, []);
   return (
     <footer className="border-t border-white/10 bg-[#020617] pt-16 pb-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -150,9 +153,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 md:flex-row">
-          <p className="text-sm text-gray-600">
-            © {new Date().getFullYear()} Hyperse Inc. All rights reserved.
-          </p>
+          <p className="text-sm text-gray-600">{copyRight}</p>
         </div>
       </div>
     </footer>

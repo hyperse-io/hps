@@ -26,7 +26,9 @@ const getPostcssOptions = (
   > = postcssOptions.plugins || [];
 
   if (pixelOptions !== false) {
-    postCssPlugins.push(hpsSrvPostcssPluginPixel(pixelOptions));
+    postCssPlugins.push(
+      hpsSrvPostcssPluginPixel(pixelOptions) as AcceptedPlugin
+    );
   }
 
   return {

@@ -265,6 +265,7 @@ export class CleanPlugin {
         const message =
           'clean-webpack-plugin: Cannot delete files/folders outside the current working directory. Can be overridden with the `dangerouslyAllowCleanPatternsOutsideProject` option.';
 
+        // eslint-disable-next-line preserve-caught-error
         throw new Error(message);
       }
 

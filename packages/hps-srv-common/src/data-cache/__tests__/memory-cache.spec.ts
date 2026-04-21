@@ -25,6 +25,7 @@ describe('memory cache', () => {
           throw new Error('111');
         });
       } catch (err) {
+        // eslint-disable-next-line preserve-caught-error
         throw new Error('111' + (err as Error).message);
       }
     }

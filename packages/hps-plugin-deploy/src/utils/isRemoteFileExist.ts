@@ -58,10 +58,12 @@ export const isRemoteFileExist = async (
     // Handle different types of errors
     if (error instanceof Error) {
       if (error.name === 'AbortError') {
+        // eslint-disable-next-line preserve-caught-error
         throw new Error(
           `isRemoteFileExist() request timeout after ${timeout}ms`
         );
       }
+      // eslint-disable-next-line preserve-caught-error
       throw new Error(
         `isRemoteFileExist() failed to check remote file: ${error.message}`
       );

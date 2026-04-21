@@ -18,6 +18,10 @@ export default defineConfig(() => ({
       entry: ['./src/home/index.tsx'],
       options: {},
     },
+    "inspector-page": {
+      entry: ['./src/inspector-page/index.tsx'],
+      options: {},
+    },
     mine: {
       entry: ['./src/mine/index.tsx'],
       options: {},

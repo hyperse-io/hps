@@ -1,5 +1,5 @@
-import { type Application } from 'express';
 import express from 'express';
+import { type Application } from 'express';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { type TrustedEditor } from '@hyperse/inspector-common';

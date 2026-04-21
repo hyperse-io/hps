@@ -1,8 +1,10 @@
 import type { DeepPartial } from '@hyperse/config-loader';
 import { logger } from '@hyperse/hps-srv-common';
+import type { RspackOptions } from '@rspack/core';
 import { createGlobalCompiler } from '../compiler/create-global-compiler.js';
 import { ignoreEntryOptionKeys } from '../constants.js';
 import { filterActivedEntriesByModule } from '../helpers/helper-filter-actived-entries.js';
+import { mergeInspectorEvolveConfig } from '../helpers/helper-merge-inspector-evolve-config.js';
 import { normalizeEvolveEntryMap } from '../helpers/helper-normalize-entry-map.js';
 import { splitToEntryGroup } from '../helpers/helper-split-to-entry-group.js';
 import { loadEvolveConfig } from '../load-config/load-evolve-config.js';
@@ -34,10 +36,19 @@ export const startBuild = async (
   overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {}
 ): Promise<EvolveBuildResult[]> => {
   // Try to load evolve configuration from `hps-evolve.config.ts`
-  const newEvolveOptions = await loadEvolveConfig(
+  let newEvolveOptions = await loadEvolveConfig(
     projectCwd,
     overrideEvolveOptions
   );
+
+  // Merge inspector client entry
+  const { inspector } = newEvolveOptions;
+  const { injectClient = false } = inspector || {};
+  const mode: RspackOptions['mode'] =
+    newEvolveOptions.rspack?.mode ?? 'production';
+  if (inspector && mode === 'development' && injectClient) {
+    newEvolveOptions = mergeInspectorEvolveConfig(newEvolveOptions);
+  }
 
   await createGlobalCompiler(false, newEvolveOptions);
 

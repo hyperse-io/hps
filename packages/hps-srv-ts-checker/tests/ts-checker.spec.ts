@@ -25,23 +25,23 @@ describe('Should correct resolve module imports via tsconfig.json', () => {
   it('throw error with *.ts file', async () => {
     writeFileSync(join(fixtureCwd, 'a.ts'), 'const a:number = "11111";');
 
-    await expect(async () => {
-      await createTsCheckerCompiler({
+    await expect(
+      createTsCheckerCompiler({
         serveMode: false,
         projectCwd: fixtureCwd,
-      });
-    }).rejects.toThrow();
+      })
+    ).rejects.toThrow();
   });
 
   it('throw error with *.tsx file', async () => {
     writeFileSync(join(fixtureCwd, 'b.tsx'), 'const b:number = "22222";');
 
-    await expect(async () => {
-      await createTsCheckerCompiler({
+    await expect(
+      createTsCheckerCompiler({
         serveMode: false,
         projectCwd: fixtureCwd,
-      });
-    }).rejects.toThrow();
+      })
+    ).rejects.toThrow();
   });
 
   it('check error message', async () => {
