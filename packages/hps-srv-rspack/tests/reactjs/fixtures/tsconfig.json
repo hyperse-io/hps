@@ -10,7 +10,7 @@
     "allowJs": false,
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "preserveConstEnums": true,
@@ -33,6 +33,7 @@
     "**/*.tsx",
     "**/*.vue",
     "**/*.js",
+    "**/*.less",
     ".eslintrc.js",
     "hps-evolve.config.ts"
   ]
