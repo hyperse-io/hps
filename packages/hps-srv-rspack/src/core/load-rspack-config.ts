@@ -57,7 +57,7 @@ export const loadRspackConfig = async (
     // The context is an absolute string to the directory that contains the entry files.
     context: projectCwd,
     target: (rspack.target ?? ['web', 'es5']) as Target,
-    resolve: createResolve(projectCwd, rspack),
+    resolve: createResolve(projectCwd, rspack.resolve),
     module: {
       ...(rspack.module || {}),
       rules: moduleRules,

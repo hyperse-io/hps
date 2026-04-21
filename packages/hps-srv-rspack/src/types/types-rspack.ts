@@ -81,8 +81,7 @@ export interface HpsEvolveRspackOptions
   /**
    * These options change how modules are resolved.
    */
-  resolve?: Omit<ResolveOptions, 'tsConfig' | 'alias'> & {
-    tsConfig?: string;
+  resolve?: Omit<ResolveOptions, 'alias'> & {
     /**
      * Only allow pass `key:value` alias `{'@xxx':'./src/xxx'}`
      * Note: Usually you don't need to specify an alias, the framework will auto support `paths` alias of tsconfig.json
