@@ -15,6 +15,7 @@
   "license": "SEE LICENSE IN FILE 'LICENSE'",
   "exports": {
     ".": {
+      "source": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "import": "./index.js"
     },
