@@ -1,11 +1,9 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "./",
     "jsx": "react-jsx",
     "allowJs": false,
     "noImplicitAny": true,
-    "ignoreDeprecations": "6.0",
     "verbatimModuleSyntax": false,
     "noEmit": false,
     "incremental": true,
