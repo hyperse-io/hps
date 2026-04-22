@@ -21,7 +21,7 @@ const testCli = createWizard({
   configLoaderOptions: {
     configFile: 'hps',
     loaderOptions: {
-      externals: [/^@hyperse\/.*/],
+      externals: [/^@hyperse\/.*/, /^@hyperse-hub\/.*/],
       externalExclude: (moduleId: string | RegExp) => {
         return moduleId.toString().startsWith('@hyperse/');
       },
