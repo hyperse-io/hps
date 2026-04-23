@@ -19,6 +19,10 @@ export const createDevServerCompiler = (
   evolveOptions: HpsEvolveOptions
 ): Promise<boolean> => {
   const { projectCwd, devServer } = evolveOptions;
+  const webSocketURLExtra =
+    devServer?.webSocketURL && typeof devServer.webSocketURL === 'object'
+      ? devServer.webSocketURL
+      : undefined;
 
   const server = new RspackDevServer(
     {
@@ -63,7 +67,7 @@ export const createDevServerCompiler = (
                 // always use public ip address cause of charles proxy to mobile devices don't work on  `ws://${domain host}:port`
                 // if we use https, we don't need to specify the hostname or specify the https domain address
                 hostname: '0.0.0.0',
-                ...devServer?.webSocketURL,
+                ...(webSocketURLExtra || {}),
               },
       },
     },

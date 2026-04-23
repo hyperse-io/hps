@@ -1,4 +1,4 @@
-import type { Configuration, RspackOptions } from '@rspack/core';
+import type { Configuration, DevServer, RspackOptions } from '@rspack/core';
 import { assertSingleCompiler } from '../../src/helpers/helper-assert-single-compiler.js';
 import { type EvolveEntryMap, type HpsEvolveOptions } from '../../src/index.js';
 
@@ -42,8 +42,8 @@ describe('split-to-multi-compiler-configs', () => {
     );
 
     expect(result).toBeDefined();
-    expect(result.devServer?.port).toBe(3000);
-    expect(result.devServer?.host).toBe('localhost');
+    expect((result.devServer as DevServer)?.port).toBe(3000);
+    expect((result.devServer as DevServer)?.host).toBe('localhost');
     expect(result.entry).toHaveProperty('home');
     expect(result.entry).toHaveProperty('mine');
     expect(result.entry?.['home']).toBe(servedEntries.home.entry);
@@ -90,8 +90,8 @@ describe('split-to-multi-compiler-configs', () => {
     );
 
     expect(result).toBeDefined();
-    expect(result.devServer?.port).toBe(3000);
-    expect(result.devServer?.host).toBe('localhost');
+    expect((result.devServer as DevServer)?.port).toBe(3000);
+    expect((result.devServer as DevServer)?.host).toBe('localhost');
     expect(result.entry).toHaveProperty('home');
     expect(result.entry).toHaveProperty('mine');
     expect(result.entry?.['home']).toBe(servedEntries.home.entry);

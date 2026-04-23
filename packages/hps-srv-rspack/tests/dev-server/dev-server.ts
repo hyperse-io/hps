@@ -51,9 +51,8 @@ const overrideEvolveOptions: DeepPartial<HpsEvolveOptions> = {
         output: {
           library: {
             name: 'HmrLibrary',
-            type: 'var',
+            type: 'window',
           },
-          libraryTarget: 'window',
         },
       },
     },

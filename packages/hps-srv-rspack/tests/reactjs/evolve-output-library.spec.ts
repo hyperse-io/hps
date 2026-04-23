@@ -35,9 +35,8 @@ describe('evolve reactjs output library', () => {
             output: {
               library: {
                 name: 'FOO',
-                type: 'var',
+                type: 'window',
               },
-              libraryTarget: 'window',
             },
           },
         },

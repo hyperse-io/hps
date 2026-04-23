@@ -19,7 +19,7 @@
     "build": "npm run clean && rspack build"
   },
   "dependencies": {
-    "@heroui/react": "^3.0.1",
+    "@heroui/react": "^3.0.3",
     "@hyperse/hps": "workspace:*",
     "@hyperse/hps-plugin-build": "workspace:*",
     "@hyperse/hps-plugin-mock": "workspace:*",
@@ -28,19 +28,19 @@
     "@iconify/react": "^6.0.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
   },
   "devDependencies": {
     "@hyperse/wizard": "^1.0.6",
-    "@rspack/cli": "~1.7.10",
-    "@rspack/core": "~1.7.11",
-    "@tailwindcss/postcss": "^4.2.2",
-    "@types/node": "^25.5.0",
-    "autoprefixer": "^10.4.27",
-    "postcss": "^8.5.8",
+    "@rspack/cli": "~2.0.0",
+    "@rspack/core": "~2.0.0",
+    "@tailwindcss/postcss": "^4.2.4",
+    "@types/node": "^25.6.0",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.10",
     "rimraf": "^6.1.3",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3"
   },
   "peerDependencies": {

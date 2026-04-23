@@ -47,7 +47,7 @@ const cli = createWizard({
   configLoaderOptions: {
     configFile: 'hps',
     loaderOptions: {
-      externals: [/^@hyperse\/.*/],
+      externals: [/^@hyperse\/.*/, /^@hyperse-hub\/.*/],
     },
   },
 })
