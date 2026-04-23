@@ -43,7 +43,7 @@ export const startTestBuild = async (
   const evolveFileOptions = await loadEvolveConfigFile(projectCwd, command, {
     configFile: 'hps-evolve',
     loaderOptions: {
-      externals: [/^@hyperse\/.*/],
+      externals: [/^@hyperse\/.*/, /^@hyperse-hub\/.*/],
       externalExclude: (moduleId: string | RegExp) => {
         return moduleId.toString().startsWith('@hyperse/');
       },

@@ -1,5 +1,19 @@
 # @example/example-modular
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @hyperse/hps@0.1.5
+
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @hyperse/hps@0.1.4
+
 ## 0.0.5
 
 ### Patch Changes

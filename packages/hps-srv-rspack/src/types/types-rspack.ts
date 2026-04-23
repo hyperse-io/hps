@@ -2,6 +2,7 @@ import type {
   Configuration,
   LazyCompilationOptions,
   ModuleOptions,
+  ResolveOptions,
   SwcJsMinimizerRspackPluginOptions,
 } from '@rspack/core';
 import { type RuleSetLoaderOptions } from './types-loader-options.js';
@@ -79,11 +80,10 @@ export interface HpsEvolveRspackOptions extends Pick<
       | 'detailed'
       | 'summary';
   };
-
   /**
    * These options change how modules are resolved.
    */
-  resolve?: Omit<Configuration['resolve'], 'fallback'> & {
+  resolve?: Omit<ResolveOptions, 'alias'> & {
     /**
      * Only allow pass `key:value` alias `{'@xxx':'./src/xxx'}`
      * Note: Usually you don't need to specify an alias, the framework will auto support `paths` alias of tsconfig.json
@@ -98,17 +98,7 @@ export interface HpsEvolveRspackOptions extends Pick<
      * ```
      */
     alias?: Record<string, string>;
-
-    /**
-     * Redirect module requests when normal resolving fails.
-     *
-     * Compatible with both rspack and webpack, using intersection of their types.
-     */
-    fallback?: {
-      [x: string]: string | false | string[];
-    };
   };
-
   /**
    * Specify the default type of externals.
    * @example `externalsType: 'window'`

@@ -11,7 +11,7 @@ export const loadEvolveConfigFile = async (
   configLoaderOptions: ConfigLoaderOptions = {
     configFile: configFileName,
     loaderOptions: {
-      externals: [/^@hyperse\/.*/],
+      externals: [/^@hyperse\/.*/, /^@hyperse-hub\/.*/],
     },
   }
 ): Promise<DeepPartial<HpsEvolveOptions>> => {

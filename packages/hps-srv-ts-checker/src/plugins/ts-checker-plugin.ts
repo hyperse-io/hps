@@ -1,3 +1,4 @@
+import { dirname, resolve } from 'node:path';
 import { TsCheckerRspackPlugin } from 'ts-checker-rspack-plugin';
 import { logger } from '@hyperse/hps-srv-common';
 import type { Plugins } from '@rspack/core';
@@ -11,11 +12,15 @@ export const createTsCheckerPlugins = (
     serveMode,
     runTsChecker = true,
     projectCwd = process.cwd(),
+    tsConfigPath,
   } = options;
 
   const plugins: Plugins = [];
   // Runs typescript type checker and linter on separate process.
   if (runTsChecker) {
+    const configFileAbs = tsConfigPath
+      ? resolve(projectCwd, tsConfigPath)
+      : undefined;
     plugins.push(
       new TsCheckerRspackPlugin({
         async: serveMode,
@@ -31,8 +36,12 @@ export const createTsCheckerPlugins = (
           },
         },
         typescript: {
-          context: projectCwd,
+          // Must match ts-checker-rspack-plugin default: context is the directory of configFile.
+          // If context is the package root while configFile lives in `ui/`, globs like `./**/*`
+          // in that tsconfig are resolved from the wrong base and the checker typechecks the whole package.
+          context: configFileAbs ? dirname(configFileAbs) : projectCwd,
           memoryLimit: 2048 * 4,
+          configFile: configFileAbs,
         },
       })
     );

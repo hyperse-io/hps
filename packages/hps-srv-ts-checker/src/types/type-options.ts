@@ -22,6 +22,11 @@ export interface RspackWatchOptions {
 
 export type ForgeTsCheckerOptions = {
   /**
+   * The ts config file path
+   */
+  tsConfigPath?: string;
+
+  /**
    * The current working directory
    */
   projectCwd?: string;
