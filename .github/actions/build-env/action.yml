@@ -5,7 +5,7 @@ inputs:
   node-version:
     description: 'Node.js version to use'
     required: false
-    default: '20.x'
+    default: '24.x'
   rust-targets:
     description: 'Rust targets to install (comma-separated)'
     required: false
