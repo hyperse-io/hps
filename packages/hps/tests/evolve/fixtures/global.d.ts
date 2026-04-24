@@ -12,5 +12,10 @@ declare module '*.css' {
   export default content;
 }
 
+declare module '*.less' {
+  const content: any;
+  export default content;
+}
+
 declare module 'hps_evolve_home/Widget';
 declare module 'hps_evolve_setting/Widget';

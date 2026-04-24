@@ -30,7 +30,7 @@ export class GraphqlEndpointManager {
   private introspectionSchema: GraphQLSchema | null = null;
 
   // cached mock config
-  private mockConfig: {
+  private mockConfig!: {
     proxyPath: string;
     serviceUrl: string;
   };

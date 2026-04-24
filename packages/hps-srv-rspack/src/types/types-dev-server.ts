@@ -1,10 +1,6 @@
 import { type RequestHandler } from 'express';
-import {
-  type ClientConfiguration,
-  type WebSocketURL,
-} from 'webpack-dev-server';
 import type { HpsMockOptions, SecureContextHttps } from '@hyperse/hps-srv-mock';
-import type { DevServer } from '@rspack/core';
+import type { DevServer, DevServerClient } from '@rspack/core';
 import type { EvolveEntryMapContent } from './types-entry-map.js';
 
 export type RspackMiddleware = Parameters<
@@ -145,14 +141,14 @@ export type HpsEvolveDevServerOptions = {
    *   warnings: false,
    * }
    */
-  clientOverlay?: ClientConfiguration['overlay'];
+  clientOverlay?: DevServerClient['overlay'];
 
   /**
    * This option allows specifying URL to web socket server (useful when you're proxying dev server and client script does not always know where to connect to).
    * @example use `localIp` for remote mobile devices HMR it will convert to local ip `ws://10.10.100.3/ws`
    * @example use  `{ hostname: '0.0.0.0' }`, will get 'auto://0.0.0.0:0/ws'
    */
-  webSocketURL?: WebSocketURL | 'localIp';
+  webSocketURL?: DevServerClient['webSocketURL'] | 'localIp';
 
   /**
    * The customized config options of `@hyperse/hps-srv-mock`, it will override options `HpsMockOptions`

@@ -14,7 +14,7 @@ type GraphqlMockManagerMap = {
 };
 
 export class GraphqlMockManager {
-  private mockOptions: HpsMockOptions;
+  private mockOptions!: HpsMockOptions;
   private graphqlMockManagerMap: Map<string, GraphqlMockManagerMap> = new Map();
   private allEndpointManagers: GraphqlEndpointManager[] = [];
 

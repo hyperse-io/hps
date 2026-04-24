@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "paths": {},
+    "customConditions": ["source"],
     "newLine": "LF",
     "skipLibCheck": false,
     "noUnusedParameters": true,
@@ -10,11 +11,10 @@
     "allowJs": false,
     "module": "ESNext",
     "target": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "preserveConstEnums": true,
-    "outDir": "dist",
     "sourceMap": false,
     "lib": ["ES2016", "DOM"],
     "jsx": "preserve",
@@ -25,7 +25,6 @@
     "strictFunctionTypes": true,
     "removeComments": false,
     "experimentalDecorators": true,
-    "rootDir": "."
   },
   "include": [
     "scripts/*.ts",
@@ -33,6 +32,7 @@
     "**/*.tsx",
     "**/*.vue",
     "**/*.js",
+    "**/*.less",
     ".eslintrc.js",
     "hps-evolve.config.ts"
   ]

@@ -1,7 +1,7 @@
 import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin';
 import { logger } from '@hyperse/hps-srv-common';
 import rspack, { type Plugin as RspackPlugin } from '@rspack/core';
-import ReactRefreshPlugin from '@rspack/plugin-react-refresh';
+import { ReactRefreshRspackPlugin } from '@rspack/plugin-react-refresh';
 import { assertChunkFilename } from '../../helpers/helper-assert-chunk-filename.js';
 import { enableBundleHashName } from '../../helpers/helper-enable-bundle-hashname.js';
 import { getBundleFileName } from '../../helpers/helper-get-bundle-file-name.js';
@@ -94,7 +94,7 @@ export const createPlugins = async (
     // Applies the react-refresh Babel plugin on non-production modes only
     // Ensure `react-refresh/runtime` is hoisted and shared
     builtInPlugins.push(
-      new ReactRefreshPlugin({
+      new ReactRefreshRspackPlugin({
         // Always use webpack-dev-server `client` overlay!
       })
     );

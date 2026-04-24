@@ -2,16 +2,19 @@ import { Worker } from 'node:worker_threads';
 import { resolve } from 'path';
 import { getDirname } from '@armit/file-utility';
 import { mergeOptions } from '@hyperse/config-loader';
-import type { Plugin as RspackPlugin } from '@rspack/core';
+import type {
+  Plugin as RspackPlugin,
+  ProgressPluginOptions,
+} from '@rspack/core';
 import { type Compiler } from '@rspack/core';
-import { ProgressPlugin, type ProgressPluginArgument } from '@rspack/core';
+import { ProgressPlugin } from '@rspack/core';
 import type { EntryMapItem } from '../../../types/types-entry-map.js';
 import { progressHandler } from './progress-handler.js';
 
 export const createProgressPlugins = (
   serveMode: boolean,
   entryMapItemList: EntryMapItem[],
-  pluginOptions: ProgressPluginArgument = {}
+  pluginOptions: ProgressPluginOptions = {}
 ): RspackPlugin[] => {
   if (serveMode) {
     return [];
@@ -35,7 +38,7 @@ export const createProgressPlugins = (
     },
   });
 
-  const finalOptions = mergeOptions<ProgressPluginArgument>(
+  const finalOptions = mergeOptions<ProgressPluginOptions>(
     progressHandler(worker, entryMapItemList),
     pluginOptions
   );
