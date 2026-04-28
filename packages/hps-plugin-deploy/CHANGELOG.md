@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-deploy
 
+## 0.1.2
+
+### Patch Changes
+
+- [#69](https://github.com/hyperse-io/hps/pull/69) [`daa19e5`](https://github.com/hyperse-io/hps/commit/daa19e52fb57cae6377078b157704d1ea2b40f71) Thanks [@ShunquanWang](https://github.com/ShunquanWang)! - chore: remove baseUrl configuration from tsconfig files across multiple packages for consistency
+
 ## 0.1.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@hyperse/hps-plugin-serve",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/hyperse-io/hps",
   "repository": {
     "type": "git",
@@ -68,7 +68,7 @@
     "@hyperse/wizard": ">=1.0.6"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=24.0.0"
   },
   "publishConfig": {
     "access": "public",

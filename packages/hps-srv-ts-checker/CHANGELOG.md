@@ -1,5 +1,14 @@
 @hyperse/hps-srv-ts-checker
 
+## 0.1.5
+
+### Patch Changes
+
+- [#69](https://github.com/hyperse-io/hps/pull/69) [`daa19e5`](https://github.com/hyperse-io/hps/commit/daa19e52fb57cae6377078b157704d1ea2b40f71) Thanks [@ShunquanWang](https://github.com/ShunquanWang)! - chore: remove baseUrl configuration from tsconfig files across multiple packages for consistency
+
+- Updated dependencies [[`daa19e5`](https://github.com/hyperse-io/hps/commit/daa19e52fb57cae6377078b157704d1ea2b40f71)]:
+  - @hyperse/hps-srv-common@0.1.3
+
 ## 0.1.4
 
 ### Patch Changes

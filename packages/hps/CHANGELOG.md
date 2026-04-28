@@ -1,5 +1,22 @@
 # @hyperse/hps
 
+## 0.1.6
+
+### Patch Changes
+
+- [#69](https://github.com/hyperse-io/hps/pull/69) [`daa19e5`](https://github.com/hyperse-io/hps/commit/daa19e52fb57cae6377078b157704d1ea2b40f71) Thanks [@ShunquanWang](https://github.com/ShunquanWang)! - chore: remove baseUrl configuration from tsconfig files across multiple packages for consistency
+
+- [`e34788a`](https://github.com/hyperse-io/hps/commit/e34788a4611e533bbed038298a4396744eb20393) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update externals configuration to include @hyperse-hub in multiple packages
+
+- Updated dependencies [[`daa19e5`](https://github.com/hyperse-io/hps/commit/daa19e52fb57cae6377078b157704d1ea2b40f71)]:
+  - @hyperse/hps-plugin-deploy@0.1.2
+  - @hyperse/hps-plugin-update@0.1.3
+  - @hyperse/hps-plugin-build@0.1.6
+  - @hyperse/hps-plugin-serve@0.1.6
+  - @hyperse/hps-plugin-info@0.1.2
+  - @hyperse/hps-plugin-mock@0.1.3
+  - @hyperse/hps-srv-common@0.1.3
+
 ## 0.1.5
 
 ### Patch Changes
