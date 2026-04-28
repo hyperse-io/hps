@@ -137,3 +137,7 @@ target/
 # misc
 .DS_Store
 *.pem
+
+
+# docs
+TODO.md
