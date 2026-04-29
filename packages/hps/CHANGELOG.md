@@ -1,5 +1,22 @@
 # @hyperse/hps
 
+## 1.0.0
+
+### Major Changes
+
+- [#74](https://github.com/hyperse-io/hps/pull/74) [`1c548de`](https://github.com/hyperse-io/hps/commit/1c548de35d2427dd23cdaa3187531034f2bd60cb) Thanks [@ShunquanWang](https://github.com/ShunquanWang)! - feat: hps v1.0.0 released
+
+### Patch Changes
+
+- Updated dependencies [[`1c548de`](https://github.com/hyperse-io/hps/commit/1c548de35d2427dd23cdaa3187531034f2bd60cb)]:
+  - @hyperse/hps-plugin-deploy@1.0.0
+  - @hyperse/hps-plugin-update@1.0.0
+  - @hyperse/hps-plugin-build@1.0.0
+  - @hyperse/hps-plugin-serve@1.0.0
+  - @hyperse/hps-plugin-info@1.0.0
+  - @hyperse/hps-plugin-mock@1.0.0
+  - @hyperse/hps-srv-common@1.0.0
+
 ## 0.1.6
 
 ### Patch Changes
