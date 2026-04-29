@@ -1,5 +1,11 @@
 # @hyperse/hps-srv-mock
 
+## 1.0.1
+
+### Patch Changes
+
+- [#76](https://github.com/hyperse-io/hps/pull/76) [`3fb1bd9`](https://github.com/hyperse-io/hps/commit/3fb1bd9c6bb4cdca401fbeab26cb2f7173aad207) Thanks [@ShunquanWang](https://github.com/ShunquanWang)! - feat: enhance CORS support in attachMockMiddlewares by allowing custom options and updating type definitions
+
 ## 1.0.0
 
 ### Major Changes

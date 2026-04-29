@@ -1,5 +1,12 @@
 # @hyperse/hps-srv-rspack
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies [[`3fb1bd9`](https://github.com/hyperse-io/hps/commit/3fb1bd9c6bb4cdca401fbeab26cb2f7173aad207)]:
+  - @hyperse/hps-srv-mock@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
