@@ -72,6 +72,6 @@ export interface HpsEvolveOptions {
          * The trusted editors that can be launched from browser.
          * @default 'code'
          */
-        trustedEditor?: `${TrustedEditor}`;
+        trustedEditor?: TrustedEditor;
       };
 }

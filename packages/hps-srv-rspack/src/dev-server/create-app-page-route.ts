@@ -2,7 +2,6 @@ import express from 'express';
 import { type Application } from 'express';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { type TrustedEditor } from '@hyperse/inspector-common';
 import { createLaunchEditorMiddleware } from '@hyperse/inspector-middleware';
 import { normalizePageProxy } from '../helpers/helper-normalize-page-proxy.js';
 import type { EvolveDevServerEntryMap } from '../types/types-dev-server.js';
@@ -30,7 +29,7 @@ export const createAppPageRoute = (
     devServer?.middlewares?.push(
       createLaunchEditorMiddleware({
         customLaunchEditorEndpoint: inspector.customLaunchEditorEndpoint,
-        trustedEditor: inspector.trustedEditor as TrustedEditor,
+        trustedEditor: inspector.trustedEditor,
         projectCwd,
       })
     );
