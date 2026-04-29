@@ -1,5 +1,12 @@
 # @hyperse/hps-plugin-build
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @hyperse/hps-srv-rspack@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

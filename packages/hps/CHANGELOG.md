@@ -1,5 +1,14 @@
 # @hyperse/hps
 
+## 1.0.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @hyperse/hps-plugin-mock@1.0.1
+  - @hyperse/hps-plugin-serve@1.0.1
+  - @hyperse/hps-plugin-build@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
