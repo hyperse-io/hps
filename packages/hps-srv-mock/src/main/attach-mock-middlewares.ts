@@ -1,5 +1,5 @@
 import bodyParser from 'body-parser';
-import cors from 'cors';
+import cors, { type CorsOptions } from 'cors';
 import express, {
   type Application,
   type RequestHandler,
@@ -8,7 +8,7 @@ import express, {
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { resolve } from 'node:path';
 import favicon from 'serve-favicon';
-import { logger } from '@hyperse/hps-srv-common';
+import { logger, mergeOptions } from '@hyperse/hps-srv-common';
 import { faviconIcon } from '../constants.js';
 import { createMockWatcher } from '../esm-task/create-mock-watcher.js';
 import { getMockCwd } from '../helpers/get-mock-cwd.js';
@@ -37,6 +37,7 @@ export const attachMockMiddlewares = async (
   applicationOptions: HpsMockApplicationOptions
 ) => {
   const {
+    cors: corsOptions,
     staticMap,
     proxyMap,
     mockMap,
@@ -44,7 +45,15 @@ export const attachMockMiddlewares = async (
     bodyParserJson,
   } = mockOptions;
 
-  app.use(cors());
+  const defaultCorsOptions: CorsOptions = {
+    origin: (origin, callback) => {
+      callback(null, origin);
+    },
+    credentials: true,
+  };
+  const finalCorsOptions = mergeOptions(defaultCorsOptions, corsOptions || {});
+
+  app.use(cors(finalCorsOptions));
   app.use(favicon(faviconIcon()));
 
   const mockCwd = getMockCwd(mockOptions);

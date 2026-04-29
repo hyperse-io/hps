@@ -1,4 +1,5 @@
 import type { OptionsJson } from 'body-parser';
+import type { CorsOptions } from 'cors';
 import {
   type NextFunction,
   type Request,
@@ -95,6 +96,19 @@ export type SecureContextHttps = {
 };
 
 export interface HpsMockOptions {
+  /**
+   * The cors options
+   * @example
+   * ```ts
+   * {
+   *   origin: (origin, callback) => {
+   *     callback(null, origin);
+   *   },
+   *   credentials: true,
+   * }
+   * ```
+   */
+  cors?: Partial<CorsOptions>;
   /**
    * Push into a chunk every 50 files.
    * @default 100
