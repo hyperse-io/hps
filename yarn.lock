@@ -4089,7 +4089,7 @@ __metadata:
     typescript: "npm:^6.0.3"
     vitest: "npm:^4.1.9"
   peerDependencies:
-    graphql: ">=17.0.1"
+    graphql: ">=16.13.2"
     typescript: ">=6.0.3"
   languageName: unknown
   linkType: soft
@@ -4337,7 +4337,7 @@ __metadata:
     vitest: "npm:^4.1.9"
   peerDependencies:
     "@hyperse/wizard": ">=1.0.6"
-    graphql: ">=17.0.1"
+    graphql: ">=16.13.2"
   peerDependenciesMeta:
     "@hyperse/wizard":
       optional: true
