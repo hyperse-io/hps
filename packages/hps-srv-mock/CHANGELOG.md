@@ -1,5 +1,11 @@
 # @hyperse/hps-srv-mock
 
+## 1.0.3
+
+### Patch Changes
+
+- [`c27ae8a`](https://github.com/hyperse-io/hps/commit/c27ae8af72bd48a9b5f99b0fb884aa64bae2afd0) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update peerDependencies for graphql to version >=16.13.2 and adjust .ncurc.json dependencies
+
 ## 1.0.2
 
 ### Patch Changes
