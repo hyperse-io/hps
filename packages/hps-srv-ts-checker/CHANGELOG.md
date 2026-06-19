@@ -1,5 +1,16 @@
 @hyperse/hps-srv-ts-checker
 
+## 1.0.1
+
+### Patch Changes
+
+- [`b1e1eb6`](https://github.com/hyperse-io/hps/commit/b1e1eb6f2c5349549d1de271322a2321efaa057b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update dependencies and Yarn configuration to improve project stability and performance
+
+- [`562ac6d`](https://github.com/hyperse-io/hps/commit/562ac6daf8f96ad610bce734272fdd83bdaeb0bb) Thanks [@tianyingchun](https://github.com/tianyingchun)! - add tsCheckerBuild option to TsCheckerPlugin for project-reference solutions
+
+- Updated dependencies [[`b1e1eb6`](https://github.com/hyperse-io/hps/commit/b1e1eb6f2c5349549d1de271322a2321efaa057b)]:
+  - @hyperse/hps-srv-common@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

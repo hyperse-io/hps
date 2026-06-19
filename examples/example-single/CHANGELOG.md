@@ -1,5 +1,18 @@
 # @example/example-single
 
+## 0.0.11
+
+### Patch Changes
+
+- [`b1e1eb6`](https://github.com/hyperse-io/hps/commit/b1e1eb6f2c5349549d1de271322a2321efaa057b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update dependencies and Yarn configuration to improve project stability and performance
+
+- Updated dependencies [[`b1e1eb6`](https://github.com/hyperse-io/hps/commit/b1e1eb6f2c5349549d1de271322a2321efaa057b), [`562ac6d`](https://github.com/hyperse-io/hps/commit/562ac6daf8f96ad610bce734272fdd83bdaeb0bb)]:
+  - @hyperse/hps-plugin-build@1.0.2
+  - @hyperse/hps-plugin-serve@1.0.2
+  - @hyperse/hps-plugin-mock@1.0.2
+  - @hyperse/hps-srv-rspack@1.0.2
+  - @hyperse/hps@1.0.2
+
 ## 0.0.10
 
 ### Patch Changes

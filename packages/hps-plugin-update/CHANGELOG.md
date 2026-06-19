@@ -1,5 +1,11 @@
 # @hyperse/hps-plugin-update
 
+## 1.0.1
+
+### Patch Changes
+
+- [`b1e1eb6`](https://github.com/hyperse-io/hps/commit/b1e1eb6f2c5349549d1de271322a2321efaa057b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update dependencies and Yarn configuration to improve project stability and performance
+
 ## 1.0.0
 
 ### Major Changes
