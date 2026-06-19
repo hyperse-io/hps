@@ -38,6 +38,12 @@ export type ForgeTsCheckerOptions = {
   runTsChecker?: boolean;
 
   /**
+   * Run `tsc --build` for project-reference solution tsconfigs.
+   * @default false
+   */
+  tsCheckerBuild?: boolean;
+
+  /**
    * Whether to start the serve
    */
   serveMode: boolean;

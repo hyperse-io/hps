@@ -11,6 +11,7 @@ export const createTsCheckerPlugins = (
   const {
     serveMode,
     runTsChecker = true,
+    tsCheckerBuild = false,
     projectCwd = process.cwd(),
     tsConfigPath,
   } = options;
@@ -42,6 +43,7 @@ export const createTsCheckerPlugins = (
           context: configFileAbs ? dirname(configFileAbs) : projectCwd,
           memoryLimit: 2048 * 4,
           configFile: configFileAbs,
+          build: tsCheckerBuild,
         },
       })
     );

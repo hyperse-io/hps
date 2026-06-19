@@ -23,6 +23,7 @@ export const createGlobalCompiler = async (
     serveMode,
     projectCwd: projectCwd,
     runTsChecker: rspack?.plugins?.tsCheckerPlugin?.enabled,
+    tsCheckerBuild: rspack?.plugins?.tsCheckerPlugin?.build,
     watchOptions: devServer?.watchOptions || {},
     tsConfigPath,
   };
