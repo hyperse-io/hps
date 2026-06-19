@@ -1,5 +1,14 @@
 # @hyperse/hps-srv-mock
 
+## 1.0.2
+
+### Patch Changes
+
+- [`b1e1eb6`](https://github.com/hyperse-io/hps/commit/b1e1eb6f2c5349549d1de271322a2321efaa057b) Thanks [@tianyingchun](https://github.com/tianyingchun)! - update dependencies and Yarn configuration to improve project stability and performance
+
+- Updated dependencies [[`b1e1eb6`](https://github.com/hyperse-io/hps/commit/b1e1eb6f2c5349549d1de271322a2321efaa057b)]:
+  - @hyperse/hps-srv-common@1.0.1
+
 ## 1.0.1
 
 ### Patch Changes
