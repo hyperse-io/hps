@@ -1,5 +1,16 @@
 # @example/example-single
 
+## 0.0.12
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @hyperse/hps-plugin-mock@1.0.3
+  - @hyperse/hps-plugin-serve@1.0.3
+  - @hyperse/hps-srv-rspack@1.0.3
+  - @hyperse/hps@1.0.3
+  - @hyperse/hps-plugin-build@1.0.3
+
 ## 0.0.11
 
 ### Patch Changes
