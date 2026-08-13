@@ -36,14 +36,14 @@ jobs:
       #     build-command: yarn build
       #     clean-command: yarn clean
 
-      # @link https://github.com/changesets/action
+      # @link https://github.com/changesets/action (v2 for @changesets/cli v3)
       - name: Create Release Pull Request or Publish to npm
         id: changesets
-        uses: changesets/action@v1.7.0
+        uses: changesets/action@v2
         with:
-          publish: yarn g:release
-          cwd: ${{ github.workspace }}
-          title: '[Release] Version packages'
+          publish-script: yarn g:release
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-title: '[Release] Version packages'
           # Optional, might be used in conjunction with GITHUB_TOKEN to
           # allow running the workflows on a Version package action.
           # Be aware of security implications.
@@ -52,7 +52,6 @@ jobs:
           # See https://github.com/changesets/action/issues/147
           HOME: ${{ github.workspace }}
           # Allows to download / query / comment packages
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Allows to publish packages
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           # Support cargo
