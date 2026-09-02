@@ -20,6 +20,7 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ !startsWith(github.head_ref, 'changeset-release/') }}
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -51,7 +52,7 @@ jobs:
           path: website/out
 
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' && !startsWith(github.head_ref, 'changeset-release/') }}
     needs: build
     runs-on: ubuntu-latest
     environment:
