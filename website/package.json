@@ -14,17 +14,19 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "next build && yarn postbuild",
+    "mdx": "fumadocs-mdx",
+    "postinstall": "fumadocs-mdx",
+    "build": "fumadocs-mdx && next build && yarn postbuild",
     "postbuild": "next-sitemap",
-    "build:ghpage": "cross-env NEXT_BUILD_ENV_OUTPUT='export' next build && yarn postbuild:ghpage",
+    "build:ghpage": "fumadocs-mdx && cross-env NEXT_BUILD_ENV_OUTPUT='export' next build && yarn postbuild:ghpage",
     "postbuild:ghpage": "next-sitemap",
-    "dev": "next dev -p 3000 -H 0.0.0.0 --turbopack",
+    "dev": "fumadocs-mdx && next dev -p 3000 -H 0.0.0.0 --turbopack",
     "fix-all-files": "eslint . --fix",
     "g:lint-staged-files": "lint-staged --allow-empty",
     "lint": "eslint .",
     "start": "next start -p 3000 -H 0.0.0.0",
     "test": "vitest run",
-    "typecheck": "tsc --project ./tsconfig.json --noEmit"
+    "typecheck": "fumadocs-mdx && tsc --project ./tsconfig.json --noEmit"
   },
   "config": {
     "commitizen": {
