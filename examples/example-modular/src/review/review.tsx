@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { User } from '@heroui/react';
+import { Avatar } from '@heroui/react';
 import { cn } from '@heroui/react';
 import { Icon } from '@iconify/react';
 
@@ -30,21 +30,20 @@ export const Review = ({
   <div {...props}>
     <div className="flex items-center justify-between">
       <div className="flex items-center gap-2">
-        <User
-          avatarProps={{
-            src: user.avatar,
-          }}
-          classNames={{
-            name: 'font-medium',
-            description: 'text-small',
-          }}
-          description={new Intl.DateTimeFormat('en-US', {
-            month: 'long',
-            day: 'numeric',
-            year: 'numeric',
-          }).format(new Date(createdAt))}
-          name={user.name}
-        />
+        <Avatar size="md">
+          <Avatar.Image alt={user.name} src={user.avatar} />
+          <Avatar.Fallback>{user.name.charAt(0).toUpperCase()}</Avatar.Fallback>
+        </Avatar>
+        <div className="flex flex-col">
+          <span className="font-medium">{user.name}</span>
+          <span className="text-muted text-sm">
+            {new Intl.DateTimeFormat('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            }).format(new Date(createdAt))}
+          </span>
+        </div>
       </div>
       <div className="flex items-center gap-1">
         {Array.from({ length: 5 }, (_, i) => {
@@ -55,7 +54,7 @@ export const Review = ({
               key={i}
               className={cn(
                 'text-lg sm:text-xl',
-                isSelected ? 'text-warning' : 'text-default-200'
+                isSelected ? 'text-warning' : 'text-default'
               )}
               icon="solar:star-bold"
             />
@@ -64,8 +63,8 @@ export const Review = ({
       </div>
     </div>
     <div className="mt-4 w-full">
-      <p className="text-default-900 font-medium">{title}</p>
-      <p className="text-default-500 mt-2">{content || children}</p>
+      <p className="text-foreground font-medium">{title}</p>
+      <p className="text-muted mt-2">{content || children}</p>
     </div>
   </div>
 );

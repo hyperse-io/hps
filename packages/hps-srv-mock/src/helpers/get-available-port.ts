@@ -3,7 +3,7 @@ import getPort, { portNumbers } from 'get-port';
 /**
  * Returns a Promise for a port number.
  * @param defaultPort A preferred port or an iterable of preferred ports to use
- * @param host The host on which port resolution should be performed. Can be either an IPv4 or IPv6 address default `dev.hps.com`
+ * @param host The host on which port resolution should be performed. Can be either an IPv4 or IPv6 address default `hps.dev`
  */
 export const getAvailablePort = (
   defaultPort: number,

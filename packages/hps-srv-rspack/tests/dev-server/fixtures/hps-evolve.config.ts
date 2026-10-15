@@ -40,7 +40,7 @@ export default defineConfig(() => ({
       return moduleGlobal();
     },
     mockOptions: {
-      hostname: 'dev.hps.com',
+      hostname: 'hps.dev',
       mockBaseDir: `./mocks`,
       port: 40000,
       chunkSize: 3,
@@ -70,7 +70,7 @@ export default defineConfig(() => ({
     },
     plugins: {
       htmlPlugin: {
-        htmlCdn: 'http://dev.hps.com:4000/public',
+        htmlCdn: 'http://hps.dev:4000/public',
       },
     },
   },

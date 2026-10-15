@@ -1,5 +1,5 @@
 import { logger } from '@hyperse/hps-srv-common';
-import { CircularDependencyRspackPlugin, type Plugins } from '@rspack/core';
+import { CircularCheckRspackPlugin, type Plugins } from '@rspack/core';
 import { type HpsEvolveOptions } from '../../../types/types-options.js';
 
 const cutBefore = (str: string, keyword: string) => {
@@ -27,11 +27,11 @@ export const createCircularDependencyPlugins = (
 
   const { projectCwd } = evolveOptions;
   return [
-    new CircularDependencyRspackPlugin({
+    new CircularCheckRspackPlugin({
       exclude: /node_modules/,
       failOnError: false,
-      onDetected(_, modules) {
-        const relativePaths = modules
+      onDetected({ paths }) {
+        const relativePaths = paths
           .map((module) => cutBefore(module, projectCwd))
           .join(' -> ');
         logger.warn(`Circular dependency detected:\r\n ${relativePaths}`);

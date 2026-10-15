@@ -4,12 +4,12 @@
 export interface MockDomainData {
   /**
    * The mock domain url
-   * @example `http://dev.hps.com:3001/
+   * @example `http://hps.dev:3001/
    */
   domain: string;
   /**
    * The host base url.
-   * @example `http://dev.hps.com:3001`
+   * @example `http://hps.dev:3001`
    * Without last slash.
    */
   hostUri: string;

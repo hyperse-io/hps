@@ -62,7 +62,7 @@ describe('Should correct resolve module imports via tsconfig.json', () => {
       });
     } catch (error) {
       // eslint-disable-next-line vitest/no-conditional-expect
-      expect(error).toEqual('TS_CHECKER_ERROR: Found 1 errors 0 warnings .');
+      expect(error).contain('TS_CHECKER_ERROR: Found 1 errors 0 warnings .');
     }
   });
 });

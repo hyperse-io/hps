@@ -43,7 +43,7 @@ export const normalizeCheckEntryOptions = (
 ): Partial<EvolveEntryItemOption> | undefined => {
   const mode = serveMode ? 'development' : 'production';
   const envCdnDomain = serveMode
-    ? 'http://dev.hps.com/apps'
+    ? 'http://hps.dev/apps'
     : 'https://hps.pro.com/apps';
 
   const configData: HtmlPluginConfigConfigData = {

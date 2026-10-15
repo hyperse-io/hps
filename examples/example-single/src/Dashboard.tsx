@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import {
   Card,
-  CardHeader,
   Chip,
-  Listbox,
-  ListboxItem,
+  Description,
+  Label,
+  ListBox,
   Spinner,
 } from '@heroui/react';
 import { Logo } from './Logo';
@@ -61,7 +61,7 @@ export const Dashboard = () => {
       <div className="flex h-screen w-full items-center justify-center">
         <div className="flex flex-col items-center gap-y-4">
           <Spinner />
-          <p className="text-sm text-gray-500">Loading...</p>
+          <p className="text-muted text-sm">Loading...</p>
         </div>
       </div>
     );
@@ -71,54 +71,55 @@ export const Dashboard = () => {
     <div className="m-auto box-border flex h-full w-full max-w-7xl flex-col gap-y-4 p-4">
       {/* Header */}
       <header>
-        <Card className="bg-primary/80">
-          <CardHeader className="flex w-full flex-row items-center justify-between text-white">
+        <Card className="bg-accent/80">
+          <Card.Header className="flex w-full flex-row items-center justify-between text-white">
             <div className="size-6">
               <Logo />
             </div>
             <p className="text-lg">{data.title}</p>
             <p className="text-sm">{currentTime}</p>
-          </CardHeader>
+          </Card.Header>
         </Card>
       </header>
 
       {/* Main Content */}
       <main>
-        <Listbox aria-label="Listbox menu with descriptions" variant="flat">
+        <ListBox
+          aria-label="Listbox menu with descriptions"
+          selectionMode="none"
+        >
           {data.modules.map((module, index) => (
-            <ListboxItem
+            <ListBox.Item
               key={index}
-              className="border-default-100 border"
-              description={
-                <span className="text-default-400 text-sm font-normal">
-                  {module.link}
-                </span>
-              }
-              onPress={() => {
+              className="border-separator border"
+              id={String(index)}
+              onAction={() => {
                 window.open(module.link, '_self');
               }}
-              startContent={<span>{index + 1}、</span>}
-              endContent={
-                <Chip
-                  color={module.flagText === 'serve' ? 'primary' : 'secondary'}
-                  size="sm"
-                  classNames={{
-                    content: 'text-sm',
-                  }}
-                >
-                  {module.flagText}
-                </Chip>
-              }
+              textValue={module.name}
             >
-              <span className="text-sm font-normal">{module.name}</span>
-            </ListboxItem>
+              <span>{index + 1}、</span>
+              <div className="flex flex-col">
+                <Label>{module.name}</Label>
+                <Description className="text-muted font-normal">
+                  {module.link}
+                </Description>
+              </div>
+              <Chip
+                className="text-sm"
+                color={module.flagText === 'serve' ? 'accent' : 'default'}
+                size="sm"
+              >
+                <Chip.Label>{module.flagText}</Chip.Label>
+              </Chip>
+            </ListBox.Item>
           ))}
-        </Listbox>
+        </ListBox>
       </main>
 
       {/* Footer */}
       <footer className="py-6 text-center">
-        <p className="text-sm text-gray-400">
+        <p className="text-muted text-sm">
           © Copyright 2025 hyperse | All rights reserved.
         </p>
       </footer>

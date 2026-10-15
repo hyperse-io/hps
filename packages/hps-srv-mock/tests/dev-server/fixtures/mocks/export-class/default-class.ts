@@ -54,7 +54,7 @@ export default class MockDefaultExportClassService extends MockBase {
             this.pureList
           )}`
         ),
-        data: ['https://www.hps.com/blog/img/hps_avatar.png'],
+        data: ['https://hps.dev/blog/img/hps_avatar.png'],
       })
     );
   }

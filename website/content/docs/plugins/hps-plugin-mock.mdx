@@ -99,7 +99,7 @@ The context uses `HpsMockOptions` type for configuration.
 
 - **Type**: `string`
 - **Required**: No
-- **Description**: The hostname for the mock server. If not specified, the hostname from the configuration file will be used, or defaults to `"dev.hps.com"`.
+- **Description**: The hostname for the mock server. If not specified, the hostname from the configuration file will be used, or defaults to `"hps.dev"`.
 
 **Usage:**
 
@@ -181,7 +181,7 @@ The mock command loads configuration from your `hps.config.ts` file under the `m
 #### `hostname`
 
 - **Type**: `string`
-- **Default**: `"dev.hps.com"`
+- **Default**: `"hps.dev"`
 - **Description**: The hostname for the mock server. This is used to construct the server URL.
 
 #### `port`
@@ -364,13 +364,13 @@ The mock command provides feedback during server startup:
 ### Server Startup
 
 ```
-Start an mock service on "http://dev.hps.com:4000"
+Start an mock service on "http://hps.dev:4000"
 ```
 
 Or with HTTPS:
 
 ```
-Start an mock service on "https://dev.hps.com:4000"
+Start an mock service on "https://hps.dev:4000"
 ```
 
 ### Error Messages
@@ -400,7 +400,7 @@ const mockOptions = {
   projectCwd: process.cwd(),
   mockBaseDir: './mocks',
   apiContext: '/api',
-  hostname: 'dev.hps.com',
+  hostname: 'hps.dev',
   port: 4000,
   mockFilters: ['api/.*', '!api/test/.*'],
   staticMap: {
@@ -511,23 +511,23 @@ hps mock --mock-filters "api/.*" "!api/test/.*"
 **Expected Output:**
 
 ```
-Start an mock service on "http://dev.hps.com:4000"
+Start an mock service on "http://hps.dev:4000"
 ```
 
 **5. Access your mock APIs:**
 
-- Users API: `http://dev.hps.com:4000/api/users`
-- Products API: `http://dev.hps.com:4000/api/products`
-- Static files: `http://dev.hps.com:4000/static/...`
+- Users API: `http://hps.dev:4000/api/users`
+- Products API: `http://hps.dev:4000/api/products`
+- Static files: `http://hps.dev:4000/static/...`
 
 **6. Test your APIs:**
 
 ```bash
 # GET request
-curl http://dev.hps.com:4000/api/users
+curl http://hps.dev:4000/api/users
 
 # POST request
-curl -X POST http://dev.hps.com:4000/api/users \
+curl -X POST http://hps.dev:4000/api/users \
   -H "Content-Type: application/json" \
   -d '{"name": "New User", "email": "new@example.com"}'
 ```

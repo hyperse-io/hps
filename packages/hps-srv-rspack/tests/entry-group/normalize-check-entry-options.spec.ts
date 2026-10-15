@@ -178,7 +178,7 @@ describe('normalize-check-entry-options.spec', () => {
   it('env = development', async () => {
     const configData: HtmlPluginConfigConfigData = {
       mode: 'development',
-      envCdn: urlJoin('http://dev.hps.com/apps', ['public']),
+      envCdn: urlJoin('http://hps.dev/apps', ['public']),
     };
 
     const originalOptions = {

@@ -4,7 +4,7 @@ export const defaultMockOptions: HpsMockOptions = {
   projectCwd: process.cwd(),
   mockBaseDir: './mocks',
   apiContext: '/api',
-  hostname: 'dev.hps.com',
+  hostname: 'hps.dev',
   externals: [
     '@hyperse/hps-srv-mock',
     '@hyperse/hps-srv-common',

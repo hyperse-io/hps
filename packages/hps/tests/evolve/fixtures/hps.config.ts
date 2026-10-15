@@ -1,7 +1,7 @@
 import { myDefineConfig } from '../../../src/define-config';
 
 const mockOptions = {
-  hostname: 'dev.hps.com',
+  hostname: 'hps.dev',
   mockBaseDir: `./mocks`,
   port: 40000,
   chunkSize: 3,
@@ -87,7 +87,7 @@ const evolveOptions = {
     },
     plugins: {
       htmlPlugin: {
-        htmlCdn: 'http://dev.hps.com:4000/public',
+        htmlCdn: 'http://hps.dev:4000/public',
       },
       tsCheckerPlugin: {
         enabled: false,

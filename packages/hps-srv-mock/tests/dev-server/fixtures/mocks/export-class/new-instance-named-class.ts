@@ -11,7 +11,7 @@ class MockExportClassService extends MockBase {
         message: getStr(
           'export default new MockExportClassService(); without @mockable()'
         ),
-        data: ['https://www.dev.hps.com/blog/img/hps_avatar.png'],
+        data: ['https://hps.dev/blog/img/hps_avatar.png'],
       })
     );
   }

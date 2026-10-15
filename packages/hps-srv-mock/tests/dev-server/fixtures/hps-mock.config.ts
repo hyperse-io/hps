@@ -2,7 +2,7 @@ import { defineConfig, defineGraphqlMock } from "@hyperse/hps-srv-mock";
 
 export default defineConfig({
   projectCwd: process.cwd(),
-  hostname: "dev.hps.com",
+  hostname: "hps.dev",
   mockBaseDir: `./mocks`,
   port: 40001,
   chunkSize: 3,

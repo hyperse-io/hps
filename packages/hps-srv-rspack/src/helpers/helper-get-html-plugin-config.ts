@@ -59,8 +59,7 @@ export const getHtmlPluginConfig = <T extends Json>(
 
   if (typeof userValue === 'undefined') {
     const defaultValue = defaultHtmlPluginConfig[key] as
-      | T
-      | ((configData: HtmlPluginConfigConfigData) => T);
+      T | ((configData: HtmlPluginConfigConfigData) => T);
 
     return typeof defaultValue === 'function'
       ? defaultValue(configData)

@@ -160,8 +160,8 @@ export interface HpsMockOptions {
    */
   https?: SecureContextHttps;
   /**
-   * The hostname of mock service `dev.hps.com`
-   * @default `dev.hps.com`
+   * The hostname of mock service `hps.dev`
+   * @default `hps.dev`
    */
   hostname?: string;
   /**

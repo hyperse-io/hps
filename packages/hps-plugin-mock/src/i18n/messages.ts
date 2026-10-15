@@ -7,7 +7,7 @@ export const mockPluginMessages = defineLocaleMessages({
       name: 'CLI Build Plugin',
       command: {
         description: 'Start a mock service',
-        example: 'hps mock -n="dev.hps.com" -p="3000"',
+        example: 'hps mock -n="hps.dev" -p="3000"',
       },
       flags: {
         hostname: 'The hostname of dev mock server.',

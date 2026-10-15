@@ -11,10 +11,10 @@ export const HPS_MOCK_META = `Hps-Mock-Meta`;
 export const HPS_MOCK_GRAPHQL_SCHEMA_DIR = 'graphql-schema';
 
 export enum hpsMockTypes {
-  'FUNC' = 'FUNC',
-  'FUNC_SIMPLE' = 'FUNC_SIMPLE',
-  'REST' = 'REST',
-  'OTHER' = 'OTHER',
+  FUNC = 'FUNC',
+  FUNC_SIMPLE = 'FUNC_SIMPLE',
+  REST = 'REST',
+  OTHER = 'OTHER',
 }
 
 /**

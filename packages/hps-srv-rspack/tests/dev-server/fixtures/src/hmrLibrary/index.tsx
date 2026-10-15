@@ -25,7 +25,7 @@ export const HmrLibrary = () => {
             border: 'none',
             marginTop: 24,
           }}
-          src="http://dev.hps.com:40000/route/hmrIframe"
+          src="http://hps.dev:40000/route/hmrIframe"
         />
     </div>
   );

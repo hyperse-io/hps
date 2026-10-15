@@ -52,7 +52,7 @@ export const startRspackServe = async (
     return previousValue;
   }, {});
 
-  // e.g. `http://dev.hps.com:3002/public/`
+  // e.g. `http://hps.dev:3002/public/`
   const servePublicPath = urlJoin(devServerHostUri, ['public']);
 
   const rspackConfig = await loadRspackConfig(

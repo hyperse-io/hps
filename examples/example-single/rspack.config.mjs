@@ -1,6 +1,6 @@
 import { createLaunchEditorMiddleware } from '@hyperse/inspector-middleware';
 import { DefinePlugin, HtmlRspackPlugin, ProgressPlugin } from '@rspack/core';
-import ReactRefreshPlugin from '@rspack/plugin-react-refresh';
+import { ReactRefreshRspackPlugin } from '@rspack/plugin-react-refresh';
 
 const isDev = process.env.NODE_ENV === 'development';
 const publicPath = isDev ? '/' : '/rspack/';
@@ -77,14 +77,16 @@ const config = {
             externalHelpers: true,
             experimental: {
               keepImportAttributes: true,
-              plugins: [
-                [
-                  '@hyperse/inspector-swc-plugin',
-                  {
-                    projectCwd: process.cwd(),
-                  },
-                ],
-              ],
+              plugins: isDev
+                ? [
+                    [
+                      '@hyperse/inspector-swc-plugin',
+                      {
+                        projectCwd: process.cwd(),
+                      },
+                    ],
+                  ]
+                : [],
             },
             transform: {
               decoratorMetadata: true,
@@ -109,7 +111,7 @@ const config = {
     new HtmlRspackPlugin({
       template: './index.html',
     }),
-    isDev && new ReactRefreshPlugin(),
+    isDev && new ReactRefreshRspackPlugin(),
   ],
 };
 

@@ -18,8 +18,7 @@ export type HtmlPluginConfigConfigData = {
 };
 
 export type HtmlPluginConfigTokenType<T extends Json> =
-  | T
-  | ((configData: HtmlPluginConfigConfigData) => T);
+  T | ((configData: HtmlPluginConfigConfigData) => T);
 
 /**
  * The html plugin configuration for each entry item

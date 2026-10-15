@@ -25,7 +25,7 @@ const matchStaticPath = (
 
 /**
  * A middleware to proxy the page modules template.
- * @example `http://dev.hps.com:3001/pages`
+ * @example `http://hps.dev:3001/pages`
  * @param mode The mode of this dev server instance.
  * @param hostUri The main host base url.
  * @param servedDevServerEntries The served webpack entries

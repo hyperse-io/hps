@@ -23,7 +23,7 @@ export const getAvailableDomain = async (
   options: GetAvailableDomainOptions
 ): Promise<GetAvailableDomainData> => {
   const listenHostName = '0.0.0.0';
-  const { port = 6001, hostname = 'dev.hps.com' } = options;
+  const { port = 6001, hostname = 'hps.dev' } = options;
   let availablePort: number;
   try {
     availablePort = await getAvailablePort(port, listenHostName);
