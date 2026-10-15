@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+    # Only redeploy when the site, its content, or the workflow itself changes.
     paths:
       - '.github/workflows/gh-pages.yml'
       - 'website/**'
+      - 'packages/**'
   pull_request:
 
 permissions:
@@ -22,9 +24,6 @@ jobs:
   build:
     if: ${{ !startsWith(github.head_ref, 'changeset-release/') }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: website
     strategy:
       matrix:
         node-version: [24.x]
@@ -40,10 +39,15 @@ jobs:
         run: yarn --frozen-lockfile
 
       - name: Unit tests
-        run: yarn test
+        run: yarn workspace @hyperse/hps-website run test
 
-      - name: Build
-        run: yarn build:ghpage
+      - name: Build packages
+        # The docs use Twoslash, which resolves types from the workspace
+        # packages' `dist/*.d.ts`, so they must be built before the website.
+        run: yarn g:build-local
+
+      - name: Build website
+        run: yarn g:build-website
 
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'

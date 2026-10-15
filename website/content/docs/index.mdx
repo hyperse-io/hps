@@ -1,0 +1,40 @@
+---
+title: Introduction
+description: HPS is a blazing fast frontend build tool based on Rspack that powers the next generation of web applications.
+---
+
+# Hyperse HPS
+
+**@hyperse/hps** is a blazing fast frontend build tool based on Rspack. It delivers instant
+startup, lightning-fast Hot Module Replacement (HMR), and minimal-config deployment for modern
+web applications.
+
+## Why HPS?
+
+Modern web applications deserve a toolchain that stays out of the way. HPS is engineered to
+eliminate the bottlenecks in your development lifecycle:
+
+- **Rspack Core** — built on the ultra-fast Rust-based bundler, with a Webpack-compatible API
+  and Vite-like speed.
+- **Minimal Configuration** — sensible defaults so you can start developing immediately.
+- **Built-in Mock** — integrated API mocking lets you build frontend features before the
+  backend is ready.
+- **One-Click Publish** — streamlined build and deployment commands.
+- **Module Federation** — native support for scalable micro-frontend architectures.
+- **Type Safety** — written in TypeScript with full type definitions included.
+
+## Three-Tier Architecture
+
+HPS separates concerns across three architectural layers:
+
+| Layer       | Purpose                               | Package Pattern            | Examples                                       |
+| ----------- | ------------------------------------- | -------------------------- | ---------------------------------------------- |
+| **CLI**     | User interface, command orchestration | **@hyperse/hps**           | Core CLI, command parsing                      |
+| **Plugin**  | Feature implementation                | **@hyperse/hps-plugin-\*** | build, serve, mock, deploy, update, info, pack |
+| **Service** | Technical implementation              | **@hyperse/hps-srv-\***    | rspack, rolldown, mock, ts-checker, common     |
+
+Dependencies flow downward: the CLI depends on Plugins, and Plugins depend on Services.
+
+## Explore the documentation
+
+<OverviewPage />

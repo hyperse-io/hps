@@ -1,15 +1,17 @@
-'use client';
-
-import { use } from 'react';
-import { useRouter } from 'next/navigation';
+import type { Metadata } from 'next';
+import { Features } from '@/components/Features';
 import { Footer } from '@/components/Footer';
-import { Features } from '../../components/Features';
-import { Hero } from '../../components/Hero';
-import { Performance } from '../../components/Performance';
+import { Hero } from '@/components/Hero';
+import { Performance } from '@/components/Performance';
 import './page.css';
 
+export const metadata: Metadata = {
+  title: 'Hyperse Hps',
+  description:
+    'HPS is a blazing fast frontend build tool based on Rspack that powers the next generation of web applications.',
+};
+
 function App() {
-  const route = useRouter();
   return (
     <div className="grid-bg relative flex min-h-screen flex-col selection:bg-cyan-500/30 selection:text-cyan-200">
       <main className="flex-grow">
@@ -29,20 +31,20 @@ function App() {
               HPS.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <button
+              <a
+                href="/hps/docs/guide/getting-started"
                 className="cursor-pointer rounded-lg bg-white px-8 py-4 font-bold text-black transition-colors hover:bg-gray-200"
-                onClick={() => route.push('/guide/getting-started')}
               >
                 Get Started Now
-              </button>
-              <button
+              </a>
+              <a
+                href="https://github.com/hyperse-io/hps"
+                target="_blank"
+                rel="noreferrer"
                 className="cursor-pointer rounded-lg border border-white/20 bg-transparent px-8 py-4 font-bold text-white transition-colors hover:bg-white/10"
-                onClick={() => {
-                  window.open('https://github.com/hyperse-io/hps', '_blank');
-                }}
               >
                 View on GitHub
-              </button>
+              </a>
             </div>
           </div>
         </section>

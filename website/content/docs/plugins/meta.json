@@ -1,0 +1,11 @@
+{
+  "title": "Plugins",
+  "pages": [
+    "hps-plugin-info",
+    "hps-plugin-update",
+    "hps-plugin-deploy",
+    "hps-plugin-serve",
+    "hps-plugin-build",
+    "hps-plugin-mock"
+  ]
+}

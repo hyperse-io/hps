@@ -34,8 +34,9 @@
   ],
   "scripts": {
     "g:clean": "yarn clean:global-cache && yarn workspaces foreach -At run clean",
-    "g:build": "yarn g:build",
+    "g:build": "yarn g:build-local",
     "g:build-local": "yarn workspaces foreach -At run build",
+    "g:build-website": "yarn workspace @hyperse/hps-website run build:ghpage",
     "g:test": "yarn workspaces foreach -At run test",
     "g:test-unit": "yarn workspaces foreach --all -ptv run test-unit",
     "g:test-e2e": "yarn workspaces foreach -At run test-e2e",
@@ -70,9 +71,9 @@
     "lint-staged": "^17.0.7",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.1.3",
-    "typescript": "^6.0.3"
+    "typescript": "6.0.3"
   },
-  "packageManager": "yarn@4.17.0",
+  "packageManager": "yarn@4.18.1",
   "engines": {
     "node": ">=24.0.0",
     "npm": "please-use-yarn",

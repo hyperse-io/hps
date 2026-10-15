@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      
 
 jobs:
   release:
@@ -20,21 +19,11 @@ jobs:
           # @link https://github.com/actions/checkout#fetch-all-history-for-all-tags-and-branches
           fetch-depth: 0
 
-      - name: Setup Rust Environment
-        uses: ./.github/actions/rust-setup
-
       - name: Setup Node.js Environment
         uses: ./.github/actions/node-env
 
-      - name: 📥 Monorepo install
-        uses: ./.github/actions/yarn-nm-install
-
-      # - name: Build hps-srv-rspack-plugin-import
-      #   uses: ./.github/actions/rust-build
-      #   with:
-      #     working-directory: crates/hps-srv-rspack-plugin-import
-      #     build-command: yarn build
-      #     clean-command: yarn clean
+      - name: 📥 Install Dependencies
+        run: yarn --frozen-lockfile
 
       # @link https://github.com/changesets/action (v2 for @changesets/cli v3)
       - name: Create Release Pull Request or Publish to npm
@@ -55,6 +44,8 @@ jobs:
           # Allows to download / query / comment packages
           # Allows to publish packages
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          # Support cargo
-          CARGO_TERM_COLOR: always
-          RUST_BACKTRACE: 1
+          # Yarn (Berry) doesn't read NPM_TOKEN; it maps this variable onto
+          # `npmAuthToken`. Without it publishing fails with
+          # "YN0033: No authentication configured for request".
+          # @link https://yarnpkg.com/configuration/yarnrc#npmAuthToken
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -89,7 +89,7 @@ export const Hero: React.FC = () => {
                 size="lg"
                 className="group w-full sm:w-auto"
                 onClick={() => {
-                  route.push('/guide/introduction');
+                  route.push('/docs/guide/introduction');
                 }}
               >
                 Get Started
@@ -99,7 +99,7 @@ export const Hero: React.FC = () => {
                 variant="secondary"
                 size="lg"
                 className="w-full sm:w-auto"
-                onClick={() => route.push('/guide/getting-started')}
+                onClick={() => route.push('/docs/guide/getting-started')}
               >
                 Read Documentation
               </Button>

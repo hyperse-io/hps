@@ -19,7 +19,26 @@
     "incremental": true,
     "types": ["vitest/globals"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@hyperse/hps": ["../packages/hps/dist/index.d.ts"],
+      "@hyperse/hps-plugin-build": [
+        "../packages/hps-plugin-build/dist/index.d.ts"
+      ],
+      "@hyperse/hps-plugin-deploy": [
+        "../packages/hps-plugin-deploy/dist/index.d.ts"
+      ],
+      "@hyperse/hps-plugin-info": [
+        "../packages/hps-plugin-info/dist/index.d.ts"
+      ],
+      "@hyperse/hps-plugin-mock": [
+        "../packages/hps-plugin-mock/dist/index.d.ts"
+      ],
+      "@hyperse/hps-plugin-serve": [
+        "../packages/hps-plugin-serve/dist/index.d.ts"
+      ],
+      "@hyperse/hps-plugin-update": [
+        "../packages/hps-plugin-update/dist/index.d.ts"
+      ]
     },
     "plugins": [
       {

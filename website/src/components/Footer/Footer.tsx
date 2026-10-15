@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
                 <a
-                  href="/hps/resources/about"
+                  href="/hps/docs/resources/about"
                   className="transition-colors hover:text-cyan-400"
                 >
                   About Hyperse

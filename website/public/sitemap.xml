@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://nextra.site</loc><lastmod>2025-12-18T04:06:31.583Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/configuration/configuration</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/guide/cli</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/guide/getting-started</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/guide/introduction</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/plugins/hps-plugin-build</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/plugins/hps-plugin-deploy</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/plugins/hps-plugin-info</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/plugins/hps-plugin-mock</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/plugins/hps-plugin-serve</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/plugins/hps-plugin-update</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/resources/about</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/resources/blog</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
-<url><loc>https://nextra.site/resources/releases</loc><lastmod>2025-12-18T04:06:31.584Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps</loc><lastmod>2026-10-15T10:40:49.713Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/api/search</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/configuration/configuration</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/guide/cli</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/guide/getting-started</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/guide/introduction</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/plugins/hps-plugin-build</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/plugins/hps-plugin-deploy</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/plugins/hps-plugin-info</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/plugins/hps-plugin-mock</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/plugins/hps-plugin-serve</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/plugins/hps-plugin-update</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+<url><loc>https://hyperse-io.github.io/hps/docs/resources/about</loc><lastmod>2026-10-15T10:40:49.714Z</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
 </urlset>
