@@ -54,5 +54,22 @@ RollupError: Could not resolve "./get-str.js" from "src/utils/index.ts"
 bundle traversal of the `@/utils` -> `./get-str.js` -> `get-str.ts` chain.
 
 This drops all 11 `@flatjs/*` packages plus `dts-bundle-generator` from the
-dependency tree, and adds `rollup` as a direct dependency since it was
-previously only available transitively.
+dependency tree. Two plugins that forge used to inject are now declared and
+wired explicitly, because dropping them silently changed output:
+
+- `@rollup/plugin-commonjs` — mock definition files may be authored as
+  CommonJS (`module.exports = ...` or `exports.foo = ...`). Without the
+  conversion step they were emitted verbatim into `.mjs` files, so importing
+  them threw `ReferenceError: exports is not defined in ES module scope` at
+  startup.
+- `rollup` is now a direct dependency, since it was previously only reachable
+  transitively through forge.
+
+The transform output directory is also anchored to `projectCwd` rather than
+left relative. `createRollupOutputDir` used to join `projectCwd` for us;
+passing a relative `distFolder` straight to rollup's `output.dir` made rollup
+resolve it against `process.cwd()`, so the bundles landed outside the `.cache`
+root that `getMockCacheDir` cleans and reads. The two only coincided when the
+process happened to run with `cwd === projectCwd`. `createWatcherOptions` now
+builds the path from `getMockCacheDir` so the writer and the reader cannot
+drift apart.

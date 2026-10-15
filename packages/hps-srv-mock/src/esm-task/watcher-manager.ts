@@ -4,7 +4,6 @@ import { existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { type ChangeEvent, type Plugin, type RollupWatcher } from 'rollup';
 import type { PackageJson } from 'type-fest';
-import { createRollupWatcher, type FlatForgeOptions } from '@flatjs/forge';
 import { chalk, logger } from '@hyperse/hps-srv-common';
 import { esbuildTransform } from '../esm-task-plugins/esbuild.js';
 import { mockResolveExportsActions } from '../esm-task-plugins/mock-resolve-exports-actions.js';
@@ -15,7 +14,12 @@ import { loadMockMapDefEntryFiles } from '../helpers/load-mock-map-defs.js';
 import { type HpsMockOptions } from '../types/types-options.js';
 import { WatchTask } from '../watch/watch-task.js';
 import { actionCacheManager } from './action-cache-manager.js';
+import { getMockCacheDir } from './get-mock-cache-dir.js';
 import { mockChunks } from './mock-chunk.js';
+import {
+  createMockRollupWatcher,
+  type MockWatcherOptions,
+} from './rollup-watcher.js';
 export interface WatcherManagerOptions {
   /**
    * Push into a chunk every 30 files.
@@ -169,7 +173,7 @@ export class WatcherManager {
   }
 
   private async createWatcher(watcherId: string, mockDefFiles: string[]) {
-    const { packageJson = {}, projectCwd } = this.options;
+    const { projectCwd } = this.options;
 
     // Use project default tsconfig.
     const tsconfig = getTsconfig(projectCwd);
@@ -188,7 +192,7 @@ export class WatcherManager {
       }),
     ]);
 
-    const watcher = await createRollupWatcher(watcherOptions, packageJson);
+    const watcher = createMockRollupWatcher(watcherOptions);
     this.watachers.set(watcherId, watcher);
 
     return new Promise<void>((resolve) => {
@@ -211,29 +215,24 @@ export class WatcherManager {
     watcherId: string,
     mockDefEntryFiles: string[],
     extraPlugins: Plugin[] = []
-  ) {
-    const { projectCwd, externalModules } = this.options;
+  ): MockWatcherOptions {
+    const { projectCwd, externalModules, packageJson, mockOptions } =
+      this.options;
 
-    const options: FlatForgeOptions = {
+    // Keep the transform output inside the same `.cache` root that
+    // `getMockCacheDir` cleans and reads from. `mockOptions` and `this.options`
+    // both carry `projectCwd`, so either source anchors to the same directory.
+    const cacheDir = getMockCacheDir({ ...mockOptions, projectCwd });
+
+    return {
       projectCwd,
       input: mockDefEntryFiles,
-      externals: externalModules,
-      dts: false,
-      plugin: {
-        pluginConfigs: {
-          terserOptions: false,
-          // Disable babel transform to speed up build, Use esbuild instead.
-          babelOptions: false,
-          nodeResolveOptions: {
-            extensions: ['.js', '.ts', '.mjs', '.cjs', '.mts', '.cts', '.json'],
-          },
-        },
-        extraPlugins,
-      },
+      externalModules,
+      packageJson,
+      extraPlugins,
       output: {
         format: 'esm',
-        distFolder: join('.cache', watcherId),
-        cleanDistFolder: false,
+        distFolder: join(cacheDir, watcherId),
         preserveModules: false,
         entryFileNames: (chunkInfo: any) => {
           // Make sure that we have `mocks/rest/catalog/[hash:16].mjs`.
@@ -241,6 +240,5 @@ export class WatcherManager {
         },
       },
     };
-    return options;
   }
 }
