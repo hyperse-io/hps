@@ -65,7 +65,7 @@
     "cors": "^2.8.6",
     "esbuild": "^0.28.2",
     "express": "^5.3.0",
-    "express-mung": "^0.5.1",
+    "express-response-middleware": "^2.2.0",
     "fast-glob": "^3.3.3",
     "get-tsconfig": "^4.14.3",
     "gql.tada": "^1.11.4",
@@ -84,7 +84,6 @@
   "devDependencies": {
     "@hyperse/eslint-config-hyperse": "^1.7.5",
     "@hyperse/wizard": "^1.0.7",
-    "@types/express-mung": "0.5.5",
     "@types/listr": "^0.14.10",
     "@types/node": "^26.6.5",
     "@types/serve-favicon": "^2.5.7",

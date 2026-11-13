@@ -139,7 +139,7 @@ function builtinMockItemMiddlewares(mockItem: HpsMockMapItem) {
   const reqMiddlewares: MockRequestHandler[] = [];
 
   // Setup middlewares to transform response json, Note the `res` filter middleware need created use `createJsonResTransformer()`
-  // Note Caused by `express-mung` the executed orders of middlewares
+  // Note Caused by `express-response-middleware` the executed orders of middlewares
   // We need to put response `json` transform middleware before the other route handling middleware
   // Our `customized` middlewares will be executes after all `builtin` middlewares has been finished.
   const resMiddlewares: MockRequestHandler[] = [];
